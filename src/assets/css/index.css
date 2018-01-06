@@ -1,0 +1,7 @@
+body {
+  background: #f8f8f8; }
+
+.ant-menu-horizontal {
+  float: right !important;
+  border: none !important;
+  padding: 1% !important; }
