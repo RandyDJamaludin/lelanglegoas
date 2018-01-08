@@ -12,28 +12,35 @@ body{
 }
 .navbar-inverse{
     border:none;
-}
-.navbar-inverse .navbar-toggle{
-    border:none;
-    background:#eb5f02;
-}
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
-    border:none;
-    background:#eb5f02;    
-}
-.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
-    border:none;
-}
-.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
-    color:#eb5f02;
-}
-.navbar-inverse .navbar-nav>li>a{
-    color:#000;
+    
+    .navbar-toggle{
+        border:none;
+        background:#eb5f02;
+    }
+    .navbar-toggle:hover{
+        border:none;
+        background:#eb5f02;    
+    }
+    .navbar-collapse{
+        border:none;
+    }
+    .navbar-form{
+        border:none;
+    }
+    .navbar-nav>li>a{
+        color:#000;
+    }    
+    .navbar-nav>li>a:focus{
+        color:#eb5f02;
+    }
+    .navbar-nav>li>a:hover{
+        color:#ff731a;
+    }
+    .navbar-nav>li>a:hover{
+        color:#eb5f02;
+    }
 }
 
-.navbar-inverse .navbar-nav>li>a:hover{
-    color:#ff731a;
-}
 span.orange{
     color:#ff741a;
     font-weight: bold;

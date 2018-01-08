@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import 'antd/lib/date-picker/style/css'
-import './App.css'
 import Navigation from './pages/Components/Navigation'
 import Landing from './pages/Landing/index'
 import { BackTop } from 'antd'
