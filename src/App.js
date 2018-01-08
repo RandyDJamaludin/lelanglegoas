@@ -3,6 +3,8 @@ import 'antd/lib/date-picker/style/css'
 import './App.css'
 import Navigation from './pages/Components/Navigation'
 import Landing from './pages/Landing/index'
+import { BackTop } from 'antd'
+import FaTop from 'react-icons/lib/fa/chevron-circle-up'
 
 class App extends Component {
   render() {
@@ -10,6 +12,11 @@ class App extends Component {
       <div className="App">
         <Navigation/>
         <Landing/>
+        <BackTop>
+          <div className="ant-back-top-inner">
+            <p className='backTop'><FaTop/></p>
+          </div>
+        </BackTop>
       </div>
     );
   }

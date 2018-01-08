@@ -1,7 +1,251 @@
 body {
-  background: #f8f8f8; }
+  background: #fff !important;
+  font-family: Helvetica !important; }
 
-.ant-menu-horizontal {
-  float: right !important;
-  border: none !important;
-  padding: 1% !important; }
+.navbar {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 13px;
+  box-shadow: 0 0 10px #ccc;
+  background: #fff;
+  color: #ff741a; }
+
+.navbar-inverse {
+  border: none; }
+
+.navbar-inverse .navbar-toggle {
+  border: none;
+  background: #eb5f02; }
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+  border: none;
+  background: #eb5f02; }
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+  border: none; }
+
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover {
+  color: #eb5f02; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #000; }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+  color: #ff731a; }
+
+span.orange {
+  color: #ff741a;
+  font-weight: bold; }
+
+ul.right {
+  float: right; }
+  @media only screen and (max-width: 765px) {
+    ul.right {
+      float: none; } }
+
+img.logo {
+  margin-top: -5px; }
+
+.landing-lelang {
+  padding-top: 3%; }
+  .landing-lelang .body-header p {
+    font-size: 18px;
+    font-weight: bold; }
+  .landing-lelang .body-header #date {
+    color: #ff731a; }
+  .landing-lelang .lelang-lot {
+    background: #ff741a;
+    margin-top: 15px;
+    padding: 35px;
+    padding-top: 55px; }
+    .landing-lelang .lelang-lot h2 {
+      color: #fff;
+      font-size: 24px; }
+  .landing-lelang img {
+    padding: 10px;
+    margin-top: 15px; }
+  .landing-lelang .content-lelang {
+    margin-top: 4%; }
+    .landing-lelang .content-lelang p.sub-title {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.year {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.type {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.loc {
+      line-height: 1; }
+    .landing-lelang .content-lelang button {
+      background: #ff741a;
+      border: none;
+      color: #fff; }
+  .landing-lelang p.lihatJadwal {
+    text-align: center;
+    margin-top: 30px; }
+
+p.backTop {
+  border: none;
+  font-size: 30px;
+  color: #eb5f02; }
+
+.banner_background {
+  background: url("http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg") center no-repeat;
+  height: 400px;
+  background-size: cover; }
+  .banner_background .contain {
+    padding: 2%;
+    margin-top: 5%; }
+    .banner_background .contain h4 {
+      font-size: 15px;
+      color: #fff;
+      text-align: justify;
+      font-family: Helvetica; }
+      @media only screen and (max-width: 320px) {
+        .banner_background .contain h4 {
+          font-size: 12px;
+          padding-top: 70px; } }
+      @media only screen and (min-width: 321px) and (max-width: 430px) {
+        .banner_background .contain h4 {
+          font-size: 12px;
+          padding-top: 80px; } }
+    .banner_background .contain h1 {
+      font-size: 45px;
+      font-family: Helvetica;
+      font-weight: bold;
+      color: #fff;
+      text-align: justify;
+      margin-top: 0px; }
+      @media only screen and (max-width: 320px) {
+        .banner_background .contain h1 {
+          font-size: 24px; } }
+      @media only screen and (min-width: 321px) and (max-width: 430px) {
+        .banner_background .contain h1 {
+          font-size: 28px; } }
+    .banner_background .contain p {
+      color: #fff;
+      text-align: justify;
+      margin-top: 0px; }
+    .banner_background .contain button {
+      float: left;
+      background: #ff741a;
+      border: #ff741a;
+      border-bottom: 5px solid #eb5f02;
+      padding: 10px 30px 25px 30px;
+      font-size: 12px; }
+  .banner_background ul.slick-dots button {
+    margin-top: 100px;
+    padding: 10px; }
+
+.background-card {
+  background: #fbfbfb;
+  margin-top: 10%;
+  padding: 5%; }
+  .background-card img {
+    padding: 20px; }
+  .background-card h3 {
+    font-size: 16px;
+    font-weight: bold; }
+  .background-card button {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #eb5f02;
+    padding: 10px 30px 25px 30px;
+    font-size: 12px; }
+  .background-card button:hover {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #eb5f02; }
+  .background-card button:active {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #eb5f02; }
+  .background-card button:focus {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #eb5f02; }
+  @media only screen and (max-width: 320px) {
+    .background-card button {
+      padding: 5px;
+      font-size: 10px; } }
+
+.background-card:hover {
+  box-shadow: 0 0 5px #ff741a;
+  background: #fff; }
+
+.body-card2 {
+  padding-top: 5%;
+  padding-bottom: 5%; }
+
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
+  text-align: left !important;
+  border: 2px solid #f8f8f8;
+  font-size: 12px;
+  padding: 15px 40px 15px 40px;
+  color: #ccc; }
+
+.ant-tabs-tab-active.ant-tabs-tab {
+  background: #f8f8f8;
+  color: #000 !important; }
+
+.ant-tabs-ink-bar {
+  background-color: #eb5f02 !important; }
+
+.background-card2 {
+  background: #fbfbfb;
+  margin-bottom: 30px;
+  padding: 20px;
+  margin-top: 30px;
+  margin-right: 15px;
+  transition: 0.3s; }
+  .background-card2 img {
+    margin-top: 20%;
+    height: 120px; }
+  .background-card2 button {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #fbfbfb;
+    padding: 10px 30px 25px 30px;
+    font-size: 12px;
+    margin-bottom: 15px;
+    background: #fbfbfb;
+    color: #fbfbfb; }
+  .background-card2 p.price {
+    margin-top: -10px; }
+  .background-card2 p.skin {
+    font-size: 12px; }
+  .background-card2 h3 {
+    font-size: 16px;
+    margin-top: 10px;
+    padding-top: 10%;
+    font-weight: bold; }
+
+button.explore {
+  background: #ff741a;
+  color: #fff;
+  padding: 10px 10px 30px 10px;
+  width: 100%;
+  border: none; }
+  button.explore p {
+    transition: 0.2s; }
+
+button.explore:hover {
+  background: #ff741a;
+  color: #fff;
+  padding: 10px 10px 30px 10px;
+  width: 100%;
+  border: none; }
+  button.explore:hover p {
+    margin-left: 10px;
+    transition: 0.2s; }
+
+.background-card2:hover {
+  background: #fff;
+  box-shadow: 0 0 4px #ccc;
+  transform: scale(1.1); }
+  .background-card2:hover button {
+    background: #ff741a;
+    border: #ff741a;
+    border-bottom: 5px solid #eb5f02;
+    font-size: 12px;
+    display: inline-block !important; }
+  .background-card2:hover p.price {
+    padding-bottom: 0px !important; }

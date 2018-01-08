@@ -1,9 +1,123 @@
 body{
-    background:#f8f8f8;
+    background:#fff !important;
+    font-family: Helvetica !important;
+}
+.navbar{
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size:13px;
+    box-shadow:0 0 10px #ccc;
+    background: #fff;
+    color:#ff741a;
+}
+.navbar-inverse{
+    border:none;
+}
+.navbar-inverse .navbar-toggle{
+    border:none;
+    background:#eb5f02;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    border:none;
+    background:#eb5f02;    
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+    border:none;
+}
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover{
+    color:#eb5f02;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color:#000;
 }
 
-.ant-menu-horizontal{
-    float:right !important;
-    border:none !important;
-    padding:1% !important;
+.navbar-inverse .navbar-nav>li>a:hover{
+    color:#ff731a;
 }
+span.orange{
+    color:#ff741a;
+    font-weight: bold;
+}
+ul.right{
+    float:right;
+    @media only screen and (max-width:765px){
+        float:none;
+    }
+}
+img.logo{
+    margin-top:-5px;
+}
+
+// Landing Lelang
+
+.landing-lelang{
+    padding-top:3%;
+    .body-header{
+        p{
+            font-size:18px;
+            font-weight: bold;
+        }
+        #date{
+            color:#ff731a;
+        }
+    }
+    .lelang-lot{
+        background:#ff741a;
+        margin-top:15px;
+        padding:35px;
+        padding-top:55px;
+        h2{
+            color:#fff;
+            font-size:24px;
+        }
+    }
+    img{
+        padding:10px;
+        margin-top:15px;
+    }
+
+    .content-lelang{
+        margin-top:4%;
+        p.sub-title{
+            line-height: 1;
+        }
+        p.year{
+            line-height: 1;
+        }
+        p.type{
+            line-height: 1;
+        }
+        p.loc{
+            line-height: 1;
+        }
+        button{
+            background: #ff741a;
+            border:none;
+            color:#fff;
+        }
+    }
+    p.lihatJadwal{
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+
+//
+
+
+
+
+
+
+//Back to Top
+
+p.backTop{
+    border:none;
+    font-size:30px;
+    color:#eb5f02;
+}
+
+//End to Top
+
+@import 'Components/Banner.scss';
+@import 'Components/Card1.scss';

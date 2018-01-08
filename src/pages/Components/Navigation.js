@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import { Menu, Col, Row } from 'antd';
+import { NavLink } from "react-router-dom"
+import { Navbar, Image } from "react-bootstrap"
+import Logo from '../../assets/image/logo-dummy.png'
 
 class Navigation extends Component {
   state = {
@@ -14,39 +16,57 @@ class Navigation extends Component {
   render() {
     return (
       <div>
-        <div className="gutter-example">
-          <Row gutter={24}>
-            <Col className="gutter-row" span={12}>
-              <div className="gutter-box">col-6</div>
-            </Col>
-            <Col className="gutter-row" span={12}>
-              <Menu
-                onClick={this.handleClick}
-                selectedKeys={[this.state.current]}
-                mode="horizontal">
-
-                <Menu.Item key="beranda">
+        <div className="wrap-nav">
+        <Navbar
+          inverse
+          collapseOnSelect
+          style={{ zIndex: "99" }}
+          id="navbar"
+          onSelect={this.handleSelect}
+        >
+          <Navbar.Header>
+            <Navbar.Brand>
+              <NavLink to='/'>
+                <Image src={Logo} className='logo' width='100px'/>  
+              </NavLink>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <ul className="nav navbar-nav right"> 
+							<li eventkey={1}>
+                <NavLink to="/" activeClassName="anchorActive">
                   Beranda
-                </Menu.Item>
-
-                <Menu.Item key="tataCara">
+                </NavLink>
+              </li>
+              
+              <li eventkey={2}>
+                <NavLink to="/" activeClassName="anchorActive">
                   Tata Cara Lelang
-                </Menu.Item>
+                </NavLink>
+              </li>
 
-                <Menu.Item key="lokasiLelang">
+              <li eventkey={3}>
+                <NavLink to="/" activeClassName="anchorActive">
                   Lokasi Lelang
-                </Menu.Item>
+                </NavLink>
+              </li>
 
-                <Menu.Item key="jadwalLelang">
-                  Jawal Lelang
-                </Menu.Item>
+              <li eventkey={3}>
+                <NavLink to="/" activeClassName="anchorActive">
+                  Jadwal Lelang
+                </NavLink>
+              </li>
 
-                <Menu.Item key="kontakKami">
+              <li eventkey={3}>
+                <NavLink to="/" activeClassName="anchorActive">
                   Kontak Kami
-                </Menu.Item>
-              </Menu>
-            </Col>
-          </Row>
+                </NavLink>
+              </li>
+
+            </ul>
+          </Navbar.Collapse>
+        </Navbar>
         </div>
       </div>
     );
