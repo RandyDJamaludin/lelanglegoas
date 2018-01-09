@@ -77,22 +77,22 @@ export class Index extends Component {
               <div className='wrap-client'>
                 <Grid className='client-border'>
                   <Row>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
-                    <Col xs={3} md={2}>
+                    <Col xs={4} md={2}>
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
                   </Row>
