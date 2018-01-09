@@ -2,17 +2,31 @@
   background: #fbfbfb;
   margin-top: 10%;
   padding: 5%; }
+  @media only screen and (max-width: 700px) {
+    .background-card {
+      padding: 0px; } }
   .background-card img {
     padding: 20px; }
+    @media only screen and (max-width: 700px) {
+      .background-card img {
+        padding: 10px; } }
   .background-card h3 {
     font-size: 16px;
     font-weight: bold; }
+    @media only screen and (max-width: 500px) {
+      .background-card h3 {
+        font-size: 14px; } }
   .background-card button {
     background: #ff741a;
     border: #ff741a;
     border-bottom: 5px solid #eb5f02;
     padding: 10px 30px 25px 30px;
     font-size: 12px; }
+    @media only screen and (max-width: 700px) {
+      .background-card button {
+        padding: 6px 20px 10px 20px;
+        font-size: 12px;
+        margin-bottom: 15px; } }
   .background-card button:hover {
     background: #ff741a;
     border: #ff741a;
@@ -60,8 +74,7 @@
   margin-right: 15px;
   transition: 0.3s; }
   .background-card2 img {
-    margin-top: 20%;
-    height: 120px; }
+    margin-top: 20%; }
   .background-card2 button {
     background: #ff741a;
     border: #ff741a;

@@ -27,7 +27,7 @@ export class Index extends Component {
                 <Grid>
                   <Row>
                   {StateCard1.map((data, index) => (
-                    <Col md={4} key={data.key}>
+                    <Col xs={6} md={4} key={data.key}>
                       
                       <Card1 
                         name={data.name}
@@ -51,7 +51,7 @@ export class Index extends Component {
                   </div>
                   <Row>
                   {StateCardLocation.map((data, index) => (
-                    <Col md={12} key={data.key}>
+                    <Col xs={6} md={12} key={data.key}>
                       
                       <JadwalLelang 
                         number={data.number}

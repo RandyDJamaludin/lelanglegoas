@@ -23,7 +23,7 @@ export class Card2 extends Component {
                         
                         <Row>
                         {StateContentTab.map((data, index) => (
-                          <Col md={4} key={data.key}>
+                          <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
                               name={data.name}
@@ -50,7 +50,7 @@ export class Card2 extends Component {
                         
                         <Row>
                         {StateContentTab.map((data, index) => (
-                          <Col md={4} key={data.key}>
+                          <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
                               name={data.name}
@@ -77,7 +77,7 @@ export class Card2 extends Component {
                         
                         <Row>
                         {StateContentTab.map((data, index) => (
-                          <Col md={4} key={data.key}>
+                          <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
                               name={data.name}
@@ -104,7 +104,7 @@ export class Card2 extends Component {
                         
                         <Row>
                         {StateContentTab.map((data, index) => (
-                          <Col md={4} key={data.key}>
+                          <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
                               name={data.name}

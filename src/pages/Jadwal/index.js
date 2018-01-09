@@ -19,7 +19,7 @@ export class Index extends Component {
                   </div>
                   <Row>
                   {StateCardLocation.map((data, index) => (
-                    <Col md={12} key={data.key}>
+                    <Col xs={6} md={12} key={data.key}>
                       
                       <JadwalLelang 
                         number={data.number}

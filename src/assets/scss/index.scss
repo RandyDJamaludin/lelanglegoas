@@ -71,11 +71,41 @@ img.logo{
     .lelang-lot{
         background:#ff741a;
         margin-top:15px;
-        padding:35px;
-        padding-top:55px;
+        
+        @media only screen and (max-width:425px){
+            background:transparent;
+            padding: 0px;
+        }
+        @media only screen and (max-width: 800px){
+            padding:0px;
+            background: transparent;
+        }
+        @media only screen and (min-width:1000px) and (max-width:1040px){
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+
         h2{
             color:#fff;
-            font-size:24px;
+            font-size:14px;
+            padding:10px;
+            
+            @media only screen and (max-width:425px){
+                font-size:12px;
+                text-align: center;
+                padding:10px;
+                color:#ff731a;
+            }
+            @media only screen and (max-width:800px){
+                color:#ff731a;
+                font-size:14px;
+            }
+            @media only screen and (min-width:700px) and (max-width:780px){
+                font-size:15px;
+                text-align: center;
+                padding:10px;
+                color:#ff731a;
+            }
         }
     }
     img{
@@ -96,11 +126,33 @@ img.logo{
         }
         p.loc{
             line-height: 1;
+            @media only screen and ( max-width: 720px){
+                line-height: 2;
+            }
+        }
+        @media only screen and(max-width:425px){
+            font-size:12px;
         }
         button{
             background: #ff741a;
             border:none;
             color:#fff;
+            font-size:12px;
+
+            @media only screen and(max-width:425px){
+                margin-top:10px;
+                margin-bottom:10px;
+                font-size:12px;
+            }
+            @media only screen and (max-width: 800px){
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+            @media only screen and (min-width:700px) and (max-width: 780px){
+                margin-top:10px;
+                margin-bottom:10px;
+                font-size:12px;
+            }
         }
     }
     p.lihatJadwal{
@@ -110,6 +162,14 @@ img.logo{
     .pagination{
         padding-top:1%;
         padding-left:10%;
+    }
+    .row-lelang{
+        border:2px dotted #ccc;
+        margin-top:2%;
+
+        @media only screen and (max-width:768px){
+            border:1px solid #ccc !important;
+        }
     }
 }
 

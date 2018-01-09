@@ -53,12 +53,39 @@ img.logo {
     color: #ff731a; }
   .landing-lelang .lelang-lot {
     background: #ff741a;
-    margin-top: 15px;
-    padding: 35px;
-    padding-top: 55px; }
+    margin-top: 15px; }
+    @media only screen and (max-width: 425px) {
+      .landing-lelang .lelang-lot {
+        background: transparent;
+        padding: 0px; } }
+    @media only screen and (max-width: 800px) {
+      .landing-lelang .lelang-lot {
+        padding: 0px;
+        background: transparent; } }
+    @media only screen and (min-width: 1000px) and (max-width: 1040px) {
+      .landing-lelang .lelang-lot {
+        margin-top: 10px;
+        margin-bottom: 10px; } }
     .landing-lelang .lelang-lot h2 {
       color: #fff;
-      font-size: 24px; }
+      font-size: 14px;
+      padding: 10px; }
+      @media only screen and (max-width: 425px) {
+        .landing-lelang .lelang-lot h2 {
+          font-size: 12px;
+          text-align: center;
+          padding: 10px;
+          color: #ff731a; } }
+      @media only screen and (max-width: 800px) {
+        .landing-lelang .lelang-lot h2 {
+          color: #ff731a;
+          font-size: 14px; } }
+      @media only screen and (min-width: 700px) and (max-width: 780px) {
+        .landing-lelang .lelang-lot h2 {
+          font-size: 15px;
+          text-align: center;
+          padding: 10px;
+          color: #ff731a; } }
   .landing-lelang img {
     padding: 10px;
     margin-top: 15px; }
@@ -72,16 +99,43 @@ img.logo {
       line-height: 1; }
     .landing-lelang .content-lelang p.loc {
       line-height: 1; }
+      @media only screen and (max-width: 720px) {
+        .landing-lelang .content-lelang p.loc {
+          line-height: 2; } }
+    @media only screen and (max-width: 425px) {
+      .landing-lelang .content-lelang {
+        font-size: 12px; } }
     .landing-lelang .content-lelang button {
       background: #ff741a;
       border: none;
-      color: #fff; }
+      color: #fff;
+      font-size: 12px; }
+      @media only screen and (max-width: 425px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 12px; } }
+      @media only screen and (max-width: 800px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px; } }
+      @media only screen and (min-width: 700px) and (max-width: 780px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 12px; } }
   .landing-lelang p.lihatJadwal {
     text-align: center;
     margin-top: 30px; }
   .landing-lelang .pagination {
     padding-top: 1%;
     padding-left: 10%; }
+  .landing-lelang .row-lelang {
+    border: 2px dotted #ccc;
+    margin-top: 2%; }
+    @media only screen and (max-width: 768px) {
+      .landing-lelang .row-lelang {
+        border: 1px solid #ccc !important; } }
 
 .location-lelang .body-header p {
   font-size: 18px;
@@ -192,17 +246,31 @@ p.backTop {
   background: #fbfbfb;
   margin-top: 10%;
   padding: 5%; }
+  @media only screen and (max-width: 700px) {
+    .background-card {
+      padding: 0px; } }
   .background-card img {
     padding: 20px; }
+    @media only screen and (max-width: 700px) {
+      .background-card img {
+        padding: 10px; } }
   .background-card h3 {
     font-size: 16px;
     font-weight: bold; }
+    @media only screen and (max-width: 500px) {
+      .background-card h3 {
+        font-size: 14px; } }
   .background-card button {
     background: #ff741a;
     border: #ff741a;
     border-bottom: 5px solid #eb5f02;
     padding: 10px 30px 25px 30px;
     font-size: 12px; }
+    @media only screen and (max-width: 700px) {
+      .background-card button {
+        padding: 6px 20px 10px 20px;
+        font-size: 12px;
+        margin-bottom: 15px; } }
   .background-card button:hover {
     background: #ff741a;
     border: #ff741a;
@@ -250,8 +318,7 @@ p.backTop {
   margin-right: 15px;
   transition: 0.3s; }
   .background-card2 img {
-    margin-top: 20%;
-    height: 120px; }
+    margin-top: 20%; }
   .background-card2 button {
     background: #ff741a;
     border: #ff741a;
