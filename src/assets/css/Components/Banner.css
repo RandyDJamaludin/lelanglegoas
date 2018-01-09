@@ -1,10 +1,10 @@
 .banner_background {
   background: url("http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg") center no-repeat;
-  height: 400px;
+  height: 450px;
   background-size: cover; }
   .banner_background .contain {
     padding: 2%;
-    margin-top: 5%; }
+    margin-top: 10%; }
     .banner_background .contain h4 {
       font-size: 15px;
       color: #fff;

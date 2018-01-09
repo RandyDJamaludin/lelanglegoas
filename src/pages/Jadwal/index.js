@@ -10,7 +10,7 @@ import { Adsense } from '../Components/Adsense';
 export class Index extends Component {
     render() { 
         return (
-            <div>
+            <div style={{paddingTop:'5%'}}>
               <div className='landing-lelang'>
                 <Grid>
                   <div className='body-header'>

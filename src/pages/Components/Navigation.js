@@ -41,25 +41,25 @@ class Navigation extends Component {
               </li>
               
               <li eventkey={2}>
-                <NavLink to="/" activeClassName="anchorActive">
+                <NavLink to="/lelang" activeClassName="anchorActive">
                   Tata Cara Lelang
                 </NavLink>
               </li>
 
               <li eventkey={3}>
-                <NavLink to="/" activeClassName="anchorActive">
+                <NavLink to="/lokasi" activeClassName="anchorActive">
                   Lokasi Lelang
                 </NavLink>
               </li>
 
               <li eventkey={3}>
-                <NavLink to="/" activeClassName="anchorActive">
+                <NavLink to="/jadwal" activeClassName="anchorActive">
                   Jadwal Lelang
                 </NavLink>
               </li>
 
               <li eventkey={3}>
-                <NavLink to="/" activeClassName="anchorActive">
+                <NavLink to="/kontak" activeClassName="anchorActive">
                   Kontak Kami
                 </NavLink>
               </li>

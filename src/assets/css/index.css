@@ -2,34 +2,39 @@ body {
   background: #fff !important;
   font-family: Helvetica !important; }
 
-.navbar {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  font-size: 13px;
-  box-shadow: 0 0 10px #ccc;
-  background: #fff;
-  color: #ff741a; }
-
-.navbar-inverse {
-  border: none; }
-  .navbar-inverse .navbar-toggle {
-    border: none;
-    background: #eb5f02; }
-  .navbar-inverse .navbar-toggle:hover {
-    border: none;
-    background: #eb5f02; }
-  .navbar-inverse .navbar-collapse {
+.wrap-nav {
+  position: fixed;
+  z-index: 999;
+  width: 100%; }
+  .wrap-nav a.anchorActive {
+    color: #ff741a !important; }
+  .wrap-nav .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    box-shadow: 0 0 10px #ccc;
+    background: #fff;
+    color: #ff741a; }
+  .wrap-nav .navbar-inverse {
     border: none; }
-  .navbar-inverse .navbar-form {
-    border: none; }
-  .navbar-inverse .navbar-nav > li > a {
-    color: #000; }
-  .navbar-inverse .navbar-nav > li > a:focus {
-    color: #eb5f02; }
-  .navbar-inverse .navbar-nav > li > a:hover {
-    color: #ff731a; }
-  .navbar-inverse .navbar-nav > li > a:hover {
-    color: #eb5f02; }
+    .wrap-nav .navbar-inverse .navbar-toggle {
+      border: none;
+      background: #eb5f02; }
+    .wrap-nav .navbar-inverse .navbar-toggle:hover {
+      border: none;
+      background: #eb5f02; }
+    .wrap-nav .navbar-inverse .navbar-collapse {
+      border: none; }
+    .wrap-nav .navbar-inverse .navbar-form {
+      border: none; }
+    .wrap-nav .navbar-inverse .navbar-nav > li > a {
+      color: #000; }
+    .wrap-nav .navbar-inverse .navbar-nav > li > a:focus {
+      color: #eb5f02; }
+    .wrap-nav .navbar-inverse .navbar-nav > li > a:hover {
+      color: #ff731a; }
+    .wrap-nav .navbar-inverse .navbar-nav > li > a:hover {
+      color: #eb5f02; }
 
 span.orange {
   color: #ff741a;
@@ -196,11 +201,11 @@ p.backTop {
 
 .banner_background {
   background: url("http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg") center no-repeat;
-  height: 400px;
+  height: 450px;
   background-size: cover; }
   .banner_background .contain {
     padding: 2%;
-    margin-top: 5%; }
+    margin-top: 10%; }
     .banner_background .contain h4 {
       font-size: 15px;
       color: #fff;

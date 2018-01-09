@@ -2,45 +2,53 @@ body{
     background:#fff !important;
     font-family: Helvetica !important;
 }
-.navbar{
-    padding-top:10px;
-    padding-bottom:10px;
-    font-size:13px;
-    box-shadow:0 0 10px #ccc;
-    background: #fff;
-    color:#ff741a;
-}
-.navbar-inverse{
-    border:none;
+.wrap-nav{
+    position:fixed;
+    z-index: 999;
+    width: 100%;
     
-    .navbar-toggle{
-        border:none;
-        background:#eb5f02;
+    a.anchorActive{
+        color:#ff741a !important;
     }
-    .navbar-toggle:hover{
-        border:none;
-        background:#eb5f02;    
+    .navbar{
+        padding-top:10px;
+        padding-bottom:10px;
+        font-size:13px;
+        box-shadow:0 0 10px #ccc;
+        background: #fff;
+        color:#ff741a;
     }
-    .navbar-collapse{
+    .navbar-inverse{
         border:none;
-    }
-    .navbar-form{
-        border:none;
-    }
-    .navbar-nav>li>a{
-        color:#000;
+        
+        .navbar-toggle{
+            border:none;
+            background:#eb5f02;
+        }
+        .navbar-toggle:hover{
+            border:none;
+            background:#eb5f02;    
+        }
+        .navbar-collapse{
+            border:none;
+        }
+        .navbar-form{
+            border:none;
+        }
+        .navbar-nav>li>a{
+            color:#000;
+        }    
+        .navbar-nav>li>a:focus{
+            color:#eb5f02;
+        }
+        .navbar-nav>li>a:hover{
+            color:#ff731a;
+        }
+        .navbar-nav>li>a:hover{
+            color:#eb5f02;
+        }
     }    
-    .navbar-nav>li>a:focus{
-        color:#eb5f02;
-    }
-    .navbar-nav>li>a:hover{
-        color:#ff731a;
-    }
-    .navbar-nav>li>a:hover{
-        color:#eb5f02;
-    }
 }
-
 span.orange{
     color:#ff741a;
     font-weight: bold;

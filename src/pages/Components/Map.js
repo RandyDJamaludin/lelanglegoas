@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { compose, withProps } from "recompose"
+import { Grid, Row, Col } from 'react-bootstrap'
+import GoCalendar from 'react-icons/lib/go/calendar'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
 const MyMapComponent = compose(
@@ -42,10 +44,32 @@ export class Map extends Component {
     render() { 
         return (
             <div>
-                <MyMapComponent
-                    isMarkerShown={this.state.isMarkerShown}
-                    onMarkerClick={this.handleMarkerClick}
-                />
+                <div className='location-lelang'>
+                <Grid>
+                  <div className='body-header'>
+                    <p><GoCalendar id='date'/> LOKASI LELANG</p>
+                    <hr/>
+                  </div>
+                  <Row>
+                    <Col xs={12} md={12}>
+                        <MyMapComponent
+                          isMarkerShown={this.state.isMarkerShown}
+                          onMarkerClick={this.handleMarkerClick}
+                      />
+                      <div className='wrap-location'>
+                        <p className='sub-location'>RND Indonesia - Jakarta </p>
+                      </div>
+                      <div className='body-location'>
+                        <p>Jl. Lorem ipsum No 7 Sudirman</p>
+                        <p>Jakarta Selatan, 1340</p>
+                        <p>Indonesia</p>
+                        <p>(021) 864-0987| +62-859-9870-444 </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </Grid>
+              </div>
+
             </div>
         )
     }
