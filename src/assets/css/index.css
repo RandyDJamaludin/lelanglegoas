@@ -80,6 +80,54 @@ img.logo {
     text-align: center;
     margin-top: 30px; }
 
+.location-lelang .body-header p {
+  font-size: 18px;
+  font-weight: bold; }
+
+.location-lelang .body-header #date {
+  color: #ff731a; }
+
+.location-lelang .wrap-location {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-top: 2%; }
+
+.location-lelang .body-location {
+  margin-top: -10px; }
+  .location-lelang .body-location p {
+    font-size: 12px;
+    line-height: 0.5; }
+
+.wrap-client {
+  padding-top: 3%; }
+  .wrap-client .client-border {
+    border-top: 2px solid #f8f8f8;
+    border-bottom: 2px solid #f8f8f8;
+    padding-top: 2%;
+    padding-bottom: 2%; }
+  .wrap-client p.street {
+    line-height: 0.8; }
+  .wrap-client p.phone {
+    line-height: 0; }
+  .wrap-client .body-client {
+    padding-top: 4%; }
+  .wrap-client .logo-addins {
+    padding-top: 10%; }
+
+.wrap-footer {
+  padding-top: 3%;
+  color: #b3b3b3; }
+  .wrap-footer .border {
+    border-bottom: 2px solid #f8f8f8;
+    padding-bottom: 3%; }
+  .wrap-footer p {
+    line-height: 1.2;
+    font-family: Helvetica; }
+  .wrap-footer p.footer {
+    text-align: center;
+    padding-top: 1%; }
+
 p.backTop {
   border: none;
   font-size: 30px;

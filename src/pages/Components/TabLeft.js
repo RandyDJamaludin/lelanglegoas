@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Tabs } from 'antd';
 import { Grid, Row, Col } from 'react-bootstrap';
+import { Button } from 'antd'
+import FaRight from 'react-icons/lib/fa/arrow-right'
 import ContentTab from './ContentTab'
+import { StateContentTab } from '../AllData/StateContentTab'
 const TabPane = Tabs.TabPane;
 
 export class Card2 extends Component {
@@ -17,19 +20,111 @@ export class Card2 extends Component {
                     style={{ height: 'auto' }}
                   >
                     <TabPane tab="New Auctions" key="1">
-                        <ContentTab/>
+                        
+                        <Row>
+                        {StateContentTab.map((data, index) => (
+                          <Col md={4} key={data.key}>
+                            
+                            <ContentTab 
+                              name={data.name}
+                              image={data.image}
+                              price={data.price}
+                              button={data.button}
+                            />
+                          </Col>
+                        ))}
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={12}>
+                            <Button className='explore'>
+                              <p>
+                                View All New Auctions <FaRight/> 
+                              </p> 
+                            </Button>
+                          </Col>
+                        </Row>
+
                     </TabPane>
 
                     <TabPane tab="Daihatsu" key="2">
-                        <ContentTab/>
+                        
+                        <Row>
+                        {StateContentTab.map((data, index) => (
+                          <Col md={4} key={data.key}>
+                            
+                            <ContentTab 
+                              name={data.name}
+                              image={data.image}
+                              price={data.price}
+                              button={data.button}
+                            />
+                          </Col>
+                        ))}
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={12}>
+                            <Button className='explore'>
+                              <p>
+                                View All New Auctions <FaRight/> 
+                              </p> 
+                            </Button>
+                          </Col>
+                        </Row>
+
                     </TabPane>
                     
                     <TabPane tab="Toyota" key="3">
-                        <ContentTab/>
+                        
+                        <Row>
+                        {StateContentTab.map((data, index) => (
+                          <Col md={4} key={data.key}>
+                            
+                            <ContentTab 
+                              name={data.name}
+                              image={data.image}
+                              price={data.price}
+                              button={data.button}
+                            />
+                          </Col>
+                        ))}
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={12}>
+                            <Button className='explore'>
+                              <p>
+                                View All New Auctions <FaRight/> 
+                              </p> 
+                            </Button>
+                          </Col>
+                        </Row>
+
                     </TabPane>
                     
                     <TabPane tab="Honda" key="4">
-                        <ContentTab/>
+                        
+                        <Row>
+                        {StateContentTab.map((data, index) => (
+                          <Col md={4} key={data.key}>
+                            
+                            <ContentTab 
+                              name={data.name}
+                              image={data.image}
+                              price={data.price}
+                              button={data.button}
+                            />
+                          </Col>
+                        ))}
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={12}>
+                            <Button className='explore'>
+                              <p>
+                                View All New Auctions <FaRight/> 
+                              </p> 
+                            </Button>
+                          </Col>
+                        </Row>
+
                     </TabPane>
                     
                     <TabPane tab="Mitsubishi" key="5"></TabPane>
