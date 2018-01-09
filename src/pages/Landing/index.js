@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import { Image, Grid, Row, Col } from 'react-bootstrap'
+
+//Files
 import Banner from '../Components/Banner'
 import Card1 from '../Components/Card1'
 import { StateCard1 } from '../AllData/StateCard1'
 import { StateCardLocation } from '../AllData/StateCardLocation'
 import JadwalLelang from '../Components/JadwalLelang'
 import TabLeft from '../Components/TabLeft'
+import Adsense from '../Components/Adsense'
+import Footer from '../Components/Footer'
 
 //Icon & Image
 import GoCalendar from 'react-icons/lib/go/calendar'
 import Map from '../Components/Map'
-import Logo from '../../assets/image/logo-dummy.png'
 
 export class Index extends Component {
   static defaultProps = {
@@ -38,16 +41,7 @@ export class Index extends Component {
                 </Grid>
                 
               <TabLeft/>
-              
-              <div className='adsense'>
-                <Grid>
-                  <Row>
-                    <Col xs={12} md={12}>
-                      <Image src='http://www.weddleautobody.com/services/images/banner2.jpg' width='100%'/>
-                    </Col>
-                  </Row>
-                </Grid>
-              </div>
+              <Adsense/>
 
               <div className='landing-lelang'>
                 <Grid>
@@ -123,56 +117,10 @@ export class Index extends Component {
                       <Image src='http://www.netocratic.com/wp-content/uploads/sites/3/2014/05/Startup-Wise-Guys-logo.jpg?x71871' width='100%'/>
                     </Col>
                   </Row>
-                  <Row>
-                    <Col xs={4} md={4}></Col>
-                    <Col xs={12} md={4}>
-                      <center>
-                      <div className='logo-addins'>
-                        <Image src={Logo} width='55%'/>
-                      </div>
-                        <div className='body-client'>
-                          <p className='street'> Lorem ipsum No 7, 70094 </p>
-                          <p className='phone'> (021) 305 - 0554 <span className='orange'> hello@telecreative.com </span></p> 
-                        </div>
-                      </center>
-                    </Col>
-                    <Col xs={4} md={4}></Col>
-                  </Row>
                 </Grid>
               </div>
 
-              <div className='wrap-footer'>
-                <Grid>
-                  <Row className='border'>
-                    <Col xs={6} md={3} mdPush={1}>
-                      <p> About </p>
-                      <p> Contact </p>
-                      <p> Careers </p>
-                      <p> Team </p>
-                      <p> Press Release </p>
-                      <p> In the media </p>
-                      <p> Testimonials </p>
-                    </Col>
-                    <Col xs={6} md={3} mdPush={1}>
-                      <p> Become a seller </p>
-                      <p> Affilates </p>
-                      <p> Resource center </p>
-                      <p> Seller resources </p>
-                      <p> Featured partners </p>
-                      <p> Nonprofits </p>
-                      <p> Help </p>
-                    </Col>
-                    <Col xs={6} md={3} mdPush={1}>
-                      <p> Subscribe Our Newslatter </p>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} md={12}>
-                      <p className='footer'> @ Telecreative inc </p>
-                    </Col>
-                  </Row>
-                </Grid>
-              </div>
+              <Footer />
 
           </div>
         )

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import 'antd/lib/date-picker/style/css'
 import Navigation from './pages/Components/Navigation'
-import Landing from './pages/Landing/index'
+import Main from './pages/Main'
 import { BackTop } from 'antd'
 import FaTop from 'react-icons/lib/fa/chevron-circle-up'
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navigation/>
-        <Landing/>
+        <Main/>
         <BackTop>
           <div className="ant-back-top-inner">
             <p className='backTop'><FaTop/></p>

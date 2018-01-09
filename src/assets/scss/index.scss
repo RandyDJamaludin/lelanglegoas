@@ -107,6 +107,10 @@ img.logo{
         text-align: center;
         margin-top: 30px;
     }
+    .pagination{
+        padding-top:1%;
+        padding-left:10%;
+    }
 }
 
 // Location Lelang
@@ -140,32 +144,38 @@ img.logo{
     padding-top:3%;
     .client-border{
         border-top:2px solid #f8f8f8;
-        border-bottom:2px solid #f8f8f8;
         padding-top:2%;
-        padding-bottom:2%;
-    }
-    p.street{
-        line-height: 0.8;
-    }
-    p.phone{
-        line-height: 0;    
-    }
-    .body-client{
-        padding-top:4%;
-    }
-    .logo-addins{
-        padding-top:10%;
     }
 }
 
 
 .wrap-footer{
-    padding-top:3%;
     color:#b3b3b3;
+    
+    .logo-footer{
+        padding-bottom:2%;
+    }
+    p.street{
+        line-height: 0.8;
+    }
+
+    p.phone{
+        line-height: 0;    
+    }
+
+    .body-client{
+        padding-top:4%;
+    }
+
+    .logo-addins{
+        padding-top:10%;
+    }
 
     .border{
+        border-top:2px solid #f8f8f8;
         border-bottom:2px solid #f8f8f8;
         padding-bottom:3%;
+        padding-top:2%;
     }
     p{
         line-height: 1.2;
@@ -178,6 +188,9 @@ img.logo{
 
 }
 
+.adsense{
+    padding-top:2%;
+}
 
 
 //Back to Top

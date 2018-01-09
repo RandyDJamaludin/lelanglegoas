@@ -79,6 +79,9 @@ img.logo {
   .landing-lelang p.lihatJadwal {
     text-align: center;
     margin-top: 30px; }
+  .landing-lelang .pagination {
+    padding-top: 1%;
+    padding-left: 10%; }
 
 .location-lelang .body-header p {
   font-size: 18px;
@@ -103,30 +106,34 @@ img.logo {
   padding-top: 3%; }
   .wrap-client .client-border {
     border-top: 2px solid #f8f8f8;
-    border-bottom: 2px solid #f8f8f8;
-    padding-top: 2%;
-    padding-bottom: 2%; }
-  .wrap-client p.street {
-    line-height: 0.8; }
-  .wrap-client p.phone {
-    line-height: 0; }
-  .wrap-client .body-client {
-    padding-top: 4%; }
-  .wrap-client .logo-addins {
-    padding-top: 10%; }
+    padding-top: 2%; }
 
 .wrap-footer {
-  padding-top: 3%;
   color: #b3b3b3; }
+  .wrap-footer .logo-footer {
+    padding-bottom: 2%; }
+  .wrap-footer p.street {
+    line-height: 0.8; }
+  .wrap-footer p.phone {
+    line-height: 0; }
+  .wrap-footer .body-client {
+    padding-top: 4%; }
+  .wrap-footer .logo-addins {
+    padding-top: 10%; }
   .wrap-footer .border {
+    border-top: 2px solid #f8f8f8;
     border-bottom: 2px solid #f8f8f8;
-    padding-bottom: 3%; }
+    padding-bottom: 3%;
+    padding-top: 2%; }
   .wrap-footer p {
     line-height: 1.2;
     font-family: Helvetica; }
   .wrap-footer p.footer {
     text-align: center;
     padding-top: 1%; }
+
+.adsense {
+  padding-top: 2%; }
 
 p.backTop {
   border: none;
