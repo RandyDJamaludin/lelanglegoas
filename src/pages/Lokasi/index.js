@@ -6,11 +6,8 @@ import { Adsense } from '../Components/Adsense';
 export class Index extends Component {
     render() { 
         return (
-            <div>
-              <div style={{padding:'8%'}}>
-                <Map/>
-              </div>
-              
+            <div className='page-lokasi'>
+              <Map/>
               <Adsense/>
               <Footer/>
             </div>

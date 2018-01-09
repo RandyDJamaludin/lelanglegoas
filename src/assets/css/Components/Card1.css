@@ -102,6 +102,9 @@ button.explore {
   border: none; }
   button.explore p {
     transition: 0.2s; }
+  @media only screen and (max-width: 425px) {
+    button.explore {
+      font-size: 12px; } }
 
 button.explore:hover {
   background: #ff741a;

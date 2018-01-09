@@ -17,7 +17,7 @@
     h3{
         font-size:16px;
         font-weight: bold;
-        
+
         @media only screen and (max-width:500px){
             font-size:14px;
         }
@@ -132,6 +132,9 @@ button.explore{
     border:none;
     p{
         transition:0.2s;
+    }
+    @media only screen and (max-width:425px){
+        font-size:12px;
     }
 }
 

@@ -261,6 +261,23 @@ img.logo{
 }
 
 
+//Page Location 
+
+.page-lokasi{
+    padding-top:8%;
+    @media only screen and(max-width:600px){
+        padding-top:18%;
+    }
+}
+
+.page-jadwal{
+    padding-top:5%;
+    @media only screen and(max-width:600px){
+        padding-top:18%;
+    }
+}
+
+
 //Back to Top
 
 p.backTop{
