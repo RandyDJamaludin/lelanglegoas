@@ -129,12 +129,12 @@ export class Index extends Component {
                       <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
                     </Col>
 
-                    <Col xs={2} md={1}/>
+                    <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
                       <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
                     </Col>
 
-                    <Col xs={2} md={1}/>
+                    <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
                       <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
                     </Col>
@@ -144,17 +144,17 @@ export class Index extends Component {
 
                   <Row style={{marginLeft:'7%', marginTop:'5%', marginBottom:'5%'}}>
                     
-                    <Col xs={2} md={3}/>
+                    <Col xs={3} md={3}/>
                     <Col xs={2} md={2}>
                       <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
                     </Col>
 
-                    <Col xs={2} md={1}/>
+                    <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
                       <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
                     </Col>
 
-                    <Col xs={2} md={4}/>
+                    <Col xs={4} md={4}/>
                   </Row>
 
                 </Grid>

@@ -208,6 +208,9 @@ img.logo {
 
 .wrap-people {
   background: #fff; }
+  @media only screen and (max-width: 800px) {
+    .wrap-people {
+      padding-top: 20px; } }
   .wrap-people p.header {
     text-align: center;
     font-size: 20px;
