@@ -49,99 +49,6 @@ ul.right {
 img.logo {
   margin-top: -5px; }
 
-.landing-lelang {
-  padding-top: 3%; }
-  .landing-lelang .body-header p {
-    font-size: 18px;
-    font-weight: bold; }
-  .landing-lelang .body-header #date {
-    color: #ff731a; }
-  .landing-lelang .lelang-lot {
-    background: #ff741a;
-    margin-top: 15px; }
-    @media only screen and (max-width: 425px) {
-      .landing-lelang .lelang-lot {
-        background: transparent;
-        padding: 0px; } }
-    @media only screen and (max-width: 800px) {
-      .landing-lelang .lelang-lot {
-        padding: 0px;
-        background: transparent; } }
-    @media only screen and (min-width: 1000px) and (max-width: 1040px) {
-      .landing-lelang .lelang-lot {
-        margin-top: 10px;
-        margin-bottom: 10px; } }
-    .landing-lelang .lelang-lot h2 {
-      color: #fff;
-      font-size: 14px;
-      padding: 10px; }
-      @media only screen and (max-width: 425px) {
-        .landing-lelang .lelang-lot h2 {
-          font-size: 12px;
-          text-align: center;
-          padding: 10px;
-          color: #ff731a; } }
-      @media only screen and (max-width: 800px) {
-        .landing-lelang .lelang-lot h2 {
-          color: #ff731a;
-          font-size: 14px; } }
-      @media only screen and (min-width: 700px) and (max-width: 780px) {
-        .landing-lelang .lelang-lot h2 {
-          font-size: 15px;
-          text-align: center;
-          padding: 10px;
-          color: #ff731a; } }
-  .landing-lelang img {
-    padding: 10px;
-    margin-top: 15px; }
-  .landing-lelang .content-lelang {
-    margin-top: 4%; }
-    .landing-lelang .content-lelang p.sub-title {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.year {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.type {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.loc {
-      line-height: 1; }
-      @media only screen and (max-width: 720px) {
-        .landing-lelang .content-lelang p.loc {
-          line-height: 2; } }
-    @media only screen and (max-width: 425px) {
-      .landing-lelang .content-lelang {
-        font-size: 12px; } }
-    .landing-lelang .content-lelang button {
-      background: #ff741a;
-      border: none;
-      color: #fff;
-      font-size: 12px; }
-      @media only screen and (max-width: 425px) {
-        .landing-lelang .content-lelang button {
-          margin-top: 10px;
-          margin-bottom: 10px;
-          font-size: 12px; } }
-      @media only screen and (max-width: 800px) {
-        .landing-lelang .content-lelang button {
-          margin-top: 10px;
-          margin-bottom: 10px; } }
-      @media only screen and (min-width: 700px) and (max-width: 780px) {
-        .landing-lelang .content-lelang button {
-          margin-top: 10px;
-          margin-bottom: 10px;
-          font-size: 12px; } }
-  .landing-lelang p.lihatJadwal {
-    text-align: center;
-    margin-top: 30px; }
-  .landing-lelang .pagination {
-    padding-top: 1%;
-    padding-left: 10%; }
-  .landing-lelang .row-lelang {
-    border: 2px dotted #ccc;
-    margin-top: 2%; }
-    @media only screen and (max-width: 768px) {
-      .landing-lelang .row-lelang {
-        border: 1px solid #ccc !important; } }
-
 .location-lelang .body-header p {
   font-size: 18px;
   font-weight: bold; }
@@ -166,30 +73,6 @@ img.logo {
   .wrap-client .client-border {
     border-top: 2px solid #f8f8f8;
     padding-top: 2%; }
-
-.wrap-footer {
-  color: #b3b3b3; }
-  .wrap-footer .logo-footer {
-    padding-bottom: 2%; }
-  .wrap-footer p.street {
-    line-height: 0.8; }
-  .wrap-footer p.phone {
-    line-height: 0; }
-  .wrap-footer .body-client {
-    padding-top: 4%; }
-  .wrap-footer .logo-addins {
-    padding-top: 10%; }
-  .wrap-footer .border {
-    border-top: 2px solid #f8f8f8;
-    border-bottom: 2px solid #f8f8f8;
-    padding-bottom: 3%;
-    padding-top: 2%; }
-  .wrap-footer p {
-    line-height: 1.2;
-    font-family: Helvetica; }
-  .wrap-footer p.footer {
-    text-align: center;
-    padding-top: 1%; }
 
 .adsense {
   padding-top: 2%; }
@@ -216,6 +99,42 @@ img.logo {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold; }
+
+.wrap-footer {
+  color: #b3b3b3; }
+  .wrap-footer .logo-footer {
+    padding-bottom: 2%; }
+  .wrap-footer p.street {
+    line-height: 0.8; }
+  .wrap-footer p.phone {
+    line-height: 0; }
+  .wrap-footer .body-client {
+    padding-top: 4%; }
+  .wrap-footer .logo-addins {
+    padding-top: 10%; }
+  .wrap-footer .border {
+    border-top: 2px solid #f8f8f8;
+    border-bottom: 2px solid #f8f8f8;
+    padding-bottom: 3%;
+    padding-top: 2%; }
+  .wrap-footer p {
+    line-height: 1.2;
+    font-family: Helvetica; }
+  .wrap-footer p.footer {
+    text-align: center;
+    padding-top: 1%; }
+  .wrap-footer input.footer-email::placeholder {
+    color: #ccc;
+    font-size: 12px; }
+  .wrap-footer input.footer-email {
+    font-size: 12px; }
+  .wrap-footer p.social-media {
+    font-size: 30px;
+    display: inline-block;
+    padding-right: 15px;
+    padding-top: 10px; }
+  .wrap-footer span {
+    color: #ff731a; }
 
 p.backTop {
   border: none;
@@ -299,6 +218,9 @@ p.backTop {
   margin-top: 10%;
   padding: 5%;
   margin-bottom: 30%; }
+  .background-card:hover {
+    border: 1px dotted #ff741a;
+    background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
       padding: 0px; } }
@@ -340,10 +262,6 @@ p.backTop {
     .background-card button {
       padding: 5px;
       font-size: 10px; } }
-
-.background-card:hover {
-  box-shadow: 0 0 5px #ff741a;
-  background: #fff; }
 
 .body-card2 {
   padding-top: 5%;
@@ -415,7 +333,7 @@ button.explore:hover {
 
 .background-card2:hover {
   background: #fff;
-  box-shadow: 0 0 4px #ccc;
+  box-shadow: 0 0 5px #ccc;
   transform: scale(1.1); }
   .background-card2:hover button {
     background: #ff741a;
@@ -543,3 +461,99 @@ button.explore:hover {
 
 ul.slider-list {
   height: 300px !important; }
+
+.landing-lelang {
+  padding-top: 3%; }
+  .landing-lelang .body-header p {
+    font-size: 18px;
+    font-weight: bold; }
+  .landing-lelang .body-header #date {
+    color: #ff731a; }
+  .landing-lelang .lelang-lot {
+    background: #ff741a;
+    margin-top: 15px; }
+    @media only screen and (max-width: 425px) {
+      .landing-lelang .lelang-lot {
+        background: transparent;
+        padding: 0px; } }
+    @media only screen and (max-width: 800px) {
+      .landing-lelang .lelang-lot {
+        padding: 0px;
+        background: transparent; } }
+    @media only screen and (min-width: 1000px) and (max-width: 1040px) {
+      .landing-lelang .lelang-lot {
+        margin-top: 10px;
+        margin-bottom: 10px; } }
+    .landing-lelang .lelang-lot h2 {
+      color: #fff;
+      font-size: 14px;
+      padding: 10px; }
+      @media only screen and (max-width: 425px) {
+        .landing-lelang .lelang-lot h2 {
+          font-size: 12px;
+          text-align: center;
+          padding: 10px;
+          color: #ff731a; } }
+      @media only screen and (max-width: 800px) {
+        .landing-lelang .lelang-lot h2 {
+          color: #ff731a;
+          font-size: 14px; } }
+      @media only screen and (min-width: 700px) and (max-width: 780px) {
+        .landing-lelang .lelang-lot h2 {
+          font-size: 15px;
+          text-align: center;
+          padding: 10px;
+          color: #ff731a; } }
+  .landing-lelang img {
+    padding: 10px;
+    margin-top: 15px; }
+  .landing-lelang .content-lelang {
+    margin-top: 4%; }
+    .landing-lelang .content-lelang p.sub-title {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.year {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.type {
+      line-height: 1; }
+    .landing-lelang .content-lelang p.loc {
+      line-height: 1; }
+      @media only screen and (max-width: 720px) {
+        .landing-lelang .content-lelang p.loc {
+          line-height: 2; } }
+    @media only screen and (max-width: 425px) {
+      .landing-lelang .content-lelang {
+        font-size: 12px; } }
+    .landing-lelang .content-lelang button {
+      background: #ff741a;
+      border: none;
+      color: #fff;
+      font-size: 12px; }
+      @media only screen and (max-width: 425px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 12px; } }
+      @media only screen and (max-width: 800px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px; } }
+      @media only screen and (min-width: 700px) and (max-width: 780px) {
+        .landing-lelang .content-lelang button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 12px; } }
+  .landing-lelang p.lihatJadwal {
+    text-align: center;
+    margin-top: 30px; }
+  .landing-lelang .pagination {
+    padding-top: 1%;
+    padding-left: 10%; }
+  .landing-lelang .row-lelang {
+    border: 2px dotted #ccc;
+    margin-top: 2%; }
+    .landing-lelang .row-lelang:hover {
+      border: 2px solid #ff731a;
+      transition: 0.5s; }
+    @media only screen and (max-width: 768px) {
+      .landing-lelang .row-lelang {
+        border: 1px solid #ccc !important; } }

@@ -4,6 +4,11 @@
     margin-top:10%;
     padding:5%;
     margin-bottom:30%;
+    
+    &:hover{
+        border: 1px dotted #ff741a;
+        background:#fff;
+    }
 
     @media only screen and (max-width:700px){
         padding:0px;
@@ -58,13 +63,6 @@
         }
     }
 }
-
-.background-card:hover{
-    box-shadow: 0 0 5px #ff741a;
-    background:#fff;
-}
-
-
 
 // Tab Vertical
 .body-card2{
@@ -153,7 +151,7 @@ button.explore:hover{
 
 .background-card2:hover{
     background:#fff;
-    box-shadow:0 0 4px #ccc;
+    box-shadow:0 0 5px #ccc;
     transform: scale(1.1);
     button{
         background:#ff741a;
@@ -323,4 +321,129 @@ ul.slider-list{
     height:300px !important; 
 }
 // End carousel
+
+
+
+// Landing Lelang
+
+.landing-lelang{
+    padding-top:3%;
+    .body-header{
+        p{
+            font-size:18px;
+            font-weight: bold;
+        }
+        #date{
+            color:#ff731a;
+        }
+    }
+    .lelang-lot{
+        background:#ff741a;
+        margin-top:15px;
+        
+        @media only screen and (max-width:425px){
+            background:transparent;
+            padding: 0px;
+        }
+        @media only screen and (max-width: 800px){
+            padding:0px;
+            background: transparent;
+        }
+        @media only screen and (min-width:1000px) and (max-width:1040px){
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+
+        h2{
+            color:#fff;
+            font-size:14px;
+            padding:10px;
+            
+            @media only screen and (max-width:425px){
+                font-size:12px;
+                text-align: center;
+                padding:10px;
+                color:#ff731a;
+            }
+            @media only screen and (max-width:800px){
+                color:#ff731a;
+                font-size:14px;
+            }
+            @media only screen and (min-width:700px) and (max-width:780px){
+                font-size:15px;
+                text-align: center;
+                padding:10px;
+                color:#ff731a;
+            }
+        }
+    }
+    img{
+        padding:10px;
+        margin-top:15px;
+    }
+
+    .content-lelang{
+        margin-top:4%;
+        p.sub-title{
+            line-height: 1;
+        }
+        p.year{
+            line-height: 1;
+        }
+        p.type{
+            line-height: 1;
+        }
+        p.loc{
+            line-height: 1;
+            @media only screen and ( max-width: 720px){
+                line-height: 2;
+            }
+        }
+        @media only screen and(max-width:425px){
+            font-size:12px;
+        }
+        button{
+            background: #ff741a;
+            border:none;
+            color:#fff;
+            font-size:12px;
+
+            @media only screen and(max-width:425px){
+                margin-top:10px;
+                margin-bottom:10px;
+                font-size:12px;
+            }
+            @media only screen and (max-width: 800px){
+                margin-top:10px;
+                margin-bottom:10px;
+            }
+            @media only screen and (min-width:700px) and (max-width: 780px){
+                margin-top:10px;
+                margin-bottom:10px;
+                font-size:12px;
+            }
+        }
+    }
+    p.lihatJadwal{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .pagination{
+        padding-top:1%;
+        padding-left:10%;
+    }
+    .row-lelang{
+        border:2px dotted #ccc;
+        margin-top:2%;
+
+        &:hover{
+            border:2px solid #ff731a;
+            transition:0.5s;
+        }
+
+        @media only screen and (max-width:768px){
+            border:1px solid #ccc !important;
+        }
+    }
+}
 

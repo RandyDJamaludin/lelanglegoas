@@ -15,6 +15,7 @@ import TabLeft from '../Components/TabLeft'
 import Adsense from '../Components/Adsense'
 import Footer from '../Components/Footer'
 import Map from '../Components/Map'
+import { NavLink } from 'react-router-dom'
 
 export class Index extends Component {
   static defaultProps = {
@@ -114,7 +115,7 @@ export class Index extends Component {
                     </Col>
                   ))}
                   </Row>
-                  <a href='/'><p className='lihatJadwal'> Lihat Semua Jadwal </p></a>
+                  <NavLink to='/jadwal'><p className='lihatJadwal'> Lihat Semua Jadwal </p></NavLink>
                 </Grid>
               </div>
 

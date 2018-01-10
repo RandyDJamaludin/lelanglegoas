@@ -62,125 +62,6 @@ ul.right{
 img.logo{
     margin-top:-5px;
 }
-
-// Landing Lelang
-
-.landing-lelang{
-    padding-top:3%;
-    .body-header{
-        p{
-            font-size:18px;
-            font-weight: bold;
-        }
-        #date{
-            color:#ff731a;
-        }
-    }
-    .lelang-lot{
-        background:#ff741a;
-        margin-top:15px;
-        
-        @media only screen and (max-width:425px){
-            background:transparent;
-            padding: 0px;
-        }
-        @media only screen and (max-width: 800px){
-            padding:0px;
-            background: transparent;
-        }
-        @media only screen and (min-width:1000px) and (max-width:1040px){
-            margin-top:10px;
-            margin-bottom:10px;
-        }
-
-        h2{
-            color:#fff;
-            font-size:14px;
-            padding:10px;
-            
-            @media only screen and (max-width:425px){
-                font-size:12px;
-                text-align: center;
-                padding:10px;
-                color:#ff731a;
-            }
-            @media only screen and (max-width:800px){
-                color:#ff731a;
-                font-size:14px;
-            }
-            @media only screen and (min-width:700px) and (max-width:780px){
-                font-size:15px;
-                text-align: center;
-                padding:10px;
-                color:#ff731a;
-            }
-        }
-    }
-    img{
-        padding:10px;
-        margin-top:15px;
-    }
-
-    .content-lelang{
-        margin-top:4%;
-        p.sub-title{
-            line-height: 1;
-        }
-        p.year{
-            line-height: 1;
-        }
-        p.type{
-            line-height: 1;
-        }
-        p.loc{
-            line-height: 1;
-            @media only screen and ( max-width: 720px){
-                line-height: 2;
-            }
-        }
-        @media only screen and(max-width:425px){
-            font-size:12px;
-        }
-        button{
-            background: #ff741a;
-            border:none;
-            color:#fff;
-            font-size:12px;
-
-            @media only screen and(max-width:425px){
-                margin-top:10px;
-                margin-bottom:10px;
-                font-size:12px;
-            }
-            @media only screen and (max-width: 800px){
-                margin-top:10px;
-                margin-bottom:10px;
-            }
-            @media only screen and (min-width:700px) and (max-width: 780px){
-                margin-top:10px;
-                margin-bottom:10px;
-                font-size:12px;
-            }
-        }
-    }
-    p.lihatJadwal{
-        text-align: center;
-        margin-top: 30px;
-    }
-    .pagination{
-        padding-top:1%;
-        padding-left:10%;
-    }
-    .row-lelang{
-        border:2px dotted #ccc;
-        margin-top:2%;
-
-        @media only screen and (max-width:768px){
-            border:1px solid #ccc !important;
-        }
-    }
-}
-
 // Location Lelang
 
 .location-lelang{
@@ -216,45 +97,6 @@ img.logo{
     }
 }
 
-
-.wrap-footer{
-    color:#b3b3b3;
-    
-    .logo-footer{
-        padding-bottom:2%;
-    }
-    p.street{
-        line-height: 0.8;
-    }
-
-    p.phone{
-        line-height: 0;    
-    }
-
-    .body-client{
-        padding-top:4%;
-    }
-
-    .logo-addins{
-        padding-top:10%;
-    }
-
-    .border{
-        border-top:2px solid #f8f8f8;
-        border-bottom:2px solid #f8f8f8;
-        padding-bottom:3%;
-        padding-top:2%;
-    }
-    p{
-        line-height: 1.2;
-        font-family: Helvetica;
-    }
-    p.footer{
-        text-align: center;
-        padding-top:1%;
-    }
-
-}
 
 .adsense{
     padding-top:2%;
@@ -295,6 +137,67 @@ img.logo{
 
 // End People us
 
+
+//Footer
+
+
+.wrap-footer{
+    color:#b3b3b3;
+    
+    .logo-footer{
+        padding-bottom:2%;
+    }
+    p.street{
+        line-height: 0.8;
+    }
+
+    p.phone{
+        line-height: 0;    
+    }
+
+    .body-client{
+        padding-top:4%;
+    }
+
+    .logo-addins{
+        padding-top:10%;
+    }
+
+    .border{
+        border-top:2px solid #f8f8f8;
+        border-bottom:2px solid #f8f8f8;
+        padding-bottom:3%;
+        padding-top:2%;
+    }
+    p{
+        line-height: 1.2;
+        font-family: Helvetica;
+    }
+    p.footer{
+        text-align: center;
+        padding-top:1%;
+    }
+
+    input.footer-email::placeholder{
+        color:#ccc;
+        font-size:12px;
+    }
+    input.footer-email{
+        font-size:12px;
+    }
+    p.social-media{
+        font-size:30px;
+        display:inline-block;
+        padding-right:15px;
+        padding-top:10px;
+    }
+    span{
+        color:#ff731a;
+    }
+}
+
+//End Footer
+
 //Back to Top
 
 p.backTop{
@@ -306,4 +209,4 @@ p.backTop{
 //End to Top
 
 @import 'Components/Banner.scss';
-@import 'Components/Card1.scss';
+@import 'Components/Card.scss';

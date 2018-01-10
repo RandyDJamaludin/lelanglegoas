@@ -1,6 +1,13 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
 import Logo from '../../assets/image/logo-dummy.png'
+import { Input, Icon } from 'antd'
+import TiFacebook from 'react-icons/lib/ti/social-facebook'
+import TiYoutube from 'react-icons/lib/ti/social-youtube'
+import TiInstagram from 'react-icons/lib/ti/social-instagram'
+import TiTwitter from 'react-icons/lib/ti/social-twitter'
+import TiHeart from 'react-icons/lib/ti/heart-full-outline'
+
 
 export class Footer extends Component {
     
@@ -44,11 +51,18 @@ export class Footer extends Component {
                     </Col>
                     <Col xs={6} md={3} mdPush={1}>
                       <p> Subscribe Our Newslatter </p>
+                      <Input addonAfter={<Icon type="mail" />} className='footer-email' placeholder='Type your e-mail here' />
+                          <p className='social-media'><TiFacebook/></p>
+                          <p className='social-media'><TiYoutube/></p>
+                          <p className='social-media'><TiInstagram/></p>
+                          <p className='social-media'><TiTwitter/></p>
                     </Col>
                   </Row>
                   <Row>
                     <Col xs={12} md={12}>
-                      <p className='footer'> @ Telecreative inc </p>
+                      <div className='wrap-footer'>
+                        <p className='footer'> Made with <span><TiHeart/></span> by <span> Telecreative </span> </p>
+                      </div>
                     </Col>
                   </Row>
                 </Grid>
