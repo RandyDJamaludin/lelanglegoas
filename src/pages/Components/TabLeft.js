@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Tabs } from 'antd';
 import { Grid, Row, Col } from 'react-bootstrap';
-import { Button } from 'antd'
-import FaRight from 'react-icons/lib/fa/arrow-right'
+import { Button, Icon } from 'antd'
 import ContentTab from './ContentTab'
 import { DataContentTab } from '../AllData/DataContentTab'
 const TabPane = Tabs.TabPane;
@@ -38,7 +37,7 @@ export class Card2 extends Component {
                           <Col xs={12} md={12}>
                             <Button className='explore'>
                               <p>
-                                View All New Auctions <FaRight/> 
+                                View All New Auctions <Icon type="arrow-right" /> 
                               </p> 
                             </Button>
                           </Col>
@@ -65,7 +64,7 @@ export class Card2 extends Component {
                           <Col xs={12} md={12}>
                             <Button className='explore'>
                               <p>
-                                View All New Auctions <FaRight/> 
+                                View All New Auctions <Icon type="arrow-right" /> 
                               </p> 
                             </Button>
                           </Col>
@@ -92,7 +91,7 @@ export class Card2 extends Component {
                           <Col xs={12} md={12}>
                             <Button className='explore'>
                               <p>
-                                View All New Auctions <FaRight/> 
+                                View All New Auctions <Icon type="arrow-right" /> 
                               </p> 
                             </Button>
                           </Col>
@@ -119,7 +118,7 @@ export class Card2 extends Component {
                           <Col xs={12} md={12}>
                             <Button className='explore'>
                               <p>
-                                View All New Auctions <FaRight/> 
+                                View All New Auctions <Icon type="arrow-right" /> 
                               </p> 
                             </Button>
                           </Col>
