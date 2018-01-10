@@ -3,6 +3,7 @@
     background:#fbfbfb;
     margin-top:10%;
     padding:5%;
+    margin-bottom:30%;
 
     @media only screen and (max-width:700px){
         padding:0px;
@@ -117,7 +118,7 @@
         font-size:12px;
     }
     h3{
-        font-size:16px;
+        font-size:14px;
         margin-top:10px;
         padding-top:10%;
         font-weight: bold;
@@ -167,3 +168,159 @@ button.explore:hover{
 }
 
 // End Vertical
+
+
+
+// background carousel 
+
+.wrap-cardCarousel{
+    .header-ongoing{
+        margin-top:20px;
+    }
+    button{
+        font-size:12px;
+    }
+    .header{
+        background:#f8f8f8;
+        margin-bottom:15px;
+        
+        p.left{
+            font-weight: bold;
+            padding-top:15px;
+            padding-left:10px;
+        }
+
+        p.right{
+            color:#ccc;
+            padding-top:15px;
+            padding-left:10px;
+            padding-right:20px;
+            float:right;
+            transition:0.2s;
+        
+            &:hover{
+                padding-right:10px;
+                transition:0.2s;
+            }
+        }
+    }
+    li.slider-slide{
+        position:none !important;
+    }
+    .background-cardCarousel{
+        padding-top:50px;
+        border:1px solid #ccc;
+        height:300px;
+
+        &:hover{
+            background:#f8f8f8;
+            cursor: pointer;
+        }
+    }
+    img{
+        padding-top:7%;
+        width: 80%;
+        padding:10px;
+    }
+    h3{
+        font-size:14px;
+        padding-top:10%;
+        font-weight: bold;
+    }
+    p.color{
+        font-size:12px;
+        line-height: 0.5;
+    }
+    p.last{
+        line-height: 0.5;
+        font-size:12px;
+    }
+
+    @media only screen and ( max-width: 987px){
+        display: none;
+    }
+}
+
+.wrap-cardCarouselMobile{
+    display:none;
+    .header-ongoing{
+        margin-top:20px;
+    }
+    button{
+        font-size:12px;
+    }
+    .header{
+        background:#f8f8f8;
+        margin-bottom:15px;
+        
+        p.left{
+            font-weight: bold;
+            padding-top:15px;
+            padding-left:10px;
+        }
+
+        p.right{
+            color:#ccc;
+            padding-top:15px;
+            padding-left:10px;
+            padding-right:20px;
+            float:right;
+            transition:0.2s;
+        
+            &:hover{
+                padding-right:10px;
+                transition:0.2s;
+            }
+        }
+    }
+    li.slider-slide{
+        position:none !important;
+    }
+    .background-cardCarousel{
+        padding-top:50px;
+        border:1px solid #ccc;
+        height:400px;
+
+        @media only screen and(max-width:425px){
+            height:280px;
+        }
+
+        &:hover{
+            background:#f8f8f8;
+            cursor: pointer;
+        }
+    }
+    img{
+        padding-top:7%;
+        width: 80%;
+        padding:10px;
+    }
+    h3{
+        font-size:14px;
+        padding-top:10%;
+        font-weight: bold;
+    }
+    p.color{
+        font-size:12px;
+        line-height: 0.5;
+    }
+    p.last{
+        line-height: 0.5;
+        font-size:12px;
+    }
+
+    @media only screen and ( max-width: 987px){
+        display: inherit;
+        ul.slider-list{
+            height:300px !important; 
+        }
+    }
+}
+.slider-decorator-2{
+    display:none;
+}
+ul.slider-list{
+    height:300px !important; 
+}
+// End carousel
+

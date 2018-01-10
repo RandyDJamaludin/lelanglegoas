@@ -1,4 +1,4 @@
-export const StateContentTab = [
+export const DataContentTab = [
     {
       name: "HONDA HR-V",
       image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",

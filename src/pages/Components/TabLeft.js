@@ -4,7 +4,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { Button } from 'antd'
 import FaRight from 'react-icons/lib/fa/arrow-right'
 import ContentTab from './ContentTab'
-import { StateContentTab } from '../AllData/StateContentTab'
+import { DataContentTab } from '../AllData/DataContentTab'
 const TabPane = Tabs.TabPane;
 
 export class Card2 extends Component {
@@ -22,7 +22,7 @@ export class Card2 extends Component {
                     <TabPane tab="New Auctions" key="1">
                         
                         <Row>
-                        {StateContentTab.map((data, index) => (
+                        {DataContentTab.map((data, index) => (
                           <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
@@ -49,7 +49,7 @@ export class Card2 extends Component {
                     <TabPane tab="Daihatsu" key="2">
                         
                         <Row>
-                        {StateContentTab.map((data, index) => (
+                        {DataContentTab.map((data, index) => (
                           <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
@@ -76,7 +76,7 @@ export class Card2 extends Component {
                     <TabPane tab="Toyota" key="3">
                         
                         <Row>
-                        {StateContentTab.map((data, index) => (
+                        {DataContentTab.map((data, index) => (
                           <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 
@@ -103,7 +103,7 @@ export class Card2 extends Component {
                     <TabPane tab="Honda" key="4">
                         
                         <Row>
-                        {StateContentTab.map((data, index) => (
+                        {DataContentTab.map((data, index) => (
                           <Col xs={12} md={4} key={data.key}>
                             
                             <ContentTab 

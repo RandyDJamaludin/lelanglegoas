@@ -1,4 +1,4 @@
-export const StateCardLocation = [
+export const DataCardLocation = [
     {
       number: "1",
       name: "HONDA HR-V",
