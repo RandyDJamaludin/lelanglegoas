@@ -100,6 +100,76 @@ img.logo {
     text-transform: uppercase;
     font-weight: bold; }
 
+.wrap-kontak {
+  padding-top: 8%; }
+  .wrap-kontak .left-panel .contact-us p.header {
+    font-size: 19px;
+    font-family: Helvetica;
+    font-weight: bold; }
+    .wrap-kontak .left-panel .contact-us p.header span {
+      color: #ff741a; }
+  .wrap-kontak .left-panel .corporate p.header {
+    font-size: 17px;
+    padding-top: 5%;
+    line-height: 0.5;
+    font-family: Helvetica; }
+  .wrap-kontak .left-panel .corporate p.sub-header {
+    font-size: 15px;
+    font-weight: bold; }
+  .wrap-kontak .left-panel .header-icon p.phone {
+    font-size: 14px; }
+  .wrap-kontak .right-panel .form-contact input::placeholder {
+    font-size: 12px; }
+  .wrap-kontak .right-panel .form-contact textarea {
+    height: 200px; }
+  .wrap-kontak .right-panel .form-contact textarea::placeholder {
+    font-size: 12px; }
+  .wrap-kontak .right-panel .form-contact button {
+    margin-top: 5%;
+    width: 100%;
+    background: #eb5f02;
+    border: 1px solid #eb5f02; }
+  .wrap-kontak .right-panel .header p.header {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase; }
+    .wrap-kontak .right-panel .header p.header span {
+      color: #ff741a; }
+
+.wrap-tatacara {
+  padding-top: 8%; }
+  .wrap-tatacara .body-tatacara {
+    border-bottom: 1px solid #f8f8f8; }
+    .wrap-tatacara .body-tatacara p.header {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: Helvetica;
+      line-height: 0.5; }
+
+.wrap-tatacara .Collapsible {
+  border-bottom: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 10px;
+  margin-top: 1%; }
+  .wrap-tatacara .Collapsible:hover {
+    cursor: pointer; }
+  .wrap-tatacara .Collapsible .body1 {
+    padding-top: 2%;
+    padding-left: 1%; }
+  .wrap-tatacara .Collapsible .is-closed {
+    padding: 10px;
+    font-weight: bold; }
+  .wrap-tatacara .Collapsible .is-open {
+    padding: 10px;
+    font-weight: bold; }
+
+@media only screen and (max-width: 450px) {
+  .wrap-tatacara {
+    padding-top: 30%; }
+    .wrap-tatacara .body-tatacara p.header {
+      font-size: 16px; } }
+
 .wrap-footer {
   color: #b3b3b3; }
   .wrap-footer .logo-footer {
@@ -557,3 +627,15 @@ ul.slider-list {
     @media only screen and (max-width: 768px) {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
+
+.wrap-login {
+  padding-top: 8%; }
+  .wrap-login a.login-form-forgot {
+    float: right; }
+  .wrap-login .boxshadow-login {
+    box-shadow: 0 0 10px #ccc;
+    padding: 3%; }
+  .wrap-login button.login-form-button {
+    width: 100%;
+    background: #eb5f02;
+    border: none; }

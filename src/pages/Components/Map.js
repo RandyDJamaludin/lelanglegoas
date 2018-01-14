@@ -22,57 +22,60 @@ const MyMapComponent = compose(
     </GoogleMap>
   )
   
-export class Map extends Component {    
-    state = {
-        isMarkerShown: false,
-      }
-    
-      componentDidMount() {
-        this.delayedShowMarker()
-      }
-    
-      delayedShowMarker = () => {
-        setTimeout(() => {
-          this.setState({ isMarkerShown: true })
-        }, 3000)
-      }
-    
-      handleMarkerClick = () => {
-        this.setState({ isMarkerShown: false })
-        this.delayedShowMarker()
-      }
-    render() { 
-        return (
-            <div>
-                <div className='location-lelang'>
-                <Grid>
-                  <div className='body-header'>
-                    <p><GoCalendar id='date'/> LOKASI LELANG</p>
-                    <hr/>
-                  </div>
-                  <Row>
-                    <Col xs={12} md={12}>
-                        <MyMapComponent
-                          isMarkerShown={this.state.isMarkerShown}
-                          onMarkerClick={this.handleMarkerClick}
-                      />
-                      <div className='wrap-location'>
-                        <p className='sub-location'>RND Indonesia - Jakarta </p>
-                      </div>
-                      <div className='body-location'>
-                        <p>Jl. Lorem ipsum No 7 Sudirman</p>
-                        <p>Jakarta Selatan, 1340</p>
-                        <p>Indonesia</p>
-                        <p>(021) 864-0987| +62-859-9870-444 </p>
-                      </div>
-                    </Col>
-                  </Row>
-                </Grid>
-              </div>
-
-            </div>
-        )
+export class Map extends Component {   
+  constructor(){
+    super()
+    this.state = {
+      isMarkerShown: false,
     }
+  }
+
+  componentDidMount() {
+    this.delayedShowMarker()
+  }
+
+  delayedShowMarker = () => {
+    setTimeout(() => {
+      this.setState({ isMarkerShown: true })
+    }, 3000)
+  }
+
+  handleMarkerClick = () => {
+    this.setState({ isMarkerShown: false })
+    this.delayedShowMarker()
+  }
+  render() { 
+      return (
+          <div>
+              <div className='location-lelang'>
+              <Grid>
+                <div className='body-header'>
+                  <p><GoCalendar id='date'/> LOKASI LELANG</p>
+                  <hr/>
+                </div>
+                <Row>
+                  <Col xs={12} md={12}>
+                      <MyMapComponent
+                        isMarkerShown={this.state.isMarkerShown}
+                        onMarkerClick={this.handleMarkerClick}
+                    />
+                    <div className='wrap-location'>
+                      <p className='sub-location'>RND Indonesia - Jakarta </p>
+                    </div>
+                    <div className='body-location'>
+                      <p>Jl. Lorem ipsum No 7 Sudirman</p>
+                      <p>Jakarta Selatan, 1340</p>
+                      <p>Indonesia</p>
+                      <p>(021) 864-0987| +62-859-9870-444 </p>
+                    </div>
+                  </Col>
+                </Row>
+              </Grid>
+            </div>
+
+          </div>
+      )
+  }
 }
  
 export default Map;

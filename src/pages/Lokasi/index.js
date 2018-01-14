@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Map from '../Components/Map'
-import { Footer } from '../Components/Footer'
 import { Adsense } from '../Components/Adsense'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Icon } from 'antd'
@@ -59,7 +58,6 @@ export class Index extends Component {
               </Grid>
               
               <Adsense/>
-              <Footer/>
             </div>
         )
     }

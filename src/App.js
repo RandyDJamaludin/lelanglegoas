@@ -4,6 +4,7 @@ import Navigation from './pages/Components/Navigation'
 import Main from './pages/Main'
 import { BackTop } from 'antd'
 import FaTop from 'react-icons/lib/fa/chevron-circle-up'
+import Footer from './pages/Components/Footer'
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
             <p className='backTop'><FaTop/></p>
           </div>
         </BackTop>
+        <Footer/>
       </div>
     );
   }

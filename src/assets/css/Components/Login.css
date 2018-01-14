@@ -1,0 +1,11 @@
+.wrap-login {
+  padding-top: 8%; }
+  .wrap-login a.login-form-forgot {
+    float: right; }
+  .wrap-login .boxshadow-login {
+    box-shadow: 0 0 10px #ccc;
+    padding: 3%; }
+  .wrap-login button.login-form-button {
+    width: 100%;
+    background: #eb5f02;
+    border: none; }

@@ -138,6 +138,125 @@ img.logo{
 // End People us
 
 
+// Page Kontak us
+
+.wrap-kontak{
+    padding-top:8%;
+    .left-panel{
+      .contact-us{
+        p.header{
+            font-size:19px;
+            font-family: Helvetica;
+            font-weight: bold;
+
+            span{
+                color:#ff741a;
+            }
+        }
+      }
+      .corporate{
+        p.header{
+            font-size:17px;
+            padding-top:5%;
+            line-height: 0.5;
+            font-family: Helvetica;
+        }
+        p.sub-header{
+            font-size:15px;
+            font-weight: bold;
+        }
+      }
+      .header-icon{
+        p.phone{
+            font-size:14px;
+        }
+      }
+    }
+    .right-panel{
+        .form-contact{
+            input::placeholder{
+                font-size:12px;
+            }
+            textarea{
+                height: 200px;
+            }
+            textarea::placeholder{
+                font-size:12px;
+            }
+            button{
+                margin-top:5%;
+                width: 100%;
+                background:#eb5f02;
+                border:1px solid #eb5f02;
+            }
+        }
+        .header{
+            p.header{
+                font-size:18px;
+                font-weight: bold;
+                font-family: Helvetica;
+                text-transform: uppercase;
+
+                span{
+                    color:#ff741a;
+                }
+            }
+        }
+    }
+}
+
+// End Kontak Us
+
+// Tata cara lelang
+
+.wrap-tatacara{
+    padding-top:8%;
+    .body-tatacara{
+
+        border-bottom:1px solid #f8f8f8;
+        p.header{
+            font-size:18px;
+            font-weight: bold;
+            font-family: Helvetica;
+            line-height:0.5;   
+        } 
+    }
+}
+
+// End Tata cara lelang
+
+.wrap-tatacara{
+    .Collapsible{
+        border-bottom:1px solid #ccc;
+        background:#f8f8f8;
+        padding:10px;
+        margin-top:1%;
+        &:hover{
+            cursor:pointer;
+        }
+        .body1{
+            padding-top:2%;
+            padding-left:1%;
+        }
+        .is-closed{
+            padding:10px;
+            font-weight: bold;
+        }
+        .is-open{
+            padding:10px;
+            font-weight: bold;
+        }
+    }
+    @media only screen and(max-width:450px){
+        padding-top:30%;
+        .body-tatacara{
+            p.header{
+                font-size:16px;
+            }
+        }
+    }
+}
+
 //Footer
 
 
@@ -210,3 +329,4 @@ p.backTop{
 
 @import 'Components/Banner.scss';
 @import 'Components/Card.scss';
+@import 'Components/Login.scss';

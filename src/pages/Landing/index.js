@@ -13,7 +13,6 @@ import { DataCardCarousel } from '../AllData/DataCardCarousel'
 import JadwalLelang from '../Components/JadwalLelang'
 import TabLeft from '../Components/TabLeft'
 import Adsense from '../Components/Adsense'
-import Footer from '../Components/Footer'
 import Map from '../Components/Map'
 import { NavLink } from 'react-router-dom'
 
@@ -185,9 +184,6 @@ export class Index extends Component {
                   </Row>
                 </Grid>
               </div>
-
-              <Footer />
-
           </div>
         )
     }
