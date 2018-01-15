@@ -19,51 +19,37 @@ class Register extends Component {
       <div className='wrap-login'>
         <Grid>
           <Row>
-            <Col xs={12} md={6} mdPush={3} className='boxshadow-login'>
+            <Col md={4}/>
+            <Col xs={12} md={5} className='boxshadow-login'>
               <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
-                  {getFieldDecorator('userName', {
-                    rules: [{ required: true, message: 'Please input your username!' }],
+                  {getFieldDecorator('Fullname', {
+                    rules: [{ required: true, message: 'Please input your Fullname!' }],
                   })(
-                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Username" size="large" />
+                    <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Fullname" size="large" />
                   )}
                 </FormItem>
                 <FormItem>
-                  {getFieldDecorator('password', {
-                    rules: [{ required: true, message: 'Please input your Password!' }],
+                  {getFieldDecorator('email', {
+                    rules: [{ required: true, message: 'Please input your Email!' }],
                   })(
                     <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="Email" placeholder="Email" size="large" />
                   )}
                 </FormItem>
                 
                 <FormItem>
-                  {getFieldDecorator('email', {
-                    rules: [{ required: true, message: 'Please input your Email!' }],
+                  {getFieldDecorator('password', {
+                    rules: [{ required: true, message: 'Please input your Password!' }],
                   })(
-                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="Nama" placeholder="Nama" size="large" />
+                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="Password" placeholder="Password" size="large" />
                   )}
                 </FormItem>
 
                 <FormItem>
-                  {getFieldDecorator('email', {
-                    rules: [{ required: true, message: 'Please input your Email!' }],
+                  {getFieldDecorator('Confirm-password', {
+                    rules: [{ required: true, message: 'Please input your Confirm Passowrd!' }],
                   })(
-                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="No Hp" size="large" />
-                  )}
-                </FormItem>
-
-                <FormItem>
-                  {getFieldDecorator('email', {
-                    rules: [{ required: true, message: 'Please input your Email!' }],
-                  })(
-                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Password" size="large" />
-                  )}
-                </FormItem>
-                <FormItem>
-                  {getFieldDecorator('email', {
-                    rules: [{ required: true, message: 'Please input your Email!' }],
-                  })(
-                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Nama" size="large" />
+                    <Input prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />} type="password" placeholder="Confirm Password" size="large" />
                   )}
                 </FormItem>
                 

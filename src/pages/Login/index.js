@@ -19,7 +19,8 @@ class Login extends Component {
       <div className='wrap-login'>
         <Grid>
           <Row>
-            <Col xs={12} md={6} mdPush={3} className='boxshadow-login'>
+            <Col md={4}/>
+            <Col xs={12} md={5} className='boxshadow-login'>
               <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
                   {getFieldDecorator('userName', {
@@ -53,7 +54,9 @@ class Login extends Component {
                   <Button type="primary" htmlType="submit" className="login-form-button" size="large">
                     Log in
                   </Button>
+                  
                   <Link to='/register'>
+                    <center> Register </center>
                   </Link>
                 </FormItem>
               </Form>

@@ -629,7 +629,8 @@ ul.slider-list {
         border: 1px solid #ccc !important; } }
 
 .wrap-login {
-  padding-top: 8%; }
+  padding-top: 8%;
+  margin-right: 8%; }
   .wrap-login a.login-form-forgot {
     float: right; }
   .wrap-login .boxshadow-login {
@@ -639,3 +640,7 @@ ul.slider-list {
     width: 100%;
     background: #eb5f02;
     border: none; }
+  .wrap-login input::placeholder {
+    font-size: 12px; }
+  .wrap-login input {
+    font-size: 12px; }

@@ -1,5 +1,6 @@
 .wrap-login{
     padding-top:8%;
+    margin-right:8%;
     a.login-form-forgot{
         float:right;
     }
@@ -11,5 +12,11 @@
         width:100%;
         background: #eb5f02;
         border:none;
+    }
+    input::placeholder{
+        font-size:12px;
+    }
+    input{
+        font-size:12px;
     }
 }
