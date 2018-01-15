@@ -90,7 +90,9 @@ img.logo {
       padding-top: 18%; } }
 
 .wrap-people {
-  background: #fff; }
+  background: url("../image/icon/bg-adins.png");
+  background-size: 100%;
+  margin-top: 5%; }
   @media only screen and (max-width: 800px) {
     .wrap-people {
       padding-top: 20px; } }

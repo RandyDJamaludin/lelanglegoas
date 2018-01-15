@@ -16,6 +16,12 @@ import Adsense from '../Components/Adsense'
 import Map from '../Components/Map'
 import { NavLink } from 'react-router-dom'
 
+import Image1 from '../../assets/image/icon/save.png'
+import Image2 from '../../assets/image/icon/incountry.png'
+import Image3 from '../../assets/image/icon/quality.png'
+import Image4 from '../../assets/image/icon/performance.png'
+import Image5 from '../../assets/image/icon/24hours.png'
+
 export class Index extends Component {
   static defaultProps = {
     center: { lat: 40.7446790, lng: -73.9485420 },
@@ -126,17 +132,17 @@ export class Index extends Component {
                   <Row style={{marginTop:'5%'}}>
                     <Col xs={2} md={2}/>
                     <Col xs={2} md={2}>
-                      <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
+                      <Image src={Image1} circle width='100%'/>
                     </Col>
 
                     <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
-                      <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
+                      <Image src={Image2} circle width='100%'/>
                     </Col>
 
                     <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
-                      <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
+                      <Image src={Image3} circle width='100%'/>
                     </Col>
 
                     <Col xs={2} md={2}/>
@@ -146,12 +152,12 @@ export class Index extends Component {
                     
                     <Col xs={3} md={3}/>
                     <Col xs={2} md={2}>
-                      <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
+                      <Image src={Image4} circle width='100%'/>
                     </Col>
 
                     <Col xs={1} md={1}/>
                     <Col xs={2} md={2}>
-                      <Image src='https://image.flaticon.com/icons/svg/675/675263.svg' circle width='100%'/>
+                      <Image src={Image5} circle width='100%'/>
                     </Col>
 
                     <Col xs={4} md={4}/>
