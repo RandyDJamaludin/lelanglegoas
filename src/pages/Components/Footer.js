@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import Logo from '../../assets/image/logo-dummy.png'
+import Logo from '../../assets/image/logo.jpeg'
 import { Input, Icon } from 'antd'
 import TiFacebook from 'react-icons/lib/ti/social-facebook'
 import TiYoutube from 'react-icons/lib/ti/social-youtube'

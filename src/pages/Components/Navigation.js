@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
 import { Navbar, Image } from "react-bootstrap"
-import Logo from '../../assets/image/logo-dummy.png'
+import Logo from '../../assets/image/logo.jpeg'
 
 class Navigation extends Component {
   state = {
