@@ -98,7 +98,6 @@ export class Index extends Component {
               <div className='adsense'>
                 <Adsense/>
               </div>
-              <Footer/>
             </div>
 
         )
