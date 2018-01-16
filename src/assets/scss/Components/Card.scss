@@ -6,7 +6,7 @@
     margin-bottom:30%;
     
     &:hover{
-        border: 1px dotted #ff741a;
+        border: 1px dotted #1a4c93;
         background:#fff;
     }
 
@@ -29,9 +29,9 @@
         }
     }
     button{
-        background:#ff741a;
-        border:#ff741a;
-        border-bottom:5px solid #eb5f02;
+        background:#1a4c93;
+        border:#1a4c93;
+        border-bottom:5px solid #1a4c93;
         padding: 10px 30px 25px 30px;
         font-size:12px;
 
@@ -42,19 +42,19 @@
         }
     } 
     button:hover{
-        background:#ff741a;
-        border:#ff741a;
-        border-bottom:5px solid #eb5f02;
+        background:#1a4c93;
+        border:#1a4c93;
+        border-bottom:5px solid #1a4c93;
     }
     button:active{
-        background:#ff741a;
-        border:#ff741a;
-        border-bottom:5px solid #eb5f02;
+        background:#1a4c93;
+        border:#1a4c93;
+        border-bottom:5px solid #1a4c93;
     }
     button:focus{
-        background:#ff741a;
-        border:#ff741a;
-        border-bottom:5px solid #eb5f02;
+        background:#1a4c93;
+        border:#1a4c93;
+        border-bottom:5px solid #1a4c93;
     }
     @media only screen and (max-width:320px){
         button{
@@ -81,7 +81,7 @@
     color:#000 !important;
 }
 .ant-tabs-ink-bar{
-    background-color: #eb5f02 !important;
+    background-color: #1a4c93 !important;
 }
 
 // End Tab Vertical
@@ -100,8 +100,8 @@
         margin-top:20%;
     }
     button{
-        background:#ff741a;
-        border:#ff741a;
+        background:#1a4c93;
+        border:#1a4c93;
         border-bottom:5px solid #fbfbfb;
         padding: 10px 30px 25px 30px;
         font-size:12px;
@@ -124,7 +124,7 @@
 }
 
 button.explore{
-    background:#ff741a;
+    background:#1a4c93;
     color:#fff;
     padding:10px 10px 30px 10px;
     width:100%;
@@ -138,7 +138,7 @@ button.explore{
 }
 
 button.explore:hover{
-    background:#ff741a;
+    background:#1a4c93;
     color:#fff;
     padding:10px 10px 30px 10px;
     width:100%;
@@ -154,9 +154,9 @@ button.explore:hover{
     box-shadow:0 0 5px #ccc;
     transform: scale(1.1);
     button{
-        background:#ff741a;
-        border:#ff741a;
-        border-bottom:5px solid #eb5f02;
+        background:#1a4c93;
+        border:#1a4c93;
+        border-bottom:5px solid #1a4c93;
         font-size:12px;
         display:inline-block !important;
     }
@@ -334,11 +334,11 @@ ul.slider-list{
             font-weight: bold;
         }
         #date{
-            color:#ff731a;
+            color:#1a4c93;
         }
     }
     .lelang-lot{
-        background:#ff741a;
+        background:#1a4c93;
         margin-top:15px;
         
         @media only screen and (max-width:425px){
@@ -363,17 +363,17 @@ ul.slider-list{
                 font-size:12px;
                 text-align: center;
                 padding:10px;
-                color:#ff731a;
+                color:#1a4c93;
             }
             @media only screen and (max-width:800px){
-                color:#ff731a;
+                color:#1a4c93;
                 font-size:14px;
             }
             @media only screen and (min-width:700px) and (max-width:780px){
                 font-size:15px;
                 text-align: center;
                 padding:10px;
-                color:#ff731a;
+                color:#1a4c93;
             }
         }
     }
@@ -403,7 +403,7 @@ ul.slider-list{
             font-size:12px;
         }
         button{
-            background: #ff741a;
+            background: #1a4c93;
             border:none;
             color:#fff;
             font-size:12px;
@@ -437,7 +437,7 @@ ul.slider-list{
         margin-top:2%;
 
         &:hover{
-            border:2px solid #ff731a;
+            border:2px solid #1a4c93;
             transition:0.5s;
         }
 

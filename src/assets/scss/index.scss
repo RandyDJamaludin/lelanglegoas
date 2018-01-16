@@ -8,7 +8,7 @@ body{
     width: 100%;
     
     a.anchorActive{
-        color:#ff741a !important;
+        color:#1a4c93 !important;
     }
     .navbar{
         padding-top:10px;
@@ -16,18 +16,18 @@ body{
         font-size:13px;
         box-shadow:0 0 10px #ccc;
         background: #fff;
-        color:#ff741a;
+        color:#1a4c93;
     }
     .navbar-inverse{
         border:none;
         
         .navbar-toggle{
             border:none;
-            background:#eb5f02;
+            background:#1a4c93;
         }
         .navbar-toggle:hover{
             border:none;
-            background:#eb5f02;    
+            background:#1a4c93;    
         }
         .navbar-collapse{
             border:none;
@@ -39,18 +39,18 @@ body{
             color:#000;
         }    
         .navbar-nav>li>a:focus{
-            color:#eb5f02;
+            color:#1a4c93;
         }
         .navbar-nav>li>a:hover{
-            color:#ff731a;
+            color:#1a4c93;
         }
         .navbar-nav>li>a:hover{
-            color:#eb5f02;
+            color:#1a4c93;
         }
     }    
 }
 span.orange{
-    color:#ff741a;
+    color:#1a4c93;
     font-weight: bold;
 }
 ul.right{
@@ -71,7 +71,7 @@ img.logo{
             font-weight: bold;
         }
         #date{
-            color:#ff731a;
+            color:#1a4c93;
         }
     }
     .wrap-location{
@@ -152,7 +152,7 @@ img.logo{
             font-weight: bold;
 
             span{
-                color:#ff741a;
+                color:#1a4c93;
             }
         }
       }
@@ -188,8 +188,8 @@ img.logo{
             button{
                 margin-top:5%;
                 width: 100%;
-                background:#eb5f02;
-                border:1px solid #eb5f02;
+                background:#1a4c93;
+                border:1px solid #1a4c93;
             }
         }
         .header{
@@ -200,7 +200,7 @@ img.logo{
                 text-transform: uppercase;
 
                 span{
-                    color:#ff741a;
+                    color:#1a4c93;
                 }
             }
         }
@@ -313,7 +313,7 @@ img.logo{
         padding-top:10px;
     }
     span{
-        color:#ff731a;
+        color:#1a4c93;
     }
 }
 
@@ -324,7 +324,7 @@ img.logo{
 p.backTop{
     border:none;
     font-size:30px;
-    color:#eb5f02;
+    color:#1a4c93;
 }
 
 //End to Top

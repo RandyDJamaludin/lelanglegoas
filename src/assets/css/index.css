@@ -7,22 +7,22 @@ body {
   z-index: 999;
   width: 100%; }
   .wrap-nav a.anchorActive {
-    color: #ff741a !important; }
+    color: #1a4c93 !important; }
   .wrap-nav .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 13px;
     box-shadow: 0 0 10px #ccc;
     background: #fff;
-    color: #ff741a; }
+    color: #1a4c93; }
   .wrap-nav .navbar-inverse {
     border: none; }
     .wrap-nav .navbar-inverse .navbar-toggle {
       border: none;
-      background: #eb5f02; }
+      background: #1a4c93; }
     .wrap-nav .navbar-inverse .navbar-toggle:hover {
       border: none;
-      background: #eb5f02; }
+      background: #1a4c93; }
     .wrap-nav .navbar-inverse .navbar-collapse {
       border: none; }
     .wrap-nav .navbar-inverse .navbar-form {
@@ -30,14 +30,14 @@ body {
     .wrap-nav .navbar-inverse .navbar-nav > li > a {
       color: #000; }
     .wrap-nav .navbar-inverse .navbar-nav > li > a:focus {
-      color: #eb5f02; }
+      color: #1a4c93; }
     .wrap-nav .navbar-inverse .navbar-nav > li > a:hover {
-      color: #ff731a; }
+      color: #1a4c93; }
     .wrap-nav .navbar-inverse .navbar-nav > li > a:hover {
-      color: #eb5f02; }
+      color: #1a4c93; }
 
 span.orange {
-  color: #ff741a;
+  color: #1a4c93;
   font-weight: bold; }
 
 ul.right {
@@ -54,7 +54,7 @@ img.logo {
   font-weight: bold; }
 
 .location-lelang .body-header #date {
-  color: #ff731a; }
+  color: #1a4c93; }
 
 .location-lelang .wrap-location {
   font-size: 20px;
@@ -90,7 +90,7 @@ img.logo {
       padding-top: 18%; } }
 
 .wrap-people {
-  background: url("../image/icon/bg-adins.png");
+  background: #fff;
   background-size: 100%;
   margin-top: 5%; }
   @media only screen and (max-width: 800px) {
@@ -109,7 +109,7 @@ img.logo {
     font-family: Helvetica;
     font-weight: bold; }
     .wrap-kontak .left-panel .contact-us p.header span {
-      color: #ff741a; }
+      color: #1a4c93; }
   .wrap-kontak .left-panel .corporate p.header {
     font-size: 17px;
     padding-top: 5%;
@@ -129,15 +129,15 @@ img.logo {
   .wrap-kontak .right-panel .form-contact button {
     margin-top: 5%;
     width: 100%;
-    background: #eb5f02;
-    border: 1px solid #eb5f02; }
+    background: #1a4c93;
+    border: 1px solid #1a4c93; }
   .wrap-kontak .right-panel .header p.header {
     font-size: 18px;
     font-weight: bold;
     font-family: Helvetica;
     text-transform: uppercase; }
     .wrap-kontak .right-panel .header p.header span {
-      color: #ff741a; }
+      color: #1a4c93; }
 
 .wrap-tatacara {
   padding-top: 8%; }
@@ -206,12 +206,12 @@ img.logo {
     padding-right: 15px;
     padding-top: 10px; }
   .wrap-footer span {
-    color: #ff731a; }
+    color: #1a4c93; }
 
 p.backTop {
   border: none;
   font-size: 30px;
-  color: #eb5f02; }
+  color: #1a4c93; }
 
 .banner_background {
   background: url("http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg") center no-repeat;
@@ -276,9 +276,9 @@ p.backTop {
       margin-top: 0px; }
     .banner_background .contain button {
       float: left;
-      background: #ff741a;
-      border: #ff741a;
-      border-bottom: 5px solid #eb5f02;
+      background: #1a4c93;
+      border: #1a4c93;
+      border-bottom: 5px solid #1a4c93;
       padding: 10px 30px 25px 30px;
       font-size: 12px; }
   .banner_background ul.slick-dots button {
@@ -291,7 +291,7 @@ p.backTop {
   padding: 5%;
   margin-bottom: 30%; }
   .background-card:hover {
-    border: 1px dotted #ff741a;
+    border: 1px dotted #1a4c93;
     background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
@@ -308,9 +308,9 @@ p.backTop {
       .background-card h3 {
         font-size: 14px; } }
   .background-card button {
-    background: #ff741a;
-    border: #ff741a;
-    border-bottom: 5px solid #eb5f02;
+    background: #1a4c93;
+    border: #1a4c93;
+    border-bottom: 5px solid #1a4c93;
     padding: 10px 30px 25px 30px;
     font-size: 12px; }
     @media only screen and (max-width: 700px) {
@@ -319,17 +319,17 @@ p.backTop {
         font-size: 12px;
         margin-bottom: 15px; } }
   .background-card button:hover {
-    background: #ff741a;
-    border: #ff741a;
-    border-bottom: 5px solid #eb5f02; }
+    background: #1a4c93;
+    border: #1a4c93;
+    border-bottom: 5px solid #1a4c93; }
   .background-card button:active {
-    background: #ff741a;
-    border: #ff741a;
-    border-bottom: 5px solid #eb5f02; }
+    background: #1a4c93;
+    border: #1a4c93;
+    border-bottom: 5px solid #1a4c93; }
   .background-card button:focus {
-    background: #ff741a;
-    border: #ff741a;
-    border-bottom: 5px solid #eb5f02; }
+    background: #1a4c93;
+    border: #1a4c93;
+    border-bottom: 5px solid #1a4c93; }
   @media only screen and (max-width: 320px) {
     .background-card button {
       padding: 5px;
@@ -351,7 +351,7 @@ p.backTop {
   color: #000 !important; }
 
 .ant-tabs-ink-bar {
-  background-color: #eb5f02 !important; }
+  background-color: #1a4c93 !important; }
 
 .background-card2 {
   background: #fbfbfb;
@@ -363,8 +363,8 @@ p.backTop {
   .background-card2 img {
     margin-top: 20%; }
   .background-card2 button {
-    background: #ff741a;
-    border: #ff741a;
+    background: #1a4c93;
+    border: #1a4c93;
     border-bottom: 5px solid #fbfbfb;
     padding: 10px 30px 25px 30px;
     font-size: 12px;
@@ -382,7 +382,7 @@ p.backTop {
     font-weight: bold; }
 
 button.explore {
-  background: #ff741a;
+  background: #1a4c93;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -394,7 +394,7 @@ button.explore {
       font-size: 12px; } }
 
 button.explore:hover {
-  background: #ff741a;
+  background: #1a4c93;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -408,9 +408,9 @@ button.explore:hover {
   box-shadow: 0 0 5px #ccc;
   transform: scale(1.1); }
   .background-card2:hover button {
-    background: #ff741a;
-    border: #ff741a;
-    border-bottom: 5px solid #eb5f02;
+    background: #1a4c93;
+    border: #1a4c93;
+    border-bottom: 5px solid #1a4c93;
     font-size: 12px;
     display: inline-block !important; }
   .background-card2:hover p.price {
@@ -540,9 +540,9 @@ ul.slider-list {
     font-size: 18px;
     font-weight: bold; }
   .landing-lelang .body-header #date {
-    color: #ff731a; }
+    color: #1a4c93; }
   .landing-lelang .lelang-lot {
-    background: #ff741a;
+    background: #1a4c93;
     margin-top: 15px; }
     @media only screen and (max-width: 425px) {
       .landing-lelang .lelang-lot {
@@ -565,17 +565,17 @@ ul.slider-list {
           font-size: 12px;
           text-align: center;
           padding: 10px;
-          color: #ff731a; } }
+          color: #1a4c93; } }
       @media only screen and (max-width: 800px) {
         .landing-lelang .lelang-lot h2 {
-          color: #ff731a;
+          color: #1a4c93;
           font-size: 14px; } }
       @media only screen and (min-width: 700px) and (max-width: 780px) {
         .landing-lelang .lelang-lot h2 {
           font-size: 15px;
           text-align: center;
           padding: 10px;
-          color: #ff731a; } }
+          color: #1a4c93; } }
   .landing-lelang img {
     padding: 10px;
     margin-top: 15px; }
@@ -596,7 +596,7 @@ ul.slider-list {
       .landing-lelang .content-lelang {
         font-size: 12px; } }
     .landing-lelang .content-lelang button {
-      background: #ff741a;
+      background: #1a4c93;
       border: none;
       color: #fff;
       font-size: 12px; }
@@ -624,7 +624,7 @@ ul.slider-list {
     border: 2px dotted #ccc;
     margin-top: 2%; }
     .landing-lelang .row-lelang:hover {
-      border: 2px solid #ff731a;
+      border: 2px solid #1a4c93;
       transition: 0.5s; }
     @media only screen and (max-width: 768px) {
       .landing-lelang .row-lelang {
@@ -640,7 +640,7 @@ ul.slider-list {
     padding: 3%; }
   .wrap-login button.login-form-button {
     width: 100%;
-    background: #eb5f02;
+    background: #1a4c93;
     border: none; }
   .wrap-login input::placeholder {
     font-size: 12px; }
