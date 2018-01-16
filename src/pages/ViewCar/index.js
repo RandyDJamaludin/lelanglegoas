@@ -13,7 +13,7 @@ export class Index extends Component {
               <p className='header'> PORSCHE CAYENNE </p>
               <Image src='https://www.ford.co.uk/content/dam/guxeu/uk/forms/ford-KMI_form-eu-mustang-16x9-991x557-ford-news-kmi.jpg' width='100%'/>
             </Col>
-            <Col xs={4} md={4}>
+            <Col xs={12} md={4}>
               <div className='right-panel'>
                 <p className='title'> INFORMASI LELANG </p>
               </div>
