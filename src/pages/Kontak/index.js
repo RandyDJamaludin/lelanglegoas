@@ -10,45 +10,13 @@ export class Index extends Component {
             <div className='wrap-kontak'>
               <Grid>
                 <Row>
-                  <Col xs={12} md={6}>
-                    <div className='left-panel'>
-                      <div className='contact-us'>
-                        <p className='header'><span> <Icon type="contacts" /></span> KONTAK KAMI </p>
-                        <p className='desc'> Ada yang perlu Anda tanyakan mengenai MPM Lelang dan MPM Group? Silakan jangan ragu untuk menghubungi kami. Kami akan siap melayani Anda dengan sepenuh hati </p> 
-                      </div>
-                      <div className='corporate'>
-                        <p className='header'> PT. TELE DIGITAL KREATIF </p>
-                        <p className='sub-header'> HEAD OFFICE </p>
-                      </div>
-                      <Row>
-                        <Col xs={12} md={6}>
-                          <p> Sunburst, CBD Lot II No. 10
-                              Jl. Kapten Sudirman Sunburst, 
-                              CBD Lot II No. 10
-                              Jl. Kapten Sudirman
-                              BSD City - Jakarta 15322
-                          </p>
-                        </Col>
-                        <Col xs={12} md={12}/>
-                      </Row>
-
-                      <Row>
-                        <Col xs={12} md={6}>
-                          <div className='header-icon'>
-                            <p className='phone'> <Icon type="phone" /> + 628 0000 0000 </p>
-                            <p className='phone'> <Icon type="mail" /> product@telecreativenow.com</p>
-                          </div>
-                        </Col>
-                      </Row>
-
-                    </div>
-                  </Col>
+                  <Col md={3}/>
 
                   <Col xs={12} md={6}>
                     <div className='right-panel'>
                       <div className='header'>
                         <p className='header'> <span><Icon type="form" /></span> Form Kontak </p>
-                        <p className='sub-header'> Anda juga bisa menghubungi kami secara langsung dengan mengirimkan pesan melalui form kontak berikut ini. </p> 
+                        <p className='sub-header'> Hubungi kami dengan cara mengirimkan pesan kepada kami </p> 
                       </div>
                       <div className='form-contact'>
                         <Form onSubmit={this.handleSubmit}>

@@ -23,8 +23,8 @@ export class Footer extends Component {
                         <Image src={Logo} width='50%'/>
                       </div>
                         <div className='body-client'>
-                          <p className='street'> Lorem ipsum No 7, 70094 </p>
-                          <p className='phone'> (021) 305 - 0554 <span className='orange'> hello@telecreative.com </span></p> 
+                          <p className='street'> Jl. Raya Kaliabang no. 45 <br/> <br/>Medan satria, bekasi 17132 </p>
+                          {/*<p className='phone'> (021) 305 - 0554 <span className='orange'> hello@telecreative.com </span></p> */}
                         </div>
                       </center>
                     </Col>
@@ -32,21 +32,13 @@ export class Footer extends Component {
                   </Row>
                   <Row className='border'>
                     <Col xs={6} md={3} mdPush={1}>
-                      <p> About </p>
-                      <p> Contact </p>
-                      <p> Careers </p>
-                      <p> Team </p>
-                      <p> Press Release </p>
-                      <p> In the media </p>
-                      <p> Testimonials </p>
+                      <p className='title'> BANTUAN </p> 
+                      <p> Info Lelang </p>
+                      <p> Jadwal Lelang </p>
                     </Col>
                     <Col xs={6} md={3} mdPush={1}>
-                      <p> Become a seller </p>
-                      <p> Affilates </p>
-                      <p> Resource center </p>
-                      <p> Seller resources </p>
-                      <p> Featured partners </p>
-                      <p> Nonprofits </p>
+                      <p className='title'> BANTUAN </p> 
+                      <p> Contact </p>
                       <p> Help </p>
                     </Col>
                     <Col xs={6} md={3} mdPush={1}>

@@ -7,15 +7,15 @@ export class JadwalLelang extends Component {
         return (
             <div>
                 <Row className='row-lelang'>
-                  <Col xs={4} md={1}>
+                  {/*<Col xs={4} md={1}>
                     <div className='lelang-lot'>
                       <h2><center> LOT <br/> {this.props.number}</center></h2>
                     </div>
-                  </Col>
+                  </Col>*/}
                   <Col xs={12} md={3}>
                     <Image src={this.props.image} width='100%'/>
                   </Col>
-                  <Col xs={12} md={6}>
+                  <Col xs={12} md={7}>
                     <div className='content-lelang'>
                       <p className='sub-title'> {this.props.name} </p>
                       <p className='year'> Tahun {this.props.year} </p>

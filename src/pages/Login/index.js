@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import { Grid, Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 const FormItem = Form.Item;
 
 class Login extends Component {
@@ -55,9 +54,6 @@ class Login extends Component {
                     Log in
                   </Button>
                   
-                  <Link to='/register'>
-                    <center> Register </center>
-                  </Link>
                 </FormItem>
               </Form>
             </Col>

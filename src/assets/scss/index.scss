@@ -35,18 +35,35 @@ body{
         .navbar-form{
             border:none;
         }
-        .navbar-nav>li>a{
-            color:#000;
-        }    
-        .navbar-nav>li>a:focus{
-            color:#1a4c93;
+        .navbar-nav{
+            background:transparent;
+            &:focus{
+              background:red !important;
+            }
+            .open{
+                a{
+                  background:transparent;
+                }
+                &:hover{
+                  background:transparent;
+                }
+                &:focus{
+                  background:transparent;
+                }
+            }
+            li{
+                a{
+                    color:#000;
+                    &:focus{
+                        color:#1a4c93;    
+                    }
+                    &:hover{
+                        color:#1a4c93;
+                    }
+                }
+            }
         }
-        .navbar-nav>li>a:hover{
-            color:#1a4c93;
-        }
-        .navbar-nav>li>a:hover{
-            color:#1a4c93;
-        }
+        
     }    
 }
 span.orange{
@@ -144,37 +161,9 @@ img.logo{
 
 .wrap-kontak{
     padding-top:8%;
-    .left-panel{
-      .contact-us{
-        p.header{
-            font-size:19px;
-            font-family: Helvetica;
-            font-weight: bold;
-
-            span{
-                color:#1a4c93;
-            }
-        }
-      }
-      .corporate{
-        p.header{
-            font-size:17px;
-            padding-top:5%;
-            line-height: 0.5;
-            font-family: Helvetica;
-        }
-        p.sub-header{
-            font-size:15px;
-            font-weight: bold;
-        }
-      }
-      .header-icon{
-        p.phone{
-            font-size:14px;
-        }
-      }
-    }
     .right-panel{
+        box-shadow:0 0 10px #ccc;
+        padding:30px;
         .form-contact{
             input::placeholder{
                 font-size:12px;
@@ -213,19 +202,18 @@ img.logo{
 
 .wrap-tatacara{
     padding-top:8%;
-    .body-tatacara{
-
-        border-bottom:1px solid #f8f8f8;
-        p.header{
-            font-size:18px;
-            font-weight: bold;
-            font-family: Helvetica;
-            line-height:0.5;   
-        } 
+    .desktop-tatacaraPage{
+      
+      @media only screen and(max-width:800px){
+        display:none !important
+      }
     }
+    .mobile-tatacaraPage{
+      @media only screen and(min-width:801px){
+          display:none !important
+      }
+  }
 }
-
-// End Tata cara lelang
 
 .wrap-tatacara{
     .Collapsible{
@@ -259,8 +247,142 @@ img.logo{
     }
 }
 
-//Footer
 
+//End tata cara lelang
+
+
+// Pengertian lelang
+
+.wrap-pengertianLelangPage{
+  padding-top:8%;
+  padding-bottom:8%;
+  p.header{
+      font-size:18px;
+      font-weight: bold;
+      font-family: Helvetica;
+      text-transform: uppercase;
+  }
+  span.orange{
+    color:#1a4c93;
+    font-weight: bold;
+  }
+}
+
+// End Pengertian lelang
+
+// Peraturan lelang
+
+.wrap-peraturanLelangPage{
+  padding-top:8%;
+  p.header{
+    font-size:18px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase;
+  }
+  span.orange{
+    font-weight: bold;
+  }
+  .collapse-body{
+    padding:10px;
+    padding-left:25px;
+    span{
+      font-weight: bold;
+      font-size:14px;
+      color:#1a4c93;
+    }
+  }
+}
+
+// End Peraturan lelang
+
+// Page Register 
+
+.wrap-registerChoosePage{
+  padding-top:10%;
+  padding-bottom:5%;
+  .wrap-auction{
+    transition:1s;
+    .auction{
+      border: 3px solid #ccc;
+      padding:20%;
+      background:#f8f8f8;
+      border-radius: 100%;
+    }
+    .text-auction{
+      padding-top:10px;
+      font-size:20px;
+      color:#1a4c93;
+      font-weight: bold;
+      text-align: center;
+    }
+    &:hover{
+      margin-top:-10px;
+      margin-bottom:10px;
+      transition:1s;
+    }
+  }
+  .wrap-user{
+    transition:1s;
+    .user{
+      border: 3px solid #ccc;
+      background:#f8f8f8;
+      padding:20%;
+      border-radius: 100%;  
+    }
+    .text-user{
+      padding-top:10px;
+      font-size:20px;
+      font-weight: bold;
+      color:#1a4c93;
+      text-align: center;
+    }
+    &:hover{
+      transition:1s;
+      margin-top:-10px;
+      margin-bottom:10px;
+    }
+  }
+}
+
+// End Register
+
+
+// Page Tentang Kami
+
+.wrap-tentangKamiPage{
+  padding-top:8%;
+  .image-business{
+    background:url('https://www.universitiesabroad.com/sites/all/files/public/field/image/business%20admin2.jpg');
+    background-size:cover;
+    height: 300px;
+  }
+  .right-panel{
+    p.header{
+      font-size:18px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  .section-bottom{
+    padding-top:5%;  
+    padding-bottom:10%;
+    .wrap-team{
+      p.name{
+        font-size:20px;
+        font-weight: bold;
+        height:10px;
+        margin-top:10px;
+      }
+      text-align: center;
+    }
+  }
+  
+}
+
+// End Tentang Kami
+
+//Footer
 
 .wrap-footer{
     color:#b3b3b3;
@@ -289,6 +411,10 @@ img.logo{
         border-bottom:2px solid #f8f8f8;
         padding-bottom:3%;
         padding-top:2%;
+        p.title{
+          font-weight: bold;
+          color:#1a4c93;
+        }
     }
     p{
         line-height: 1.2;

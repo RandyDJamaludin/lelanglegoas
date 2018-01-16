@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom"
-import { Navbar, Image } from "react-bootstrap"
+import { Navbar, Image, NavDropdown } from "react-bootstrap"
 import Logo from '../../assets/image/logo.jpeg'
 
 class Navigation extends Component {
@@ -39,12 +39,35 @@ class Navigation extends Component {
                   Beranda
                 </NavLink>
               </li>
-              
+
+
               <li eventkey={2}>
-                <NavLink to="/tatacara" activeClassName="anchorActive">
-                  Tata Cara Lelang
+                <NavLink to="/jadwal" activeClassName="anchorActive">
+                  Jadwal Lelang
                 </NavLink>
               </li>
+
+              <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
+                
+                <li eventKey={3.1} >
+                  <NavLink to="/pengertian-lelang" activeClassName="anchorActive">
+                    Pengertian Lelang
+                  </NavLink>
+                </li>
+
+                <li eventKey={3.2}>
+                  <NavLink to="/tatacara-lelang" activeClassName="anchorActive">
+                    Tata Cara Lelang
+                  </NavLink>
+                </li>
+
+                <li eventKey={3.3}>
+                  <NavLink to="/peraturan-lelang"activeClassName="anchorActive">
+                    Peraturan Lelang
+                  </NavLink>
+                </li>
+              
+              </NavDropdown>
 
               <li eventkey={3}>
                 <NavLink to="/lokasi" activeClassName="anchorActive">
@@ -53,8 +76,8 @@ class Navigation extends Component {
               </li>
 
               <li eventkey={4}>
-                <NavLink to="/jadwal" activeClassName="anchorActive">
-                  Jadwal Lelang
+                <NavLink to="/tentang-kami" activeClassName="anchorActive">
+                  Tentang Kami
                 </NavLink>
               </li>
 
@@ -64,9 +87,16 @@ class Navigation extends Component {
                 </NavLink>
               </li>
 
-              <li eventkey={56}>
+              <li eventkey={6}>
                 <NavLink to="/login" activeClassName="anchorActive">
                   Login
+                </NavLink>
+              </li>
+
+
+              <li eventkey={7}>
+                <NavLink to="/register-choose" activeClassName="anchorActive">
+                  Register
                 </NavLink>
               </li>
 

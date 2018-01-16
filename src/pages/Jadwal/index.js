@@ -7,7 +7,6 @@ import { DataCardCarousel } from '../AllData/DataCardCarousel'
 import CardCarousel from '../Components/CardCarousel'
 import JadwalLelang from '../Components/JadwalLelang'
 import { DataCardLocation } from '../AllData/DataCardLocation'
-import Footer from '../Components/Footer'
 import { Adsense } from '../Components/Adsense'
 
 export class Index extends Component {

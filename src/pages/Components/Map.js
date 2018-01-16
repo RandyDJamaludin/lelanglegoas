@@ -63,10 +63,10 @@ export class Map extends Component {
                       <p className='sub-location'>RND Indonesia - Jakarta </p>
                     </div>
                     <div className='body-location'>
-                      <p>Jl. Lorem ipsum No 7 Sudirman</p>
-                      <p>Jakarta Selatan, 1340</p>
+                      <p>Jl. Raya Kaliabang no. 45</p>
+                      <p>Bekasi, 13132</p>
                       <p>Indonesia</p>
-                      <p>(021) 864-0987| +62-859-9870-444 </p>
+                      <p>cs@legoas.co.id </p>
                     </div>
                   </Col>
                 </Row>
