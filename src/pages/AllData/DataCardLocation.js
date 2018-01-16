@@ -9,6 +9,7 @@ export const DataCardLocation = [
       date: ' 1 Januari 2017',
       time: ' 13.00 - Selesai',
       button: 'BID NOW',
+      grade : 'A',
       key: 1
     },
     {
@@ -21,6 +22,7 @@ export const DataCardLocation = [
       date: ' 1 Januari 2017',
       time: ' 13.00 - Selesai',
       button: 'BID NOW',
+      grade : 'A',
       key: 2
     },
     {
@@ -33,6 +35,7 @@ export const DataCardLocation = [
       date: ' 1 Januari 2017',
       time: ' 13.00 - Selesai',
       button: 'BID NOW',
+      grade : 'A',
       key: 3
     },
   ]

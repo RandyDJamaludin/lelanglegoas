@@ -440,7 +440,16 @@ ul.slider-list{
             border:2px solid #1a4c93;
             transition:0.5s;
         }
-
+        .grade-lelang{
+            padding-top:14%;
+            p.grade{
+                color:#1a4c93;
+                padding:10px;
+                border-radius:10px;
+                float:right;
+                border:2px solid #ccc;
+            }
+        }
         @media only screen and (max-width:768px){
             border:1px solid #ccc !important;
         }

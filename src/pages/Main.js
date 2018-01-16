@@ -12,7 +12,7 @@ export class Main extends Component {
     render() { 
         return ( 
           <main> 
-          <Switch>
+          <Switch >
               <Route exact path="/" component={Landing}/>
               <Route exact path="/tatacara" component={Tata}/>
               <Route exact path="/jadwal" component={Jadwal}/>

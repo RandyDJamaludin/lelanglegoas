@@ -34,6 +34,7 @@ export class Index extends Component {
                         time={data.time}
                         image={data.image}
                         price={data.price}
+                        grade={data.grade}
                         button={data.button}
                       />
                     </Col>

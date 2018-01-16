@@ -114,6 +114,7 @@ export class Index extends Component {
                         date={data.date}
                         time={data.time}
                         image={data.image}
+                        grade={data.grade}
                         price={data.price}
                         button={data.button}
                       />

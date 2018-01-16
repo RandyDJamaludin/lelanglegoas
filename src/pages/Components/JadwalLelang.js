@@ -15,7 +15,7 @@ export class JadwalLelang extends Component {
                   <Col xs={12} md={3}>
                     <Image src={this.props.image} width='100%'/>
                   </Col>
-                  <Col xs={12} md={7}>
+                  <Col xs={12} md={6}>
                     <div className='content-lelang'>
                       <p className='sub-title'> {this.props.name} </p>
                       <p className='year'> Tahun {this.props.year} </p>
@@ -23,6 +23,11 @@ export class JadwalLelang extends Component {
                       <p className='loc'> Lokasi : {this.props.location} | Tanggal : {this.props.date} | Jam : {this.props.time} </p>
                       <Button> Info Lengkap </Button> 
                     </div>
+                  </Col>
+                  <Col xs={12} md={2}>
+                    <div className='grade-lelang'>
+                      <p className='grade'> Grade {this.props.grade} </p>
+                    </div> 
                   </Col>
                 </Row>
             </div>
