@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Row, Col, Image } from 'react-bootstrap'
 import { Button } from 'antd'
+import { Link } from 'react-router-dom'
 
 export class JadwalLelang extends Component {
     render() { 
@@ -21,7 +22,8 @@ export class JadwalLelang extends Component {
                       <p className='year'> Tahun {this.props.year} </p>
                       <p className='type'> Jenis Kendaraan : {this.props.type} </p>
                       <p className='loc'> Lokasi : {this.props.location} | Tanggal : {this.props.date} | Jam : {this.props.time} </p>
-                      <Button> Info Lengkap </Button> 
+                      <Link to='/view-car'> <Button> Info Lengkap </Button></Link>
+                      
                     </div>
                   </Col>
                   <Col xs={12} md={2}>
