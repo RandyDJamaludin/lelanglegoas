@@ -98,7 +98,7 @@ export class Index extends Component {
               <div className='landing-lelang'>
                 <Grid>
                   <div className='body-header'>
-                    <p><Icon id='date' type='calendar'/> JADWAL LELANG</p>
+                    <p><Icon id='date' type='calendar'/> JADWAL LELANG TERDEKAT</p>
                     <hr/>
                   </div>
                   <Row>
