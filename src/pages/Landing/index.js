@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Image, Grid, Row, Col } from 'react-bootstrap'
-import { Icon } from 'antd'
+import { Icon, Input } from 'antd'
 import AutoCarousel  from 'nuka-carousel'
 
 //Files
@@ -21,6 +21,7 @@ import Image2 from '../../assets/image/icon/incountry.png'
 import Image3 from '../../assets/image/icon/quality.png'
 import Image4 from '../../assets/image/icon/performance.png'
 import Image5 from '../../assets/image/icon/24hours.png'
+const Search = Input.Search;
 
 export class Index extends Component {
   static defaultProps = {
@@ -32,6 +33,17 @@ export class Index extends Component {
           <div>
               <Banner/>
                 <Grid>
+                <div style={{marginTop:20}}>
+                  <Row>
+                    <Col xs={12} md={4}>
+                      <Search
+                        placeholder="Cari mobil"
+                        onSearch={value => console.log(value)}
+                        style={{ width: '100%' }}
+                      />
+                    </Col>
+                  </Row>
+                </div>
                   <Row>
                   {DataCard1.map((data, index) => (
                     <Col xs={6} md={4} key={data.key}>
