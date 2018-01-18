@@ -527,7 +527,7 @@ button.explore:hover {
     padding-bottom: 0px !important; }
 
 .wrap-cardCarousel .header-ongoing {
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 .wrap-cardCarousel button {
   font-size: 12px; }
@@ -554,9 +554,10 @@ button.explore:hover {
   position: none !important; }
 
 .wrap-cardCarousel .background-cardCarousel {
-  padding-top: 50px;
+  padding-top: 30px;
+  padding-bottom: 20px;
   border: 1px solid #ccc;
-  height: 300px; }
+  height: 330px; }
   .wrap-cardCarousel .background-cardCarousel:hover {
     background: #f8f8f8;
     cursor: pointer; }
