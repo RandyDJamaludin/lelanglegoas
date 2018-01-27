@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Form, Icon, Input, Button, Checkbox } from 'antd'
 import { Grid, Row, Col } from 'react-bootstrap'
+import Logo from '../../assets/image/logo.jpeg'
 const FormItem = Form.Item;
 
 class Login extends Component {
@@ -20,6 +21,14 @@ class Login extends Component {
           <Row>
             <Col md={4}/>
             <Col xs={12} md={5} className='boxshadow-login'>
+              <Row>
+                <Col md={3}/>
+                <Col md={6}>
+                  <img src={Logo} alt='Logo' style={{width:'100%', padding:10}}/>
+                </Col>
+                <Col md={3}/>
+              </Row>
+              
               <Form onSubmit={this.handleSubmit} className="login-form">
                 <FormItem>
                   {getFieldDecorator('userName', {

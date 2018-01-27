@@ -1,84 +1,35 @@
 .banner_background{
-    background:url('http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg')center no-repeat;
-    height:450px;   
-    background-size:cover;
-    .contain{
-        padding:2%;
-        margin-top:10%;
-        @media only screen and (max-width:425px){
-            margin-top:20%;
-        }
-        
-        h4{
-            font-size:15px;
-            color:#fff;
-            text-align: justify;
-            font-family: Helvetica;
-            @media only screen and(max-width:320px){
-                font-size:12px;
-                padding-top:30%;
-            }
-            @media only screen and(min-width:321px) and (max-width:500px){
-                font-size:12px;
-                padding-top:30%;
-            }
-            @media only screen and(min-width:501px) and (max-width:600px){
-                font-size:12px;
-                padding-top:20%;
-            }
-            @media only screen and(min-width:601px) and (max-width:700px){
-                font-size:14px;
-                padding-top:15%;
-            }
-            @media only screen and(min-width:701px) and (max-width:800px){
-                font-size:15px;
-                padding-top:10%;
-            }
-        }
-        h1{
-            font-size: 45px;
-            font-family: Helvetica;
-            font-weight: bold;
-            color:#fff;
-            text-align: justify;
-            margin-top:0px;
-            
-            @media only screen and(max-width:320px){
-                font-size:24px;
-            }
-
-            @media only screen and(min-width:321px) and (max-width:500px){
-                font-size:28px;
-            }
-            
-            @media only screen and(min-width:501px) and (max-width:600px){
-                font-size:28px;
-            }
-            @media only screen and(min-width:601px) and (max-width:700px){
-                font-size:30px;
-            }
-            @media only screen and(min-width:701px) and (max-width:800px){
-                font-size:32px;
-            }
-        }
-        p{
-            color:#fff;
-            text-align: justify;
-            margin-top:0px;
-        }
-        button{
-            float:left;
-            background:#1a4c93;
-            border:#1a4c93;
-            border-bottom:5px solid #1a4c93;
-            padding: 10px 30px 25px 30px;
-            font-size:12px;
-        }
+    button{
+        background:#3c8dbc;
+        border:#3c8dbc;
+        border-bottom:5px solid #3c8dbc;
+        padding: 10px 30px 25px 30px;
+        font-size:12px;
+    }
+    .containBanner1{
+        background:url('https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg')center no-repeat;   
+        background-size:cover;
+        padding:150px;
     }
     ul.slick-dots{
         button{
-            margin-top:100px;
+            margin-top:-10px;
             padding:10px;
         }
+    }
+    h4{
+        color:#fff;
+    }
+    h1{
+        color:#fff;
+        font-size:43px;
+    }
+    p{
+        color:#fff;
+    }
+    .containBanner2{
+        background:url('https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg')center no-repeat;   
+        background-size:cover;
+        padding:150px;
     }
 }

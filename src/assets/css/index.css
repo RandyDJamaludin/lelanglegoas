@@ -7,22 +7,22 @@ body {
   z-index: 999;
   width: 100%; }
   .wrap-nav a.anchorActive {
-    color: #1a4c93 !important; }
+    color: #3c8dbc !important; }
   .wrap-nav .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 13px;
     box-shadow: 0 0 10px #ccc;
     background: #fff;
-    color: #1a4c93; }
+    color: #3c8dbc; }
   .wrap-nav .navbar-inverse {
     border: none; }
     .wrap-nav .navbar-inverse .navbar-toggle {
       border: none;
-      background: #1a4c93; }
+      background: #3c8dbc; }
     .wrap-nav .navbar-inverse .navbar-toggle:hover {
       border: none;
-      background: #1a4c93; }
+      background: #3c8dbc; }
     .wrap-nav .navbar-inverse .navbar-collapse {
       border: none; }
     .wrap-nav .navbar-inverse .navbar-form {
@@ -40,12 +40,12 @@ body {
       .wrap-nav .navbar-inverse .navbar-nav li a {
         color: #000; }
         .wrap-nav .navbar-inverse .navbar-nav li a:focus {
-          color: #1a4c93; }
+          color: #3c8dbc; }
         .wrap-nav .navbar-inverse .navbar-nav li a:hover {
-          color: #1a4c93; }
+          color: #3c8dbc; }
 
 span.orange {
-  color: #1a4c93;
+  color: #3c8dbc;
   font-weight: bold; }
 
 ul.right {
@@ -62,7 +62,7 @@ img.logo {
   font-weight: bold; }
 
 .location-lelang .body-header #date {
-  color: #1a4c93; }
+  color: #3c8dbc; }
 
 .location-lelang .wrap-location {
   font-size: 20px;
@@ -75,12 +75,6 @@ img.logo {
   .location-lelang .body-location p {
     font-size: 12px;
     line-height: 0.5; }
-
-.wrap-client {
-  padding-top: 3%; }
-  .wrap-client .client-border {
-    border-top: 2px solid #f8f8f8;
-    padding-top: 2%; }
 
 .adsense {
   padding-top: 2%; }
@@ -124,15 +118,15 @@ img.logo {
     .wrap-kontak .right-panel .form-contact button {
       margin-top: 5%;
       width: 100%;
-      background: #1a4c93;
-      border: 1px solid #1a4c93; }
+      background: #3c8dbc;
+      border: 1px solid #3c8dbc; }
     .wrap-kontak .right-panel .header p.header {
       font-size: 18px;
       font-weight: bold;
       font-family: Helvetica;
       text-transform: uppercase; }
       .wrap-kontak .right-panel .header p.header span {
-        color: #1a4c93; }
+        color: #3c8dbc; }
 
 .wrap-tatacara {
   padding-top: 8%; }
@@ -188,7 +182,7 @@ img.logo {
     text-transform: uppercase;
     font-size: 12px;
     padding: 10px;
-    background: #1a4c93;
+    background: #3c8dbc;
     color: #fff; }
 
 .wrap-pengertianLelangPage {
@@ -200,7 +194,7 @@ img.logo {
     font-family: Helvetica;
     text-transform: uppercase; }
   .wrap-pengertianLelangPage span.orange {
-    color: #1a4c93;
+    color: #3c8dbc;
     font-weight: bold; }
 
 .wrap-peraturanLelangPage {
@@ -218,45 +212,7 @@ img.logo {
     .wrap-peraturanLelangPage .collapse-body span {
       font-weight: bold;
       font-size: 14px;
-      color: #1a4c93; }
-
-.wrap-registerChoosePage {
-  padding-top: 10%;
-  padding-bottom: 5%; }
-  .wrap-registerChoosePage .wrap-auction {
-    transition: 1s; }
-    .wrap-registerChoosePage .wrap-auction .auction {
-      border: 3px solid #ccc;
-      padding: 20%;
-      background: #f8f8f8;
-      border-radius: 100%; }
-    .wrap-registerChoosePage .wrap-auction .text-auction {
-      padding-top: 10px;
-      font-size: 20px;
-      color: #1a4c93;
-      font-weight: bold;
-      text-align: center; }
-    .wrap-registerChoosePage .wrap-auction:hover {
-      margin-top: -10px;
-      margin-bottom: 10px;
-      transition: 1s; }
-  .wrap-registerChoosePage .wrap-user {
-    transition: 1s; }
-    .wrap-registerChoosePage .wrap-user .user {
-      border: 3px solid #ccc;
-      background: #f8f8f8;
-      padding: 20%;
-      border-radius: 100%; }
-    .wrap-registerChoosePage .wrap-user .text-user {
-      padding-top: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #1a4c93;
-      text-align: center; }
-    .wrap-registerChoosePage .wrap-user:hover {
-      transition: 1s;
-      margin-top: -10px;
-      margin-bottom: 10px; }
+      color: #3c8dbc; }
 
 .wrap-tentangKamiPage {
   padding-top: 8%; }
@@ -289,8 +245,6 @@ img.logo {
     line-height: 0; }
   .wrap-footer .body-client {
     padding-top: 4%; }
-  .wrap-footer .logo-addins {
-    padding-top: 10%; }
   .wrap-footer .border {
     border-top: 2px solid #f8f8f8;
     border-bottom: 2px solid #f8f8f8;
@@ -298,7 +252,7 @@ img.logo {
     padding-top: 2%; }
     .wrap-footer .border p.title {
       font-weight: bold;
-      color: #1a4c93; }
+      color: #3c8dbc; }
   .wrap-footer p {
     line-height: 1.2;
     font-family: Helvetica; }
@@ -316,84 +270,43 @@ img.logo {
     padding-right: 15px;
     padding-top: 10px; }
   .wrap-footer span {
-    color: #1a4c93; }
+    color: #3c8dbc; }
 
 p.backTop {
   border: none;
   font-size: 30px;
-  color: #1a4c93; }
+  color: #3c8dbc; }
 
-.banner_background {
-  background: url("http://techcornerz.com/wp-content/uploads/2017/06/lamborghini-aventador-2017-reviews.jpg") center no-repeat;
-  height: 450px;
-  background-size: cover; }
-  .banner_background .contain {
-    padding: 2%;
-    margin-top: 10%; }
-    @media only screen and (max-width: 425px) {
-      .banner_background .contain {
-        margin-top: 20%; } }
-    .banner_background .contain h4 {
-      font-size: 15px;
-      color: #fff;
-      text-align: justify;
-      font-family: Helvetica; }
-      @media only screen and (max-width: 320px) {
-        .banner_background .contain h4 {
-          font-size: 12px;
-          padding-top: 30%; } }
-      @media only screen and (min-width: 321px) and (max-width: 500px) {
-        .banner_background .contain h4 {
-          font-size: 12px;
-          padding-top: 30%; } }
-      @media only screen and (min-width: 501px) and (max-width: 600px) {
-        .banner_background .contain h4 {
-          font-size: 12px;
-          padding-top: 20%; } }
-      @media only screen and (min-width: 601px) and (max-width: 700px) {
-        .banner_background .contain h4 {
-          font-size: 14px;
-          padding-top: 15%; } }
-      @media only screen and (min-width: 701px) and (max-width: 800px) {
-        .banner_background .contain h4 {
-          font-size: 15px;
-          padding-top: 10%; } }
-    .banner_background .contain h1 {
-      font-size: 45px;
-      font-family: Helvetica;
-      font-weight: bold;
-      color: #fff;
-      text-align: justify;
-      margin-top: 0px; }
-      @media only screen and (max-width: 320px) {
-        .banner_background .contain h1 {
-          font-size: 24px; } }
-      @media only screen and (min-width: 321px) and (max-width: 500px) {
-        .banner_background .contain h1 {
-          font-size: 28px; } }
-      @media only screen and (min-width: 501px) and (max-width: 600px) {
-        .banner_background .contain h1 {
-          font-size: 28px; } }
-      @media only screen and (min-width: 601px) and (max-width: 700px) {
-        .banner_background .contain h1 {
-          font-size: 30px; } }
-      @media only screen and (min-width: 701px) and (max-width: 800px) {
-        .banner_background .contain h1 {
-          font-size: 32px; } }
-    .banner_background .contain p {
-      color: #fff;
-      text-align: justify;
-      margin-top: 0px; }
-    .banner_background .contain button {
-      float: left;
-      background: #1a4c93;
-      border: #1a4c93;
-      border-bottom: 5px solid #1a4c93;
-      padding: 10px 30px 25px 30px;
-      font-size: 12px; }
-  .banner_background ul.slick-dots button {
-    margin-top: 100px;
-    padding: 10px; }
+.banner_background button {
+  background: #3c8dbc;
+  border: #3c8dbc;
+  border-bottom: 5px solid #3c8dbc;
+  padding: 10px 30px 25px 30px;
+  font-size: 12px; }
+
+.banner_background .containBanner1 {
+  background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
+
+.banner_background ul.slick-dots button {
+  margin-top: -10px;
+  padding: 10px; }
+
+.banner_background h4 {
+  color: #fff; }
+
+.banner_background h1 {
+  color: #fff;
+  font-size: 43px; }
+
+.banner_background p {
+  color: #fff; }
+
+.banner_background .containBanner2 {
+  background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
 
 .background-card {
   background: #fbfbfb;
@@ -401,7 +314,7 @@ p.backTop {
   padding: 5%;
   margin-bottom: 30%; }
   .background-card:hover {
-    border: 1px dotted #1a4c93;
+    border: 1px dotted #3c8dbc;
     background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
@@ -418,9 +331,9 @@ p.backTop {
       .background-card h3 {
         font-size: 14px; } }
   .background-card button {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc;
     padding: 10px 30px 25px 30px;
     font-size: 12px; }
     @media only screen and (max-width: 700px) {
@@ -429,17 +342,17 @@ p.backTop {
         font-size: 12px;
         margin-bottom: 15px; } }
   .background-card button:hover {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   .background-card button:active {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   .background-card button:focus {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   @media only screen and (max-width: 320px) {
     .background-card button {
       padding: 5px;
@@ -461,7 +374,7 @@ p.backTop {
   color: #000 !important; }
 
 .ant-tabs-ink-bar {
-  background-color: #1a4c93 !important; }
+  background-color: #3c8dbc !important; }
 
 .background-card2 {
   background: #fbfbfb;
@@ -473,8 +386,8 @@ p.backTop {
   .background-card2 img {
     margin-top: 20%; }
   .background-card2 button {
-    background: #1a4c93;
-    border: #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
     border-bottom: 5px solid #fbfbfb;
     padding: 10px 30px 25px 30px;
     font-size: 12px;
@@ -492,7 +405,7 @@ p.backTop {
     font-weight: bold; }
 
 button.explore {
-  background: #1a4c93;
+  background: #3c8dbc;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -504,7 +417,7 @@ button.explore {
       font-size: 12px; } }
 
 button.explore:hover {
-  background: #1a4c93;
+  background: #3c8dbc;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -515,12 +428,12 @@ button.explore:hover {
 
 .background-card2:hover {
   background: #fff;
-  box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #3c8dbc;
   transform: scale(1.1); }
   .background-card2:hover button {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc;
     font-size: 12px;
     display: inline-block !important; }
   .background-card2:hover p.price {
@@ -651,9 +564,9 @@ ul.slider-list {
     font-size: 18px;
     font-weight: bold; }
   .landing-lelang .body-header #date {
-    color: #1a4c93; }
+    color: #3c8dbc; }
   .landing-lelang .lelang-lot {
-    background: #1a4c93;
+    background: #3c8dbc;
     margin-top: 15px; }
     @media only screen and (max-width: 425px) {
       .landing-lelang .lelang-lot {
@@ -676,17 +589,17 @@ ul.slider-list {
           font-size: 12px;
           text-align: center;
           padding: 10px;
-          color: #1a4c93; } }
+          color: #3c8dbc; } }
       @media only screen and (max-width: 800px) {
         .landing-lelang .lelang-lot h2 {
-          color: #1a4c93;
+          color: #3c8dbc;
           font-size: 14px; } }
       @media only screen and (min-width: 700px) and (max-width: 780px) {
         .landing-lelang .lelang-lot h2 {
           font-size: 15px;
           text-align: center;
           padding: 10px;
-          color: #1a4c93; } }
+          color: #3c8dbc; } }
   .landing-lelang img {
     padding: 10px;
     margin-top: 15px; }
@@ -707,7 +620,7 @@ ul.slider-list {
       .landing-lelang .content-lelang {
         font-size: 12px; } }
     .landing-lelang .content-lelang button {
-      background: #1a4c93;
+      background: #3c8dbc;
       border: none;
       color: #fff;
       font-size: 12px; }
@@ -735,12 +648,12 @@ ul.slider-list {
     border: 2px dotted #ccc;
     margin-top: 2%; }
     .landing-lelang .row-lelang:hover {
-      border: 2px solid #1a4c93;
+      border: 2px solid #3c8dbc;
       transition: 0.5s; }
     .landing-lelang .row-lelang .grade-lelang {
       padding-top: 14%; }
       .landing-lelang .row-lelang .grade-lelang p.grade {
-        color: #1a4c93;
+        color: #3c8dbc;
         padding: 10px;
         border-radius: 10px;
         float: right;
@@ -751,7 +664,8 @@ ul.slider-list {
 
 .wrap-login {
   padding-top: 8%;
-  margin-right: 8%; }
+  margin-right: 8%;
+  padding-bottom: 8%; }
   .wrap-login a.login-form-forgot {
     float: right; }
   .wrap-login .boxshadow-login {
@@ -759,7 +673,7 @@ ul.slider-list {
     padding: 3%; }
   .wrap-login button.login-form-button {
     width: 100%;
-    background: #1a4c93;
+    background: #3c8dbc;
     border: none; }
   .wrap-login input::placeholder {
     font-size: 12px; }
@@ -773,3 +687,56 @@ ul.slider-list {
     .wrap-login {
       padding-top: 10%;
       padding-left: 10%; } }
+
+.wrap-registerChoosePage {
+  padding-top: 10%;
+  padding-bottom: 5%; }
+  .wrap-registerChoosePage .body-register {
+    border: 1px solid #ccc; }
+    .wrap-registerChoosePage .body-register .header {
+      background: #3c8dbc; }
+      .wrap-registerChoosePage .body-register .header p {
+        padding: 10px;
+        color: #fff; }
+    .wrap-registerChoosePage .body-register .headerLeftPanel {
+      background: #d2d6de;
+      margin-left: 10px; }
+      .wrap-registerChoosePage .body-register .headerLeftPanel p {
+        padding: 10px; }
+    .wrap-registerChoosePage .body-register .bodyLeftPanel {
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      margin-top: -15px;
+      margin-bottom: 15px; }
+      .wrap-registerChoosePage .body-register .bodyLeftPanel .content {
+        border: 1px solid #ccc;
+        margin: 10px;
+        overflow-y: auto;
+        height: 450px; }
+        .wrap-registerChoosePage .body-register .bodyLeftPanel .content h4 {
+          padding: 10px; }
+        .wrap-registerChoosePage .body-register .bodyLeftPanel .content p {
+          margin-left: 10px; }
+        .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar-track {
+          -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+          background-color: #F5F5F5; }
+        .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar {
+          width: 5px;
+          background-color: #F5F5F5; }
+        .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar-thumb {
+          background-color: #3c8dbc;
+          border: 1px solid #3c8dbc; }
+    .wrap-registerChoosePage .body-register .headerRightPanel {
+      border-top: 5px solid #3c8dbc;
+      border-left: 1px solid #ccc;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc;
+      margin-right: 15px;
+      padding: 10px; }
+      .wrap-registerChoosePage .body-register .headerRightPanel input::placeholder {
+        font-size: 12px; }
+      .wrap-registerChoosePage .body-register .headerRightPanel p {
+        margin-top: 5px; }
+      .wrap-registerChoosePage .body-register .headerRightPanel button {
+        background: #3c8dbc;
+        font-size: 12px; }

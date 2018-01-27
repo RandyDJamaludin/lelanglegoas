@@ -4,7 +4,7 @@
   padding: 5%;
   margin-bottom: 30%; }
   .background-card:hover {
-    border: 1px dotted #1a4c93;
+    border: 1px dotted #3c8dbc;
     background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
@@ -21,9 +21,9 @@
       .background-card h3 {
         font-size: 14px; } }
   .background-card button {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc;
     padding: 10px 30px 25px 30px;
     font-size: 12px; }
     @media only screen and (max-width: 700px) {
@@ -32,17 +32,17 @@
         font-size: 12px;
         margin-bottom: 15px; } }
   .background-card button:hover {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   .background-card button:active {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   .background-card button:focus {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93; }
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc; }
   @media only screen and (max-width: 320px) {
     .background-card button {
       padding: 5px;
@@ -64,7 +64,7 @@
   color: #000 !important; }
 
 .ant-tabs-ink-bar {
-  background-color: #1a4c93 !important; }
+  background-color: #3c8dbc !important; }
 
 .background-card2 {
   background: #fbfbfb;
@@ -76,8 +76,8 @@
   .background-card2 img {
     margin-top: 20%; }
   .background-card2 button {
-    background: #1a4c93;
-    border: #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
     border-bottom: 5px solid #fbfbfb;
     padding: 10px 30px 25px 30px;
     font-size: 12px;
@@ -95,7 +95,7 @@
     font-weight: bold; }
 
 button.explore {
-  background: #1a4c93;
+  background: #3c8dbc;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -107,7 +107,7 @@ button.explore {
       font-size: 12px; } }
 
 button.explore:hover {
-  background: #1a4c93;
+  background: #3c8dbc;
   color: #fff;
   padding: 10px 10px 30px 10px;
   width: 100%;
@@ -118,12 +118,12 @@ button.explore:hover {
 
 .background-card2:hover {
   background: #fff;
-  box-shadow: 0 0 5px #ccc;
+  box-shadow: 0 0 5px #3c8dbc;
   transform: scale(1.1); }
   .background-card2:hover button {
-    background: #1a4c93;
-    border: #1a4c93;
-    border-bottom: 5px solid #1a4c93;
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc;
     font-size: 12px;
     display: inline-block !important; }
   .background-card2:hover p.price {
@@ -254,9 +254,9 @@ ul.slider-list {
     font-size: 18px;
     font-weight: bold; }
   .landing-lelang .body-header #date {
-    color: #1a4c93; }
+    color: #3c8dbc; }
   .landing-lelang .lelang-lot {
-    background: #1a4c93;
+    background: #3c8dbc;
     margin-top: 15px; }
     @media only screen and (max-width: 425px) {
       .landing-lelang .lelang-lot {
@@ -279,17 +279,17 @@ ul.slider-list {
           font-size: 12px;
           text-align: center;
           padding: 10px;
-          color: #1a4c93; } }
+          color: #3c8dbc; } }
       @media only screen and (max-width: 800px) {
         .landing-lelang .lelang-lot h2 {
-          color: #1a4c93;
+          color: #3c8dbc;
           font-size: 14px; } }
       @media only screen and (min-width: 700px) and (max-width: 780px) {
         .landing-lelang .lelang-lot h2 {
           font-size: 15px;
           text-align: center;
           padding: 10px;
-          color: #1a4c93; } }
+          color: #3c8dbc; } }
   .landing-lelang img {
     padding: 10px;
     margin-top: 15px; }
@@ -310,7 +310,7 @@ ul.slider-list {
       .landing-lelang .content-lelang {
         font-size: 12px; } }
     .landing-lelang .content-lelang button {
-      background: #1a4c93;
+      background: #3c8dbc;
       border: none;
       color: #fff;
       font-size: 12px; }
@@ -338,12 +338,12 @@ ul.slider-list {
     border: 2px dotted #ccc;
     margin-top: 2%; }
     .landing-lelang .row-lelang:hover {
-      border: 2px solid #1a4c93;
+      border: 2px solid #3c8dbc;
       transition: 0.5s; }
     .landing-lelang .row-lelang .grade-lelang {
       padding-top: 14%; }
       .landing-lelang .row-lelang .grade-lelang p.grade {
-        color: #1a4c93;
+        color: #3c8dbc;
         padding: 10px;
         border-radius: 10px;
         float: right;

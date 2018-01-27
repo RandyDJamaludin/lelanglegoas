@@ -81,11 +81,12 @@ class Navigation extends Component {
                 </NavLink>
               </li>
 
-              <li eventkey={5}>
+              {/*<li eventkey={5}>
                 <NavLink to="/kontak" activeClassName="anchorActive">
                   Kontak Kami
                 </NavLink>
               </li>
+              */}
 
               <li eventkey={6}>
                 <NavLink to="/login" activeClassName="anchorActive">

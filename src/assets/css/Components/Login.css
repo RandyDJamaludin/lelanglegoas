@@ -1,6 +1,7 @@
 .wrap-login {
   padding-top: 8%;
-  margin-right: 8%; }
+  margin-right: 8%;
+  padding-bottom: 8%; }
   .wrap-login a.login-form-forgot {
     float: right; }
   .wrap-login .boxshadow-login {
@@ -8,7 +9,7 @@
     padding: 3%; }
   .wrap-login button.login-form-button {
     width: 100%;
-    background: #1a4c93;
+    background: #3c8dbc;
     border: none; }
   .wrap-login input::placeholder {
     font-size: 12px; }

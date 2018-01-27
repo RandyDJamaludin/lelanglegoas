@@ -18,7 +18,7 @@ export class Card2 extends Component {
                     tabPosition={'left'}
                     style={{ height: 'auto' }}
                   >
-                    <TabPane tab="New Auctions" key="1">
+                    <TabPane tab="Lelang terbaru" key="1">
                         
                         <Row>
                         {DataContentTab.map((data, index) => (
@@ -37,7 +37,7 @@ export class Card2 extends Component {
                           <Col xs={12} md={12}>
                             <Button className='explore'>
                               <p>
-                                View All New Auctions <Icon type="arrow-right" /> 
+                                Lihat Semua Lelang <Icon type="arrow-right" /> 
                               </p> 
                             </Button>
                           </Col>

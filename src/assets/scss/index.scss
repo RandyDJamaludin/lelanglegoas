@@ -8,7 +8,7 @@ body{
     width: 100%;
     
     a.anchorActive{
-        color:#1a4c93 !important;
+        color:#3c8dbc !important;
     }
     .navbar{
         padding-top:10px;
@@ -16,18 +16,18 @@ body{
         font-size:13px;
         box-shadow:0 0 10px #ccc;
         background: #fff;
-        color:#1a4c93;
+        color:#3c8dbc;
     }
     .navbar-inverse{
         border:none;
         
         .navbar-toggle{
             border:none;
-            background:#1a4c93;
+            background:#3c8dbc;
         }
         .navbar-toggle:hover{
             border:none;
-            background:#1a4c93;    
+            background:#3c8dbc;    
         }
         .navbar-collapse{
             border:none;
@@ -55,10 +55,10 @@ body{
                 a{
                     color:#000;
                     &:focus{
-                        color:#1a4c93;    
+                        color:#3c8dbc;    
                     }
                     &:hover{
-                        color:#1a4c93;
+                        color:#3c8dbc;
                     }
                 }
             }
@@ -67,7 +67,7 @@ body{
     }    
 }
 span.orange{
-    color:#1a4c93;
+    color:#3c8dbc;
     font-weight: bold;
 }
 ul.right{
@@ -88,7 +88,7 @@ img.logo{
             font-weight: bold;
         }
         #date{
-            color:#1a4c93;
+            color:#3c8dbc;
         }
     }
     .wrap-location{
@@ -105,15 +105,6 @@ img.logo{
         }
     }
 }
-
-.wrap-client{
-    padding-top:3%;
-    .client-border{
-        border-top:2px solid #f8f8f8;
-        padding-top:2%;
-    }
-}
-
 
 .adsense{
     padding-top:2%;
@@ -177,8 +168,8 @@ img.logo{
             button{
                 margin-top:5%;
                 width: 100%;
-                background:#1a4c93;
-                border:1px solid #1a4c93;
+                background:#3c8dbc;
+                border:1px solid #3c8dbc;
             }
         }
         .header{
@@ -189,7 +180,7 @@ img.logo{
                 text-transform: uppercase;
 
                 span{
-                    color:#1a4c93;
+                    color:#3c8dbc;
                 }
             }
         }
@@ -278,7 +269,7 @@ img.logo{
       text-transform: uppercase;
       font-size:12px;
       padding:10px;
-      background: #1a4c93;
+      background: #3c8dbc;
       color:#fff;
     }
   }
@@ -298,7 +289,7 @@ img.logo{
       text-transform: uppercase;
   }
   span.orange{
-    color:#1a4c93;
+    color:#3c8dbc;
     font-weight: bold;
   }
 }
@@ -324,64 +315,12 @@ img.logo{
     span{
       font-weight: bold;
       font-size:14px;
-      color:#1a4c93;
+      color:#3c8dbc;
     }
   }
 }
 
 // End Peraturan lelang
-
-// Page Register 
-
-.wrap-registerChoosePage{
-  padding-top:10%;
-  padding-bottom:5%;
-  .wrap-auction{
-    transition:1s;
-    .auction{
-      border: 3px solid #ccc;
-      padding:20%;
-      background:#f8f8f8;
-      border-radius: 100%;
-    }
-    .text-auction{
-      padding-top:10px;
-      font-size:20px;
-      color:#1a4c93;
-      font-weight: bold;
-      text-align: center;
-    }
-    &:hover{
-      margin-top:-10px;
-      margin-bottom:10px;
-      transition:1s;
-    }
-  }
-  .wrap-user{
-    transition:1s;
-    .user{
-      border: 3px solid #ccc;
-      background:#f8f8f8;
-      padding:20%;
-      border-radius: 100%;  
-    }
-    .text-user{
-      padding-top:10px;
-      font-size:20px;
-      font-weight: bold;
-      color:#1a4c93;
-      text-align: center;
-    }
-    &:hover{
-      transition:1s;
-      margin-top:-10px;
-      margin-bottom:10px;
-    }
-  }
-}
-
-// End Register
-
 
 // Page Tentang Kami
 
@@ -437,10 +376,6 @@ img.logo{
         padding-top:4%;
     }
 
-    .logo-addins{
-        padding-top:10%;
-    }
-
     .border{
         border-top:2px solid #f8f8f8;
         border-bottom:2px solid #f8f8f8;
@@ -448,7 +383,7 @@ img.logo{
         padding-top:2%;
         p.title{
           font-weight: bold;
-          color:#1a4c93;
+          color:#3c8dbc;
         }
     }
     p{
@@ -474,7 +409,7 @@ img.logo{
         padding-top:10px;
     }
     span{
-        color:#1a4c93;
+        color:#3c8dbc;
     }
 }
 
@@ -485,7 +420,7 @@ img.logo{
 p.backTop{
     border:none;
     font-size:30px;
-    color:#1a4c93;
+    color:#3c8dbc;
 }
 
 //End to Top
@@ -493,3 +428,4 @@ p.backTop{
 @import 'Components/Banner.scss';
 @import 'Components/Card.scss';
 @import 'Components/Login.scss';
+@import 'Components/Register.scss';
