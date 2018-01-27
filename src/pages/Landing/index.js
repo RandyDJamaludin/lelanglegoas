@@ -204,6 +204,7 @@ export class Index extends Component {
                   </Row>
                 </Grid>
               </div>
+              <a href="whatsapp://send?text=Hello Circledoo&phone=+6281999197186">Hello world </a>
           </div>
         )
     }
