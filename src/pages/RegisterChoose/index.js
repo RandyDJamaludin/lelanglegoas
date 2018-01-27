@@ -90,7 +90,7 @@ export class Index extends Component {
                       <Row>
                         <Form onSubmit={this.handleSubmit}>
                           <Col md={4}>
-                            <p> Nama Akun : </p>
+                            <p> Nama Akun </p>
                           </Col>
                           <Col md={7}>
                             <FormItem>
