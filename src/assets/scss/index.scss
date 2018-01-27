@@ -194,16 +194,16 @@ img.logo{
 .wrap-tatacara{
     padding-top:8%;
     .desktop-tatacaraPage{
-      
-      @media only screen and(max-width:800px){
-        display:none !important
-      }
+        padding-bottom:10%;  
+        @media only screen and(max-width:800px){
+            display:none !important
+        }
     }
     .mobile-tatacaraPage{
-      @media only screen and(min-width:801px){
-          display:none !important
-      }
-  }
+        @media only screen and(min-width:801px){
+            display:none !important
+        }
+    }
 }
 
 .wrap-tatacara{
@@ -340,7 +340,7 @@ img.logo{
   }
   .section-bottom{
     padding-top:5%;  
-    padding-bottom:10%;
+    padding-bottom:2%;
     .wrap-team{
       p.name{
         font-size:20px;

@@ -130,9 +130,11 @@ img.logo {
 
 .wrap-tatacara {
   padding-top: 8%; }
-  @media only screen and (max-width: 800px) {
-    .wrap-tatacara .desktop-tatacaraPage {
-      display: none !important; } }
+  .wrap-tatacara .desktop-tatacaraPage {
+    padding-bottom: 10%; }
+    @media only screen and (max-width: 800px) {
+      .wrap-tatacara .desktop-tatacaraPage {
+        display: none !important; } }
   @media only screen and (min-width: 801px) {
     .wrap-tatacara .mobile-tatacaraPage {
       display: none !important; } }
@@ -226,7 +228,7 @@ img.logo {
     text-transform: uppercase; }
   .wrap-tentangKamiPage .section-bottom {
     padding-top: 5%;
-    padding-bottom: 10%; }
+    padding-bottom: 2%; }
     .wrap-tentangKamiPage .section-bottom .wrap-team {
       text-align: center; }
       .wrap-tentangKamiPage .section-bottom .wrap-team p.name {
@@ -470,7 +472,7 @@ button.explore:hover {
   padding-top: 20px;
   padding-bottom: 20px;
   border: 1px solid #ccc;
-  height: 330px; }
+  height: 300px; }
   .wrap-cardCarousel .background-cardCarousel:hover {
     background: #f8f8f8;
     cursor: pointer; }

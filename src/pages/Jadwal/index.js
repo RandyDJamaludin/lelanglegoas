@@ -95,10 +95,6 @@ export class Index extends Component {
                   </AutoCarousel>
                 </Row>
               </Grid>
-
-              <div className='adsense'>
-                <Adsense/>
-              </div>
             </div>
 
         )

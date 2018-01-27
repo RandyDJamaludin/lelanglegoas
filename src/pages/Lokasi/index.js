@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import Map from '../Components/Map'
-import { Adsense } from '../Components/Adsense'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Icon } from 'antd'
 import AutoCarousel from 'nuka-carousel'
@@ -57,8 +56,6 @@ export class Index extends Component {
                   </AutoCarousel>
                 </Row>
               </Grid>
-              
-              <Adsense/>
             </div>
         )
     }

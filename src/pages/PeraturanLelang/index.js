@@ -60,13 +60,13 @@ export class Index extends Component {
                     </div>
                   </Panel>
 
-                  <Panel header="Fource Majoure" key="5">
+                  <Panel header="Fource Majoure" key="6">
                     <div className='collapse-body'>
                       <p>Apabila terjadi FORCE MAJOURE seperti bencana alam, kerusuhan masa dan tindakan pemerintah dalam bidang moneter, maka segala akibat dan atau kerugian yang timbul menjadi tanggung jawab pemenang. </p>
                     </div>
                   </Panel>
 
-                  <Panel header="Ketentuan lain - lain " key="5">
+                  <Panel header="Ketentuan lain - lain " key="7">
                     <div className='collapse-body'>
                       <p><span> 1 </span> Biaya yang timbul dalam rangka peralihan hak atau pengembalian / pemindahan kendaraan menjadi tanggung jawab pemenang. </p>
                       <p><span> 2 </span> Objek lelang tidak bisa ditukar sebagian atau keseluruhan dengan objek lain manapun.</p>
