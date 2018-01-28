@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { compose, withProps } from "recompose"
 import { Grid, Row, Col } from 'react-bootstrap'
-import GoCalendar from 'react-icons/lib/go/calendar'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import GoCalendar from 'react-icons/lib/go/calendar'
 
 const MyMapComponent = compose(
     withProps({

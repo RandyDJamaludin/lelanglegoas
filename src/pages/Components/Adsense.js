@@ -16,5 +16,4 @@ export class Adsense extends Component {
         )
     }
 }
- 
 export default Adsense;

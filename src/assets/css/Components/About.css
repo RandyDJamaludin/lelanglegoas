@@ -1,0 +1,177 @@
+* {
+  box-sizing: border-box; }
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -ms-flex; }
+  .flex.column {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column; }
+  .flex.row {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    -ms-flex-direction: row; }
+  .flex .swap1 {
+    order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+    -o-order: 1;
+    -ms-order: 1; }
+  .flex .swap2 {
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -o-order: 2;
+    -ms-order: 2; }
+
+@media screen and (max-width: 767px) {
+  .flex .swap1 {
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -o-order: 2;
+    -ms-order: 2; }
+  .flex .swap2 {
+    order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+    -o-order: 1;
+    -ms-order: 1; } }
+
+section {
+  padding-bottom: 5%; }
+  section .title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px; }
+    section .title:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      margin: 20px auto;
+      background-color: #B9DE26; }
+
+#top-menu {
+  margin-bottom: 0px;
+  padding: 10px;
+  border: none;
+  background: none; }
+  #top-menu .logo {
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: auto; }
+  #top-menu #top-menu-content .nav > li > a {
+    padding-right: 5px; }
+  #top-menu #top-menu-content .active a, #top-menu #top-menu-content .open a {
+    background: none; }
+  #top-menu #top-menu-content .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); }
+
+@media screen and (max-width: 991px) {
+  #top-menu .logo {
+    position: relative; } }
+
+@media screen and (max-width: 767px) {
+  #top-menu .dropdown-toggle:focus, #top-menu .dropdown-toggle:visited, #top-menu .dropdown-toggle:active {
+    color: #777; }
+  #top-menu .dropdown-toggle .caret {
+    display: none; }
+  #top-menu .dropdown-menu {
+    display: block;
+    position: static;
+    width: 100%;
+    float: none; }
+    #top-menu .dropdown-menu .dropdown-header, #top-menu .dropdown-menu a {
+      padding: 5px 15px 5px 25px; }
+    #top-menu .dropdown-menu a {
+      line-height: 20px;
+      color: #777; } }
+
+#top-picture {
+  width: 100%;
+  height: 200px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent, url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  /* Fallback */
+  background-image: url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(transparent)), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -webkit-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -moz-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -ms-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -o-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', EndColorStr='transparent')"; }
+  #top-picture .content {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -o-align-items: flex-end;
+    -ms-align-items: flex-end; }
+    #top-picture .content .card {
+      max-width: 600px;
+      color: #EAEAEA;
+      text-align: center;
+      margin-bottom: 65px; }
+      #top-picture .content .card .line {
+        display: inline-block;
+        width: 100px;
+        height: 3px;
+        margin: 15px;
+        background-color: #B9DE26; }
+      #top-picture .content .card .description {
+        font-size: 24px; }
+
+@media screen and (max-width: 767px) {
+  #top-picture {
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.35), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    /* Fallback */
+    background-image: url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.7)), to(transparent)), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(0, 0, 0, 0.7)', EndColorStr='transparent')"; }
+    #top-picture .content {
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      -o-align-items: flex-start;
+      -ms-align-items: flex-start; } }

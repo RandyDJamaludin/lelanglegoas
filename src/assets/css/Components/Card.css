@@ -1,10 +1,7 @@
 .background-card {
   background: #fbfbfb;
-  margin-top: 10%;
-  padding: 5%;
-  margin-bottom: 30%; }
+  padding: 10px; }
   .background-card:hover {
-    border: 1px dotted #3c8dbc;
     background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
@@ -47,24 +44,6 @@
     .background-card button {
       padding: 5px;
       font-size: 10px; } }
-
-.body-card2 {
-  padding-top: 5%;
-  padding-bottom: 5%; }
-
-.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
-  text-align: left !important;
-  border: 2px solid #f8f8f8;
-  font-size: 12px;
-  padding: 15px 40px 15px 40px;
-  color: #ccc; }
-
-.ant-tabs-tab-active.ant-tabs-tab {
-  background: #f8f8f8;
-  color: #000 !important; }
-
-.ant-tabs-ink-bar {
-  background-color: #3c8dbc !important; }
 
 .background-card2 {
   background: #fbfbfb;
@@ -129,63 +108,55 @@ button.explore:hover {
   .background-card2:hover p.price {
     padding-bottom: 0px !important; }
 
-.wrap-cardCarousel .header-ongoing {
-  margin-top: 10px; }
-
-.wrap-cardCarousel button {
-  font-size: 12px; }
-
-.wrap-cardCarousel .header {
-  background: #f8f8f8;
-  margin-bottom: 15px; }
-  .wrap-cardCarousel .header p.left {
-    font-weight: bold;
-    padding-top: 15px;
-    padding-left: 10px; }
-  .wrap-cardCarousel .header p.right {
-    color: #ccc;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 20px;
-    float: right;
-    transition: 0.2s; }
-    .wrap-cardCarousel .header p.right:hover {
-      padding-right: 10px;
-      transition: 0.2s; }
-
-.wrap-cardCarousel li.slider-slide {
-  position: none !important; }
-
-.wrap-cardCarousel .background-cardCarousel {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border: 1px solid #ccc;
-  height: 300px; }
-  .wrap-cardCarousel .background-cardCarousel:hover {
+.wrap-cardCarousel {
+  padding-top: 10px; }
+  .wrap-cardCarousel .header-ongoing {
+    margin-top: 10px; }
+  .wrap-cardCarousel button {
+    font-size: 12px; }
+  .wrap-cardCarousel .header {
     background: #f8f8f8;
-    cursor: pointer; }
-
-.wrap-cardCarousel img {
-  padding-top: 7%;
-  width: 80%;
-  padding: 10px; }
-
-.wrap-cardCarousel h3 {
-  font-size: 14px;
-  padding-top: 10%;
-  font-weight: bold; }
-
-.wrap-cardCarousel p.color {
-  font-size: 12px;
-  line-height: 0.5; }
-
-.wrap-cardCarousel p.last {
-  line-height: 0.5;
-  font-size: 12px; }
-
-@media only screen and (max-width: 987px) {
-  .wrap-cardCarousel {
-    display: none; } }
+    margin-bottom: 15px; }
+    .wrap-cardCarousel .header p.left {
+      font-weight: bold;
+      padding-top: 15px;
+      padding-left: 10px; }
+    .wrap-cardCarousel .header p.right {
+      color: #ccc;
+      padding-top: 15px;
+      padding-left: 10px;
+      padding-right: 20px;
+      float: right;
+      transition: 0.2s; }
+      .wrap-cardCarousel .header p.right:hover {
+        padding-right: 10px;
+        transition: 0.2s; }
+  .wrap-cardCarousel li.slider-slide {
+    position: none !important; }
+  .wrap-cardCarousel .background-cardCarousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc; }
+    .wrap-cardCarousel .background-cardCarousel:hover {
+      background: #f8f8f8;
+      cursor: pointer; }
+  .wrap-cardCarousel img {
+    padding-top: 7%;
+    width: 80%;
+    padding: 10px; }
+  .wrap-cardCarousel h3 {
+    font-size: 14px;
+    padding-top: 10%;
+    font-weight: bold; }
+  .wrap-cardCarousel p.color {
+    font-size: 12px;
+    line-height: 0.5; }
+  .wrap-cardCarousel p.last {
+    line-height: 0.5;
+    font-size: 12px; }
+  @media only screen and (max-width: 987px) {
+    .wrap-cardCarousel {
+      display: none; } }
 
 .wrap-cardCarouselMobile {
   display: none; }
@@ -213,12 +184,8 @@ button.explore:hover {
   .wrap-cardCarouselMobile li.slider-slide {
     position: none !important; }
   .wrap-cardCarouselMobile .background-cardCarousel {
-    padding-top: 50px;
-    border: 1px solid #ccc;
-    height: 400px; }
-    @media only screen and (max-width: 425px) {
-      .wrap-cardCarouselMobile .background-cardCarousel {
-        height: 280px; } }
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #ccc; }
     .wrap-cardCarouselMobile .background-cardCarousel:hover {
       background: #f8f8f8;
       cursor: pointer; }
@@ -292,7 +259,7 @@ ul.slider-list {
           color: #3c8dbc; } }
   .landing-lelang img {
     padding: 10px;
-    margin-top: 15px; }
+    margin-top: 25px; }
   .landing-lelang .content-lelang {
     margin-top: 4%; }
     .landing-lelang .content-lelang p.sub-title {
@@ -336,7 +303,8 @@ ul.slider-list {
     padding-left: 10%; }
   .landing-lelang .row-lelang {
     border: 2px dotted #ccc;
-    margin-top: 2%; }
+    margin-top: 2%;
+    padding: 20px; }
     .landing-lelang .row-lelang:hover {
       border: 2px solid #3c8dbc;
       transition: 0.5s; }
@@ -351,3 +319,6 @@ ul.slider-list {
     @media only screen and (max-width: 768px) {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
+
+.alice-carousel__wrapper {
+  border: none !important; }

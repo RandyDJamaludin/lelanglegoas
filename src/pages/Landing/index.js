@@ -1,27 +1,18 @@
 import React, { Component } from 'react'
 import { Image, Grid, Row, Col } from 'react-bootstrap'
-import { Icon, Input } from 'antd'
-import AutoCarousel  from 'nuka-carousel'
-
-//Files
-import Banner from '../Components/Banner'
-import Card1 from '../Components/Card1'
-import { CardCarousel } from '../Components/CardCarousel';
-import { DataCard1 } from '../AllData/DataCard1'
-import { DataCardLocation } from '../AllData/DataCardLocation'
-import { DataCardCarousel } from '../AllData/DataCardCarousel' 
-import JadwalLelang from '../Components/JadwalLelang'
-import TabLeft from '../Components/TabLeft'
-import Adsense from '../Components/Adsense'
-import Map from '../Components/Map'
+import { Icon } from 'antd'
+import { Card, CardCarousel, JadwalLelang } from '../Components/Card'
+import { DataCard, DataCardLocation, DataCardCarousel } from '../AllData/DataCard'
+import { Banner } from '../Components/Banner'
 import { NavLink } from 'react-router-dom'
-
+import AliceCarousel from 'react-alice-carousel'
+import Map from '../Components/Map'
+import TabLeft from '../Components/TabLeft'
 import Image1 from '../../assets/image/icon/save.png'
 import Image2 from '../../assets/image/icon/incountry.png'
 import Image3 from '../../assets/image/icon/quality.png'
 import Image4 from '../../assets/image/icon/performance.png'
 import Image5 from '../../assets/image/icon/24hours.png'
-const Search = Input.Search;
 
 export class Index extends Component {
   static defaultProps = {
@@ -29,26 +20,26 @@ export class Index extends Component {
     zoom: 11
   }
     render() { 
+      const responsive = {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 2
+        },
+        1024: {
+          items: 3
+        }
+      };
         return (
           <div>
               <Banner/>
-                <Grid>
-                <div style={{marginTop:20}}>
+                <Grid style={{paddingTop:'2%'}}>
                   <Row>
-                    <Col xs={12} md={4}>
-                      <Search
-                        placeholder="Cari mobil"
-                        onSearch={value => console.log(value)}
-                        style={{ width: '100%' }}
-                      />
-                    </Col>
-                  </Row>
-                </div>
-                  <Row>
-                  {DataCard1.map((data, index) => (
-                    <Col xs={6} md={4} key={data.key}>
+                  {DataCard.map((data, index) => (
+                    <Col xs={12} md={4} key={data.key}>
                       
-                      <Card1 
+                      <Card
                         name={data.name}
                         image={data.image}
                         price={data.price}
@@ -71,43 +62,69 @@ export class Index extends Component {
                   </Row>
                 </div>
                 <Row>
-                  <AutoCarousel slidesToShow={4} speed={200} autoTime={10}>
-                      {DataCardCarousel.map((data, index) => (
-                        <Col xs={12} md={12} key={data.key}>  
-                          <CardCarousel
-                            name={data.name}
-                            image={data.image}
-                            color={data.color}
-                            lastBid={data.lastBid}
-                            openhouse={data.openhouse}
-                          />
-                        </Col>
-                      ))}
-                  </AutoCarousel>
+                  <AliceCarousel
+                      duration={400}
+                      autoPlay={true}
+                      startIndex = {1}
+                      fadeOutAnimation={true}
+                      mouseDragEnabled={true}
+                      playButtonEnabled={true}
+                      responsive={responsive}
+                      autoPlayInterval={2000}
+                      autoPlayDirection="rtl"
+                      autoPlayActionDisabled={true}
+                      onSlideChange={this.onSlideChange}
+                      onSlideChanged={this.onSlideChanged}
+                    >
+                    {DataCardCarousel.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>  
+                        <CardCarousel
+                          name={data.name}
+                          image={data.image}
+                          color={data.color}
+                          lastBid={data.lastBid}
+                          openhouse={data.openhouse}
+                        />
+                      </Col>
+                    ))}
+                  </AliceCarousel>
+
                 </Row>
               </Grid>
 
               <Grid className='wrap-cardCarouselMobile'>
                 <Row>
-                  <AutoCarousel slidesToShow={2} speed={400} dragging={true} autoTime={100}>
-                      {DataCardCarousel.map((data, index) => (
-                        <Col xs={12} md={12} key={data.key}>  
-                          <CardCarousel
-                            name={data.name}
-                            image={data.image}
-                            color={data.color}
-                            lastBid={data.lastBid}
-                          />
-                        </Col>
-                      ))}
-                  </AutoCarousel>
+                  <AliceCarousel
+                      duration={400}
+                      autoPlay={true}
+                      startIndex = {1}
+                      fadeOutAnimation={true}
+                      mouseDragEnabled={true}
+                      playButtonEnabled={true}
+                      responsive={responsive}
+                      autoPlayInterval={2000}
+                      autoPlayDirection="rtl"
+                      autoPlayActionDisabled={true}
+                      onSlideChange={this.onSlideChange}
+                      onSlideChanged={this.onSlideChanged}
+                    >
+                    {DataCardCarousel.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>  
+                        <CardCarousel
+                          name={data.name}
+                          image={data.image}
+                          color={data.color}
+                          lastBid={data.lastBid}
+                          openhouse={data.openhouse}
+                        />
+                      </Col>
+                    ))}
+                  </AliceCarousel>
                 </Row>
               </Grid>
 
-
               <TabLeft/>
-              <Adsense/>
-
+              
               <div className='landing-lelang'>
                 <Grid>
                   <div className='body-header'>
@@ -144,18 +161,18 @@ export class Index extends Component {
                 <Grid>
                   <p className='header'> Why People Love Us </p>
                   <Row style={{marginTop:'5%'}}>
-                    <Col xs={2} md={2}/>
-                    <Col xs={2} md={2}>
+                    <Col md={2}/>
+                    <Col xs={4} md={2}>
                       <Image src={Image1} circle width='100%'/>
                     </Col>
 
-                    <Col xs={1} md={1}/>
-                    <Col xs={2} md={2}>
+                    <Col md={1}/>
+                    <Col xs={4} md={2}>
                       <Image src={Image2} circle width='100%'/>
                     </Col>
 
-                    <Col xs={1} md={1}/>
-                    <Col xs={2} md={2}>
+                    <Col md={1}/>
+                    <Col xs={4} md={2}>
                       <Image src={Image3} circle width='100%'/>
                     </Col>
 
@@ -164,13 +181,13 @@ export class Index extends Component {
 
                   <Row style={{marginLeft:'7%', marginTop:'5%', marginBottom:'5%'}}>
                     
-                    <Col xs={3} md={3}/>
-                    <Col xs={2} md={2}>
+                    <Col xs={2} md={3}/>
+                    <Col xs={4} md={2}>
                       <Image src={Image4} circle width='100%'/>
                     </Col>
 
-                    <Col xs={1} md={1}/>
-                    <Col xs={2} md={2}>
+                    <Col md={1}/>
+                    <Col xs={4} md={2}>
                       <Image src={Image5} circle width='100%'/>
                     </Col>
 

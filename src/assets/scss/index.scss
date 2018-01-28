@@ -2,6 +2,10 @@ body{
     background:#fff !important;
     font-family: Helvetica !important;
 }
+button.buttonSearch{
+    width:100%;
+    margin-top:24px;
+}
 .wrap-nav{
     position:fixed;
     z-index: 999;
@@ -125,6 +129,10 @@ img.logo{
     @media only screen and(max-width:600px){
         padding-top:18%;
     }
+    .searchPanel{
+        box-shadow:0 0 10px #ccc;
+        padding:20px;
+    }
 }
 
 
@@ -192,7 +200,7 @@ img.logo{
 // Tata cara lelang
 
 .wrap-tatacara{
-    padding-top:8%;
+    padding-top:5%;
     .desktop-tatacaraPage{
         padding-bottom:10%;  
         @media only screen and(max-width:800px){
@@ -241,46 +249,10 @@ img.logo{
 //End tata cara lelang
 
 
-// View Car
-
-.wrap-viewCarPage{
-  padding-top:8%;
-  padding-bottom:10%;
-  .body-panel{
-    background:#fff;
-    border:1px solid #ccc;
-    margin-top:-12px;
-    margin-left:0px;
-    margin-right:0px;
-    padding:15px;
-  }
-  p.header{
-    font-size:18px;
-    font-weight: bold;
-    font-family: Helvetica;
-    text-transform: uppercase;
-  }
-  p.overview-title{
-    font-weight: bold;
-    font-size:16px;
-  }
-  .right-panel{
-    p.title{
-      text-transform: uppercase;
-      font-size:12px;
-      padding:10px;
-      background: #3c8dbc;
-      color:#fff;
-    }
-  }
-}
-
-// End View Car
-
 // Pengertian lelang
 
 .wrap-pengertianLelangPage{
-  padding-top:8%;
+  padding-top:5%;
   padding-bottom:8%;
   p.header{
       font-size:18px;
@@ -299,7 +271,8 @@ img.logo{
 // Peraturan lelang
 
 .wrap-peraturanLelangPage{
-  padding-top:8%;
+  padding-top:5%;
+  padding-bottom:5%;
   p.header{
     font-size:18px;
     font-weight: bold;
@@ -325,11 +298,11 @@ img.logo{
 // Page Tentang Kami
 
 .wrap-tentangKamiPage{
-  padding-top:8%;
-  .image-business{
-    background:url('https://www.universitiesabroad.com/sites/all/files/public/field/image/business%20admin2.jpg');
-    background-size:cover;
-    height: 300px;
+  padding-top:5%;
+  .banner{
+      background:url(https://i2.wp.com/wannabebucks.org/wp-content/uploads/2017/12/work-experience.jpg?resize=1022%2C486&ssl=1) no-repeat;
+      background-size:cover;
+      padding:2%;
   }
   .right-panel{
     p.header{
@@ -337,21 +310,11 @@ img.logo{
       font-weight: bold;
       text-transform: uppercase;
     }
-  }
-  .section-bottom{
-    padding-top:5%;  
-    padding-bottom:2%;
-    .wrap-team{
-      p.name{
-        font-size:20px;
-        font-weight: bold;
-        height:10px;
-        margin-top:10px;
-      }
-      text-align: center;
+    p.description{
+        line-height: 2;
     }
   }
-  
+
 }
 
 // End Tentang Kami
@@ -364,14 +327,6 @@ img.logo{
     .logo-footer{
         padding-bottom:2%;
     }
-    p.street{
-        line-height: 0.8;
-    }
-
-    p.phone{
-        line-height: 0;    
-    }
-
     .body-client{
         padding-top:4%;
     }
@@ -427,5 +382,9 @@ p.backTop{
 
 @import 'Components/Banner.scss';
 @import 'Components/Card.scss';
+@import 'Components/About.scss';
+@import 'Components/TabLeft.scss';
 @import 'Components/Login.scss';
 @import 'Components/Register.scss';
+@import 'Components/ViewCar.scss';
+@import "react-alice-carousel/src/alice-carousel.scss";

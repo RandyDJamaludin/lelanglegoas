@@ -30,4 +30,18 @@ export class Banner extends Component {
     }
 }
  
-export default Banner;
+export class BannerInfo extends Component{
+  render(){
+    return(
+      <div id="top-picture">
+        <div className="content">
+          <div className="card">
+            <h1 className="title" style={{ color: "#fff" }}>
+              {this.props.title}
+            </h1>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}

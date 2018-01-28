@@ -3,7 +3,6 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import { Icon, Form, Input, Button } from 'antd'
 const { TextArea } = Input;
 
-
 export class Index extends Component {
     render() { 
         return (

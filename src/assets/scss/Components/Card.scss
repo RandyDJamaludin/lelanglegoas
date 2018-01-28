@@ -1,12 +1,8 @@
 
 .background-card{
     background:#fbfbfb;
-    margin-top:10%;
-    padding:5%;
-    margin-bottom:30%;
-    
+    padding:10px;
     &:hover{
-        border: 1px dotted #3c8dbc;
         background:#fff;
     }
 
@@ -63,30 +59,6 @@
         }
     }
 }
-
-// Tab Vertical
-.body-card2{
-    padding-top:5%;
-    padding-bottom:5%;
-}
-.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab{
-    text-align: left !important;
-    border: 2px solid #f8f8f8;
-    font-size:12px;
-    padding:15px 40px 15px 40px;
-    color:#ccc;
-}
-.ant-tabs-tab-active.ant-tabs-tab{
-    background:#f8f8f8;
-    color:#000 !important;
-}
-.ant-tabs-ink-bar{
-    background-color: #3c8dbc !important;
-}
-
-// End Tab Vertical
-
-
 
 // Card 2
 .background-card2{
@@ -172,6 +144,7 @@ button.explore:hover{
 // background carousel 
 
 .wrap-cardCarousel{
+    padding-top:10px;
     .header-ongoing{
         margin-top:10px;
     }
@@ -209,7 +182,6 @@ button.explore:hover{
         padding-top:20px;
         padding-bottom:20px;
         border:1px solid #ccc;
-        height:300px;
 
         &:hover{
             background:#f8f8f8;
@@ -276,13 +248,8 @@ button.explore:hover{
         position:none !important;
     }
     .background-cardCarousel{
-        padding-top:50px;
+        padding:10px 10px 10px 10px;
         border:1px solid #ccc;
-        height:400px;
-
-        @media only screen and(max-width:425px){
-            height:280px;
-        }
 
         &:hover{
             background:#f8f8f8;
@@ -380,7 +347,7 @@ ul.slider-list{
     }
     img{
         padding:10px;
-        margin-top:15px;
+        margin-top:25px;
     }
 
     .content-lelang{
@@ -436,6 +403,7 @@ ul.slider-list{
     .row-lelang{
         border:2px dotted #ccc;
         margin-top:2%;
+        padding:20px;
 
         &:hover{
             border:2px solid #3c8dbc;
@@ -457,3 +425,6 @@ ul.slider-list{
     }
 }
 
+.alice-carousel__wrapper{
+    border:none !important;
+}

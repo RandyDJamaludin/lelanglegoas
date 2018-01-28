@@ -2,6 +2,10 @@ body {
   background: #fff !important;
   font-family: Helvetica !important; }
 
+button.buttonSearch {
+  width: 100%;
+  margin-top: 24px; }
+
 .wrap-nav {
   position: fixed;
   z-index: 999;
@@ -90,6 +94,9 @@ img.logo {
   @media only screen and (max-width: 600px) {
     .page-jadwal {
       padding-top: 18%; } }
+  .page-jadwal .searchPanel {
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px; }
 
 .wrap-people {
   background: #fff;
@@ -129,7 +136,7 @@ img.logo {
         color: #3c8dbc; }
 
 .wrap-tatacara {
-  padding-top: 8%; }
+  padding-top: 5%; }
   .wrap-tatacara .desktop-tatacaraPage {
     padding-bottom: 10%; }
     @media only screen and (max-width: 800px) {
@@ -162,33 +169,8 @@ img.logo {
     .wrap-tatacara .body-tatacara p.header {
       font-size: 16px; } }
 
-.wrap-viewCarPage {
-  padding-top: 8%;
-  padding-bottom: 10%; }
-  .wrap-viewCarPage .body-panel {
-    background: #fff;
-    border: 1px solid #ccc;
-    margin-top: -12px;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 15px; }
-  .wrap-viewCarPage p.header {
-    font-size: 18px;
-    font-weight: bold;
-    font-family: Helvetica;
-    text-transform: uppercase; }
-  .wrap-viewCarPage p.overview-title {
-    font-weight: bold;
-    font-size: 16px; }
-  .wrap-viewCarPage .right-panel p.title {
-    text-transform: uppercase;
-    font-size: 12px;
-    padding: 10px;
-    background: #3c8dbc;
-    color: #fff; }
-
 .wrap-pengertianLelangPage {
-  padding-top: 8%;
+  padding-top: 5%;
   padding-bottom: 8%; }
   .wrap-pengertianLelangPage p.header {
     font-size: 18px;
@@ -200,7 +182,8 @@ img.logo {
     font-weight: bold; }
 
 .wrap-peraturanLelangPage {
-  padding-top: 8%; }
+  padding-top: 5%;
+  padding-bottom: 5%; }
   .wrap-peraturanLelangPage p.header {
     font-size: 18px;
     font-weight: bold;
@@ -217,34 +200,22 @@ img.logo {
       color: #3c8dbc; }
 
 .wrap-tentangKamiPage {
-  padding-top: 8%; }
-  .wrap-tentangKamiPage .image-business {
-    background: url("https://www.universitiesabroad.com/sites/all/files/public/field/image/business%20admin2.jpg");
+  padding-top: 5%; }
+  .wrap-tentangKamiPage .banner {
+    background: url(https://i2.wp.com/wannabebucks.org/wp-content/uploads/2017/12/work-experience.jpg?resize=1022%2C486&ssl=1) no-repeat;
     background-size: cover;
-    height: 300px; }
+    padding: 2%; }
   .wrap-tentangKamiPage .right-panel p.header {
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase; }
-  .wrap-tentangKamiPage .section-bottom {
-    padding-top: 5%;
-    padding-bottom: 2%; }
-    .wrap-tentangKamiPage .section-bottom .wrap-team {
-      text-align: center; }
-      .wrap-tentangKamiPage .section-bottom .wrap-team p.name {
-        font-size: 20px;
-        font-weight: bold;
-        height: 10px;
-        margin-top: 10px; }
+  .wrap-tentangKamiPage .right-panel p.description {
+    line-height: 2; }
 
 .wrap-footer {
   color: #b3b3b3; }
   .wrap-footer .logo-footer {
     padding-bottom: 2%; }
-  .wrap-footer p.street {
-    line-height: 0.8; }
-  .wrap-footer p.phone {
-    line-height: 0; }
   .wrap-footer .body-client {
     padding-top: 4%; }
   .wrap-footer .border {
@@ -285,11 +256,18 @@ p.backTop {
   border-bottom: 5px solid #3c8dbc;
   padding: 10px 30px 25px 30px;
   font-size: 12px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background button {
+      margin-left: 30px; } }
 
 .banner_background .containBanner1 {
   background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg") center no-repeat;
   background-size: cover;
   padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner1 {
+      padding: 100px 0px 0px 0px !important;
+      height: 400px !important; } }
 
 .banner_background ul.slick-dots button {
   margin-top: -10px;
@@ -297,26 +275,37 @@ p.backTop {
 
 .banner_background h4 {
   color: #fff; }
+  @media only screen and (max-width: 425px) {
+    .banner_background h4 {
+      margin-left: 30px; } }
 
 .banner_background h1 {
   color: #fff;
   font-size: 43px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background h1 {
+      font-size: 30px !important;
+      margin-left: 30px; } }
 
 .banner_background p {
   color: #fff; }
+  @media only screen and (max-width: 425px) {
+    .banner_background p {
+      margin-left: 30px; } }
 
 .banner_background .containBanner2 {
   background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg") center no-repeat;
   background-size: cover;
   padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner2 {
+      padding: 100px 0px 0px 0px !important;
+      height: 400px !important; } }
 
 .background-card {
   background: #fbfbfb;
-  margin-top: 10%;
-  padding: 5%;
-  margin-bottom: 30%; }
+  padding: 10px; }
   .background-card:hover {
-    border: 1px dotted #3c8dbc;
     background: #fff; }
   @media only screen and (max-width: 700px) {
     .background-card {
@@ -359,24 +348,6 @@ p.backTop {
     .background-card button {
       padding: 5px;
       font-size: 10px; } }
-
-.body-card2 {
-  padding-top: 5%;
-  padding-bottom: 5%; }
-
-.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
-  text-align: left !important;
-  border: 2px solid #f8f8f8;
-  font-size: 12px;
-  padding: 15px 40px 15px 40px;
-  color: #ccc; }
-
-.ant-tabs-tab-active.ant-tabs-tab {
-  background: #f8f8f8;
-  color: #000 !important; }
-
-.ant-tabs-ink-bar {
-  background-color: #3c8dbc !important; }
 
 .background-card2 {
   background: #fbfbfb;
@@ -441,63 +412,55 @@ button.explore:hover {
   .background-card2:hover p.price {
     padding-bottom: 0px !important; }
 
-.wrap-cardCarousel .header-ongoing {
-  margin-top: 10px; }
-
-.wrap-cardCarousel button {
-  font-size: 12px; }
-
-.wrap-cardCarousel .header {
-  background: #f8f8f8;
-  margin-bottom: 15px; }
-  .wrap-cardCarousel .header p.left {
-    font-weight: bold;
-    padding-top: 15px;
-    padding-left: 10px; }
-  .wrap-cardCarousel .header p.right {
-    color: #ccc;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 20px;
-    float: right;
-    transition: 0.2s; }
-    .wrap-cardCarousel .header p.right:hover {
-      padding-right: 10px;
-      transition: 0.2s; }
-
-.wrap-cardCarousel li.slider-slide {
-  position: none !important; }
-
-.wrap-cardCarousel .background-cardCarousel {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border: 1px solid #ccc;
-  height: 300px; }
-  .wrap-cardCarousel .background-cardCarousel:hover {
+.wrap-cardCarousel {
+  padding-top: 10px; }
+  .wrap-cardCarousel .header-ongoing {
+    margin-top: 10px; }
+  .wrap-cardCarousel button {
+    font-size: 12px; }
+  .wrap-cardCarousel .header {
     background: #f8f8f8;
-    cursor: pointer; }
-
-.wrap-cardCarousel img {
-  padding-top: 7%;
-  width: 80%;
-  padding: 10px; }
-
-.wrap-cardCarousel h3 {
-  font-size: 14px;
-  padding-top: 10%;
-  font-weight: bold; }
-
-.wrap-cardCarousel p.color {
-  font-size: 12px;
-  line-height: 0.5; }
-
-.wrap-cardCarousel p.last {
-  line-height: 0.5;
-  font-size: 12px; }
-
-@media only screen and (max-width: 987px) {
-  .wrap-cardCarousel {
-    display: none; } }
+    margin-bottom: 15px; }
+    .wrap-cardCarousel .header p.left {
+      font-weight: bold;
+      padding-top: 15px;
+      padding-left: 10px; }
+    .wrap-cardCarousel .header p.right {
+      color: #ccc;
+      padding-top: 15px;
+      padding-left: 10px;
+      padding-right: 20px;
+      float: right;
+      transition: 0.2s; }
+      .wrap-cardCarousel .header p.right:hover {
+        padding-right: 10px;
+        transition: 0.2s; }
+  .wrap-cardCarousel li.slider-slide {
+    position: none !important; }
+  .wrap-cardCarousel .background-cardCarousel {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid #ccc; }
+    .wrap-cardCarousel .background-cardCarousel:hover {
+      background: #f8f8f8;
+      cursor: pointer; }
+  .wrap-cardCarousel img {
+    padding-top: 7%;
+    width: 80%;
+    padding: 10px; }
+  .wrap-cardCarousel h3 {
+    font-size: 14px;
+    padding-top: 10%;
+    font-weight: bold; }
+  .wrap-cardCarousel p.color {
+    font-size: 12px;
+    line-height: 0.5; }
+  .wrap-cardCarousel p.last {
+    line-height: 0.5;
+    font-size: 12px; }
+  @media only screen and (max-width: 987px) {
+    .wrap-cardCarousel {
+      display: none; } }
 
 .wrap-cardCarouselMobile {
   display: none; }
@@ -525,12 +488,8 @@ button.explore:hover {
   .wrap-cardCarouselMobile li.slider-slide {
     position: none !important; }
   .wrap-cardCarouselMobile .background-cardCarousel {
-    padding-top: 50px;
-    border: 1px solid #ccc;
-    height: 400px; }
-    @media only screen and (max-width: 425px) {
-      .wrap-cardCarouselMobile .background-cardCarousel {
-        height: 280px; } }
+    padding: 10px 10px 10px 10px;
+    border: 1px solid #ccc; }
     .wrap-cardCarouselMobile .background-cardCarousel:hover {
       background: #f8f8f8;
       cursor: pointer; }
@@ -604,7 +563,7 @@ ul.slider-list {
           color: #3c8dbc; } }
   .landing-lelang img {
     padding: 10px;
-    margin-top: 15px; }
+    margin-top: 25px; }
   .landing-lelang .content-lelang {
     margin-top: 4%; }
     .landing-lelang .content-lelang p.sub-title {
@@ -648,7 +607,8 @@ ul.slider-list {
     padding-left: 10%; }
   .landing-lelang .row-lelang {
     border: 2px dotted #ccc;
-    margin-top: 2%; }
+    margin-top: 2%;
+    padding: 20px; }
     .landing-lelang .row-lelang:hover {
       border: 2px solid #3c8dbc;
       transition: 0.5s; }
@@ -663,6 +623,213 @@ ul.slider-list {
     @media only screen and (max-width: 768px) {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
+
+.alice-carousel__wrapper {
+  border: none !important; }
+
+* {
+  box-sizing: border-box; }
+
+.flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -ms-flex; }
+  .flex.column {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -o-flex-direction: column;
+    -ms-flex-direction: column; }
+  .flex.row {
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -o-flex-direction: row;
+    -ms-flex-direction: row; }
+  .flex .swap1 {
+    order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+    -o-order: 1;
+    -ms-order: 1; }
+  .flex .swap2 {
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -o-order: 2;
+    -ms-order: 2; }
+
+@media screen and (max-width: 767px) {
+  .flex .swap1 {
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+    -o-order: 2;
+    -ms-order: 2; }
+  .flex .swap2 {
+    order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+    -o-order: 1;
+    -ms-order: 1; } }
+
+section {
+  padding-bottom: 5%; }
+  section .title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px; }
+    section .title:after {
+      content: '';
+      display: block;
+      width: 100px;
+      height: 3px;
+      margin: 20px auto;
+      background-color: #B9DE26; }
+
+#top-menu {
+  margin-bottom: 0px;
+  padding: 10px;
+  border: none;
+  background: none; }
+  #top-menu .logo {
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: auto; }
+  #top-menu #top-menu-content .nav > li > a {
+    padding-right: 5px; }
+  #top-menu #top-menu-content .active a, #top-menu #top-menu-content .open a {
+    background: none; }
+  #top-menu #top-menu-content .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); }
+
+@media screen and (max-width: 991px) {
+  #top-menu .logo {
+    position: relative; } }
+
+@media screen and (max-width: 767px) {
+  #top-menu .dropdown-toggle:focus, #top-menu .dropdown-toggle:visited, #top-menu .dropdown-toggle:active {
+    color: #777; }
+  #top-menu .dropdown-toggle .caret {
+    display: none; }
+  #top-menu .dropdown-menu {
+    display: block;
+    position: static;
+    width: 100%;
+    float: none; }
+    #top-menu .dropdown-menu .dropdown-header, #top-menu .dropdown-menu a {
+      padding: 5px 15px 5px 25px; }
+    #top-menu .dropdown-menu a {
+      line-height: 20px;
+      color: #777; } }
+
+#top-picture {
+  width: 100%;
+  height: 200px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -ms-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-color: transparent, url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  /* Fallback */
+  background-image: url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(transparent)), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -webkit-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -moz-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -ms-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-image: -o-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', EndColorStr='transparent')"; }
+  #top-picture .content {
+    height: 100%;
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -o-flex;
+    display: -ms-flex;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -o-justify-content: center;
+    -ms-justify-content: center;
+    align-items: flex-end;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -o-align-items: flex-end;
+    -ms-align-items: flex-end; }
+    #top-picture .content .card {
+      max-width: 600px;
+      color: #EAEAEA;
+      text-align: center;
+      margin-bottom: 65px; }
+      #top-picture .content .card .line {
+        display: inline-block;
+        width: 100px;
+        height: 3px;
+        margin: 15px;
+        background-color: #B9DE26; }
+      #top-picture .content .card .description {
+        font-size: 24px; }
+
+@media screen and (max-width: 767px) {
+  #top-picture {
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.35), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    /* Fallback */
+    background-image: url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.7)), to(transparent)), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(0, 0, 0, 0.7)', EndColorStr='transparent')"; }
+    #top-picture .content {
+      align-items: flex-start;
+      -webkit-align-items: flex-start;
+      -moz-align-items: flex-start;
+      -o-align-items: flex-start;
+      -ms-align-items: flex-start; } }
+
+.body-card2 {
+  padding-top: 5%;
+  padding-bottom: 5%; }
+
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab {
+  text-align: left !important;
+  border: 2px solid #f8f8f8;
+  font-size: 12px;
+  padding: 15px 40px 15px 40px;
+  color: #ccc; }
+
+.ant-tabs-tab-active.ant-tabs-tab {
+  background: #f8f8f8;
+  color: #000 !important; }
+
+.ant-tabs-ink-bar {
+  background-color: #3c8dbc !important; }
+
+@media only screen and (max-width: 800px) {
+  .desktopTabs {
+    display: none; } }
+
+@media only screen and (min-width: 800px) {
+  .mobileTabs {
+    display: none; } }
 
 .wrap-login {
   padding-top: 8%;
@@ -742,3 +909,227 @@ ul.slider-list {
       .wrap-registerChoosePage .body-register .headerRightPanel button {
         background: #3c8dbc;
         font-size: 12px; }
+
+.wrap-viewCarPage {
+  padding-top: 8%;
+  padding-bottom: 10%; }
+  .wrap-viewCarPage .body-panel {
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-top: -12px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 15px; }
+  .wrap-viewCarPage p.header {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase; }
+  .wrap-viewCarPage p.overview-title {
+    font-weight: bold;
+    font-size: 16px; }
+  .wrap-viewCarPage .right-panel p.title {
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 10px;
+    background: #3c8dbc;
+    color: #fff; }
+  .wrap-viewCarPage .alice-carousel {
+    padding: 0px !important; }
+
+.multiSlider img {
+  width: 100%;
+  height: 400px; }
+
+.multiSliderThumbs {
+  padding: 0 15px 0 15px !important;
+  padding: 0px; }
+  .multiSliderThumbs .col-md-4 {
+    padding: 0px !important; }
+  .multiSliderThumbs img {
+    width: 100%;
+    height: 120px; }
+
+.infoKendaraan {
+  padding-top: 20px; }
+  .infoKendaraan span {
+    color: #3c8dbc; }
+
+.alice-carousel .animated {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both; }
+
+.alice-carousel .animated-out {
+  z-index: 1; }
+
+.alice-carousel .fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut; }
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0;
+    visibility: hidden; } }
+
+.alice-carousel {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  padding: 60px;
+  margin: auto; }
+
+.alice-carousel__wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: solid 1px rgba(70, 87, 152, 0.3); }
+
+.alice-carousel__stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  box-sizing: border-box; }
+  .alice-carousel__stage-item {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    white-space: normal;
+    line-height: 0; }
+    .alice-carousel__stage-item * {
+      line-height: initial; }
+    .alice-carousel__stage-item.__cloned {
+      opacity: 0;
+      visibility: hidden; }
+  .alice-carousel__stage:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0; }
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%; }
+
+.alice-carousel__prev-btn-item,
+.alice-carousel__next-btn-item {
+  display: inline-block;
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6e7ebc;
+  cursor: pointer;
+  font-size: 1.9em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #6e7ebc;
+  transition: 0.3s ease; }
+  .alice-carousel__prev-btn-item:before,
+  .alice-carousel__next-btn-item:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%; }
+  .alice-carousel__prev-btn-item:hover,
+  .alice-carousel__next-btn-item:hover {
+    color: darkred;
+    border: 1px solid darkred; }
+  .alice-carousel__prev-btn-item.__inactive,
+  .alice-carousel__next-btn-item.__inactive {
+    opacity: .4; }
+
+.alice-carousel__prev-btn-item {
+  left: 0; }
+  .alice-carousel__prev-btn-item:after {
+    content: '\02039'; }
+
+.alice-carousel__next-btn-item {
+  right: 0; }
+  .alice-carousel__next-btn-item:after {
+    content: '\0203A'; }
+
+.alice-carousel__play-btn {
+  display: inline-block;
+  position: absolute;
+  bottom: 90px;
+  left: 80px;
+  transform: scale(0.8); }
+  .alice-carousel__play-btn:hover {
+    cursor: pointer; }
+
+.alice-carousel__play-btn-item {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  background: transparent;
+  border: 0;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 30px;
+  outline: none; }
+  .alice-carousel__play-btn-item::before, .alice-carousel__play-btn-item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 8px 0 8px 15px;
+    border-left-color: #fff;
+    width: 0;
+    height: 0;
+    transition: all 0.3s linear; }
+  .alice-carousel__play-btn-item::before {
+    height: 16px; }
+  .alice-carousel__play-btn-item::after {
+    left: 15px;
+    top: 8px; }
+  .alice-carousel__play-btn-item.__pause::before, .alice-carousel__play-btn-item.__pause::after {
+    border-width: 0 0 0 10px;
+    height: 30px; }
+  .alice-carousel__play-btn-item.__pause::after {
+    left: 18px;
+    top: 0; }
+
+.alice-carousel__dots {
+  position: absolute;
+  display: inline-block;
+  margin: auto;
+  padding: 0;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); }
+  .alice-carousel__dots-item {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #e0e4fb; }
+    .alice-carousel__dots-item:not(:last-child) {
+      margin-right: 15px; }
+    .alice-carousel__dots-item:hover, .alice-carousel__dots-item.__active {
+      background-color: #6e7ebc; }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import Logo from '../../assets/image/logo.jpeg'
 import { Input, Icon } from 'antd'
+import Logo from '../../assets/image/logo.jpeg'
 import TiFacebook from 'react-icons/lib/ti/social-facebook'
 import TiYoutube from 'react-icons/lib/ti/social-youtube'
 import TiInstagram from 'react-icons/lib/ti/social-instagram'
@@ -17,7 +17,7 @@ export class Footer extends Component {
                 <Grid>
                   <Row className='border'>
 
-                    <Col xs={6} md={3}>
+                    <Col xs={12} md={3}>
                       <div className='logo-addins'>
                         <Image src={Logo} width='50%'/>
                       </div>
@@ -35,7 +35,7 @@ export class Footer extends Component {
                       <p> Contact </p>
                       <p> Help </p>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col xs={12} md={3}>
                       <p> Subscribe Our Newslatter </p>
                       <Input addonAfter={<Icon type="mail" />} className='footer-email' placeholder='Type your e-mail here' />
                         <p className='social-media'><TiFacebook/></p>

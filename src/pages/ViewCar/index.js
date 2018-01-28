@@ -1,9 +1,27 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import { Tag, Tabs } from 'antd'
-const TabPane = Tabs.TabPane;
+import { Tag, Divider } from 'antd'
+import AliceCarousel from 'react-alice-carousel'
+import MdAccessTime from 'react-icons/lib/md/access-time'
+import MdLocationOn from 'react-icons/lib/md/location-on'
+import FaCalendarCheckO from 'react-icons/lib/fa/calendar-check-o'
+
 
 export class Index extends Component {
+  renderThumbs = () =>
+    <div className='multiSliderThumbs'>
+      <Row> 
+        {
+          [
+          <Image src='http://images.caricos.com/b/bmw/2016_bmw_m6_gt3/images/2560x1440/2016_bmw_m6_gt3_20_2560x1440.jpg'/>,
+          <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>,
+          <Image src='http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg'/>
+          ].map((item, i) =>
+          <Col xs={4} md={4} key={i} onClick={() => this.Carousel._onDotClick(i)}>{item}</Col>)
+        }
+      </Row>
+    </div>
+    ;
   render() { 
     return (
       <div className='wrap-viewCarPage'>
@@ -11,7 +29,56 @@ export class Index extends Component {
           <Row>
             <Col xs={12} md={8}>
               <p className='header'> PORSCHE CAYENNE </p>
-              <Image src='https://www.ford.co.uk/content/dam/guxeu/uk/forms/ford-KMI_form-eu-mustang-16x9-991x557-ford-news-kmi.jpg' width='100%'/>
+              <div>
+                <AliceCarousel
+                  dotsDisabled={true}
+                  buttonsDisabled={true}
+                  ref={ el => this.Carousel = el }
+                >
+                  <div className='multiSlider'>
+                    <Image src='http://images.caricos.com/b/bmw/2016_bmw_m6_gt3/images/2560x1440/2016_bmw_m6_gt3_20_2560x1440.jpg'/>
+                  </div>
+                  <div className='multiSlider'>
+                    <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>
+                  </div>
+                  <div className='multiSlider'>
+                    <Image src='http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg'/>
+                  </div>
+                </AliceCarousel>
+                { this.renderThumbs() }  
+              </div>
+
+              <div className='infoKendaraan'>
+                <Row>
+                  <div style={{paddingLeft:12, paddingRight:12}}>
+                    <h4> Detail Kendaraan </h4>
+                    <Divider/>
+                  </div>
+                  <Col md={6}>
+                    <p> Merk <span> HONDA </span></p>
+
+                    <p> Type <span> PORSCHE CAYENNE </span></p>
+
+                    <p> No Polisi <span> B 9999 AI</span></p>
+
+                    <p> Tahun <span> 2013 </span></p>
+
+                    <p> Kapasitas Mesin (CC) <span> 8066CC</span></p>
+                  </Col>
+
+                  <Col md={6}>
+                    <p> STNK <span> ADA </span></p>
+
+                    <p> Masa Berlaku STNK <span> 12/10/2025 </span></p>
+
+                    <p> BPKB <span> TIDAK ADA </span></p>
+
+                    <p> Faktur <span> ADA </span></p>
+
+                    <p> Kapasitas Mesin (CC) <span> 3127CC</span></p>
+                  </Col>
+                </Row> 
+              </div>
             </Col>
             <Col xs={12} md={4}>
               <div className='right-panel'>
@@ -32,7 +99,7 @@ export class Index extends Component {
                   </Col>
                 </Row>  
                 <Row>
-                <Col xs={4} md={4}>
+                  <Col xs={4} md={4}>
                     <div>
                       <p> Start Bid </p>
                     </div> 
@@ -40,21 +107,49 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Rp. 200.0000.000 </p>
+                      <p><b> Rp. 200.0000.000 </b></p>
                     </div> 
                   </Col>
                 </Row>  
 
                 <Row>
-                <Col xs={4} md={4}>
+                  <Col xs={4} md={4}>
                     <div>
-                      <p> Jadwal Lelang </p>
+                      <p> Lokasi </p>
                     </div> 
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> 01 Januari 2018 </p>
+                      <p><MdLocationOn/> Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132 </p>
+                    </div> 
+                  </Col>
+                </Row>  
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Tanggal </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p><FaCalendarCheckO/> 01 Januari 2018 </p>
+                    </div> 
+                  </Col>
+                </Row>  
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Waktu </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p><MdAccessTime/> 21.00 </p>
                     </div> 
                   </Col>
                 </Row>  
@@ -78,6 +173,7 @@ export class Index extends Component {
               <div className='right-panel'>
                 <p className='title'> DETAIL KENDARAAN </p>
               </div>
+
               <div className='body-panel'>
                 <Row>
                   <Col xs={4} md={4}>
@@ -137,23 +233,11 @@ export class Index extends Component {
               <div className='right-panel'>
                 <p className='title'> NOTE </p>
               </div>
+              
               <Row className='body-panel'>
                 <p> Mobil dengan kualitas yang sangat cangih, dan mobil baru baru belum pernah dipakai. </p>
               </Row>
-            </Col>
-            <Col xs={12} md={12}>
-              <Tabs defaultActiveKey="1">
-                <TabPane tab="Overview" key="1">
-                  <p className='overview-title'>
-                    MOBIL MERCEDES-BENZ'S: LIMOUSINES
-                  </p>
-                  <p className='desc-overview'>
-                    Dunia mewah mobil ditandai oleh Mercedes-Benz 600, kendaraan mewah yang hadir dalam dua model berbeda: sedan 4 pintu pendek, sebuah wheelbase 4-pintu limusin Pullman dan limusin 6 pintu. Produksi mereka dimulai pada tahun 1964. Pada tahun 1972, 600 model keluar di pasaran.
-                    Orang-orang terkenal yang memiliki model ini termasuk Coco Chanel, Hugh Hefner, Elizabeth Taylor, John Lennon, dll.
-                  </p>
-                </TabPane>
-              </Tabs>
-            </Col>
+            </Col>            
           </Row>
         </Grid>
       </div>

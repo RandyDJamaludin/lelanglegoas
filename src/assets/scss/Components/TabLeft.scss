@@ -1,0 +1,30 @@
+.body-card2{
+  padding-top:5%;
+  padding-bottom:5%;
+}
+.ant-tabs-vertical.ant-tabs-left > .ant-tabs-bar .ant-tabs-tab{
+  text-align: left !important;
+  border: 2px solid #f8f8f8;
+  font-size:12px;
+  padding:15px 40px 15px 40px;
+  color:#ccc;
+}
+.ant-tabs-tab-active.ant-tabs-tab{
+  background:#f8f8f8;
+  color:#000 !important;
+}
+.ant-tabs-ink-bar{
+  background-color: #3c8dbc !important;
+}
+
+.desktopTabs{
+  @media only screen and(max-width:800px){
+    display:none;
+  }
+}
+
+.mobileTabs{
+  @media only screen and(min-width:800px){
+    display: none;
+  }
+}
