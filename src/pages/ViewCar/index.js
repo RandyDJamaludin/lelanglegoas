@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import { Tag, Divider } from 'antd'
+import { Divider } from 'antd'
 import AliceCarousel from 'react-alice-carousel'
 import MdAccessTime from 'react-icons/lib/md/access-time'
 import MdLocationOn from 'react-icons/lib/md/location-on'
@@ -152,21 +152,6 @@ export class Index extends Component {
                   <Col xs={8} md={8}>
                     <div>
                       <p><MdAccessTime/> 21.00 </p>
-                    </div> 
-                  </Col>
-                </Row>  
-
-                <Row>
-                  <Col xs={5} md={2}>
-                    <div>
-                      <Tag color="green">Open House</Tag>
-                    </div> 
-                  </Col>
-
-                  <Col xs={2} md={2}/>
-                  <Col xs={5} md={2}>
-                    <div>
-                      <Tag color="green">Live</Tag>
                     </div> 
                   </Col>
                 </Row>          
