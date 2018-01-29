@@ -40,7 +40,6 @@ export class CardCarousel extends Component {
             
             Last Bid <span className="orange"> {this.props.lastBid}</span>
           </p>
-          <Tag color="green">{this.props.openhouse}</Tag>
         </center>
       </div>
     );

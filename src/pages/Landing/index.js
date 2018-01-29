@@ -55,7 +55,6 @@ export class Index extends Component {
                     image={data.image}
                     color={data.color}
                     lastBid={data.lastBid}
-                    openhouse={data.openhouse}
                   />
                 </Col>
               ))}
