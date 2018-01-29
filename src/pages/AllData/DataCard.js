@@ -84,7 +84,7 @@ export const DataCardLocation = [
     police: 'B 8288 TLL',
     pajak:'11/07/2018',
     price: 'Rp 436,500,00',
-    bundle: 'Bundle 1',
+    bundle: '',
     key: 2
   },
   

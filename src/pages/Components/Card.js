@@ -72,6 +72,13 @@ export class ContentTab extends Component {
 
 export class ListLelang extends Component {
   render() {
+    const isBundle = this.props.bundle;
+    let button;
+    if (isBundle === '') {
+    } else {
+      button = <Tag color="green">{this.props.bundle}</Tag>
+    }
+
     return (
       <div className="listLelang" style={{ paddingBottom: "2%" }}>
         <Row>
@@ -108,7 +115,7 @@ export class ListLelang extends Component {
                       <p className="title"> Harga </p>
                       <p className="sub-title"> {this.props.price}</p>
                     </Col>
-                    <Tag color="green">{this.props.bundle}</Tag>
+                    {button}
 
                   </Row>
                 </Col>

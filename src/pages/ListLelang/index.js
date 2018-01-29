@@ -18,7 +18,6 @@ class Index extends Component {
     function handleFocus() {
       console.log('focus');
     }
-    
     return (
       <div className='wrap-ListLelang'>
         <Grid>
