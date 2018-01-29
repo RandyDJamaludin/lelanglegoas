@@ -119,24 +119,24 @@ export const DataContentTab = [
 
 export const DataJadwal = [
   {
-    transport:'Mobil ',
-    location:'Jakarta',
+    transport:' Mobil ',
+    location:' Jakarta',
     time:'17:00 - 20:00',
     date:'21 Januari 2018',
     openhouse:'Open house 17-20 Januari 2018',
     key: 1
   },
   {
-    transport:'Motor ',
-    location:'Bogor',
+    transport:' Mobil',
+    location:' Bogor',
     time:'12:00 - 15:00',
     date:'18 Februari 2018',
     openhouse:'Open house 15-17 Februari 2018',
     key: 2
   },
   {
-    transport:'Motor ',
-    location:'Surabaya',
+    transport:' Motor ',
+    location:' Surabaya',
     time:'08:00 - 12:00',
     date:'21 Januari 2018',
     openhouse:'Open house 17-20 Januari 2018',
@@ -144,8 +144,8 @@ export const DataJadwal = [
   },
 
   {
-    transport:'Mobil ',
-    location:'Medan',
+    transport:' Motor ',
+    location:' Medan',
     time:'13:00 - 24:00',
     date:'13 April 2018',
     openhouse:'Open house 9-12 April 2018',
