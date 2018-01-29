@@ -1,17 +1,12 @@
 import React, { Component } from "react"
-import { Image, Grid, Row, Col } from "react-bootstrap"
+import { Grid, Row, Col } from "react-bootstrap"
 import { Icon } from "antd"
 import { CardCarousel, JadwalLelang, TabLeft} from "../Components/Card"
-import { DataCardCarousel, DataJadwal } from "../AllData/DataCard"
+import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil } from "../AllData/DataCard"
 import { Banner } from "../Components/Partial"
 import { NavLink } from "react-router-dom"
 import AliceCarousel from "react-alice-carousel"
 import Map from "../Components/Map"
-import Image1 from "../../assets/image/icon/save.png"
-import Image2 from "../../assets/image/icon/incountry.png"
-import Image3 from "../../assets/image/icon/quality.png"
-import Image4 from "../../assets/image/icon/performance.png"
-import Image5 from "../../assets/image/icon/24hours.png"
 
 export class Index extends Component {
   static defaultProps = {
@@ -105,9 +100,10 @@ export class Index extends Component {
             </div>
             <Row>
               <Col xs={6} md={12}>
+                <Row>
                 <AliceCarousel
                   duration={400}
-                  autoPlay={true}
+                  autoPlay={false}
                   startIndex={1}
                   fadeOutAnimation={true}
                   mouseDragEnabled={true}
@@ -117,7 +113,7 @@ export class Index extends Component {
                   onSlideChange={this.onSlideChange}
                   onSlideChanged={this.onSlideChanged}
                 >
-                  {DataJadwal.map((data, index) => (
+                  {DataJadwalMotor.map((data, index) => (
                     <Col xs={12} md={12} key={data.key}>
                       <JadwalLelang
                         transport={data.transport}
@@ -129,6 +125,37 @@ export class Index extends Component {
                     </Col>
                   ))}
                 </AliceCarousel>
+                </Row>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={6} md={12}>
+                <Row>
+                <AliceCarousel
+                  duration={400}
+                  autoPlay={false}
+                  startIndex={1}
+                  fadeOutAnimation={true}
+                  mouseDragEnabled={true}
+                  responsive={responsive}
+                  autoPlayInterval={2000}
+                  autoPlayActionDisabled={true}
+                  onSlideChange={this.onSlideChange}
+                  onSlideChanged={this.onSlideChanged}
+                >
+                  {DataJadwalMobil.map((data, index) => (
+                    <Col xs={12} md={12} key={data.key}>
+                      <JadwalLelang
+                        transport={data.transport}
+                        location={data.location}
+                        date={data.date}
+                        time={data.time}
+                        openhouse={data.openhouse}
+                      />
+                    </Col>
+                  ))}
+                </AliceCarousel>
+                </Row>
               </Col>
             </Row>
             <NavLink to="/jadwal">
@@ -138,46 +165,6 @@ export class Index extends Component {
         </div>
 
         <Map />
-
-        <div className="wrap-people">
-          <Grid>
-            <p className="header"> Why People Love Us </p>
-            <Row style={{ marginTop: "5%" }}>
-              <Col md={2} />
-              <Col xs={4} md={2}>
-                <Image src={Image1} circle width="100%" />
-              </Col>
-
-              <Col md={1} />
-              <Col xs={4} md={2}>
-                <Image src={Image2} circle width="100%" />
-              </Col>
-
-              <Col md={1} />
-              <Col xs={4} md={2}>
-                <Image src={Image3} circle width="100%" />
-              </Col>
-
-              <Col xs={2} md={2} />
-            </Row>
-
-            <Row
-              style={{ marginLeft: "7%", marginTop: "5%", marginBottom: "5%" }}
-            >
-              <Col xs={2} md={3} />
-              <Col xs={4} md={2}>
-                <Image src={Image4} circle width="100%" />
-              </Col>
-
-              <Col md={1} />
-              <Col xs={4} md={2}>
-                <Image src={Image5} circle width="100%" />
-              </Col>
-
-              <Col xs={4} md={4} />
-            </Row>
-          </Grid>
-        </div>
       </div>
     );
   }

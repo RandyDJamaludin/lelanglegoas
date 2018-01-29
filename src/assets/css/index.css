@@ -247,7 +247,7 @@ p.backTop {
   padding: 150px; }
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner1 {
-      padding: 100px 0px 0px 0px !important;
+      padding: 40px 0px 0px 0px !important;
       height: 400px !important; } }
 
 .banner_background ul.slick-dots button {
@@ -258,7 +258,7 @@ p.backTop {
   color: #fff; }
   @media only screen and (max-width: 425px) {
     .banner_background h4 {
-      margin-left: 30px; } }
+      font-size: 20px !important; } }
 
 .banner_background h1 {
   color: #fff;
@@ -280,7 +280,7 @@ p.backTop {
   padding: 150px; }
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner2 {
-      padding: 100px 0px 0px 0px !important;
+      padding: 0px !important;
       height: 400px !important; } }
 
 .background-card {
@@ -338,7 +338,8 @@ p.backTop {
   margin-right: 15px;
   transition: 0.3s; }
   .background-card2 img {
-    margin-top: 20%; }
+    margin-top: 20%;
+    height: 130px; }
   .background-card2 button {
     background: #3c8dbc;
     border: #3c8dbc;
@@ -511,6 +512,8 @@ ul.slider-list {
   padding-top: 3%; }
   .landing-lelang .alice-carousel {
     padding: 0px !important; }
+  .landing-lelang .alice-carousel__dots-item {
+    display: none; }
   .landing-lelang .body-header p {
     font-size: 16px;
     font-weight: bold; }

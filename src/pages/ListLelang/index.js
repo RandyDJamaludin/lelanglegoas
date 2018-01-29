@@ -24,7 +24,7 @@ class Index extends Component {
         <Grid>
           <Row>
             <Col md={12}>
-              <p className='header'> DAFTAR MOTOR - JAKARTA | 31 JANUARY 2018 </p>
+              <p className='header'> DAFTAR MOBIL - JAKARTA | 31 JANUARY 2018 </p>
               <p className='header'> Pencarian </p>
               <Row> 
                 <Col md={2}>
@@ -119,12 +119,13 @@ class Index extends Component {
                 <ListLelang
                   number={data.number}
                   name={data.name}
+                  police={data.police}
+                  pajak={data.pajak}
+                  price={data.price}
+                  bundle={data.bundle}
                   year={data.year}
                   type={data.type}
                   image={data.image}
-                  location={data.location}
-                  date={data.date}
-                  time={data.time}
                 />
               </Col>
             ))}

@@ -69,6 +69,7 @@
     transition:0.3s;
     img{
         margin-top:20%;
+        height:130px;
     }
     button{
         background:#3c8dbc;
@@ -295,6 +296,9 @@ ul.slider-list{
     padding-top:3%;
     .alice-carousel{
         padding:0px !important;
+    }
+    .alice-carousel__dots-item{
+        display:none;
     }
     .body-header{
         p{

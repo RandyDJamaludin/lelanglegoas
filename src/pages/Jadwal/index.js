@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Pagination, Input, Select, DatePicker, Form, Button, Divider } from 'antd'
 import { JadwalLelang } from '../Components/Card'
-import { DataJadwal } from '../AllData/DataCard'
+import { DataJadwalMotor, DataJadwalMobil } from '../AllData/DataCard'
 import GoCalendar from 'react-icons/lib/go/calendar'
 const FormItem = Form.Item
 const Option = Select.Option
@@ -159,15 +159,15 @@ export class Index extends Component {
                         <Col xs={12} md={12}>
                           <p style={{fontWeight:'bold', marginLeft:10}}> Hasil Pencarian </p>
                           <JadwalLelang 
-                            transport='Mobil'
-                            location='Jakarta'
+                            transport=' Mobil '
+                            location=' Jakarta '
                             date='20 Januari 2018'
                             time='08.00 - 12:00'
                             openhouse='17-19 Januari 2018'
                           />
                           <JadwalLelang 
-                            transport='Motor'
-                            location='Bogor'
+                            transport=' Motor '
+                            location=' Bogor '
                             date='30 November 2018'
                             time='10.00 - 14:00'
                             openhouse='26-29 November 2018'
@@ -191,18 +191,38 @@ export class Index extends Component {
                     <hr/>
                   </div>
                   <Row>
-                  {DataJadwal.map((data, index) => (
-                    <Col xs={6} md={6} key={data.key}>
-                      
-                      <JadwalLelang 
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
-                      />
+                    <Col md={6}>
+                      <Row>
+                        {DataJadwalMobil.map((data, index) => (
+                          <Col xs={12} md={12} key={data.key}>
+                            
+                            <JadwalLelang 
+                              transport={data.transport}
+                              location={data.location}
+                              date={data.date}
+                              time={data.time}
+                              openhouse={data.openhouse}
+                            />
+                          </Col>
+                        ))}
+                      </Row>
                     </Col>
-                  ))}
+                    <Col md={6}>
+                      <Row>
+                        {DataJadwalMotor.map((data, index) => (
+                          <Col xs={12} md={12} key={data.key}>
+                            
+                            <JadwalLelang 
+                              transport={data.transport}
+                              location={data.location}
+                              date={data.date}
+                              time={data.time}
+                              openhouse={data.openhouse}
+                            />
+                          </Col>
+                        ))}
+                      </Row>
+                    </Col>
                   </Row>
                   <Row>
                     <Col xs={12} md={4}/>

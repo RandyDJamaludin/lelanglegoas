@@ -73,7 +73,7 @@ export class ContentTab extends Component {
 export class ListLelang extends Component {
   render() {
     return (
-      <div className="listLelang" style={{ paddingBottom: "10%" }}>
+      <div className="listLelang" style={{ paddingBottom: "2%" }}>
         <Row>
           <Link to="/view-car">
             <Col md={12}>
@@ -81,7 +81,7 @@ export class ListLelang extends Component {
                 <Col md={1}>
                   <p className="lot">
                     
-                    LOT <br /> 1
+                    LOT <br /> {this.props.number}
                   </p>
                 </Col>
                 <Col xs={12} md={3}>
@@ -89,26 +89,27 @@ export class ListLelang extends Component {
                 </Col>
                 <Col xs={12} md={8}>
                   <div className="headerLelang">
-                    <p> DATSUN GO + PANCA T </p>
+                    <p> {this.props.name} </p>
                   </div>
                   <Row className="box">
                     <Col md={2}>
                       <p className="title"> Tahun </p>
-                      <p className="sub-title"> 2017 </p>
+                      <p className="sub-title"> {this.props.year} </p>
                     </Col>
                     <Col md={2}>
                       <p className="title"> No. Polisi </p>
-                      <p className="sub-title"> B 4053 SCF </p>
+                      <p className="sub-title"> {this.props.police} </p>
                     </Col>
                     <Col md={2}>
                       <p className="title"> STNK Nota Pajak </p>
-                      <p className="sub-title"> 11/07/2018 </p>
+                      <p className="sub-title"> {this.props.pajak} </p>
                     </Col>
                     <Col md={4}>
                       <p className="title"> Harga </p>
-                      <p className="sub-title"> Rp 106,500,00 </p>
+                      <p className="sub-title"> {this.props.price}</p>
                     </Col>
-                    <Tag color="green">Bundle 1</Tag>
+                    <Tag color="green">{this.props.bundle}</Tag>
+
                   </Row>
                 </Col>
               </Row>

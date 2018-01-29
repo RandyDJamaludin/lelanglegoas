@@ -53,7 +53,8 @@
   margin-right: 15px;
   transition: 0.3s; }
   .background-card2 img {
-    margin-top: 20%; }
+    margin-top: 20%;
+    height: 130px; }
   .background-card2 button {
     background: #3c8dbc;
     border: #3c8dbc;
@@ -226,6 +227,8 @@ ul.slider-list {
   padding-top: 3%; }
   .landing-lelang .alice-carousel {
     padding: 0px !important; }
+  .landing-lelang .alice-carousel__dots-item {
+    display: none; }
   .landing-lelang .body-header p {
     font-size: 16px;
     font-weight: bold; }

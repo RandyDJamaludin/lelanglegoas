@@ -122,26 +122,24 @@ export class Banner extends Component {
     render() { 
         return (
         <div>
-         <Row>
-            <Col span={24} className='banner_background'>
-              <Carousel autoplay>
-                <div className='containBanner1'>
-                  <h4> MOBIL MEWAH DAN MURAH </h4>
-                  <h1> AYO BID SEKARANG </h1>
-                  <p> Dapatkan Mobil impian anda dengan harga yang <br/>
-                  sesuai dengan keinginan anda </p>   
-                  <Button type="primary">BID SEKARANG</Button>
-                </div>
-                <div className='containBanner2'>
-                  <h4> MOBIL MEWAH DAN MURAH </h4>
-                  <h1> AYO BID SEKARANG </h1>
-                  <p> Dapatkan Mobil impian anda dengan harga yang <br/>
-                  sesuai dengan keinginan anda </p>   
-                  <Button type="primary">BID SEKARANG</Button>
-                </div>
-              </Carousel>
-            </Col>
-          </Row>
+          <div className='banner_background'>
+            <Carousel autoplay>
+              <div className='containBanner1'>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p> Dapatkan Mobil impian anda dengan harga yang <br/>
+                sesuai dengan keinginan anda </p>   
+                <Button type="primary">BID SEKARANG</Button>
+              </div>
+              <div className='containBanner2'>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p> Dapatkan Mobil impian anda dengan harga yang <br/>
+                sesuai dengan keinginan anda </p>   
+                <Button type="primary">BID SEKARANG</Button>
+              </div>
+            </Carousel>
+          </div>
         </div>
         )
     }
