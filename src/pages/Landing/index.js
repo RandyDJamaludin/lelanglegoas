@@ -1,18 +1,17 @@
-import React, { Component } from "react";
-import { Image, Grid, Row, Col } from "react-bootstrap";
-import { Icon } from "antd";
-import { CardCarousel, JadwalLelang } from "../Components/Card";
-import { DataCardCarousel, DataJadwal } from "../AllData/DataCard";
-import { Banner } from "../Components/Banner";
-import { NavLink } from "react-router-dom";
-import AliceCarousel from "react-alice-carousel";
-import Map from "../Components/Map";
-import TabLeft from "../Components/TabLeft";
-import Image1 from "../../assets/image/icon/save.png";
-import Image2 from "../../assets/image/icon/incountry.png";
-import Image3 from "../../assets/image/icon/quality.png";
-import Image4 from "../../assets/image/icon/performance.png";
-import Image5 from "../../assets/image/icon/24hours.png";
+import React, { Component } from "react"
+import { Image, Grid, Row, Col } from "react-bootstrap"
+import { Icon } from "antd"
+import { CardCarousel, JadwalLelang, TabLeft} from "../Components/Card"
+import { DataCardCarousel, DataJadwal } from "../AllData/DataCard"
+import { Banner } from "../Components/Partial"
+import { NavLink } from "react-router-dom"
+import AliceCarousel from "react-alice-carousel"
+import Map from "../Components/Map"
+import Image1 from "../../assets/image/icon/save.png"
+import Image2 from "../../assets/image/icon/incountry.png"
+import Image3 from "../../assets/image/icon/quality.png"
+import Image4 from "../../assets/image/icon/performance.png"
+import Image5 from "../../assets/image/icon/24hours.png"
 
 export class Index extends Component {
   static defaultProps = {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { Tabs, Collapse } from "antd";
-import { BannerInfo } from "../Components/Banner";
+import { BannerInfo } from "../Components/Partial";
 const TabPane = Tabs.TabPane;
 const Panel = Collapse.Panel;
 

@@ -1,10 +1,9 @@
 import React, { Component } from 'react'
 import 'antd/lib/date-picker/style/css'
-import Navigation from './pages/Components/Navigation'
-import Main from './pages/Main'
+import { Navigation, Footer } from './pages/Components/Partial'
 import { BackTop } from 'antd'
+import Main from './pages/Main'
 import FaTop from 'react-icons/lib/fa/chevron-circle-up'
-import Footer from './pages/Components/Footer'
 
 class App extends Component {
   render() {

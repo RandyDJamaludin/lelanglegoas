@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Collapse } from 'antd'
-import { BannerInfo } from '../Components/Banner'
+import { BannerInfo } from '../Components/Partial'
 const Panel = Collapse.Panel;
 
 export class Index extends Component {

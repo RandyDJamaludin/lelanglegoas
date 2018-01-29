@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
-import { Icon } from 'antd'
 import { DataCardCarousel } from '../AllData/DataCard' 
 import { CardCarousel } from '../Components/Card'
 import AliceCarousel from 'react-alice-carousel'
@@ -23,34 +22,23 @@ export class Index extends Component {
             <div className='page-lokasi'>
               <Map/>
 
-              <Grid className='wrap-cardCarousel' style={{ paddingTop:'3%',paddingBottom:'3%'}}>
-                <div className='header'>
-                  <Row>
-                    <Col xs={6} md={6}>
-                      <p className='left'>ON GOING AUCTIONS </p>
-                    </Col>
-                    <Col xs={6} md={6}>
-                      <p className='right'>View All Featured Products <Icon type="arrow-right" /></p>
-                    </Col>
-                  </Row>
-                </div>
+              <Grid className="wrap-cardCarousel">
                 <Row>
+                  <p className='titleHeader'> REKOMENDASI MOBIL / MOTOR </p>
                   <AliceCarousel
-                      duration={400}
-                      autoPlay={true}
-                      startIndex = {1}
-                      fadeOutAnimation={true}
-                      mouseDragEnabled={true}
-                      playButtonEnabled={true}
-                      responsive={responsive}
-                      autoPlayInterval={2000}
-                      autoPlayDirection="rtl"
-                      autoPlayActionDisabled={true}
-                      onSlideChange={this.onSlideChange}
-                      onSlideChanged={this.onSlideChanged}
-                    >
+                    duration={400}
+                    autoPlay={true}
+                    startIndex={1}
+                    fadeOutAnimation={true}
+                    mouseDragEnabled={true}
+                    responsive={responsive}
+                    autoPlayInterval={2000}
+                    autoPlayActionDisabled={true}
+                    onSlideChange={this.onSlideChange}
+                    onSlideChanged={this.onSlideChanged}
+                  >
                     {DataCardCarousel.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>  
+                      <Col xs={12} md={12} key={data.key}>
                         <CardCarousel
                           name={data.name}
                           image={data.image}
