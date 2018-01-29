@@ -23,43 +23,43 @@ export const DataCardCarousel = [
   {
     name: "HONDA HR-V",
     image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    lastBid: 'Rp 100.150.000 ',
+    color: 'White',
     key: 1
   },
   {
-    name: "HONDA HR-V",
-    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Orange-McLaren-12C-Front-View-Car-PNG-Image-500x328.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    name: "Honda Supra X",
+    image: "http://3.bp.blogspot.com/-nF8M1Jqwhrk/TnCssIMTe-I/AAAAAAAAAqo/1wNpadq2r1U/s1600/14092011+Supra+X+Helm+In+-+Royal+Blue.jpg",
+    lastBid: 'Rp 10.000.000',
+    color: 'Black',
     key: 2
   },
   {
     name: "HONDA HR-V",
     image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    lastBid: 'Rp 100.150.000 ',
+    color: 'Red',
     key: 3
   },
   {
-    name: "HONDA HR-V",
-    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Orange-McLaren-12C-Front-View-Car-PNG-Image-500x328.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    name: "Motor Kawasaki Ninja",
+    image: "http://1.bp.blogspot.com/-OtqJE-xK74I/UlNVvudQIqI/AAAAAAAAALw/ZFURAwggXcI/s1600/Kawasaki+Ninja.png",
+    lastBid: 'Rp 21.150.000 ',
+    color: 'Green',
     key: 4
   },
   {
     name: "HONDA HR-V",
     image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    lastBid: 'Rp 100.000.000 ',
+    color: 'Red',
     key: 5
   },
   {
-    name: "HONDA HR-V",
-    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Orange-McLaren-12C-Front-View-Car-PNG-Image-500x328.png",
-    lastBid: 'IDR 150.000 ',
-    color: 'red',
+    name: "X-Treme Red",
+    image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
+    lastBid: 'Rp 20.500.000 ',
+    color: 'Red',
     key: 6
   },
 ]

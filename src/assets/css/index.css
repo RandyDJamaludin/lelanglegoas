@@ -428,7 +428,8 @@ button.explore:hover {
   .wrap-cardCarousel img {
     padding-top: 7%;
     width: 80%;
-    padding: 10px; }
+    padding: 10px;
+    height: 200px; }
   .wrap-cardCarousel .alice-carousel {
     padding: 20px 0px 40px 20px !important; }
   .wrap-cardCarousel h3 {
@@ -482,7 +483,8 @@ button.explore:hover {
   .wrap-cardCarouselMobile img {
     padding-top: 7%;
     width: 80%;
-    padding: 10px; }
+    padding: 10px;
+    height: 200px; }
   .wrap-cardCarouselMobile h3 {
     font-size: 14px;
     padding-top: 10%;
