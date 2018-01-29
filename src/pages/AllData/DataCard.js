@@ -24,7 +24,7 @@ export const DataCardCarousel = [
     name: "Chevrolet Corvette",
     image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
     lastBid: 'Rp 300.150.000 ',
-    color: 'White',
+    color: 'Yellow',
     key: 1
   },
   {
@@ -38,7 +38,7 @@ export const DataCardCarousel = [
     name: "Nissan Sway",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
     lastBid: 'Rp 400.150.000 ',
-    color: 'Red',
+    color: 'Black',
     key: 3
   },
   {
