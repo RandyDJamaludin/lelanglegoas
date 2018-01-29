@@ -80,33 +80,8 @@ export const DataCardLocation = [
     location: 'Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132',
     date: ' 1 Januari 2017',
     time: ' 13.00 - Selesai',
-    grade : 'A',
     key: 1
-  },
-  {
-    number: "2",
-    name: "HONDA HR-V",
-    image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    year: '2010 ',
-    type: 'Mobil',
-    location: 'Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132',
-    date: ' 1 Januari 2017',
-    time: ' 13.00 - Selesai',
-    grade : 'A',
-    key: 2
-  },
-  {
-    number: "3",
-    name: "HONDA HR-V",
-    image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    year: '2010 ',
-    type: 'Mobil',
-    location: 'Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132',
-    date: ' 1 Januari 2017',
-    time: ' 13.00 - Selesai',
-    grade : 'A',
-    key: 3
-  },
+  }
 ]
 
 export const DataContentTab = [
@@ -145,5 +120,41 @@ export const DataContentTab = [
     image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
     price: 'IDR 150.000 ',
     key: 6
+  },
+]
+
+export const DataJadwal = [
+  {
+    transport:'Mobil',
+    location:'Jakarta',
+    time:'17:00 - 20:00',
+    date:'21 Januari 2018',
+    openhouse:'17-20 Januari 2018',
+    key: 1
+  },
+  {
+    transport:'Motor',
+    location:'Bogor',
+    time:'12:00 - 15:00',
+    date:'18 Februari 2018',
+    openhouse:'15-17 Februari 2018',
+    key: 2
+  },
+  {
+    transport:'Motor',
+    location:'Surabaya',
+    time:'08:00 - 12:00',
+    date:'21 Januari 2018',
+    openhouse:'17-20 Januari 2018',
+    key: 3
+  },
+
+  {
+    transport:'Mobil',
+    location:'Medan',
+    time:'13:00 - 24:00',
+    date:'13 April 2018',
+    openhouse:'9-12 April 2018',
+    key: 4
   },
 ]

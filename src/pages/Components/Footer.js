@@ -7,6 +7,7 @@ import TiYoutube from 'react-icons/lib/ti/social-youtube'
 import TiInstagram from 'react-icons/lib/ti/social-instagram'
 import TiTwitter from 'react-icons/lib/ti/social-twitter'
 import TiHeart from 'react-icons/lib/ti/heart-full-outline'
+import MdLocation from 'react-icons/lib/md/location-on'
 
 
 export class Footer extends Component {
@@ -22,7 +23,8 @@ export class Footer extends Component {
                         <Image src={Logo} width='50%'/>
                       </div>
                       <div className='body-client'>
-                        <p className='street'> Jl. Raya Kaliabang no. 45 <br/> <br/>Medan satria, bekasi 17132 </p>
+                        <p className='street'> Legoas adalah salah satu perusahaan yang menyelenggarakan penjualan asset dengan sistem lelang.  </p>
+                        <p> <MdLocation/> Jl. Raya Kaliabang no. 45 Bekasi, 13132 </p>
                       </div>
                     </Col>
                     <Col xs={6} md={3}>

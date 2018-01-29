@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
-import { Pagination, Icon, Input, Select, DatePicker, Form, Button, Divider } from 'antd'
-import { CardCarousel, JadwalLelang } from '../Components/Card'
-import { DataCardCarousel, DataCardLocation } from '../AllData/DataCard'
-import AliceCarousel from 'react-alice-carousel'
+import { Pagination, Input, Select, DatePicker, Form, Button, Divider } from 'antd'
+import { JadwalLelang } from '../Components/Card'
+import { DataJadwal } from '../AllData/DataCard'
 import GoCalendar from 'react-icons/lib/go/calendar'
 const FormItem = Form.Item
 const Option = Select.Option
@@ -28,24 +27,13 @@ export class Index extends Component {
         console.log('focus');
       }
 
-      const responsive = {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 2
-        },
-        1024: {
-          items: 3
-        }
-      };
         return (
             <div className='page-jadwal'>
               <div className='landing-lelang'>
                 <Grid>
                   <Row>
-                    <Col md={12} className='searchPanel'>
-                      <h4> CARI DAFTAR LELANG </h4>
+                    <Col md={6} className='searchPanel'>
+                      <p style={{fontWeight:'bold'}}> CARI MOBIL / MOTOR </p>
                       <Divider/>
                       <Row>
                         <Col md={4}>
@@ -86,7 +74,7 @@ export class Index extends Component {
                         </Col>
                       </Row>
                       <Row style={{paddingTop:10}}>
-                        <Col md={4}>
+                        <Col md={6}>
                         <h5> Model </h5>
                           <Select
                             showSearch
@@ -102,20 +90,7 @@ export class Index extends Component {
                             <Option value="tom">Model C</Option>
                           </Select>
                         </Col>
-                        <Col md={3}>
-                          <h5> Tahun </h5>
-                          <Input width='100%'/>
-                        </Col>
-                        <Col md={2}>
-                          <h5 style={{marginTop:30}}><center>Sampai dengan </center></h5>
-                        </Col>
-                        <Col md={3}>
-                          <h5> Tahun </h5>
-                          <Input width='100%'/>
-                        </Col>
-                      </Row>
-                      <Row style={{paddingTop:10}}>
-                        <Col md={4}>
+                        <Col md={6}>
                           <h5> Warna </h5>
                           <Select
                             showSearch
@@ -131,7 +106,38 @@ export class Index extends Component {
                             <Option value="tom">Hitam</Option>
                           </Select>
                         </Col>
-                        <Col md={4}>
+                        
+                      </Row>
+                      <Row style={{paddingTop:10}}>
+                        <Col md={5}>
+                          <h5> Tahun </h5>
+                          <Input width='100%'/>
+                        </Col>
+                        <Col md={2}>
+                          <h5 style={{marginTop:30}}><center>S/d </center></h5>
+                        </Col>
+                        <Col md={5}>
+                          <h5> Tahun </h5>
+                          <Input width='100%'/>
+                        </Col>
+                      </Row>
+                      <Row style={{paddingTop:15}}>
+                        <Col md={6}>
+                          <h5> Transport  </h5>
+                          <Select
+                            showSearch
+                            style={{ width: '100%' }}
+                            optionFilterProp="children"
+                            onChange={handleChange}
+                            onFocus={handleFocus}
+                            onBlur={handleBlur}
+                            filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
+                          >
+                            <Option value="jack">Mobil</Option>
+                            <Option value="lucy">Motor</Option>
+                          </Select>
+                        </Col>
+                        <Col md={6}>
                           <FormItem>
                             <h5> Tanggal</h5>
                             {getFieldDecorator('range-picker', rangeConfig)(
@@ -139,10 +145,40 @@ export class Index extends Component {
                             )}
                           </FormItem>
                         </Col>
-                        <Col md={4}>
+                      </Row>
+                      <Row>
+                        <Col md={12}>
                           <FormItem>
                             <Button type="primary" htmlType="submit" className='buttonSearch'>CARI</Button>
                           </FormItem>
+                        </Col>
+                      </Row>
+                    </Col>
+                    <Col md={6}>
+                      <Row>
+                        <Col xs={12} md={12}>
+                          <p style={{fontWeight:'bold', marginLeft:10}}> Hasil Pencarian </p>
+                          <JadwalLelang 
+                            transport='Mobil'
+                            location='Jakarta'
+                            date='20 Januari 2018'
+                            time='08.00 - 12:00'
+                            openhouse='17-19 Januari 2018'
+                          />
+                          <JadwalLelang 
+                            transport='Motor'
+                            location='Bogor'
+                            date='30 November 2018'
+                            time='10.00 - 14:00'
+                            openhouse='26-29 November 2018'
+                          />
+                          <Row>
+                            <Col md={3}/>
+                            <Col md={7}>
+                              <Pagination defaultCurrent={6} total={50} />
+                            </Col>
+                            <Col md={3}/>
+                          </Row>
                         </Col>
                       </Row>
                     </Col>
@@ -155,108 +191,30 @@ export class Index extends Component {
                     <hr/>
                   </div>
                   <Row>
-                  {DataCardLocation.map((data, index) => (
-                    <Col xs={6} md={12} key={data.key}>
+                  {DataJadwal.map((data, index) => (
+                    <Col xs={6} md={6} key={data.key}>
                       
                       <JadwalLelang 
-                        number={data.number}
-                        name={data.name}
-                        year={data.year}
-                        type={data.type}
+                        transport={data.transport}
                         location={data.location}
                         date={data.date}
                         time={data.time}
-                        image={data.image}
-                        price={data.price}
-                        grade={data.grade}
-                        button={data.button}
+                        openhouse={data.openhouse}
                       />
                     </Col>
                   ))}
                   </Row>
                   <Row>
-                    <Col xs={12} md={3}/>
-                    <Col xs={12} md={6}>
+                    <Col xs={12} md={4}/>
+                    <Col xs={12} md={4}>
                       <div className='pagination'>
-                        <Pagination defaultCurrent={6} total={500} />
+                        <Pagination defaultCurrent={6} total={50} />
                       </div>
                     </Col>
-                    <Col xs={12} md={3}/>
+                    <Col xs={12} md={4}/>
                   </Row>
                 </Grid>
               </div>
-              
-              <Grid className='wrap-cardCarousel' style={{ paddingTop:'3%',paddingBottom:'3%'}}>
-                <div className='header'>
-                  <Row>
-                    <Col xs={6} md={6}>
-                      <p className='left'>ON GOING AUCTIONS </p>
-                    </Col>
-                    <Col xs={6} md={6}>
-                      <p className='right'>View All Featured Products <Icon type="arrow-right" /></p>
-                    </Col>
-                  </Row>
-                </div>
-                <Row>
-                  <AliceCarousel
-                      duration={400}
-                      autoPlay={true}
-                      startIndex = {1}
-                      fadeOutAnimation={true}
-                      mouseDragEnabled={true}
-                      playButtonEnabled={true}
-                      responsive={responsive}
-                      autoPlayInterval={2000}
-                      autoPlayDirection="rtl"
-                      autoPlayActionDisabled={true}
-                      onSlideChange={this.onSlideChange}
-                      onSlideChanged={this.onSlideChanged}
-                    >
-                    {DataCardCarousel.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>  
-                        <CardCarousel
-                          name={data.name}
-                          image={data.image}
-                          color={data.color}
-                          lastBid={data.lastBid}
-                          openhouse={data.openhouse}
-                        />
-                      </Col>
-                    ))}
-                  </AliceCarousel>
-                </Row>
-              </Grid>
-
-              <Grid className='wrap-cardCarouselMobile'>
-                <Row>
-                  <AliceCarousel
-                      duration={400}
-                      autoPlay={true}
-                      startIndex = {1}
-                      fadeOutAnimation={true}
-                      mouseDragEnabled={true}
-                      playButtonEnabled={true}
-                      responsive={responsive}
-                      autoPlayInterval={2000}
-                      autoPlayDirection="rtl"
-                      autoPlayActionDisabled={true}
-                      onSlideChange={this.onSlideChange}
-                      onSlideChanged={this.onSlideChanged}
-                    >
-                    {DataCardCarousel.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>  
-                        <CardCarousel
-                          name={data.name}
-                          image={data.image}
-                          color={data.color}
-                          lastBid={data.lastBid}
-                          openhouse={data.openhouse}
-                        />
-                      </Col>
-                    ))}
-                  </AliceCarousel>
-                </Row>
-              </Grid>
             </div>
 
         )

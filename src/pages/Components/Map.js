@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { compose, withProps } from "recompose"
 import { Grid, Row, Col } from 'react-bootstrap'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import GoCalendar from 'react-icons/lib/go/calendar'
+import MdLocationOn from 'react-icons/lib/md/location-on'
 
 const MyMapComponent = compose(
     withProps({
@@ -50,7 +50,7 @@ export class Map extends Component {
               <div className='location-lelang'>
               <Grid>
                 <div className='body-header'>
-                  <p><GoCalendar id='date'/> LOKASI LELANG</p>
+                  <p><MdLocationOn id='date'/> LOKASI LELANG</p>
                   <hr/>
                 </div>
                 <Row>

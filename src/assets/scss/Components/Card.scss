@@ -60,7 +60,6 @@
     }
 }
 
-// Card 2
 .background-card2{
     background:#fbfbfb;
     margin-bottom:30px;
@@ -137,12 +136,6 @@ button.explore:hover{
     }
 }
 
-// End Vertical
-
-
-
-// background carousel 
-
 .wrap-cardCarousel{
     padding-top:10px;
     .header-ongoing{
@@ -193,10 +186,17 @@ button.explore:hover{
         width: 80%;
         padding:10px;
     }
+    .alice-carousel{
+        padding:20px 0px 40px 20px !important;
+    }
     h3{
-        font-size:14px;
-        padding-top:10%;
+        font-size:16px;
+    }
+    p.titleHeader{
+        font-size:16px;
         font-weight: bold;
+        padding-top:2%;
+        padding-left:3%;
     }
     p.color{
         font-size:12px;
@@ -288,17 +288,15 @@ button.explore:hover{
 ul.slider-list{
     height:300px !important; 
 }
-// End carousel
-
-
-
-// Landing Lelang
 
 .landing-lelang{
     padding-top:3%;
+    .alice-carousel{
+        padding:0px !important;
+    }
     .body-header{
         p{
-            font-size:18px;
+            font-size:16px;
             font-weight: bold;
         }
         #date{
@@ -352,21 +350,10 @@ ul.slider-list{
 
     .content-lelang{
         margin-top:4%;
-        p.sub-title{
-            line-height: 1;
+        p{
+            font-size: 30px;
         }
-        p.year{
-            line-height: 1;
-        }
-        p.type{
-            line-height: 1;
-        }
-        p.loc{
-            line-height: 1;
-            @media only screen and ( max-width: 720px){
-                line-height: 2;
-            }
-        }
+        
         @media only screen and(max-width:425px){
             font-size:12px;
         }
@@ -425,6 +412,91 @@ ul.slider-list{
     }
 }
 
+
+.location-lelang{
+    .body-header{
+        p{
+            font-size:16px;
+            font-weight: bold;
+        }
+        #date{
+            color:#3c8dbc;
+        }
+    }
+    .wrap-location{
+        font-size:20px;
+        font-weight: bold;
+        font-family: Helvetica;
+        margin-top:2%;
+    }
+    .body-location{
+        margin-top:-10px;
+        p{
+            font-size:12px;
+            line-height: 0.5;
+        }
+    }
+}
+
 .alice-carousel__wrapper{
     border:none !important;
+}
+
+
+.listLelang{
+    .headerLelang{
+        p{
+            font-size:18px;
+            color:#000;
+        }
+    }
+    .box{
+        p.title{
+            color:#000;
+            font-size: 12px;
+        }
+        p.sub-title{
+            font-size:16px;
+            color:#000;
+        }
+    }
+    .lot{
+        background:#ccc;
+        color:#000;
+        text-align: center;
+        padding:10px;
+    }
+    .contentLelang{
+        box-shadow: 0 0 10px #ccc;
+        padding: 20px 0px 20px 0px;
+        &:hover{
+            background:#f8f8f8;
+        }
+    }
+}
+.wrap-ListLelang{
+    padding-top:8%;
+    p.header{
+        font-size:14px;
+        font-weight: bold; 
+    }
+    @media only screen and(max-width:768px){
+        padding-top:25%;
+    }
+    @media only screen and (max-width:900px){
+        .ant-select-selection--single{
+            margin-top:10px !important;
+        }
+        button{
+            margin-top:10px !important;
+        }
+    }
+}
+
+.wrap-viewCarPage{
+    .contentKendaraan{
+        p.header{
+            font-size:20px;
+        }
+    }
 }

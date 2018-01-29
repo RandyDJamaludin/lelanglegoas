@@ -50,8 +50,9 @@ export class Index extends Component {
 
               <div className='infoKendaraan'>
                 <Row>
-                  <div style={{paddingLeft:12, paddingRight:12}}>
-                    <h4> Detail Kendaraan </h4>
+                  <div style={{paddingLeft:12, paddingRight:12}} className='contentKendaraan'>
+                    <p> Detail Kendaraan </p>
+                    <p className='header'> Grade <span className='grade'> A </span> </p>
                     <Divider/>
                   </div>
                   <Col md={6}>
@@ -78,6 +79,7 @@ export class Index extends Component {
                     <p> Kapasitas Mesin (CC) <span> 3127CC</span></p>
                   </Col>
                 </Row> 
+                <Divider/>
               </div>
             </Col>
             <Col xs={12} md={4}>
@@ -170,66 +172,6 @@ export class Index extends Component {
                 </Row>          
               </div>
 
-              <div className='right-panel'>
-                <p className='title'> DETAIL KENDARAAN </p>
-              </div>
-
-              <div className='body-panel'>
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> No. Polisi </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p> <span> F 9999 AI </span></p>
-                    </div> 
-                  </Col>
-                </Row>  
-                <Row>
-                <Col xs={4} md={4}>
-                    <div>
-                      <p> Unit  </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p>	SUZUKI S 2008 </p>
-                    </div> 
-                  </Col>
-                </Row>  
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Warna  </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p>	Abu - abu </p>
-                    </div> 
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Grade mesin  </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p>	A </p>
-                    </div> 
-                  </Col>
-                </Row>       
-              </div>
-              
               <div className='right-panel'>
                 <p className='title'> NOTE </p>
               </div>

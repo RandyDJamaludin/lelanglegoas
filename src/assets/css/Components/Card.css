@@ -144,10 +144,15 @@ button.explore:hover {
     padding-top: 7%;
     width: 80%;
     padding: 10px; }
+  .wrap-cardCarousel .alice-carousel {
+    padding: 20px 0px 40px 20px !important; }
   .wrap-cardCarousel h3 {
-    font-size: 14px;
-    padding-top: 10%;
-    font-weight: bold; }
+    font-size: 16px; }
+  .wrap-cardCarousel p.titleHeader {
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 2%;
+    padding-left: 3%; }
   .wrap-cardCarousel p.color {
     font-size: 12px;
     line-height: 0.5; }
@@ -217,8 +222,10 @@ ul.slider-list {
 
 .landing-lelang {
   padding-top: 3%; }
+  .landing-lelang .alice-carousel {
+    padding: 0px !important; }
   .landing-lelang .body-header p {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold; }
   .landing-lelang .body-header #date {
     color: #3c8dbc; }
@@ -262,17 +269,8 @@ ul.slider-list {
     margin-top: 25px; }
   .landing-lelang .content-lelang {
     margin-top: 4%; }
-    .landing-lelang .content-lelang p.sub-title {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.year {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.type {
-      line-height: 1; }
-    .landing-lelang .content-lelang p.loc {
-      line-height: 1; }
-      @media only screen and (max-width: 720px) {
-        .landing-lelang .content-lelang p.loc {
-          line-height: 2; } }
+    .landing-lelang .content-lelang p {
+      font-size: 30px; }
     @media only screen and (max-width: 425px) {
       .landing-lelang .content-lelang {
         font-size: 12px; } }
@@ -320,5 +318,65 @@ ul.slider-list {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
 
+.location-lelang .body-header p {
+  font-size: 16px;
+  font-weight: bold; }
+
+.location-lelang .body-header #date {
+  color: #3c8dbc; }
+
+.location-lelang .wrap-location {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Helvetica;
+  margin-top: 2%; }
+
+.location-lelang .body-location {
+  margin-top: -10px; }
+  .location-lelang .body-location p {
+    font-size: 12px;
+    line-height: 0.5; }
+
 .alice-carousel__wrapper {
   border: none !important; }
+
+.listLelang .headerLelang p {
+  font-size: 18px;
+  color: #000; }
+
+.listLelang .box p.title {
+  color: #000;
+  font-size: 12px; }
+
+.listLelang .box p.sub-title {
+  font-size: 16px;
+  color: #000; }
+
+.listLelang .lot {
+  background: #ccc;
+  color: #000;
+  text-align: center;
+  padding: 10px; }
+
+.listLelang .contentLelang {
+  box-shadow: 0 0 10px #ccc;
+  padding: 20px 0px 20px 0px; }
+  .listLelang .contentLelang:hover {
+    background: #f8f8f8; }
+
+.wrap-ListLelang {
+  padding-top: 8%; }
+  .wrap-ListLelang p.header {
+    font-size: 14px;
+    font-weight: bold; }
+  @media only screen and (max-width: 768px) {
+    .wrap-ListLelang {
+      padding-top: 25%; } }
+  @media only screen and (max-width: 900px) {
+    .wrap-ListLelang .ant-select-selection--single {
+      margin-top: 10px !important; }
+    .wrap-ListLelang button {
+      margin-top: 10px !important; } }
+
+.wrap-viewCarPage .contentKendaraan p.header {
+  font-size: 20px; }

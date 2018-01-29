@@ -6,6 +6,10 @@ button.buttonSearch{
     width:100%;
     margin-top:24px;
 }
+button.search{
+    width:100%;
+    border:1px solid #40a9ff;
+}
 .wrap-nav{
     position:fixed;
     z-index: 999;
@@ -83,37 +87,6 @@ ul.right{
 img.logo{
     margin-top:-5px;
 }
-// Location Lelang
-
-.location-lelang{
-    .body-header{
-        p{
-            font-size:18px;
-            font-weight: bold;
-        }
-        #date{
-            color:#3c8dbc;
-        }
-    }
-    .wrap-location{
-        font-size:20px;
-        font-weight: bold;
-        font-family: Helvetica;
-        margin-top:2%;
-    }
-    .body-location{
-        margin-top:-10px;
-        p{
-            font-size:12px;
-            line-height: 0.5;
-        }
-    }
-}
-
-.adsense{
-    padding-top:2%;
-}
-
 
 //Page Location 
 
@@ -342,7 +315,7 @@ img.logo{
         }
     }
     p{
-        line-height: 1.2;
+
         font-family: Helvetica;
     }
     p.footer{

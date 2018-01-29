@@ -3,6 +3,7 @@ import { Switch, Route } from 'react-router-dom'
 import Landing from './Landing/index'
 import Tata from './TataCara/index'
 import Jadwal from './Jadwal/index'
+import ListLelang from './ListLelang/index'
 import ViewCar from './ViewCar/index'
 import Lokasi from './Lokasi/index'
 import PengertianLelang from './PengertianLelang/index'
@@ -24,6 +25,7 @@ export class Main extends Component {
               <Route exact path="/tatacara-lelang" component={Tata}/>
               <Route exact path="/jadwal" component={Jadwal}/>
               <Route exact path="/lokasi" component={Lokasi}/>
+              <Route exact path='/list-lelang' component={ListLelang}/>
               <Route exact path='/view-car' component={ViewCar}/>
               <Route exact path="/kontak" component={Kontak}/>
               <Route exact path="/tentang-kami" component={TentangKami}/>
