@@ -55,35 +55,31 @@ export class Navigation extends Component {
                 </NavLink>
               </li>
 
-              <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
-                
-                <li eventKey={3.1} >
+              <NavDropdown title="Info Lelang" id="basic-nav-dropdown">  
+                <li>
                   <NavLink to="/pengertian-lelang" activeClassName="anchorActive">
                     Pengertian Lelang
                   </NavLink>
                 </li>
-
-                <li eventKey={3.2}>
+                <li>
                   <NavLink to="/tatacara-lelang" activeClassName="anchorActive">
                     Tata Cara Lelang
                   </NavLink>
                 </li>
-
-                <li eventKey={3.3}>
+                <li>
                   <NavLink to="/peraturan-lelang"activeClassName="anchorActive">
                     Peraturan Lelang
                   </NavLink>
                 </li>
-              
               </NavDropdown>
 
-              <li eventkey={3}>
+              <li eventkey={4}>
                 <NavLink to="/lokasi" activeClassName="anchorActive">
                   Lokasi Lelang
                 </NavLink>
               </li>
 
-              <li eventkey={4}>
+              <li eventkey={5}>
                 <NavLink to="/tentang-kami" activeClassName="anchorActive">
                   Tentang Kami
                 </NavLink>

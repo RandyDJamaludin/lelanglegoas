@@ -128,6 +128,61 @@ export class ListLelang extends Component {
   }
 }
 
+export class SearchLelang extends Component {
+  render() {
+    const isBundle = this.props.bundle;
+    let button;
+    if (isBundle === '') {
+    } else {
+      button = <Tag color="green">{this.props.bundle}</Tag>
+    }
+
+    return (
+      <div className='searchLelang' style={{ paddingBottom: 10 }}>
+        <Row  style={{border:'1px solid #ccc', padding:10}}>
+          <Link to="/view-car">
+            <Col md={12}>
+              <Row className="contentLelang">
+                <Col md={2}>
+                  <p className="lot">
+                    LOT <br/> {this.props.number}
+                  </p>
+                </Col>
+                <Col xs={12} md={5}>
+                  <Image src={this.props.image} width="100%" />
+                </Col>
+                <Col xs={12} md={5}>
+                  <div className="headerLelang">
+                    <p> {this.props.name} </p>
+                  </div>
+                  <Row className="box">
+                    <Col md={12}>
+                      <p className="title"> Tahun : {this.props.year} </p>
+                    </Col>
+                    <Col md={12}>
+                      <p className="title"> No. Polisi : {this.props.police} </p>
+                    </Col>
+                    <Col md={12}>
+                      <p className="title"> STNK Nota Pajak : {this.props.pajak} </p>
+                    </Col>
+                    <Col md={12}>
+                      <p className="title"> Harga : {this.props.price}</p>
+                    </Col>
+                    <Col md={12}>
+                      {button}
+                    </Col>
+
+                  </Row>
+                </Col>
+              </Row>
+            </Col>
+          </Link>
+        </Row>
+      </div>
+    );
+  }
+}
+
 export class JadwalLelang extends Component {
   render() {
     return (
@@ -145,7 +200,7 @@ export class JadwalLelang extends Component {
           <Icon type="home" /> {this.props.openhouse}
         </p>
         <p>
-          <Icon type="clock-circle-o" /> {this.props.time}
+          <Icon type="clock-circle-o" /> {this.props.time} WIB
         </p>
         <Link to="/list-lelang"> Lihat Lot </Link>
       </div>

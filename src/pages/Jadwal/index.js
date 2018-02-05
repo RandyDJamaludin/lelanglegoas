@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Pagination, Input, Select, DatePicker, Form, Button, Divider } from 'antd'
-import { JadwalLelang } from '../Components/Card'
-import { DataJadwalMotor, DataJadwalMobil } from '../AllData/DataCard'
+import { JadwalLelang, SearchLelang } from '../Components/Card'
+import { DataJadwalMotor, DataJadwalMobil, DataCardLocation } from '../AllData/DataCard'
 import GoCalendar from 'react-icons/lib/go/calendar'
 const FormItem = Form.Item
 const Option = Select.Option
@@ -32,7 +32,7 @@ export class Index extends Component {
               <div className='landing-lelang'>
                 <Grid>
                   <Row>
-                    <Col md={6} className='searchPanel'>
+                    <Col md={5} className='searchPanel'>
                       <p style={{fontWeight:'bold'}}> CARI MOBIL / MOTOR </p>
                       <Divider/>
                       <Row>
@@ -154,24 +154,25 @@ export class Index extends Component {
                         </Col>
                       </Row>
                     </Col>
+                    <Col md={1}/>
                     <Col md={6}>
                       <Row>
-                        <Col xs={12} md={12}>
-                          <p style={{fontWeight:'bold', marginLeft:10}}> Hasil Pencarian </p>
-                          <JadwalLelang 
-                            transport=' Mobil '
-                            location=' Jakarta '
-                            date='20 Januari 2018'
-                            time='08.00 - 12:00'
-                            openhouse='17-19 Januari 2018'
-                          />
-                          <JadwalLelang 
-                            transport=' Motor '
-                            location=' Bogor '
-                            date='30 November 2018'
-                            time='10.00 - 14:00'
-                            openhouse='26-29 November 2018'
-                          />
+                        <p style={{fontWeight:'bold', marginLeft:10}}> Hasil Pencarian </p>
+                          {DataCardLocation.map((data,index)=>(
+                            <Col md={12} key={data.key}>
+                              <SearchLelang
+                                number={data.number}
+                                name={data.name}
+                                police={data.police}
+                                pajak={data.pajak}
+                                price={data.price}
+                                bundle={data.bundle}
+                                year={data.year}
+                                type={data.type}
+                                image={data.image}
+                              />
+                            </Col>
+                          ))}
                           <Row>
                             <Col md={3}/>
                             <Col md={7}>
@@ -179,7 +180,6 @@ export class Index extends Component {
                             </Col>
                             <Col md={3}/>
                           </Row>
-                        </Col>
                       </Row>
                     </Col>
                   </Row>

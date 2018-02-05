@@ -13,7 +13,7 @@ export class Index extends Component {
       <Row> 
         {
           [
-          <Image src='http://images.caricos.com/b/bmw/2016_bmw_m6_gt3/images/2560x1440/2016_bmw_m6_gt3_20_2560x1440.jpg'/>,
+          <Image src='https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg'/>,
           <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>,
           <Image src='http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg'/>
           ].map((item, i) =>
@@ -36,7 +36,7 @@ export class Index extends Component {
                   ref={ el => this.Carousel = el }
                 >
                   <div className='multiSlider'>
-                    <Image src='http://images.caricos.com/b/bmw/2016_bmw_m6_gt3/images/2560x1440/2016_bmw_m6_gt3_20_2560x1440.jpg'/>
+                    <Image src='https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg'/>
                   </div>
                   <div className='multiSlider'>
                     <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>
@@ -151,7 +151,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><MdAccessTime/> 21.00 </p>
+                      <p><MdAccessTime/> 21.00 WIB</p>
                     </div> 
                   </Col>
                 </Row>          
