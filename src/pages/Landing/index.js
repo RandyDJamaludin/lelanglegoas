@@ -164,7 +164,9 @@ export class Index extends Component {
           </Grid>
         </div>
 
-        <Map />
+        <div style={{paddingBottom:'4%'}}>
+          <Map />
+        </div>
       </div>
     );
   }
