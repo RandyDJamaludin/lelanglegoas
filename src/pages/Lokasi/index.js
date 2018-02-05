@@ -19,7 +19,7 @@ export class Index extends Component {
         }
       };
         return (
-            <div className='page-lokasi'>
+            <div className='page-lokasi' style={{paddingBottom:'3%'}}>
               <Map/>
 
               <Grid className="wrap-cardCarousel">

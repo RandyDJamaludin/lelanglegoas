@@ -50,11 +50,13 @@ export class Index extends Component {
 
               <div className='infoKendaraan'>
                 <Row>
-                  <div style={{paddingLeft:12, paddingRight:12}} className='contentKendaraan'>
+                  <Col md={12}>
+                  <div className='contentKendaraan'>
                     <p> Detail Kendaraan </p>
                     <p className='header'> Grade <span className='grade'> A </span> </p>
                     <Divider/>
                   </div>
+                  </Col>
                   <Col md={6}>
                     <p> Merk <span> HONDA </span></p>
 
@@ -79,7 +81,6 @@ export class Index extends Component {
                     <p> Kapasitas Mesin (CC) <span> 3127CC</span></p>
                   </Col>
                 </Row> 
-                <Divider/>
               </div>
             </Col>
             <Col xs={12} md={4}>

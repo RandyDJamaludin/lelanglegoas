@@ -46,7 +46,7 @@ export class Map extends Component {
   }
   render() { 
       return (
-          <div style={{paddingBottom:'5%'}}>
+          <div>
               <div className='location-lelang'>
               <Grid>
                 <div className='body-header'>

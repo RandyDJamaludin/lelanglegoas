@@ -55,6 +55,9 @@
   .background-card2 img {
     margin-top: 20%;
     height: 130px; }
+    @media only screen and (max-width: 900px) {
+      .background-card2 img {
+        height: auto !important; } }
   .background-card2 button {
     background: #3c8dbc;
     border: #3c8dbc;

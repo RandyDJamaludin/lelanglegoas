@@ -70,6 +70,9 @@
     img{
         margin-top:20%;
         height:130px;
+        @media only screen and (max-width:900px){
+            height:auto !important; 
+        }
     }
     button{
         background:#3c8dbc;

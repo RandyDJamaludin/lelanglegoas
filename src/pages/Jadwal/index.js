@@ -28,7 +28,7 @@ export class Index extends Component {
       }
 
         return (
-            <div className='page-jadwal'>
+            <div className='page-jadwal' style={{paddingBottom:'3%'}}>
               <div className='landing-lelang'>
                 <Grid>
                   <Row>
@@ -37,11 +37,11 @@ export class Index extends Component {
                       <Divider/>
                       <Row>
                         <Col md={4}>
-                          <h5> Free Keyword</h5>
+                          <p> Free Keyword</p>
                           <Input width='100%'/>
                         </Col>
                         <Col md={4}>
-                          <h5> Lokasi  </h5>
+                          <p> Lokasi  </p>
                           <Select
                             showSearch
                             style={{ width: '100%' }}
@@ -57,7 +57,7 @@ export class Index extends Component {
                           </Select>
                         </Col>
                         <Col md={4}>
-                          <h5> Merk </h5>
+                          <p> Merk </p>
                           <Select
                             showSearch
                             style={{ width: '100%' }}
@@ -75,7 +75,7 @@ export class Index extends Component {
                       </Row>
                       <Row style={{paddingTop:10}}>
                         <Col md={6}>
-                        <h5> Model </h5>
+                        <p> Model </p>
                           <Select
                             showSearch
                             style={{ width: '100%' }}
@@ -91,7 +91,7 @@ export class Index extends Component {
                           </Select>
                         </Col>
                         <Col md={6}>
-                          <h5> Warna </h5>
+                          <p> Warna </p>
                           <Select
                             showSearch
                             style={{ width: '100%' }}
@@ -110,20 +110,20 @@ export class Index extends Component {
                       </Row>
                       <Row style={{paddingTop:10}}>
                         <Col md={5}>
-                          <h5> Tahun </h5>
+                          <p> Tahun </p>
                           <Input width='100%'/>
                         </Col>
                         <Col md={2}>
-                          <h5 style={{marginTop:30}}><center>S/d </center></h5>
+                          <p style={{marginTop:30, textAlign:'center'}}> S/d </p>
                         </Col>
                         <Col md={5}>
-                          <h5> Tahun </h5>
+                          <p> Tahun </p>
                           <Input width='100%'/>
                         </Col>
                       </Row>
                       <Row style={{paddingTop:15}}>
                         <Col md={6}>
-                          <h5> Transport  </h5>
+                          <p> Transport  </p>
                           <Select
                             showSearch
                             style={{ width: '100%' }}
@@ -137,13 +137,11 @@ export class Index extends Component {
                             <Option value="lucy">Motor</Option>
                           </Select>
                         </Col>
-                        <Col md={6}>
-                          <FormItem>
-                            <h5> Tanggal</h5>
+                        <Col md={6} >
+                            <p> Tanggal</p>
                             {getFieldDecorator('range-picker', rangeConfig)(
                               <RangePicker width='100%'/>
                             )}
-                          </FormItem>
                         </Col>
                       </Row>
                       <Row>
