@@ -297,18 +297,44 @@ section {
   padding: 10%;
 }
 
-#top-pictureAbout {
-  height: 300px;
-  background-size: 100% !important;
-  background: url("../image/bg_about.jpeg");
-  .shadow {
-    background: rgba(255, 255, 255, 0.561);
+.bannerAbout {
+  .desktop {
     height: 300px;
+    background-size: 100% !important;
+    background: url("../image/bg_about.jpeg");
+    .shadow {
+      background: rgba(255, 255, 255, 0.561);
+      height: 300px;
 
-    h3 {
-      font-weight: 400 !important;
-      font-size: 30px;
-      color: #1f659a;
+      h3 {
+        font-weight: 400 !important;
+        font-size: 30px;
+        color: #1f659a;
+      }
+    }
+    @media only screen and(max-width: 800px) {
+      display: none;
+    }
+  }
+
+  .mobile {
+    height: 400px;
+    background-size: cover !important;
+    background: url("../image/bg_about.jpeg") no-repeat;
+    .shadow {
+      background: rgba(255, 255, 255, 0.561);
+      height: 380px;
+      padding: 50px;
+      margin-top: 30px;
+
+      h3 {
+        font-weight: 400 !important;
+        font-size: 30px;
+        color: #1f659a;
+      }
+    }
+    @media only screen and(min-width: 800px) {
+      display: none;
     }
   }
 }

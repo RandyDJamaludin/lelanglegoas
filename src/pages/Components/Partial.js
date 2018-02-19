@@ -171,26 +171,52 @@ export class BannerInfo extends Component {
 export class BannerAbout extends Component {
   render() {
     return (
-      <div id="top-pictureAbout">
-        <Grid>
-          <Row>
-            <Col md={6} />
-            <Col md={6}>
-              <div className="shadow" style={{ padding: 50 }}>
-                <h3> WHO WE ARE ?</h3>
-                <p>
-                  LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
-                  untuk menjual assetnya dengan cepat dan transparan terhadap
-                  proses dan harga yang terbentuk. LEGOAS mengusung dunia
-                  perlelangan dengan konsep proses digital terbaik pada saat ini
-                  berdasarkan system IT, sumberdaya manusia yang berpengalaman
-                  dalam dunia lelang, dan mengutamakan kepuasan bagi pelanggan.
-                  LEGOAS hadir untuk memberikan kemudahan Anda.
-                </p>
-              </div>
-            </Col>
-          </Row>
-        </Grid>
+      <div className="bannerAbout">
+        <div id="top-pictureAbout" className="desktop">
+          <Grid>
+            <Row>
+              <Col md={6} />
+              <Col md={6}>
+                <div className="shadow" style={{ padding: 50 }}>
+                  <h3> WHO WE ARE ?</h3>
+                  <p>
+                    LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
+                    untuk menjual assetnya dengan cepat dan transparan terhadap
+                    proses dan harga yang terbentuk. LEGOAS mengusung dunia
+                    perlelangan dengan konsep proses digital terbaik pada saat
+                    ini berdasarkan system IT, sumberdaya manusia yang
+                    berpengalaman dalam dunia lelang, dan mengutamakan kepuasan
+                    bagi pelanggan. LEGOAS hadir untuk memberikan kemudahan
+                    Anda.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
+
+        <div id="top-pictureAbout" className="mobile">
+          <Grid>
+            <Row>
+              <Col md={6} />
+              <Col md={6}>
+                <div className="shadow">
+                  <h3> WHO WE ARE ?</h3>
+                  <p>
+                    LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
+                    untuk menjual assetnya dengan cepat dan transparan terhadap
+                    proses dan harga yang terbentuk. LEGOAS mengusung dunia
+                    perlelangan dengan konsep proses digital terbaik pada saat
+                    ini berdasarkan system IT, sumberdaya manusia yang
+                    berpengalaman dalam dunia lelang, dan mengutamakan kepuasan
+                    bagi pelanggan. LEGOAS hadir untuk memberikan kemudahan
+                    Anda.
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </Grid>
+        </div>
       </div>
     );
   }
