@@ -50,16 +50,18 @@ export class Index extends Component {
             </Row>
 
             <Row style={{ paddingTop: 40 }}>
-              <h3> Proses </h3>
-              <p>
-                Setiap proses dilakukan menggunakan system khusus melalui mobile
-                apps sehingga kontrol dan monitoring berjalan dgn baik. System
-                kami dirancang untuk memberikan kemudahan dalam proses dan juga
-                kontrol monitoring yang baik sehingga hasilnya dipastikan yang
-                terbaik. hasil dan report dapat diakses secara langsung oleh
-                pemilik asset .
-              </p>
-              <hr />
+              <Col md={12}>
+                <h3> Proses </h3>
+                <p>
+                  Setiap proses dilakukan menggunakan system khusus melalui
+                  mobile apps sehingga kontrol dan monitoring berjalan dgn baik.
+                  System kami dirancang untuk memberikan kemudahan dalam proses
+                  dan juga kontrol monitoring yang baik sehingga hasilnya
+                  dipastikan yang terbaik. hasil dan report dapat diakses secara
+                  langsung oleh pemilik asset .
+                </p>
+                <hr />
+              </Col>
               <Col md={6}>
                 <Row style={{ paddingTop: 30 }}>
                   <Col xs={3} md={2}>
