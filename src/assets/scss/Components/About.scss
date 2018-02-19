@@ -302,6 +302,7 @@ section {
     height: 300px;
     background-size: 100% !important;
     background: url("../image/bg_about.jpeg");
+    background-attachment: fixed;
     .shadow {
       background: rgba(255, 255, 255, 0.561);
       height: 300px;
