@@ -1,57 +1,62 @@
-.banner_background{
-    button{
-        background:#3c8dbc;
-        border:#3c8dbc;
-        border-bottom:5px solid #3c8dbc;
-        padding: 10px 30px 25px 30px;
-        font-size:12px;
+.banner_background {
+  button {
+    background: #3c8dbc;
+    border: #3c8dbc;
+    border-bottom: 5px solid #3c8dbc;
+    padding: 10px 30px 25px 30px;
+    font-size: 12px;
 
-        @media only screen and (max-width:425px){
-            margin-left:30px;
-        }
+    @media only screen and (max-width: 425px) {
+      margin-left: 30px;
     }
-    .containBanner1{
-        background:url('https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg')center no-repeat;   
-        background-size:cover;
-        padding:150px;
-        @media only screen and (max-width:425px){
-            padding:40px 0px 0px 0px !important;
-            height:400px !important;
-        }
+  }
+  .containBanner1 {
+    background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg")center
+      no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
     }
-    ul.slick-dots{
-        button{
-            margin-top:-10px;
-            padding:10px;
-        }
+  }
+  ul.slick-dots {
+    button {
+      margin-top: -10px;
+      padding: 10px;
     }
-    h4{
-        color:#fff;
-        @media only screen and (max-width:425px){
-            font-size:20px !important;
-        }
+  }
+  h4 {
+    color: #fff;
+    @media only screen and (max-width: 425px) {
+      font-size: 20px !important;
+      margin-left: 8%;
     }
-    h1{
-        color:#fff;
-        font-size:43px;
-        @media only screen and (max-width:425px){
-            font-size:30px !important;
-            margin-left:30px;
-        }
+  }
+  h1 {
+    color: #fff;
+    font-size: 43px;
+    @media only screen and (max-width: 425px) {
+      font-size: 30px !important;
+      margin-left: 30px;
     }
-    p{
-        color:#fff;
-        @media only screen and (max-width:425px){
-            margin-left:30px;
-        }
+  }
+  p {
+    color: #fff;
+    @media only screen and (max-width: 425px) {
+      margin-left: 30px;
     }
-    .containBanner2{
-        background:url('https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg')center no-repeat;   
-        background-size:cover;
-        padding:150px;
-        @media only screen and (max-width:425px){
-            padding:0px !important;
-            height:400px !important;
-        }
+  }
+  .containBanner2 {
+    background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg")center
+      no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
     }
+  }
 }

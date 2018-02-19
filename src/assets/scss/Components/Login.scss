@@ -1,31 +1,29 @@
-.wrap-login{
-    padding-top:8%;
-    margin-right:8%;
-    padding-bottom:8%;
-    a.login-form-forgot{
-        float:right;
-    }
-    .boxshadow-login{
-        box-shadow: 0 0 10px #ccc;
-        padding:3%;
-    }
-    button.login-form-button{
-        width:100%;
-        background: #3c8dbc;
-        border:none;
-    }
-    input::placeholder{
-        font-size:12px;
-    }
-    input{
-        font-size:12px;
-    }
-    @media only screen and(max-width:320px){
-        padding-top:10%;
-        padding-left:8%;
-    }
-    @media only screen and(min-width:520px) and (max-width:600px){
-        padding-top:10%;
-        padding-left:10%;
-    }
+.wrap-login {
+  padding-top: 8%;
+  padding-bottom: 8%;
+  a.login-form-forgot {
+    float: right;
+  }
+  .boxshadow-login {
+    box-shadow: 0 0 10px #ccc;
+    padding: 3%;
+  }
+  button.login-form-button {
+    width: 100%;
+    background: #3c8dbc;
+    border: none;
+  }
+  input::placeholder {
+    font-size: 12px;
+  }
+  input {
+    font-size: 12px;
+  }
+  @media only screen and(max-width:400px) {
+    padding-top: 25%;
+  }
+  @media only screen and(min-width:520px) and (max-width: 600px) {
+    padding-top: 10%;
+    padding-left: 10%;
+  }
 }

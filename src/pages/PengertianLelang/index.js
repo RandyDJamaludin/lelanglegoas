@@ -1,12 +1,13 @@
-import React, { Component } from "react"
-import { Grid, Row, Col } from "react-bootstrap"
-import { BannerInfo } from '../Components/Partial'
+import React, { Component } from "react";
+import { Grid, Row, Col } from "react-bootstrap";
+import { BannerInfo } from "../Components/Partial";
+import LogoImage from "../../assets/image/infolelang/pengertian.png";
 
 export class Index extends Component {
   render() {
     return (
       <div className="wrap-pengertianLelangPage">
-        <BannerInfo title='Pengertian Lelang'/>
+        <BannerInfo logo={LogoImage} title="PENGERTIAN LELANG" />
 
         <Grid style={{ paddingTop: "5%" }}>
           <Row>

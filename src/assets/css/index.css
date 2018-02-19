@@ -124,32 +124,11 @@ img.logo {
     @media only screen and (max-width: 800px) {
       .wrap-tatacara .desktop-tatacaraPage {
         display: none !important; } }
-  @media only screen and (min-width: 801px) {
-    .wrap-tatacara .mobile-tatacaraPage {
-      display: none !important; } }
-
-.wrap-tatacara .Collapsible {
-  border-bottom: 1px solid #ccc;
-  background: #f8f8f8;
-  padding: 10px;
-  margin-top: 1%; }
-  .wrap-tatacara .Collapsible:hover {
-    cursor: pointer; }
-  .wrap-tatacara .Collapsible .body1 {
-    padding-top: 2%;
-    padding-left: 1%; }
-  .wrap-tatacara .Collapsible .is-closed {
-    padding: 10px;
-    font-weight: bold; }
-  .wrap-tatacara .Collapsible .is-open {
-    padding: 10px;
-    font-weight: bold; }
-
-@media only screen and (max-width: 450px) {
-  .wrap-tatacara {
-    padding-top: 30%; }
-    .wrap-tatacara .body-tatacara p.header {
-      font-size: 16px; } }
+  .wrap-tatacara .mobile-tatacaraPage {
+    display: none; }
+    @media only screen and (max-width: 800px) {
+      .wrap-tatacara .mobile-tatacaraPage {
+        display: inherit !important; } }
 
 .wrap-pengertianLelangPage {
   padding-top: 5%;
@@ -184,7 +163,7 @@ img.logo {
 .wrap-tentangKamiPage {
   padding-top: 5%; }
   .wrap-tentangKamiPage .banner {
-    background: url(https://i2.wp.com/wannabebucks.org/wp-content/uploads/2017/12/work-experience.jpg?resize=1022%2C486&ssl=1) no-repeat;
+    background: url() no-repeat;
     background-size: cover;
     padding: 2%; }
   .wrap-tentangKamiPage .right-panel p.header {
@@ -247,6 +226,7 @@ p.backTop {
   padding: 150px; }
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner1 {
+      margin-top: 5%;
       padding: 40px 0px 0px 0px !important;
       height: 400px !important; } }
 
@@ -258,7 +238,8 @@ p.backTop {
   color: #fff; }
   @media only screen and (max-width: 425px) {
     .banner_background h4 {
-      font-size: 20px !important; } }
+      font-size: 20px !important;
+      margin-left: 8%; } }
 
 .banner_background h1 {
   color: #fff;
@@ -280,7 +261,8 @@ p.backTop {
   padding: 150px; }
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner2 {
-      padding: 0px !important;
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
       height: 400px !important; } }
 
 .background-card {
@@ -487,8 +469,7 @@ button.explore:hover {
   .wrap-cardCarouselMobile img {
     padding-top: 7%;
     width: 80%;
-    padding: 10px;
-    height: 200px; }
+    padding: 10px; }
   .wrap-cardCarouselMobile h3 {
     font-size: 14px;
     padding-top: 10%;
@@ -611,6 +592,10 @@ ul.slider-list {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
 
+@media only screen and (max-width: 500px) {
+  .location-lelang {
+    margin-top: 10%; } }
+
 .location-lelang .body-header p {
   font-size: 16px;
   font-weight: bold; }
@@ -684,6 +669,10 @@ ul.slider-list {
 .wrap-viewCarPage .contentKendaraan p.header {
   font-size: 20px; }
 
+@media only screen and (max-width: 500px) {
+  #hasilPencarian {
+    margin-top: 20px; } }
+
 * {
   box-sizing: border-box; }
 
@@ -739,12 +728,12 @@ section {
     font-weight: bold;
     padding-top: 20px; }
     section .title:after {
-      content: '';
+      content: "";
       display: block;
       width: 100px;
       height: 3px;
       margin: 20px auto;
-      background-color: #B9DE26; }
+      background-color: #b9de26; }
 
 #top-menu {
   margin-bottom: 0px;
@@ -765,7 +754,8 @@ section {
     margin: auto; }
   #top-menu #top-menu-content .nav > li > a {
     padding-right: 5px; }
-  #top-menu #top-menu-content .active a, #top-menu #top-menu-content .open a {
+  #top-menu #top-menu-content .active a,
+  #top-menu #top-menu-content .open a {
     background: none; }
   #top-menu #top-menu-content .dropdown-menu {
     border: none;
@@ -787,31 +777,25 @@ section {
     position: static;
     width: 100%;
     float: none; }
-    #top-menu .dropdown-menu .dropdown-header, #top-menu .dropdown-menu a {
+    #top-menu .dropdown-menu .dropdown-header,
+    #top-menu .dropdown-menu a {
       padding: 5px 15px 5px 25px; }
     #top-menu .dropdown-menu a {
       line-height: 20px;
       color: #777; } }
 
 #top-picture {
-  width: 100%;
   height: 200px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-color: transparent, url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-size: 100% !important;
+  background-color: rgba(11, 28, 28, 0.1915), url("../image/bannerabout.jpg");
   /* Fallback */
-  background-image: url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(transparent)), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -webkit-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -moz-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -ms-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -o-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', EndColorStr='transparent')"; }
+  background-image: url("../image/bannerabout.jpg");
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11, 28, 28, 0.137)), to(rgba(11, 28, 28, 0.246))), url("../image/bannerabout.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -moz-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -ms-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -o-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(11, 28, 28, 0.137)', EndColorStr='rgba(11, 28, 28, 0.246)')"; }
   #top-picture .content {
     height: 100%;
     display: flex;
@@ -831,36 +815,42 @@ section {
     -ms-align-items: flex-end; }
     #top-picture .content .card {
       max-width: 600px;
-      color: #EAEAEA;
+      color: #eaeaea;
       text-align: center;
-      margin-bottom: 65px; }
+      margin-bottom: 15px; }
+      @media only screen and (max-width: 500px) {
+        #top-picture .content .card {
+          margin-bottom: 0px !important; }
+          #top-picture .content .card h1 {
+            font-size: 20px; } }
+      #top-picture .content .card h1 {
+        font-size: 26px; }
       #top-picture .content .card .line {
         display: inline-block;
         width: 100px;
         height: 3px;
         margin: 15px;
-        background-color: #B9DE26; }
+        background-color: #b9de26; }
       #top-picture .content .card .description {
         font-size: 24px; }
 
-@media screen and (max-width: 767px) {
-  #top-picture {
-    height: 600px;
-    background-color: rgba(0, 0, 0, 0.35), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    /* Fallback */
-    background-image: url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.7)), to(transparent)), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(0, 0, 0, 0.7)', EndColorStr='transparent')"; }
-    #top-picture .content {
-      align-items: flex-start;
-      -webkit-align-items: flex-start;
-      -moz-align-items: flex-start;
-      -o-align-items: flex-start;
-      -ms-align-items: flex-start; } }
+.bannerabout {
+  background: url("../image/bannerabout.jpg") no-repeat;
+  background-size: cover;
+  background: #000;
+  padding: 10%; }
+
+#top-pictureAbout {
+  height: 300px;
+  background-size: 100% !important;
+  background: url("../image/bg_about.jpeg"); }
+  #top-pictureAbout .shadow {
+    background: rgba(255, 255, 255, 0.561);
+    height: 300px; }
+    #top-pictureAbout .shadow h3 {
+      font-weight: 400 !important;
+      font-size: 30px;
+      color: #1f659a; }
 
 .body-card2 {
   padding-top: 5%;
@@ -890,7 +880,6 @@ section {
 
 .wrap-login {
   padding-top: 8%;
-  margin-right: 8%;
   padding-bottom: 8%; }
   .wrap-login a.login-form-forgot {
     float: right; }
@@ -905,10 +894,9 @@ section {
     font-size: 12px; }
   .wrap-login input {
     font-size: 12px; }
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 400px) {
     .wrap-login {
-      padding-top: 10%;
-      padding-left: 8%; } }
+      padding-top: 25%; } }
   @media only screen and (min-width: 520px) and (max-width: 600px) {
     .wrap-login {
       padding-top: 10%;
@@ -919,6 +907,9 @@ section {
   padding-bottom: 5%; }
   .wrap-registerChoosePage .body-register {
     border: 1px solid #ccc; }
+    @media only screen and (max-width: 500px) {
+      .wrap-registerChoosePage .body-register {
+        margin-top: 10%; } }
     .wrap-registerChoosePage .body-register .header {
       background: #3c8dbc; }
       .wrap-registerChoosePage .body-register .header p {
@@ -945,10 +936,10 @@ section {
           margin-left: 10px; }
         .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar-track {
           -webkit-box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
-          background-color: #F5F5F5; }
+          background-color: #f5f5f5; }
         .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar {
           width: 5px;
-          background-color: #F5F5F5; }
+          background-color: #f5f5f5; }
         .wrap-registerChoosePage .body-register .bodyLeftPanel .content::-webkit-scrollbar-thumb {
           background-color: #3c8dbc;
           border: 1px solid #3c8dbc; }

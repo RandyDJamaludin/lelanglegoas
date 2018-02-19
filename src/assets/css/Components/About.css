@@ -53,12 +53,12 @@ section {
     font-weight: bold;
     padding-top: 20px; }
     section .title:after {
-      content: '';
+      content: "";
       display: block;
       width: 100px;
       height: 3px;
       margin: 20px auto;
-      background-color: #B9DE26; }
+      background-color: #b9de26; }
 
 #top-menu {
   margin-bottom: 0px;
@@ -79,7 +79,8 @@ section {
     margin: auto; }
   #top-menu #top-menu-content .nav > li > a {
     padding-right: 5px; }
-  #top-menu #top-menu-content .active a, #top-menu #top-menu-content .open a {
+  #top-menu #top-menu-content .active a,
+  #top-menu #top-menu-content .open a {
     background: none; }
   #top-menu #top-menu-content .dropdown-menu {
     border: none;
@@ -101,31 +102,25 @@ section {
     position: static;
     width: 100%;
     float: none; }
-    #top-menu .dropdown-menu .dropdown-header, #top-menu .dropdown-menu a {
+    #top-menu .dropdown-menu .dropdown-header,
+    #top-menu .dropdown-menu a {
       padding: 5px 15px 5px 25px; }
     #top-menu .dropdown-menu a {
       line-height: 20px;
       color: #777; } }
 
 #top-picture {
-  width: 100%;
   height: 200px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  -ms-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-color: transparent, url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
+  background-size: 100% !important;
+  background-color: rgba(11, 28, 28, 0.1915), url("../image/bannerabout.jpg");
   /* Fallback */
-  background-image: url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(transparent), to(transparent)), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -webkit-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -moz-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -ms-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  background-image: -o-linear-gradient(top, transparent, transparent), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='transparent', EndColorStr='transparent')"; }
+  background-image: url("../image/bannerabout.jpg");
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11, 28, 28, 0.137)), to(rgba(11, 28, 28, 0.246))), url("../image/bannerabout.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -moz-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -ms-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: -o-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(11, 28, 28, 0.137)', EndColorStr='rgba(11, 28, 28, 0.246)')"; }
   #top-picture .content {
     height: 100%;
     display: flex;
@@ -145,33 +140,39 @@ section {
     -ms-align-items: flex-end; }
     #top-picture .content .card {
       max-width: 600px;
-      color: #EAEAEA;
+      color: #eaeaea;
       text-align: center;
-      margin-bottom: 65px; }
+      margin-bottom: 15px; }
+      @media only screen and (max-width: 500px) {
+        #top-picture .content .card {
+          margin-bottom: 0px !important; }
+          #top-picture .content .card h1 {
+            font-size: 20px; } }
+      #top-picture .content .card h1 {
+        font-size: 26px; }
       #top-picture .content .card .line {
         display: inline-block;
         width: 100px;
         height: 3px;
         margin: 15px;
-        background-color: #B9DE26; }
+        background-color: #b9de26; }
       #top-picture .content .card .description {
         font-size: 24px; }
 
-@media screen and (max-width: 767px) {
-  #top-picture {
-    height: 600px;
-    background-color: rgba(0, 0, 0, 0.35), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    /* Fallback */
-    background-image: url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.7)), to(transparent)), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.7), transparent), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg);
-    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(0, 0, 0, 0.7)', EndColorStr='transparent')"; }
-    #top-picture .content {
-      align-items: flex-start;
-      -webkit-align-items: flex-start;
-      -moz-align-items: flex-start;
-      -o-align-items: flex-start;
-      -ms-align-items: flex-start; } }
+.bannerabout {
+  background: url("../image/bannerabout.jpg") no-repeat;
+  background-size: cover;
+  background: #000;
+  padding: 10%; }
+
+#top-pictureAbout {
+  height: 300px;
+  background-size: 100% !important;
+  background: url("../image/bg_about.jpeg"); }
+  #top-pictureAbout .shadow {
+    background: rgba(255, 255, 255, 0.561);
+    height: 300px; }
+    #top-pictureAbout .shadow h3 {
+      font-weight: 400 !important;
+      font-size: 30px;
+      color: #1f659a; }

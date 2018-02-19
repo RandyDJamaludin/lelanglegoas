@@ -1,6 +1,5 @@
 .wrap-login {
   padding-top: 8%;
-  margin-right: 8%;
   padding-bottom: 8%; }
   .wrap-login a.login-form-forgot {
     float: right; }
@@ -15,10 +14,9 @@
     font-size: 12px; }
   .wrap-login input {
     font-size: 12px; }
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 400px) {
     .wrap-login {
-      padding-top: 10%;
-      padding-left: 8%; } }
+      padding-top: 25%; } }
   @media only screen and (min-width: 520px) and (max-width: 600px) {
     .wrap-login {
       padding-top: 10%;

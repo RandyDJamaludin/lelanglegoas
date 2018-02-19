@@ -1,240 +1,205 @@
-body{
-    background:#fff !important;
-    font-family: Helvetica !important;
+body {
+  background: #fff !important;
+  font-family: Helvetica !important;
 }
-button.buttonSearch{
-    width:100%;
-    margin-top:24px;
+button.buttonSearch {
+  width: 100%;
+  margin-top: 24px;
 }
-button.search{
-    width:100%;
-    border:1px solid #40a9ff;
+button.search {
+  width: 100%;
+  border: 1px solid #40a9ff;
 }
-.wrap-nav{
-    position:fixed;
-    z-index: 999;
-    width: 100%;
-    
-    a.anchorActive{
-        color:#3c8dbc !important;
+.wrap-nav {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+
+  a.anchorActive {
+    color: #3c8dbc !important;
+  }
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    box-shadow: 0 0 10px #ccc;
+    background: #fff;
+    color: #3c8dbc;
+  }
+  .navbar-inverse {
+    border: none;
+
+    .navbar-toggle {
+      border: none;
+      background: #3c8dbc;
     }
-    .navbar{
-        padding-top:10px;
-        padding-bottom:10px;
-        font-size:13px;
-        box-shadow:0 0 10px #ccc;
-        background: #fff;
-        color:#3c8dbc;
+    .navbar-toggle:hover {
+      border: none;
+      background: #3c8dbc;
     }
-    .navbar-inverse{
-        border:none;
-        
-        .navbar-toggle{
-            border:none;
-            background:#3c8dbc;
-        }
-        .navbar-toggle:hover{
-            border:none;
-            background:#3c8dbc;    
-        }
-        .navbar-collapse{
-            border:none;
-        }
-        .navbar-form{
-            border:none;
-        }
-        .navbar-nav{
-            background:transparent;
-            &:focus{
-              background:red !important;
-            }
-            .open{
-                a{
-                  background:transparent;
-                }
-                &:hover{
-                  background:transparent;
-                }
-                &:focus{
-                  background:transparent;
-                }
-            }
-            li{
-                a{
-                    color:#000;
-                    &:focus{
-                        color:#3c8dbc;    
-                    }
-                    &:hover{
-                        color:#3c8dbc;
-                    }
-                }
-            }
-        }
-        
-    }    
-}
-span.orange{
-    color:#3c8dbc;
-    font-weight: bold;
-}
-ul.right{
-    float:right;
-    @media only screen and (max-width:765px){
-        float:none;
+    .navbar-collapse {
+      border: none;
     }
+    .navbar-form {
+      border: none;
+    }
+    .navbar-nav {
+      background: transparent;
+      &:focus {
+        background: red !important;
+      }
+      .open {
+        a {
+          background: transparent;
+        }
+        &:hover {
+          background: transparent;
+        }
+        &:focus {
+          background: transparent;
+        }
+      }
+      li {
+        a {
+          color: #000;
+          &:focus {
+            color: #3c8dbc;
+          }
+          &:hover {
+            color: #3c8dbc;
+          }
+        }
+      }
+    }
+  }
 }
-img.logo{
-    margin-top:-5px;
+span.orange {
+  color: #3c8dbc;
+  font-weight: bold;
+}
+ul.right {
+  float: right;
+  @media only screen and (max-width: 765px) {
+    float: none;
+  }
+}
+img.logo {
+  margin-top: -5px;
 }
 
-//Page Location 
+//Page Location
 
-.page-lokasi{
-    padding-top:8%;
-    @media only screen and(max-width:600px){
-        padding-top:18%;
-    }
+.page-lokasi {
+  padding-top: 8%;
+  @media only screen and(max-width:600px) {
+    padding-top: 18%;
+  }
 }
 
-.page-jadwal{
-    padding-top:5%;
-    @media only screen and(max-width:600px){
-        padding-top:18%;
-    }
-    .searchPanel{
-        box-shadow:0 0 10px #ccc;
-        padding:20px;
-    }
+.page-jadwal {
+  padding-top: 5%;
+  @media only screen and(max-width:600px) {
+    padding-top: 18%;
+  }
+  .searchPanel {
+    box-shadow: 0 0 10px #ccc;
+    padding: 20px;
+  }
 }
-
 
 // People us
 
-.wrap-people{
-    background:#fff;
-    background-size:100%;
-    margin-top:5%;
-    @media only screen and (max-width:800px){
-        padding-top:20px;
-    }
-    p.header{
-        text-align: center;
-        font-size:20px;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
+.wrap-people {
+  background: #fff;
+  background-size: 100%;
+  margin-top: 5%;
+  @media only screen and (max-width: 800px) {
+    padding-top: 20px;
+  }
+  p.header {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 // End People us
 
-
 // Page Kontak us
 
-.wrap-kontak{
-    padding-top:8%;
-    .right-panel{
-        box-shadow:0 0 10px #ccc;
-        padding:30px;
-        .form-contact{
-            input::placeholder{
-                font-size:12px;
-            }
-            textarea{
-                height: 200px;
-            }
-            textarea::placeholder{
-                font-size:12px;
-            }
-            button{
-                margin-top:5%;
-                width: 100%;
-                background:#3c8dbc;
-                border:1px solid #3c8dbc;
-            }
-        }
-        .header{
-            p.header{
-                font-size:18px;
-                font-weight: bold;
-                font-family: Helvetica;
-                text-transform: uppercase;
-
-                span{
-                    color:#3c8dbc;
-                }
-            }
-        }
+.wrap-kontak {
+  padding-top: 8%;
+  .right-panel {
+    box-shadow: 0 0 10px #ccc;
+    padding: 30px;
+    .form-contact {
+      input::placeholder {
+        font-size: 12px;
+      }
+      textarea {
+        height: 200px;
+      }
+      textarea::placeholder {
+        font-size: 12px;
+      }
+      button {
+        margin-top: 5%;
+        width: 100%;
+        background: #3c8dbc;
+        border: 1px solid #3c8dbc;
+      }
     }
+    .header {
+      p.header {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: Helvetica;
+        text-transform: uppercase;
+
+        span {
+          color: #3c8dbc;
+        }
+      }
+    }
+  }
 }
 
 // End Kontak Us
 
 // Tata cara lelang
 
-.wrap-tatacara{
-    padding-top:5%;
-    .desktop-tatacaraPage{
-        padding-bottom:10%;  
-        @media only screen and(max-width:800px){
-            display:none !important
-        }
+.wrap-tatacara {
+  padding-top: 5%;
+  .desktop-tatacaraPage {
+    padding-bottom: 10%;
+    @media only screen and(max-width:800px) {
+      display: none !important;
     }
-    .mobile-tatacaraPage{
-        @media only screen and(min-width:801px){
-            display:none !important
-        }
+  }
+  .mobile-tatacaraPage {
+    display: none;
+    @media only screen and (max-width: 800px) {
+      display: inherit !important;
     }
-}
-
-.wrap-tatacara{
-    .Collapsible{
-        border-bottom:1px solid #ccc;
-        background:#f8f8f8;
-        padding:10px;
-        margin-top:1%;
-        &:hover{
-            cursor:pointer;
-        }
-        .body1{
-            padding-top:2%;
-            padding-left:1%;
-        }
-        .is-closed{
-            padding:10px;
-            font-weight: bold;
-        }
-        .is-open{
-            padding:10px;
-            font-weight: bold;
-        }
-    }
-    @media only screen and(max-width:450px){
-        padding-top:30%;
-        .body-tatacara{
-            p.header{
-                font-size:16px;
-            }
-        }
-    }
+  }
 }
 
 //End tata cara lelang
 
-
 // Pengertian lelang
 
-.wrap-pengertianLelangPage{
-  padding-top:5%;
-  padding-bottom:8%;
-  p.header{
-      font-size:18px;
-      font-weight: bold;
-      font-family: Helvetica;
-      text-transform: uppercase;
+.wrap-pengertianLelangPage {
+  padding-top: 5%;
+  padding-bottom: 8%;
+  p.header {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Helvetica;
+    text-transform: uppercase;
   }
-  span.orange{
-    color:#3c8dbc;
+  span.orange {
+    color: #3c8dbc;
     font-weight: bold;
   }
 }
@@ -243,25 +208,25 @@ img.logo{
 
 // Peraturan lelang
 
-.wrap-peraturanLelangPage{
-  padding-top:5%;
-  padding-bottom:5%;
-  p.header{
-    font-size:18px;
+.wrap-peraturanLelangPage {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  p.header {
+    font-size: 18px;
     font-weight: bold;
     font-family: Helvetica;
     text-transform: uppercase;
   }
-  span.orange{
+  span.orange {
     font-weight: bold;
   }
-  .collapse-body{
-    padding:10px;
-    padding-left:25px;
-    span{
+  .collapse-body {
+    padding: 10px;
+    padding-left: 25px;
+    span {
       font-weight: bold;
-      font-size:14px;
-      color:#3c8dbc;
+      font-size: 14px;
+      color: #3c8dbc;
     }
   }
 }
@@ -270,94 +235,92 @@ img.logo{
 
 // Page Tentang Kami
 
-.wrap-tentangKamiPage{
-  padding-top:5%;
-  .banner{
-      background:url(https://i2.wp.com/wannabebucks.org/wp-content/uploads/2017/12/work-experience.jpg?resize=1022%2C486&ssl=1) no-repeat;
-      background-size:cover;
-      padding:2%;
+.wrap-tentangKamiPage {
+  padding-top: 5%;
+  .banner {
+    background: url() no-repeat;
+    background-size: cover;
+    padding: 2%;
   }
-  .right-panel{
-    p.header{
-      font-size:18px;
+  .right-panel {
+    p.header {
+      font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
     }
-    p.description{
-        line-height: 2;
+    p.description {
+      line-height: 2;
     }
   }
-
 }
 
 // End Tentang Kami
 
 //Footer
 
-.wrap-footer{
-    color:#b3b3b3;
-    
-    .logo-footer{
-        padding-bottom:2%;
-    }
-    .body-client{
-        padding-top:4%;
-    }
+.wrap-footer {
+  color: #b3b3b3;
 
-    .border{
-        border-top:2px solid #f8f8f8;
-        border-bottom:2px solid #f8f8f8;
-        padding-bottom:3%;
-        padding-top:2%;
-        p.title{
-          font-weight: bold;
-          color:#3c8dbc;
-        }
-    }
-    p{
+  .logo-footer {
+    padding-bottom: 2%;
+  }
+  .body-client {
+    padding-top: 4%;
+  }
 
-        font-family: Helvetica;
+  .border {
+    border-top: 2px solid #f8f8f8;
+    border-bottom: 2px solid #f8f8f8;
+    padding-bottom: 3%;
+    padding-top: 2%;
+    p.title {
+      font-weight: bold;
+      color: #3c8dbc;
     }
-    p.footer{
-        text-align: center;
-        padding-top:1%;
-    }
+  }
+  p {
+    font-family: Helvetica;
+  }
+  p.footer {
+    text-align: center;
+    padding-top: 1%;
+  }
 
-    input.footer-email::placeholder{
-        color:#ccc;
-        font-size:12px;
-    }
-    input.footer-email{
-        font-size:12px;
-    }
-    p.social-media{
-        font-size:22px;
-        display:inline-block;
-        padding-right:15px;
-        padding-top:10px;
-    }
-    span{
-        color:#3c8dbc;
-    }
+  input.footer-email::placeholder {
+    color: #ccc;
+    font-size: 12px;
+  }
+  input.footer-email {
+    font-size: 12px;
+  }
+  p.social-media {
+    font-size: 22px;
+    display: inline-block;
+    padding-right: 15px;
+    padding-top: 10px;
+  }
+  span {
+    color: #3c8dbc;
+  }
 }
 
 //End Footer
 
 //Back to Top
 
-p.backTop{
-    border:none;
-    font-size:30px;
-    color:#3c8dbc;
+p.backTop {
+  border: none;
+  font-size: 30px;
+  color: #3c8dbc;
 }
 
 //End to Top
 
-@import 'Components/Banner.scss';
-@import 'Components/Card.scss';
-@import 'Components/About.scss';
-@import 'Components/TabLeft.scss';
-@import 'Components/Login.scss';
-@import 'Components/Register.scss';
-@import 'Components/ViewCar.scss';
+@import "Components/Banner.scss";
+@import "Components/Card.scss";
+@import "Components/About.scss";
+@import "Components/TabLeft.scss";
+@import "Components/Login.scss";
+@import "Components/Register.scss";
+@import "Components/ViewCar.scss";
 @import "react-alice-carousel/src/alice-carousel.scss";

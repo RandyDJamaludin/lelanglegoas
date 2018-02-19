@@ -1,7 +1,7 @@
-$c_gray_dark: #9B9B9B;
-$c_gray_light: #EAEAEA;
-$c_green_dark: #79AD1A;
-$c_green_light: #B9DE26;
+$c_gray_dark: #9b9b9b;
+$c_gray_light: #eaeaea;
+$c_green_dark: #79ad1a;
+$c_green_light: #b9de26;
 
 $s_xs: 575px;
 $s_sm: 767px;
@@ -9,284 +9,306 @@ $s_md: 991px;
 $s_lg: 1199px;
 
 @mixin flex-display() {
-   display: flex;
-   display: -webkit-flex;
-   display: -moz-flex;
-   display: -o-flex;
-   display: -ms-flex;
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -ms-flex;
 }
 
 @mixin justify-content($value) {
-   justify-content: $value;
-   -webkit-justify-content: $value;
-   -moz-justify-content: $value;
-   -o-justify-content: $value;
-   -ms-justify-content: $value;
+  justify-content: $value;
+  -webkit-justify-content: $value;
+  -moz-justify-content: $value;
+  -o-justify-content: $value;
+  -ms-justify-content: $value;
 }
 
 @mixin align-items($value) {
-   align-items: $value;
-   -webkit-align-items: $value;
-   -moz-align-items: $value;
-   -o-align-items: $value;
-   -ms-align-items: $value;
+  align-items: $value;
+  -webkit-align-items: $value;
+  -moz-align-items: $value;
+  -o-align-items: $value;
+  -ms-align-items: $value;
 }
 
 @mixin flex($value) {
-   flex: $value;
-   -webkit-flex: $value;
-   -moz-flex: $value;
-   -o-flex: $value;
-   -ms-flex: $value;
+  flex: $value;
+  -webkit-flex: $value;
+  -moz-flex: $value;
+  -o-flex: $value;
+  -ms-flex: $value;
 }
 
 @mixin flex-flow($value) {
-   flex-flow: $value;
-   -webkit-flex-flow: $value;
-   -moz-flex-flow: $value;
-   -o-flex-flow: $value;
-   -ms-flex-flow: $value;
+  flex-flow: $value;
+  -webkit-flex-flow: $value;
+  -moz-flex-flow: $value;
+  -o-flex-flow: $value;
+  -ms-flex-flow: $value;
 }
 
 @mixin flex-direction($value) {
-   flex-direction: $value;
-   -webkit-flex-direction: $value;
-   -moz-flex-direction: $value;
-   -o-flex-direction: $value;
-   -ms-flex-direction: $value;
+  flex-direction: $value;
+  -webkit-flex-direction: $value;
+  -moz-flex-direction: $value;
+  -o-flex-direction: $value;
+  -ms-flex-direction: $value;
 }
 
 @mixin flex-basis($value) {
-   flex-basis: $value;
-   -webkit-flex-basis: $value;
-   -moz-flex-basis: $value;
-   -o-flex-basis: $value;
-   -ms-flex-basis: $value;
+  flex-basis: $value;
+  -webkit-flex-basis: $value;
+  -moz-flex-basis: $value;
+  -o-flex-basis: $value;
+  -ms-flex-basis: $value;
 }
 
 @mixin order($value) {
-   order: $value;
-   -webkit-order: $value;
-   -moz-order: $value;
-   -o-order: $value;
-   -ms-order: $value;
+  order: $value;
+  -webkit-order: $value;
+  -moz-order: $value;
+  -o-order: $value;
+  -ms-order: $value;
 }
 
 @mixin mix-blend-mode($value) {
-   mix-blend-mode: $value;
-   -webkit-mix-blend-mode: $value;
-   -moz-mix-blend-mode: $value;
-   -o-mix-blend-mode: $value;
-   -ms-mix-blend-mode: $value;
+  mix-blend-mode: $value;
+  -webkit-mix-blend-mode: $value;
+  -moz-mix-blend-mode: $value;
+  -o-mix-blend-mode: $value;
+  -ms-mix-blend-mode: $value;
 }
 
 @mixin translateY($y) {
-   -webkit-transform: translateY($y);
-   -moz-transform: translateY($y);
-   -o-transform: translateY($y);
-   -ms-transform: translateY($y);
-   transform: translateY($y);
+  -webkit-transform: translateY($y);
+  -moz-transform: translateY($y);
+  -o-transform: translateY($y);
+  -ms-transform: translateY($y);
+  transform: translateY($y);
 }
 
 @mixin transition($effect) {
-   -webkit-transition: $effect;
-   -moz-transition: $effect;
-   -o-transition: $effect;
-   -ms-transition: $effect;
-   transition: $effect;
+  -webkit-transition: $effect;
+  -moz-transition: $effect;
+  -o-transition: $effect;
+  -ms-transition: $effect;
+  transition: $effect;
 }
 
 @mixin background-size($size) {
-   -webkit-background-size: $size;
-   -moz-background-size: $size;
-   -o-background-size: $size;
-   -ms-background-size: $size;
-   background-size: $size;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+  -ms-background-size: $size;
+  background-size: $size;
 }
 
 @mixin linear-gradient($from-color, $to-color, $image) {
-   background-color: mix($from-color, $to-color), $image; /* Fallback */
-   background-image: $image;
-   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color)), $image;
-   background-image: -webkit-linear-gradient(top, $from-color, $to-color), $image; 
-   background-image: -moz-linear-gradient(top, $from-color, $to-color), $image;
-   background-image: -ms-linear-gradient(top, $from-color, $to-color), $image;
-   background-image: -o-linear-gradient(top, $from-color, $to-color), $image;
-   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', EndColorStr='#{$to-color}')";
+  background-color: mix($from-color, $to-color), $image; /* Fallback */
+  background-image: $image;
+  background-image: -webkit-gradient(
+      linear,
+      0% 0%,
+      0% 100%,
+      from($from-color),
+      to($to-color)
+    ),
+    $image;
+  background-image: -webkit-linear-gradient(top, $from-color, $to-color), $image;
+  background-image: -moz-linear-gradient(top, $from-color, $to-color), $image;
+  background-image: -ms-linear-gradient(top, $from-color, $to-color), $image;
+  background-image: -o-linear-gradient(top, $from-color, $to-color), $image;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', EndColorStr='#{$to-color}')";
 }
 
 * {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .flex {
-   @include flex-display();
-   
-   &.column {
-      @include flex-direction(column);
-   }
-   
-   &.row {
-      @include flex-direction(row);
-   }
-   
-   .swap1 {
-		@include order(1);
-	}
+  @include flex-display();
 
-	.swap2 {
-		@include order(2);
-	}
+  &.column {
+    @include flex-direction(column);
+  }
+
+  &.row {
+    @include flex-direction(row);
+  }
+
+  .swap1 {
+    @include order(1);
+  }
+
+  .swap2 {
+    @include order(2);
+  }
 }
 
 @media screen and (max-width: $s_sm) {
-   .flex {
-      .swap1 {
-         @include order(2);
-      }
+  .flex {
+    .swap1 {
+      @include order(2);
+    }
 
-      .swap2 {
-         @include order(1);
-      }
-   }
+    .swap2 {
+      @include order(1);
+    }
+  }
 }
 
 section {
-   padding-bottom:5%;
-   .title {
-      text-align: center;
-      font-weight: bold;
-      padding-top: 20px;
-      &:after {
-         content: '';
-         display: block;
-         width: 100px;
-         height: 3px;
-         margin: 20px auto;
-         background-color: $c_green_light;
-      }
-   }
+  padding-bottom: 5%;
+  .title {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    &:after {
+      content: "";
+      display: block;
+      width: 100px;
+      height: 3px;
+      margin: 20px auto;
+      background-color: $c_green_light;
+    }
+  }
 }
 
 #top-menu {
-	margin-bottom: 0px;
-   padding: 10px;
-	border: none;
-	background: none;
-   
-   .logo {
-		height: 30px;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 50%;
-		@include translateY(-50%);
-		margin: auto;
-	}
-   
-   #top-menu-content {
-      .nav > li > a {
-         padding-right: 5px;
-      }
-      
-      .active a, .open a {
-			background: none;
-		}
-		
-		.dropdown-menu {
-			border: none;
-			box-shadow: none;
-			background-color: white;
-			background-color: rgba(255, 255, 255, 0.8);
-		}
-	}
+  margin-bottom: 0px;
+  padding: 10px;
+  border: none;
+  background: none;
+
+  .logo {
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    @include translateY(-50%);
+    margin: auto;
+  }
+
+  #top-menu-content {
+    .nav > li > a {
+      padding-right: 5px;
+    }
+
+    .active a,
+    .open a {
+      background: none;
+    }
+
+    .dropdown-menu {
+      border: none;
+      box-shadow: none;
+      background-color: white;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
 }
 
 @media screen and (max-width: $s_md) {
-	#top-menu {
-		.logo {
-			position: relative;
-		}
-	}
+  #top-menu {
+    .logo {
+      position: relative;
+    }
+  }
 }
 
 @media screen and (max-width: $s_sm) {
-	#top-menu {
-      
-      .dropdown-toggle {
-         
-         &:focus, &:visited, &:active {
-            color: #777;
-         }
-         
-         .caret {
-            display: none;
-         }
+  #top-menu {
+    .dropdown-toggle {
+      &:focus,
+      &:visited,
+      &:active {
+        color: #777;
       }
-      
-		.dropdown-menu {
-        display: block;
-        position: static;
-        width: 100%;
-        float: none;
-         
-        .dropdown-header, a {
-          padding: 5px 15px 5px 25px;
-        }
-         
-        a {
-          line-height: 20px;
-          color: #777;
-        }
-		}
-	}
+
+      .caret {
+        display: none;
+      }
+    }
+
+    .dropdown-menu {
+      display: block;
+      position: static;
+      width: 100%;
+      float: none;
+
+      .dropdown-header,
+      a {
+        padding: 5px 15px 5px 25px;
+      }
+
+      a {
+        line-height: 20px;
+        color: #777;
+      }
+    }
+  }
 }
-
-
 
 #top-picture {
-	width: 100%;
-	height: 200px;
-	@include background-size(cover);
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	@include linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0), url(https://www.business.unsw.edu.au/SiteCollectionImages/Content/Slider/Business-School-OWeek-Web-Banner.jpg));
-	
-	.content {
-		height: 100%;
-		@include flex-display();
-		@include justify-content(center);
-		@include align-items(flex-end);
-		.card {
-			max-width: 600px;
-			color: $c_gray_light;
-			text-align: center;
-			margin-bottom: 65px;
-			
-			.line {
-				display: inline-block;
-				width: 100px;
-				height: 3px;
-				margin: 15px;
-				background-color: $c_green_light;
-			}
-			
-			.description {
-				font-size: 24px;
-			}
-		}
-	}
+  height: 200px;
+  background-size: 100% !important;
+  @include linear-gradient(rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246), url("../image/bannerabout.jpg"));
+  .content {
+    height: 100%;
+    @include flex-display();
+    @include justify-content(center);
+    @include align-items(flex-end);
+    .card {
+      max-width: 600px;
+      color: $c_gray_light;
+      text-align: center;
+      margin-bottom: 15px;
+      @media only screen and(max-width:500px) {
+        margin-bottom: 0px !important;
+        h1 {
+          font-size: 20px;
+        }
+      }
+      h1 {
+        font-size: 26px;
+      }
+
+      .line {
+        display: inline-block;
+        width: 100px;
+        height: 3px;
+        margin: 15px;
+        background-color: $c_green_light;
+      }
+
+      .description {
+        font-size: 24px;
+      }
+    }
+  }
 }
 
-@media screen and (max-width: $s_sm) {
-	#top-picture {
-		height: 600px;
-		@include linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.0), url(https://pas-wordpress-media.s3.amazonaws.com/content/uploads/2017/10/7-steps-to-writing-a-business-plan.jpg));
-		
-		.content {
-      @include align-items(flex-start);
-      
-		}
-	}
+.bannerabout {
+  background: url("../image/bannerabout.jpg") no-repeat;
+  background-size: cover;
+  background: #000;
+  padding: 10%;
 }
 
+#top-pictureAbout {
+  height: 300px;
+  background-size: 100% !important;
+  background: url("../image/bg_about.jpeg");
+  .shadow {
+    background: rgba(255, 255, 255, 0.561);
+    height: 300px;
+
+    h3 {
+      font-weight: 400 !important;
+      font-size: 30px;
+      color: #1f659a;
+    }
+  }
+}

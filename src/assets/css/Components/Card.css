@@ -202,8 +202,7 @@ button.explore:hover {
   .wrap-cardCarouselMobile img {
     padding-top: 7%;
     width: 80%;
-    padding: 10px;
-    height: 200px; }
+    padding: 10px; }
   .wrap-cardCarouselMobile h3 {
     font-size: 14px;
     padding-top: 10%;
@@ -326,6 +325,10 @@ ul.slider-list {
       .landing-lelang .row-lelang {
         border: 1px solid #ccc !important; } }
 
+@media only screen and (max-width: 500px) {
+  .location-lelang {
+    margin-top: 10%; } }
+
 .location-lelang .body-header p {
   font-size: 16px;
   font-weight: bold; }
@@ -398,3 +401,7 @@ ul.slider-list {
 
 .wrap-viewCarPage .contentKendaraan p.header {
   font-size: 20px; }
+
+@media only screen and (max-width: 500px) {
+  #hasilPencarian {
+    margin-top: 20px; } }

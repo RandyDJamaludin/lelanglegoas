@@ -1,12 +1,16 @@
-import React, { Component } from "react"
-import { Grid, Row, Col } from "react-bootstrap"
-import { Icon } from "antd"
-import { CardCarousel, JadwalLelang, TabLeft} from "../Components/Card"
-import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil } from "../AllData/DataCard"
-import { Banner } from "../Components/Partial"
-import { NavLink } from "react-router-dom"
-import AliceCarousel from "react-alice-carousel"
-import Map from "../Components/Map"
+import React, { Component } from "react";
+import { Grid, Row, Col } from "react-bootstrap";
+import { Icon } from "antd";
+import { CardCarousel, JadwalLelang, TabLeft } from "../Components/Card";
+import {
+  DataCardCarousel,
+  DataJadwalMotor,
+  DataJadwalMobil
+} from "../AllData/DataCard";
+import { Banner } from "../Components/Partial";
+import { NavLink } from "react-router-dom";
+import AliceCarousel from "react-alice-carousel";
+import Map from "../Components/Map";
 
 export class Index extends Component {
   static defaultProps = {
@@ -30,7 +34,7 @@ export class Index extends Component {
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
-            <p className='titleHeader'> REKOMENDASI MOBIL / MOTOR </p>
+            <p className="titleHeader"> REKOMENDASI MOBIL / MOTOR </p>
             <AliceCarousel
               duration={400}
               autoPlay={true}
@@ -99,62 +103,62 @@ export class Index extends Component {
               <hr />
             </div>
             <Row>
-              <Col xs={6} md={12}>
+              <Col xs={12} md={12}>
                 <Row>
-                <AliceCarousel
-                  duration={400}
-                  autoPlay={false}
-                  startIndex={1}
-                  fadeOutAnimation={true}
-                  mouseDragEnabled={true}
-                  responsive={responsive}
-                  autoPlayInterval={2000}
-                  autoPlayActionDisabled={true}
-                  onSlideChange={this.onSlideChange}
-                  onSlideChanged={this.onSlideChanged}
-                >
-                  {DataJadwalMotor.map((data, index) => (
-                    <Col xs={12} md={12} key={data.key}>
-                      <JadwalLelang
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
-                      />
-                    </Col>
-                  ))}
-                </AliceCarousel>
+                  <AliceCarousel
+                    duration={400}
+                    autoPlay={false}
+                    startIndex={1}
+                    fadeOutAnimation={true}
+                    mouseDragEnabled={true}
+                    responsive={responsive}
+                    autoPlayInterval={2000}
+                    autoPlayActionDisabled={true}
+                    onSlideChange={this.onSlideChange}
+                    onSlideChanged={this.onSlideChanged}
+                  >
+                    {DataJadwalMotor.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>
+                        <JadwalLelang
+                          transport={data.transport}
+                          location={data.location}
+                          date={data.date}
+                          time={data.time}
+                          openhouse={data.openhouse}
+                        />
+                      </Col>
+                    ))}
+                  </AliceCarousel>
                 </Row>
               </Col>
             </Row>
             <Row>
-              <Col xs={6} md={12}>
+              <Col xs={12} md={12}>
                 <Row>
-                <AliceCarousel
-                  duration={400}
-                  autoPlay={false}
-                  startIndex={1}
-                  fadeOutAnimation={true}
-                  mouseDragEnabled={true}
-                  responsive={responsive}
-                  autoPlayInterval={2000}
-                  autoPlayActionDisabled={true}
-                  onSlideChange={this.onSlideChange}
-                  onSlideChanged={this.onSlideChanged}
-                >
-                  {DataJadwalMobil.map((data, index) => (
-                    <Col xs={12} md={12} key={data.key}>
-                      <JadwalLelang
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
-                      />
-                    </Col>
-                  ))}
-                </AliceCarousel>
+                  <AliceCarousel
+                    duration={400}
+                    autoPlay={false}
+                    startIndex={1}
+                    fadeOutAnimation={true}
+                    mouseDragEnabled={true}
+                    responsive={responsive}
+                    autoPlayInterval={2000}
+                    autoPlayActionDisabled={true}
+                    onSlideChange={this.onSlideChange}
+                    onSlideChanged={this.onSlideChanged}
+                  >
+                    {DataJadwalMobil.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>
+                        <JadwalLelang
+                          transport={data.transport}
+                          location={data.location}
+                          date={data.date}
+                          time={data.time}
+                          openhouse={data.openhouse}
+                        />
+                      </Col>
+                    ))}
+                  </AliceCarousel>
                 </Row>
               </Col>
             </Row>
@@ -164,7 +168,7 @@ export class Index extends Component {
           </Grid>
         </div>
 
-        <div style={{paddingBottom:'4%'}}>
+        <div style={{ paddingBottom: "4%" }}>
           <Map />
         </div>
       </div>
