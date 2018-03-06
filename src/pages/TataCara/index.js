@@ -19,7 +19,6 @@ import IconPenjual1 from "../../assets/image/Penjual/download.png";
 import IconPenjual2 from "../../assets/image/Penjual/persetujuan.png";
 import IconPenjual3 from "../../assets/image/Penjual/transfer.png";
 
-import LogoImage from "../../assets/image/infolelang/tatacara.png";
 const TabPane = Tabs.TabPane;
 
 export class Index extends Component {
@@ -32,7 +31,7 @@ export class Index extends Component {
     return (
       <div>
         <div className="wrap-tatacara">
-          <BannerInfo logo={LogoImage} title="TATA CARA LELANG" />
+          <BannerInfo logo={Image3} title="TATA CARA LELANG" />
           <div className="header">
             <Grid className="desktop-tatacaraPage" style={{ paddingTop: "5%" }}>
               <Row>
