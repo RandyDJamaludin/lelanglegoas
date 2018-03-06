@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, Image } from "react-bootstrap";
 import { BannerInfo } from "../Components/Partial";
 import LogoImage from "../../assets/image/infolelang/pengertian.png";
+import IconFigure from "../../assets/image/Pembeli/figure.png";
 
 export class Index extends Component {
   render() {
@@ -11,7 +12,13 @@ export class Index extends Component {
 
         <Grid style={{ paddingTop: "5%" }}>
           <Row>
-            <Col md={2} />
+            <Col md={2}>
+            <Image
+              src={IconFigure}
+              alt="Logo"
+              style={{ width: "100%" }}
+            />
+            </Col>
             <Col md={8}>
               <p className="text-center">
                 Lelang adalah proses membeli dan menjual barang atau jasa dengan

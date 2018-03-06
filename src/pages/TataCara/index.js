@@ -2,10 +2,23 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Image } from "react-bootstrap";
 import { Tabs } from "antd";
 import { BannerInfo } from "../Components/Partial";
-import Image1 from "../../assets/image/Pembeli/1lihat.png";
-import Image2 from "../../assets/image/infolelang/tatacara.png";
-import Image5 from "../../assets/image/Pembeli/2bit.png";
-import Image6 from "../../assets/image/Pembeli/3deal.png";
+
+//Icon Pembeli
+
+import Image1 from "../../assets/image/Pembeli/icon1.png";
+import Image2 from "../../assets/image/Pembeli/icon2.png";
+import Image3 from "../../assets/image/Pembeli/icon3.png";
+import Image4 from "../../assets/image/Pembeli/icon4.png";
+import Image5 from "../../assets/image/Pembeli/icon5.png";
+import Image6 from "../../assets/image/Pembeli/icon6.png";
+import Image7 from "../../assets/image/Pembeli/icon7.png";
+
+
+//Icon Penjual
+import IconPenjual1 from "../../assets/image/Penjual/download.png";
+import IconPenjual2 from "../../assets/image/Penjual/persetujuan.png";
+import IconPenjual3 from "../../assets/image/Penjual/transfer.png";
+
 import LogoImage from "../../assets/image/infolelang/tatacara.png";
 const TabPane = Tabs.TabPane;
 
@@ -78,7 +91,7 @@ export class Index extends Component {
                         <Row>
                           <Col md={2}>
                             <Image
-                              src={Image2}
+                              src={Image3}
                               alt="Logo"
                               style={{ width: "100%" }}
                             />
@@ -100,7 +113,7 @@ export class Index extends Component {
                         <Row>
                           <Col md={2}>
                             <Image
-                              src={Image2}
+                              src={Image4}
                               alt="Logo"
                               style={{ width: "100%" }}
                             />
@@ -167,7 +180,7 @@ export class Index extends Component {
                         <Row>
                           <Col md={2}>
                             <Image
-                              src={Image2}
+                              src={Image7}
                               alt="Logo"
                               style={{ width: "100%" }}
                             />
@@ -193,7 +206,7 @@ export class Index extends Component {
                           <Row>
                             <Col md={2}>
                               <Image
-                                src={Image1}
+                                src={IconPenjual1}
                                 alt="Logo"
                                 style={{ width: "100%" }}
                               />
@@ -213,7 +226,7 @@ export class Index extends Component {
                           <Row>
                             <Col md={2}>
                               <Image
-                                src={Image2}
+                                src={IconPenjual2}
                                 alt="Logo"
                                 style={{ width: "100%" }}
                               />
@@ -236,7 +249,7 @@ export class Index extends Component {
                           <Row>
                             <Col md={2}>
                               <Image
-                                src={Image2}
+                                src={IconPenjual3}
                                 alt="Logo"
                                 style={{ width: "100%" }}
                               />
