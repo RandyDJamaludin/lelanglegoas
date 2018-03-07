@@ -76,7 +76,7 @@ export class Index extends Component {
                             <div style={{ marginTop: "30px" }}>
                               <h4>
                                 {" "}
-                                Untuk dapat melihat unit/barang yang dilelang{" "}
+                                Melihat unit/barang yang dilelang{" "}
                               </h4>
                               <p>
                                 calon peserta lelang dapat juga melihat daftar

@@ -205,6 +205,46 @@ img.logo {
   .wrap-footer span {
     color: #3c8dbc; }
 
+#comment_bubble {
+  width: 100%;
+  padding: 20px;
+  border: 5px solid #ccc;
+  position: relative;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+
+#comment_bubble:before {
+  content: "";
+  width: 0;
+  height: 0;
+  right: 100%;
+  top: 38px;
+  position: absolute;
+  border-top: 13px solid transparent;
+  border-right: 26px solid #ccc;
+  border-bottom: 13px solid transparent; }
+
+#comment_bubbleWomen {
+  width: 100%;
+  padding: 20px;
+  border: 5px solid #ccc;
+  position: relative;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px; }
+
+#comment_bubbleWomen:before {
+  content: "";
+  width: 0;
+  height: 0;
+  left: 100%;
+  top: 38px;
+  position: absolute;
+  border-top: 13px solid transparent;
+  border-left: 26px solid #ccc;
+  border-bottom: 13px solid transparent; }
+
 p.backTop {
   border: none;
   font-size: 30px;
