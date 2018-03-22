@@ -19,7 +19,7 @@ export class Card extends Component {
             />
             <h3> {this.props.name} </h3>
             <p>
-              Start Bid <span className="orange"> {this.props.price}</span>
+              Harga dasar <span className="orange"> {this.props.price}</span>
             </p>
           </center>
         </div>
@@ -36,9 +36,8 @@ export class CardCarousel extends Component {
           <Image className="components-card" src={this.props.image} />
           <h3>{this.props.name} </h3>
           <p className="color"> {this.props.color} </p>
-          <p className="last">
-            
-            Last Bid <span className="orange"> {this.props.lastBid}</span>
+          <p>
+            Harga dasar <span className="orange"> {this.props.price}</span>
           </p>
         </center>
       </div>
@@ -59,9 +58,8 @@ export class ContentTab extends Component {
             />
             <h3> {this.props.name} </h3>
             <p className="skin"> {this.props.color} </p>
-            <p className="price">
-              
-              Start Bid <span className="orange"> {this.props.price} </span>
+            <p>
+              Harga dasar <span className="orange"> {this.props.price}</span>
             </p>
           </center>
         </div>
@@ -222,7 +220,7 @@ export class TabLeft extends Component {
                   tabPosition={"left"}
                   style={{ height: "auto" }}
                 >
-                  <TabPane tab="Lelang terbaru" key="1">
+                  <TabPane tab="All" key="1">
                     <Row>
                       {DataContentTab.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
@@ -246,7 +244,7 @@ export class TabLeft extends Component {
                     </Row>
                   </TabPane>
 
-                  <TabPane tab="Daihatsu" key="2">
+                  <TabPane tab="Mobil" key="2">
                     <Row>
                       {DataContentTab.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
@@ -263,14 +261,13 @@ export class TabLeft extends Component {
                       <Col xs={12} md={12}>
                         <Button className="explore">
                           <p>
-                            View All New Auctions <Icon type="arrow-right" />
+                            Lihat Semua Lelang <Icon type="arrow-right" />
                           </p>
                         </Button>
                       </Col>
                     </Row>
                   </TabPane>
-
-                  <TabPane tab="Toyota" key="3">
+                  <TabPane tab="Motor" key="3">
                     <Row>
                       {DataContentTab.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
@@ -287,14 +284,13 @@ export class TabLeft extends Component {
                       <Col xs={12} md={12}>
                         <Button className="explore">
                           <p>
-                            View All New Auctions <Icon type="arrow-right" />
+                            Lihat Semua Lelang <Icon type="arrow-right" />
                           </p>
                         </Button>
                       </Col>
                     </Row>
                   </TabPane>
-
-                  <TabPane tab="Honda" key="4">
+                  <TabPane tab="Property" key="4">
                     <Row>
                       {DataContentTab.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
@@ -311,17 +307,12 @@ export class TabLeft extends Component {
                       <Col xs={12} md={12}>
                         <Button className="explore">
                           <p>
-                            View All New Auctions <Icon type="arrow-right" />
+                            Lihat Semua Lelang <Icon type="arrow-right" />
                           </p>
                         </Button>
                       </Col>
                     </Row>
                   </TabPane>
-
-                  <TabPane tab="Mitsubishi" key="5" />
-                  <TabPane tab="Nissan" key="6" />
-                  <TabPane tab="Hyundai" key="7" />
-                  <TabPane tab="Suzuki" key="8" />
                 </Tabs>
               </Col>
             </Row>

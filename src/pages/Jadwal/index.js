@@ -4,7 +4,6 @@ import {
   Pagination,
   Input,
   Select,
-  DatePicker,
   Form,
   Button,
   Divider
@@ -18,14 +17,10 @@ import {
 import GoCalendar from "react-icons/lib/go/calendar";
 const FormItem = Form.Item;
 const Option = Select.Option;
-const RangePicker = DatePicker.RangePicker;
 
 export class Index extends Component {
   render() {
-    const { getFieldDecorator } = this.props.form;
-    const rangeConfig = {
-      rules: [{ type: "array", required: true, message: "Please select time!" }]
-    };
+
     function handleChange(value) {
       console.log(`selected ${value}`);
     }
@@ -41,7 +36,56 @@ export class Index extends Component {
     return (
       <div className="page-jadwal" style={{ paddingBottom: "3%" }}>
         <div className="landing-lelang">
-          <Grid>
+          <Grid style={{ paddingTop: "2%" }}>
+            <div className="body-header">
+              <p>
+                <GoCalendar id="date" /> JADWAL LELANG
+              </p>
+              <hr />
+            </div>
+            <Row>
+              <Col md={6}>
+                <Row>
+                  {DataJadwalMobil.map((data, index) => (
+                    <Col xs={12} md={12} key={data.key}>
+                      <JadwalLelang
+                        transport={data.transport}
+                        location={data.location}
+                        date={data.date}
+                        time={data.time}
+                        openhouse={data.openhouse}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+              <Col md={6}>
+                <Row>
+                  {DataJadwalMotor.map((data, index) => (
+                    <Col xs={12} md={12} key={data.key}>
+                      <JadwalLelang
+                        transport={data.transport}
+                        location={data.location}
+                        date={data.date}
+                        time={data.time}
+                        openhouse={data.openhouse}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12} md={4} />
+              <Col xs={12} md={4}>
+                <div className="pagination">
+                  <Pagination defaultCurrent={6} total={50} />
+                </div>
+              </Col>
+              <Col xs={12} md={4} />
+            </Row>
+          </Grid>
+          <Grid style={{paddingTop:'3%', paddingBottom:'3%'}}>
             <Row>
               <Col md={5} className="searchPanel">
                 <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
@@ -72,7 +116,7 @@ export class Index extends Component {
                     </Select>
                   </Col>
                   <Col md={4}>
-                    <p> Merk </p>
+                    <p> Merek </p>
                     <Select
                       showSearch
                       style={{ width: "100%" }}
@@ -148,8 +192,8 @@ export class Index extends Component {
                   </Col>
                 </Row>
                 <Row style={{ paddingTop: 15 }}>
-                  <Col md={6}>
-                    <p> Transport </p>
+                  <Col md={12}>
+                    <p> Jenis Unit </p>
                     <Select
                       showSearch
                       style={{ width: "100%" }}
@@ -166,12 +210,6 @@ export class Index extends Component {
                       <Option value="jack">Mobil</Option>
                       <Option value="lucy">Motor</Option>
                     </Select>
-                  </Col>
-                  <Col md={6}>
-                    <p> Tanggal</p>
-                    {getFieldDecorator("range-picker", rangeConfig)(
-                      <RangePicker width="100%" />
-                    )}
                   </Col>
                 </Row>
                 <Row>
@@ -219,56 +257,6 @@ export class Index extends Component {
                   <Col xs={1} md={3} />
                 </Row>
               </Col>
-            </Row>
-          </Grid>
-
-          <Grid style={{ paddingTop: "2%" }}>
-            <div className="body-header">
-              <p>
-                <GoCalendar id="date" /> JADWAL LELANG
-              </p>
-              <hr />
-            </div>
-            <Row>
-              <Col md={6}>
-                <Row>
-                  {DataJadwalMobil.map((data, index) => (
-                    <Col xs={12} md={12} key={data.key}>
-                      <JadwalLelang
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
-                      />
-                    </Col>
-                  ))}
-                </Row>
-              </Col>
-              <Col md={6}>
-                <Row>
-                  {DataJadwalMotor.map((data, index) => (
-                    <Col xs={12} md={12} key={data.key}>
-                      <JadwalLelang
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
-                      />
-                    </Col>
-                  ))}
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={4} />
-              <Col xs={12} md={4}>
-                <div className="pagination">
-                  <Pagination defaultCurrent={6} total={50} />
-                </div>
-              </Col>
-              <Col xs={12} md={4} />
             </Row>
           </Grid>
         </div>

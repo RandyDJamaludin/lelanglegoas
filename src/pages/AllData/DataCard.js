@@ -23,42 +23,42 @@ export const DataCardCarousel = [
   {
     name: "Chevrolet Corvette",
     image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
-    lastBid: 'Rp 300.150.000 ',
+    price: 'Rp 300.150.000 ',
     color: 'Yellow',
     key: 1
   },
   {
     name: "Honda Supra X",
     image: "http://3.bp.blogspot.com/-nF8M1Jqwhrk/TnCssIMTe-I/AAAAAAAAAqo/1wNpadq2r1U/s1600/14092011+Supra+X+Helm+In+-+Royal+Blue.jpg",
-    lastBid: 'Rp 90.000.000',
+    price: 'Rp 90.000.000',
     color: 'Black',
     key: 2
   },
   {
     name: "Nissan Sway",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
-    lastBid: 'Rp 400.150.000 ',
+    price: 'Rp 400.150.000 ',
     color: 'Black',
     key: 3
   },
   {
     name: "Motor Kawasaki Ninja",
     image: "http://1.bp.blogspot.com/-OtqJE-xK74I/UlNVvudQIqI/AAAAAAAAALw/ZFURAwggXcI/s1600/Kawasaki+Ninja.png",
-    lastBid: 'Rp 421.150.000 ',
+    price: 'Rp 421.150.000 ',
     color: 'Green',
     key: 4
   },
   {
     name: "Lamborgini Clipart",
     image: "http://moziru.com/images/lamborghini-clipart-cool-car-19.png",
-    lastBid: 'Rp 500.000.000 ',
+    price: 'Rp 500.000.000 ',
     color: "Black",
     key: 5
   },
   {
     name: "X-Treme Red",
     image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
-    lastBid: 'Rp 20.500.000 ',
+    price: 'Rp 20.500.000 ',
     color: 'Red',
     key: 6
   },

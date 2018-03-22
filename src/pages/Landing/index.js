@@ -53,7 +53,7 @@ export class Index extends Component {
                     name={data.name}
                     image={data.image}
                     color={data.color}
-                    lastBid={data.lastBid}
+                    price={data.price}
                   />
                 </Col>
               ))}
@@ -83,7 +83,7 @@ export class Index extends Component {
                     name={data.name}
                     image={data.image}
                     color={data.color}
-                    lastBid={data.lastBid}
+                    price={data.price}
                     openhouse={data.openhouse}
                   />
                 </Col>
