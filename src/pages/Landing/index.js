@@ -52,6 +52,10 @@ export class Index extends Component {
                   <CardCarousel
                     name={data.name}
                     image={data.image}
+                    merek={data.merek}
+                    model={data.model}
+                    tipe={data.tipe}
+                    at_mt={data.at_mt}
                     color={data.color}
                     price={data.price}
                   />
@@ -82,6 +86,10 @@ export class Index extends Component {
                   <CardCarousel
                     name={data.name}
                     image={data.image}
+                    merek={data.merek}
+                    model={data.model}
+                    tipe={data.tipe}
+                    at_mt={data.at_mt}
                     color={data.color}
                     price={data.price}
                     openhouse={data.openhouse}
@@ -167,7 +175,7 @@ export class Index extends Component {
             </NavLink>
           </Grid>
         </div>
-
+        
         <div style={{ paddingBottom: "4%" }}>
           <Map />
         </div>

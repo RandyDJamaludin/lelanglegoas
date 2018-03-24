@@ -112,18 +112,23 @@ class Index extends Component {
               </Row>
             </Col>
           </Row>
-          <Row style={{paddingTop:'2%'}}>
+          <Row style={{paddingTop:'4%', paddingBottom:'4%'}}>
             {DataCardLocation.map((data,index)=>(
               <Col md={12} key={data.key}>
                 <ListLelang
                   number={data.number}
                   name={data.name}
+                  merek={data.merek}
+                  model={data.model}
+                  tipe={data.tipe}
+                  at_mt={data.at_mt}
+                  year={data.year}
+                  warna={data.warna}
+                  date={data.date}
+                  location={data.location}
                   police={data.police}
-                  pajak={data.pajak}
                   price={data.price}
                   bundle={data.bundle}
-                  year={data.year}
-                  type={data.type}
                   image={data.image}
                 />
               </Col>

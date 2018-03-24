@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Image } from "react-bootstrap";
 import { Tabs, Tag, Button, Icon } from "antd";
 import { Link } from "react-router-dom";
-import { DataContentTab } from "../AllData/DataCard";
+import { DataContentTabAll, DataContentTabMobil, DataContentTabMotor, DataContentTabProperty  } from "../AllData/DataCard";
 const TabPane = Tabs.TabPane;
 
 
@@ -35,6 +35,7 @@ export class CardCarousel extends Component {
         <center>
           <Image className="components-card" src={this.props.image} />
           <h3>{this.props.name} </h3>
+          <p> {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.at_mt})</p>
           <p className="color"> {this.props.color} </p>
           <p>
             Harga dasar <span className="orange"> {this.props.price}</span>
@@ -57,7 +58,8 @@ export class ContentTab extends Component {
               width="100%"
             />
             <h3> {this.props.name} </h3>
-            <p className="skin"> {this.props.color} </p>
+            <p> {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.at_mt})</p>
+            <p className="skin"> {this.props.warna} </p>
             <p>
               Harga dasar <span className="orange"> {this.props.price}</span>
             </p>
@@ -78,7 +80,7 @@ export class ListLelang extends Component {
     }
 
     return (
-      <div className="listLelang" style={{ paddingBottom: "2%" }}>
+      <div className="listLelang" style={{ paddingBottom: "5%" }}>
         <Row>
           <Link to="/view-car">
             <Col md={12}>
@@ -97,24 +99,46 @@ export class ListLelang extends Component {
                     <p> {this.props.name} </p>
                   </div>
                   <Row className="box">
-                    <Col md={2}>
-                      <p className="title"> Tahun </p>
-                      <p className="sub-title"> {this.props.year} </p>
+                    <Col xs={4} sm={4} md={2}>
+                      <p className="title"> Merek </p>
+                      <p className="sub-title"> {this.props.merek} </p>
                     </Col>
-                    <Col md={2}>
+                    <Col xs={4} sm={4} md={2}>
+                      <p className="title"> Model </p>
+                      <p className="sub-title"> {this.props.model} </p>
+                    </Col>
+                    <Col xs={4} sm={4} md={2}>
+                      <p className="title"> Warna </p>
+                      <p className="sub-title"> {this.props.warna} </p>
+                    </Col>
+                    <Col xs={4} sm={4} md={2}>
+                      <p className="title"> Tipe </p>
+                      <p className="sub-title"> {this.props.tipe} </p>
+                    </Col>
+                    <Col xs={4} sm={4} md={2}>
+                      <p className="title"> AT/MT </p>
+                      <p className="sub-title"> {this.props.at_mt} </p>
+                    </Col>
+                    <Col xs={4} sm={4} md={2}>
                       <p className="title"> No. Polisi </p>
                       <p className="sub-title"> {this.props.police} </p>
                     </Col>
-                    <Col md={2}>
-                      <p className="title"> STNK Nota Pajak </p>
-                      <p className="sub-title"> {this.props.pajak} </p>
-                    </Col>
-                    <Col md={4}>
+                  </Row>
+                  <hr/>
+                  <Row className="box">
+                    <Col xs={6} sm={6} md={2}>
                       <p className="title"> Harga </p>
-                      <p className="sub-title"> {this.props.price}</p>
+                      <p className="sub-title" style={{fontSize:14, color:'#4caf50'}}> {this.props.price}</p>
+                    </Col>
+                    <Col xs={6} sm={6} md={2}>
+                      <p className="title"> Tanggal Lelang </p>
+                      <p className="sub-title"> {this.props.date}</p>
+                    </Col>
+                    <Col xs={12} sm={12} md={6}>
+                      <p className="title"> Lokasi </p>
+                      <p className="sub-title"> {this.props.location}</p>
                     </Col>
                     {button}
-
                   </Row>
                 </Col>
               </Row>
@@ -222,11 +246,16 @@ export class TabLeft extends Component {
                 >
                   <TabPane tab="All" key="1">
                     <Row>
-                      {DataContentTab.map((data, index) => (
+                      {DataContentTabAll.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
                           <ContentTab
                             name={data.name}
                             image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
                             price={data.price}
                             button={data.button}
                           />
@@ -246,11 +275,16 @@ export class TabLeft extends Component {
 
                   <TabPane tab="Mobil" key="2">
                     <Row>
-                      {DataContentTab.map((data, index) => (
+                      {DataContentTabMobil.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
                           <ContentTab
                             name={data.name}
                             image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
                             price={data.price}
                             button={data.button}
                           />
@@ -269,11 +303,16 @@ export class TabLeft extends Component {
                   </TabPane>
                   <TabPane tab="Motor" key="3">
                     <Row>
-                      {DataContentTab.map((data, index) => (
+                      {DataContentTabMotor.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
                           <ContentTab
                             name={data.name}
                             image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
                             price={data.price}
                             button={data.button}
                           />
@@ -292,11 +331,16 @@ export class TabLeft extends Component {
                   </TabPane>
                   <TabPane tab="Property" key="4">
                     <Row>
-                      {DataContentTab.map((data, index) => (
+                      {DataContentTabProperty.map((data, index) => (
                         <Col xs={12} md={4} key={data.key}>
                           <ContentTab
                             name={data.name}
                             image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
                             price={data.price}
                             button={data.button}
                           />
@@ -322,13 +366,77 @@ export class TabLeft extends Component {
             <Row>
               <Col xs={12}>
                 <Tabs defaultActiveKey="1">
-                  <TabPane tab="Lelang terbaru" key="1">
+                  <TabPane tab="All" key="1">
                     <Row>
-                      {DataContentTab.map((data, index) => (
-                        <Col xs={12} md={4} key={data.key}>
+                      {DataContentTabAll.map((data, index) => (
+                        <Col xs={6} md={4} key={data.key}>
                           <ContentTab
                             name={data.name}
                             image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
+                            price={data.price}
+                            button={data.button}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  </TabPane>
+                  <TabPane tab="Mobil" key="2">
+                    <Row>
+                      {DataContentTabAll.map((data, index) => (
+                        <Col xs={6} md={4} key={data.key}>
+                          <ContentTab
+                            name={data.name}
+                            image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
+                            price={data.price}
+                            button={data.button}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  </TabPane>
+
+                  <TabPane tab="Motor" key="3">
+                    <Row>
+                      {DataContentTabMotor.map((data, index) => (
+                        <Col xs={6} md={4} key={data.key}>
+                          <ContentTab
+                            name={data.name}
+                            image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
+                            price={data.price}
+                            button={data.button}
+                          />
+                        </Col>
+                      ))}
+                    </Row>
+                  </TabPane>
+
+                  <TabPane tab="Property" key="4">
+                    <Row>
+                      {DataContentTabProperty.map((data, index) => (
+                        <Col xs={6} md={4} key={data.key}>
+                          <ContentTab
+                            name={data.name}
+                            image={data.image}
+                            merek={data.merek}
+                            model={data.model}
+                            tipe={data.tipe}
+                            at_mt={data.at_mt}
+                            warna={data.warna}
                             price={data.price}
                             button={data.button}
                           />

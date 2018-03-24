@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col, Image } from 'react-bootstrap'
-import { Divider } from 'antd'
+import { Divider, Tag } from 'antd'
 import AliceCarousel from 'react-alice-carousel'
 import MdAccessTime from 'react-icons/lib/md/access-time'
 import MdLocationOn from 'react-icons/lib/md/location-on'
@@ -100,7 +100,78 @@ export class Index extends Component {
                       <p> 1 </p>
                     </div> 
                   </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Grade </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p style={{color:'#3c8dbc', fontWeight:'bold'}}> A </p>
+                    </div> 
+                  </Col>
                 </Row>  
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Merek </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p> Toyota </p>
+                    </div> 
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Model </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p> Avanza </p>
+                    </div> 
+                  </Col>
+                </Row>  
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Tipe </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p> Sport </p>
+                    </div> 
+                  </Col>
+                </Row>  
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> AT / MT </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p> AT </p>
+                    </div> 
+                  </Col>
+                </Row>  
+                  
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
@@ -153,6 +224,21 @@ export class Index extends Component {
                   <Col xs={8} md={8}>
                     <div>
                       <p><MdAccessTime/> 21.00 WIB</p>
+                    </div> 
+                  </Col>
+                </Row>   
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Status </p>
+                    </div> 
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      {/* <Tag color="#f50">Non available</Tag> */}
+                      <Tag color="#87d068">Available</Tag>
                     </div> 
                   </Col>
                 </Row>          

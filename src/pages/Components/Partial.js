@@ -144,6 +144,36 @@ export class Banner extends Component {
               </p>
               <Button type="primary">BID SEKARANG</Button>
             </div>
+            <div className="containBanner3">
+              <h4> MOBIL MEWAH DAN MURAH </h4>
+              <h1> AYO BID SEKARANG </h1>
+              <p>
+                {" "}
+                Dapatkan Mobil impian anda dengan harga yang <br />
+                sesuai dengan keinginan anda{" "}
+              </p>
+              <Button type="primary">BID SEKARANG</Button>
+            </div>
+            <div className="containBanner4">
+              <h4> MOBIL MEWAH DAN MURAH </h4>
+              <h1> AYO BID SEKARANG </h1>
+              <p>
+                {" "}
+                Dapatkan Mobil impian anda dengan harga yang <br />
+                sesuai dengan keinginan anda{" "}
+              </p>
+              <Button type="primary">BID SEKARANG</Button>
+            </div>
+            <div className="containBanner5">
+              <h4> MOBIL MEWAH DAN MURAH </h4>
+              <h1> AYO BID SEKARANG </h1>
+              <p>
+                {" "}
+                Dapatkan Mobil impian anda dengan harga yang <br />
+                sesuai dengan keinginan anda{" "}
+              </p>
+              <Button type="primary">BID SEKARANG</Button>
+            </div>
           </Carousel>
         </div>
       </div>

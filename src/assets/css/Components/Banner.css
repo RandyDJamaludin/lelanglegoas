@@ -8,16 +8,6 @@
     .banner_background button {
       margin-left: 30px; } }
 
-.banner_background .containBanner1 {
-  background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg") center no-repeat;
-  background-size: cover;
-  padding: 150px; }
-  @media only screen and (max-width: 425px) {
-    .banner_background .containBanner1 {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important; } }
-
 .banner_background ul.slick-dots button {
   margin-top: -10px;
   padding: 10px; }
@@ -43,12 +33,52 @@
     .banner_background p {
       margin-left: 30px; } }
 
+.banner_background .containBanner1 {
+  background: url("../image/slideshow/1.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner1 {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important; } }
+
 .banner_background .containBanner2 {
-  background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg") center no-repeat;
+  background: url("../image/slideshow/2.jpg") center no-repeat;
   background-size: cover;
   padding: 150px; }
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner2 {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important; } }
+
+.banner_background .containBanner3 {
+  background: url("../image/slideshow/3.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner3 {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important; } }
+
+.banner_background .containBanner4 {
+  background: url("../image/slideshow/4.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner4 {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important; } }
+
+.banner_background .containBanner5 {
+  background: url("../image/slideshow/5.jpg") center no-repeat;
+  background-size: cover;
+  padding: 150px; }
+  @media only screen and (max-width: 425px) {
+    .banner_background .containBanner5 {
       margin-top: 5%;
       padding: 40px 0px 0px 0px !important;
       height: 400px !important; } }

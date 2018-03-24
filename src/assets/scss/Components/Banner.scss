@@ -10,17 +10,6 @@
       margin-left: 30px;
     }
   }
-  .containBanner1 {
-    background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-frost-white.jpg")center
-      no-repeat;
-    background-size: cover;
-    padding: 150px;
-    @media only screen and (max-width: 425px) {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important;
-    }
-  }
   ul.slick-dots {
     button {
       margin-top: -10px;
@@ -48,9 +37,52 @@
       margin-left: 30px;
     }
   }
+
+  .containBanner1 {
+    background: url("../image/slideshow/1.jpg")center no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
+    }
+  }
   .containBanner2 {
-    background: url("https://www.hyundaiusa.com/images/vehicles/pages/vlp/2018/santa-fe-sport/hero/base/2018-santa-fe-sport-24-base-platinum-graphite.jpg")center
-      no-repeat;
+    background: url("../image/slideshow/2.jpg")center no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
+    }
+  }
+
+  .containBanner3 {
+    background: url("../image/slideshow/3.jpg")center no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
+    }
+  }
+
+  .containBanner4 {
+    background: url("../image/slideshow/4.jpg")center no-repeat;
+    background-size: cover;
+    padding: 150px;
+    @media only screen and (max-width: 425px) {
+      margin-top: 5%;
+      padding: 40px 0px 0px 0px !important;
+      height: 400px !important;
+    }
+  }
+
+  .containBanner5 {
+    background: url("../image/slideshow/5.jpg")center no-repeat;
     background-size: cover;
     padding: 150px;
     @media only screen and (max-width: 425px) {

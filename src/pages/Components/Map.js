@@ -19,6 +19,7 @@ const MyMapComponent = compose(
       defaultCenter={{ lat: -6.1596475, lng: 106.8830528 }}
     >
       {props.isMarkerShown && <Marker position={{ lat: -6.1596475, lng: 106.8830528 }} onClick={props.onMarkerClick} />}
+      {props.isMarkerShown && <Marker position={{ lat: -6.1596475, lng: 106.3830528 }} onClick={props.onMarkerClick} />}
     </GoogleMap>
   )
   

@@ -1,29 +1,12 @@
-export const DataCard = [
-  {
-    name: "HONDA HR-V",
-    image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
-    price: '350.050.000 ',
-    key: 1
-  },
-  {
-    name: "HONDA HR-V",
-    image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    price: 'IDR 150.000 ',
-    key: 2
-  },
-  {
-    name: "HONDA HR-V",
-    image: "http://www.pngmart.com/files/4/Car-PNG-HD.png",
-    price: 'IDR 150.000 ',
-    key: 3
-  }
-]
-
 export const DataCardCarousel = [
   {
     name: "Chevrolet Corvette",
     image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
     price: 'Rp 300.150.000 ',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: 'Yellow',
     key: 1
   },
@@ -31,6 +14,10 @@ export const DataCardCarousel = [
     name: "Honda Supra X",
     image: "http://3.bp.blogspot.com/-nF8M1Jqwhrk/TnCssIMTe-I/AAAAAAAAAqo/1wNpadq2r1U/s1600/14092011+Supra+X+Helm+In+-+Royal+Blue.jpg",
     price: 'Rp 90.000.000',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: 'Black',
     key: 2
   },
@@ -38,6 +25,10 @@ export const DataCardCarousel = [
     name: "Nissan Sway",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
     price: 'Rp 400.150.000 ',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: 'Black',
     key: 3
   },
@@ -45,6 +36,10 @@ export const DataCardCarousel = [
     name: "Motor Kawasaki Ninja",
     image: "http://1.bp.blogspot.com/-OtqJE-xK74I/UlNVvudQIqI/AAAAAAAAALw/ZFURAwggXcI/s1600/Kawasaki+Ninja.png",
     price: 'Rp 421.150.000 ',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: 'Green',
     key: 4
   },
@@ -52,6 +47,10 @@ export const DataCardCarousel = [
     name: "Lamborgini Clipart",
     image: "http://moziru.com/images/lamborghini-clipart-cool-car-19.png",
     price: 'Rp 500.000.000 ',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: "Black",
     key: 5
   },
@@ -59,6 +58,10 @@ export const DataCardCarousel = [
     name: "X-Treme Red",
     image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
     price: 'Rp 20.500.000 ',
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
     color: 'Red',
     key: 6
   },
@@ -68,64 +71,214 @@ export const DataCardLocation = [
   {
     number: "1",
     name: "DATSUN GO + PANCA T",
+    merek: "Toyota",
+    model: "Avanza",
+    tipe: "sport",
+    warna: 'black',
+    at_mt: "AT",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
     year: '2010 ',
     police: 'B 1788 SKL',
-    pajak:'11/07/2018',
     price: 'Rp 496,500,00',
+    date: '01 Januari 2018',
+    location: 'Jl. Pegangsaan Dua, RT.2/RW.3, Pegangsaan Dua, Klp. Gading, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14250',
     bundle: 'Bundle 1',
     key: 1
   },
   {
     number: "2",
     name: "Chevrolet Corvette",
+    merek: "Toyota",
+    model: "Avanza",
+    tipe: "sport",
+    warna: 'yellow',
+    at_mt: "AT",
     image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
-    year: '2016 ',
-    police: 'B 8288 TLL',
-    pajak:'11/07/2018',
-    price: 'Rp 436,500,00',
+    year: '2010 ',
+    police: 'B 1788 SKL',
+    price: 'Rp 496,500,00',
+    date: '01 Januari 2018',
+    location: 'Jl. Pegangsaan Dua, RT.2/RW.3, Pegangsaan Dua, Klp. Gading, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta 14250',
     bundle: '',
     key: 2
   },
   
 ]
 
-export const DataContentTab = [
+export const DataContentTabAll = [
   {
     name: "Nissan Sway ",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
     price: 'Rp 426,500,00',
     key: 1
   },
   {
-    name: "Chevrolet Corvette",
-    image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
-    price: 'Rp 436,500,00',
+    name: "X-Treme Red",
+    image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 20,500,00',
     key: 2
   },
   {
     name: "Chevrolet Corvette",
     image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
     price: 'Rp 436,500,00',
     key: 3
   },
   {
-    name: "Chevrolet Corvette",
-    image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
+    name: "Motor Kawasaki Ninja",
+    image: "http://1.bp.blogspot.com/-OtqJE-xK74I/UlNVvudQIqI/AAAAAAAAALw/ZFURAwggXcI/s1600/Kawasaki+Ninja.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
     price: 'Rp 436,500,00',
     key: 4
   },
   {
     name: "Nissan Sway ",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
     price: 'Rp 426,500,00',
     key: 5
   },
   {
     name: "Nissan Sway ",
     image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
     price: 'Rp 426,500,00',
     key: 6
+  },
+]
+
+export const DataContentTabMobil = [
+  {
+    name: "Nissan Sway ",
+    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 426,500,00',
+    key: 1
+  },
+  {
+    name: "Chevrolet Corvette",
+    image: "http://www.performaxint.com.au/images/menuhovers/PNGPIX-COM-Yellow-Chevrolet-Corvette-Z06-C7-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 436,500,00',
+    key: 2
+  },
+  {
+    name: "Nissan Sway ",
+    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 426,500,00',
+    key: 3
+  },
+  {
+    name: "Nissan Sway ",
+    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 426,500,00',
+    key: 4
+  },
+]
+
+export const DataContentTabMotor = [
+  {
+    name: "X-Treme Red",
+    image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 20,500,00',
+    key: 1
+  },
+  {
+    name: "Motor Kawasaki Ninja",
+    image: "http://1.bp.blogspot.com/-OtqJE-xK74I/UlNVvudQIqI/AAAAAAAAALw/ZFURAwggXcI/s1600/Kawasaki+Ninja.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 436,500,00',
+    key: 2
+  },
+]
+
+export const DataContentTabProperty = [
+  {
+    name: "Nissan Sway ",
+    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 426,500,00',
+    key: 1
+  },
+  {
+    name: "X-Treme Red",
+    image: "http://1.bp.blogspot.com/-Yv5wBGWdB-8/UNMWwKOLrgI/AAAAAAAAAPY/aRXE2Srz6rs/s1600/2%2Bcopy.jpg",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 20,500,00',
+    key: 2
+  },
+  {
+    name: "Nissan Sway ",
+    image: "http://www.pngpix.com/wp-content/uploads/2016/06/PNGPIX-COM-Nissan-Sway-Gray-Car-PNG-Image.png",
+    merek: 'Toyota',
+    model: 'Avanza',
+    tipe: 'Sport',
+    at_mt: 'AT',
+    warna: 'black',
+    price: 'Rp 426,500,00',
+    key: 3
   },
 ]
 
