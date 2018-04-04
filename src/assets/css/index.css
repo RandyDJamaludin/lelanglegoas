@@ -245,6 +245,9 @@ img.logo {
   border-left: 26px solid #ccc;
   border-bottom: 13px solid transparent; }
 
+.wrap_tentang {
+  height: 300px; }
+
 p.backTop {
   border: none;
   font-size: 30px;
@@ -857,14 +860,14 @@ section {
 #top-picture {
   height: 200px;
   background-size: 100% !important;
-  background-color: rgba(11, 28, 28, 0.1915), url("../image/bannerabout.jpg");
+  background-color: rgba(11, 28, 28, 0.1915), url("../image/banner/bannerabout.jpg");
   /* Fallback */
-  background-image: url("../image/bannerabout.jpg");
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11, 28, 28, 0.137)), to(rgba(11, 28, 28, 0.246))), url("../image/bannerabout.jpg");
-  background-image: -webkit-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
-  background-image: -moz-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
-  background-image: -ms-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
-  background-image: -o-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/bannerabout.jpg");
+  background-image: url("../image/banner/bannerabout.jpg");
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(11, 28, 28, 0.137)), to(rgba(11, 28, 28, 0.246))), url("../image/banner/bannerabout.jpg");
+  background-image: -webkit-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/banner/bannerabout.jpg");
+  background-image: -moz-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/banner/bannerabout.jpg");
+  background-image: -ms-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/banner/bannerabout.jpg");
+  background-image: -o-linear-gradient(top, rgba(11, 28, 28, 0.137), rgba(11, 28, 28, 0.246)), url("../image/banner/bannerabout.jpg");
   -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='rgba(11, 28, 28, 0.137)', EndColorStr='rgba(11, 28, 28, 0.246)')"; }
   #top-picture .content {
     height: 100%;
@@ -911,13 +914,13 @@ section {
   padding: 10%; }
 
 .bannerAbout .desktop {
-  height: 300px;
+  height: 350px;
   background-size: 100% !important;
   background: url("../image/banner/1.jpg");
   background-attachment: fixed; }
   .bannerAbout .desktop .shadow {
     background: rgba(255, 255, 255, 0.561);
-    height: 300px; }
+    height: 350px; }
     .bannerAbout .desktop .shadow h3 {
       font-weight: 400 !important;
       font-size: 30px;

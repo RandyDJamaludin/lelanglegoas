@@ -128,6 +128,7 @@ class Index extends Component {
                   location={data.location}
                   police={data.police}
                   price={data.price}
+                  kode_location={data.kode_location}
                   bundle={data.bundle}
                   image={data.image}
                 />

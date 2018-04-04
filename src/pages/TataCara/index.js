@@ -75,7 +75,7 @@ export class Index extends Component {
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
                               <h4>
-                                Jadwal Lelang.
+                                Jadwal Lelang
                               </h4>
                               <p>
                                 Peserta dapat melihat jadwal lelang yang akan ditampilkan oleh legoas melalui media website, mobile apps, atau surat kabar. 
@@ -94,7 +94,7 @@ export class Index extends Component {
                           </Col>
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
-                              <h4> DAFTAR LOT. </h4>
+                              <h4> Daftar Lot </h4>
                               <p>
                                 Sebelum dilakukan lelang, maka Legoas akan mengeluarkan daftar barang/produk yang akan dilelang dengan jadwal tertentu. 
                                 Peserta lelang dapat mencari informasi dan memanfaatkan daftar lot ini untuk mendapatkan seluruh informasi dan kondisi pada unit/produk yang diingini.
@@ -152,7 +152,7 @@ export class Index extends Component {
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
                               <h4>
-                                PAKET SILVER
+                                Paket Silver
                               </h4>
                               <p>
                               Sangat cocok bagi peserta yang memiliki rencana hanya membeli 1 unit kendaraan dan atau dibawah 5 unit. Selain tidak memberatkan dalam jumlah uang jaminan, kebutuhan ini memang diperuntukkan bagi Anda yang merencanakan memiliki unit untuk digunakan sendiri.
@@ -172,7 +172,7 @@ export class Index extends Component {
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
                               <h4>
-                                PAKET PLATINUM
+                                Paket Platinum
                               </h4>
                               <p>
                                 Dipersembahkan bagi  pelanggan loyal LEGOAS yang membutuhkan flexibilitas dalam  membeli dalam jumlah banyak dan atau rutin dalam pembelian setiap bulannya. 
@@ -213,7 +213,7 @@ export class Index extends Component {
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
                               <h4>
-                                Peserta menang lelang.
+                                Peserta menang lelang
                               </h4>
                               <p>
                                 Peserta yang telah memenangkan nomor Lot tertentu memiliki kewajiban untuk membayar sesuai nominal yang telah disubmit dan membayar biaya administrasi sesuai ketentuan dan jangka waktu yang telah ditentukan.
@@ -233,7 +233,7 @@ export class Index extends Component {
                           <Col md={10}>
                             <div style={{ marginTop: "30px" }}>
                               <h4>
-                                Peserta tidak menang lelang.
+                                Peserta tidak menang lelang
                               </h4>
                               <p>
                                 Bagi peserta yang tidak memenangkan barang/produk yang diinginkan di lelang bersangkutan. Maka dapat melakukan request untuk pengembalian uang deposit tanpa dikenakan biaya sama sekali atau tetap menggunakan keanggotaan dan paket yang dimiliki untuk mengikuti lelang-lelang yang akan datang.
@@ -348,7 +348,7 @@ export class Index extends Component {
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
                         <h4>
-                          Jadwal Lelang.
+                          Jadwal Lelang
                         </h4>
                         <p>
                           Peserta dapat melihat jadwal lelang yang akan ditampilkan oleh legoas melalui media website, mobile apps, atau surat kabar. 
@@ -367,7 +367,7 @@ export class Index extends Component {
                     </Col>
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
-                        <h4> DAFTAR LOT. </h4>
+                        <h4> Daftar Lot </h4>
                         <p>
                           Sebelum dilakukan lelang, maka Legoas akan mengeluarkan daftar barang/produk yang akan dilelang dengan jadwal tertentu. 
                           Peserta lelang dapat mencari informasi dan memanfaatkan daftar lot ini untuk mendapatkan seluruh informasi dan kondisi pada unit/produk yang diingini.
@@ -425,7 +425,7 @@ export class Index extends Component {
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
                         <h4>
-                          PAKET SILVER
+                          Paket Silver
                         </h4>
                         <p>
                         Sangat cocok bagi peserta yang memiliki rencana hanya membeli 1 unit kendaraan dan atau dibawah 5 unit. Selain tidak memberatkan dalam jumlah uang jaminan, kebutuhan ini memang diperuntukkan bagi Anda yang merencanakan memiliki unit untuk digunakan sendiri.
@@ -445,7 +445,7 @@ export class Index extends Component {
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
                         <h4>
-                          PAKET PLATINUM
+                          Paket Platinum
                         </h4>
                         <p>
                           Dipersembahkan bagi  pelanggan loyal LEGOAS yang membutuhkan flexibilitas dalam  membeli dalam jumlah banyak dan atau rutin dalam pembelian setiap bulannya. 
@@ -486,7 +486,7 @@ export class Index extends Component {
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
                         <h4>
-                          Peserta menang lelang.
+                          Peserta menang lelang
                         </h4>
                         <p>
                           Peserta yang telah memenangkan nomor Lot tertentu memiliki kewajiban untuk membayar sesuai nominal yang telah disubmit dan membayar biaya administrasi sesuai ketentuan dan jangka waktu yang telah ditentukan.
@@ -506,7 +506,7 @@ export class Index extends Component {
                     <Col md={10}>
                       <div style={{ marginTop: "30px" }}>
                         <h4>
-                          Peserta tidak menang lelang.
+                          Peserta tidak menang lelang
                         </h4>
                         <p>
                           Bagi peserta yang tidak memenangkan barang/produk yang diinginkan di lelang bersangkutan. Maka dapat melakukan request untuk pengembalian uang deposit tanpa dikenakan biaya sama sekali atau tetap menggunakan keanggotaan dan paket yang dimiliki untuk mengikuti lelang-lelang yang akan datang.

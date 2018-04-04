@@ -1,18 +1,30 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
-import { Icon } from "antd";
-import { CardCarousel, JadwalLelang, TabLeft } from "../Components/Card";
+import { Icon, Menu } from "antd";
+import { CardCarousel, JadwalLelang } from "../Components/Card";
 import {
   DataCardCarousel,
   DataJadwalMotor,
-  DataJadwalMobil
+  DataJadwalMobil,
+  DataContentTab,
 } from "../AllData/DataCard";
 import { Banner } from "../Components/Partial";
 import { NavLink } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 import Map from "../Components/Map";
+import { ContentTab } from '../Components/Card'
+
+const SubMenu = Menu.SubMenu;
 
 export class Index extends Component {
+  constructor() {
+    super()
+
+    this.state = {
+      merek: ''
+    }
+  }
+
   static defaultProps = {
     center: { lat: 40.744679, lng: -73.948542 },
     zoom: 11
@@ -100,7 +112,66 @@ export class Index extends Component {
           </Row>
         </Grid>
 
-        <TabLeft />
+        {/* Tab */}
+        <Grid>
+          <Row>
+            <Col md={2}>
+              <Menu
+                onClick={({item, key}) => this.setState({merek: key})}
+                style={{ width: '100%' }}
+                defaultOpenKeys={['all']}
+                selectedKeys = {[this.state.merek]}
+                mode="inline">
+                <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
+                  <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
+                    <Menu.Item key="Avanza">Avanza</Menu.Item>
+                    <Menu.Item key="Toyota">Xenia</Menu.Item>
+                  </SubMenu>
+                  <SubMenu key="sub2" title={<span><span>Motor</span></span>}>
+                    <Menu.Item key="Ninja">Ninja</Menu.Item>
+                    <Menu.Item key="Supra">Supra</Menu.Item>
+                  </SubMenu>
+                  <SubMenu key="sub3" title={<span><span>Property</span></span>}>
+                    <Menu.Item key="Rumah">Rumah</Menu.Item>
+                  </SubMenu>
+                </SubMenu>
+              </Menu>
+            </Col>
+            <Col md={10}>
+              {this.state.merek === '' ? (
+                DataContentTab.map((d, index) => (
+                  <Col md={4} key={index}>
+                    <ContentTab
+                      name={d.name}
+                      image={d.image}
+                      merek={d.merek}
+                      model={d.model}
+                      tipe={d.tipe}
+                      at_mt={d.at_mt}
+                      warna={d.warna}
+                      price={d.price}
+                      button={d.button} />
+                  </Col>
+                ))
+              ) : (
+                DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
+                  <Col md={4} key={index}>
+                    <ContentTab
+                      name={d.name}
+                      image={d.image}
+                      merek={d.merek}
+                      model={d.model}
+                      tipe={d.tipe}
+                      at_mt={d.at_mt}
+                      warna={d.warna}
+                      price={d.price}
+                      button={d.button} />
+                  </Col>
+                ))
+              )}
+            </Col>
+          </Row>
+        </Grid>
 
         <div className="landing-lelang">
           <Grid>

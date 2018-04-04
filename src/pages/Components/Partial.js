@@ -210,14 +210,9 @@ export class BannerAbout extends Component {
                 <div className="shadow" style={{ padding: 50 }}>
                   <h3> WHO WE ARE ?</h3>
                   <p>
-                    LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
-                    untuk menjual assetnya dengan cepat dan transparan terhadap
-                    proses dan harga yang terbentuk. LEGOAS mengusung dunia
-                    perlelangan dengan konsep proses digital terbaik pada saat
-                    ini berdasarkan system IT, sumberdaya manusia yang
-                    berpengalaman dalam dunia lelang, dan mengutamakan kepuasan
-                    bagi pelanggan. LEGOAS hadir untuk memberikan kemudahan
-                    Anda.
+                  LEGOAS memiliki ijin operasional Balai Lelang yang disahkan melalui Keputusan Menteri Keuangan no 28/KM.6/2018.  
+                  Dalam hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan pemerintah sehingga peserta tidak perlu khawatir atas kredibilitas LEGOAS karena sebagai peserta lelang juga dilindungi haknya oleh Negara. 
+                  Dengan masuknya LEGOAS dalam pengawasan negara, maka kewajiban dari LEGOAS juga dalam pelaksanaan lelang dan termasuk memeriksa keabsahan kepemilikan barang tersebut sehingga peserta tidak perlu dikhawatirkan dalam keabsahan kepemilikan tersebut. 
                   </p>
                 </div>
               </Col>
