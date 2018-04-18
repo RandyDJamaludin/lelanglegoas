@@ -129,6 +129,10 @@ img.logo {
     @media only screen and (max-width: 800px) {
       .wrap-tatacara .mobile-tatacaraPage {
         display: inherit !important; } }
+  .wrap-tatacara .table_ant {
+    margin-top: 30px; }
+    .wrap-tatacara .table_ant ul.ant-pagination {
+      display: none !important; }
 
 .wrap-pengertianLelangPage {
   padding-top: 5%;

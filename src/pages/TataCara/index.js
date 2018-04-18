@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col, Image } from "react-bootstrap";
-import { Tabs } from "antd";
+import { Tabs, Table } from "antd";
 import { BannerInfo } from "../Components/Partial";
 
 //Icon Pembeli
@@ -24,6 +24,45 @@ import IconPenjual3 from "../../assets/image/Penjual/transfer.png";
 
 const TabPane = Tabs.TabPane;
 
+const dataSilver = [{
+  key: '1',
+  paket: 'Paket A',
+  price: 'Rp. 1.000.000',
+  address: '1 Token Motor'
+}, {
+  key: '2',
+  paket: 'Paket B',
+  price: 'Rp. 5.000.000',
+  address: '1 Token Motor'
+}, {
+  key: '3',
+  paket: 'Paket C (Hanya jika ada lelang untuk produk mobil dan motor pada waktu yang bersamaan)',
+  price: 'Rp. 7.000.000',
+  address: "1 Token Mobil 1 Token Motor"
+}];
+
+
+const dataPlatinum = [{
+  key: '1',
+  paket: 'PLATINUM',
+  price: 'Rp. 30.000.000',
+  address: 'Tidak terbatas untuk mobil dan motor.'
+}];
+
+const headerTable = [{
+  title: 'Paket',
+  dataIndex: 'paket',
+  key: 'paket',
+  width: 250,
+}, {
+  title: 'Deposito',
+  dataIndex: 'price',
+  key: 'price',
+}, {
+  title: 'Token yang diperoleh',
+  dataIndex: 'address',
+  key: 'address',
+}];
 export class Index extends Component {
   handleModeChange = e => {
     const mode = e.target.value;
@@ -160,7 +199,11 @@ export class Index extends Component {
                             </div>
                           </Col>
                         </Row>
-
+                        <Row>
+                          <Col md={12}>
+                            <Table dataSource={dataSilver} columns={headerTable} size="small" className="table_ant"/>
+                          </Col>
+                        </Row>
                         <Row>
                           <Col md={2}>
                             <Image
@@ -180,7 +223,11 @@ export class Index extends Component {
                             </div>
                           </Col>
                         </Row>
-
+                        <Row>
+                          <Col md={12}>
+                            <Table dataSource={dataPlatinum} columns={headerTable} size="small" className="table_ant"/>
+                          </Col>
+                        </Row>
                         <Row>
                           <Col md={2}>
                             <Image
@@ -435,6 +482,12 @@ export class Index extends Component {
                   </Row>
 
                   <Row>
+                    <Col md={12}>
+                      <Table dataSource={dataSilver} columns={headerTable} size="small" className="table_ant"/>
+                    </Col>
+                  </Row>
+
+                  <Row>
                     <Col md={2}>
                       <Image
                         src={Image7}
@@ -451,6 +504,12 @@ export class Index extends Component {
                           Dipersembahkan bagi  pelanggan loyal LEGOAS yang membutuhkan flexibilitas dalam  membeli dalam jumlah banyak dan atau rutin dalam pembelian setiap bulannya. 
                         </p>
                       </div>
+                    </Col>
+                  </Row>
+
+                  <Row>
+                    <Col md={12}>
+                      <Table dataSource={dataPlatinum} columns={headerTable} size="small" className="table_ant"/>
                     </Col>
                   </Row>
 
