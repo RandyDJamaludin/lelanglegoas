@@ -1,20 +1,26 @@
-import React, { Component } from "react";
-import { Form, Icon, Input, Button, Checkbox } from "antd";
-import { Grid, Row, Col } from "react-bootstrap";
-import Logo from "../../assets/image/logo.jpeg";
+import React, { Component } from "react"
+import { Form, Icon, Input, Button, Checkbox } from "antd"
+import { Grid, Row, Col } from "react-bootstrap"
+import { connect } from 'react-redux'
+import { login } from '../../actions/login'
+import Logo from "../../assets/image/logo.jpeg"
 const FormItem = Form.Item;
 
 class Login extends Component {
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (!err) {
-        console.log("Received values of form: ", values);
-      }
-    });
-  };
+  constructor(){
+    super()
+
+    this.state = {
+      username: '',
+      password: ''
+    }
+  }
+
+  handleLogin(){
+    this.props.login(this.state.username, this.state.password)
+  }
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     return (
       <div className="wrap-login">
         <Grid>
@@ -35,7 +41,7 @@ class Login extends Component {
                 <Col md={3} />
               </Row>
 
-              <Form onSubmit={this.handleSubmit} className="login-form">
+              <Form className="login-form">
                 <FormItem>
                   {getFieldDecorator("userName", {
                     rules: [
@@ -51,6 +57,7 @@ class Login extends Component {
                       }
                       placeholder="Username"
                       size="large"
+                      onChange={(username) => this.setState({username})} 
                     />
                   )}
                 </FormItem>
@@ -70,6 +77,7 @@ class Login extends Component {
                       type="password"
                       placeholder="Password"
                       size="large"
+                      onChange={(password) => this.setState({password})} 
                     />
                   )}
                 </FormItem>
@@ -93,6 +101,7 @@ class Login extends Component {
                     htmlType="submit"
                     className="login-form-button"
                     size="large"
+                    onClick={() => this.handleLogin()}
                   >
                     Log in
                   </Button>
@@ -105,7 +114,19 @@ class Login extends Component {
     );
   }
 }
+const mapStateToProps = state => {
+  return{
+    success: state.success,
+    loading: state.loading,
+    failed: state.failed,
+  }
+}
 
+const mapDispatchToProps = dispatch => {
+  return{
+    login: (username, password) => dispatch(login(username,password))
+  }
+}
 const WrappedNormalLoginForm = Form.create()(Login);
 
-export default WrappedNormalLoginForm;
+export default connect(mapStateToProps, mapDispatchToProps)(WrappedNormalLoginForm);

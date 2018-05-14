@@ -125,54 +125,64 @@ export class Banner extends Component {
         <div className="banner_background">
           <Carousel autoplay>
             <div className="containBanner1">
-              <h4> MOBIL MEWAH DAN MURAH </h4>
-              <h1> AYO BID SEKARANG </h1>
-              <p>
-                {" "}
-                Dapatkan Mobil impian anda dengan harga yang <br />
-                sesuai dengan keinginan anda{" "}
-              </p>
-              <Button type="primary">BID SEKARANG</Button>
+              <Grid>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p>
+                  {" "}
+                  Dapatkan Mobil impian anda dengan harga yang <br />
+                  sesuai dengan keinginan anda{" "}
+                </p>
+                <Button type="primary">BID SEKARANG</Button>
+              </Grid>
             </div>
             <div className="containBanner2">
-              <h4> MOBIL MEWAH DAN MURAH </h4>
-              <h1> AYO BID SEKARANG </h1>
-              <p>
-                {" "}
-                Dapatkan Mobil impian anda dengan harga yang <br />
-                sesuai dengan keinginan anda{" "}
-              </p>
-              <Button type="primary">BID SEKARANG</Button>
+              <Grid>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p>
+                  {" "}
+                  Dapatkan Mobil impian anda dengan harga yang <br />
+                  sesuai dengan keinginan anda{" "}
+                </p>
+                <Button type="primary">BID SEKARANG</Button>
+              </Grid>
             </div>
             <div className="containBanner3">
-              <h4> MOBIL MEWAH DAN MURAH </h4>
-              <h1> AYO BID SEKARANG </h1>
-              <p>
-                {" "}
-                Dapatkan Mobil impian anda dengan harga yang <br />
-                sesuai dengan keinginan anda{" "}
-              </p>
-              <Button type="primary">BID SEKARANG</Button>
+              <Grid>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p>
+                  {" "}
+                  Dapatkan Mobil impian anda dengan harga yang <br />
+                  sesuai dengan keinginan anda{" "}
+                </p>
+                <Button type="primary">BID SEKARANG</Button>
+              </Grid>
             </div>
             <div className="containBanner4">
-              <h4> MOBIL MEWAH DAN MURAH </h4>
-              <h1> AYO BID SEKARANG </h1>
-              <p>
-                {" "}
-                Dapatkan Mobil impian anda dengan harga yang <br />
-                sesuai dengan keinginan anda{" "}
-              </p>
-              <Button type="primary">BID SEKARANG</Button>
+              <Grid>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p>
+                  {" "}
+                  Dapatkan Mobil impian anda dengan harga yang <br />
+                  sesuai dengan keinginan anda{" "}
+                </p>
+                <Button type="primary">BID SEKARANG</Button>
+              </Grid>
             </div>
             <div className="containBanner5">
-              <h4> MOBIL MEWAH DAN MURAH </h4>
-              <h1> AYO BID SEKARANG </h1>
-              <p>
-                {" "}
-                Dapatkan Mobil impian anda dengan harga yang <br />
-                sesuai dengan keinginan anda{" "}
-              </p>
-              <Button type="primary">BID SEKARANG</Button>
+              <Grid>
+                <h4> MOBIL MEWAH DAN MURAH </h4>
+                <h1> AYO BID SEKARANG </h1>
+                <p>
+                  {" "}
+                  Dapatkan Mobil impian anda dengan harga yang <br />
+                  sesuai dengan keinginan anda{" "}
+                </p>
+                <Button type="primary">BID SEKARANG</Button>
+              </Grid>
             </div>
           </Carousel>
         </div>

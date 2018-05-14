@@ -1,20 +1,15 @@
-import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import { Icon, Menu } from "antd";
-import { CardCarousel, JadwalLelang } from "../Components/Card";
-import {
-  DataCardCarousel,
-  DataJadwalMotor,
-  DataJadwalMobil,
-  DataContentTab,
-} from "../AllData/DataCard";
-import { Banner } from "../Components/Partial";
-import { NavLink } from "react-router-dom";
-import AliceCarousel from "react-alice-carousel";
+import React, { Component } from "react"
+import { Grid, Row, Col } from "react-bootstrap"
+import { Icon, Divider, Input, Select, Form, Pagination, Button } from "antd"
+import { NavLink } from "react-router-dom"
+import AliceCarousel from "react-alice-carousel"
+import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } from "../AllData/DataCard"
+import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
+import { Banner } from "../Components/Partial"
 import Map from "../Components/Map";
-import { ContentTab } from '../Components/Card'
 
-const SubMenu = Menu.SubMenu;
+const FormItem = Form.Item;
+const Option = Select.Option;
 
 export class Index extends Component {
   constructor() {
@@ -113,7 +108,7 @@ export class Index extends Component {
         </Grid>
 
         {/* Tab */}
-        <Grid>
+        {/* <Grid>
           <Row>
             <Col md={2}>
               <Menu
@@ -169,6 +164,124 @@ export class Index extends Component {
                   </Col>
                 ))
               )}
+            </Col>
+          </Row>
+        </Grid> */}
+
+        <Grid style={{paddingTop:'3%', paddingBottom:'3%'}}>
+          <Row>
+            <Col md={5} className="searchPanel">
+              <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
+              <Divider />
+              <Row>
+                <Col md={4}>
+                  <p> Free Keyword</p>
+                  <Input width="100%" />
+                </Col>
+                <Col md={4}>
+                  <p> Lokasi </p>
+                  <Select
+                    showSearch
+                    style={{ width: "100%" }}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Option value="jack">Jakarta Barat</Option>
+                    <Option value="lucy">Jakarta Timur</Option>
+                    <Option value="tom">Jakarta Utara</Option>
+                  </Select>
+                </Col>
+                <Col md={4}>
+                  <p> Merek </p>
+                  <Select
+                    showSearch
+                    style={{ width: "100%" }}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Option value="jack">Yamaha</Option>
+                    <Option value="lucy">Honda</Option>
+                    <Option value="tom">Jaguar</Option>
+                  </Select>
+                </Col>
+              </Row>
+              <Row style={{ paddingTop: 10 }}>
+                <Col md={12}>
+                  <p> Model </p>
+                  <Select
+                    showSearch
+                    style={{ width: "100%" }}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Option value="jack">Model A</Option>
+                    <Option value="lucy">Model B</Option>
+                    <Option value="tom">Model C</Option>
+                  </Select>
+                </Col>
+              </Row>
+              <Row style={{ paddingTop: 10 }}>
+                <Col md={12}>
+                  <p> Tahun </p>
+                  <Input width="100%" />
+                </Col>
+              </Row>
+              <Row>
+                <Col md={12}>
+                  <FormItem>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="buttonSearch"
+                    >
+                      CARI
+                    </Button>
+                  </FormItem>
+                </Col>
+              </Row>
+            </Col>
+            <Col md={1} />
+            <Col md={6}>
+              <Row id="hasilPencarian">
+                <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                  {" "}
+                  Hasil Pencarian{" "}
+                </p>
+                {DataCardLocation.map((data, index) => (
+                  <Col md={12} key={data.key}>
+                    <SearchLelang
+                      number={data.number}
+                      name={data.name}
+                      police={data.police}
+                      pajak={data.pajak}
+                      price={data.price}
+                      bundle={data.bundle}
+                      year={data.year}
+                      type={data.type}
+                      image={data.image}
+                    />
+                  </Col>
+                ))}
+              </Row>
+              <Row>
+                <Col xs={1} md={3} />
+                <Col xs={10} md={7}>
+                  <Pagination defaultCurrent={6} total={50} />
+                </Col>
+                <Col xs={1} md={3} />
+              </Row>
             </Col>
           </Row>
         </Grid>

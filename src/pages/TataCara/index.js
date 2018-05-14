@@ -200,7 +200,8 @@ export class Index extends Component {
                           </Col>
                         </Row>
                         <Row>
-                          <Col md={12}>
+                          <Col md={2}/>
+                          <Col md={10}>
                             <Table dataSource={dataSilver} columns={headerTable} size="small" className="table_ant"/>
                           </Col>
                         </Row>
@@ -224,7 +225,8 @@ export class Index extends Component {
                           </Col>
                         </Row>
                         <Row>
-                          <Col md={12}>
+                          <Col md={2}/>
+                          <Col md={10}>
                             <Table dataSource={dataPlatinum} columns={headerTable} size="small" className="table_ant"/>
                           </Col>
                         </Row>

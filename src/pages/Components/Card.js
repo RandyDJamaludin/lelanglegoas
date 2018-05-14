@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Row, Col, Image } from "react-bootstrap";
-import { Tag, Icon } from "antd";
+import { Icon } from "antd";
 import { Link } from "react-router-dom";
 
 export class Card extends Component {
@@ -68,14 +68,7 @@ export class ContentTab extends Component {
 }
 
 export class ListLelang extends Component {
-  render() {
-    const isBundle = this.props.bundle;
-    let button;
-    if (isBundle === '') {
-    } else {
-      button = <Tag color="green">{this.props.bundle}</Tag>
-    }
-
+  render() { 
     return (
       <div className="listLelang" style={{ paddingBottom: "5%" }}>
         <Row>
@@ -116,10 +109,6 @@ export class ListLelang extends Component {
                       <p className="title"> AT/MT </p>
                       <p className="sub-title"> {this.props.at_mt} </p>
                     </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> No. Polisi </p>
-                      <p className="sub-title"> {this.props.police} </p>
-                    </Col>
                   </Row>
                   <hr/>
                   <Row className="box">
@@ -136,7 +125,6 @@ export class ListLelang extends Component {
                       <p className="sub-title"> {this.props.kode_location}</p>
                       <p className="sub-title"> {this.props.location}</p>
                     </Col>
-                    {button}
                   </Row>
                 </Col>
               </Row>
@@ -150,28 +138,16 @@ export class ListLelang extends Component {
 
 export class SearchLelang extends Component {
   render() {
-    const isBundle = this.props.bundle;
-    let button;
-    if (isBundle === '') {
-    } else {
-      button = <Tag color="green">{this.props.bundle}</Tag>
-    }
-
     return (
       <div className='searchLelang' style={{ paddingBottom: 10 }}>
         <Row  style={{border:'1px solid #ccc', padding:10}}>
           <Link to="/view-car">
             <Col md={12}>
               <Row className="contentLelang">
-                <Col md={2}>
-                  <p className="lot">
-                    LOT <br/> {this.props.number}
-                  </p>
-                </Col>
                 <Col xs={12} md={5}>
                   <Image src={this.props.image} width="100%" />
                 </Col>
-                <Col xs={12} md={5}>
+                <Col xs={12} md={7}>
                   <div className="headerLelang">
                     <p> {this.props.name} </p>
                   </div>
@@ -180,18 +156,8 @@ export class SearchLelang extends Component {
                       <p className="title"> Tahun : {this.props.year} </p>
                     </Col>
                     <Col md={12}>
-                      <p className="title"> No. Polisi : {this.props.police} </p>
-                    </Col>
-                    <Col md={12}>
-                      <p className="title"> STNK Nota Pajak : {this.props.pajak} </p>
-                    </Col>
-                    <Col md={12}>
                       <p className="title"> Harga : {this.props.price}</p>
                     </Col>
-                    <Col md={12}>
-                      {button}
-                    </Col>
-
                   </Row>
                 </Col>
               </Row>
