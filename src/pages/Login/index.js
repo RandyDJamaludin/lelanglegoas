@@ -3,22 +3,24 @@ import { Form, Icon, Input, Button, Checkbox } from "antd"
 import { Grid, Row, Col } from "react-bootstrap"
 import { connect } from 'react-redux'
 import { login } from '../../actions/login'
+import {setFailed} from '../../actions/processor'
 import Logo from "../../assets/image/logo.jpeg"
 const FormItem = Form.Item;
 
 class Login extends Component {
-  constructor(){
-    super()
-
-    this.state = {
-      username: '',
-      password: ''
-    }
-  }
 
   handleLogin(){
-    this.props.login(this.state.username, this.state.password)
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        this.props.login(values.username, values.password)
+        
+      }else{
+        console.log('error:', err)
+        alert('login gagal')
+      }
+    });
   }
+
   render() {
     const { getFieldDecorator } = this.props.form
     return (
@@ -43,7 +45,7 @@ class Login extends Component {
 
               <Form className="login-form">
                 <FormItem>
-                  {getFieldDecorator("userName", {
+                  {getFieldDecorator("username", {
                     rules: [
                       { required: true, message: "Please input your username!" }
                     ]
@@ -57,7 +59,6 @@ class Login extends Component {
                       }
                       placeholder="Username"
                       size="large"
-                      onChange={(username) => this.setState({username})} 
                     />
                   )}
                 </FormItem>
@@ -77,7 +78,6 @@ class Login extends Component {
                       type="password"
                       placeholder="Password"
                       size="large"
-                      onChange={(password) => this.setState({password})} 
                     />
                   )}
                 </FormItem>
@@ -124,7 +124,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return{
-    login: (username, password) => dispatch(login(username,password))
+    login: (username, password) => dispatch(login(username,password)),
+    setFailed: (condition, process_on, message) => dispatch(setFailed(condition, process_on, message))
   }
 }
 const WrappedNormalLoginForm = Form.create()(Login);
