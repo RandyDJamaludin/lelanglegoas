@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import { Icon } from "antd";
 import { Link } from "react-router-dom";
+import moment from 'moment'
+import 'moment/locale/id'
 
 export class Card extends Component {
   render() {
@@ -171,6 +173,7 @@ export class SearchLelang extends Component {
 
 export class JadwalLelang extends Component {
   render() {
+    console.log(this.props)
     return (
       <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
         <p style={{ fontWeight: "bold" }}>
@@ -180,15 +183,18 @@ export class JadwalLelang extends Component {
           </span>
         </p>
         <p>
-          <Icon type="calendar" /> {this.props.date}
+          <Icon type="calendar" /> {moment(this.props.date).format('D MMMM YYYY')}
         </p>
         <p>
-          <Icon type="home" /> {this.props.openhouse}
+          <Icon type="home" /> Open House {moment(this.props.openhouse).format('D MMMM YYYY')}
         </p>
         <p>
-          <Icon type="clock-circle-o" /> {this.props.time} WIB
+          <Icon type="clock-circle-o" /> {this.props.startTime} - {this.props.endTime} {this.props.timeZone}
         </p>
-        <Link to="/list-lelang"> Lihat Lot </Link>
+        <Link to={{
+          pathname: '/list-lelang',
+          state: { data: this.props }
+        }} > Lihat Lot </Link>
       </div>
     );
   }

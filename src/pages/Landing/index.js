@@ -7,6 +7,8 @@ import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } 
 import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
 import { Banner } from "../Components/Partial"
 import Map from "../Components/Map";
+import { connect } from 'react-redux'
+import { fetchScheduleCar } from "../../actions/getSchedule"
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -18,6 +20,10 @@ export class Index extends Component {
     this.state = {
       merek: ''
     }
+  }
+
+  componentDidMount(){
+    this.props.fetchScheduleCar("B3dIjc_HGclI8yP-xU7Yfrgo4TD_jQAn0SdhSenkjK4fT8-AhgQUrg2")
   }
 
   static defaultProps = {
@@ -339,14 +345,17 @@ export class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
-                    {DataJadwalMobil.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
+                    
+                    {this.props.schedulecar.map((data, index) => (
+                      <Col xs={12} md={12} key={data.auctionEventId}>
                         <JadwalLelang
-                          transport={data.transport}
-                          location={data.location}
-                          date={data.date}
-                          time={data.time}
-                          openhouse={data.openhouse}
+                          transport={" MOBIL"}
+                          location={data.auctionHouseProvince}
+                          date={data.eventDate.date}
+                          startTime={data.eventDate.startTime}
+                          endTime={data.eventDate.endTime}
+                          timeZone={data.timezone}
+                          openhouse={data.openHouseDate.date}
                         />
                       </Col>
                     ))}
@@ -368,4 +377,12 @@ export class Index extends Component {
   }
 }
 
-export default Index;
+const mapStateToProps = state => ({
+  schedulecar: state.schedulecar
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);
