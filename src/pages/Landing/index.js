@@ -2,28 +2,39 @@ import React, { Component } from "react"
 import { Grid, Row, Col } from "react-bootstrap"
 import { Icon, Divider, Input, Select, Form, Pagination, Button } from "antd"
 import { NavLink } from "react-router-dom"
+import { Redirect } from "react-router"
 import AliceCarousel from "react-alice-carousel"
 import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } from "../AllData/DataCard"
 import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
 import { Banner } from "../Components/Partial"
 import Map from "../Components/Map";
 import { connect } from 'react-redux'
-import { fetchScheduleCar } from "../../actions/getSchedule"
+import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
+import { fetchBrand } from "../../actions/getBrand"
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 
 export class Index extends Component {
+  
   constructor() {
     super()
 
     this.state = {
-      merek: ''
+      merk: '',
+      models: null,
+      model: '',
+      
     }
   }
 
-  componentDidMount(){
-    this.props.fetchScheduleCar("OrjNkfvMmINqeG_q63RaD8VwxOObZw9y-T-4kihzrOL2a_0yK3TPRQ2")
+  componentDidMount = async() => {
+    if(this.props.sessionPersistance == null){
+      <Redirect to="/login"/>
+    }
+    await this.props.fetchScheduleCar(this.props.sessionPersistance)
+    await this.props.fetchScheduleMot(this.props.sessionPersistance)
+    await this.props.fetchBrand(this.props.sessionPersistance)
   }
 
   static defaultProps = {
@@ -60,6 +71,27 @@ export class Index extends Component {
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
             >
+              {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
+                data.models.filter(model => model.parentId === data.id).slice(0,5).map(model => (
+                  model.tipes.filter(tipe => tipe.parentId === model.id).map(tipe => (
+                    <Col xs={12} md={12}>
+                    {console.log(model.value)}
+                    <CardCarousel
+                      key={tipe.id}
+                      nameBrand={data.value}
+                      image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
+                      merek={data.value}
+                      model={model.value}
+                      tipe={tipe.value}
+                      at_mt={"---"}
+                      color={"---"}
+                      price={"---"}
+                    />
+                  </Col>
+                  ))
+                ))
+              ))
+              } */}
               {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
@@ -92,8 +124,7 @@ export class Index extends Component {
               autoPlayDirection="rtl"
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
-              onSlideChanged={this.onSlideChanged}
-            >
+              onSlideChanged={this.onSlideChanged}>
               {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
@@ -212,10 +243,10 @@ export class Index extends Component {
                         .toLowerCase()
                         .indexOf(input.toLowerCase()) >= 0
                     }
-                  >
-                    <Option value="jack">Yamaha</Option>
-                    <Option value="lucy">Honda</Option>
-                    <Option value="tom">Jaguar</Option>
+                    onChange={(value)=> this.setState({models: value})}>
+                  {this.props.receivedbrand.map(merk => (
+                    <Option value={JSON.stringify(merk.models)} key={merk.id}>{merk.value}</Option>
+                  ))}
                   </Select>
                 </Col>
               </Row>
@@ -231,10 +262,14 @@ export class Index extends Component {
                         .toLowerCase()
                         .indexOf(input.toLowerCase()) >= 0
                     }
-                  >
-                    <Option value="jack">Model A</Option>
-                    <Option value="lucy">Model B</Option>
-                    <Option value="tom">Model C</Option>
+                    onChange={(value)=> this.setState({model: value })}>
+                  {this.state.models == null ? (
+                    <Option value="select">Please Select Merk</Option>
+                  ):(
+                  JSON.parse(this.state.models).map(model => (
+                    <Option value={model.value} key={model.id}>{model.value}</Option>
+                  ))
+                  )}
                   </Select>
                 </Col>
               </Row>
@@ -378,11 +413,16 @@ export class Index extends Component {
 }
 
 const mapStateToProps = state => ({
-  schedulecar: state.schedulecar
+  schedulecar: state.schedulecar,
+  schedulemot: state.schedulemot,
+  receivedbrand: state.receivedbrand,
+  sessionPersistance: state.sessionPersistance
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId))
+  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId)),
+  fetchScheduleMot: (tokenId) => dispatch(fetchScheduleMot(tokenId)),
+  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);

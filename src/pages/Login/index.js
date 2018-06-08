@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import { Form, Icon, Input, Button, Checkbox } from "antd"
+import { Link } from "react-router-dom"
 import { Grid, Row, Col } from "react-bootstrap"
 import { connect } from 'react-redux'
 import { login } from '../../actions/login'
@@ -9,11 +10,39 @@ const FormItem = Form.Item;
 
 class Login extends Component {
 
+  shouldComponentUpdate(nextProps, nextState) {
+    if(nextProps !== this.props) {
+      return true
+    }
+
+    if(nextState !== this.state) {
+      return true
+    }
+
+    return false
+  }
+
+  componentWillUpdate(nextProps) {
+    const { loading, success, failed, navigation } = nextProps
+    console.log(failed)
+    if (
+      failed.condition === true &&
+      failed.process_on === 'FAILED_PROCESS_LOGIN'
+    ) {
+      alert('Login gagal', 'Silahkan Cek Kembali Akun Anda!')
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { failed, setFailed } = prevProps
+
+  }
+
   handleLogin(){
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.login(values.username, values.password)
         
+        this.props.login(values.username, values.password)
       }else{
         console.log('error:', err)
         alert('login gagal')

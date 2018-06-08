@@ -32,8 +32,9 @@ export class CardCarousel extends Component {
     return (
       <div className="background-cardCarousel">
         <center>
+        {/* {console.log(this.props.nameModel)} */}
           <Image className="components-card" src={this.props.image} />
-          <h3>{this.props.name} </h3>
+          <h3>{this.props.nameBrand} </h3>
           <p> {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.at_mt})</p>
           <p className="color"> {this.props.color} </p>
           <p>
@@ -173,7 +174,6 @@ export class SearchLelang extends Component {
 
 export class JadwalLelang extends Component {
   render() {
-    console.log(this.props)
     return (
       <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
         <p style={{ fontWeight: "bold" }}>

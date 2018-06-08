@@ -1,11 +1,12 @@
 import React, { Component } from "react"
 import { Grid, Row, Col } from "react-bootstrap"
 import { Pagination } from "antd"
+import { Redirect } from "react-router"
 import { JadwalLelang } from "../Components/Card"
 import { DataJadwalMotor, DataJadwalMobil } from "../AllData/DataCard"
 import GoCalendar from "react-icons/lib/go/calendar"
 import { connect } from 'react-redux'
-import { fetchScheduleCar } from "../../actions/getSchedule"
+import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
 
 const paginate = (array, page_size, page_number) => {
   --page_number; // because pages logically start with 1, but technically with 0
@@ -22,8 +23,12 @@ export class Index extends Component {
     }
   }
 
-  componentDidMount(){
-    this.props.fetchScheduleCar("OrjNkfvMmINqeG_q63RaD8VwxOObZw9y-T-4kihzrOL2a_0yK3TPRQ2")
+  componentDidMount = async() => {
+    if(this.props.sessionPersistance == null){
+      <Redirect to="/login"/>
+    }
+    await this.props.fetchScheduleCar(this.props.sessionPersistance)
+    await this.props.fetchScheduleMot(this.props.sessionPersistance)
   }
 
   onChange = (page) => {
@@ -99,11 +104,14 @@ export class Index extends Component {
 }
 
 const mapStateToProps = state => ({
-  schedulecar: state.schedulecar
+  schedulecar: state.schedulecar,
+  schedulemot: state.schedulemot,
+  sessionPersistance: state.sessionPersistance
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId))
+  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId)),
+  fetchScheduleMot: (tokenId) => dispatch(fetchScheduleMot(tokenId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);
