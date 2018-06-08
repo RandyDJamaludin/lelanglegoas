@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import { Grid, Row, Col } from "react-bootstrap"
 import { Icon, Divider, Input, Select, Form, Pagination, Button } from "antd"
-import { NavLink } from "react-router-dom"
-import { Redirect } from "react-router"
+import { NavLink, Redirect } from "react-router-dom"
 import AliceCarousel from "react-alice-carousel"
 import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } from "../AllData/DataCard"
 import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
@@ -24,17 +23,17 @@ export class Index extends Component {
       merk: '',
       models: null,
       model: '',
-      
+      isAuth: null
     }
   }
 
   componentDidMount = async() => {
-    if(this.props.sessionPersistance == null){
-      <Redirect to="/login"/>
+    if(this.props.sessionPersistance.tokenId != null){
+      this.setState({isAuth: this.props.sessionPersistance})
     }
-    await this.props.fetchScheduleCar(this.props.sessionPersistance)
-    await this.props.fetchScheduleMot(this.props.sessionPersistance)
-    await this.props.fetchBrand(this.props.sessionPersistance)
+    await this.props.fetchScheduleCar(this.props.sessionPersistance.tokenId)
+    await this.props.fetchScheduleMot(this.props.sessionPersistance.tokenId)
+    await this.props.fetchBrand(this.props.sessionPersistance.tokenId)
   }
 
   static defaultProps = {
@@ -53,8 +52,18 @@ export class Index extends Component {
         items: 3
       }
     };
+    console.log(this.state.isAuth)
     return (
-      <div>
+    this.props.sessionPersistance.tokenId == null ? (
+    <Redirect
+        to={{
+          pathname: "/login",
+          state: { from: this.props.location }
+        }}
+      />
+    ) : (
+
+        <div>
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
@@ -70,28 +79,28 @@ export class Index extends Component {
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
-            >
+              >
               {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
                 data.models.filter(model => model.parentId === data.id).slice(0,5).map(model => (
                   model.tipes.filter(tipe => tipe.parentId === model.id).map(tipe => (
                     <Col xs={12} md={12}>
                     {console.log(model.value)}
                     <CardCarousel
-                      key={tipe.id}
-                      nameBrand={data.value}
-                      image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
-                      merek={data.value}
-                      model={model.value}
-                      tipe={tipe.value}
-                      at_mt={"---"}
-                      color={"---"}
-                      price={"---"}
+                    key={tipe.id}
+                    nameBrand={data.value}
+                    image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
+                    merek={data.value}
+                    model={model.value}
+                    tipe={tipe.value}
+                    at_mt={"---"}
+                    color={"---"}
+                    price={"---"}
                     />
-                  </Col>
+                    </Col>
                   ))
                 ))
               ))
-              } */}
+            } */}
               {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
@@ -103,7 +112,7 @@ export class Index extends Component {
                     at_mt={data.at_mt}
                     color={data.color}
                     price={data.price}
-                  />
+                    />
                 </Col>
               ))}
             </AliceCarousel>
@@ -137,7 +146,7 @@ export class Index extends Component {
                     color={data.color}
                     price={data.price}
                     openhouse={data.openhouse}
-                  />
+                    />
                 </Col>
               ))}
             </AliceCarousel>
@@ -147,61 +156,61 @@ export class Index extends Component {
         {/* Tab */}
         {/* <Grid>
           <Row>
-            <Col md={2}>
-              <Menu
-                onClick={({item, key}) => this.setState({merek: key})}
-                style={{ width: '100%' }}
-                defaultOpenKeys={['all']}
-                selectedKeys = {[this.state.merek]}
-                mode="inline">
-                <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
-                  <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
-                    <Menu.Item key="Avanza">Avanza</Menu.Item>
-                    <Menu.Item key="Toyota">Xenia</Menu.Item>
-                  </SubMenu>
-                  <SubMenu key="sub2" title={<span><span>Motor</span></span>}>
-                    <Menu.Item key="Ninja">Ninja</Menu.Item>
-                    <Menu.Item key="Supra">Supra</Menu.Item>
-                  </SubMenu>
-                  <SubMenu key="sub3" title={<span><span>Property</span></span>}>
-                    <Menu.Item key="Rumah">Rumah</Menu.Item>
-                  </SubMenu>
-                </SubMenu>
-              </Menu>
-            </Col>
-            <Col md={10}>
-              {this.state.merek === '' ? (
-                DataContentTab.map((d, index) => (
-                  <Col md={4} key={index}>
-                    <ContentTab
-                      name={d.name}
-                      image={d.image}
-                      merek={d.merek}
-                      model={d.model}
-                      tipe={d.tipe}
-                      at_mt={d.at_mt}
-                      warna={d.warna}
-                      price={d.price}
-                      button={d.button} />
-                  </Col>
-                ))
-              ) : (
-                DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
-                  <Col md={4} key={index}>
-                    <ContentTab
-                      name={d.name}
-                      image={d.image}
-                      merek={d.merek}
-                      model={d.model}
-                      tipe={d.tipe}
-                      at_mt={d.at_mt}
-                      warna={d.warna}
-                      price={d.price}
-                      button={d.button} />
-                  </Col>
-                ))
-              )}
-            </Col>
+          <Col md={2}>
+          <Menu
+          onClick={({item, key}) => this.setState({merek: key})}
+          style={{ width: '100%' }}
+          defaultOpenKeys={['all']}
+          selectedKeys = {[this.state.merek]}
+          mode="inline">
+          <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
+          <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
+          <Menu.Item key="Avanza">Avanza</Menu.Item>
+          <Menu.Item key="Toyota">Xenia</Menu.Item>
+          </SubMenu>
+          <SubMenu key="sub2" title={<span><span>Motor</span></span>}>
+          <Menu.Item key="Ninja">Ninja</Menu.Item>
+          <Menu.Item key="Supra">Supra</Menu.Item>
+          </SubMenu>
+          <SubMenu key="sub3" title={<span><span>Property</span></span>}>
+          <Menu.Item key="Rumah">Rumah</Menu.Item>
+          </SubMenu>
+          </SubMenu>
+          </Menu>
+          </Col>
+          <Col md={10}>
+          {this.state.merek === '' ? (
+            DataContentTab.map((d, index) => (
+              <Col md={4} key={index}>
+              <ContentTab
+              name={d.name}
+              image={d.image}
+              merek={d.merek}
+              model={d.model}
+              tipe={d.tipe}
+              at_mt={d.at_mt}
+              warna={d.warna}
+              price={d.price}
+              button={d.button} />
+              </Col>
+            ))
+          ) : (
+            DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
+              <Col md={4} key={index}>
+              <ContentTab
+              name={d.name}
+              image={d.image}
+              merek={d.merek}
+              model={d.model}
+              tipe={d.tipe}
+              at_mt={d.at_mt}
+              warna={d.warna}
+              price={d.price}
+              button={d.button} />
+              </Col>
+            ))
+          )}
+          </Col>
           </Row>
         </Grid> */}
 
@@ -223,10 +232,10 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      .toLowerCase()
+                      .indexOf(input.toLowerCase()) >= 0
                     }
-                  >
+                    >
                     <Option value="jack">Jakarta Barat</Option>
                     <Option value="lucy">Jakarta Timur</Option>
                     <Option value="tom">Jakarta Utara</Option>
@@ -240,8 +249,8 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      .toLowerCase()
+                      .indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={(value)=> this.setState({models: value})}>
                   {this.props.receivedbrand.map(merk => (
@@ -259,16 +268,16 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      .toLowerCase()
+                      .indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={(value)=> this.setState({model: value })}>
                   {this.state.models == null ? (
                     <Option value="select">Please Select Merk</Option>
                   ):(
-                  JSON.parse(this.state.models).map(model => (
-                    <Option value={model.value} key={model.id}>{model.value}</Option>
-                  ))
+                    JSON.parse(this.state.models).map(model => (
+                      <Option value={model.value} key={model.id}>{model.value}</Option>
+                    ))
                   )}
                   </Select>
                 </Col>
@@ -286,7 +295,7 @@ export class Index extends Component {
                       type="primary"
                       htmlType="submit"
                       className="buttonSearch"
-                    >
+                      >
                       CARI
                     </Button>
                   </FormItem>
@@ -312,7 +321,7 @@ export class Index extends Component {
                       year={data.year}
                       type={data.type}
                       image={data.image}
-                    />
+                      />
                   </Col>
                 ))}
               </Row>
@@ -349,7 +358,7 @@ export class Index extends Component {
                     autoPlayActionDisabled={true}
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
-                  >
+                    >
                     {DataJadwalMotor.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <JadwalLelang
@@ -358,7 +367,7 @@ export class Index extends Component {
                           date={data.date}
                           time={data.time}
                           openhouse={data.openhouse}
-                        />
+                          />
                       </Col>
                     ))}
                   </AliceCarousel>
@@ -379,7 +388,7 @@ export class Index extends Component {
                     autoPlayActionDisabled={true}
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
-                  >
+                    >
                     
                     {this.props.schedulecar.map((data, index) => (
                       <Col xs={12} md={12} key={data.auctionEventId}>
@@ -391,7 +400,7 @@ export class Index extends Component {
                           endTime={data.eventDate.endTime}
                           timeZone={data.timezone}
                           openhouse={data.openHouseDate.date}
-                        />
+                          />
                       </Col>
                     ))}
                   </AliceCarousel>
@@ -408,6 +417,7 @@ export class Index extends Component {
           <Map />
         </div>
       </div>
+  )
     );
   }
 }

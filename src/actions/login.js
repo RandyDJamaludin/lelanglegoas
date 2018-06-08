@@ -36,8 +36,8 @@ const login2 = (token, officeCode, RoleCode) => {
       )
       const data = await response.data
       console.log(data)
-      await dispatch(saveSession( data.tokenId ))
-			await dispatch(saveSessionPersistance( data.tokenId ))
+      await dispatch(saveSession( data ))
+			await dispatch(saveSessionPersistance( data ))
       await dispatch(setSuccess(true, 'SUCCESS_PROCESS_LOGIN2', 'Login sukses'))
       await dispatch(setLoading(false, 'LOADING_PROCESS_LOGIN2'))
     }catch(e){
@@ -49,7 +49,7 @@ const login2 = (token, officeCode, RoleCode) => {
 
 const saveSession = data => {
 	return () => {
-		localStorage.setItem('session', JSON.stringify(data))
+    localStorage.setItem('session', JSON.stringify(data))
 	}
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Form, Icon, Input, Button, Checkbox } from "antd"
-import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import { Grid, Row, Col } from "react-bootstrap"
 import { connect } from 'react-redux'
 import { login } from '../../actions/login'
@@ -53,6 +53,14 @@ class Login extends Component {
   render() {
     const { getFieldDecorator } = this.props.form
     return (
+        this.props.sessionPersistance.tokenId != null ? (
+          <Redirect
+              to={{
+                pathname: "/",
+                state: { from: this.props.location }
+              }}
+            />
+          ) : (
       <div className="wrap-login">
         <Grid>
           <Row>
@@ -140,7 +148,7 @@ class Login extends Component {
           </Row>
         </Grid>
       </div>
-    );
+    ));
   }
 }
 const mapStateToProps = state => {
@@ -148,6 +156,7 @@ const mapStateToProps = state => {
     success: state.success,
     loading: state.loading,
     failed: state.failed,
+    sessionPersistance: state.sessionPersistance
   }
 }
 
