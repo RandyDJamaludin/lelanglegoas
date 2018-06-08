@@ -389,11 +389,12 @@ export class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                     >
-                    
-                    {this.props.schedulecar.map((data, index) => (
+                  {this.props.schedulecar.map((data, index) => (  
                       <Col xs={12} md={12} key={data.auctionEventId}>
                         <JadwalLelang
                           transport={" MOBIL"}
+                          eventCode={data.eventCode}
+                          eventNumber={data.eventNumber}
                           location={data.auctionHouseProvince}
                           date={data.eventDate.date}
                           startTime={data.eventDate.startTime}

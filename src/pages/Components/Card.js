@@ -182,6 +182,9 @@ export class JadwalLelang extends Component {
             {this.props.transport} {this.props.location}
           </span>
         </p>
+        <p style={{ fontWeight: "bold" }}>
+          {this.props.eventCode} {this.props.eventNumber}
+        </p>
         <p>
           <Icon type="calendar" /> {moment(this.props.date).format('D MMMM YYYY')}
         </p>
