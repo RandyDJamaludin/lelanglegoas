@@ -51,7 +51,7 @@ export class Index extends Component {
         items: 3
       }
     };
-    {console.log("haha",this.state.model)}
+    {console.log("state model",this.state.model)}
     return (
     this.props.sessionPersistance.tokenId == null ? (
     <Redirect
@@ -79,32 +79,11 @@ export class Index extends Component {
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
               >
-              {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
-                data.models.filter(model => model.parentId === data.id).slice(0,5).map(model => (
-                  model.tipes.filter(tipe => tipe.parentId === model.id).map(tipe => (
-                    <Col xs={12} md={12}>
-                    {console.log(model.value)}
-                    <CardCarousel
-                    key={tipe.id}
-                    nameBrand={data.value}
-                    image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
-                    merek={data.value}
-                    model={model.value}
-                    tipe={tipe.value}
-                    at_mt={"---"}
-                    color={"---"}
-                    price={"---"}
-                    />
-                    </Col>
-                  ))
-                ))
-              ))
-            } */}
             {this.props.receivedbrand.slice(0,5).map((data, Index) => (
                 data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
                   model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
                     <Col xs={12} md={12}>
-                    {console.log(model.value)}
+                    {/* {console.log(model.value)} */}
                     <CardCarousel
                     key={tipe.id}
                     nameBrand={data.value}
