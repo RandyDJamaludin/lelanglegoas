@@ -26,7 +26,7 @@ export const fetchScheduleCar = (tokenId) => {
       }
       )
       const data = await response.data
-      // console.log(data)
+      console.log("get schedule car",data)
       await dispatch(receivedScheduleCar(data.data))
       await dispatch(setSuccess(true, 'SUCCESS_GET_SCHEDULE_CAR', 'berhasil mendapatkan jadwal car'))
       await dispatch(setLoading(false, 'LOADING_GET_SCHEDULE_CAR'))
@@ -67,7 +67,7 @@ export const fetchScheduleMot = (tokenId) => {
       }
       )
       const data = await response.data
-      console.log(data)
+      console.log("get schedule mot",data)
       await dispatch(receivedScheduleMot(data.data))
       await dispatch(setSuccess(true, 'SUCCESS_GET_SCHEDULE_MOT', 'berhasil mendapatkan jadwal mot'))
       await dispatch(setLoading(false, 'LOADING_GET_SCHEDULE_MOT'))

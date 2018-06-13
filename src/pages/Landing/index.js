@@ -21,7 +21,6 @@ export class Index extends Component {
 
     this.state = {
       merk: '',
-      models: null,
       model: '',
       isAuth: null
     }
@@ -52,7 +51,7 @@ export class Index extends Component {
         items: 3
       }
     };
-    console.log(this.state.isAuth)
+    {console.log("haha",this.state.model)}
     return (
     this.props.sessionPersistance.tokenId == null ? (
     <Redirect
@@ -101,7 +100,28 @@ export class Index extends Component {
                 ))
               ))
             } */}
-              {DataCardCarousel.map((data, index) => (
+            {this.props.receivedbrand.slice(0,5).map((data, Index) => (
+                data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
+                  model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
+                    <Col xs={12} md={12}>
+                    {console.log(model.value)}
+                    <CardCarousel
+                    key={tipe.id}
+                    nameBrand={data.value}
+                    image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
+                    merek={data.value}
+                    model={model.value}
+                    tipe={tipe.value}
+                    at_mt={"---"}
+                    color={"---"}
+                    price={"---"}
+                    />
+                    </Col>
+                  ))
+                ))
+              ))
+            }
+              {/* {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
                     name={data.name}
@@ -114,7 +134,7 @@ export class Index extends Component {
                     price={data.price}
                     />
                 </Col>
-              ))}
+              ))} */}
             </AliceCarousel>
           </Row>
         </Grid>
@@ -252,9 +272,9 @@ export class Index extends Component {
                       .toLowerCase()
                       .indexOf(input.toLowerCase()) >= 0
                     }
-                    onChange={(value)=> this.setState({models: value})}>
+                    onChange={(value)=> this.setState({merk: value})}>
                   {this.props.receivedbrand.map(merk => (
-                    <Option value={JSON.stringify(merk.models)} key={merk.id}>{merk.value}</Option>
+                    <Option value={merk.value} key={merk.id}>{merk.value}</Option>
                   ))}
                   </Select>
                 </Col>
@@ -272,12 +292,12 @@ export class Index extends Component {
                       .indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={(value)=> this.setState({model: value })}>
-                  {this.state.models == null ? (
-                    <Option value="select">Please Select Merk</Option>
+                  {this.state.merk == '' ? (
+                    <Option value="select" disabled >Please Select Merk</Option>
                   ):(
-                    JSON.parse(this.state.models).map(model => (
+                    this.props.receivedbrand.filter(merk => merk.value === this.state.merk).map(merk => merk.models.map(model => (
                       <Option value={model.value} key={model.id}>{model.value}</Option>
-                    ))
+                    )))
                   )}
                   </Select>
                 </Col>
@@ -291,6 +311,16 @@ export class Index extends Component {
               <Row>
                 <Col md={12}>
                   <FormItem>
+                    {this.state.merk === '' && this.state.model === '' ? (
+                      <Button
+                      type="primary"
+                      htmlType="submit"
+                      className="buttonSearch"
+                      disabled
+                      >
+                      CARI
+                    </Button>
+                    ):(
                     <Button
                       type="primary"
                       htmlType="submit"
@@ -298,6 +328,7 @@ export class Index extends Component {
                       >
                       CARI
                     </Button>
+                    )}
                   </FormItem>
                 </Col>
               </Row>

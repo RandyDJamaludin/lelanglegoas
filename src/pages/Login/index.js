@@ -24,7 +24,7 @@ class Login extends Component {
 
   componentWillUpdate(nextProps) {
     const { loading, success, failed, navigation } = nextProps
-    console.log(failed)
+    // console.log(failed)
     if (
       failed.condition === true &&
       failed.process_on === 'FAILED_PROCESS_LOGIN'
