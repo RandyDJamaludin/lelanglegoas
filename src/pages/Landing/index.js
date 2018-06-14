@@ -79,28 +79,26 @@ export class Index extends Component {
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
               >
-            {this.props.receivedbrand.slice(0,5).map((data, Index) => (
-                data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
-                  model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
-                    <Col xs={12} md={12}>
-                    {/* {console.log(model.value)} */}
-                    <CardCarousel
-                    key={tipe.id}
-                    nameBrand={data.value}
-                    image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
-                    merek={data.value}
-                    model={model.value}
-                    tipe={tipe.value}
-                    at_mt={"---"}
-                    color={"---"}
-                    price={"---"}
-                    />
-                    </Col>
+                {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
+                  data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
+                    model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
+                      <Col xs={12} md={12}>
+                      <CardCarousel
+                      key={tipe.id}
+                      nameBrand={data.value}
+                      image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
+                      merek={data.value}
+                      model={model.value}
+                      tipe={tipe.value}
+                      at_mt={"---"}
+                      color={"---"}
+                      price={"---"}
+                      />
+                      </Col>
+                    ))
                   ))
-                ))
-              ))
-            }
-              {/* {DataCardCarousel.map((data, index) => (
+                ))} */}
+              {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
                     name={data.name}
@@ -113,7 +111,7 @@ export class Index extends Component {
                     price={data.price}
                     />
                 </Col>
-              ))} */}
+              ))}
             </AliceCarousel>
           </Row>
         </Grid>
@@ -380,6 +378,21 @@ export class Index extends Component {
                           />
                       </Col>
                     ))}
+                    {/* {this.props.schedulemot.map((data, index) => (  
+                      <Col xs={12} md={12} key={data.auctionEventId}>
+                        <JadwalLelang
+                          transport={" MOBIL"}
+                          eventCode={data.eventCode}
+                          eventNumber={data.eventNumber}
+                          location={data.auctionHouseProvince}
+                          date={data.eventDate.date}
+                          startTime={data.eventDate.startTime}
+                          endTime={data.eventDate.endTime}
+                          timeZone={data.timezone}
+                          openhouse={data.openHouseDate.date}
+                          />
+                      </Col>
+                    ))} */}
                   </AliceCarousel>
                 </Row>
               </Col>
@@ -399,7 +412,18 @@ export class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                     >
-                  {this.props.schedulecar.map((data, index) => (  
+                    {DataJadwalMobil.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>
+                        <JadwalLelang
+                          transport={data.transport}
+                          location={data.location}
+                          date={data.date}
+                          time={data.time}
+                          openhouse={data.openhouse}
+                          />
+                      </Col>
+                    ))}
+                    {/* {this.props.schedulecar.map((data, index) => (  
                       <Col xs={12} md={12} key={data.auctionEventId}>
                         <JadwalLelang
                           transport={" MOBIL"}
@@ -413,7 +437,7 @@ export class Index extends Component {
                           openhouse={data.openHouseDate.date}
                           />
                       </Col>
-                    ))}
+                    ))} */}
                   </AliceCarousel>
                 </Row>
               </Col>
