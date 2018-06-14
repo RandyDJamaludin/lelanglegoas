@@ -1,12 +1,31 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-bootstrap'
+import { Redirect } from "react-router-dom"
 import { DataCardCarousel } from '../AllData/DataCard' 
 import { CardCarousel } from '../Components/Card'
 import AliceCarousel from 'react-alice-carousel'
 import Map from '../Components/Map'
+import { connect } from 'react-redux'
+import { fetchBrand } from "../../actions/getBrand"
 
-export class Index extends Component {
-    render() { 
+class Index extends Component {
+  
+  constructor() {
+    super()
+
+    this.state = {
+      isAuth: null
+    }
+  }
+
+  componentDidMount = async() => {
+    if(this.props.sessionPersistance.tokenId != null){
+      this.setState({isAuth: this.props.sessionPersistance})
+    }
+    await this.props.fetchBrand(this.props.sessionPersistance.tokenId)
+  }
+  
+  render() { 
       const responsive = {
         0: {
           items: 1
@@ -19,6 +38,14 @@ export class Index extends Component {
         }
       };
         return (
+          this.props.sessionPersistance.tokenId == null ? (
+            <Redirect
+                to={{
+                  pathname: "/login",
+                  state: { from: this.props.location }
+                }}
+              />
+            ) : (
             <div className='page-lokasi' style={{paddingBottom:'3%'}}>
               <Map/>
 
@@ -37,6 +64,25 @@ export class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
+                    {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
+                      data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
+                        model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
+                          <Col xs={12} md={12}>
+                          <CardCarousel
+                          key={tipe.id}
+                          nameBrand={data.value}
+                          image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
+                          merek={data.value}
+                          model={model.value}
+                          tipe={tipe.value}
+                          at_mt={"---"}
+                          color={"---"}
+                          price={"---"}
+                          />
+                          </Col>
+                        ))
+                      ))
+                    ))} */}
                     {DataCardCarousel.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <CardCarousel
@@ -83,8 +129,18 @@ export class Index extends Component {
                 </Row>
               </Grid>
             </div>
+            )
         )
     }
 }
  
-export default Index;
+const mapStateToProps = state => ({
+  receivedbrand: state.receivedbrand,
+  sessionPersistance: state.sessionPersistance
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Index);

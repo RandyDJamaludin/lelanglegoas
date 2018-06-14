@@ -19,13 +19,14 @@ export class Index extends Component {
 
     this.state = {
       pageSize : 3,
-      current : 1
+      current : 1,
+      isAuth: null
     }
   }
 
   componentDidMount = async() => {
-    if(this.props.sessionPersistance == null){
-      <Redirect to="/login"/>
+    if(this.props.sessionPersistance.tokenId != null){
+      this.setState({isAuth: this.props.sessionPersistance})
     }
     await this.props.fetchScheduleCar(this.props.sessionPersistance)
     await this.props.fetchScheduleMot(this.props.sessionPersistance)
@@ -41,66 +42,75 @@ export class Index extends Component {
     let total = Math.max(this.props.schedulecar.length, DataJadwalMotor.length)
     // console.log(paginate(this.props.schedulecar, this.state.pageSize, this.state.current));
     return (
-      <div className="page-jadwal" style={{ paddingBottom: "3%" }}>
-        <div className="landing-lelang">
-          <Grid style={{ paddingTop: "2%" }}>
-            <div className="body-header">
-              <p>
-                <GoCalendar id="date" /> JADWAL LELANG
-              </p>
-              <hr />
-            </div>
-            <Row>
-              <Col md={6}>
-                <Row>
-                  {paginate(this.props.schedulecar, this.state.pageSize, this.state.current).map((data, index) => (
-                    <Col xs={12} md={12} key={data.auctionEventId}>
-                    <JadwalLelang
-                      transport={" MOBIL"}
-                      eventCode={data.eventCode}
-                      eventNumber={data.eventNumber}
-                      location={data.auctionHouseProvince}
-                      date={data.eventDate.date}
-                      startTime={data.eventDate.startTime}
-                      endTime={data.eventDate.endTime}
-                      timeZone={data.timezone}
-                      openhouse={data.openHouseDate.date}
-                      houseName={data.auctionHouseName}
-                      houseAddress={data.auctionHouseAddress}
-                    />
-                  </Col>
-                  ))}
-                </Row>
-              </Col>
-              <Col md={6}>
-                <Row>
-                  {DataJadwalMotor.map((data, index) => (
-                    <Col xs={12} md={12} key={data.key}>
+      this.props.sessionPersistance.tokenId == null ? (
+        <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: this.props.location }
+            }}
+          />
+      ) : (
+        <div className="page-jadwal" style={{ paddingBottom: "3%" }}>
+          <div className="landing-lelang">
+            <Grid style={{ paddingTop: "2%" }}>
+              <div className="body-header">
+                <p>
+                  <GoCalendar id="date" /> JADWAL LELANG
+                </p>
+                <hr />
+              </div>
+              <Row>
+                <Col md={6}>
+                  <Row>
+                    {paginate(this.props.schedulecar, this.state.pageSize, this.state.current).map((data, index) => (
+                      <Col xs={12} md={12} key={data.auctionEventId}>
                       <JadwalLelang
-                        transport={data.transport}
-                        location={data.location}
-                        date={data.date}
-                        time={data.time}
-                        openhouse={data.openhouse}
+                        transport={" MOBIL"}
+                        eventCode={data.eventCode}
+                        eventNumber={data.eventNumber}
+                        location={data.auctionHouseProvince}
+                        date={data.eventDate.date}
+                        startTime={data.eventDate.startTime}
+                        endTime={data.eventDate.endTime}
+                        timeZone={data.timezone}
+                        openhouse={data.openHouseDate.date}
+                        houseName={data.auctionHouseName}
+                        houseAddress={data.auctionHouseAddress}
                       />
                     </Col>
-                  ))}
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={4} />
-              <Col xs={12} md={4}>
-                <div className="pagination">
-                  <Pagination defaultCurrent={1} pageSize={this.state.pageSize} total={total} current={this.state.current} onChange={this.onChange} />
-                </div>
-              </Col>
-              <Col xs={12} md={4} />
-            </Row>
-          </Grid>
-          
+                    ))}
+                  </Row>
+                </Col>
+                <Col md={6}>
+                  <Row>
+                    {DataJadwalMotor.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>
+                        <JadwalLelang
+                          transport={data.transport}
+                          location={data.location}
+                          date={data.date}
+                          time={data.time}
+                          openhouse={data.openhouse}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={12} md={4} />
+                <Col xs={12} md={4}>
+                  <div className="pagination">
+                    <Pagination defaultCurrent={1} pageSize={this.state.pageSize} total={total} current={this.state.current} onChange={this.onChange} />
+                  </div>
+                </Col>
+                <Col xs={12} md={4} />
+              </Row>
+            </Grid>
+            
+          </div>
         </div>
-      </div>
+      )
     );
   }
 }
