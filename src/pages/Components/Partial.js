@@ -33,7 +33,7 @@ export class Navigation extends Component {
             <Navbar.Header>
               <Navbar.Brand>
                 <NavLink to="/">
-                  <Image src={Logo} className="logo" width="100px" />
+                  <Image src={Logo} className="logo" width="130px" />
                 </NavLink>
               </Navbar.Brand>
               <Navbar.Toggle />
@@ -269,9 +269,8 @@ export class Footer extends Component {
               </div>
               <div className="body-client">
                 <p className="street">
-                  {" "}
                   Legoas adalah salah satu perusahaan yang menyelenggarakan
-                  penjualan asset dengan sistem lelang.{" "}
+                  penjualan asset dengan sistem lelang.
                 </p>
                 <p> </p>
               </div>

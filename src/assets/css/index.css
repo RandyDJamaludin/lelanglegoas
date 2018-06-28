@@ -209,6 +209,9 @@ img.logo {
   .wrap-footer span {
     color: #3c8dbc; }
 
+p.street {
+  margin-left: 5px; }
+
 #comment_bubble {
   width: 100%;
   padding: 20px;
