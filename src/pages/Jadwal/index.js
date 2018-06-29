@@ -111,7 +111,7 @@ export class Index extends Component {
                       />
                     </Col>
                     ))} */}
-                    {DataJadwalMotor.map((data, index) => (
+                    {/* {DataJadwalMotor.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <JadwalLelang
                           transport={data.transport}
@@ -120,6 +120,11 @@ export class Index extends Component {
                           time={data.time}
                           openhouse={data.openhouse}
                         />
+                      </Col>
+                    ))} */}
+                    {DataJadwalMotor.map((data, index) => (
+                      <Col xs={12} md={12} key={data.key}>
+                        <Text>Jadwal Motor belum tersedia</Text>
                       </Col>
                     ))}
                   </Row>
