@@ -122,11 +122,9 @@ export class Index extends Component {
                         />
                       </Col>
                     ))} */}
-                    {DataJadwalMotor.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
-                        <Text>Jadwal Motor belum tersedia</Text>
+                      <Col xs={12} md={12}>
+                        <p>Jadwal Motor belum tersedia</p>
                       </Col>
-                    ))}
                   </Row>
                 </Col>
               </Row>
