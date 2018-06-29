@@ -10,6 +10,7 @@ import Map from "../Components/Map";
 import { connect } from 'react-redux'
 import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
 import { fetchBrand } from "../../actions/getBrand"
+import { cekToken } from "../../actions/login"
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -27,12 +28,13 @@ export class Index extends Component {
   }
 
   componentDidMount = async() => {
-    if(this.props.sessionPersistance.tokenId != null){
-      this.setState({isAuth: this.props.sessionPersistance})
-    }
-    await this.props.fetchScheduleCar(this.props.sessionPersistance.tokenId)
-    await this.props.fetchScheduleMot(this.props.sessionPersistance.tokenId)
-    await this.props.fetchBrand(this.props.sessionPersistance.tokenId)
+    const session = JSON.parse(localStorage.getItem('session'))
+    console.log("state storage", session)
+    await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode)
+    console.log("cek token", this.props.resultCekToken)
+    await this.props.fetchScheduleCar(session.tokenId)
+    await this.props.fetchScheduleMot(session.tokenId)
+    await this.props.fetchBrand(session.tokenId)
   }
 
   static defaultProps = {
@@ -51,9 +53,9 @@ export class Index extends Component {
         items: 3
       }
     };
-    {console.log("state model",this.state.model)}
+    {console.log(this.props.resultCekToken == {} )}
     return (
-    this.props.sessionPersistance.tokenId == null ? (
+      this.props.resultCekToken == {} ? (
     <Redirect
         to={{
           pathname: "/login",
@@ -79,7 +81,7 @@ export class Index extends Component {
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
               >
-                {/* {this.props.receivedbrand.slice(0,5).map((data, Index) => (
+                {this.props.receivedbrand.slice(0,5).map((data, Index) => (
                   data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
                     model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
                       <Col xs={12} md={12}>
@@ -97,8 +99,8 @@ export class Index extends Component {
                       </Col>
                     ))
                   ))
-                ))} */}
-              {DataCardCarousel.map((data, index) => (
+                ))}
+              {/* {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
                     name={data.name}
@@ -111,7 +113,7 @@ export class Index extends Component {
                     price={data.price}
                     />
                 </Col>
-              ))}
+              ))} */}
             </AliceCarousel>
           </Row>
         </Grid>
@@ -461,13 +463,15 @@ const mapStateToProps = state => ({
   schedulecar: state.schedulecar,
   schedulemot: state.schedulemot,
   receivedbrand: state.receivedbrand,
-  sessionPersistance: state.sessionPersistance
+  sessionPersistance: state.sessionPersistance,
+  resultCekToken: state.resultCekToken
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId)),
   fetchScheduleMot: (tokenId) => dispatch(fetchScheduleMot(tokenId)),
-  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId))
+  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId)),
+  cekToken: (token, officeCode, roleCode ) => dispatch(cekToken(token, officeCode, roleCode )),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Index);
