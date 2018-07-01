@@ -1,16 +1,17 @@
 import React, { Component } from "react"
 import { Grid, Row, Col } from "react-bootstrap"
-import { Icon, Divider, Input, Select, Form, Pagination, Button } from "antd"
+import { Icon, Divider, Input, Select, Form, Pagination, Button, Menu } from "antd"
 import { NavLink, Redirect } from "react-router-dom"
 import AliceCarousel from "react-alice-carousel"
-import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } from "../AllData/DataCard"
-import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
+import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation, DataContentTab } from "../AllData/DataCard"
+import { CardCarousel, JadwalLelang, SearchLelang, ContentTab } from "../Components/Card"
 import { Banner } from "../Components/Partial"
 import Map from "../Components/Map";
 import { connect } from 'react-redux'
 import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
 import { fetchBrand } from "../../actions/getBrand"
 import { cekToken } from "../../actions/login"
+const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -72,6 +73,7 @@ export class Index extends Component {
             <AliceCarousel
               duration={400}
               autoPlay={true}
+              infinite={false}
               startIndex={1}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
@@ -123,6 +125,7 @@ export class Index extends Component {
             <AliceCarousel
               duration={400}
               autoPlay={true}
+              infinite={false}
               startIndex={1}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
@@ -152,66 +155,58 @@ export class Index extends Component {
           </Row>
         </Grid>
 
-        {/* Tab */}
-        {/* <Grid>
+        {/*
+        <Grid>
           <Row>
           <Col md={2}>
-          <Menu
-          onClick={({item, key}) => this.setState({merek: key})}
-          style={{ width: '100%' }}
-          defaultOpenKeys={['all']}
-          selectedKeys = {[this.state.merek]}
-          mode="inline">
-          <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
-          <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
-          <Menu.Item key="Avanza">Avanza</Menu.Item>
-          <Menu.Item key="Toyota">Xenia</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" title={<span><span>Motor</span></span>}>
-          <Menu.Item key="Ninja">Ninja</Menu.Item>
-          <Menu.Item key="Supra">Supra</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub3" title={<span><span>Property</span></span>}>
-          <Menu.Item key="Rumah">Rumah</Menu.Item>
-          </SubMenu>
-          </SubMenu>
-          </Menu>
+            <Menu
+              onClick={({item, key}) => this.setState({merek: key})}
+              style={{ width: '100%' }}
+              defaultOpenKeys={['sub1']}
+              selectedKeys = {[this.state.merek]}
+              mode="inline">
+              <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
+                <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
+                  <Menu.Item key="Avanza">Avanza</Menu.Item>
+                  <Menu.Item key="Toyota">Xenia</Menu.Item>
+                </SubMenu>
+            </Menu>
           </Col>
           <Col md={10}>
           {this.state.merek === '' ? (
             DataContentTab.map((d, index) => (
               <Col md={4} key={index}>
               <ContentTab
-              name={d.name}
-              image={d.image}
-              merek={d.merek}
-              model={d.model}
-              tipe={d.tipe}
-              at_mt={d.at_mt}
-              warna={d.warna}
-              price={d.price}
-              button={d.button} />
+                name={d.name}
+                image={d.image}
+                merek={d.merek}
+                model={d.model}
+                tipe={d.tipe}
+                at_mt={d.at_mt}
+                warna={d.warna}
+                price={d.price}
+                button={d.button} />
               </Col>
             ))
           ) : (
             DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
               <Col md={4} key={index}>
               <ContentTab
-              name={d.name}
-              image={d.image}
-              merek={d.merek}
-              model={d.model}
-              tipe={d.tipe}
-              at_mt={d.at_mt}
-              warna={d.warna}
-              price={d.price}
-              button={d.button} />
+                name={d.name}
+                image={d.image}
+                merek={d.merek}
+                model={d.model}
+                tipe={d.tipe}
+                at_mt={d.at_mt}
+                warna={d.warna}
+                price={d.price}
+                button={d.button} />
               </Col>
             ))
           )}
           </Col>
           </Row>
-        </Grid> */}
+        </Grid>*/}
 
         <Grid style={{paddingTop:'3%', paddingBottom:'3%'}}>
           <Row>
@@ -219,11 +214,11 @@ export class Index extends Component {
               <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
               <Divider />
               <Row>
-                <Col md={4}>
+                <Col md={6}>
                   <p> Free Keyword</p>
                   <Input width="100%" />
                 </Col>
-                <Col md={4}>
+                <Col md={6}>
                   <p> Lokasi </p>
                   <Select
                     showSearch
@@ -240,7 +235,9 @@ export class Index extends Component {
                     <Option value="tom">Jakarta Utara</Option>
                   </Select>
                 </Col>
-                <Col md={4}>
+              </Row>
+              <Row style={{ paddingTop: 10 }}>
+                <Col md={6}>
                   <p> Merek </p>
                   <Select
                     showSearch
@@ -257,9 +254,7 @@ export class Index extends Component {
                   ))}
                   </Select>
                 </Col>
-              </Row>
-              <Row style={{ paddingTop: 10 }}>
-                <Col md={12}>
+                <Col md={6}>
                   <p> Model </p>
                   <Select
                     showSearch
@@ -272,7 +267,7 @@ export class Index extends Component {
                     }
                     onChange={(value)=> this.setState({model: value })}>
                   {this.state.merk == '' ? (
-                    <Option value="select" disabled >Please Select Merk</Option>
+                    <Option value="select" disabled >Please Select Model</Option>
                   ):(
                     this.props.receivedbrand.filter(merk => merk.value === this.state.merk).map(merk => merk.models.map(model => (
                       <Option value={model.value} key={model.id}>{model.value}</Option>
@@ -361,6 +356,7 @@ export class Index extends Component {
                     duration={400}
                     autoPlay={false}
                     startIndex={1}
+                    infinite={false}
                     fadeOutAnimation={true}
                     mouseDragEnabled={true}
                     responsive={responsive}
@@ -406,6 +402,7 @@ export class Index extends Component {
                     duration={400}
                     autoPlay={false}
                     startIndex={1}
+                    infinite={false}
                     fadeOutAnimation={true}
                     mouseDragEnabled={true}
                     responsive={responsive}

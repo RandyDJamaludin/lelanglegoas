@@ -183,16 +183,11 @@ img.logo {
     padding-bottom: 2%; }
   .wrap-footer .body-client {
     padding-top: 4%; }
-  .wrap-footer .border {
-    border-top: 2px solid #f8f8f8;
-    border-bottom: 2px solid #f8f8f8;
-    padding-bottom: 3%;
-    padding-top: 2%; }
-    .wrap-footer .border p.title {
-      font-weight: bold;
-      color: #3c8dbc; }
-  .wrap-footer p {
-    font-family: Helvetica; }
+  .wrap-footer p.title {
+    font-weight: bold;
+    color: #3c8dbc; }
+  .wrap-footer a.footer {
+    color: #ccc !important; }
   .wrap-footer p.footer {
     text-align: center;
     padding-top: 1%; }
@@ -711,6 +706,9 @@ ul.slider-list {
 .listLelang .headerLelang p {
   font-size: 18px;
   color: #000; }
+
+.listLelang .bodyLelang {
+  margin-top: 10px; }
 
 .listLelang .box p.title {
   color: #000;

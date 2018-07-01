@@ -78,55 +78,42 @@ export class ListLelang extends Component {
           <Link to="/view-car">
             <Col md={12}>
               <Row className="contentLelang">
-                <Col md={1}>
-                  <p className="lot">
-                    
-                    LOT <br /> {this.props.number}
-                  </p>
-                </Col>
                 <Col xs={12} md={3}>
                   <Image src={this.props.image} width="100%" />
                 </Col>
-                <Col xs={12} md={8}>
-                  <div className="headerLelang">
-                    <p> {this.props.name} </p>
-                  </div>
-                  <Row className="box">
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Merek </p>
-                      <p className="sub-title"> {this.props.merek} </p>
+                <Col xs={12} md={9}>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p><b>{this.props.name}</b></p>
+                      </div>
                     </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Model </p>
-                      <p className="sub-title"> {this.props.model} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Warna </p>
-                      <p className="sub-title"> {this.props.warna} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Tipe </p>
-                      <p className="sub-title"> {this.props.tipe} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> AT/MT </p>
-                      <p className="sub-title"> {this.props.at_mt} </p>
+                    <Col xs={12} md={2}>
+                      <div className="headerLelang">
+                        <p style={{textAlign: 'center', fontWeight: 'bold'}}>Grade</p>
+                      </div>
                     </Col>
                   </Row>
-                  <hr/>
-                  <Row className="box">
-                    <Col xs={6} sm={6} md={2}>
-                      <p className="title"> Harga </p>
-                      <p className="sub-title" style={{fontSize:14, color:'#4caf50'}}> {this.props.price}</p>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p style={{color: '#ccc', fontSize: 15}}>B 15 A | 2017 | KM : 40,17 A</p>
+                      </div>
                     </Col>
-                    <Col xs={6} sm={6} md={2}>
-                      <p className="title"> Tanggal Lelang </p>
-                      <p className="sub-title"> {this.props.date}</p>
+                    <Col xs={12} md={2}>
+                      <div className="headerLelang">
+                        <div className="bodyLelang">
+                          <p style={{fontWeight: 'bold', fontSize: 30, color: '#3c8dbc', textAlign: 'center', lineHeight: 0}}> A</p>
+                          <p style={{fontWeight: 'bold', fontSize: 14, textAlign: 'center', lineHeight: 0, marginTop: 10}}> LOT 1</p>
+                        </div>
+                      </div>
                     </Col>
-                    <Col xs={12} sm={12} md={6}>
-                      <p className="title"> Lokasi </p>
-                      <p className="sub-title"> {this.props.kode_location}</p>
-                      <p className="sub-title"> {this.props.location}</p>
+                  </Row>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p style={{fontSize: 22, fontWeight: 'bold'}}>RP. 120.000.000</p>
+                      </div>
                     </Col>
                   </Row>
                 </Col>

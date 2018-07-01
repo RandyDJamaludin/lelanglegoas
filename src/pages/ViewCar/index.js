@@ -52,33 +52,33 @@ export class Index extends Component {
                 <Row>
                   <Col md={12}>
                   <div className='contentKendaraan'>
-                    <p> Detail Kendaraan </p>
+                    <p style={{fontSize: 16}}> Detail Kendaraan </p>
                     <p className='header'> Grade <span className='grade'> A </span> </p>
                     <Divider/>
                   </div>
                   </Col>
                   <Col md={6}>
-                    <p> Merk <span> HONDA </span></p>
+                    <p> Merk <span style={{fontWeight: 'bold'}}> HONDA </span></p>
 
-                    <p> Type <span> PORSCHE CAYENNE </span></p>
+                    <p> Type <span style={{fontWeight: 'bold'}}> PORSCHE CAYENNE </span></p>
 
-                    <p> No Polisi <span> B 9999 AI</span></p>
+                    <p> No Polisi <span style={{fontWeight: 'bold'}}> B 9999 AI</span></p>
 
-                    <p> Tahun <span> 2013 </span></p>
+                    <p> Tahun <span style={{fontWeight: 'bold'}}> 2013 </span></p>
 
-                    <p> Kapasitas Mesin (CC) <span> 8066CC</span></p>
+                    <p> Kapasitas Mesin (CC) <span style={{fontWeight: 'bold'}}> 8066CC</span></p>
                   </Col>
 
                   <Col md={6}>
-                    <p> STNK <span> ADA </span></p>
+                    <p> STNK <span style={{fontWeight: 'bold'}}> ADA </span></p>
 
-                    <p> Masa Berlaku STNK <span> 12/10/2025 </span></p>
+                    <p> Masa Berlaku STNK <span style={{fontWeight: 'bold'}}> 12/10/2025 </span></p>
 
-                    <p> BPKB <span> TIDAK ADA </span></p>
+                    <p> BPKB <span style={{fontWeight: 'bold'}}> TIDAK ADA </span></p>
 
-                    <p> Faktur <span> ADA </span></p>
+                    <p> Faktur <span style={{fontWeight: 'bold'}}> ADA </span></p>
 
-                    <p> Kapasitas Mesin (CC) <span> 3127CC</span></p>
+                    <p> Kapasitas Mesin (CC) <span style={{fontWeight: 'bold'}}> 3127CC</span></p>
                   </Col>
                 </Row> 
               </div>
@@ -97,24 +97,10 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> 1 </p>
+                      <p><b> 1 </b></p>
                     </div> 
                   </Col>
                 </Row>
-
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Grade </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p style={{color:'#3c8dbc', fontWeight:'bold'}}> A </p>
-                    </div> 
-                  </Col>
-                </Row>  
 
                 <Row>
                   <Col xs={4} md={4}>
@@ -125,7 +111,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Toyota </p>
+                      <p><b> Toyota </b></p>
                     </div> 
                   </Col>
                 </Row>
@@ -139,7 +125,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Avanza </p>
+                      <p><b> Avanza </b></p>
                     </div> 
                   </Col>
                 </Row>  
@@ -153,7 +139,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Sport </p>
+                      <p><b> Sport </b></p>
                     </div> 
                   </Col>
                 </Row>  
@@ -167,7 +153,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> AT </p>
+                      <p><b> AT </b></p>
                     </div> 
                   </Col>
                 </Row>  
@@ -181,7 +167,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><b> Rp. 200.0000.000 </b></p>
+                      <p style={{fontSize: 16, fontWeight: 'bold'}}> Rp. 200.0000.000 </p>
                     </div> 
                   </Col>
                 </Row>  
@@ -195,7 +181,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><MdLocationOn/> Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132 </p>
+                      <p><MdLocationOn/> <b>Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132 </b></p>
                     </div> 
                   </Col>
                 </Row>  
@@ -209,7 +195,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><FaCalendarCheckO/> 01 Januari 2018 </p>
+                      <p><FaCalendarCheckO/><b> 01 Januari 2018 </b></p>
                     </div> 
                   </Col>
                 </Row>  
@@ -223,7 +209,7 @@ export class Index extends Component {
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><MdAccessTime/> 21.00 WIB</p>
+                      <p><MdAccessTime/><b> 21.00 WIB </b></p>
                     </div> 
                   </Col>
                 </Row>   
@@ -243,14 +229,6 @@ export class Index extends Component {
                   </Col>
                 </Row>          
               </div>
-
-              <div className='right-panel'>
-                <p className='title'> NOTE </p>
-              </div>
-              
-              <Row className='body-panel'>
-                <p> Mobil dengan kualitas yang sangat cangih, dan mobil baru baru belum pernah dipakai. </p>
-              </Row>
             </Col>            
           </Row>
         </Grid>

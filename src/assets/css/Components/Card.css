@@ -365,6 +365,9 @@ ul.slider-list {
   font-size: 18px;
   color: #000; }
 
+.listLelang .bodyLelang {
+  margin-top: 10px; }
+
 .listLelang .box p.title {
   color: #000;
   font-size: 12px; }

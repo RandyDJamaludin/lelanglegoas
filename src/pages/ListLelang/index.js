@@ -24,8 +24,8 @@ class Index extends Component {
           <Row>
             <Col md={12}>
               <p className='header'> DAFTAR MOBIL - JAKARTA | 31 JANUARY 2018 </p>
-              <p className='header'> Pencarian </p>
-              <Row> 
+              {/* <p className='header'> Pencarian </p> */}
+              {/* <Row> 
                 <Col md={2}>
                   <Select
                     showSearch
@@ -109,7 +109,7 @@ class Index extends Component {
                 <Col md={2}>
                   <Button className='search'> Cari </Button>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
           </Row>
           <Row style={{paddingTop:'4%', paddingBottom:'4%'}}>

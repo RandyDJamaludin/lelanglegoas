@@ -273,18 +273,12 @@ img.logo {
   .body-client {
     padding-top: 4%;
   }
-  .border {
-    border-top: 2px solid #f8f8f8;
-    border-bottom: 2px solid #f8f8f8;
-    padding-bottom: 3%;
-    padding-top: 2%;
-    p.title {
-      font-weight: bold;
-      color: #3c8dbc;
-    }
+  p.title {
+    font-weight: bold;
+    color: #3c8dbc;
   }
-  p {
-    font-family: Helvetica;
+  a.footer{
+    color: #ccc !important;
   }
   p.footer {
     text-align: center;

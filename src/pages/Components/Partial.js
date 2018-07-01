@@ -41,13 +41,13 @@ export class Navigation extends Component {
             <Navbar.Collapse>
               <ul className="nav navbar-nav right">
                 <li eventkey={1}>
-                  <NavLink to="/" activeClassName="anchorActive">
+                  <NavLink to="/">
                     Beranda
                   </NavLink>
                 </li>
 
                 <li eventkey={2}>
-                  <NavLink to="/jadwal" activeClassName="anchorActive">
+                  <NavLink to="/jadwal">
                     Jadwal Lelang
                   </NavLink>
                 </li>
@@ -55,57 +55,51 @@ export class Navigation extends Component {
                 <NavDropdown title="Info Lelang" id="basic-nav-dropdown">
                   <li>
                     <NavLink
-                      to="/pengertian-lelang"
-                      activeClassName="anchorActive"
-                    >
+                      to="/pengertian-lelang">
                       Pengertian Lelang
                     </NavLink>
                   </li>
                   <li>
                     <NavLink
-                      to="/tatacara-lelang"
-                      activeClassName="anchorActive"
-                    >
+                      to="/tatacara-lelang">
                       Tata Cara Lelang
                     </NavLink>
                   </li>
                   <li>
                     <NavLink
-                      to="/peraturan-lelang"
-                      activeClassName="anchorActive"
-                    >
+                      to="/peraturan-lelang">
                       Peraturan Lelang
                     </NavLink>
                   </li>
                 </NavDropdown>
 
                 <li eventkey={4}>
-                  <NavLink to="/lokasi" activeClassName="anchorActive">
+                  <NavLink to="/lokasi">
                     Lokasi Lelang
                   </NavLink>
                 </li>
 
                 <li eventkey={5}>
-                  <NavLink to="/tentang-kami" activeClassName="anchorActive">
+                  <NavLink to="/tentang-kami">
                     Tentang Kami
                   </NavLink>
                 </li>
 
-                {/*<li eventkey={5}>
-                <NavLink to="/kontak" activeClassName="anchorActive">
-                  Kontak Kami
-                </NavLink>
-              </li>
-              */}
+                  {/*<li eventkey={5}>
+                  <NavLink to="/kontak">
+                    Kontak Kami
+                  </NavLink>
+                </li>
+                */}
 
                 <li eventkey={6}>
-                  <NavLink to="/login" activeClassName="anchorActive">
+                  <NavLink to="/login">
                     Login
                   </NavLink>
                 </li>
 
                 <li eventkey={7}>
-                  <NavLink to="/register-choose" activeClassName="anchorActive">
+                  <NavLink to="/register-choose">
                     Register
                   </NavLink>
                 </li>
@@ -276,14 +270,16 @@ export class Footer extends Component {
               </div>
             </Col>
             <Col xs={6} md={3}>
-              <p className="title"> BANTUAN </p>
-              <p> Info Lelang </p>
-              <p> Jadwal Lelang </p>
+              <p class="title"> Legoas </p>
+              <p><NavLink class="footer" to="/">Beranda</NavLink></p>
+              <p><NavLink class="footer" to="/jadwal">Jadwal Lelang</NavLink></p>
+              <p><NavLink class="footer" to="/lokasi">Lokasi Lelang</NavLink></p>
             </Col>
             <Col xs={6} md={3}>
-              <p className="title"> BANTUAN </p>
-              <p> Contact </p>
-              <p> Help </p>
+              <p class="title"> Bantuan </p>
+              <p><NavLink class="footer" to="/">Pengertian Lelang</NavLink></p>
+              <p><NavLink class="footer" to="/">Tata Cara Lelang</NavLink></p>
+              <p><NavLink class="footer" to="/">Peraturan Lelang</NavLink></p>
             </Col>
             <Col xs={12} md={3}>
               <p> Subscribe Our Newslatter </p>

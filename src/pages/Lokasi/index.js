@@ -55,6 +55,7 @@ class Index extends Component {
                   <AliceCarousel
                     duration={400}
                     autoPlay={true}
+                    infinite={false}
                     startIndex={1}
                     fadeOutAnimation={true}
                     mouseDragEnabled={true}
@@ -103,6 +104,7 @@ class Index extends Component {
                   <AliceCarousel
                       duration={400}
                       autoPlay={true}
+                      infinite={false}
                       startIndex = {1}
                       fadeOutAnimation={true}
                       mouseDragEnabled={true}
