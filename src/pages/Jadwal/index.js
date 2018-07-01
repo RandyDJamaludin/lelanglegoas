@@ -62,7 +62,7 @@ export class Index extends Component {
               <Row>
                 <Col md={6}>
                   <Row>
-                    {/* {paginate(this.props.schedulecar, this.state.pageSize, this.state.current).map((data, index) => (
+                    {paginate(this.props.schedulecar, this.state.pageSize, this.state.current).map((data, index) => (
                       <Col xs={12} md={12} key={data.auctionEventId}>
                       <JadwalLelang
                         transport={" MOBIL"}
@@ -78,8 +78,8 @@ export class Index extends Component {
                         houseAddress={data.auctionHouseAddress}
                       />
                     </Col>
-                    ))} */}
-                    {DataJadwalMobil.map((data, index) => (
+                    ))}
+                    {/* {DataJadwalMobil.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <JadwalLelang
                           transport={data.transport}
@@ -89,7 +89,7 @@ export class Index extends Component {
                           openhouse={data.openhouse}
                         />
                       </Col>
-                    ))}
+                    ))} */}
                   </Row>
                 </Col>
                 <Col md={6}>

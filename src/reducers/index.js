@@ -3,7 +3,7 @@ import { success, loading, failed } from './processor'
 
 import { schedulecar } from './getSchedule'
 import { receivedbrand } from './getBrand'
-import { sessionPersistance } from './login'
+import { sessionPersistance, resultCekToken } from './login'
 
 const rootReducers = combineReducers({
   success,
@@ -11,7 +11,8 @@ const rootReducers = combineReducers({
   failed,
   schedulecar,
   receivedbrand,
-  sessionPersistance
+  sessionPersistance,
+  resultCekToken
 })
 
 export default rootReducers
