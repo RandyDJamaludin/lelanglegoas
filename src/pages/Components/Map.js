@@ -61,11 +61,11 @@ export class Map extends Component {
                         onMarkerClick={this.handleMarkerClick}
                     />
                     <div className='wrap-location'>
-                      <p className='sub-location'>PT. Digital Sarana Legoas. </p>
+                      <p className='sub-location'>PT Digital Sarana Legoas</p>
                     </div>
                     <div className='body-location'>
                       <p>Jl. Raya Kaliabang no. 45</p>
-                      <p>Bekasi, 13132</p>
+                      <p>Medan Satria, Bekasi 17132</p>
                       <p>Indonesia</p>
                       <p>cs@legoas.co.id </p>
                     </div>
