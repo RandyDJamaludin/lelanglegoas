@@ -1,41 +1,67 @@
-import React, { Component } from "react"
-import { Grid, Row, Col } from "react-bootstrap"
-import { Icon, Divider, Input, Select, Form, Pagination, Button, Menu } from "antd"
-import { NavLink, Redirect } from "react-router-dom"
-import AliceCarousel from "react-alice-carousel"
-import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation, DataContentTab } from "../AllData/DataCard"
-import { CardCarousel, JadwalLelang, SearchLelang, ContentTab } from "../Components/Card"
-import { Banner } from "../Components/Partial"
+import React, { Component } from "react";
+import { Grid, Row, Col } from "react-bootstrap";
+import {
+  Icon,
+  Divider,
+  Input,
+  Select,
+  Form,
+  Pagination,
+  Button,
+  Menu
+} from "antd";
+import { NavLink, Redirect } from "react-router-dom";
+import AliceCarousel from "react-alice-carousel";
+import {
+  DataCardCarousel,
+  DataJadwalMotor,
+  DataJadwalMobil,
+  DataCardLocation,
+  DataContentTab
+} from "../AllData/DataCard";
+import {
+  CardCarousel,
+  JadwalLelang,
+  SearchLelang,
+  ContentTab
+} from "../Components/Card";
+import { Banner } from "../Components/Partial";
 import Map from "../Components/Map";
-import { connect } from 'react-redux'
-import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
-import { fetchBrand } from "../../actions/getBrand"
-import { cekToken } from "../../actions/login"
+import { connect } from "react-redux";
+import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
+import { fetchBrand } from "../../actions/getBrand";
+import { fetchProductRecomended } from "../../actions/getProduct";
+import { login, cekToken } from "../../actions/login";
 const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 
-export class Index extends Component {
-  
+class Index extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
-      merk: '',
-      model: '',
+      merk: "",
+      model: "",
       isAuth: null
-    }
+    };
   }
 
-  componentDidMount = async() => {
-    const session = JSON.parse(localStorage.getItem('session'))
-    console.log("state storage", session)
-    await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode)
-    console.log("cek token", this.props.resultCekToken)
-    await this.props.fetchScheduleCar(session.tokenId)
-    await this.props.fetchScheduleMot(session.tokenId)
-    await this.props.fetchBrand(session.tokenId)
+  async componentDidMount() {
+    await this.props.login("TELECREATIVE", "01042018");
+    const session = JSON.parse(localStorage.getItem("session"));
+    console.log("state storage", session);
+    await this.props.cekToken(
+      session.tokenId,
+      session.RoleCode,
+      session.officeCode
+    );
+    console.log("cek token", this.props.resultCekToken);
+    await this.props.fetchProductRecomended(session.tokenId);
+    await this.props.fetchScheduleCar(session.tokenId);
+    await this.props.fetchScheduleMot(session.tokenId);
+    await this.props.fetchBrand(session.tokenId);
   }
 
   static defaultProps = {
@@ -54,18 +80,18 @@ export class Index extends Component {
         items: 3
       }
     };
-    {console.log(this.props.resultCekToken == {} )}
-    return (
-      this.props.resultCekToken == {} ? (
-    <Redirect
+    {
+      console.log(this.props.resultCekToken == {});
+    }
+    return this.props.resultCekToken == {} ? (
+      <Redirect
         to={{
           pathname: "/login",
           state: { from: this.props.location }
         }}
       />
     ) : (
-
-        <div>
+      <div>
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
@@ -82,26 +108,34 @@ export class Index extends Component {
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
-              >
-                {this.props.receivedbrand.slice(0,5).map((data, Index) => (
-                  data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
-                    model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
-                      <Col xs={12} md={12}>
-                      <CardCarousel
-                      key={tipe.id}
-                      nameBrand={data.value}
-                      image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
-                      merek={data.value}
-                      model={model.value}
-                      tipe={tipe.value}
-                      at_mt={"---"}
-                      color={"---"}
-                      price={"---"}
-                      />
-                      </Col>
-                    ))
-                  ))
-                ))}
+            >
+              {this.props.receivedbrand.slice(0, 5).map((data, Index) =>
+                data.models
+                  .filter(model => model.parentId === data.id)
+                  .slice(0, 1)
+                  .map(model =>
+                    model.tipes
+                      .filter(tipe => tipe.parentId === model.id)
+                      .slice(0, 1)
+                      .map(tipe => (
+                        <Col xs={12} md={12}>
+                          <CardCarousel
+                            key={tipe.id}
+                            nameBrand={data.value}
+                            image={
+                              "http://moziru.com/images/lamborghini-clipart-cool-car-19.png"
+                            }
+                            merek={data.value}
+                            model={model.value}
+                            tipe={tipe.value}
+                            at_mt={"---"}
+                            color={"---"}
+                            price={"---"}
+                          />
+                        </Col>
+                      ))
+                  )
+              )}
               {/* {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
@@ -135,7 +169,8 @@ export class Index extends Component {
               autoPlayDirection="rtl"
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
-              onSlideChanged={this.onSlideChanged}>
+              onSlideChanged={this.onSlideChanged}
+            >
               {DataCardCarousel.map((data, index) => (
                 <Col xs={12} md={12} key={data.key}>
                   <CardCarousel
@@ -148,7 +183,7 @@ export class Index extends Component {
                     color={data.color}
                     price={data.price}
                     openhouse={data.openhouse}
-                    />
+                  />
                 </Col>
               ))}
             </AliceCarousel>
@@ -208,7 +243,7 @@ export class Index extends Component {
           </Row>
         </Grid>*/}
 
-        <Grid style={{paddingTop:'3%', paddingBottom:'3%'}}>
+        <Grid style={{ paddingTop: "3%", paddingBottom: "3%" }}>
           <Row>
             <Col md={5} className="searchPanel">
               <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
@@ -226,10 +261,10 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    >
+                  >
                     <Option value="jack">Jakarta Barat</Option>
                     <Option value="lucy">Jakarta Timur</Option>
                     <Option value="tom">Jakarta Utara</Option>
@@ -245,13 +280,16 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    onChange={(value)=> this.setState({merk: value})}>
-                  {this.props.receivedbrand.map(merk => (
-                    <Option value={merk.value} key={merk.id}>{merk.value}</Option>
-                  ))}
+                    onChange={value => this.setState({ merk: value })}
+                  >
+                    {this.props.receivedbrand.map(merk => (
+                      <Option value={merk.value} key={merk.id}>
+                        {merk.value}
+                      </Option>
+                    ))}
                   </Select>
                 </Col>
                 <Col md={6}>
@@ -262,17 +300,26 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    onChange={(value)=> this.setState({model: value })}>
-                  {this.state.merk == '' ? (
-                    <Option value="select" disabled >Please Select Model</Option>
-                  ):(
-                    this.props.receivedbrand.filter(merk => merk.value === this.state.merk).map(merk => merk.models.map(model => (
-                      <Option value={model.value} key={model.id}>{model.value}</Option>
-                    )))
-                  )}
+                    onChange={value => this.setState({ model: value })}
+                  >
+                    {this.state.merk == "" ? (
+                      <Option value="select" disabled>
+                        Please Select Model
+                      </Option>
+                    ) : (
+                      this.props.receivedbrand
+                        .filter(merk => merk.value === this.state.merk)
+                        .map(merk =>
+                          merk.models.map(model => (
+                            <Option value={model.value} key={model.id}>
+                              {model.value}
+                            </Option>
+                          ))
+                        )
+                    )}
                   </Select>
                 </Col>
               </Row>
@@ -285,23 +332,23 @@ export class Index extends Component {
               <Row>
                 <Col md={12}>
                   <FormItem>
-                    {this.state.merk === '' && this.state.model === '' ? (
+                    {this.state.merk === "" && this.state.model === "" ? (
                       <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="buttonSearch"
-                      disabled
+                        type="primary"
+                        htmlType="submit"
+                        className="buttonSearch"
+                        disabled
                       >
-                      CARI
-                    </Button>
-                    ):(
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="buttonSearch"
+                        CARI
+                      </Button>
+                    ) : (
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        className="buttonSearch"
                       >
-                      CARI
-                    </Button>
+                        CARI
+                      </Button>
                     )}
                   </FormItem>
                 </Col>
@@ -326,7 +373,7 @@ export class Index extends Component {
                       year={data.year}
                       type={data.type}
                       image={data.image}
-                      />
+                    />
                   </Col>
                 ))}
               </Row>
@@ -364,7 +411,7 @@ export class Index extends Component {
                     autoPlayActionDisabled={true}
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
-                    >
+                  >
                     {DataJadwalMotor.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <JadwalLelang
@@ -373,7 +420,7 @@ export class Index extends Component {
                           date={data.date}
                           time={data.time}
                           openhouse={data.openhouse}
-                          />
+                        />
                       </Col>
                     ))}
                     {/* {this.props.schedulemot.map((data, index) => (  
@@ -410,7 +457,7 @@ export class Index extends Component {
                     autoPlayActionDisabled={true}
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
-                    >
+                  >
                     {DataJadwalMobil.map((data, index) => (
                       <Col xs={12} md={12} key={data.key}>
                         <JadwalLelang
@@ -419,7 +466,7 @@ export class Index extends Component {
                           date={data.date}
                           time={data.time}
                           openhouse={data.openhouse}
-                          />
+                        />
                       </Col>
                     ))}
                     {/* {this.props.schedulecar.map((data, index) => (  
@@ -446,12 +493,11 @@ export class Index extends Component {
             </NavLink>
           </Grid>
         </div>
-        
+
         <div style={{ paddingBottom: "4%" }}>
           <Map />
         </div>
       </div>
-  )
     );
   }
 }
@@ -465,10 +511,16 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId)),
-  fetchScheduleMot: (tokenId) => dispatch(fetchScheduleMot(tokenId)),
-  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId)),
-  cekToken: (token, officeCode, roleCode ) => dispatch(cekToken(token, officeCode, roleCode )),
+  login: (username, password) => dispatch(login(username, password)),
+  fetchProductRecomended: tokenId => dispatch(fetchProductRecomended(tokenId)),
+  fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
+  fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
+  fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
+  cekToken: (token, officeCode, roleCode) =>
+    dispatch(cekToken(token, officeCode, roleCode))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);
