@@ -41,51 +41,34 @@ export class Navigation extends Component {
             <Navbar.Collapse>
               <ul className="nav navbar-nav right">
                 <li eventkey={1}>
-                  <NavLink to="/">
-                    Beranda
-                  </NavLink>
+                  <NavLink to="/">Beranda</NavLink>
                 </li>
 
                 <li eventkey={2}>
-                  <NavLink to="/jadwal">
-                    Jadwal Lelang
-                  </NavLink>
+                  <NavLink to="/jadwal">Jadwal Lelang</NavLink>
                 </li>
 
                 <NavDropdown title="Info Lelang" id="basic-nav-dropdown">
                   <li>
-                    <NavLink
-                      to="/pengertian-lelang">
-                      Pengertian Lelang
-                    </NavLink>
+                    <NavLink to="/pengertian-lelang">Pengertian Lelang</NavLink>
                   </li>
                   <li>
-                    <NavLink
-                      to="/tatacara-lelang">
-                      Tata Cara Lelang
-                    </NavLink>
+                    <NavLink to="/tatacara-lelang">Tata Cara Lelang</NavLink>
                   </li>
                   <li>
-                    <NavLink
-                      to="/peraturan-lelang">
-                      Peraturan Lelang
-                    </NavLink>
+                    <NavLink to="/peraturan-lelang">Peraturan Lelang</NavLink>
                   </li>
                 </NavDropdown>
 
                 <li eventkey={4}>
-                  <NavLink to="/lokasi">
-                    Lokasi Lelang
-                  </NavLink>
+                  <NavLink to="/lokasi">Lokasi Lelang</NavLink>
                 </li>
 
                 <li eventkey={5}>
-                  <NavLink to="/tentang-kami">
-                    Tentang Kami
-                  </NavLink>
+                  <NavLink to="/tentang-kami">Tentang Kami</NavLink>
                 </li>
 
-                  {/*<li eventkey={5}>
+                {/*<li eventkey={5}>
                   <NavLink to="/kontak">
                     Kontak Kami
                   </NavLink>
@@ -93,15 +76,11 @@ export class Navigation extends Component {
                 */}
 
                 <li eventkey={6}>
-                  <NavLink to="/login">
-                    Login
-                  </NavLink>
+                  <NavLink to="/login">Login</NavLink>
                 </li>
 
                 <li eventkey={7}>
-                  <NavLink to="/register-choose">
-                    Register
-                  </NavLink>
+                  <NavLink to="/register-choose">Register</NavLink>
                 </li>
               </ul>
             </Navbar.Collapse>
@@ -214,9 +193,16 @@ export class BannerAbout extends Component {
                 <div className="shadow" style={{ padding: 50 }}>
                   <h3> WHO WE ARE ?</h3>
                   <p>
-                  LEGOAS memiliki ijin operasional Balai Lelang yang disahkan melalui Keputusan Menteri Keuangan no 28/KM.6/2018.  
-                  Dalam hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan pemerintah sehingga peserta tidak perlu khawatir atas kredibilitas LEGOAS karena sebagai peserta lelang juga dilindungi haknya oleh Negara. 
-                  Dengan masuknya LEGOAS dalam pengawasan negara, maka kewajiban dari LEGOAS juga dalam pelaksanaan lelang dan termasuk memeriksa keabsahan kepemilikan barang tersebut sehingga peserta tidak perlu dikhawatirkan dalam keabsahan kepemilikan tersebut. 
+                    LEGOAS memiliki ijin operasional Balai Lelang yang disahkan
+                    melalui Keputusan Menteri Keuangan no 28/KM.6/2018. Dalam
+                    hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan
+                    pemerintah sehingga peserta tidak perlu khawatir atas
+                    kredibilitas LEGOAS karena sebagai peserta lelang juga
+                    dilindungi haknya oleh Negara. Dengan masuknya LEGOAS dalam
+                    pengawasan negara, maka kewajiban dari LEGOAS juga dalam
+                    pelaksanaan lelang dan termasuk memeriksa keabsahan
+                    kepemilikan barang tersebut sehingga peserta tidak perlu
+                    dikhawatirkan dalam keabsahan kepemilikan tersebut.
                   </p>
                 </div>
               </Col>
@@ -271,15 +257,39 @@ export class Footer extends Component {
             </Col>
             <Col xs={6} md={3}>
               <p class="title"> Legoas </p>
-              <p><NavLink class="footer" to="/">Beranda</NavLink></p>
-              <p><NavLink class="footer" to="/jadwal">Jadwal Lelang</NavLink></p>
-              <p><NavLink class="footer" to="/lokasi">Lokasi Lelang</NavLink></p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Beranda
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/jadwal">
+                  Jadwal Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/lokasi">
+                  Lokasi Lelang
+                </NavLink>
+              </p>
             </Col>
             <Col xs={6} md={3}>
               <p class="title"> Bantuan </p>
-              <p><NavLink class="footer" to="/">Pengertian Lelang</NavLink></p>
-              <p><NavLink class="footer" to="/">Tata Cara Lelang</NavLink></p>
-              <p><NavLink class="footer" to="/">Peraturan Lelang</NavLink></p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Pengertian Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Tata Cara Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Peraturan Lelang
+                </NavLink>
+              </p>
             </Col>
             <Col xs={12} md={3}>
               <p> Subscribe Our Newslatter </p>
@@ -289,16 +299,28 @@ export class Footer extends Component {
                 placeholder="Type your e-mail here"
               />
               <p className="social-media">
-                <TiFacebook />
+                <NavLink
+                  to="https://www.facebook.com/Legoas-Indonesia-400497903760852/"
+                  target="_blank"
+                >
+                  <TiFacebook />
+                </NavLink>
               </p>
               <p className="social-media">
-                <TiYoutube />
+                <NavLink
+                  to="https://www.instagram.com/legoasindonesia/"
+                  target="_blank"
+                >
+                  <TiInstagram />
+                </NavLink>
               </p>
               <p className="social-media">
-                <TiInstagram />
-              </p>
-              <p className="social-media">
-                <TiTwitter />
+                <NavLink
+                  to="https://twitter.com/LegoasIndonesia?lang=en"
+                  target="_blank"
+                >
+                  <TiTwitter />
+                </NavLink>
               </p>
             </Col>
           </Row>
