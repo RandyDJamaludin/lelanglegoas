@@ -8,7 +8,8 @@ import {
   Form,
   Pagination,
   Button,
-  Menu
+  Menu,
+  Spin
 } from "antd";
 import { NavLink, Redirect } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
@@ -30,7 +31,11 @@ import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
 import { fetchBrand } from "../../actions/getBrand";
-import { fetchProductRecomended } from "../../actions/getProduct";
+import {
+  fetchProductRecomended,
+  fetchProductByEvent,
+  fetchProductDetail
+} from "../../actions/getProduct";
 import { login, cekToken } from "../../actions/login";
 const SubMenu = Menu.SubMenu;
 
@@ -44,24 +49,27 @@ class Index extends Component {
     this.state = {
       merk: "",
       model: "",
-      isAuth: null
+      session: {},
+      loading: true
     };
   }
 
   async componentDidMount() {
     await this.props.login("TELECREATIVE", "01042018");
     const session = JSON.parse(localStorage.getItem("session"));
-    console.log("state storage", session);
+    await this.setState({ session });
     await this.props.cekToken(
       session.tokenId,
       session.RoleCode,
       session.officeCode
     );
     console.log("cek token", this.props.resultCekToken);
+    console.log("state session", this.state.session);
     await this.props.fetchProductRecomended(session.tokenId);
     await this.props.fetchScheduleCar(session.tokenId);
     await this.props.fetchScheduleMot(session.tokenId);
     await this.props.fetchBrand(session.tokenId);
+    await this.setState({ loading: false });
   }
 
   static defaultProps = {
@@ -80,79 +88,55 @@ class Index extends Component {
         items: 3
       }
     };
-    {
-      console.log(this.props.resultCekToken == {});
-    }
-    return this.props.resultCekToken == {} ? (
-      <Redirect
-        to={{
-          pathname: "/login",
-          state: { from: this.props.location }
-        }}
-      />
-    ) : (
+
+    return this.state.loading ? null : (
       <div>
         <Banner />
-        <Grid className="wrap-cardCarousel">
-          <Row>
-            <p className="titleHeader"> REKOMENDASI MOBIL / MOTOR </p>
-            <AliceCarousel
-              duration={400}
-              autoPlay={true}
-              infinite={false}
-              startIndex={1}
-              fadeOutAnimation={true}
-              mouseDragEnabled={true}
-              responsive={responsive}
-              autoPlayInterval={2000}
-              autoPlayActionDisabled={true}
-              onSlideChange={this.onSlideChange}
-              onSlideChanged={this.onSlideChanged}
-            >
-              {this.props.receivedbrand.slice(0, 5).map((data, Index) =>
-                data.models
-                  .filter(model => model.parentId === data.id)
-                  .slice(0, 1)
-                  .map(model =>
-                    model.tipes
-                      .filter(tipe => tipe.parentId === model.id)
-                      .slice(0, 1)
-                      .map(tipe => (
-                        <Col xs={12} md={12}>
-                          <CardCarousel
-                            key={tipe.id}
-                            nameBrand={data.value}
-                            image={
-                              "http://moziru.com/images/lamborghini-clipart-cool-car-19.png"
-                            }
-                            merek={data.value}
-                            model={model.value}
-                            tipe={tipe.value}
-                            at_mt={"---"}
-                            color={"---"}
-                            price={"---"}
-                          />
-                        </Col>
-                      ))
-                  )
-              )}
-              {/* {DataCardCarousel.map((data, index) => (
-                <Col xs={12} md={12} key={data.key}>
-                  <CardCarousel
-                    name={data.name}
-                    image={data.image}
-                    merek={data.merek}
-                    model={data.model}
-                    tipe={data.tipe}
-                    at_mt={data.at_mt}
-                    color={data.color}
-                    price={data.price}
-                    />
-                </Col>
-              ))} */}
-            </AliceCarousel>
-          </Row>
-        </Grid>
+        {console.log(this.props.receivedproductrecomend)}
+        {this.props.receivedproductrecomend == [] ? (
+          <div>
+            <Spin size="large" />
+          </div>
+        ) : (
+          <Grid className="wrap-cardCarousel">
+            <Row>
+              <p className="titleHeader"> REKOMENDASI MOBIL / MOTOR </p>
+              <AliceCarousel
+                duration={400}
+                autoPlay={true}
+                infinite={false}
+                startIndex={1}
+                fadeOutAnimation={true}
+                mouseDragEnabled={true}
+                responsive={responsive}
+                autoPlayInterval={2000}
+                autoPlayActionDisabled={true}
+                onSlideChange={this.onSlideChange}
+                onSlideChanged={this.onSlideChanged}
+              >
+                {this.props.receivedproductrecomend
+                  .slice(0, 10)
+                  .map((data, Index) => (
+                    <Col xs={12} md={12}>
+                      <CardCarousel
+                        key={data.UnitKeyFinder}
+                        nameBrand={data.UnitName}
+                        image={
+                          "http://moziru.com/images/lamborghini-clipart-cool-car-19.png"
+                        }
+                        merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                        model={data.AuctionLotUnitSpecs[1].SpecValue}
+                        tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                        no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
+                        color={data.AuctionLotUnitSpecs[11].SpecValue}
+                        price={data.AuctionLot.FinalBasePrice}
+                      />
+                    </Col>
+                  ))}
+              </AliceCarousel>
+            </Row>
+          </Grid>
+        )}
 
         <Grid className="wrap-cardCarouselMobile">
           <Row>
@@ -412,78 +396,27 @@ class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
-                    {DataJadwalMotor.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
-                        <JadwalLelang
-                          transport={data.transport}
-                          location={data.location}
-                          date={data.date}
-                          time={data.time}
-                          openhouse={data.openhouse}
-                        />
-                      </Col>
-                    ))}
-                    {/* {this.props.schedulemot.map((data, index) => (  
-                      <Col xs={12} md={12} key={data.auctionEventId}>
-                        <JadwalLelang
-                          transport={" MOBIL"}
-                          eventCode={data.eventCode}
-                          eventNumber={data.eventNumber}
-                          location={data.auctionHouseProvince}
-                          date={data.eventDate.date}
-                          startTime={data.eventDate.startTime}
-                          endTime={data.eventDate.endTime}
-                          timeZone={data.timezone}
-                          openhouse={data.openHouseDate.date}
+                    {this.props.schedulecar == [] ? (
+                      <div>
+                        <Spin size="large" />
+                      </div>
+                    ) : (
+                      this.props.schedulecar.map((data, index) => (
+                        <Col xs={12} md={12} key={data.auctionEventId}>
+                          <JadwalLelang
+                            transport={" MOBIL"}
+                            eventCode={data.eventCode}
+                            eventNumber={data.eventNumber}
+                            location={data.auctionHouseProvince}
+                            date={data.eventDate.date}
+                            startTime={data.eventDate.startTime}
+                            endTime={data.eventDate.endTime}
+                            timeZone={data.timezone}
+                            openhouse={data.openHouseDate.date}
                           />
-                      </Col>
-                    ))} */}
-                  </AliceCarousel>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={12}>
-                <Row>
-                  <AliceCarousel
-                    duration={400}
-                    autoPlay={false}
-                    startIndex={1}
-                    infinite={false}
-                    fadeOutAnimation={true}
-                    mouseDragEnabled={true}
-                    responsive={responsive}
-                    autoPlayInterval={2000}
-                    autoPlayActionDisabled={true}
-                    onSlideChange={this.onSlideChange}
-                    onSlideChanged={this.onSlideChanged}
-                  >
-                    {DataJadwalMobil.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
-                        <JadwalLelang
-                          transport={data.transport}
-                          location={data.location}
-                          date={data.date}
-                          time={data.time}
-                          openhouse={data.openhouse}
-                        />
-                      </Col>
-                    ))}
-                    {/* {this.props.schedulecar.map((data, index) => (  
-                      <Col xs={12} md={12} key={data.auctionEventId}>
-                        <JadwalLelang
-                          transport={" MOBIL"}
-                          eventCode={data.eventCode}
-                          eventNumber={data.eventNumber}
-                          location={data.auctionHouseProvince}
-                          date={data.eventDate.date}
-                          startTime={data.eventDate.startTime}
-                          endTime={data.eventDate.endTime}
-                          timeZone={data.timezone}
-                          openhouse={data.openHouseDate.date}
-                          />
-                      </Col>
-                    ))} */}
+                        </Col>
+                      ))
+                    )}
                   </AliceCarousel>
                 </Row>
               </Col>
@@ -506,6 +439,9 @@ const mapStateToProps = state => ({
   schedulecar: state.schedulecar,
   schedulemot: state.schedulemot,
   receivedbrand: state.receivedbrand,
+  receivedproductrecomend: state.receivedproductrecomend,
+  receivedproductbyevent: state.receivedproductbyevent,
+  receivedproductdetail: state.receivedproductdetail,
   sessionPersistance: state.sessionPersistance,
   resultCekToken: state.resultCekToken
 });
@@ -513,6 +449,10 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   login: (username, password) => dispatch(login(username, password)),
   fetchProductRecomended: tokenId => dispatch(fetchProductRecomended(tokenId)),
+  fetchProductByEvent: (tokenId, eventId) =>
+    dispatch(fetchProductByEvent(tokenId, eventId)),
+  fetchProductDetail: (tokenId, lotId) =>
+    dispatch(fetchProductDetail(tokenId, lotId)),
   fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
   fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
   fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),

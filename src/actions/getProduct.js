@@ -4,7 +4,8 @@ import { server } from "../env/server";
 
 import {
   RECEIVED_PRODUCT_RECOMEND,
-  RECEIVED_PRODUCT_BY_EVENT
+  RECEIVED_PRODUCT_BY_EVENT,
+  RECEIVED_PRODUCT_DETAIL
 } from "../constants/processor";
 
 export const fetchProductRecomended = tokenId => {
@@ -47,7 +48,11 @@ export const fetchProductRecomended = tokenId => {
         }
       });
       const data = await response.data;
-      console.log("hasil product recomend", data);
+      console.log("hasil product recomend", data.data);
+      console.log(
+        "hasil merek ",
+        ...data.data.map(data => data.AuctionLotUnitSpecs[0].SpecValue)
+      );
       await dispatch(receivedProductRecomend(data.data));
       await dispatch(
         setSuccess(
@@ -94,7 +99,7 @@ export const fetchProductByEvent = (tokenId, eventId) => {
               searchable: true,
               orderable: true,
               search: {
-                value: `"``${eventId}``"`,
+                value: `${eventId}`,
                 regex: false
               }
             }
@@ -118,7 +123,7 @@ export const fetchProductByEvent = (tokenId, eventId) => {
         }
       });
       const data = await response.data;
-      console.log("hasil product by event", data);
+      console.log("hasil product by event", data.data);
       await dispatch(receivedProductByEvent(data.data));
       await dispatch(
         setSuccess(
@@ -129,7 +134,7 @@ export const fetchProductByEvent = (tokenId, eventId) => {
       );
       await dispatch(setLoading(false, "LOADING_FETCH_BY_EVENT"));
     } catch (e) {
-      console.log("fetch recomend", e);
+      console.log("fetch by event", e);
       await dispatch(
         setFailed(
           true,
@@ -151,71 +156,45 @@ const receivedProductByEvent = data => {
 
 export const fetchProductDetail = (tokenId, lotId) => {
   return async dispatch => {
-    await dispatch(setLoading(true, "LOADING_FETCH_BY_EVENT"));
+    await dispatch(setLoading(true, "LOADING_FETCH_DETAIL_PRODUCT"));
     try {
-      const response = await axios.post(`${server}/api/am/get/command`, {
-        tokenId: tokenId,
-        uriCode: "LOT_SEARCH",
-        param: {
-          draw: 1,
-          columns: [
-            {
-              data: "AuctionLot.AuctionEvent.AuctionEventId",
-              name: null,
-              searchable: true,
-              orderable: true,
-              search: {
-                value: `"``${lotId}``"`,
-                regex: false
-              }
-            }
-          ],
-          order: [
-            {
-              column: 0,
-              dir: "asc"
-            }
-          ],
-          start: 0,
-          search: {
-            value: null,
-            regex: false
-          },
-          extra: {
-            SearchType: "SEARCHBYUNITSPEC",
-            UnitTypeCode: "CAR",
-            SpecFiltersJson: "{}"
+      const response = await axios.post(
+        `${server}/api/am/get/auctionlotbundle`,
+        {
+          tokenId: tokenId,
+          param: {
+            auctionLotId: lotId
           }
         }
-      });
+      );
       const data = await response.data;
-      console.log("hasil product by event", data);
-      await dispatch(receivedProductDetail(data.data));
+      console.log("hasil product detail", data);
+      await dispatch(receivedProductDetail(data));
       await dispatch(
         setSuccess(
           true,
-          "SUCCESS_FETCH_BY_EVENT",
-          "berhasil mendapatkan product by event"
+          "SUCCESS_FETCH_DETAIL_PRODUCT",
+          "berhasil mendapatkan product detail"
         )
       );
-      await dispatch(setLoading(false, "LOADING_FETCH_BY_EVENT"));
+      await dispatch(setLoading(false, "LOADING_FETCH_DETAIL_PRODUCT"));
     } catch (e) {
-      console.log("fetch recomend", e);
+      console.log("fetch product detail", e);
       await dispatch(
         setFailed(
           true,
-          "FAILED_FETCH_BY_EVENT",
-          "gagal mendapatkan product by event"
+          "FAILED_FETCH_DETAIL_PRODUCT",
+          "gagal mendapatkan product detail"
         )
       );
-      await dispatch(setLoading(false, "LOADING_FETCH_BY_EVENT"));
+      await dispatch(setLoading(false, "LOADING_FETCH_DETAIL_PRODUCT"));
     }
   };
 };
 
 const receivedProductDetail = data => {
   return {
-    type: RECEIVED_PRODUCT_BY_EVENT,
+    type: RECEIVED_PRODUCT_DETAIL,
     payload: data
   };
 };

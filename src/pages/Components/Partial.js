@@ -4,7 +4,6 @@ import { Grid, Row, Col, Image, Navbar, NavDropdown } from "react-bootstrap";
 import { Carousel, Button, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
-import TiYoutube from "react-icons/lib/ti/social-youtube";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
 import TiHeart from "react-icons/lib/ti/heart-full-outline";
@@ -76,7 +75,12 @@ export class Navigation extends Component {
                 */}
 
                 <li eventkey={6}>
-                  <NavLink to="/login">Login</NavLink>
+                  <NavLink
+                    to="http://legoas-am-dev.cloudapp.net/Account/Login"
+                    target="_blank"
+                  >
+                    Login
+                  </NavLink>
                 </li>
 
                 <li eventkey={7}>
