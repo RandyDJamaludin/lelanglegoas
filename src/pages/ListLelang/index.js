@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
+import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
 import { Select, Form, Button, Spin } from "antd";
 import { Redirect } from "react-router";
 import { DataCardLocation } from "../AllData/DataCard";
@@ -13,17 +13,22 @@ const Option = Select.Option;
 
 class Index extends Component {
   state = {
-    isAuth: null
+    isAuth: null,
+    loading: true,
+    progress: 0
   };
 
   async componentDidMount() {
     if (this.props.sessionPersistance.tokenId != null) {
-      this.setState({ isAuth: this.props.sessionPersistance });
+      await this.setState({ isAuth: this.props.sessionPersistance });
     }
+    await this.setState({ progress: 50 });
     await this.props.fetchProductByEvent(
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.eventId
     );
+    await this.setState({ progress: 100 });
+    await this.setState({ loading: false });
   }
 
   render() {
@@ -155,8 +160,15 @@ class Index extends Component {
             </Col>
           </Row>
           <Row style={{ paddingTop: "4%", paddingBottom: "4%" }}>
-            {this.props.receivedproductbyevent == [] ? (
-              <Spin size="large" />
+            {this.state.loading ? (
+              <div>
+                <ProgressBar
+                  active
+                  striped
+                  bsStyle="info"
+                  now={this.state.progress}
+                />
+              </div>
             ) : (
               this.props.receivedproductbyevent.map((data, index) => (
                 <Col md={12} key={data.UnitKeyFinder}>

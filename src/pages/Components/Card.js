@@ -206,7 +206,13 @@ export class SearchLelang extends Component {
                       <p className="title"> Tahun : {this.props.year} </p>
                     </Col>
                     <Col md={12}>
-                      <p className="title"> Harga : {this.props.price}</p>
+                      <p className="title">
+                        {" "}
+                        Harga :{" "}
+                        {this.props.price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      </p>
                     </Col>
                   </Row>
                 </Col>

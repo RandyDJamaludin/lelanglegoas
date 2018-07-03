@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Image } from "react-bootstrap";
-import { Divider, Tag } from "antd";
+import { Grid, Row, Col, Image, ProgressBar } from "react-bootstrap";
+import { Divider, Tag, Spin } from "antd";
 import { Redirect } from "react-router";
 import AliceCarousel from "react-alice-carousel";
 import MdAccessTime from "react-icons/lib/md/access-time";
@@ -14,7 +14,8 @@ import { fetchProductDetail } from "../../actions/getProduct";
 
 class Index extends Component {
   state = {
-    isAuth: null
+    isAuth: null,
+    loading: true
   };
 
   async componentDidMount() {
@@ -25,30 +26,31 @@ class Index extends Component {
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.lotId
     );
+    await this.props.fetchProductDetail(
+      this.props.sessionPersistance.tokenId,
+      171
+    );
+    await this.setState({ loading: false });
   }
 
   renderThumbs = () => (
     <div className="multiSliderThumbs">
       <Row>
-        {[
-          <Image src="https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg" />,
-          <Image src="http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg" />,
-          <Image src="http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg" />
-        ].map((item, i) => (
+        {this.props.receivedimagesproduct.map((item, i) => (
           <Col
             xs={4}
             md={4}
             key={i}
             onClick={() => this.Carousel._onDotClick(i)}
           >
-            {item}
+            <Image src={item.imageUri} />
           </Col>
         ))}
       </Row>
     </div>
   );
   render() {
-    console.log(this.props.location.state.data);
+    console.log("physical", this.props.receivedimageeveryproduct);
     const {
       grade,
       km,
@@ -71,6 +73,10 @@ class Index extends Component {
           state: { from: this.props.location }
         }}
       />
+    ) : this.state.loading ? (
+      <div>
+        <ProgressBar active striped bsStyle="info" now={100} />
+      </div>
     ) : (
       <div className="wrap-viewCarPage">
         <Grid>
@@ -83,15 +89,11 @@ class Index extends Component {
                   buttonsDisabled={true}
                   ref={el => (this.Carousel = el)}
                 >
-                  <div className="multiSlider">
-                    <Image src="https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg" />
-                  </div>
-                  <div className="multiSlider">
-                    <Image src="http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg" />
-                  </div>
-                  <div className="multiSlider">
-                    <Image src="http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg" />
-                  </div>
+                  {this.props.receivedimagesproduct.map((item, i) => (
+                    <div className="multiSlider">
+                      <Image src={item.imageUri} />
+                    </div>
+                  ))}
                 </AliceCarousel>
                 {this.renderThumbs()}
               </div>
@@ -377,6 +379,8 @@ class Index extends Component {
 
 const mapStateToProps = state => ({
   receivedproductdetail: state.receivedproductdetail,
+  receivedimagesproduct: state.receivedimagesproduct,
+  receivedimageeveryproduct: state.receivedimageeveryproduct,
   sessionPersistance: state.sessionPersistance
 });
 

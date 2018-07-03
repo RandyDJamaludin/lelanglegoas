@@ -89,9 +89,9 @@ export class Index extends Component {
               </Col>
               <Col md={6}>
                 {this.props.schedulemot == null ? (
-                  <Row>
+                  <center>
                     <p>Schedule Motor Not Available</p>
-                  </Row>
+                  </center>
                 ) : (
                   <Row>
                     {paginate(
