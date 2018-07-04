@@ -185,9 +185,7 @@ class Index extends Component {
                     grade={data.UnitGrade}
                     lotNumber={data.AuctionLot.AuctionLotNumber}
                     price={data.AuctionLot.FinalBasePrice}
-                    image={
-                      "http://moziru.com/images/lamborghini-clipart-cool-car-19.png"
-                    }
+                    image={data.ImageUri}
                     lotId={data.AuctionLot.AuctionLotId}
                     dataJadwal={this.props.location.state.data}
                   />
