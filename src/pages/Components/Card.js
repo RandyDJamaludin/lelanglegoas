@@ -101,7 +101,12 @@ export class ListLelang extends Component {
                     <Col xs={12} md={10}>
                       <div className="headerLelang">
                         <p>
-                          <b>{this.props.name}</b>
+                          <b>
+                            {this.props.merek} {this.props.model}
+                          </b>
+                        </p>
+                        <p>
+                          <b>{this.props.tipe}</b>
                         </p>
                       </div>
                     </Col>
@@ -116,10 +121,11 @@ export class ListLelang extends Component {
                   <Row>
                     <Col xs={12} md={10}>
                       <div className="headerLelang">
-                        <p style={{ color: "#ccc", fontSize: 15 }}>
+                        <p style={{ color: "#000", fontSize: 15 }}>
                           {this.props.police} | {this.props.year} | KM :{" "}
                           {this.props.km}
                         </p>
+                        <p>Harga Dasar: </p>
                       </div>
                     </Col>
                     <Col xs={12} md={2}>
@@ -160,7 +166,7 @@ export class ListLelang extends Component {
                           RP.{" "}
                           {this.props.price
                             .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                         </p>
                       </div>
                     </Col>
@@ -202,10 +208,10 @@ export class SearchLelang extends Component {
                     <Col md={12}>
                       <p className="title">
                         {" "}
-                        Harga :{" "}
+                        Harga :Rp.{" "}
                         {this.props.price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                       </p>
                     </Col>
                   </Row>

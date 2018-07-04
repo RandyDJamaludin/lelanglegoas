@@ -84,7 +84,12 @@ export class Navigation extends Component {
                 </li>
 
                 <li eventkey={7}>
-                  <NavLink to="/register-choose">Register</NavLink>
+                  <NavLink
+                    to="https://lelang.legoas.co.id/Auction/Bidder/Register"
+                    target="_blank"
+                  >
+                    Register
+                  </NavLink>
                 </li>
               </ul>
             </Navbar.Collapse>
