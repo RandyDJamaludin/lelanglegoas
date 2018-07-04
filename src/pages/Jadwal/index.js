@@ -62,30 +62,37 @@ export class Index extends Component {
             </div>
             <Row>
               <Col md={6}>
-                <Row>
-                  {paginate(
-                    this.props.schedulecar,
-                    this.state.pageSize,
-                    this.state.current
-                  ).map((data, index) => (
-                    <Col xs={12} md={12} key={data.auctionEventId}>
-                      <JadwalLelang
-                        transport={" MOBIL"}
-                        eventCode={data.eventCode}
-                        eventNumber={data.eventNumber}
-                        location={data.auctionHouseProvince}
-                        date={data.eventDate.date}
-                        startTime={data.eventDate.startTime}
-                        endTime={data.eventDate.endTime}
-                        timeZone={data.timezone}
-                        openhouse={data.openHouseDate.date}
-                        houseName={data.auctionHouseName}
-                        houseAddress={data.auctionHouseAddress}
-                        eventId={data.auctionEventId}
-                      />
-                    </Col>
-                  ))}
-                </Row>
+                {this.props.schedulecar == null ? (
+                  <center>
+                    <p>Schedule Mobil Not Available</p>
+                  </center>
+                ) : (
+                  <Row>
+                    {paginate(
+                      this.props.schedulecar,
+                      this.state.pageSize,
+                      this.state.current
+                    ).map((data, index) => (
+                      <Col xs={12} md={12} key={data.auctionEventId}>
+                        <JadwalLelang
+                          transport={" MOBIL"}
+                          eventCode={data.eventCode}
+                          eventNumber={data.eventNumber}
+                          location={data.auctionHouseProvince}
+                          date={data.eventDate.date}
+                          startTime={data.eventDate.startTime}
+                          endTime={data.eventDate.endTime}
+                          timeZone={data.timezone}
+                          openhouse={data.openHouseDate.date}
+                          houseName={data.auctionHouseName}
+                          houseAddress={data.auctionHouseAddress}
+                          eventId={data.auctionEventId}
+                          admfee={this.props.receivedadmfee}
+                        />
+                      </Col>
+                    ))}
+                  </Row>
+                )}
               </Col>
               <Col md={6}>
                 {this.props.schedulemot == null ? (
@@ -144,6 +151,7 @@ export class Index extends Component {
 const mapStateToProps = state => ({
   schedulecar: state.schedulecar,
   schedulemot: state.schedulemot,
+  receivedadmfee: state.receivedadmfee,
   sessionPersistance: state.sessionPersistance
 });
 

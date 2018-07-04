@@ -36,6 +36,7 @@ import {
   fetchProductByEvent,
   fetchProductDetail
 } from "../../actions/getProduct";
+import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchMerek, fetchModel, fetchTipe } from "../../actions/searchProduct";
 import { login, cekToken } from "../../actions/login";
 const SubMenu = Menu.SubMenu;
@@ -96,6 +97,7 @@ class Index extends Component {
       )
     );
     await this.setState({ progress: 95 });
+    await this.props.fetchAdmFee(session.tokenId)
     await this.setState({ loading: false });
   }
 
@@ -601,7 +603,8 @@ const mapDispatchToProps = dispatch => ({
   fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
   fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
   cekToken: (token, officeCode, roleCode) =>
-    dispatch(cekToken(token, officeCode, roleCode))
+    dispatch(cekToken(token, officeCode, roleCode)),
+  fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId)),
 });
 
 export default connect(

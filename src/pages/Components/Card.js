@@ -250,6 +250,10 @@ export class JadwalLelang extends Component {
           <Icon type="clock-circle-o" /> {this.props.startTime} -{" "}
           {this.props.endTime} {this.props.timeZone}
         </p>
+        <p>
+          <Icon type="home" /> Adm Fee{" "}
+          {this.props.admfee}
+        </p>
         <Link
           to={{
             pathname: "/list-lelang",
