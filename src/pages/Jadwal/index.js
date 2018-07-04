@@ -62,7 +62,7 @@ export class Index extends Component {
             </div>
             <Row>
               <Col md={6}>
-                {this.props.schedulecar == null ? (
+                {this.props.schedulecar == [] ? (
                   <center>
                     <p>Schedule Mobil Not Available</p>
                   </center>

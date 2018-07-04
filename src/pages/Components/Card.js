@@ -43,13 +43,7 @@ export class CardCarousel extends Component {
           </p>
           <p className="color"> {this.props.color} </p>
           <p>
-            Harga dasar{" "}
-            <span className="orange">
-              {" "}
-              {this.props.price
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            </span>
+            Harga dasar <span className="orange"> {this.props.price}</span>
           </p>
         </center>
       </div>
@@ -251,8 +245,7 @@ export class JadwalLelang extends Component {
           {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="home" /> Adm Fee{" "}
-          {this.props.admfee}
+          <Icon type="home" /> Adm Fee {this.props.admfee}
         </p>
         <Link
           to={{
