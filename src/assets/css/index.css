@@ -293,11 +293,7 @@ p.backTop {
 .banner_background .containBanner1 {
   background: url("../image/slideshow/1.jpg") center no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   padding: 150px; }
-=======
-  height: 700px !important; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner1 {
       margin-top: 5%;
@@ -307,11 +303,7 @@ p.backTop {
 .banner_background .containBanner2 {
   background: url("../image/slideshow/2.jpg") center no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   padding: 150px; }
-=======
-  height: 700px !important; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner2 {
       margin-top: 5%;
@@ -321,11 +313,7 @@ p.backTop {
 .banner_background .containBanner3 {
   background: url("../image/slideshow/3.jpg") center no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   padding: 150px; }
-=======
-  height: 700px !important; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner3 {
       margin-top: 5%;
@@ -335,11 +323,7 @@ p.backTop {
 .banner_background .containBanner4 {
   background: url("../image/slideshow/4.jpg") center no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   padding: 150px; }
-=======
-  height: 700px !important; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner4 {
       margin-top: 5%;
@@ -347,13 +331,9 @@ p.backTop {
       height: 400px !important; } }
 
 .banner_background .containBanner5 {
-  background: url("../image/banner/Ban4.png") center no-repeat;
+  background: url("../image/slideshow/5.jpg") center no-repeat;
   background-size: cover;
-<<<<<<< HEAD
   padding: 150px; }
-=======
-  height: 700px !important; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner5 {
       margin-top: 5%;
@@ -933,11 +913,7 @@ section {
         font-size: 24px; }
 
 .bannerabout {
-<<<<<<< HEAD
   background: url("../image/banner/1.jpg") no-repeat;
-=======
-  background: url("../image/banner/Ban1.png") no-repeat;
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   background-size: cover;
   background: #000;
   padding: 10%; }
@@ -945,7 +921,7 @@ section {
 .bannerAbout .desktop {
   height: 350px;
   background-size: 100% !important;
-  background: url("../image/banner/Ban2.png");
+  background: url("../image/banner/1.jpg");
   background-attachment: fixed; }
   .bannerAbout .desktop .shadow {
     background: rgba(255, 255, 255, 0.561);
@@ -961,11 +937,7 @@ section {
 .bannerAbout .mobile {
   height: 400px;
   background-size: cover !important;
-<<<<<<< HEAD
   background: url("../image/banner/1.jpg") no-repeat; }
-=======
-  background: url("../image/banner/Ban3.png") no-repeat; }
->>>>>>> 804a58aead1f53b59bda7ad499284136bf1f9862
   .bannerAbout .mobile .shadow {
     background: rgba(255, 255, 255, 0.561);
     height: 380px;
