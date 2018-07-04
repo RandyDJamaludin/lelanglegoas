@@ -293,7 +293,8 @@ p.backTop {
 .banner_background .containBanner1 {
   background: url("../image/banner/Ban1.png") center no-repeat;
   background-size: cover;
-  height: 700px !important }
+  height: 700px !important 
+}
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner1 {
       margin-top: 5%;
