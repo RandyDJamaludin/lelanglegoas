@@ -39,45 +39,57 @@
   }
 
   .containBanner1 {
-    background: url("../image/slideshow/1.jpg")center no-repeat;
+    background: url("../image/banner/Ban1.jpg") no-repeat;
+    background-size: 100%;
+    padding: 425px;
     background-size: cover;
-    padding: 150px;
+    background-position: 0px 40px;
     @media only screen and (max-width: 425px) {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important;
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      margin-top:70px;
+      height: 420px !important;
+      background-size: cover;
     }
   }
   .containBanner2 {
-    background: url("../image/slideshow/2.jpg")center no-repeat;
+    background: url("../image/banner/Ban2.jpg") no-repeat;
+    background-size: 100%;
+    padding: 425px;
     background-size: cover;
-    padding: 150px;
+    background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important;
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      margin-top:70px;
+      height: 420px !important;
+      background-size: cover;
     }
   }
 
   .containBanner3 {
-    background: url("../image/slideshow/3.jpg")center no-repeat;
+    background: url("../image/banner/Ban3.jpg") no-repeat;
+    background-size: 100%;
+    padding: 425px;
     background-size: cover;
-    padding: 150px;
+    background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important;
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      margin-top:70px;
+      height: 420px !important;
+      background-size: cover;
     }
   }
 
   .containBanner4 {
-    background: url("../image/slideshow/4.jpg")center no-repeat;
+    background: url("../image/banner/Ban4.jpg") no-repeat;
+    background-size: 100%;
+    padding: 425px;
     background-size: cover;
-    padding: 150px;
+    background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important;
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      margin-top:70px;
+      height: 420px !important;
+      background-size: cover;
     }
   }
 

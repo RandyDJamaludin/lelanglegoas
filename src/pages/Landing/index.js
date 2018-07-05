@@ -1,40 +1,122 @@
-import React, { Component } from "react"
-import { Grid, Row, Col } from "react-bootstrap"
-import { Icon, Divider, Input, Select, Form, Pagination, Button } from "antd"
-import { NavLink, Redirect } from "react-router-dom"
-import AliceCarousel from "react-alice-carousel"
-import { DataCardCarousel, DataJadwalMotor, DataJadwalMobil, DataCardLocation } from "../AllData/DataCard"
-import { CardCarousel, JadwalLelang, SearchLelang } from "../Components/Card"
-import { Banner } from "../Components/Partial"
+import React, { Component } from "react";
+import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
+import {
+  Icon,
+  Divider,
+  Input,
+  Select,
+  Form,
+  Pagination,
+  Button,
+  Menu,
+  Spin
+} from "antd";
+import { NavLink, Redirect } from "react-router-dom";
+import AliceCarousel from "react-alice-carousel";
+import {
+  DataCardCarousel,
+  DataJadwalMotor,
+  DataJadwalMobil,
+  DataCardLocation,
+  DataContentTab
+} from "../AllData/DataCard";
+import {
+  CardCarousel,
+  JadwalLelang,
+  SearchLelang,
+  ContentTab
+} from "../Components/Card";
+import { Banner } from "../Components/Partial";
 import Map from "../Components/Map";
-import { connect } from 'react-redux'
-import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule"
-import { fetchBrand } from "../../actions/getBrand"
-import { cekToken } from "../../actions/login"
+import { connect } from "react-redux";
+import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
+import { fetchBrand } from "../../actions/getBrand";
+import {
+  fetchProductRecomended,
+  fetchProductByEvent,
+  fetchProductDetail
+} from "../../actions/getProduct";
+import { fetchAdmFee } from "../../actions/getAdmFee";
+import { fetchMerek, fetchModel, fetchTipe } from "../../actions/searchProduct";
+import { login, cekToken } from "../../actions/login";
+const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
 
-export class Index extends Component {
-  
+const paginate = (array, page_size, page_number) => {
+  --page_number; // because pages logically start with 1, but technically with 0
+  return array.slice(page_number * page_size, (page_number + 1) * page_size);
+};
+
+class Index extends Component {
   constructor() {
-    super()
+    super();
 
     this.state = {
-      merk: '',
-      model: '',
-      isAuth: null
+      merk: "",
+      model: "",
+      tipe: "",
+      session: {},
+      loading: true,
+      progress: 0,
+      resultSearch: [],
+      pageSize: 2,
+      current: 1
+    };
+  }
+
+  onChange = page => {
+    this.setState({
+      current: page
+    });
+  };
+
+  async componentDidMount() {
+    await this.props.login("TELECREATIVE", "01042018");
+    await this.setState({ progress: 15 });
+    const session = JSON.parse(localStorage.getItem("session"));
+    await this.setState({ session });
+    await this.setState({ progress: 30 });
+    await this.props.cekToken(
+      session.tokenId,
+      session.RoleCode,
+      session.officeCode
+    );
+    await this.setState({ progress: 45 });
+    await this.props.fetchScheduleCar(session.tokenId);
+    await this.setState({ progress: 60 });
+    await this.props.fetchScheduleMot(session.tokenId);
+    await this.setState({ progress: 75 });
+    await this.props.fetchBrand(session.tokenId);
+    await this.setState({ progress: 80 });
+    await this.props.fetchProductRecomended(session.tokenId);
+    await this.getImageRecomend(
+      this.props.receivedproductrecomend.map(
+        data => data.AuctionLot.AuctionLotId
+      )
+    );
+    await this.setState({ progress: 95 });
+    await this.props.fetchAdmFee(session.tokenId)
+    await this.setState({ loading: false });
+  }
+
+  async getImageRecomend(lotId) {
+    for (let i = 0; i < lotId.length; i++) {
+      this.props.fetchProductDetail(this.state.session.tokenId, lotId[i]);
     }
   }
 
-  componentDidMount = async() => {
-    const session = JSON.parse(localStorage.getItem('session'))
-    console.log("state storage", session)
-    await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode)
-    console.log("cek token", this.props.resultCekToken)
-    await this.props.fetchScheduleCar(session.tokenId)
-    await this.props.fetchScheduleMot(session.tokenId)
-    await this.props.fetchBrand(session.tokenId)
+  async handleSearch() {
+    const { session, merk, model, tipe } = this.state;
+    if (merk != "" && model != "" && tipe != "") {
+      await this.props.fetchTipe(session.tokenId, merk, model, tipe);
+    } else if (merk != "" && model != "" && tipe == "") {
+      await this.props.fetchModel(session.tokenId, merk, model);
+    } else if (merk != "" && model == "" && tipe == "") {
+      await this.props.fetchMerek(session.tokenId, merk);
+    }
+    await this.setState({ resultSearch: this.props.receivedsearchproduct });
   }
 
   static defaultProps = {
@@ -42,6 +124,10 @@ export class Index extends Component {
     zoom: 11
   };
   render() {
+    let total = Math.max(
+      this.props.receivedproductrecomend.length,
+      this.props.receivedsearchproduct.length
+    );
     const responsive = {
       0: {
         items: 1
@@ -53,18 +139,32 @@ export class Index extends Component {
         items: 3
       }
     };
-    {console.log(this.props.resultCekToken == {} )}
-    return (
-      this.props.resultCekToken == {} ? (
-    <Redirect
-        to={{
-          pathname: "/login",
-          state: { from: this.props.location }
-        }}
-      />
-    ) : (
 
-        <div>
+    return this.state.loading ? (
+      <div
+        style={{
+          paddingTop: 100,
+          marginLeft: "20%",
+          width: "60%",
+          justifyContent: "center"
+        }}
+      >
+        <center>
+          <ProgressBar
+            active
+            striped
+            bsStyle="info"
+            now={this.state.progress}
+            style={{ justifyContent: "center" }}
+          />
+        </center>
+      </div>
+    ) : this.props.receivedproductrecomend == [] ? (
+      <div style={{ paddingTop: 100 }}>
+        <ProgressBar striped bsStyle="info" now={100} />
+      </div>
+    ) : (
+      <div>
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
@@ -72,6 +172,7 @@ export class Index extends Component {
             <AliceCarousel
               duration={400}
               autoPlay={true}
+              infinite={false}
               startIndex={1}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
@@ -80,49 +181,33 @@ export class Index extends Component {
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
-              >
-                {this.props.receivedbrand.slice(0,5).map((data, Index) => (
-                  data.models.filter(model => model.parentId === data.id).slice(0,1).map(model => (
-                    model.tipes.filter(tipe => tipe.parentId === model.id).slice(0,1).map(tipe => (
-                      <Col xs={12} md={12}>
-                      <CardCarousel
-                      key={tipe.id}
-                      nameBrand={data.value}
-                      image={"http://moziru.com/images/lamborghini-clipart-cool-car-19.png"}
-                      merek={data.value}
-                      model={model.value}
-                      tipe={tipe.value}
-                      at_mt={"---"}
-                      color={"---"}
-                      price={"---"}
-                      />
-                      </Col>
-                    ))
-                  ))
-                ))}
-              {/* {DataCardCarousel.map((data, index) => (
-                <Col xs={12} md={12} key={data.key}>
-                  <CardCarousel
-                    name={data.name}
-                    image={data.image}
-                    merek={data.merek}
-                    model={data.model}
-                    tipe={data.tipe}
-                    at_mt={data.at_mt}
-                    color={data.color}
-                    price={data.price}
+            >
+              {this.props.receivedproductrecomend
+                .slice(0, 10)
+                .map((data, Index) => (
+                  <Col xs={12} md={12}>
+                    <CardCarousel
+                      key={data.UnitKeyFinder}
+                      nameBrand={data.UnitName}
+                      image={data.ImageUri}
+                      merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                      model={data.AuctionLotUnitSpecs[1].SpecValue}
+                      tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                      no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
+                      color={data.AuctionLotUnitSpecs[11].SpecValue}
+                      price={data.AuctionLot.FinalBasePrice}
                     />
-                </Col>
-              ))} */}
+                  </Col>
+                ))}
             </AliceCarousel>
           </Row>
         </Grid>
-
         <Grid className="wrap-cardCarouselMobile">
           <Row>
             <AliceCarousel
               duration={400}
               autoPlay={true}
+              infinite={false}
               startIndex={1}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
@@ -132,115 +217,102 @@ export class Index extends Component {
               autoPlayDirection="rtl"
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
-              onSlideChanged={this.onSlideChanged}>
-              {DataCardCarousel.map((data, index) => (
-                <Col xs={12} md={12} key={data.key}>
-                  <CardCarousel
-                    name={data.name}
-                    image={data.image}
-                    merek={data.merek}
-                    model={data.model}
-                    tipe={data.tipe}
-                    at_mt={data.at_mt}
-                    color={data.color}
-                    price={data.price}
-                    openhouse={data.openhouse}
+              onSlideChanged={this.onSlideChanged}
+            >
+              {this.props.receivedproductrecomend
+                .slice(0, 10)
+                .map((data, Index) => (
+                  <Col xs={12} md={12}>
+                    <CardCarousel
+                      key={data.UnitKeyFinder}
+                      nameBrand={data.UnitName}
+                      image={data.ImageUri}
+                      merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                      model={data.AuctionLotUnitSpecs[1].SpecValue}
+                      tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                      no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
+                      color={data.AuctionLotUnitSpecs[11].SpecValue}
+                      price={data.AuctionLot.FinalBasePrice}
                     />
-                </Col>
-              ))}
+                  </Col>
+                ))}
             </AliceCarousel>
           </Row>
         </Grid>
-
-        {/* Tab */}
-        {/* <Grid>
+        {/*
+        <Grid>
           <Row>
           <Col md={2}>
-          <Menu
-          onClick={({item, key}) => this.setState({merek: key})}
-          style={{ width: '100%' }}
-          defaultOpenKeys={['all']}
-          selectedKeys = {[this.state.merek]}
-          mode="inline">
-          <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
-          <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
-          <Menu.Item key="Avanza">Avanza</Menu.Item>
-          <Menu.Item key="Toyota">Xenia</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" title={<span><span>Motor</span></span>}>
-          <Menu.Item key="Ninja">Ninja</Menu.Item>
-          <Menu.Item key="Supra">Supra</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub3" title={<span><span>Property</span></span>}>
-          <Menu.Item key="Rumah">Rumah</Menu.Item>
-          </SubMenu>
-          </SubMenu>
-          </Menu>
+            <Menu
+              onClick={({item, key}) => this.setState({merek: key})}
+              style={{ width: '100%' }}
+              defaultOpenKeys={['sub1']}
+              selectedKeys = {[this.state.merek]}
+              mode="inline">
+              <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
+                <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
+                  <Menu.Item key="Avanza">Avanza</Menu.Item>
+                  <Menu.Item key="Toyota">Xenia</Menu.Item>
+                </SubMenu>
+            </Menu>
           </Col>
           <Col md={10}>
           {this.state.merek === '' ? (
             DataContentTab.map((d, index) => (
               <Col md={4} key={index}>
               <ContentTab
-              name={d.name}
-              image={d.image}
-              merek={d.merek}
-              model={d.model}
-              tipe={d.tipe}
-              at_mt={d.at_mt}
-              warna={d.warna}
-              price={d.price}
-              button={d.button} />
+                name={d.name}
+                image={d.image}
+                merek={d.merek}
+                model={d.model}
+                tipe={d.tipe}
+                at_mt={d.at_mt}
+                warna={d.warna}
+                price={d.price}
+                button={d.button} />
               </Col>
             ))
           ) : (
             DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
               <Col md={4} key={index}>
               <ContentTab
-              name={d.name}
-              image={d.image}
-              merek={d.merek}
-              model={d.model}
-              tipe={d.tipe}
-              at_mt={d.at_mt}
-              warna={d.warna}
-              price={d.price}
-              button={d.button} />
+                name={d.name}
+                image={d.image}
+                merek={d.merek}
+                model={d.model}
+                tipe={d.tipe}
+                at_mt={d.at_mt}
+                warna={d.warna}
+                price={d.price}
+                button={d.button} />
               </Col>
             ))
           )}
           </Col>
           </Row>
-        </Grid> */}
-
-        <Grid style={{paddingTop:'3%', paddingBottom:'3%'}}>
+        </Grid>*/}
+        <Grid style={{ paddingTop: "3%", paddingBottom: "3%" }}>
           <Row>
             <Col md={5} className="searchPanel">
               <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
               <Divider />
               <Row>
-                <Col md={4}>
-                  <p> Free Keyword</p>
-                  <Input width="100%" />
-                </Col>
-                <Col md={4}>
-                  <p> Lokasi </p>
+                <Col md={6}>
+                  <p> Jenis Kendaraan</p>
                   <Select
                     showSearch
                     style={{ width: "100%" }}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    >
-                    <Option value="jack">Jakarta Barat</Option>
-                    <Option value="lucy">Jakarta Timur</Option>
-                    <Option value="tom">Jakarta Utara</Option>
+                  >
+                    <Option value="mobil">Mobil</Option>
                   </Select>
                 </Col>
-                <Col md={4}>
+                <Col md={6}>
                   <p> Merek </p>
                   <Select
                     showSearch
@@ -248,18 +320,21 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    onChange={(value)=> this.setState({merk: value})}>
-                  {this.props.receivedbrand.map(merk => (
-                    <Option value={merk.value} key={merk.id}>{merk.value}</Option>
-                  ))}
+                    onChange={value => this.setState({ merk: value })}
+                  >
+                    {this.props.receivedbrand.map(merk => (
+                      <Option value={merk.value} key={merk.id}>
+                        {merk.value}
+                      </Option>
+                    ))}
                   </Select>
                 </Col>
               </Row>
               <Row style={{ paddingTop: 10 }}>
-                <Col md={12}>
+                <Col md={6}>
                   <p> Model </p>
                   <Select
                     showSearch
@@ -267,46 +342,107 @@ export class Index extends Component {
                     optionFilterProp="children"
                     filterOption={(input, option) =>
                       option.props.children
-                      .toLowerCase()
-                      .indexOf(input.toLowerCase()) >= 0
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
                     }
-                    onChange={(value)=> this.setState({model: value })}>
-                  {this.state.merk == '' ? (
-                    <Option value="select" disabled >Please Select Merk</Option>
-                  ):(
-                    this.props.receivedbrand.filter(merk => merk.value === this.state.merk).map(merk => merk.models.map(model => (
-                      <Option value={model.value} key={model.id}>{model.value}</Option>
-                    )))
-                  )}
+                    onChange={value => this.setState({ model: value })}
+                  >
+                    {this.state.merk == "" ? (
+                      <Option value="select" disabled>
+                        Please Select Model
+                      </Option>
+                    ) : (
+                      this.props.receivedbrand
+                        .filter(merk => merk.value === this.state.merk)
+                        .map(merk =>
+                          merk.models.map(model => (
+                            <Option value={model.value} key={model.id}>
+                              {model.value}
+                            </Option>
+                          ))
+                        )
+                    )}
+                  </Select>
+                </Col>
+                <Col md={6}>
+                  <p> Tipe </p>
+                  <Select
+                    showSearch
+                    style={{ width: "100%" }}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                    onChange={value => this.setState({ tipe: value })}
+                  >
+                    {this.state.model == "" ? (
+                      <Option value="select" disabled>
+                        Please Select Tipe
+                      </Option>
+                    ) : (
+                      this.props.receivedbrand
+                        .filter(merk => merk.value === this.state.merk)
+                        .map(merk =>
+                          merk.models
+                            .filter(model => model.value === this.state.model)
+                            .map(model =>
+                              model.tipes.map(tipe => (
+                                <Option value={tipe.value} key={tipe.id}>
+                                  {tipe.value}
+                                </Option>
+                              ))
+                            )
+                        )
+                    )}
                   </Select>
                 </Col>
               </Row>
               <Row style={{ paddingTop: 10 }}>
-                <Col md={12}>
+                <Col md={6}>
                   <p> Tahun </p>
                   <Input width="100%" />
+                </Col>
+                <Col md={6}>
+                  <p> warna </p>
+                  <Select
+                    showSearch
+                    style={{ width: "100%" }}
+                    optionFilterProp="children"
+                    filterOption={(input, option) =>
+                      option.props.children
+                        .toLowerCase()
+                        .indexOf(input.toLowerCase()) >= 0
+                    }
+                  >
+                    <Option value="merah">MERAH</Option>
+                    <Option value="hitam">HITAM</Option>
+                    <Option value="biru">BIRU</Option>
+                  </Select>
                 </Col>
               </Row>
               <Row>
                 <Col md={12}>
                   <FormItem>
-                    {this.state.merk === '' && this.state.model === '' ? (
+                    {this.state.tipe === "" ? (
                       <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="buttonSearch"
-                      disabled
+                        type="primary"
+                        htmlType="submit"
+                        className="buttonSearch"
+                        disabled
                       >
-                      CARI
-                    </Button>
-                    ):(
-                    <Button
-                      type="primary"
-                      htmlType="submit"
-                      className="buttonSearch"
+                        CARI
+                      </Button>
+                    ) : (
+                      <Button
+                        type="primary"
+                        htmlType="submit"
+                        className="buttonSearch"
+                        onClick={() => this.handleSearch()}
                       >
-                      CARI
-                    </Button>
+                        CARI
+                      </Button>
                     )}
                   </FormItem>
                 </Col>
@@ -319,33 +455,63 @@ export class Index extends Component {
                   {" "}
                   Hasil Pencarian{" "}
                 </p>
-                {DataCardLocation.map((data, index) => (
-                  <Col md={12} key={data.key}>
-                    <SearchLelang
-                      number={data.number}
-                      name={data.name}
-                      police={data.police}
-                      pajak={data.pajak}
-                      price={data.price}
-                      bundle={data.bundle}
-                      year={data.year}
-                      type={data.type}
-                      image={data.image}
-                      />
-                  </Col>
-                ))}
+                {this.state.resultSearch == []
+                  ? this.props
+                      .receivedproductrecomendpaginate(
+                        this.state.resultSearch,
+                        this.state.pageSize,
+                        this.state.current
+                      )
+                      .slice(0, 10)
+                      .map((data, Index) => (
+                        <Col md={12} key={data.key}>
+                          <SearchLelang
+                            number={data.number}
+                            name={data.UnitName}
+                            police={data.AuctionLotUnitSpecs[3].SpecValue}
+                            price={data.AuctionLot.FinalBasePrice}
+                            year={data.AuctionLotUnitSpecs[4].SpecValue}
+                            type={data.AuctionLotUnitSpecs[2].SpecValue}
+                            image={data.ImageUri}
+                            data={data}
+                          />
+                        </Col>
+                      ))
+                  : paginate(
+                      this.state.resultSearch,
+                      this.state.pageSize,
+                      this.state.current
+                    ).map((data, index) => (
+                      <Col md={12} key={data.UnitKeyFinder}>
+                        <SearchLelang
+                          number={data.number}
+                          name={data.UnitName}
+                          police={data.AuctionLotUnitSpecs[3].SpecValue}
+                          price={data.AuctionLot.FinalBasePrice}
+                          year={data.AuctionLotUnitSpecs[4].SpecValue}
+                          type={data.AuctionLotUnitSpecs[2].SpecValue}
+                          image={data.ImageUri}
+                          data={data}
+                        />
+                      </Col>
+                    ))}
               </Row>
               <Row>
                 <Col xs={1} md={3} />
                 <Col xs={10} md={7}>
-                  <Pagination defaultCurrent={6} total={50} />
+                  <Pagination
+                    defaultCurrent={1}
+                    pageSize={this.state.pageSize}
+                    total={total}
+                    current={this.state.current}
+                    onChange={this.onChange}
+                  />
                 </Col>
                 <Col xs={1} md={3} />
               </Row>
             </Col>
           </Row>
         </Grid>
-
         <div className="landing-lelang">
           <Grid>
             <div className="body-header">
@@ -361,6 +527,7 @@ export class Index extends Component {
                     duration={400}
                     autoPlay={false}
                     startIndex={1}
+                    infinite={false}
                     fadeOutAnimation={true}
                     mouseDragEnabled={true}
                     responsive={responsive}
@@ -368,78 +535,28 @@ export class Index extends Component {
                     autoPlayActionDisabled={true}
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
-                    >
-                    {DataJadwalMotor.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
-                        <JadwalLelang
-                          transport={data.transport}
-                          location={data.location}
-                          date={data.date}
-                          time={data.time}
-                          openhouse={data.openhouse}
+                  >
+                    {this.props.schedulecar == [] ? (
+                      <div>
+                        <Spin size="large" />
+                      </div>
+                    ) : (
+                      this.props.schedulecar.map((data, index) => (
+                        <Col xs={12} md={12} key={data.auctionEventId}>
+                          <JadwalLelang
+                            transport={" MOBIL"}
+                            eventCode={data.eventCode}
+                            eventNumber={data.eventNumber}
+                            location={data.auctionHouseProvince}
+                            date={data.eventDate.date}
+                            startTime={data.eventDate.startTime}
+                            endTime={data.eventDate.endTime}
+                            timeZone={data.timezone}
+                            openhouse={data.openHouseDate.date}
                           />
-                      </Col>
-                    ))}
-                    {/* {this.props.schedulemot.map((data, index) => (  
-                      <Col xs={12} md={12} key={data.auctionEventId}>
-                        <JadwalLelang
-                          transport={" MOBIL"}
-                          eventCode={data.eventCode}
-                          eventNumber={data.eventNumber}
-                          location={data.auctionHouseProvince}
-                          date={data.eventDate.date}
-                          startTime={data.eventDate.startTime}
-                          endTime={data.eventDate.endTime}
-                          timeZone={data.timezone}
-                          openhouse={data.openHouseDate.date}
-                          />
-                      </Col>
-                    ))} */}
-                  </AliceCarousel>
-                </Row>
-              </Col>
-            </Row>
-            <Row>
-              <Col xs={12} md={12}>
-                <Row>
-                  <AliceCarousel
-                    duration={400}
-                    autoPlay={false}
-                    startIndex={1}
-                    fadeOutAnimation={true}
-                    mouseDragEnabled={true}
-                    responsive={responsive}
-                    autoPlayInterval={2000}
-                    autoPlayActionDisabled={true}
-                    onSlideChange={this.onSlideChange}
-                    onSlideChanged={this.onSlideChanged}
-                    >
-                    {DataJadwalMobil.map((data, index) => (
-                      <Col xs={12} md={12} key={data.key}>
-                        <JadwalLelang
-                          transport={data.transport}
-                          location={data.location}
-                          date={data.date}
-                          time={data.time}
-                          openhouse={data.openhouse}
-                          />
-                      </Col>
-                    ))}
-                    {/* {this.props.schedulecar.map((data, index) => (  
-                      <Col xs={12} md={12} key={data.auctionEventId}>
-                        <JadwalLelang
-                          transport={" MOBIL"}
-                          eventCode={data.eventCode}
-                          eventNumber={data.eventNumber}
-                          location={data.auctionHouseProvince}
-                          date={data.eventDate.date}
-                          startTime={data.eventDate.startTime}
-                          endTime={data.eventDate.endTime}
-                          timeZone={data.timezone}
-                          openhouse={data.openHouseDate.date}
-                          />
-                      </Col>
-                    ))} */}
+                        </Col>
+                      ))
+                    )}
                   </AliceCarousel>
                 </Row>
               </Col>
@@ -449,12 +566,10 @@ export class Index extends Component {
             </NavLink>
           </Grid>
         </div>
-        
         <div style={{ paddingBottom: "4%" }}>
           <Map />
         </div>
       </div>
-  )
     );
   }
 }
@@ -463,15 +578,36 @@ const mapStateToProps = state => ({
   schedulecar: state.schedulecar,
   schedulemot: state.schedulemot,
   receivedbrand: state.receivedbrand,
+  receivedproductrecomend: state.receivedproductrecomend,
+  receivedproductbyevent: state.receivedproductbyevent,
+  receivedproductdetail: state.receivedproductdetail,
+  receivedsearchproduct: state.receivedsearchproduct,
+  receivedimageeveryproduct: state.receivedimageeveryproduct,
   sessionPersistance: state.sessionPersistance,
   resultCekToken: state.resultCekToken
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchScheduleCar: (tokenId) => dispatch(fetchScheduleCar(tokenId)),
-  fetchScheduleMot: (tokenId) => dispatch(fetchScheduleMot(tokenId)),
-  fetchBrand: (tokenId) => dispatch(fetchBrand(tokenId)),
-  cekToken: (token, officeCode, roleCode ) => dispatch(cekToken(token, officeCode, roleCode )),
+  login: (username, password) => dispatch(login(username, password)),
+  fetchProductRecomended: tokenId => dispatch(fetchProductRecomended(tokenId)),
+  fetchProductByEvent: (tokenId, eventId) =>
+    dispatch(fetchProductByEvent(tokenId, eventId)),
+  fetchProductDetail: (tokenId, lotId) =>
+    dispatch(fetchProductDetail(tokenId, lotId)),
+  fetchMerek: (tokenId, merek) => dispatch(fetchMerek(tokenId, merek)),
+  fetchModel: (tokenId, merek, model) =>
+    dispatch(fetchModel(tokenId, merek, model)),
+  fetchTipe: (tokenId, merek, model, tipe) =>
+    dispatch(fetchTipe(tokenId, merek, model, tipe)),
+  fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
+  fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
+  fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
+  cekToken: (token, officeCode, roleCode) =>
+    dispatch(cekToken(token, officeCode, roleCode)),
+  fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);

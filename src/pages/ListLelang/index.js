@@ -1,31 +1,78 @@
-import React, { Component } from 'react'
-import { Grid, Row, Col } from 'react-bootstrap'
-import { Select, Form, Button } from 'antd'
-import { DataCardLocation } from '../AllData/DataCard'
-import { ListLelang } from '../Components/Card'
-const Option = Select.Option
+import React, { Component } from "react";
+import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
+import { Select, Form, Button, Spin } from "antd";
+import { Redirect } from "react-router";
+import { DataCardLocation } from "../AllData/DataCard";
+import { ListLelang } from "../Components/Card";
+import { connect } from "react-redux";
+import { fetchProductByEvent } from "../../actions/getProduct";
+import moment from "moment";
+import "moment/locale/id";
+
+const Option = Select.Option;
 
 class Index extends Component {
-  render() { 
+  state = {
+    isAuth: null,
+    loading: true,
+    progress: 0
+  };
+
+  async componentDidMount() {
+    if (this.props.sessionPersistance.tokenId != null) {
+      await this.setState({ isAuth: this.props.sessionPersistance });
+    }
+    await this.setState({ progress: 50 });
+    await this.props.fetchProductByEvent(
+      this.props.sessionPersistance.tokenId,
+      this.props.location.state.data.eventId
+    );
+    await this.setState({ progress: 100 });
+    await this.setState({ loading: false });
+  }
+
+  render() {
+    const {
+      transport,
+      houseName,
+      eventNumber,
+      date
+    } = this.props.location.state.data;
+
     function handleChange(value) {
       console.log(`selected ${value}`);
     }
-    
+
     function handleBlur() {
-      console.log('blur');
+      console.log("blur");
     }
-    
+
     function handleFocus() {
-      console.log('focus');
+      console.log("focus");
     }
-    return (
-      <div className='wrap-ListLelang'>
+    return this.props.sessionPersistance.tokenId == null ? (
+      <Redirect
+        to={{
+          pathname: "/",
+          state: { from: this.props.location }
+        }}
+      />
+    ) : (
+      <div className="wrap-ListLelang">
+        {this.props == null
+          ? null
+          : console.log(this.props.location.state.data)}
+        {console.log(this.props.receivedproductbyevent)}
         <Grid>
           <Row>
             <Col md={12}>
-              <p className='header'> DAFTAR MOBIL - JAKARTA | 31 JANUARY 2018 </p>
-              <p className='header'> Pencarian </p>
-              <Row> 
+              <p className="header">
+                {" "}
+                DAFTAR {transport} - {houseName} {eventNumber} |{" "}
+                {moment(date).format("D MMMM YYYY")}{" "}
+              </p>
+              {/* <p className='header'> Pencarian </p> */}
+              {/* <Row> 
                 <Col md={2}>
                   <Select
                     showSearch
@@ -109,37 +156,64 @@ class Index extends Component {
                 <Col md={2}>
                   <Button className='search'> Cari </Button>
                 </Col>
-              </Row>
+              </Row> */}
             </Col>
           </Row>
-          <Row style={{paddingTop:'4%', paddingBottom:'4%'}}>
-            {DataCardLocation.map((data,index)=>(
-              <Col md={12} key={data.key}>
-                <ListLelang
-                  number={data.number}
-                  name={data.name}
-                  merek={data.merek}
-                  model={data.model}
-                  tipe={data.tipe}
-                  at_mt={data.at_mt}
-                  year={data.year}
-                  warna={data.warna}
-                  date={data.date}
-                  location={data.location}
-                  police={data.police}
-                  price={data.price}
-                  kode_location={data.kode_location}
-                  bundle={data.bundle}
-                  image={data.image}
+          <Row style={{ paddingTop: "4%", paddingBottom: "4%" }}>
+            {this.state.loading ? (
+              <div>
+                <ProgressBar
+                  active
+                  striped
+                  bsStyle="info"
+                  now={this.state.progress}
                 />
-              </Col>
-            ))}
+              </div>
+            ) : (
+              this.props.receivedproductbyevent.map((data, index) => (
+                <Col md={12} key={data.UnitKeyFinder}>
+                  <ListLelang
+                    number={data.number}
+                    name={data.UnitName}
+                    merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                    model={data.AuctionLotUnitSpecs[1].SpecValue}
+                    tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                    police={data.AuctionLotUnitSpecs[3].SpecValue}
+                    year={data.AuctionLotUnitSpecs[4].SpecValue}
+                    warna={data.AuctionLotUnitSpecs[11].SpecValue}
+                    km={data.AuctionLotUnitSpecs[12].SpecValue}
+                    grade={data.UnitGrade}
+                    lotNumber={data.AuctionLot.AuctionLotNumber}
+                    price={data.AuctionLot.FinalBasePrice}
+                    image={
+                      "http://moziru.com/images/lamborghini-clipart-cool-car-19.png"
+                    }
+                    lotId={data.AuctionLot.AuctionLotId}
+                    dataJadwal={this.props.location.state.data}
+                  />
+                </Col>
+              ))
+            )}
           </Row>
         </Grid>
       </div>
-    )
+    );
   }
 }
- 
-const WrappedListLelang = Form.create()(Index);
-export default WrappedListLelang
+const mapStateToProps = state => ({
+  receivedproductbyevent: state.receivedproductbyevent,
+  sessionPersistance: state.sessionPersistance
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchProductByEvent: (tokenId, eventId) =>
+    dispatch(fetchProductByEvent(tokenId, eventId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);
+// const WrappedListLelang = Form.create()(Index);
+
+// export default WrappedListLelang;

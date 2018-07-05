@@ -210,6 +210,14 @@ export const DataJadwalMotor = [
     openhouse:'Open house 26-28 November 2018',
     key: 3
   },
+  {
+    transport:' Motor ',
+    location:' Bekasi',
+    time:'23:00 - 24:00',
+    date:'39 November 2018',
+    openhouse:'Open house 26-28 November 2018',
+    key: 4
+  },
 ]
 
 export const DataJadwalMobil = [

@@ -53,7 +53,7 @@ const headerTable = [{
   title: 'Paket',
   dataIndex: 'paket',
   key: 'paket',
-  width: 250,
+  width: 200,
 }, {
   title: 'Deposito',
   dataIndex: 'price',

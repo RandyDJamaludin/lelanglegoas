@@ -4,7 +4,6 @@ import { Grid, Row, Col, Image, Navbar, NavDropdown } from "react-bootstrap";
 import { Carousel, Button, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
-import TiYoutube from "react-icons/lib/ti/social-youtube";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
 import TiHeart from "react-icons/lib/ti/heart-full-outline";
@@ -41,73 +40,51 @@ export class Navigation extends Component {
             <Navbar.Collapse>
               <ul className="nav navbar-nav right">
                 <li eventkey={1}>
-                  <NavLink to="/" activeClassName="anchorActive">
-                    Beranda
-                  </NavLink>
+                  <NavLink to="/">Beranda</NavLink>
                 </li>
 
                 <li eventkey={2}>
-                  <NavLink to="/jadwal" activeClassName="anchorActive">
-                    Jadwal Lelang
-                  </NavLink>
+                  <NavLink to="/jadwal">Jadwal Lelang</NavLink>
                 </li>
 
                 <NavDropdown title="Info Lelang" id="basic-nav-dropdown">
                   <li>
-                    <NavLink
-                      to="/pengertian-lelang"
-                      activeClassName="anchorActive"
-                    >
-                      Pengertian Lelang
-                    </NavLink>
+                    <NavLink to="/pengertian-lelang">Pengertian Lelang</NavLink>
                   </li>
                   <li>
-                    <NavLink
-                      to="/tatacara-lelang"
-                      activeClassName="anchorActive"
-                    >
-                      Tata Cara Lelang
-                    </NavLink>
+                    <NavLink to="/tatacara-lelang">Tata Cara Lelang</NavLink>
                   </li>
                   <li>
-                    <NavLink
-                      to="/peraturan-lelang"
-                      activeClassName="anchorActive"
-                    >
-                      Peraturan Lelang
-                    </NavLink>
+                    <NavLink to="/peraturan-lelang">Peraturan Lelang</NavLink>
                   </li>
                 </NavDropdown>
 
                 <li eventkey={4}>
-                  <NavLink to="/lokasi" activeClassName="anchorActive">
-                    Lokasi Lelang
-                  </NavLink>
+                  <NavLink to="/lokasi">Lokasi Lelang</NavLink>
                 </li>
 
                 <li eventkey={5}>
-                  <NavLink to="/tentang-kami" activeClassName="anchorActive">
-                    Tentang Kami
-                  </NavLink>
+                  <NavLink to="/tentang-kami">Tentang Kami</NavLink>
                 </li>
 
                 {/*<li eventkey={5}>
-                <NavLink to="/kontak" activeClassName="anchorActive">
-                  Kontak Kami
-                </NavLink>
-              </li>
-              */}
+                  <NavLink to="/kontak">
+                    Kontak Kami
+                  </NavLink>
+                </li>
+                */}
 
                 <li eventkey={6}>
-                  <NavLink to="/login" activeClassName="anchorActive">
+                  <NavLink
+                    to="http://legoas-am-dev.cloudapp.net/Account/Login"
+                    target="_blank"
+                  >
                     Login
                   </NavLink>
                 </li>
 
                 <li eventkey={7}>
-                  <NavLink to="/register-choose" activeClassName="anchorActive">
-                    Register
-                  </NavLink>
+                  <NavLink to="/register-choose">Register</NavLink>
                 </li>
               </ul>
             </Navbar.Collapse>
@@ -125,7 +102,7 @@ export class Banner extends Component {
         <div className="banner_background">
           <Carousel autoplay>
             <div className="containBanner1">
-              <Grid>
+              {/* <Grid>
                 <h4> MOBIL MEWAH DAN MURAH </h4>
                 <h1> AYO BID SEKARANG </h1>
                 <p>
@@ -134,10 +111,10 @@ export class Banner extends Component {
                   sesuai dengan keinginan anda{" "}
                 </p>
                 <Button type="primary">BID SEKARANG</Button>
-              </Grid>
+              </Grid> */}
             </div>
             <div className="containBanner2">
-              <Grid>
+              {/* <Grid>
                 <h4> MOBIL MEWAH DAN MURAH </h4>
                 <h1> AYO BID SEKARANG </h1>
                 <p>
@@ -146,10 +123,10 @@ export class Banner extends Component {
                   sesuai dengan keinginan anda{" "}
                 </p>
                 <Button type="primary">BID SEKARANG</Button>
-              </Grid>
+              </Grid> */}
             </div>
             <div className="containBanner3">
-              <Grid>
+              {/* <Grid>
                 <h4> MOBIL MEWAH DAN MURAH </h4>
                 <h1> AYO BID SEKARANG </h1>
                 <p>
@@ -158,10 +135,10 @@ export class Banner extends Component {
                   sesuai dengan keinginan anda{" "}
                 </p>
                 <Button type="primary">BID SEKARANG</Button>
-              </Grid>
+              </Grid> */}
             </div>
             <div className="containBanner4">
-              <Grid>
+              {/* <Grid>
                 <h4> MOBIL MEWAH DAN MURAH </h4>
                 <h1> AYO BID SEKARANG </h1>
                 <p>
@@ -170,19 +147,7 @@ export class Banner extends Component {
                   sesuai dengan keinginan anda{" "}
                 </p>
                 <Button type="primary">BID SEKARANG</Button>
-              </Grid>
-            </div>
-            <div className="containBanner5">
-              <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid>
+              </Grid> */}
             </div>
           </Carousel>
         </div>
@@ -220,9 +185,16 @@ export class BannerAbout extends Component {
                 <div className="shadow" style={{ padding: 50 }}>
                   <h3> WHO WE ARE ?</h3>
                   <p>
-                  LEGOAS memiliki ijin operasional Balai Lelang yang disahkan melalui Keputusan Menteri Keuangan no 28/KM.6/2018.  
-                  Dalam hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan pemerintah sehingga peserta tidak perlu khawatir atas kredibilitas LEGOAS karena sebagai peserta lelang juga dilindungi haknya oleh Negara. 
-                  Dengan masuknya LEGOAS dalam pengawasan negara, maka kewajiban dari LEGOAS juga dalam pelaksanaan lelang dan termasuk memeriksa keabsahan kepemilikan barang tersebut sehingga peserta tidak perlu dikhawatirkan dalam keabsahan kepemilikan tersebut. 
+                    LEGOAS memiliki ijin operasional Balai Lelang yang disahkan
+                    melalui Keputusan Menteri Keuangan no 28/KM.6/2018. Dalam
+                    hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan
+                    pemerintah sehingga peserta tidak perlu khawatir atas
+                    kredibilitas LEGOAS karena sebagai peserta lelang juga
+                    dilindungi haknya oleh Negara. Dengan masuknya LEGOAS dalam
+                    pengawasan negara, maka kewajiban dari LEGOAS juga dalam
+                    pelaksanaan lelang dan termasuk memeriksa keabsahan
+                    kepemilikan barang tersebut sehingga peserta tidak perlu
+                    dikhawatirkan dalam keabsahan kepemilikan tersebut.
                   </p>
                 </div>
               </Col>
@@ -276,14 +248,40 @@ export class Footer extends Component {
               </div>
             </Col>
             <Col xs={6} md={3}>
-              <p className="title"> BANTUAN </p>
-              <p> Info Lelang </p>
-              <p> Jadwal Lelang </p>
+              <p class="title"> Legoas </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Beranda
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/jadwal">
+                  Jadwal Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/lokasi">
+                  Lokasi Lelang
+                </NavLink>
+              </p>
             </Col>
             <Col xs={6} md={3}>
-              <p className="title"> BANTUAN </p>
-              <p> Contact </p>
-              <p> Help </p>
+              <p class="title"> Bantuan </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Pengertian Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Tata Cara Lelang
+                </NavLink>
+              </p>
+              <p>
+                <NavLink class="footer" to="/">
+                  Peraturan Lelang
+                </NavLink>
+              </p>
             </Col>
             <Col xs={12} md={3}>
               <p> Subscribe Our Newslatter </p>
@@ -293,16 +291,28 @@ export class Footer extends Component {
                 placeholder="Type your e-mail here"
               />
               <p className="social-media">
-                <TiFacebook />
+                <NavLink
+                  to="https://www.facebook.com/Legoas-Indonesia-400497903760852/"
+                  target="_blank"
+                >
+                  <TiFacebook />
+                </NavLink>
               </p>
               <p className="social-media">
-                <TiYoutube />
+                <NavLink
+                  to="https://www.instagram.com/legoasindonesia/"
+                  target="_blank"
+                >
+                  <TiInstagram />
+                </NavLink>
               </p>
               <p className="social-media">
-                <TiInstagram />
-              </p>
-              <p className="social-media">
-                <TiTwitter />
+                <NavLink
+                  to="https://twitter.com/LegoasIndonesia?lang=en"
+                  target="_blank"
+                >
+                  <TiTwitter />
+                </NavLink>
               </p>
             </Col>
           </Row>

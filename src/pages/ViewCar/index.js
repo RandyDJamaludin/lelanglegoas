@@ -1,132 +1,209 @@
-import React, { Component } from 'react'
-import { Grid, Row, Col, Image } from 'react-bootstrap'
-import { Divider, Tag } from 'antd'
-import AliceCarousel from 'react-alice-carousel'
-import MdAccessTime from 'react-icons/lib/md/access-time'
-import MdLocationOn from 'react-icons/lib/md/location-on'
-import FaCalendarCheckO from 'react-icons/lib/fa/calendar-check-o'
+import React, { Component } from "react";
+import { Grid, Row, Col, Image, ProgressBar } from "react-bootstrap";
+import { Divider, Tag, Spin } from "antd";
+import { Redirect } from "react-router";
+import AliceCarousel from "react-alice-carousel";
+import MdAccessTime from "react-icons/lib/md/access-time";
+import MdLocationOn from "react-icons/lib/md/location-on";
+import FaCalendarCheckO from "react-icons/lib/fa/calendar-check-o";
+import moment from "moment";
+import "moment/locale/id";
 
+import { connect } from "react-redux";
+import { fetchProductDetail } from "../../actions/getProduct";
 
-export class Index extends Component {
-  renderThumbs = () =>
-    <div className='multiSliderThumbs'>
-      <Row> 
-        {
-          [
-          <Image src='https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg'/>,
-          <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>,
-          <Image src='http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg'/>
-          ].map((item, i) =>
-          <Col xs={4} md={4} key={i} onClick={() => this.Carousel._onDotClick(i)}>{item}</Col>)
-        }
+class Index extends Component {
+  state = {
+    isAuth: null,
+    loading: true
+  };
+
+  async componentDidMount() {
+    if (this.props.sessionPersistance.tokenId != null) {
+      this.setState({ isAuth: this.props.sessionPersistance });
+    }
+    await this.props.fetchProductDetail(
+      this.props.sessionPersistance.tokenId,
+      this.props.location.state.data.lotId
+    );
+    await this.props.fetchProductDetail(
+      this.props.sessionPersistance.tokenId,
+      171
+    );
+    await this.setState({ loading: false });
+  }
+
+  renderThumbs = () => (
+    <div className="multiSliderThumbs">
+      <Row>
+        {this.props.receivedimagesproduct.map((item, i) => (
+          <Col
+            xs={4}
+            md={4}
+            key={i}
+            onClick={() => this.Carousel._onDotClick(i)}
+          >
+            <Image src={item.imageUri} />
+          </Col>
+        ))}
       </Row>
     </div>
-    ;
-  render() { 
-    return (
-      <div className='wrap-viewCarPage'>
+  );
+  render() {
+    console.log("physical", this.props.receivedimageeveryproduct);
+    const {
+      grade,
+      km,
+      lotId,
+      lotNumber,
+      merek,
+      model,
+      tipe,
+      name,
+      police,
+      price,
+      warna,
+      year,
+      dataJadwal
+    } = this.props.location.state.data;
+    return this.props.sessionPersistance.tokenId == null ? (
+      <Redirect
+        to={{
+          pathname: "/",
+          state: { from: this.props.location }
+        }}
+      />
+    ) : this.state.loading ? (
+      <div>
+        <ProgressBar active striped bsStyle="info" now={100} />
+      </div>
+    ) : (
+      <div className="wrap-viewCarPage">
         <Grid>
           <Row>
             <Col xs={12} md={8}>
-              <p className='header'> PORSCHE CAYENNE </p>
+              <p className="header"> {name} </p>
               <div>
                 <AliceCarousel
                   dotsDisabled={true}
                   buttonsDisabled={true}
-                  ref={ el => this.Carousel = el }
+                  ref={el => (this.Carousel = el)}
                 >
-                  <div className='multiSlider'>
-                    <Image src='https://wallpaperscraft.com/image/bmw_vision_efficientdynamics_concept_front_view_97571_960x544.jpg'/>
-                  </div>
-                  <div className='multiSlider'>
-                    <Image src='http://www.car-revs-daily.com/wp-content/uploads/2015/09/2016-BMW-M6-GT3-Racecar-25.jpg'/>
-                  </div>
-                  <div className='multiSlider'>
-                    <Image src='http://www.bmwgrandriver.com/wp-content/uploads/2015/09/bmw-m6-gt3-5.jpg'/>
-                  </div>
+                  {this.props.receivedimagesproduct.map((item, i) => (
+                    <div className="multiSlider">
+                      <Image src={item.imageUri} />
+                    </div>
+                  ))}
                 </AliceCarousel>
-                { this.renderThumbs() }  
+                {this.renderThumbs()}
               </div>
 
-              <div className='infoKendaraan'>
+              <div className="infoKendaraan">
                 <Row>
                   <Col md={12}>
-                  <div className='contentKendaraan'>
-                    <p> Detail Kendaraan </p>
-                    <p className='header'> Grade <span className='grade'> A </span> </p>
-                    <Divider/>
-                  </div>
+                    <div className="contentKendaraan">
+                      <p style={{ fontSize: 16 }}> Detail Kendaraan </p>
+                      <p className="header">
+                        {" "}
+                        Grade <span className="grade"> {grade} </span>{" "}
+                      </p>
+                      <Divider />
+                    </div>
                   </Col>
                   <Col md={6}>
-                    <p> Merk <span> HONDA </span></p>
+                    <p>
+                      {" "}
+                      Merk <span style={{ fontWeight: "bold" }}> {merek} </span>
+                    </p>
 
-                    <p> Type <span> PORSCHE CAYENNE </span></p>
+                    <p>
+                      {" "}
+                      Type <span style={{ fontWeight: "bold" }}> {tipe} </span>
+                    </p>
 
-                    <p> No Polisi <span> B 9999 AI</span></p>
+                    <p>
+                      {" "}
+                      No Polisi{" "}
+                      <span style={{ fontWeight: "bold" }}> {police}</span>
+                    </p>
 
-                    <p> Tahun <span> 2013 </span></p>
+                    <p>
+                      {" "}
+                      Tahun <span style={{ fontWeight: "bold" }}> {year} </span>
+                    </p>
 
-                    <p> Kapasitas Mesin (CC) <span> 8066CC</span></p>
+                    <p>
+                      {" "}
+                      Kapasitas Mesin (CC){" "}
+                      <span style={{ fontWeight: "bold" }}> 8066CC</span>
+                    </p>
                   </Col>
 
                   <Col md={6}>
-                    <p> STNK <span> ADA </span></p>
+                    <p>
+                      {" "}
+                      STNK <span style={{ fontWeight: "bold" }}> ADA </span>
+                    </p>
 
-                    <p> Masa Berlaku STNK <span> 12/10/2025 </span></p>
+                    <p>
+                      {" "}
+                      Masa Berlaku STNK{" "}
+                      <span style={{ fontWeight: "bold" }}> 12/10/2025 </span>
+                    </p>
 
-                    <p> BPKB <span> TIDAK ADA </span></p>
+                    <p>
+                      {" "}
+                      BPKB <span style={{ fontWeight: "bold" }}> ADA </span>
+                    </p>
 
-                    <p> Faktur <span> ADA </span></p>
+                    <p>
+                      {" "}
+                      Faktur <span style={{ fontWeight: "bold" }}> ADA </span>
+                    </p>
 
-                    <p> Kapasitas Mesin (CC) <span> 3127CC</span></p>
+                    <p>
+                      {" "}
+                      Kapasitas Mesin (CC){" "}
+                      <span style={{ fontWeight: "bold" }}> 3127CC</span>
+                    </p>
                   </Col>
-                </Row> 
+                </Row>
               </div>
             </Col>
             <Col xs={12} md={4}>
-              <div className='right-panel'>
-                <p className='title'> INFORMASI LELANG </p>
+              <div className="right-panel">
+                <p className="title"> INFORMASI LELANG </p>
               </div>
-              <div className='body-panel'>
+              <div className="body-panel">
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Lot </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> 1 </p>
-                    </div> 
+                      <p>
+                        <b> {lotNumber} </b>
+                      </p>
+                    </div>
                   </Col>
                 </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Grade </p>
-                    </div> 
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p style={{color:'#3c8dbc', fontWeight:'bold'}}> A </p>
-                    </div> 
-                  </Col>
-                </Row>  
-
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
                       <p> Merek </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Toyota </p>
-                    </div> 
+                      <p>
+                        <b> {merek} </b>
+                      </p>
+                    </div>
                   </Col>
                 </Row>
 
@@ -134,129 +211,185 @@ export class Index extends Component {
                   <Col xs={4} md={4}>
                     <div>
                       <p> Model </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Avanza </p>
-                    </div> 
+                      <p>
+                        <b> {model} </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
+                </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Tipe </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> Sport </p>
-                    </div> 
+                      <p>
+                        <b> {tipe} </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
+                </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> AT / MT </p>
-                    </div> 
+                      <p> NO POLISI </p>
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p> AT </p>
-                    </div> 
+                      <p>
+                        <b> {police} </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
-                  
+                </Row>
+
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Start Bid </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><b> Rp. 200.0000.000 </b></p>
-                    </div> 
+                      <p style={{ fontSize: 16, fontWeight: "bold" }}>
+                        {" "}
+                        Rp.{" "}
+                        {price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
+                </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Lokasi </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><MdLocationOn/> Jl. Raya Kaliabang no. 45 Medan satria, bekasi 17132 </p>
-                    </div> 
+                      <p>
+                        <MdLocationOn />{" "}
+                        <b>
+                          {dataJadwal.houseAddress},{dataJadwal.location}{" "}
+                        </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
+                </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Tanggal </p>
-                    </div> 
+                      <p> Open House </p>
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><FaCalendarCheckO/> 01 Januari 2018 </p>
-                    </div> 
+                      <p>
+                        <FaCalendarCheckO />
+                        <b>
+                          {" "}
+                          {moment(dataJadwal.openhouse).format(
+                            "D MMMM YYYY"
+                          )}{" "}
+                        </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>  
+                </Row>
+
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Lelang </p>
+                    </div>
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p>
+                        <FaCalendarCheckO />
+                        <b> {moment(dataJadwal.date).format("D MMMM YYYY")} </b>
+                      </p>
+                    </div>
+                  </Col>
+                </Row>
 
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Waktu </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      <p><MdAccessTime/> 21.00 WIB</p>
-                    </div> 
+                      <p>
+                        <MdAccessTime />
+                        <b>
+                          {" "}
+                          {dataJadwal.startTime} - {dataJadwal.endTime}{" "}
+                          {dataJadwal.timeZone}{" "}
+                        </b>
+                      </p>
+                    </div>
                   </Col>
-                </Row>   
+                </Row>
 
-                <Row>
+                {/* <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Status </p>
-                    </div> 
+                    </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
-                      {/* <Tag color="#f50">Non available</Tag> */}
-                      <Tag color="#87d068">Available</Tag>
-                    </div> 
+                      <Tag color="#f50">Non available</Tag>
+                      <Tag color="#87d068">Available</Tag> 
+                    </div>
                   </Col>
-                </Row>          
+                </Row> */}
               </div>
-
-              <div className='right-panel'>
-                <p className='title'> NOTE </p>
-              </div>
-              
-              <Row className='body-panel'>
-                <p> Mobil dengan kualitas yang sangat cangih, dan mobil baru baru belum pernah dipakai. </p>
-              </Row>
-            </Col>            
+            </Col>
           </Row>
         </Grid>
       </div>
-    )
+    );
   }
 }
- 
-export default Index;
+
+const mapStateToProps = state => ({
+  receivedproductdetail: state.receivedproductdetail,
+  receivedimagesproduct: state.receivedimagesproduct,
+  receivedimageeveryproduct: state.receivedimageeveryproduct,
+  sessionPersistance: state.sessionPersistance
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchProductDetail: (tokenId, lotId) =>
+    dispatch(fetchProductDetail(tokenId, lotId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Index);

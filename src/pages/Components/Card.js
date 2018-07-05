@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Row, Col, Image } from "react-bootstrap";
 import { Icon } from "antd";
 import { Link } from "react-router-dom";
-import moment from 'moment'
-import 'moment/locale/id'
+import moment from "moment";
+import "moment/locale/id";
 
 export class Card extends Component {
   render() {
@@ -32,13 +32,24 @@ export class CardCarousel extends Component {
     return (
       <div className="background-cardCarousel">
         <center>
-        {/* {console.log(this.props.nameModel)} */}
+          {/* {console.log(this.props.nameModel)} */}
           <Image className="components-card" src={this.props.image} />
           <h3>{this.props.nameBrand} </h3>
-          <p> {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.at_mt})</p>
+          <p>
+            {" "}
+            {this.props.merek} {this.props.model} - {this.props.tipe} ({
+              this.props.no_pol
+            })
+          </p>
           <p className="color"> {this.props.color} </p>
           <p>
-            Harga dasar <span className="orange"> {this.props.price}</span>
+            Harga dasar{" "}
+            <span className="orange">
+              {" "}
+              {this.props.price
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </span>
           </p>
         </center>
       </div>
@@ -58,7 +69,12 @@ export class ContentTab extends Component {
               width="100%"
             />
             <h3> {this.props.name} </h3>
-            <p> {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.at_mt})</p>
+            <p>
+              {" "}
+              {this.props.merek} {this.props.model} - {this.props.tipe} ({
+                this.props.at_mt
+              })
+            </p>
             <p className="skin"> {this.props.warna} </p>
             <p>
               Harga dasar <span className="orange"> {this.props.price}</span>
@@ -71,62 +87,88 @@ export class ContentTab extends Component {
 }
 
 export class ListLelang extends Component {
-  render() { 
+  render() {
     return (
       <div className="listLelang" style={{ paddingBottom: "5%" }}>
         <Row>
-          <Link to="/view-car">
+          <Link
+            to={{
+              pathname: "/view-car",
+              state: { data: this.props }
+            }}
+          >
             <Col md={12}>
               <Row className="contentLelang">
-                <Col md={1}>
-                  <p className="lot">
-                    
-                    LOT <br /> {this.props.number}
-                  </p>
-                </Col>
                 <Col xs={12} md={3}>
                   <Image src={this.props.image} width="100%" />
                 </Col>
-                <Col xs={12} md={8}>
-                  <div className="headerLelang">
-                    <p> {this.props.name} </p>
-                  </div>
-                  <Row className="box">
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Merek </p>
-                      <p className="sub-title"> {this.props.merek} </p>
+                <Col xs={12} md={9}>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p>
+                          <b>{this.props.name}</b>
+                        </p>
+                      </div>
                     </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Model </p>
-                      <p className="sub-title"> {this.props.model} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Warna </p>
-                      <p className="sub-title"> {this.props.warna} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> Tipe </p>
-                      <p className="sub-title"> {this.props.tipe} </p>
-                    </Col>
-                    <Col xs={4} sm={4} md={2}>
-                      <p className="title"> AT/MT </p>
-                      <p className="sub-title"> {this.props.at_mt} </p>
+                    <Col xs={12} md={2}>
+                      <div className="headerLelang">
+                        <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                          Grade
+                        </p>
+                      </div>
                     </Col>
                   </Row>
-                  <hr/>
-                  <Row className="box">
-                    <Col xs={6} sm={6} md={2}>
-                      <p className="title"> Harga </p>
-                      <p className="sub-title" style={{fontSize:14, color:'#4caf50'}}> {this.props.price}</p>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p style={{ color: "#ccc", fontSize: 15 }}>
+                          {this.props.police} | {this.props.year} | KM :{" "}
+                          {this.props.km}
+                        </p>
+                      </div>
                     </Col>
-                    <Col xs={6} sm={6} md={2}>
-                      <p className="title"> Tanggal Lelang </p>
-                      <p className="sub-title"> {this.props.date}</p>
+                    <Col xs={12} md={2}>
+                      <div className="headerLelang">
+                        <div className="bodyLelang">
+                          <p
+                            style={{
+                              fontWeight: "bold",
+                              fontSize: 30,
+                              color: "#3c8dbc",
+                              textAlign: "center",
+                              lineHeight: 0
+                            }}
+                          >
+                            {" "}
+                            {this.props.grade}
+                          </p>
+                          <p
+                            style={{
+                              fontWeight: "bold",
+                              fontSize: 14,
+                              textAlign: "center",
+                              lineHeight: 0,
+                              marginTop: 10
+                            }}
+                          >
+                            {" "}
+                            LOT {this.props.lotNumber}
+                          </p>
+                        </div>
+                      </div>
                     </Col>
-                    <Col xs={12} sm={12} md={6}>
-                      <p className="title"> Lokasi </p>
-                      <p className="sub-title"> {this.props.kode_location}</p>
-                      <p className="sub-title"> {this.props.location}</p>
+                  </Row>
+                  <Row>
+                    <Col xs={12} md={10}>
+                      <div className="headerLelang">
+                        <p style={{ fontSize: 22, fontWeight: "bold" }}>
+                          RP.{" "}
+                          {this.props.price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        </p>
+                      </div>
                     </Col>
                   </Row>
                 </Col>
@@ -142,9 +184,14 @@ export class ListLelang extends Component {
 export class SearchLelang extends Component {
   render() {
     return (
-      <div className='searchLelang' style={{ paddingBottom: 10 }}>
-        <Row  style={{border:'1px solid #ccc', padding:10}}>
-          <Link to="/view-car">
+      <div className="searchLelang" style={{ paddingBottom: 10 }}>
+        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+          <Link
+            to={{
+              pathname: "/view-car",
+              state: { data: this.props }
+            }}
+          >
             <Col md={12}>
               <Row className="contentLelang">
                 <Col xs={12} md={5}>
@@ -159,7 +206,13 @@ export class SearchLelang extends Component {
                       <p className="title"> Tahun : {this.props.year} </p>
                     </Col>
                     <Col md={12}>
-                      <p className="title"> Harga : {this.props.price}</p>
+                      <p className="title">
+                        {" "}
+                        Harga :{" "}
+                        {this.props.price
+                          .toString()
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                      </p>
                     </Col>
                   </Row>
                 </Col>
@@ -186,18 +239,30 @@ export class JadwalLelang extends Component {
           {this.props.eventCode} {this.props.eventNumber}
         </p>
         <p>
-          <Icon type="calendar" /> {moment(this.props.date).format('D MMMM YYYY')}
+          <Icon type="calendar" />{" "}
+          {moment(this.props.date).format("D MMMM YYYY")}
         </p>
         <p>
-          <Icon type="home" /> Open House {moment(this.props.openhouse).format('D MMMM YYYY')}
+          <Icon type="home" /> Open House{" "}
+          {moment(this.props.openhouse).format("D MMMM YYYY")}
         </p>
         <p>
-          <Icon type="clock-circle-o" /> {this.props.startTime} - {this.props.endTime} {this.props.timeZone}
+          <Icon type="clock-circle-o" /> {this.props.startTime} -{" "}
+          {this.props.endTime} {this.props.timeZone}
         </p>
-        <Link to={{
-          pathname: '/list-lelang',
-          state: { data: this.props }
-        }} > Lihat Lot </Link>
+        <p>
+          <Icon type="home" /> Adm Fee{" "}
+          {this.props.admfee}
+        </p>
+        <Link
+          to={{
+            pathname: "/list-lelang",
+            state: { data: this.props }
+          }}
+        >
+          {" "}
+          Lihat Lot{" "}
+        </Link>
       </div>
     );
   }

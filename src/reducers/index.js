@@ -1,9 +1,18 @@
-import { combineReducers } from 'redux'
-import { success, loading, failed } from './processor'
+import { combineReducers } from "redux";
+import { success, loading, failed } from "./processor";
 
-import { schedulecar } from './getSchedule'
-import { receivedbrand } from './getBrand'
-import { sessionPersistance, resultCekToken } from './login'
+import { schedulecar } from "./getSchedule";
+import { receivedbrand } from "./getBrand";
+import { receivedadmfee } from "./getAdmFee";
+import { sessionPersistance, resultCekToken } from "./login";
+import {
+  receivedproductrecomend,
+  receivedproductbyevent,
+  receivedproductdetail,
+  receivedimagesproduct,
+  receivedimageeveryproduct,
+  receivedsearchproduct
+} from "./getProduct";
 
 const rootReducers = combineReducers({
   success,
@@ -11,8 +20,15 @@ const rootReducers = combineReducers({
   failed,
   schedulecar,
   receivedbrand,
+  receivedadmfee,
   sessionPersistance,
-  resultCekToken
-})
+  resultCekToken,
+  receivedproductrecomend,
+  receivedproductbyevent,
+  receivedproductdetail,
+  receivedsearchproduct,
+  receivedimagesproduct,
+  receivedimageeveryproduct
+});
 
-export default rootReducers
+export default rootReducers;
