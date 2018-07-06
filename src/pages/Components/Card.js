@@ -48,7 +48,7 @@ export class CardCarousel extends Component {
               {" "}
               {this.props.price
                 .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
             </span>
           </p>
         </center>
@@ -166,7 +166,7 @@ export class ListLelang extends Component {
                           RP.{" "}
                           {this.props.price
                             .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                         </p>
                       </div>
                     </Col>
@@ -211,7 +211,7 @@ export class SearchLelang extends Component {
                         Harga :{" "}
                         {this.props.price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
                       </p>
                     </Col>
                   </Row>
@@ -251,8 +251,10 @@ export class JadwalLelang extends Component {
           {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="home" /> Adm Fee{" "}
-          {this.props.admfee}
+          <Icon type="home" /> Biaya Admin: Rp{" "}
+          {this.props.admfee
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
         </p>
         <Link
           to={{

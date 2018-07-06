@@ -145,6 +145,8 @@ class Index extends Component {
         style={{
           paddingTop: 100,
           marginLeft: "20%",
+          paddingTop: "20%",
+          marginBottom: "20%",
           width: "60%",
           justifyContent: "center"
         }}
@@ -464,9 +466,9 @@ class Index extends Component {
                       )
                       .slice(0, 10)
                       .map((data, Index) => (
-                        <Col md={12} key={data.key}>
+                        <Col md={12} key={data.UnitKeyFinder}>
                           <SearchLelang
-                            number={data.number}
+                            number={"1"}
                             name={data.UnitName}
                             police={data.AuctionLotUnitSpecs[3].SpecValue}
                             price={data.AuctionLot.FinalBasePrice}
@@ -553,6 +555,10 @@ class Index extends Component {
                             endTime={data.eventDate.endTime}
                             timeZone={data.timezone}
                             openhouse={data.openHouseDate.date}
+                            houseName={data.auctionHouseName}
+                            houseAddress={data.auctionHouseAddress}
+                            eventId={data.auctionEventId}
+                            admfee={this.props.receivedadmfee.CAR}
                           />
                         </Col>
                       ))
@@ -584,7 +590,8 @@ const mapStateToProps = state => ({
   receivedsearchproduct: state.receivedsearchproduct,
   receivedimageeveryproduct: state.receivedimageeveryproduct,
   sessionPersistance: state.sessionPersistance,
-  resultCekToken: state.resultCekToken
+  resultCekToken: state.resultCekToken,
+  receivedadmfee: state.receivedadmfee
 });
 
 const mapDispatchToProps = dispatch => ({
