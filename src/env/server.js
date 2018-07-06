@@ -1,1 +1,1 @@
-export const server = "//legoas-am-dev.cloudapp.net:8080"
+export const server = "https://lelang.legoas.co.id:8443"
