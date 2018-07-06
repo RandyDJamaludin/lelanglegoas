@@ -97,7 +97,7 @@ class Index extends Component {
       )
     );
     await this.setState({ progress: 95 });
-    await this.props.fetchAdmFee(session.tokenId)
+    await this.props.fetchAdmFee(session.tokenId);
     await this.setState({ loading: false });
   }
 
@@ -120,7 +120,7 @@ class Index extends Component {
   }
 
   static defaultProps = {
-    center: { lat: 40.744679, lng: -73.948542 },
+    center: { lat: -6.197027, lng: 106.9793295 },
     zoom: 11
   };
   render() {
@@ -611,7 +611,7 @@ const mapDispatchToProps = dispatch => ({
   fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
   cekToken: (token, officeCode, roleCode) =>
     dispatch(cekToken(token, officeCode, roleCode)),
-  fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId)),
+  fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId))
 });
 
 export default connect(
