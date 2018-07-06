@@ -427,7 +427,7 @@ class Index extends Component {
               <Row>
                 <Col md={12}>
                   <FormItem>
-                    {this.state.tipe === "" ? (
+                    {this.state.merk === "" ? (
                       <Button
                         type="primary"
                         htmlType="submit"

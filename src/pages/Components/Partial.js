@@ -76,7 +76,7 @@ export class Navigation extends Component {
 
                 <li eventkey={6}>
                   <NavLink
-                    to="http://legoas-am-dev.cloudapp.net/Account/Login"
+                    to="https://lelang.legoas.co.id/Account/Login"
                     target="_blank"
                   >
                     Login

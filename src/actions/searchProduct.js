@@ -9,31 +9,24 @@ export const fetchMerek = (tokenId, merek) => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
     try {
       const response = await axios.post(`${server}/api/am/get/command`, {
-        tokenId: tokenId,
-        uriCode: "LOT_SEARCH",
-        param: {
-          draw: 1,
-          columns: [],
-          order: [
-            {
-              column: 0,
-              dir: "asc"
-            }
-          ],
-          start: 0,
-          search: {
-            value: null,
-            regex: false
-          },
-          extra: {
-            SearchType: "SEARCHBYUNITSPEC",
-            UnitTypeCode: "CAR",
-            SpecFiltersJson: `'{"MEREK":["${merek}"]}'`
+        "tokenId": tokenId,
+        "uriCode": "LOT_SEARCH",
+        "param": {
+          "draw": 1,
+          "columns": [],
+          "start": 0,
+          "length": -1,
+          "search": {},
+          "extra": {
+            "SearchType": "SEARCHBYUNITSPEC",
+            "UnitTypeCode": "CAR",
+            "SpecFiltersJson": `'{"MEREK":["${merek}"]}'`
           }
         }
       });
       const data = await response.data;
-      await dispatch(receivedSearchProduct(data.data));
+      console.log(data);
+      // await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
           true,
@@ -43,7 +36,8 @@ export const fetchMerek = (tokenId, merek) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      console.log("fetch search product", e);
+      console.log("fetch search merek", e);
+      console.log(`'{"MEREK":["${merek}"]}'`);
       await dispatch(
         setFailed(
           true,
@@ -95,7 +89,7 @@ export const fetchModel = (tokenId, merek, model) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      console.log("fetch search product", e);
+      console.log("fetch search model", e);
       await dispatch(
         setFailed(
           true,
@@ -137,7 +131,8 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
         }
       });
       const data = await response.data;
-      await dispatch(receivedSearchProduct(data.data));
+      console.log(data);
+      // await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
           true,
@@ -147,7 +142,10 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      console.log("fetch search product", e);
+      console.log("fetch search tipe", e);
+      console.log(
+        `'{"MEREK":["${merek}"],"MODEL":["${model}"],"TIPE":["${tipe}"]}'`
+      );
       await dispatch(
         setFailed(
           true,
