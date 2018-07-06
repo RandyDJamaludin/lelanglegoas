@@ -245,7 +245,7 @@ export class JadwalLelang extends Component {
           {this.props.eventCode} {this.props.eventNumber}
         </p>
         <p>
-          <Icon type="calendar" />{" "}
+          <Icon type="calendar" />Tanggal Lelang{" "}
           {moment(this.props.date).format("D MMMM YYYY")}
         </p>
         <p>
@@ -257,7 +257,7 @@ export class JadwalLelang extends Component {
           {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="home" /> Biaya Admin: Rp {this.props.admfee}
+          <Icon type="money" /> Biaya Admin: Rp {this.props.admfee}
         </p>
         <Link
           to={{

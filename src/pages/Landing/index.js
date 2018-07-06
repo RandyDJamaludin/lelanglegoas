@@ -457,12 +457,13 @@ class Index extends Component {
                   {" "}
                   Hasil Pencarian{" "}
                 </p>
-                {this.state.resultSearch == []
-                  ? this.props
-                      .receivedproductrecomendpaginate(
-                        this.state.resultSearch,
-                        this.state.pageSize,
-                        this.state.current
+                {console.log(this.props.receivedsearchproduct)}
+                {console.log(this.state.resultSearch)}
+                {this.props.receivedsearchproduct == null
+                  ? paginate(
+                      this.props.receivedproductrecomend,
+                      this.state.pageSize,
+                      this.state.current
                       )
                       .slice(0, 10)
                       .map((data, Index) => (

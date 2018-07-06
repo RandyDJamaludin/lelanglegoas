@@ -20,13 +20,13 @@ export const fetchMerek = (tokenId, merek) => {
           "extra": {
             "SearchType": "SEARCHBYUNITSPEC",
             "UnitTypeCode": "CAR",
-            "SpecFiltersJson": `'{"MEREK":["${merek}"]}'`
+            "SpecFiltersJson": '{"MEREK":["'+merek+'"]}'
           }
         }
       });
       const data = await response.data;
       console.log(data);
-      // await dispatch(receivedSearchProduct(data.data));
+      await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
           true,
@@ -37,7 +37,6 @@ export const fetchMerek = (tokenId, merek) => {
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
       console.log("fetch search merek", e);
-      console.log(`'{"MEREK":["${merek}"]}'`);
       await dispatch(
         setFailed(
           true,
@@ -74,7 +73,7 @@ export const fetchModel = (tokenId, merek, model) => {
           extra: {
             SearchType: "SEARCHBYUNITSPEC",
             UnitTypeCode: "CAR",
-            SpecFiltersJson: `'{"MEREK":["${merek}"],"MODEL":["${model}"]}'`
+            SpecFiltersJson: '{"MEREK":["'+merek+'"],"MODEL":["'+model+'"]}'
           }
         }
       });
@@ -126,13 +125,13 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
           extra: {
             SearchType: "SEARCHBYUNITSPEC",
             UnitTypeCode: "CAR",
-            SpecFiltersJson: `'{"MEREK":["${merek}"],"MODEL":["${model}"],"TIPE":["${tipe}"]}'`
+            SpecFiltersJson: '{"MEREK":["'+merek+'"],"MODEL":["'+model+'"],"TIPE":["'+tipe+'"]}'
           }
         }
       });
       const data = await response.data;
       console.log(data);
-      // await dispatch(receivedSearchProduct(data.data));
+      await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
           true,
