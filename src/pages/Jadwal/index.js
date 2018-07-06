@@ -87,7 +87,7 @@ export class Index extends Component {
                           houseName={data.auctionHouseName}
                           houseAddress={data.auctionHouseAddress}
                           eventId={data.auctionEventId}
-                          admfee={this.props.receivedadmfee}
+                          admfee={this.props.receivedadmfee.CAR}
                         />
                       </Col>
                     ))}
@@ -119,9 +119,14 @@ export class Index extends Component {
                           openhouse={data.openHouseDate.date}
                           houseName={data.auctionHouseName}
                           houseAddress={data.auctionHouseAddress}
+                          eventId={data.auctionEventId}
+                          admfee={this.props.receivedadmfee.MOT}
                         />
                       </Col>
                     ))}
+                      <Col xs={12} md={12}>
+                        <p>Jadwal Motor belum tersedia</p>
+                      </Col>
                   </Row>
                 )}
               </Col>
