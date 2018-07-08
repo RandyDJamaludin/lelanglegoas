@@ -246,8 +246,7 @@ export class Footer extends Component {
               </div>
               <div className="body-client">
                 <p className="street">
-                  Legoas adalah salah satu perusahaan yang menyelenggarakan
-                  penjualan asset dengan sistem lelang.
+                Market-place pertama di Indonesia untuk menjual dan membeli kendaraan melalui Lelang
                 </p>
                 <p> </p>
               </div>
