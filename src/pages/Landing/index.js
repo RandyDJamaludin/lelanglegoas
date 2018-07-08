@@ -60,7 +60,7 @@ class Index extends Component {
       session: {},
       loading: true,
       progress: 0,
-      resultSearch: [],
+      resultSearch: "Not Yet Search",
       pageSize: 2,
       current: 1
     };
@@ -124,10 +124,6 @@ class Index extends Component {
     zoom: 11
   };
   render() {
-    let total = Math.max(
-      this.props.receivedproductrecomend.length,
-      this.props.receivedsearchproduct.length
-    );
     const responsive = {
       0: {
         items: 1
@@ -451,43 +447,23 @@ class Index extends Component {
               </Row>
             </Col>
             <Col md={1} />
-            <Col md={6}>
-              <Row id="hasilPencarian">
-                <p style={{ fontWeight: "bold", marginLeft: 10 }}>
-                  {" "}
-                  Hasil Pencarian{" "}
-                </p>
-                {console.log(this.props.receivedsearchproduct)}
-                {console.log(this.state.resultSearch)}
-                {this.props.receivedsearchproduct == null
-                  ? paginate(
-                      this.props.receivedproductrecomend,
-                      this.state.pageSize,
-                      this.state.current
-                      )
-                      .slice(0, 10)
-                      .map((data, Index) => (
-                        <Col md={12} key={data.UnitKeyFinder}>
-                          <SearchLelang
-                            number={"1"}
-                            name={data.UnitName}
-                            police={data.AuctionLotUnitSpecs[3].SpecValue}
-                            price={data.AuctionLot.FinalBasePrice}
-                            year={data.AuctionLotUnitSpecs[4].SpecValue}
-                            type={data.AuctionLotUnitSpecs[2].SpecValue}
-                            image={data.ImageUri}
-                            data={data}
-                          />
-                        </Col>
-                      ))
-                  : paginate(
-                      this.state.resultSearch,
-                      this.state.pageSize,
-                      this.state.current
-                    ).map((data, index) => (
+            {this.state.resultSearch === "Not Yet Search" ? 
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Hasil Pencarian{" "}
+                  </p>
+                  {paginate(
+                    this.props.receivedproductrecomend,
+                    this.state.pageSize,
+                    this.state.current
+                  )
+                    .slice(0, 10)
+                    .map((data, Index) => (
                       <Col md={12} key={data.UnitKeyFinder}>
                         <SearchLelang
-                          number={data.number}
+                          number={"1"}
                           name={data.UnitName}
                           police={data.AuctionLotUnitSpecs[3].SpecValue}
                           price={data.AuctionLot.FinalBasePrice}
@@ -498,21 +474,80 @@ class Index extends Component {
                         />
                       </Col>
                     ))}
-              </Row>
-              <Row>
-                <Col xs={1} md={3} />
-                <Col xs={10} md={7}>
-                  <Pagination
-                    defaultCurrent={1}
-                    pageSize={this.state.pageSize}
-                    total={total}
-                    current={this.state.current}
-                    onChange={this.onChange}
-                  />
-                </Col>
-                <Col xs={1} md={3} />
-              </Row>
-            </Col>
+                </Row>
+                <Row>
+                  <Col xs={1} md={3} />
+                  <Col xs={10} md={7}>
+                    <Pagination
+                      defaultCurrent={1}
+                      pageSize={this.state.pageSize}
+                      total={this.props.receivedproductrecomend.length}
+                      current={this.state.current}
+                      onChange={this.onChange}
+                    />
+                  </Col>
+                  <Col xs={1} md={3} />
+                </Row>
+              </Col>
+             : this.state.resultSearch == null ?
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Produk yang mungkin disukai{" "}
+                  </p>
+                  {paginate(
+                    this.state.resultSearch,
+                    this.state.pageSize,
+                    this.state.current
+                  ).map((data, index) => (
+                    <Col md={12} key={data.UnitKeyFinder}>
+                      <SearchLelang
+                        number={data.number}
+                        name={data.UnitName}
+                        police={data.AuctionLotUnitSpecs[3].SpecValue}
+                        price={data.AuctionLot.FinalBasePrice}
+                        year={data.AuctionLotUnitSpecs[4].SpecValue}
+                        type={data.AuctionLotUnitSpecs[2].SpecValue}
+                        image={data.ImageUri}
+                        data={data}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+                <Row>
+                  <Col xs={1} md={3} />
+                  <Col xs={10} md={7}>
+                    <Pagination
+                      defaultCurrent={1}
+                      pageSize={this.state.pageSize}
+                      total={this.props.receivedsearchproduct.length}
+                      current={this.state.current}
+                      onChange={this.onChange}
+                    />
+                  </Col>
+                  <Col xs={1} md={3} />
+                </Row>
+              </Col>
+              :
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Hasil Pencarian{" "}
+                  </p>
+                </Row>
+                <Row>
+                  <Col xs={1} md={2} />
+                  <Col xs={10} md={8}>
+                <p style={{ fontWeight: "bold", marginTop: 10,  }}>
+                mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda
+                </p>
+                  </Col>
+                  <Col xs={1} md={2} />
+                </Row>
+              </Col>
+            }
           </Row>
         </Grid>
         <div className="landing-lelang">
