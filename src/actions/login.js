@@ -60,7 +60,7 @@ export const cekToken = (token, officeCode, RoleCode) => {
       )
       const data = await response.data
       console.log(data)
-      if (data == "Akun telah logged in"){
+      if (data === "Akun telah logged in"){
         await dispatch(resultToken( true ))
       }else{
         await dispatch(resultToken( false ))

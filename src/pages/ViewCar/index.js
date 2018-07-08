@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Row, Col, Image, ProgressBar } from "react-bootstrap";
-import { Divider, Tag, Spin } from "antd";
+import { Divider } from "antd";
 import { Redirect } from "react-router";
 import AliceCarousel from "react-alice-carousel";
 import MdAccessTime from "react-icons/lib/md/access-time";
@@ -53,8 +53,8 @@ class Index extends Component {
     console.log("physical", this.props.receivedimageeveryproduct);
     const {
       grade,
-      km,
-      lotId,
+      // km,
+      // lotId,
       lotNumber,
       merek,
       model,
@@ -62,7 +62,7 @@ class Index extends Component {
       name,
       police,
       price,
-      warna,
+      // warna,
       year,
       dataJadwal
     } = this.props.location.state.data;

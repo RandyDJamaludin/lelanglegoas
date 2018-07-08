@@ -8,23 +8,17 @@ import {
   Form,
   Pagination,
   Button,
-  Menu,
+  // Menu,
   Spin
 } from "antd";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
-import {
-  DataCardCarousel,
-  DataJadwalMotor,
-  DataJadwalMobil,
-  DataCardLocation,
-  DataContentTab
-} from "../AllData/DataCard";
+// import { DataContentTab } from "../AllData/DataCard";
 import {
   CardCarousel,
   JadwalLelang,
   SearchLelang,
-  ContentTab
+  // ContentTab
 } from "../Components/Card";
 import { Banner } from "../Components/Partial";
 import Map from "../Components/Map";
@@ -39,7 +33,7 @@ import {
 import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchMerek, fetchModel, fetchTipe } from "../../actions/searchProduct";
 import { login, cekToken } from "../../actions/login";
-const SubMenu = Menu.SubMenu;
+// const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -109,11 +103,11 @@ class Index extends Component {
 
   async handleSearch() {
     const { session, merk, model, tipe } = this.state;
-    if (merk != "" && model != "" && tipe != "") {
+    if (merk !== "" && model !== "" && tipe !== "") {
       await this.props.fetchTipe(session.tokenId, merk, model, tipe);
-    } else if (merk != "" && model != "" && tipe == "") {
+    } else if (merk !== "" && model !== "" && tipe === "") {
       await this.props.fetchModel(session.tokenId, merk, model);
-    } else if (merk != "" && model == "" && tipe == "") {
+    } else if (merk !== "" && model === "" && tipe === "") {
       await this.props.fetchMerek(session.tokenId, merk);
     }
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
@@ -139,10 +133,9 @@ class Index extends Component {
     return this.state.loading ? (
       <div
         style={{
-          paddingTop: 100,
           marginLeft: "20%",
-          paddingTop: "20%",
-          marginBottom: "20%",
+          paddingTop: "18%",
+          marginBottom: "15%",
           width: "60%",
           justifyContent: "center"
         }}
@@ -157,7 +150,7 @@ class Index extends Component {
           />
         </center>
       </div>
-    ) : this.props.receivedproductrecomend == [] ? (
+    ) : this.props.receivedproductrecomend === [] ? (
       <div style={{ paddingTop: 100 }}>
         <ProgressBar striped bsStyle="info" now={100} />
       </div>
@@ -345,7 +338,7 @@ class Index extends Component {
                     }
                     onChange={value => this.setState({ model: value })}
                   >
-                    {this.state.merk == "" ? (
+                    {this.state.merk === "" ? (
                       <Option value="select" disabled>
                         Please Select Model
                       </Option>
@@ -375,7 +368,7 @@ class Index extends Component {
                     }
                     onChange={value => this.setState({ tipe: value })}
                   >
-                    {this.state.model == "" ? (
+                    {this.state.model === "" ? (
                       <Option value="select" disabled>
                         Please Select Tipe
                       </Option>
@@ -574,7 +567,7 @@ class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
-                    {this.props.schedulecar == [] ? (
+                    {this.props.schedulecar === [] ? (
                       <div>
                         <Spin size="large" />
                       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Grid, Row, Col, Image, Navbar, NavDropdown } from "react-bootstrap";
-import { Carousel, Button, Input, Icon } from "antd";
+import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";

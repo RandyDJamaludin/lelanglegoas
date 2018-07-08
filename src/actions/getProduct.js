@@ -9,7 +9,6 @@ import {
   RECEIVED_IMAGES_PRODUCT,
   RECEIVED_IMAGE_EVERY_PRODUCT
 } from "../constants/processor";
-import { receivedimageeveryproduct } from "../reducers/getProduct";
 
 export const fetchProductRecomended = tokenId => {
   return async dispatch => {
@@ -216,9 +215,8 @@ const receivedImages = data => {
 };
 
 const receivedImage = data => {
-  // imageArray = []
-  const imgArr = imageArray.push(data);
-  console.log(imageArray.sort());
+  imageArray.push(data);
+  
   return {
     type: RECEIVED_IMAGE_EVERY_PRODUCT,
     payload: imageArray

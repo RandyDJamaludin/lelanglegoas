@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
+// import { Grid, Row, Col } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
-import { DataCardCarousel } from "../AllData/DataCard";
-import { CardCarousel } from "../Components/Card";
-import AliceCarousel from "react-alice-carousel";
+// import { DataCardCarousel } from "../AllData/DataCard";
+// import { CardCarousel } from "../Components/Card";
+// import AliceCarousel from "react-alice-carousel";
 import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchBrand } from "../../actions/getBrand";
@@ -25,17 +25,17 @@ class Index extends Component {
   };
 
   render() {
-    const responsive = {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      1024: {
-        items: 3
-      }
-    };
+    // const responsive = {
+    //   0: {
+    //     items: 1
+    //   },
+    //   600: {
+    //     items: 2
+    //   },
+    //   1024: {
+    //     items: 3
+    //   }
+    // };
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
         to={{
