@@ -36,7 +36,7 @@ const dataSilver = [{
   address: '1 Token Motor'
 }, {
   key: '3',
-  paket: 'Paket C (Hanya jika ada lelang untuk produk mobil dan motor pada waktu yang bersamaan)',
+  paket: 'Paket C',
   price: 'Rp. 7.000.000',
   address: "1 Token Mobil 1 Token Motor"
 }];
