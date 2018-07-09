@@ -3,7 +3,7 @@ import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
 import {
   Icon,
   Divider,
-  Input,
+  // Input,
   Select,
   Form,
   Pagination,
@@ -31,7 +31,7 @@ import {
   fetchProductDetail
 } from "../../actions/getProduct";
 import { fetchAdmFee } from "../../actions/getAdmFee";
-import { fetchMerek, fetchModel, fetchTipe } from "../../actions/searchProduct";
+import { fetchMerek, fetchModel, fetchTipe, fetchMerekWithColor, fetchModelWithColor, fetchTipeWithColor } from "../../actions/searchProduct";
 import { login, cekToken } from "../../actions/login";
 // const SubMenu = Menu.SubMenu;
 
@@ -51,6 +51,7 @@ class Index extends Component {
       merk: "",
       model: "",
       tipe: "",
+      warna: "",
       session: {},
       loading: true,
       progress: 0,
@@ -102,12 +103,18 @@ class Index extends Component {
   }
 
   async handleSearch() {
-    const { session, merk, model, tipe } = this.state;
-    if (merk !== "" && model !== "" && tipe !== "") {
+    const { session, merk, model, tipe, warna } = this.state;
+    if (merk !== "" && model !== "" && tipe !== "" && warna !== "") {
+      await this.props.fetchTipeWithColor(session.tokenId, merk, model, tipe, warna);
+    } else if (merk !== "" && model !== "" && tipe === "" && warna !== "") {
+      await this.props.fetchModelWithColor(session.tokenId, merk, model, warna);
+    } else if (merk !== "" && model === "" && tipe === "" && warna !== "") {
+      await this.props.fetchMerekWithColor(session.tokenId, merk, warna);
+    } else if (merk !== "" && model !== "" && tipe !== "" && warna === "") {
       await this.props.fetchTipe(session.tokenId, merk, model, tipe);
-    } else if (merk !== "" && model !== "" && tipe === "") {
+    } else if (merk !== "" && model !== "" && tipe === "" && warna === "") {
       await this.props.fetchModel(session.tokenId, merk, model);
-    } else if (merk !== "" && model === "" && tipe === "") {
+    } else if (merk !== "" && model === "" && tipe === "" && warna === "") {
       await this.props.fetchMerek(session.tokenId, merk);
     }
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
@@ -391,11 +398,11 @@ class Index extends Component {
                 </Col>
               </Row>
               <Row style={{ paddingTop: 10 }}>
-                <Col md={6}>
+                {/* <Col md={6}>
                   <p> Tahun </p>
                   <Input width="100%" />
-                </Col>
-                <Col md={6}>
+                </Col> */}
+                <Col md={12}>
                   <p> warna </p>
                   <Select
                     showSearch
@@ -406,8 +413,11 @@ class Index extends Component {
                         .toLowerCase()
                         .indexOf(input.toLowerCase()) >= 0
                     }
+                    onChange={value => this.setState({ warna: value })}
                   >
                     <Option value="merah">MERAH</Option>
+                    <Option value="putih">PUTIH</Option>
+                    <Option value="abu-abu">ABU - ABU</Option>
                     <Option value="hitam">HITAM</Option>
                     <Option value="biru">BIRU</Option>
                   </Select>
@@ -630,6 +640,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchProductByEvent(tokenId, eventId)),
   fetchProductDetail: (tokenId, lotId) =>
     dispatch(fetchProductDetail(tokenId, lotId)),
+  fetchMerekWithColor: (tokenId, merek, warna) => dispatch(fetchMerekWithColor(tokenId, merek, warna)),
+  fetchModelWithColor: (tokenId, merek, model, warna) =>
+    dispatch(fetchModelWithColor(tokenId, merek, model, warna)),
+  fetchTipeWithColor: (tokenId, merek, model, tipe, warna) =>
+    dispatch(fetchTipeWithColor(tokenId, merek, model, tipe, warna)),
   fetchMerek: (tokenId, merek) => dispatch(fetchMerek(tokenId, merek)),
   fetchModel: (tokenId, merek, model) =>
     dispatch(fetchModel(tokenId, merek, model)),

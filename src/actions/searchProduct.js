@@ -149,6 +149,151 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
   };
 };
 
+export const fetchMerekWithColor = (tokenId, merek, warna) => {
+  return async dispatch => {
+    await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
+    try {
+      const response = await axios.post(`${server}/api/am/get/command`, {
+        "tokenId": tokenId,
+        "uriCode": "LOT_SEARCH",
+        "param": {
+          "draw": 1,
+          "columns": [],
+          "start": 0,
+          "length": -1,
+          "search": {},
+          "extra": {
+            "SearchType": "SEARCHBYUNITSPEC",
+            "UnitTypeCode": "CAR",
+            "SpecFiltersJson": '{"MEREK":["'+merek+'"],"WARNA":["'+warna+'"]}'
+          }
+        }
+      });
+      const data = await response.data;
+      await dispatch(receivedSearchProduct(data.data));
+      await dispatch(
+        setSuccess(
+          true,
+          "SUCCESS_GET_SEARCH_PRODUCT",
+          "berhasil mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    } catch (e) {
+      await dispatch(
+        setFailed(
+          true,
+          "FAILED_GET_SEARCH_PRODUCT",
+          "gagal mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    }
+  };
+};
+
+export const fetchModelWithColor = (tokenId, merek, model, warna) => {
+  return async dispatch => {
+    await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
+    try {
+      const response = await axios.post(`${server}/api/am/get/command`, {
+        tokenId: tokenId,
+        uriCode: "LOT_SEARCH",
+        param: {
+          draw: 1,
+          columns: [],
+          order: [
+            {
+              column: 0,
+              dir: "asc"
+            }
+          ],
+          start: 0,
+          search: {
+            value: null,
+            regex: false
+          },
+          extra: {
+            SearchType: "SEARCHBYUNITSPEC",
+            UnitTypeCode: "CAR",
+            SpecFiltersJson: '{"MEREK":["'+merek+'"],"MODEL":["'+model+'"],"WARNA":["'+warna+'"]}'
+          }
+        }
+      });
+      const data = await response.data;
+      await dispatch(receivedSearchProduct(data.data));
+      await dispatch(
+        setSuccess(
+          true,
+          "SUCCESS_GET_SEARCH_PRODUCT",
+          "berhasil mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    } catch (e) {
+      await dispatch(
+        setFailed(
+          true,
+          "FAILED_GET_SEARCH_PRODUCT",
+          "gagal mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    }
+  };
+};
+
+export const fetchTipeWithColor = (tokenId, merek, model, tipe, warna) => {
+  return async dispatch => {
+    await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
+    try {
+      const response = await axios.post(`${server}/api/am/get/command`, {
+        tokenId: tokenId,
+        uriCode: "LOT_SEARCH",
+        param: {
+          draw: 1,
+          columns: [],
+          order: [
+            {
+              column: 0,
+              dir: "asc"
+            }
+          ],
+          start: 0,
+          search: {
+            value: null,
+            regex: false
+          },
+          extra: {
+            SearchType: "SEARCHBYUNITSPEC",
+            UnitTypeCode: "CAR",
+            SpecFiltersJson: '{"MEREK":["'+merek+'"],"MODEL":["'+model+'"],"TIPE":["'+tipe+'"],"WARNA":["'+warna+'"]}'
+          }
+        }
+      });
+      const data = await response.data;
+      await dispatch(receivedSearchProduct(data.data));
+      await dispatch(
+        setSuccess(
+          true,
+          "SUCCESS_GET_SEARCH_PRODUCT",
+          "berhasil mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    } catch (e) {
+      await dispatch(
+        setFailed(
+          true,
+          "FAILED_GET_SEARCH_PRODUCT",
+          "gagal mendapatkan search product"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
+    }
+  };
+};
+
 const receivedSearchProduct = data => {
   return {
     type: RECEIVED_SEARCH_PRODUCT,
