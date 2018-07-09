@@ -32,7 +32,6 @@ export class CardCarousel extends Component {
     return (
       <div className="background-cardCarousel">
         <center>
-          {/* {console.log(this.props.nameModel)} */}
           <Image className="components-card" src={this.props.image} />
           <h3>{this.props.nameBrand} </h3>
           <p>

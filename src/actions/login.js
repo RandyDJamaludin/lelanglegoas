@@ -12,7 +12,6 @@ export const login = (username, password) => {
         {username, password}
       )
       const data = await response.data
-      // console.log(data)
       await dispatch(login2(data.tokenId, data.listOffice[0].officeCode, data.listRole[0].RoleCode ))
       await dispatch(setSuccess(true, 'SUCCESS_PROCESS_LOGIN', 'Login sukses'))
       await dispatch(setLoading(false, 'LOADING_PROCESS_LOGIN'))
@@ -35,7 +34,6 @@ export const login2 = (token, officeCode, RoleCode) => {
       }
       )
       const data = await response.data
-      console.log(data)
       await dispatch(saveSession( {...data, officeCode, RoleCode} ))
 			await dispatch(saveSessionPersistance( data ))
       await dispatch(setSuccess(true, 'SUCCESS_PROCESS_LOGIN2', 'Login sukses'))
@@ -59,7 +57,6 @@ export const cekToken = (token, officeCode, RoleCode) => {
       }
       )
       const data = await response.data
-      console.log(data)
       if (data === "Akun telah logged in"){
         await dispatch(resultToken( true ))
       }else{
@@ -68,7 +65,6 @@ export const cekToken = (token, officeCode, RoleCode) => {
       await dispatch(setSuccess(true, 'SUCCESS_PROCESS_CEKTOKEN', 'Login sukses'))
       await dispatch(setLoading(false, 'LOADING_PROCESS_CEKTOKEN'))
     }catch(e){
-      console.log(e)
       await dispatch(setFailed(true, 'FAILED_PROCESS_CEKTOKEN', 'Login Gagal'))
       await dispatch(setLoading(false, 'LOADING_PROCESS_CEKTOKEN'))
     }

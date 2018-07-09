@@ -25,7 +25,6 @@ export const fetchMerek = (tokenId, merek) => {
         }
       });
       const data = await response.data;
-      // console.log(data);
       await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
@@ -36,7 +35,6 @@ export const fetchMerek = (tokenId, merek) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      // console.log("fetch search merek", e);
       await dispatch(
         setFailed(
           true,
@@ -88,7 +86,6 @@ export const fetchModel = (tokenId, merek, model) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      // console.log("fetch search model", e);
       await dispatch(
         setFailed(
           true,
@@ -130,7 +127,6 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
         }
       });
       const data = await response.data;
-      // console.log(data);
       await dispatch(receivedSearchProduct(data.data));
       await dispatch(
         setSuccess(
@@ -141,7 +137,6 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
       );
       await dispatch(setLoading(false, "LOADING_GET_SEARCH_PRODUCT"));
     } catch (e) {
-      // console.log("fetch search tipe", e);
       await dispatch(
         setFailed(
           true,
