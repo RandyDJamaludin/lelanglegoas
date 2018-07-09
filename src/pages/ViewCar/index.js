@@ -50,7 +50,6 @@ class Index extends Component {
     </div>
   );
   render() {
-    console.log("physical", this.props.receivedimageeveryproduct);
     const {
       grade,
       // km,

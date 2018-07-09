@@ -42,7 +42,6 @@ export class Index extends Component {
       this.props.schedulecar.length,
       this.props.schedulecar.length
     );
-    // console.log(paginate(this.props.schedulecar, this.state.pageSize, this.state.current));
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
         to={{
@@ -62,7 +61,7 @@ export class Index extends Component {
             </div>
             <Row>
               <Col md={6}>
-                {this.props.schedulecar === [] ? (
+                {this.props.schedulecar == null ? (
                   <center>
                     <p>Schedule Mobil Not Available</p>
                   </center>
@@ -124,9 +123,6 @@ export class Index extends Component {
                         />
                       </Col>
                     ))}
-                      <Col xs={12} md={12}>
-                        <p>Jadwal Motor belum tersedia</p>
-                      </Col>
                   </Row>
                 )}
               </Col>

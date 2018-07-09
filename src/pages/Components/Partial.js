@@ -6,14 +6,12 @@ import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
-import TiHeart from "react-icons/lib/ti/heart-full-outline";
 
 export class Navigation extends Component {
   state = {
     current: "mail"
   };
   handleClick = e => {
-    console.log("click ", e);
     this.setState({
       current: e.key
     });
@@ -272,17 +270,17 @@ export class Footer extends Component {
             <Col xs={6} md={3}>
               <p class="title"> Bantuan </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/pengertian-lelang">
                   Pengertian Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/tatacara-lelang">
                   Tata Cara Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/peraturan-lelang">
                   Peraturan Lelang
                 </NavLink>
               </p>
@@ -318,20 +316,6 @@ export class Footer extends Component {
                   <TiTwitter />
                 </NavLink>
               </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} md={12}>
-              <div className="wrap-footer">
-                <p className="footer">
-                  {" "}
-                  Made with{" "}
-                  <span>
-                    <TiHeart />
-                  </span>{" "}
-                  by <span> Telecreative </span>{" "}
-                </p>
-              </div>
             </Col>
           </Row>
         </Grid>

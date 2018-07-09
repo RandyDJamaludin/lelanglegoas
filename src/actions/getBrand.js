@@ -18,13 +18,6 @@ export const fetchBrand = (tokenId) => {
       }
       )
       const data = await response.data
-      console.log('KEVIN', data.list.MER.map(merk => ({
-          ...merk,
-          models: data.list.MOD.filter(model => model.parentId === merk.id).map(model => ({
-              ...model,
-              tipes: data.list.TIP.filter(tipe => tipe.parentId === model.id)
-          }))
-      })))
       await dispatch(receivedBrand(data.list.MER.map(merk => ({
         ...merk,
         models: data.list.MOD.filter(model => model.parentId === merk.id).map(model => ({
@@ -35,7 +28,6 @@ export const fetchBrand = (tokenId) => {
       await dispatch(setSuccess(true, 'SUCCESS_GET_BRAND', 'berhasil mendapatkan jadwal car'))
       await dispatch(setLoading(false, 'LOADING_GET_BRAND'))
     }catch(e){
-      console.log("fetch brand",e)
       await dispatch(setFailed(true, 'FAILED_GET_BRAND', 'gagal mendapatkan jadwal car'))
       await dispatch(setLoading(false, 'LOADING_GET_BRAND'))
     }

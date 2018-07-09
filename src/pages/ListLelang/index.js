@@ -61,8 +61,7 @@ class Index extends Component {
       <div className="wrap-ListLelang">
         {this.props == null
           ? null
-          : console.log(this.props.location.state.data)}
-        {console.log(this.props.receivedproductbyevent)}
+          : null}
         <Grid>
           <Row>
             <Col md={12}>

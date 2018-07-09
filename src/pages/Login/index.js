@@ -24,7 +24,6 @@ class Login extends Component {
 
   componentWillUpdate(nextProps) {
     const { failed } = nextProps
-    // console.log(failed)
     if (
       failed.condition === true &&
       failed.process_on === 'FAILED_PROCESS_LOGIN'
@@ -44,7 +43,6 @@ class Login extends Component {
         
         this.props.login(values.username, values.password)
       }else{
-        console.log('error:', err)
         alert('login gagal')
       }
     });
