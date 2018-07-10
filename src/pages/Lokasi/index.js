@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import { Grid, Row, Col } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 // import { DataCardCarousel } from "../AllData/DataCard";
 // import { CardCarousel } from "../Components/Card";
 // import AliceCarousel from "react-alice-carousel";
