@@ -544,7 +544,13 @@ class Index extends Component {
                   <Col xs={1} md={2} />
                   <Col xs={10} md={8}>
                 <p style={{ fontWeight: "bold", marginTop: 10,  }}>
-                mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda
+                mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda{" "}
+                <NavLink
+                  to="https://lelang.legoas.co.id/Auction/Bidder/Register"
+                  target="_blank"
+                >
+                  disini
+                </NavLink>
                 </p>
                   </Col>
                   <Col xs={1} md={2} />
