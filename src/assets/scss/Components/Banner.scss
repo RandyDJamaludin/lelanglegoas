@@ -46,9 +46,11 @@
     background-position: 0px 40px;
     @media only screen and (max-width: 425px) {
       background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
-      margin-top:70px;
-      height: 420px !important;
+      background-repeat: no-repeat;
+      background-position: center center;
       background-size: cover;
+      padding: 180px;
+      margin-top:70px;
     }
   }
   .containBanner2 {
@@ -59,9 +61,11 @@
     background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
       background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
-      margin-top:70px;
-      height: 420px !important;
+      background-repeat: no-repeat;
+      background-position: center center;
       background-size: cover;
+      padding: 180px;
+      margin-top:70px;
     }
   }
 
@@ -73,9 +77,11 @@
     background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
       background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
-      margin-top:70px;
-      height: 420px !important;
+      background-repeat: no-repeat;
+      background-position: center center;
       background-size: cover;
+      padding: 180px;
+      margin-top:70px;
     }
   }
 
@@ -87,9 +93,11 @@
     background-position: 0px 28px;
     @media only screen and (max-width: 425px) {
       background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
-      margin-top:70px;
-      height: 420px !important;
+      background-repeat: no-repeat;
+      background-position: center center;
       background-size: cover;
+      padding: 180px;
+      margin-top:70px;
     }
   }
 
