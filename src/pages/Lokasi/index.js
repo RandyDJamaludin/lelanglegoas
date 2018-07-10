@@ -4,7 +4,7 @@ import React, { Component } from "react";
 // import { DataCardCarousel } from "../AllData/DataCard";
 // import { CardCarousel } from "../Components/Card";
 // import AliceCarousel from "react-alice-carousel";
-import Map from "../Components/Map";
+// import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchBrand } from "../../actions/getBrand";
 
@@ -38,7 +38,7 @@ class Index extends Component {
     // };
     return (
       <div className="page-lokasi" style={{ paddingBottom: "3%" }}>
-        <Map />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2205989328704!2d106.6434728149142!3d-6.234625762790542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbef3f4d0beb%3A0x78078e91a74fd969!2sPT+Artha+Guna+Sejati!5e0!3m2!1sen!2sid!4v1521549590794" title="map" style={{marginLeft:"10%", width:"80%", height:"100%"}} frameborder="0" allowfullscreen></iframe>
 
         {/* <Grid className="wrap-cardCarousel">
           <Row>

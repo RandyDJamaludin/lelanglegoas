@@ -26,19 +26,14 @@ const TabPane = Tabs.TabPane;
 
 const dataSilver = [{
   key: '1',
-  paket: 'Paket A',
+  paket: 'SILVER A',
   price: 'Rp. 1.000.000',
   address: '1 Token Motor'
 }, {
   key: '2',
-  paket: 'Paket B',
+  paket: 'silver B',
   price: 'Rp. 5.000.000',
-  address: '1 Token Motor'
-}, {
-  key: '3',
-  paket: 'Paket C',
-  price: 'Rp. 7.000.000',
-  address: "1 Token Mobil 1 Token Motor"
+  address: '1 Token Mobil'
 }];
 
 
