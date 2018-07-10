@@ -48,15 +48,17 @@ const headerTable = [{
   title: 'Paket',
   dataIndex: 'paket',
   key: 'paket',
-  width: 200,
+  width: 115,
 }, {
   title: 'Deposito',
   dataIndex: 'price',
   key: 'price',
+  width: 150,
 }, {
   title: 'Token yang diperoleh',
   dataIndex: 'address',
   key: 'address',
+  width: 150,
 }];
 export class Index extends Component {
   handleModeChange = e => {

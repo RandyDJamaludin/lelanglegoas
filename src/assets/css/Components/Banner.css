@@ -42,9 +42,11 @@
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner1 {
       background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px;
+      margin-top: 70px; } }
 
 .banner_background .containBanner2 {
   background: url("../image/banner/Ban2.jpg") no-repeat;
@@ -55,9 +57,11 @@
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner2 {
       background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px;
+      margin-top: 70px; } }
 
 .banner_background .containBanner3 {
   background: url("../image/banner/Ban3.jpg") no-repeat;
@@ -68,9 +72,11 @@
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner3 {
       background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px;
+      margin-top: 70px; } }
 
 .banner_background .containBanner4 {
   background: url("../image/banner/Ban4.jpg") no-repeat;
@@ -81,9 +87,11 @@
   @media only screen and (max-width: 425px) {
     .banner_background .containBanner4 {
       background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px;
+      margin-top: 70px; } }
 
 .banner_background .containBanner5 {
   background: url("../image/slideshow/5.jpg") center no-repeat;
