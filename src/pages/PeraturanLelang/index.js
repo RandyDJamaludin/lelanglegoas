@@ -14,20 +14,55 @@ export class Index extends Component {
           <Row>
             <Col md={12}>
               <Collapse defaultActiveKey={["1"]} accordion>
-                <Panel header="1. Open house" key="1">
+                <Panel header="1. Definisi" key="1">
                   <div className="collapse-body">
                     <p>
                       {" "}
-                      1.1) Selama acara Open House peminat diberikan kesempatan
-                      untuk memeriksa fisik & dokumen unit yang akan di Lelang,
-                      pada hari Lelang tidak diperkenankan lagi untuk melihat
-                      objek lelang.
+                      1.1) Mobile aplikasi LEGOAS adalah aplikasi milik PT. Digital Sarana Legoas (“LEGOAS”) yang dapat didownload melalui situs web resmi LEGOAS maupun media distribusi aplikasi/software resmi yang ditunjuk dan digunakan LEGOAS yang dimiliki oleh mobile operating system yang terdapat di handphone pelanggan untuk melakukan proses pendaftaran, pembelian token, hingga pelaksanaan lelang.
                     </p>
                     <p>
                       {" "}
-                      1.2) Pengunjung Open House dilarang mengambil atau merusak
-                      atau memindahkan atribut, nomor, tulisan atau tanda-tanda
-                      yang menempel pada objek lelang.{" "}
+                      1.2) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.3)  Peserta Lelang adalah personal yang telah mendaftar melalui aplikasi dan website LEGOAS sesuai dengan persyaratan dan kewajiban yang telah ditentukan. Sesuai Syarat dan Ketentuan,  Peserta Lelang akan mendapatkan 1 (satu) akun yang terdaftar dalam situs dan aplikasi mobile LEGOAS (“Akun Peserta Lelang”). Untuk mengikuti lelang maka peserta lelang harus melakukan kewajibannya dalam memilih paket keanggotaan yang diingini. Dengan pendaftaran tersebut dan melewati tahap pemilihan paket keanggotaan maka Peserta Lelang dapat mengikuti proses lelang melalui aplikasi dan website Legoas. 
+                    </p>
+                    <p>
+                      {" "}
+                      1.4) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.5) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.6) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.7) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.8) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.9) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.10) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.11) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
+                    </p>
+                    <p>
+                      {" "}
+                      1.12) Situs web LEGOAS adalah  layanan yang dapat diakses secara langsung oleh Peserta melalui telepon selular (handphone atau tablet) dengan alamat www.legoas.co.id.{" "}
                     </p>
                   </div>
                 </Panel>
