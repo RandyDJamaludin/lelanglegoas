@@ -36,14 +36,7 @@ class Index extends Component {
     //     items: 3
     //   }
     // };
-    return this.props.sessionPersistance.tokenId == null ? (
-      <Redirect
-        to={{
-          pathname: "/",
-          state: { from: this.props.location }
-        }}
-      />
-    ) : (
+    return (
       <div className="page-lokasi" style={{ paddingBottom: "3%" }}>
         <Map />
 
