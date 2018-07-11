@@ -104,54 +104,10 @@ export class Banner extends Component {
       <div>
         <div className="banner_background">
           <Carousel autoplay>
-            <div className="containBanner1">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner2">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner3">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner4">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
+            <div className="containBanner1"></div>
+            <div className="containBanner2"></div>
+            <div className="containBanner3"></div>
+            <div className="containBanner4"></div>
           </Carousel>
         </div>
       </div>
