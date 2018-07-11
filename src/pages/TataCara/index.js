@@ -31,7 +31,7 @@ const dataSilver = [{
   address: '1 Token Motor'
 }, {
   key: '2',
-  paket: 'silver B',
+  paket: 'SILVER B',
   price: 'Rp. 5.000.000',
   address: '1 Token Mobil'
 }];

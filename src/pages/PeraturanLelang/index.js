@@ -330,8 +330,7 @@ export class Index extends Component {
                 </Panel>
               </Collapse>
               <p class="Text">
-                {" "}
-                Dalam hal LEGOAS tidak dapat melakukan proses dan pelaksanaan lelang baik sebagian maupun seluruhnya karena kejadian=kejadian atau hal-hal diluar kekuasaan maupun kemampuan LEGOAS, termasuk namun tidak terbatas pada bencana alam, perang, huru-hara, peralatan/system/transmisi dalam keadaan tidak berfungsi, terjadinya gangguan listrik, gangguan telekomunikasi, adanya kebijakan pemerintah yang melarang LEGOAS memberikan layanan, serta kejadian-kejadian atau hal-hal lain di luar kekuasaan atau kemampuan LEGOAS, maka Peserta Lelang dengan ini membebaskan LEGOAS dari segala macam tuntutan apa pun dan dalam bentuk apapun terkait dengan hal tersebut. .{" "}
+              Ketentuan LEGOAS ini telah disesuaikan dengan ketentuan peraturan perundang-undangan ketentuan Peraturan Menteri Keuangan nomor 90/PMK.06/2016 tentang Pedoman Pelaksanaan Lelang dengan Penawaran Secara Tertulis Tanpa Kehadiran Peserta Lelang Melalui Sistem jo PMK Nomor 27/PMK.06/2016 tentang Petunjuk Pelaksanaan Lelang dan berlaku untuk semua penawaran onsite/online pada penjualan melalui lelang yang dilakukan  oleh LEGOAS melalui aplikasi mobile dan situs web LEGOAS.
               </p>
       
             </Col>
