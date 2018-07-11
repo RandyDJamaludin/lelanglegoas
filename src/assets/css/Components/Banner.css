@@ -38,7 +38,15 @@
   background-size: 100%;
   padding: 425px;
   background-position: 0px 40px; }
-  @media (min-width: 320px) and (max-width: 424px) {
+  @media only screen and (max-width: 360px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 155px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 361px) and (max-width: 424px) {
     .banner_background .containBanner1 {
       background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
       background-repeat: no-repeat;
