@@ -18,7 +18,10 @@ export class Card extends Component {
             />
             <h3> {this.props.name} </h3>
             <p>
-              Harga dasar <span className="orange"> {this.props.price}</span>
+              Harga dasar <span className="orange"> Rp. {" "}
+              {this.props.price
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
             </p>
           </center>
         </div>
@@ -45,7 +48,7 @@ export class CardCarousel extends Component {
           <p>
             Harga dasar{" "}
             <span className="orange">
-              {" "}
+              Rp. {" "}
               {this.props.price
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
@@ -77,7 +80,10 @@ export class ContentTab extends Component {
             </p>
             <p className="skin"> {this.props.warna} </p>
             <p>
-              Harga dasar <span className="orange"> {this.props.price}</span>
+              Harga dasar <span className="orange"> Rp. {" "}
+              {this.props.price
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
             </p>
           </center>
         </div>
@@ -257,7 +263,8 @@ export class JadwalLelang extends Component {
           {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="money" /> Biaya Admin: Rp {this.props.admfee}
+          <Icon type="money" /> Biaya Admin: Rp. {this.props.admfee.toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
         </p>
         <Link
           to={{

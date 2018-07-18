@@ -170,7 +170,7 @@ class Index extends Component {
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
-            <p className="titleHeader"> REKOMENDASI MOBIL / MOTOR </p>
+            <p className="titleHeader"> REKOMENDASI BARANG </p>
             <AliceCarousel
               duration={400}
               autoPlay={true}
@@ -495,6 +495,15 @@ class Index extends Component {
                           type={data.AuctionLotUnitSpecs[2].SpecValue}
                           image={data.ImageUri}
                           data={data}
+                          merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                          model={data.AuctionLotUnitSpecs[1].SpecValue}
+                          tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                          warna={data.AuctionLotUnitSpecs[11].SpecValue}
+                          km={data.AuctionLotUnitSpecs[12].SpecValue}
+                          grade={data.UnitGrade}
+                          lotNumber={data.AuctionLot.AuctionLotNumber}
+                          lotId={data.AuctionLot.AuctionLotId}
+                          dataJadwal={this.props.location.state.data}
                         />
                       </Col>
                     ))}

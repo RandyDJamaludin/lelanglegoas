@@ -135,36 +135,36 @@ class Index extends Component {
                     <p>
                       {" "}
                       Kapasitas Mesin (CC){" "}
-                      <span style={{ fontWeight: "bold" }}> 8066CC</span>
+                      <span style={{ fontWeight: "bold" }}> ---</span>
                     </p>
                   </Col>
 
                   <Col md={6}>
                     <p>
                       {" "}
-                      STNK <span style={{ fontWeight: "bold" }}> ADA </span>
+                      STNK <span style={{ fontWeight: "bold" }}> --- </span>
                     </p>
 
                     <p>
                       {" "}
                       Masa Berlaku STNK{" "}
-                      <span style={{ fontWeight: "bold" }}> 12/10/2025 </span>
+                      <span style={{ fontWeight: "bold" }}> --- </span>
                     </p>
 
                     <p>
                       {" "}
-                      BPKB <span style={{ fontWeight: "bold" }}> ADA </span>
+                      BPKB <span style={{ fontWeight: "bold" }}> --- </span>
                     </p>
 
                     <p>
                       {" "}
-                      Faktur <span style={{ fontWeight: "bold" }}> ADA </span>
+                      Faktur <span style={{ fontWeight: "bold" }}> --- </span>
                     </p>
 
                     <p>
                       {" "}
                       Kapasitas Mesin (CC){" "}
-                      <span style={{ fontWeight: "bold" }}> 3127CC</span>
+                      <span style={{ fontWeight: "bold" }}> ---</span>
                     </p>
                   </Col>
                 </Row>
@@ -269,7 +269,7 @@ class Index extends Component {
                         Rp.{" "}
                         {price
                           .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
                       </p>
                     </div>
                   </Col>
