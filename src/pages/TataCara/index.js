@@ -26,19 +26,14 @@ const TabPane = Tabs.TabPane;
 
 const dataSilver = [{
   key: '1',
-  paket: 'Paket A',
+  paket: 'SILVER A',
   price: 'Rp. 1.000.000',
   address: '1 Token Motor'
 }, {
   key: '2',
-  paket: 'Paket B',
+  paket: 'SILVER B',
   price: 'Rp. 5.000.000',
-  address: '1 Token Motor'
-}, {
-  key: '3',
-  paket: 'Paket C (Hanya jika ada lelang untuk produk mobil dan motor pada waktu yang bersamaan)',
-  price: 'Rp. 7.000.000',
-  address: "1 Token Mobil 1 Token Motor"
+  address: '1 Token Mobil'
 }];
 
 
@@ -53,15 +48,17 @@ const headerTable = [{
   title: 'Paket',
   dataIndex: 'paket',
   key: 'paket',
-  width: 200,
+  width: 115,
 }, {
   title: 'Deposito',
   dataIndex: 'price',
   key: 'price',
+  width: 150,
 }, {
   title: 'Token yang diperoleh',
   dataIndex: 'address',
   key: 'address',
+  width: 150,
 }];
 export class Index extends Component {
   handleModeChange = e => {

@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import { Grid, Row, Col, Image, Navbar, NavDropdown } from "react-bootstrap";
-import { Carousel, Button, Input, Icon } from "antd";
+import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
-import TiHeart from "react-icons/lib/ti/heart-full-outline";
 
 export class Navigation extends Component {
   state = {
     current: "mail"
   };
   handleClick = e => {
-    console.log("click ", e);
     this.setState({
       current: e.key
     });
@@ -106,54 +104,10 @@ export class Banner extends Component {
       <div>
         <div className="banner_background">
           <Carousel autoplay>
-            <div className="containBanner1">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner2">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner3">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
-            <div className="containBanner4">
-              {/* <Grid>
-                <h4> MOBIL MEWAH DAN MURAH </h4>
-                <h1> AYO BID SEKARANG </h1>
-                <p>
-                  {" "}
-                  Dapatkan Mobil impian anda dengan harga yang <br />
-                  sesuai dengan keinginan anda{" "}
-                </p>
-                <Button type="primary">BID SEKARANG</Button>
-              </Grid> */}
-            </div>
+            <div className="containBanner1"></div>
+            <div className="containBanner2"></div>
+            <div className="containBanner3"></div>
+            <div className="containBanner4"></div>
           </Carousel>
         </div>
       </div>
@@ -246,8 +200,7 @@ export class Footer extends Component {
               </div>
               <div className="body-client">
                 <p className="street">
-                  Legoas adalah salah satu perusahaan yang menyelenggarakan
-                  penjualan asset dengan sistem lelang.
+                Market-place pertama di Indonesia untuk menjual dan membeli kendaraan melalui Lelang
                 </p>
                 <p> </p>
               </div>
@@ -273,17 +226,17 @@ export class Footer extends Component {
             <Col xs={6} md={3}>
               <p class="title"> Bantuan </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/pengertian-lelang">
                   Pengertian Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/tatacara-lelang">
                   Tata Cara Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink class="footer" to="/">
+                <NavLink class="footer" to="/peraturan-lelang">
                   Peraturan Lelang
                 </NavLink>
               </p>
@@ -291,6 +244,7 @@ export class Footer extends Component {
             <Col xs={12} md={3}>
               <p> Subscribe Our Newslatter </p>
               <Input
+                onBlur={() => alert("Terimakasih sudah subscribe Legoas")}
                 addonAfter={<Icon type="mail" />}
                 className="footer-email"
                 placeholder="Type your e-mail here"
@@ -319,20 +273,6 @@ export class Footer extends Component {
                   <TiTwitter />
                 </NavLink>
               </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={12} md={12}>
-              <div className="wrap-footer">
-                <p className="footer">
-                  {" "}
-                  Made with{" "}
-                  <span>
-                    <TiHeart />
-                  </span>{" "}
-                  by <span> Telecreative </span>{" "}
-                </p>
-              </div>
             </Col>
           </Row>
         </Grid>

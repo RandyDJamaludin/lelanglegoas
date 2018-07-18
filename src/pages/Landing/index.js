@@ -8,26 +8,20 @@ import {
   Form,
   Pagination,
   Button,
-  Menu,
+  // Menu,
   Spin
 } from "antd";
-import { NavLink, Redirect } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
-import {
-  DataCardCarousel,
-  DataJadwalMotor,
-  DataJadwalMobil,
-  DataCardLocation,
-  DataContentTab
-} from "../AllData/DataCard";
+// import { DataContentTab } from "../AllData/DataCard";
 import {
   CardCarousel,
   JadwalLelang,
   SearchLelang,
-  ContentTab
+  // ContentTab
 } from "../Components/Card";
 import { Banner } from "../Components/Partial";
-import Map from "../Components/Map";
+// import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
 import { fetchBrand } from "../../actions/getBrand";
@@ -37,9 +31,9 @@ import {
   fetchProductDetail
 } from "../../actions/getProduct";
 import { fetchAdmFee } from "../../actions/getAdmFee";
-import { fetchMerek, fetchModel, fetchTipe } from "../../actions/searchProduct";
+import { fetchMerek, fetchModel, fetchTipe, fetchMerekWithColor, fetchModelWithColor, fetchTipeWithColor } from "../../actions/searchProduct";
 import { login, cekToken } from "../../actions/login";
-const SubMenu = Menu.SubMenu;
+// const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -57,10 +51,11 @@ class Index extends Component {
       merk: "",
       model: "",
       tipe: "",
+      warna: "",
       session: {},
       loading: true,
       progress: 0,
-      resultSearch: [],
+      resultSearch: "Not Yet Search",
       pageSize: 2,
       current: 1
     };
@@ -108,12 +103,18 @@ class Index extends Component {
   }
 
   async handleSearch() {
-    const { session, merk, model, tipe } = this.state;
-    if (merk != "" && model != "" && tipe != "") {
+    const { session, merk, model, tipe, warna } = this.state;
+    if (merk !== "" && model !== "" && tipe !== "" && warna !== "") {
+      await this.props.fetchTipeWithColor(session.tokenId, merk, model, tipe, warna);
+    } else if (merk !== "" && model !== "" && tipe === "" && warna !== "") {
+      await this.props.fetchModelWithColor(session.tokenId, merk, model, warna);
+    } else if (merk !== "" && model === "" && tipe === "" && warna !== "") {
+      await this.props.fetchMerekWithColor(session.tokenId, merk, warna);
+    } else if (merk !== "" && model !== "" && tipe !== "" && warna === "") {
       await this.props.fetchTipe(session.tokenId, merk, model, tipe);
-    } else if (merk != "" && model != "" && tipe == "") {
+    } else if (merk !== "" && model !== "" && tipe === "" && warna === "") {
       await this.props.fetchModel(session.tokenId, merk, model);
-    } else if (merk != "" && model == "" && tipe == "") {
+    } else if (merk !== "" && model === "" && tipe === "" && warna === "") {
       await this.props.fetchMerek(session.tokenId, merk);
     }
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
@@ -124,10 +125,6 @@ class Index extends Component {
     zoom: 11
   };
   render() {
-    let total = Math.max(
-      this.props.receivedproductrecomend.length,
-      this.props.receivedsearchproduct.length
-    );
     const responsive = {
       0: {
         items: 1
@@ -143,10 +140,9 @@ class Index extends Component {
     return this.state.loading ? (
       <div
         style={{
-          paddingTop: 100,
           marginLeft: "20%",
-          paddingTop: "20%",
-          marginBottom: "20%",
+          paddingTop: "18%",
+          marginBottom: "15%",
           width: "60%",
           justifyContent: "center"
         }}
@@ -161,7 +157,7 @@ class Index extends Component {
           />
         </center>
       </div>
-    ) : this.props.receivedproductrecomend == [] ? (
+    ) : this.props.receivedproductrecomend === [] ? (
       <div style={{ paddingTop: 100 }}>
         <ProgressBar striped bsStyle="info" now={100} />
       </div>
@@ -349,7 +345,7 @@ class Index extends Component {
                     }
                     onChange={value => this.setState({ model: value })}
                   >
-                    {this.state.merk == "" ? (
+                    {this.state.merk === "" ? (
                       <Option value="select" disabled>
                         Please Select Model
                       </Option>
@@ -379,7 +375,7 @@ class Index extends Component {
                     }
                     onChange={value => this.setState({ tipe: value })}
                   >
-                    {this.state.model == "" ? (
+                    {this.state.model === "" ? (
                       <Option value="select" disabled>
                         Please Select Tipe
                       </Option>
@@ -417,8 +413,11 @@ class Index extends Component {
                         .toLowerCase()
                         .indexOf(input.toLowerCase()) >= 0
                     }
+                    onChange={value => this.setState({ warna: value })}
                   >
                     <Option value="merah">MERAH</Option>
+                    <Option value="putih">PUTIH</Option>
+                    <Option value="abu-abu">ABU - ABU</Option>
                     <Option value="hitam">HITAM</Option>
                     <Option value="biru">BIRU</Option>
                   </Select>
@@ -451,43 +450,23 @@ class Index extends Component {
               </Row>
             </Col>
             <Col md={1} />
-            <Col md={6}>
-              <Row id="hasilPencarian">
-                <p style={{ fontWeight: "bold", marginLeft: 10 }}>
-                  {" "}
-                  Hasil Pencarian{" "}
-                </p>
-                {console.log(this.props.receivedsearchproduct)}
-                {console.log(this.state.resultSearch)}
-                {this.props.receivedsearchproduct == null
-                  ? paginate(
-                      this.props.receivedproductrecomend,
-                      this.state.pageSize,
-                      this.state.current
-                      )
-                      .slice(0, 10)
-                      .map((data, Index) => (
-                        <Col md={12} key={data.UnitKeyFinder}>
-                          <SearchLelang
-                            number={"1"}
-                            name={data.UnitName}
-                            police={data.AuctionLotUnitSpecs[3].SpecValue}
-                            price={data.AuctionLot.FinalBasePrice}
-                            year={data.AuctionLotUnitSpecs[4].SpecValue}
-                            type={data.AuctionLotUnitSpecs[2].SpecValue}
-                            image={data.ImageUri}
-                            data={data}
-                          />
-                        </Col>
-                      ))
-                  : paginate(
-                      this.state.resultSearch,
-                      this.state.pageSize,
-                      this.state.current
-                    ).map((data, index) => (
+            {this.state.resultSearch === "Not Yet Search" ? 
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Hasil Pencarian{" "}
+                  </p>
+                  {paginate(
+                    this.props.receivedproductrecomend,
+                    this.state.pageSize,
+                    this.state.current
+                  )
+                    .slice(0, 10)
+                    .map((data, Index) => (
                       <Col md={12} key={data.UnitKeyFinder}>
                         <SearchLelang
-                          number={data.number}
+                          number={"1"}
                           name={data.UnitName}
                           police={data.AuctionLotUnitSpecs[3].SpecValue}
                           price={data.AuctionLot.FinalBasePrice}
@@ -507,21 +486,86 @@ class Index extends Component {
                         />
                       </Col>
                     ))}
-              </Row>
-              <Row>
-                <Col xs={1} md={3} />
-                <Col xs={10} md={7}>
-                  <Pagination
-                    defaultCurrent={1}
-                    pageSize={this.state.pageSize}
-                    total={total}
-                    current={this.state.current}
-                    onChange={this.onChange}
-                  />
-                </Col>
-                <Col xs={1} md={3} />
-              </Row>
-            </Col>
+                </Row>
+                <Row>
+                  <Col xs={1} md={3} />
+                  <Col xs={10} md={7}>
+                    <Pagination
+                      defaultCurrent={1}
+                      pageSize={this.state.pageSize}
+                      total={this.props.receivedproductrecomend.length}
+                      current={this.state.current}
+                      onChange={this.onChange}
+                    />
+                  </Col>
+                  <Col xs={1} md={3} />
+                </Row>
+              </Col>
+             : this.state.resultSearch == null ?
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Produk yang mungkin disukai{" "}
+                  </p>
+                  {paginate(
+                    this.state.resultSearch,
+                    this.state.pageSize,
+                    this.state.current
+                  ).map((data, index) => (
+                    <Col md={12} key={data.UnitKeyFinder}>
+                      <SearchLelang
+                        number={data.number}
+                        name={data.UnitName}
+                        police={data.AuctionLotUnitSpecs[3].SpecValue}
+                        price={data.AuctionLot.FinalBasePrice}
+                        year={data.AuctionLotUnitSpecs[4].SpecValue}
+                        type={data.AuctionLotUnitSpecs[2].SpecValue}
+                        image={data.ImageUri}
+                        data={data}
+                      />
+                    </Col>
+                  ))}
+                </Row>
+                <Row>
+                  <Col xs={1} md={3} />
+                  <Col xs={10} md={7}>
+                    <Pagination
+                      defaultCurrent={1}
+                      pageSize={this.state.pageSize}
+                      total={this.props.receivedsearchproduct.length}
+                      current={this.state.current}
+                      onChange={this.onChange}
+                    />
+                  </Col>
+                  <Col xs={1} md={3} />
+                </Row>
+              </Col>
+              :
+              <Col md={6}>
+                <Row id="hasilPencarian">
+                  <p style={{ fontWeight: "bold", marginLeft: 10 }}>
+                    {" "}
+                    Hasil Pencarian{" "}
+                  </p>
+                </Row>
+                <Row>
+                  <Col xs={1} md={2} />
+                  <Col xs={10} md={8}>
+                <p style={{ fontWeight: "bold", marginTop: 10,  }}>
+                mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda{" "}
+                <NavLink
+                  to="https://lelang.legoas.co.id/Auction/Bidder/Register"
+                  target="_blank"
+                >
+                  disini
+                </NavLink>
+                </p>
+                  </Col>
+                  <Col xs={1} md={2} />
+                </Row>
+              </Col>
+            }
           </Row>
         </Grid>
         <div className="landing-lelang">
@@ -548,7 +592,7 @@ class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
-                    {this.props.schedulecar == [] ? (
+                    {this.props.schedulecar === [] ? (
                       <div>
                         <Spin size="large" />
                       </div>
@@ -583,7 +627,7 @@ class Index extends Component {
           </Grid>
         </div>
         <div style={{ paddingBottom: "4%" }}>
-          <Map />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6263097029314!2d106.9802200539126!3d-6.196873185633912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b937f68c20d%3A0xda5b15b4bf92449c!2skantor+pt.Digital+sarana+legoas!5e0!3m2!1sen!2sid!4v1531283557410" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     );
@@ -611,6 +655,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchProductByEvent(tokenId, eventId)),
   fetchProductDetail: (tokenId, lotId) =>
     dispatch(fetchProductDetail(tokenId, lotId)),
+  fetchMerekWithColor: (tokenId, merek, warna) => dispatch(fetchMerekWithColor(tokenId, merek, warna)),
+  fetchModelWithColor: (tokenId, merek, model, warna) =>
+    dispatch(fetchModelWithColor(tokenId, merek, model, warna)),
+  fetchTipeWithColor: (tokenId, merek, model, tipe, warna) =>
+    dispatch(fetchTipeWithColor(tokenId, merek, model, tipe, warna)),
   fetchMerek: (tokenId, merek) => dispatch(fetchMerek(tokenId, merek)),
   fetchModel: (tokenId, merek, model) =>
     dispatch(fetchModel(tokenId, merek, model)),

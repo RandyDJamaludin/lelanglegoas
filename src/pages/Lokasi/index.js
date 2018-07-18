@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import { Redirect } from "react-router-dom";
-import { DataCardCarousel } from "../AllData/DataCard";
-import { CardCarousel } from "../Components/Card";
-import AliceCarousel from "react-alice-carousel";
-import Map from "../Components/Map";
+// import { Grid } from "react-bootstrap";
+// import { Redirect } from "react-router-dom";
+// import { DataCardCarousel } from "../AllData/DataCard";
+// import { CardCarousel } from "../Components/Card";
+// import AliceCarousel from "react-alice-carousel";
+// import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchBrand } from "../../actions/getBrand";
 
@@ -25,27 +25,20 @@ class Index extends Component {
   };
 
   render() {
-    const responsive = {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 2
-      },
-      1024: {
-        items: 3
-      }
-    };
-    return this.props.sessionPersistance.tokenId == null ? (
-      <Redirect
-        to={{
-          pathname: "/",
-          state: { from: this.props.location }
-        }}
-      />
-    ) : (
+    // const responsive = {
+    //   0: {
+    //     items: 1
+    //   },
+    //   600: {
+    //     items: 2
+    //   },
+    //   1024: {
+    //     items: 3
+    //   }
+    // };
+    return (
       <div className="page-lokasi" style={{ paddingBottom: "3%" }}>
-        <Map />
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6263097029314!2d106.9802200539126!3d-6.196873185633912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b937f68c20d%3A0xda5b15b4bf92449c!2skantor+pt.Digital+sarana+legoas!5e0!3m2!1sen!2sid!4v1531283557410" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameborder="0" allowfullscreen></iframe>
 
         {/* <Grid className="wrap-cardCarousel">
           <Row>

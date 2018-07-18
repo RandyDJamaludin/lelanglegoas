@@ -22,7 +22,6 @@ export const fetchAdmFee = tokenId => {
       );
       await dispatch(setLoading(false, "LOADING_GET_ADM_FEE"));
     } catch (e) {
-      console.log("fetch adm fee", e);
       await dispatch(
         setFailed(true, "FAILED_GET_ADM_FEE", "gagal mendapatkan adm fee")
       );

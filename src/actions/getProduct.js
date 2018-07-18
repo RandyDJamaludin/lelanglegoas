@@ -9,7 +9,6 @@ import {
   RECEIVED_IMAGES_PRODUCT,
   RECEIVED_IMAGE_EVERY_PRODUCT
 } from "../constants/processor";
-import { receivedimageeveryproduct } from "../reducers/getProduct";
 
 export const fetchProductRecomended = tokenId => {
   return async dispatch => {
@@ -51,11 +50,6 @@ export const fetchProductRecomended = tokenId => {
         }
       });
       const data = await response.data;
-      console.log("hasil product recomend", data.data);
-      console.log(
-        "hasil merek ",
-        data.data.map(data => data.AuctionLot.AuctionLotId)
-      );
       await dispatch(receivedProductRecomend(data.data));
       await dispatch(
         setSuccess(
@@ -66,7 +60,6 @@ export const fetchProductRecomended = tokenId => {
       );
       await dispatch(setLoading(false, "LOADING_FETCH_RECOMEND"));
     } catch (e) {
-      console.log("fetch recomend", e);
       await dispatch(
         setFailed(
           true,
@@ -126,7 +119,6 @@ export const fetchProductByEvent = (tokenId, eventId) => {
         }
       });
       const data = await response.data;
-      console.log("hasil product by event", data.data);
       await dispatch(receivedProductByEvent(data.data));
       await dispatch(
         setSuccess(
@@ -137,7 +129,6 @@ export const fetchProductByEvent = (tokenId, eventId) => {
       );
       await dispatch(setLoading(false, "LOADING_FETCH_BY_EVENT"));
     } catch (e) {
-      console.log("fetch by event", e);
       await dispatch(
         setFailed(
           true,
@@ -173,7 +164,6 @@ export const fetchProductDetail = (tokenId, lotId) => {
         }
       );
       const data = await response.data;
-      console.log("hasil product detail", data);
       await dispatch(receivedProductDetail(data));
       await dispatch(receivedImages(data.auctionLotUnits[0].physicalImages));
       await dispatch(
@@ -188,7 +178,6 @@ export const fetchProductDetail = (tokenId, lotId) => {
       );
       await dispatch(setLoading(false, "LOADING_FETCH_DETAIL_PRODUCT"));
     } catch (e) {
-      console.log("fetch product detail", e);
       await dispatch(
         setFailed(
           true,
@@ -216,9 +205,8 @@ const receivedImages = data => {
 };
 
 const receivedImage = data => {
-  // imageArray = []
-  const imgArr = imageArray.push(data);
-  console.log(imageArray.sort());
+  imageArray.push(data);
+  
   return {
     type: RECEIVED_IMAGE_EVERY_PRODUCT,
     payload: imageArray

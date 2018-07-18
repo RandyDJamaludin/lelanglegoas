@@ -37,60 +37,598 @@
   background: url("../image/banner/Ban1.jpg") no-repeat;
   background-size: 100%;
   padding: 425px;
-  background-size: cover;
   background-position: 0px 40px; }
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 299px) {
     .banner_background .containBanner1 {
       background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 100px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 140px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 361px) and (max-width: 424px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 425px) and (max-width: 470px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 210px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 471px) and (max-width: 500px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 225px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 501px) and (max-width: 540px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 247px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 541px) and (max-width: 600px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 601px) and (max-width: 650px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 651px) and (max-width: 700px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 701px) and (max-width: 767px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 65px !important; } }
+  @media (min-width: 768px) and (max-width: 850px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 851px) and (max-width: 900px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 901px) and (max-width: 950px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 951px) and (max-width: 991px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 120px !important; } }
+  @media (min-width: 992px) and (max-width: 1100px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 60px !important; } }
+  @media (min-width: 1101px) and (max-width: 1150px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1151px) and (max-width: 1200px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1201px) and (max-width: 1280px) {
+    .banner_background .containBanner1 {
+      background: url("../image/banner/Ban1.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 340px !important;
+      margin-top: 75px !important; } }
 
 .banner_background .containBanner2 {
   background: url("../image/banner/Ban2.jpg") no-repeat;
   background-size: 100%;
   padding: 425px;
-  background-size: cover;
-  background-position: 0px 28px; }
-  @media only screen and (max-width: 425px) {
+  background-position: 0px 40px; }
+  @media only screen and (max-width: 299px) {
     .banner_background .containBanner2 {
       background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 100px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 140px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 361px) and (max-width: 424px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 425px) and (max-width: 470px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 210px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 471px) and (max-width: 500px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 225px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 501px) and (max-width: 540px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 247px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 541px) and (max-width: 600px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 601px) and (max-width: 650px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 651px) and (max-width: 700px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/mobile/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 701px) and (max-width: 767px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 65px !important; } }
+  @media (min-width: 768px) and (max-width: 850px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 851px) and (max-width: 900px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 901px) and (max-width: 950px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 951px) and (max-width: 991px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 120px !important; } }
+  @media (min-width: 992px) and (max-width: 1100px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 60px !important; } }
+  @media (min-width: 1101px) and (max-width: 1150px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1151px) and (max-width: 1200px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1201px) and (max-width: 1280px) {
+    .banner_background .containBanner2 {
+      background: url("../image/banner/Ban2.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 340px !important;
+      margin-top: 75px !important; } }
 
 .banner_background .containBanner3 {
   background: url("../image/banner/Ban3.jpg") no-repeat;
   background-size: 100%;
   padding: 425px;
-  background-size: cover;
-  background-position: 0px 28px; }
-  @media only screen and (max-width: 425px) {
+  background-position: 0px 40px; }
+  @media only screen and (max-width: 299px) {
     .banner_background .containBanner3 {
       background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 100px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 140px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 361px) and (max-width: 424px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 425px) and (max-width: 470px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 210px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 471px) and (max-width: 500px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 225px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 501px) and (max-width: 540px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 247px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 541px) and (max-width: 600px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 601px) and (max-width: 650px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 651px) and (max-width: 700px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/mobile/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 701px) and (max-width: 767px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 65px !important; } }
+  @media (min-width: 768px) and (max-width: 850px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 851px) and (max-width: 900px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 901px) and (max-width: 950px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 951px) and (max-width: 991px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 120px !important; } }
+  @media (min-width: 992px) and (max-width: 1100px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 60px !important; } }
+  @media (min-width: 1101px) and (max-width: 1150px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1151px) and (max-width: 1200px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1201px) and (max-width: 1280px) {
+    .banner_background .containBanner3 {
+      background: url("../image/banner/Ban3.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 340px !important;
+      margin-top: 75px !important; } }
 
 .banner_background .containBanner4 {
   background: url("../image/banner/Ban4.jpg") no-repeat;
   background-size: 100%;
   padding: 425px;
-  background-size: cover;
-  background-position: 0px 28px; }
-  @media only screen and (max-width: 425px) {
+  background-position: 0px 40px; }
+  @media only screen and (max-width: 299px) {
     .banner_background .containBanner4 {
       background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
-      margin-top: 70px;
-      height: 420px !important;
-      background-size: cover; } }
-
-.banner_background .containBanner5 {
-  background: url("../image/slideshow/5.jpg") center no-repeat;
-  background-size: cover;
-  padding: 150px; }
-  @media only screen and (max-width: 425px) {
-    .banner_background .containBanner5 {
-      margin-top: 5%;
-      padding: 40px 0px 0px 0px !important;
-      height: 400px !important; } }
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 100px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 300px) and (max-width: 360px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 140px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 361px) and (max-width: 424px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 180px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 425px) and (max-width: 470px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 210px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 471px) and (max-width: 500px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 225px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 501px) and (max-width: 540px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 247px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 541px) and (max-width: 600px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 601px) and (max-width: 650px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 651px) and (max-width: 700px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/mobile/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 70px !important; } }
+  @media (min-width: 701px) and (max-width: 767px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 65px !important; } }
+  @media (min-width: 768px) and (max-width: 850px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 220px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 851px) and (max-width: 900px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 901px) and (max-width: 950px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 250px !important;
+      margin-top: 125px !important; } }
+  @media (min-width: 951px) and (max-width: 991px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 270px !important;
+      margin-top: 120px !important; } }
+  @media (min-width: 992px) and (max-width: 1100px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 60px !important; } }
+  @media (min-width: 1101px) and (max-width: 1150px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 300px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1151px) and (max-width: 1200px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 320px !important;
+      margin-top: 75px !important; } }
+  @media (min-width: 1201px) and (max-width: 1280px) {
+    .banner_background .containBanner4 {
+      background: url("../image/banner/Ban4.jpg") no-repeat;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      padding: 340px !important;
+      margin-top: 75px !important; } }

@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
-import { Select, Form, Button, Spin } from "antd";
+// import { Select } from "antd";
 import { Redirect } from "react-router";
-import { DataCardLocation } from "../AllData/DataCard";
+// import { DataCardLocation } from "../AllData/DataCard";
 import { ListLelang } from "../Components/Card";
 import { connect } from "react-redux";
 import { fetchProductByEvent } from "../../actions/getProduct";
 import moment from "moment";
 import "moment/locale/id";
 
-const Option = Select.Option;
+// const Option = Select.Option;
 
 class Index extends Component {
   state = {
@@ -39,17 +39,17 @@ class Index extends Component {
       date
     } = this.props.location.state.data;
 
-    function handleChange(value) {
-      console.log(`selected ${value}`);
-    }
+    // function handleChange(value) {
+    //   console.log(`selected ${value}`);
+    // }
 
-    function handleBlur() {
-      console.log("blur");
-    }
+    // function handleBlur() {
+    //   console.log("blur");
+    // }
 
-    function handleFocus() {
-      console.log("focus");
-    }
+    // function handleFocus() {
+    //   console.log("focus");
+    // }
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
         to={{
@@ -61,8 +61,7 @@ class Index extends Component {
       <div className="wrap-ListLelang">
         {this.props == null
           ? null
-          : console.log(this.props.location.state.data)}
-        {console.log(this.props.receivedproductbyevent)}
+          : null}
         <Grid>
           <Row>
             <Col md={12}>
