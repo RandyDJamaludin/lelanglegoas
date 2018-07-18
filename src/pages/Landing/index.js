@@ -231,6 +231,7 @@ class Index extends Component {
                       no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
                       color={data.AuctionLotUnitSpecs[11].SpecValue}
                       price={data.AuctionLot.FinalBasePrice}
+                      data={data}
                     />
                   </Col>
                 ))}
@@ -482,7 +483,6 @@ class Index extends Component {
                           grade={data.UnitGrade}
                           lotNumber={data.AuctionLot.AuctionLotNumber}
                           lotId={data.AuctionLot.AuctionLotId}
-                          dataJadwal={this.props.location.state.data}
                         />
                       </Col>
                     ))}
@@ -522,7 +522,15 @@ class Index extends Component {
                         year={data.AuctionLotUnitSpecs[4].SpecValue}
                         type={data.AuctionLotUnitSpecs[2].SpecValue}
                         image={data.ImageUri}
+                        lotId={data.AuctionLot.AuctionLotId}
                         data={data}
+                        merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                        model={data.AuctionLotUnitSpecs[1].SpecValue}
+                        tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                        warna={data.AuctionLotUnitSpecs[11].SpecValue}
+                        km={data.AuctionLotUnitSpecs[12].SpecValue}
+                        grade={data.UnitGrade}
+                        lotNumber={data.AuctionLot.AuctionLotNumber}
                       />
                     </Col>
                   ))}

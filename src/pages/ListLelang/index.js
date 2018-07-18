@@ -186,7 +186,8 @@ class Index extends Component {
                     price={data.AuctionLot.FinalBasePrice}
                     image={data.ImageUri}
                     lotId={data.AuctionLot.AuctionLotId}
-                    dataJadwal={this.props.location.state.data}
+                    // dataJadwal={this.props.location.state.data}
+                    data={data}
                   />
                 </Col>
               ))

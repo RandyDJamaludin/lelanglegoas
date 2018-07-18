@@ -3,7 +3,7 @@ import { Grid, Row, Col, Image, ProgressBar } from "react-bootstrap";
 import { Divider } from "antd";
 import { Redirect } from "react-router";
 import AliceCarousel from "react-alice-carousel";
-import MdAccessTime from "react-icons/lib/md/access-time";
+// import MdAccessTime from "react-icons/lib/md/access-time";
 import MdLocationOn from "react-icons/lib/md/location-on";
 import FaCalendarCheckO from "react-icons/lib/fa/calendar-check-o";
 import moment from "moment";
@@ -25,10 +25,6 @@ class Index extends Component {
     await this.props.fetchProductDetail(
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.lotId
-    );
-    await this.props.fetchProductDetail(
-      this.props.sessionPersistance.tokenId,
-      171
     );
     await this.setState({ loading: false });
   }
@@ -55,15 +51,15 @@ class Index extends Component {
       // km,
       // lotId,
       lotNumber,
-      merek,
-      model,
-      tipe,
+      // merek,
+      // model,
+      // tipe,
       name,
-      police,
+      // police,
       price,
       // warna,
-      year,
-      dataJadwal
+      // year,
+      data
     } = this.props.location.state.data;
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
@@ -112,58 +108,74 @@ class Index extends Component {
                   <Col md={6}>
                     <p>
                       {" "}
-                      Merk <span style={{ fontWeight: "bold" }}> {merek} </span>
+                      {data.AuctionLotUnitSpecs[0].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[0].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Type <span style={{ fontWeight: "bold" }}> {tipe} </span>
+                      {data.AuctionLotUnitSpecs[1].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[1].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      No Polisi{" "}
-                      <span style={{ fontWeight: "bold" }}> {police}</span>
+                      {data.AuctionLotUnitSpecs[2].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[2].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Tahun <span style={{ fontWeight: "bold" }}> {year} </span>
+                      {data.AuctionLotUnitSpecs[3].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[3].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Kapasitas Mesin (CC){" "}
-                      <span style={{ fontWeight: "bold" }}> ---</span>
+                      {data.AuctionLotUnitSpecs[4].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[4].SpecValue} </span>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {data.AuctionLotUnitSpecs[5].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[5].SpecValue} </span>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {data.AuctionLotUnitSpecs[6].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[6].SpecValue} </span>
                     </p>
                   </Col>
 
                   <Col md={6}>
                     <p>
                       {" "}
-                      STNK <span style={{ fontWeight: "bold" }}> --- </span>
+                      {data.AuctionLotUnitSpecs[7].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[7].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Masa Berlaku STNK{" "}
-                      <span style={{ fontWeight: "bold" }}> --- </span>
+                      {data.AuctionLotUnitSpecs[8].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[8].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      BPKB <span style={{ fontWeight: "bold" }}> --- </span>
+                      {data.AuctionLotUnitSpecs[9].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[9].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Faktur <span style={{ fontWeight: "bold" }}> --- </span>
+                      {data.AuctionLotUnitSpecs[10].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[10].SpecValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      Kapasitas Mesin (CC){" "}
-                      <span style={{ fontWeight: "bold" }}> ---</span>
+                      {data.AuctionLotUnitSpecs[11].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[11].SpecValue} </span>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {data.AuctionLotUnitSpecs[12].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[12].SpecValue} </span>
+                    </p>
+
+                    <p>
+                      {" "}
+                      {data.AuctionLotUnitSpecs[13].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[13].SpecValue} </span>
                     </p>
                   </Col>
                 </Row>
@@ -193,14 +205,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Merek </p>
+                      <p> {data.AuctionLotUnitSpecs[0].SpecName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {merek} </b>
+                        <b> {data.AuctionLotUnitSpecs[0].SpecName} </b>
                       </p>
                     </div>
                   </Col>
@@ -209,14 +221,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Model </p>
+                      <p> {data.AuctionLotUnitSpecs[1].SpecName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {model} </b>
+                        <b> {data.AuctionLotUnitSpecs[1].SpecName} </b>
                       </p>
                     </div>
                   </Col>
@@ -225,14 +237,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Tipe </p>
+                      <p> {data.AuctionLotUnitSpecs[2].SpecName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {tipe} </b>
+                        <b> {data.AuctionLotUnitSpecs[2].SpecName} </b>
                       </p>
                     </div>
                   </Col>
@@ -241,14 +253,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> NO POLISI </p>
+                      <p> {data.AuctionLotUnitSpecs[3].SpecName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {police} </b>
+                        <b> {data.AuctionLotUnitSpecs[3].SpecName} </b>
                       </p>
                     </div>
                   </Col>
@@ -286,14 +298,14 @@ class Index extends Component {
                       <p>
                         <MdLocationOn />{" "}
                         <b>
-                          {dataJadwal.houseAddress},{dataJadwal.location}{" "}
+                          {data.AuctionLot.AuctionEvent.AuctionHouse.AuctionHouseAddr}{" "}
                         </b>
                       </p>
                     </div>
                   </Col>
                 </Row>
 
-                <Row>
+                {/* <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Open House </p>
@@ -313,7 +325,7 @@ class Index extends Component {
                       </p>
                     </div>
                   </Col>
-                </Row>
+                </Row> */}
 
                 <Row>
                   <Col xs={4} md={4}>
@@ -326,13 +338,13 @@ class Index extends Component {
                     <div>
                       <p>
                         <FaCalendarCheckO />
-                        <b> {moment(dataJadwal.date).format("D MMMM YYYY")} </b>
+                        <b> {moment(data.AuctionLot.AuctionEvent.EventDate).format("D MMMM YYYY")} </b>
                       </p>
                     </div>
                   </Col>
                 </Row>
 
-                <Row>
+                {/* <Row>
                   <Col xs={4} md={4}>
                     <div>
                       <p> Waktu </p>
@@ -351,7 +363,7 @@ class Index extends Component {
                       </p>
                     </div>
                   </Col>
-                </Row>
+                </Row> */}
 
                 {/* <Row>
                   <Col xs={4} md={4}>
