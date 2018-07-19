@@ -166,7 +166,7 @@ class Index extends Component {
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
-            <p className="titleHeader"> REKOMENDASI BARANG </p>
+            <p className="titleHeader"> REKOMENDASI</p>
             <AliceCarousel
               duration={400}
               autoPlay={true}
@@ -194,6 +194,14 @@ class Index extends Component {
                       no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
                       color={data.AuctionLotUnitSpecs[11].SpecValue}
                       price={data.AuctionLot.FinalBasePrice}
+                      number={data.number}
+                      name={data.UnitName}
+                      year={data.AuctionLotUnitSpecs[4].SpecValue}
+                      km={data.AuctionLotUnitSpecs[12].SpecValue}
+                      grade={data.UnitGrade}
+                      lotNumber={data.AuctionLot.AuctionLotNumber}
+                      lotId={data.AuctionLot.AuctionLotId}
+                      data={data}
                     />
                   </Col>
                 ))}
