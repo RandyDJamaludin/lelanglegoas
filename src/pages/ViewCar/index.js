@@ -205,14 +205,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[0].SpecName} </p>
+                      <p> {data.AuctionLotUnitSpecs[0].SpecValue} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[0].SpecName} </b>
+                        <b> {data.AuctionLotUnitSpecs[0].SpecValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -221,14 +221,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[1].SpecName} </p>
+                      <p> {data.AuctionLotUnitSpecs[1].SpecValue} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[1].SpecName} </b>
+                        <b> {data.AuctionLotUnitSpecs[1].SpecValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -237,14 +237,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[2].SpecName} </p>
+                      <p> {data.AuctionLotUnitSpecs[2].SpecValue} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[2].SpecName} </b>
+                        <b> {data.AuctionLotUnitSpecs[2].SpecValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -253,14 +253,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[3].SpecName} </p>
+                      <p> {data.AuctionLotUnitSpecs[3].SpecValue} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[3].SpecName} </b>
+                        <b> {data.AuctionLotUnitSpecs[3].SpecValue} </b>
                       </p>
                     </div>
                   </Col>
