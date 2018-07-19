@@ -14,7 +14,6 @@ export class Card extends Component {
             <Image
               className="components-card"
               src={this.props.image}
-              width="70%"
             />
             <h3> {this.props.name} </h3>
             <p>
