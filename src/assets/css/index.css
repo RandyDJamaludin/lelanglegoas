@@ -862,61 +862,68 @@ button.explore:hover {
   .background-card2:hover p.price {
     padding-bottom: 0px !important; }
 
-.wrap-cardCarousel {
-  padding-top: 10px; }
-  .wrap-cardCarousel .header-ongoing {
-    margin-top: 10px; }
-  .wrap-cardCarousel button {
-    font-size: 12px; }
-  .wrap-cardCarousel .header {
-    background: #f8f8f8;
-    margin-bottom: 15px; }
-    .wrap-cardCarousel .header p.left {
-      font-weight: bold;
-      padding-top: 15px;
-      padding-left: 10px; }
-    .wrap-cardCarousel .header p.right {
-      color: #ccc;
-      padding-top: 15px;
-      padding-left: 10px;
-      padding-right: 20px;
-      float: right;
-      transition: 0.2s; }
-      .wrap-cardCarousel .header p.right:hover {
-        padding-right: 10px;
-        transition: 0.2s; }
-  .wrap-cardCarousel li.slider-slide {
-    position: none !important; }
-  .wrap-cardCarousel .background-cardCarousel {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border: 1px solid #ccc; }
-    .wrap-cardCarousel .background-cardCarousel:hover {
-      background: #f8f8f8;
-      cursor: pointer; }
-  .wrap-cardCarousel img {
-    padding-top: 7%;
-    width: 80%;
-    padding: 10px;
-    height: 200px; }
-  .wrap-cardCarousel .alice-carousel {
-    padding: 20px 0px 40px 20px !important; }
-  .wrap-cardCarousel h3 {
-    font-size: 16px; }
-  .wrap-cardCarousel p.titleHeader {
-    font-size: 16px;
+.wrap-cardCarousel .header-ongoing {
+  margin-top: 10px; }
+
+.wrap-cardCarousel button {
+  font-size: 12px; }
+
+.wrap-cardCarousel .header {
+  background: #f8f8f8;
+  margin-bottom: 15px; }
+  .wrap-cardCarousel .header p.left {
     font-weight: bold;
-    padding-top: 2%;
-    padding-left: 3%; }
-  .wrap-cardCarousel p.color {
-    font-size: 12px;
-    line-height: 0.5; }
-  .wrap-cardCarousel p.last {
-    line-height: 0.5;
-    font-size: 12px; }
-  @media only screen and (max-width: 987px) {
-    .wrap-cardCarousel {
-      display: none; } }
+    padding-top: 15px;
+    padding-left: 10px; }
+  .wrap-cardCarousel .header p.right {
+    color: #ccc;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 20px;
+    float: right;
+    transition: 0.2s; }
+    .wrap-cardCarousel .header p.right:hover {
+      padding-right: 10px;
+      transition: 0.2s; }
+
+.wrap-cardCarousel li.slider-slide {
+  position: none !important; }
+
+.wrap-cardCarousel .background-cardCarousel {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px solid #ccc; }
+  .wrap-cardCarousel .background-cardCarousel:hover {
+    background: #f8f8f8;
+    cursor: pointer; }
+
+.wrap-cardCarousel img {
+  padding-bottom: 20px;
+  height: 250px; }
+
+.wrap-cardCarousel .alice-carousel {
+  padding: 20px 0px 40px 20px !important; }
+
+.wrap-cardCarousel h3 {
+  font-size: 16px; }
+
+.wrap-cardCarousel p.titleHeader {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 2%;
+  padding-left: 3%; }
+
+.wrap-cardCarousel p.color {
+  font-size: 12px;
+  line-height: 0.5; }
+
+.wrap-cardCarousel p.last {
+  line-height: 0.5;
+  font-size: 12px; }
+
+@media only screen and (max-width: 987px) {
+  .wrap-cardCarousel {
+    display: none; } }
 
 .wrap-cardCarouselMobile {
   display: none; }
@@ -1493,7 +1500,6 @@ section {
     padding: 0px !important; }
 
 .multiSlider img {
-  width: 100%;
   height: 400px; }
 
 .multiSliderThumbs {
@@ -1503,7 +1509,6 @@ section {
   .multiSliderThumbs .col-md-4 {
     padding: 0px !important; }
   .multiSliderThumbs img {
-    width: 100%;
     height: 120px;
     padding: 5px; }
 
