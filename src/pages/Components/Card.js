@@ -33,6 +33,12 @@ export class Card extends Component {
 export class CardCarousel extends Component {
   render() {
     return (
+      <Link
+        to={{
+          pathname: "/view-car",
+          state: { data: this.props }
+        }}
+      >
       <div className="background-cardCarousel">
         <center>
           <Image className="components-card" src={this.props.image} />
@@ -55,6 +61,7 @@ export class CardCarousel extends Component {
           </p>
         </center>
       </div>
+      </Link>
     );
   }
 }
