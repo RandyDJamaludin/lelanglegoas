@@ -7,6 +7,7 @@ import { receivedadmfee } from "./getAdmFee";
 import { sessionPersistance, resultCekToken } from "./login";
 import {
   receivedproductrecomend,
+  receivedproductall,
   receivedproductbyevent,
   receivedproductdetail,
   receivedimagesproduct,
@@ -24,6 +25,7 @@ const rootReducers = combineReducers({
   sessionPersistance,
   resultCekToken,
   receivedproductrecomend,
+  receivedproductall,
   receivedproductbyevent,
   receivedproductdetail,
   receivedsearchproduct,

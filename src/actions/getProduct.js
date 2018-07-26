@@ -4,6 +4,7 @@ import { server } from "../env/server";
 
 import {
   RECEIVED_PRODUCT_RECOMEND,
+  RECEIVED_PRODUCT_ALL,
   RECEIVED_PRODUCT_BY_EVENT,
   RECEIVED_PRODUCT_DETAIL,
   RECEIVED_IMAGES_PRODUCT,
@@ -72,9 +73,129 @@ export const fetchProductRecomended = tokenId => {
   };
 };
 
+export const fetchProductGradeB = tokenId => {
+  return async dispatch => {
+    await dispatch(setLoading(true, "LOADING_FETCH_RECOMEND"));
+    try {
+      const response = await axios.post(`${server}/api/am/get/command`, {
+        tokenId: tokenId,
+        uriCode: "LOT_SEARCH",
+        param: {
+          draw: 1,
+          columns: [
+            {
+              data: "UnitGrade",
+              name: null,
+              searchable: true,
+              orderable: true,
+              search: {
+                value: "B",
+                regex: false
+              }
+            }
+          ],
+          order: [
+            {
+              column: 0,
+              dir: "asc"
+            }
+          ],
+          start: 0,
+          search: {
+            value: null,
+            regex: false
+          },
+          extra: {
+            SearchType: "SEARCHBYUNITSPEC",
+            UnitTypeCode: "CAR",
+            SpecFiltersJson: "{}"
+          }
+        }
+      });
+      const data = await response.data;
+      await dispatch(receivedProductRecomend(data.data));
+      await dispatch(
+        setSuccess(
+          true,
+          "SUCCESS_FETCH_RECOMEND",
+          "berhasil mendapatkan product recomend"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_FETCH_RECOMEND"));
+    } catch (e) {
+      await dispatch(
+        setFailed(
+          true,
+          "FAILED_FETCH_RECOMEND",
+          "gagal mendapatkan product recomend"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_FETCH_RECOMEND"));
+    }
+  };
+};
+
 const receivedProductRecomend = data => {
   return {
     type: RECEIVED_PRODUCT_RECOMEND,
+    payload: data
+  };
+};
+
+export const fetchProductAll = tokenId => {
+  return async dispatch => {
+    await dispatch(setLoading(true, "LOADING_FETCH_ALL"));
+    try {
+      const response = await axios.post(`${server}/api/am/get/command`, {
+        tokenId: tokenId,
+        uriCode: "LOT_SEARCH",
+        param: {
+          draw: 1,
+          columns: [],
+          order: [
+            {
+              column: 0,
+              dir: "asc"
+            }
+          ],
+          start: 0,
+          search: {
+            value: null,
+            regex: false
+          },
+          extra: {
+            SearchType: "SEARCHBYUNITSPEC",
+            UnitTypeCode: "CAR",
+            SpecFiltersJson: "{}"
+          }
+        }
+      });
+      const data = await response.data;
+      await dispatch(receivedProductAll(data.data));
+      await dispatch(
+        setSuccess(
+          true,
+          "SUCCESS_FETCH_ALL",
+          "berhasil mendapatkan product recomend"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_FETCH_ALL"));
+    } catch (e) {
+      await dispatch(
+        setFailed(
+          true,
+          "FAILED_FETCH_ALL",
+          "gagal mendapatkan product recomend"
+        )
+      );
+      await dispatch(setLoading(false, "LOADING_FETCH_ALL"));
+    }
+  };
+};
+
+const receivedProductAll = data => {
+  return {
+    type: RECEIVED_PRODUCT_ALL,
     payload: data
   };
 };

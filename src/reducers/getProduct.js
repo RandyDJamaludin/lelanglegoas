@@ -1,5 +1,6 @@
 import {
   RECEIVED_PRODUCT_RECOMEND,
+  RECEIVED_PRODUCT_ALL,
   RECEIVED_PRODUCT_BY_EVENT,
   RECEIVED_PRODUCT_DETAIL,
   RECEIVED_IMAGES_PRODUCT,
@@ -10,6 +11,15 @@ import {
 export const receivedproductrecomend = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_PRODUCT_RECOMEND:
+      return action.payload;
+    default:
+      return state;
+  }
+};
+
+export const receivedproductall = (state = [], action) => {
+  switch (action.type) {
+    case RECEIVED_PRODUCT_ALL:
       return action.payload;
     default:
       return state;

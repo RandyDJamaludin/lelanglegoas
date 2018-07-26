@@ -27,6 +27,8 @@ import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
 import { fetchBrand } from "../../actions/getBrand";
 import {
   fetchProductRecomended,
+  fetchProductGradeB,
+  fetchProductAll,
   fetchProductByEvent,
   fetchProductDetail
 } from "../../actions/getProduct";
@@ -82,10 +84,14 @@ class Index extends Component {
     await this.props.fetchScheduleCar(session.tokenId);
     await this.setState({ progress: 60 });
     await this.props.fetchScheduleMot(session.tokenId);
+    await this.props.fetchProductAll(session.tokenId);
     await this.setState({ progress: 75 });
     await this.props.fetchBrand(session.tokenId);
     await this.setState({ progress: 80 });
     await this.props.fetchProductRecomended(session.tokenId);
+    if(this.props.receivedproductrecomend !== null){
+      await this.props.fetchProductGradeB(session.tokenId);
+    }
     await this.getImageRecomend(
       this.props.receivedproductrecomend.map(
         data => data.AuctionLot.AuctionLotId
@@ -467,7 +473,7 @@ class Index extends Component {
                     Hasil Pencarian{" "}
                   </p>
                   {paginate(
-                    this.props.receivedproductrecomend,
+                    this.props.receivedproductall,
                     this.state.pageSize,
                     this.state.current
                   )
@@ -509,7 +515,7 @@ class Index extends Component {
                   <Col xs={1} md={3} />
                 </Row>
               </Col>
-             : this.state.resultSearch == null ?
+             : this.state.resultSearch != '' ?
               <Col md={6}>
                 <Row id="hasilPencarian">
                   <p style={{ fontWeight: "bold", marginLeft: 10 }}>
@@ -655,6 +661,7 @@ const mapStateToProps = state => ({
   schedulemot: state.schedulemot,
   receivedbrand: state.receivedbrand,
   receivedproductrecomend: state.receivedproductrecomend,
+  receivedproductall: state.receivedproductall,
   receivedproductbyevent: state.receivedproductbyevent,
   receivedproductdetail: state.receivedproductdetail,
   receivedsearchproduct: state.receivedsearchproduct,
@@ -667,6 +674,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   login: (username, password) => dispatch(login(username, password)),
   fetchProductRecomended: tokenId => dispatch(fetchProductRecomended(tokenId)),
+  fetchProductGradeB: tokenId => dispatch(fetchProductGradeB(tokenId)),
+  fetchProductAll: tokenId => dispatch(fetchProductAll(tokenId)),
   fetchProductByEvent: (tokenId, eventId) =>
     dispatch(fetchProductByEvent(tokenId, eventId)),
   fetchProductDetail: (tokenId, lotId) =>
