@@ -74,7 +74,7 @@ export class Index extends Component {
                     ).map((data, index) => (
                       <Col xs={12} md={12} key={data.auctionEventId}>
                         <JadwalLelang
-                          transport={" ELEKTRONIK"}
+                          transport={" MOBIL"}
                           eventCode={data.eventCode}
                           eventNumber={data.eventNumber}
                           location={data.auctionHouseCity}
