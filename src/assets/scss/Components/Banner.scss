@@ -1,4 +1,13 @@
 .banner_background {
+  @media (min-width: 1240px) and (max-width: 1440px) {
+    height:440px;
+  }
+  @media (min-width: 1441px) and (max-width: 1880px) {
+    height:502px;
+  }
+  @media (min-width: 1881px) and (max-width: 2560px) {
+    height:670px;
+  }
   button {
     background: #3c8dbc;
     border: #3c8dbc;
@@ -40,6 +49,8 @@
 
   .containBanner1 {
     background: url("../image/banner/Ban1.jpg") no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: 100%;
     padding: 425px;
     background-position: 0px 40px;
@@ -179,12 +190,12 @@
       padding: 130px !important;
       margin-top:75px !important;
     }
-    @media (min-width: 1201px) and (max-width: 1280px) {
+    @media (min-width: 1201px) and (max-width: 1440px) {
       background: url("../image/banner/Ban1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top:75px !important;
     }
   }
@@ -329,12 +340,12 @@
       padding: 130px !important;
       margin-top:75px !important;
     }
-    @media (min-width: 1201px) and (max-width: 1280px) {
+    @media (min-width: 1201px) and (max-width: 1440px) {
       background: url("../image/banner/Ban2.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top:75px !important;
     }
   }
@@ -479,12 +490,12 @@
       padding: 130px !important;
       margin-top:75px !important;
     }
-    @media (min-width: 1201px) and (max-width: 1280px) {
+    @media (min-width: 1201px) and (max-width: 1440px) {
       background: url("../image/banner/Ban3.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top:75px !important;
     }
   }
@@ -629,12 +640,12 @@
       padding: 130px !important;
       margin-top:75px !important;
     }
-    @media (min-width: 1201px) and (max-width: 1280px) {
+    @media (min-width: 1201px) and (max-width: 1440px) {
       background: url("../image/banner/Ban4.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top:75px !important;
     }
   }

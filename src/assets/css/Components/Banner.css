@@ -1,3 +1,15 @@
+@media (min-width: 1240px) and (max-width: 1440px) {
+  .banner_background {
+    height: 440px; } }
+
+@media (min-width: 1441px) and (max-width: 1880px) {
+  .banner_background {
+    height: 502px; } }
+
+@media (min-width: 1881px) and (max-width: 2560px) {
+  .banner_background {
+    height: 670px; } }
+
 .banner_background button {
   background: #3c8dbc;
   border: #3c8dbc;
@@ -35,6 +47,8 @@
 
 .banner_background .containBanner1 {
   background: url("../image/banner/Ban1.jpg") no-repeat;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: 100%;
   padding: 425px;
   background-position: 0px 40px; }
@@ -174,13 +188,13 @@
       background-size: cover;
       padding: 130px !important;
       margin-top: 75px !important; } }
-  @media (min-width: 1201px) and (max-width: 1280px) {
+  @media (min-width: 1201px) and (max-width: 1440px) {
     .banner_background .containBanner1 {
       background: url("../image/banner/Ban1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top: 75px !important; } }
 
 .banner_background .containBanner2 {
@@ -324,13 +338,13 @@
       background-size: cover;
       padding: 130px !important;
       margin-top: 75px !important; } }
-  @media (min-width: 1201px) and (max-width: 1280px) {
+  @media (min-width: 1201px) and (max-width: 1440px) {
     .banner_background .containBanner2 {
       background: url("../image/banner/Ban2.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top: 75px !important; } }
 
 .banner_background .containBanner3 {
@@ -474,13 +488,13 @@
       background-size: cover;
       padding: 130px !important;
       margin-top: 75px !important; } }
-  @media (min-width: 1201px) and (max-width: 1280px) {
+  @media (min-width: 1201px) and (max-width: 1440px) {
     .banner_background .containBanner3 {
       background: url("../image/banner/Ban3.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top: 75px !important; } }
 
 .banner_background .containBanner4 {
@@ -624,11 +638,11 @@
       background-size: cover;
       padding: 130px !important;
       margin-top: 75px !important; } }
-  @media (min-width: 1201px) and (max-width: 1280px) {
+  @media (min-width: 1201px) and (max-width: 1440px) {
     .banner_background .containBanner4 {
       background: url("../image/banner/Ban4.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
-      padding: 150px !important;
+      padding: 175px !important;
       margin-top: 75px !important; } }

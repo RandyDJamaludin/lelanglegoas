@@ -103,7 +103,7 @@ export class Banner extends Component {
     return (
       <div>
         <div className="banner_background">
-          <Carousel autoplay>
+          <Carousel>
             <div className="containBanner1"></div>
             <div className="containBanner2"></div>
             <div className="containBanner3"></div>
