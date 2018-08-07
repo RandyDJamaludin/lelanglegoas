@@ -246,3 +246,315 @@ export const DataJadwalMobil = [
     key: 3
   }
 ]
+
+export const dataAdins = [
+  {
+    "UnitName": "TOYOYA LIMO TAXI 1.5 NCP93R",
+    "UnitGrade": "B",
+    "UnitKeyFinder": "L 1768 UB",
+    "ImageName": "1808021559_18_55_10_4",
+    "ImageUri": "https://lelang.legoas.co.id:8443/api/get/physical/1808021559_18_55_10_4",
+    "AuctionLotUnitSpecs": [
+      {
+        "SpecName": "MEREK",
+        "SpecValue": "TOYOYA"
+      },
+      {
+        "SpecName": "MODEL",
+        "SpecValue": "LIMO TAXI"
+      },
+      {
+        "SpecName": "TIPE",
+        "SpecValue": "1.5 NCP93R"
+      },
+      {
+        "SpecName": "NO POLISI",
+        "SpecValue": "L 1768 UB"
+      },
+      {
+        "SpecName": "TAHUN",
+        "SpecValue": "2012"
+      },
+      {
+        "SpecName": "UMUR STNK",
+        "SpecValue": "10/11/2017"
+      },
+      {
+        "SpecName": "NOMOR RANGKA",
+        "SpecValue": "MR153HY93C9054396"
+      },
+      {
+        "SpecName": "NOMOR MESIN",
+        "SpecValue": "1NZY599760"
+      },
+      {
+        "SpecName": "UMUR KIR",
+        "SpecValue": "T/A"
+      },
+      {
+        "SpecName": "KESIAPAN BPKB",
+        "SpecValue": "3 HK"
+      },
+      {
+        "SpecName": "BAHAN BAKAR",
+        "SpecValue": "BENSIN"
+      },
+      {
+        "SpecName": "WARNA",
+        "SpecValue": "ABU-ABU"
+      },
+      {
+        "SpecName": "KM",
+        "SpecValue": "227959"
+      },
+      {
+        "SpecName": "KATEGORI",
+        "SpecValue": "SEDAN"
+      }
+    ],
+    "AuctionLot": {
+      "AuctionLotId": 31,
+      "FinalBasePrice": 32500000.00,
+      "AuctionLotNumber": 1,
+      "IsCancel": false,
+      "IsSold": false,
+      "IsUnsold": false,
+      "AuctionLotUnitCount": 1,
+      "AuctionEvent": {
+        "AuctionEventId": 6,
+        "EventCode": "JKT_MBL",
+        "EventDate": "2018-08-09T00:00:00",
+        "AuctionHouse": {
+          "AuctionHouseCode": "AH_JKT",
+          "AuctionHouseName": "BL_JAKARTA",
+          "AuctionHouseAddr": "Jl. Raya Kaliabang No. 45 \r\nMedan Satria, Bekasi",
+          "AuctionHouseCity": "Bekasi",
+          "AuctionHouseProvince": "Jawa Barat"
+        },
+        "EventNumber": 6,
+        "PublishedDate": "2018-08-07T07:02:07.657",
+        "AuctionRoomId": 1,
+        "RoomName": "VIP",
+        "MaxLot": 0,
+        "IsOnline": false,
+        "IsOnsite": false,
+        "IsLocked": false,
+        "IsApproved": true,
+        "ClosedBy": null,
+        "ClosedTime": null,
+        "OpenBy": null,
+        "OpenTime": null,
+        "IsActive": true,
+        "EventStatus": "PUBLISH",
+        "BeritaAcaraReady": false,
+        "TotalLot": 2
+      }
+    }
+  },
+  {
+    "UnitName": "TOYOYA LIMO TAXI 1.5 NCP93R",
+    "UnitGrade": "C",
+    "UnitKeyFinder": "L 1783 UB",
+    "ImageName": "1808021602_19_55_10_4",
+    "ImageUri": "https://lelang.legoas.co.id:8443/api/get/physical/1808021602_19_55_10_4",
+    "AuctionLotUnitSpecs": [
+      {
+        "SpecName": "MEREK",
+        "SpecValue": "TOYOYA"
+      },
+      {
+        "SpecName": "MODEL",
+        "SpecValue": "LIMO TAXI"
+      },
+      {
+        "SpecName": "TIPE",
+        "SpecValue": "1.5 NCP93R"
+      },
+      {
+        "SpecName": "NO POLISI",
+        "SpecValue": "L 1783 UB"
+      },
+      {
+        "SpecName": "TAHUN",
+        "SpecValue": "2012"
+      },
+      {
+        "SpecName": "UMUR STNK",
+        "SpecValue": "10/11/2017"
+      },
+      {
+        "SpecName": "NOMOR RANGKA",
+        "SpecValue": "MR053HY93C9054440"
+      },
+      {
+        "SpecName": "NOMOR MESIN",
+        "SpecValue": "1NZY600227"
+      },
+      {
+        "SpecName": "UMUR KIR",
+        "SpecValue": "T/A"
+      },
+      {
+        "SpecName": "KESIAPAN BPKB",
+        "SpecValue": "3 HK"
+      },
+      {
+        "SpecName": "BAHAN BAKAR",
+        "SpecValue": "BENSIN"
+      },
+      {
+        "SpecName": "WARNA",
+        "SpecValue": "HITAM"
+      },
+      {
+        "SpecName": "KM",
+        "SpecValue": "234168"
+      },
+      {
+        "SpecName": "KATEGORI",
+        "SpecValue": "SEDAN"
+      }
+    ],
+    "AuctionLot": {
+      "AuctionLotId": 32,
+      "FinalBasePrice": 32500000.00,
+      "AuctionLotNumber": 2,
+      "IsCancel": false,
+      "IsSold": false,
+      "IsUnsold": false,
+      "AuctionLotUnitCount": 1,
+      "AuctionEvent": {
+        "AuctionEventId": 6,
+        "EventCode": "JKT_MBL",
+        "EventDate": "2018-08-09T00:00:00",
+        "AuctionHouse": {
+          "AuctionHouseCode": "AH_JKT",
+          "AuctionHouseName": "BL_JAKARTA",
+          "AuctionHouseAddr": "Jl. Raya Kaliabang No. 45 \r\nMedan Satria, Bekasi",
+          "AuctionHouseCity": "Bekasi",
+          "AuctionHouseProvince": "Jawa Barat"
+        },
+        "EventNumber": 6,
+        "PublishedDate": "2018-08-07T07:02:07.657",
+        "AuctionRoomId": 1,
+        "RoomName": "VIP",
+        "MaxLot": 0,
+        "IsOnline": false,
+        "IsOnsite": false,
+        "IsLocked": false,
+        "IsApproved": true,
+        "ClosedBy": null,
+        "ClosedTime": null,
+        "OpenBy": null,
+        "OpenTime": null,
+        "IsActive": true,
+        "EventStatus": "PUBLISH",
+        "BeritaAcaraReady": false,
+        "TotalLot": 2
+      }
+    }
+  },
+  // {
+  //   "UnitName": "TOYOYA LIMO TAXI 1.5 NCP93R",
+  //   "UnitGrade": "C",
+  //   "UnitKeyFinder": "L 1783 UB",
+  //   "ImageName": "1808021602_19_55_10_4",
+  //   "ImageUri": "https://lelang.legoas.co.id:8443/api/get/physical/1808021602_19_55_10_4",
+  //   "AuctionLotUnitSpecs": [
+  //     {
+  //       "SpecName": "MEREK",
+  //       "SpecValue": "TOYOYA"
+  //     },
+  //     {
+  //       "SpecName": "MODEL",
+  //       "SpecValue": "LIMO TAXI"
+  //     },
+  //     {
+  //       "SpecName": "TIPE",
+  //       "SpecValue": "1.5 NCP93R"
+  //     },
+  //     {
+  //       "SpecName": "NO POLISI",
+  //       "SpecValue": "L 1783 UB"
+  //     },
+  //     {
+  //       "SpecName": "TAHUN",
+  //       "SpecValue": "2012"
+  //     },
+  //     {
+  //       "SpecName": "UMUR STNK",
+  //       "SpecValue": "10/11/2017"
+  //     },
+  //     {
+  //       "SpecName": "NOMOR RANGKA",
+  //       "SpecValue": "MR053HY93C9054440"
+  //     },
+  //     {
+  //       "SpecName": "NOMOR MESIN",
+  //       "SpecValue": "1NZY600227"
+  //     },
+  //     {
+  //       "SpecName": "UMUR KIR",
+  //       "SpecValue": "T/A"
+  //     },
+  //     {
+  //       "SpecName": "KESIAPAN BPKB",
+  //       "SpecValue": "3 HK"
+  //     },
+  //     {
+  //       "SpecName": "BAHAN BAKAR",
+  //       "SpecValue": "BENSIN"
+  //     },
+  //     {
+  //       "SpecName": "WARNA",
+  //       "SpecValue": "HITAM"
+  //     },
+  //     {
+  //       "SpecName": "KM",
+  //       "SpecValue": "234168"
+  //     },
+  //     {
+  //       "SpecName": "KATEGORI",
+  //       "SpecValue": "SEDAN"
+  //     }
+  //   ],
+  //   "AuctionLot": {
+  //     "AuctionLotId": 32,
+  //     "FinalBasePrice": 32500000.00,
+  //     "AuctionLotNumber": 2,
+  //     "IsCancel": false,
+  //     "IsSold": false,
+  //     "IsUnsold": false,
+  //     "AuctionLotUnitCount": 1,
+  //     "AuctionEvent": {
+  //       "AuctionEventId": 6,
+  //       "EventCode": "JKT_MBL",
+  //       "EventDate": "2018-08-09T00:00:00",
+  //       "AuctionHouse": {
+  //         "AuctionHouseCode": "AH_JKT",
+  //         "AuctionHouseName": "BL_JAKARTA",
+  //         "AuctionHouseAddr": "Jl. Raya Kaliabang No. 45 \r\nMedan Satria, Bekasi",
+  //         "AuctionHouseCity": "Bekasi",
+  //         "AuctionHouseProvince": "Jawa Barat"
+  //       },
+  //       "EventNumber": 6,
+  //       "PublishedDate": "2018-08-07T07:02:07.657",
+  //       "AuctionRoomId": 1,
+  //       "RoomName": "VIP",
+  //       "MaxLot": 0,
+  //       "IsOnline": false,
+  //       "IsOnsite": false,
+  //       "IsLocked": false,
+  //       "IsApproved": true,
+  //       "ClosedBy": null,
+  //       "ClosedTime": null,
+  //       "OpenBy": null,
+  //       "OpenTime": null,
+  //       "IsActive": true,
+  //       "EventStatus": "PUBLISH",
+  //       "BeritaAcaraReady": false,
+  //       "TotalLot": 2
+  //     }
+  //   }
+  // },
+]
