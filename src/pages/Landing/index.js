@@ -13,7 +13,7 @@ import {
 } from "antd";
 import { NavLink } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
-// import { DataContentTab } from "../AllData/DataCard";
+// import { dataAdins } from "../AllData/DataCard";
 import {
   CardCarousel,
   JadwalLelang,
@@ -177,7 +177,7 @@ class Index extends Component {
               duration={400}
               autoPlay={true}
               infinite={false}
-              startIndex={1}
+              startIndex={0}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
               responsive={responsive}
@@ -189,7 +189,7 @@ class Index extends Component {
               {this.props.receivedproductrecomend
                 .slice(0, 10)
                 .map((data, Index) => (
-                  <Col xs={12} md={12}>
+                  <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
                     <CardCarousel
                       key={data.UnitKeyFinder}
                       nameBrand={data.UnitName}
@@ -215,18 +215,17 @@ class Index extends Component {
           </Row>
         </Grid>
         <Grid className="wrap-cardCarouselMobile">
-          <Row>
+        <Row>
+            <p className="titleHeader"> REKOMENDASI</p>
             <AliceCarousel
               duration={400}
               autoPlay={true}
               infinite={false}
-              startIndex={1}
+              startIndex={0}
               fadeOutAnimation={true}
               mouseDragEnabled={true}
-              playButtonEnabled={true}
               responsive={responsive}
               autoPlayInterval={2000}
-              autoPlayDirection="rtl"
               autoPlayActionDisabled={true}
               onSlideChange={this.onSlideChange}
               onSlideChanged={this.onSlideChanged}
@@ -234,7 +233,7 @@ class Index extends Component {
               {this.props.receivedproductrecomend
                 .slice(0, 10)
                 .map((data, Index) => (
-                  <Col xs={12} md={12}>
+                  <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
                     <CardCarousel
                       key={data.UnitKeyFinder}
                       nameBrand={data.UnitName}
@@ -245,6 +244,13 @@ class Index extends Component {
                       no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
                       color={data.AuctionLotUnitSpecs[11].SpecValue}
                       price={data.AuctionLot.FinalBasePrice}
+                      number={data.number}
+                      name={data.UnitName}
+                      year={data.AuctionLotUnitSpecs[4].SpecValue}
+                      km={data.AuctionLotUnitSpecs[12].SpecValue}
+                      grade={data.UnitGrade}
+                      lotNumber={data.AuctionLot.AuctionLotNumber}
+                      lotId={data.AuctionLot.AuctionLotId}
                       data={data}
                     />
                   </Col>
@@ -470,7 +476,7 @@ class Index extends Component {
                 <Row id="hasilPencarian">
                   <p style={{ fontWeight: "bold", marginLeft: 10 }}>
                     {" "}
-                    Hasil Pencarian{" "}
+                    Produk yang mungkin disukai{" "}
                   </p>
                   {paginate(
                     this.props.receivedproductall,
@@ -520,7 +526,7 @@ class Index extends Component {
                 <Row id="hasilPencarian">
                   <p style={{ fontWeight: "bold", marginLeft: 10 }}>
                     {" "}
-                    Produk yang mungkin disukai{" "}
+                    Hasil Pencarian{" "}
                   </p>
                   {paginate(
                     this.state.resultSearch,
