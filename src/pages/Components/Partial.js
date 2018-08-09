@@ -244,11 +244,11 @@ export class Footer extends Component {
             <Col xs={12} md={3}>
               <p> Subscribe Our Newslatter </p>
               <Input
-                onBlur={() => alert("Terimakasih sudah subscribe Legoas")}
-                addonAfter={<Icon type="mail" />}
+                addonAfter={<Icon type="mail" onClick={() => alert("Terimakasih sudah subscribe Legoas")} />}
                 className="footer-email"
                 placeholder="Type your e-mail here"
               />
+              <p></p> {/* space between input type and button social */}
               <p className="social-media">
                 <NavLink
                   to="https://www.facebook.com/Legoas-Indonesia-400497903760852/"
