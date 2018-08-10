@@ -268,8 +268,8 @@ export class JadwalLelang extends Component {
           {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="money" /> Biaya Admin: Rp. {this.props.admfee.toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+          <Icon type="money" /> Biaya Admin: Rp. {this.props.admfee == null ? this.props.admfee : 
+          this.props.admfee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
         </p>
         <Link
           to={{

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
+import { Grid, Row, Col } from "react-bootstrap";
 import {
   Icon,
   Divider,
@@ -8,20 +8,18 @@ import {
   Form,
   Pagination,
   Button,
-  // Menu,
   Spin
 } from "antd";
 import { NavLink } from "react-router-dom";
+import {SkeletonImg, Skeleton} from 'react-js-skeleton'
 import AliceCarousel from "react-alice-carousel";
-// import { dataAdins } from "../AllData/DataCard";
+// import { dataAdins } from "../AllData/DataCard"; //data For Testing
 import {
   CardCarousel,
   JadwalLelang,
   SearchLelang,
-  // ContentTab
 } from "../Components/Card";
 import { Banner } from "../Components/Partial";
-// import Map from "../Components/Map";
 import { connect } from "react-redux";
 import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
 import { fetchBrand } from "../../actions/getBrand";
@@ -35,7 +33,6 @@ import {
 import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchMerek, fetchModel, fetchTipe, fetchMerekWithColor, fetchModelWithColor, fetchTipeWithColor } from "../../actions/searchProduct";
 import { login, cekToken } from "../../actions/login";
-// const SubMenu = Menu.SubMenu;
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -55,59 +52,35 @@ class Index extends Component {
       tipe: "",
       warna: "",
       session: {},
-      loading: true,
-      progress: 0,
+      loadingRecomended: true,
+      loadingCard: true,
+      loadingJadwal: true,
       resultSearch: "Not Yet Search",
       pageSize: 2,
       current: 1
     };
   }
 
-  onChange = page => {
-    this.setState({
-      current: page
-    });
-  };
-
   async componentDidMount() {
     await this.props.login("TELECREATIVE", "01042018");
-    await this.setState({ progress: 15 });
     const session = JSON.parse(localStorage.getItem("session"));
     await this.setState({ session });
-    await this.setState({ progress: 30 });
-    await this.props.cekToken(
-      session.tokenId,
-      session.RoleCode,
-      session.officeCode
-    );
-    await this.setState({ progress: 45 });
-    await this.props.fetchScheduleCar(session.tokenId);
-    await this.setState({ progress: 60 });
-    await this.props.fetchScheduleMot(session.tokenId);
-    await this.props.fetchProductAll(session.tokenId);
-    await this.setState({ progress: 75 });
-    await this.props.fetchBrand(session.tokenId);
-    await this.setState({ progress: 80 });
+    await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode);
+    await this.props.fetchAdmFee(session.tokenId);
     await this.props.fetchProductRecomended(session.tokenId);
-    if(this.props.receivedproductrecomend !== null){
+    if(this.props.receivedproductrecomend == null){
       await this.props.fetchProductGradeB(session.tokenId);
     }
-    await this.getImageRecomend(
-      this.props.receivedproductrecomend.map(
-        data => data.AuctionLot.AuctionLotId
-      )
-    );
-    await this.setState({ progress: 95 });
-    await this.props.fetchAdmFee(session.tokenId);
-    await this.setState({ loading: false });
+    this.setState({loadingRecomended: false})
+    await this.props.fetchScheduleCar(session.tokenId);
+    this.setState({loadingJadwal: false})
+    // await this.props.fetchScheduleMot(session.tokenId);
+    await this.props.fetchProductAll(session.tokenId);
+    this.setState({loadingCard: false})
+    this.props.fetchBrand(session.tokenId);
   }
 
-  async getImageRecomend(lotId) {
-    for (let i = 0; i < lotId.length; i++) {
-      this.props.fetchProductDetail(this.state.session.tokenId, lotId[i]);
-    }
-  }
-
+  //Function for Handling Search
   async handleSearch() {
     const { session, merk, model, tipe, warna } = this.state;
     if (merk !== "" && model !== "" && tipe !== "" && warna !== "") {
@@ -126,6 +99,13 @@ class Index extends Component {
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
   }
 
+  //function for change current page Pagination
+  onChange = page => {
+    this.setState({
+      current: page
+    });
+  };
+
   static defaultProps = {
     center: { lat: -6.197027, lng: 106.9793295 },
     zoom: 11
@@ -143,37 +123,56 @@ class Index extends Component {
       }
     };
 
-    return this.state.loading ? (
-      <div
-        style={{
-          marginLeft: "20%",
-          paddingTop: "18%",
-          marginBottom: "15%",
-          width: "60%",
-          justifyContent: "center"
-        }}
-      >
-        <center>
-          <ProgressBar
-            active
-            striped
-            bsStyle="info"
-            now={this.state.progress}
-            style={{ justifyContent: "center" }}
-          />
-        </center>
-      </div>
-    ) : this.props.receivedproductrecomend === [] ? (
-      <div style={{ paddingTop: 100 }}>
-        <ProgressBar striped bsStyle="info" now={100} />
-      </div>
-    ) : (
+    return (
       <div>
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
             <p className="titleHeader"> REKOMENDASI</p>
-            <AliceCarousel
+            {this.state.loadingRecomended ? (
+              <Row>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <SkeletonImg heightSkeleton={175} />
+                    <br />
+                    <br />
+                    <h3><Skeleton width={200} /></h3>
+                    <p><Skeleton width={250} /></p>
+                    <p className="color"> <Skeleton width={100} /> </p>
+                    <p><Skeleton width={200} /></p>
+                  </center>
+                </div>
+                </Col>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <SkeletonImg heightSkeleton={175} />
+                    <br />
+                    <br />
+                    <h3><Skeleton width={200} /></h3>
+                    <p><Skeleton width={250} /></p>
+                    <p className="color"> <Skeleton width={100} /> </p>
+                    <p><Skeleton width={200} /></p>
+                  </center>
+                </div>
+                </Col>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <SkeletonImg heightSkeleton={175} />
+                    <br />
+                    <br />
+                    <h3><Skeleton width={200} /></h3>
+                    <p><Skeleton width={250} /></p>
+                    <p className="color"> <Skeleton width={100} /> </p>
+                    <p><Skeleton width={200} /></p>
+                  </center>
+                </div>
+                </Col>
+              </Row>
+            ) : (
+              <AliceCarousel
               duration={400}
               autoPlay={true}
               infinite={false}
@@ -212,104 +211,71 @@ class Index extends Component {
                   </Col>
                 ))}
             </AliceCarousel>
+            )}
           </Row>
         </Grid>
         <Grid className="wrap-cardCarouselMobile">
         <Row>
             <p className="titleHeader"> REKOMENDASI</p>
-            <AliceCarousel
-              duration={400}
-              autoPlay={true}
-              infinite={false}
-              startIndex={0}
-              fadeOutAnimation={true}
-              mouseDragEnabled={true}
-              responsive={responsive}
-              autoPlayInterval={2000}
-              autoPlayActionDisabled={true}
-              onSlideChange={this.onSlideChange}
-              onSlideChanged={this.onSlideChanged}
-            >
-              {this.props.receivedproductrecomend
-                .slice(0, 10)
-                .map((data, Index) => (
-                  <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
-                    <CardCarousel
-                      key={data.UnitKeyFinder}
-                      nameBrand={data.UnitName}
-                      image={data.ImageUri}
-                      merek={data.AuctionLotUnitSpecs[0].SpecValue}
-                      model={data.AuctionLotUnitSpecs[1].SpecValue}
-                      tipe={data.AuctionLotUnitSpecs[2].SpecValue}
-                      no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
-                      color={data.AuctionLotUnitSpecs[11].SpecValue}
-                      price={data.AuctionLot.FinalBasePrice}
-                      number={data.number}
-                      name={data.UnitName}
-                      year={data.AuctionLotUnitSpecs[4].SpecValue}
-                      km={data.AuctionLotUnitSpecs[12].SpecValue}
-                      grade={data.UnitGrade}
-                      lotNumber={data.AuctionLot.AuctionLotNumber}
-                      lotId={data.AuctionLot.AuctionLotId}
-                      data={data}
-                    />
+            {this.state.loadingRecomended ? (
+              <Row>
+                  <Col md={4} >
+                  <div className="background-cardCarousel">
+                    <center>
+                      <SkeletonImg heightSkeleton={175} />
+                      <br />
+                      <br />
+                      <h3><Skeleton width={200} /></h3>
+                      <p><Skeleton width={250} /></p>
+                      <p className="color"> <Skeleton width={100} /> </p>
+                      <p><Skeleton width={200} /></p>
+                    </center>
+                  </div>
                   </Col>
-                ))}
-            </AliceCarousel>
+              </Row>
+            ) : (
+              <AliceCarousel
+                duration={400}
+                autoPlay={true}
+                infinite={false}
+                startIndex={0}
+                fadeOutAnimation={true}
+                mouseDragEnabled={true}
+                responsive={responsive}
+                autoPlayInterval={2000}
+                autoPlayActionDisabled={true}
+                onSlideChange={this.onSlideChange}
+                onSlideChanged={this.onSlideChanged}
+              >
+                {this.props.receivedproductrecomend
+                  .slice(0, 10)
+                  .map((data, Index) => (
+                    <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
+                      <CardCarousel
+                        key={data.UnitKeyFinder}
+                        nameBrand={data.UnitName}
+                        image={data.ImageUri}
+                        merek={data.AuctionLotUnitSpecs[0].SpecValue}
+                        model={data.AuctionLotUnitSpecs[1].SpecValue}
+                        tipe={data.AuctionLotUnitSpecs[2].SpecValue}
+                        no_pol={data.AuctionLotUnitSpecs[3].SpecValue}
+                        color={data.AuctionLotUnitSpecs[11].SpecValue}
+                        price={data.AuctionLot.FinalBasePrice}
+                        number={data.number}
+                        name={data.UnitName}
+                        year={data.AuctionLotUnitSpecs[4].SpecValue}
+                        km={data.AuctionLotUnitSpecs[12].SpecValue}
+                        grade={data.UnitGrade}
+                        lotNumber={data.AuctionLot.AuctionLotNumber}
+                        lotId={data.AuctionLot.AuctionLotId}
+                        data={data}
+                      />
+                    </Col>
+                  ))}
+              </AliceCarousel>
+            )}
           </Row>
         </Grid>
-        {/*
-        <Grid>
-          <Row>
-          <Col md={2}>
-            <Menu
-              onClick={({item, key}) => this.setState({merek: key})}
-              style={{ width: '100%' }}
-              defaultOpenKeys={['sub1']}
-              selectedKeys = {[this.state.merek]}
-              mode="inline">
-              <SubMenu onTitleClick={({key}) => this.setState({merek: ''})} key="all" title={<span><span>All</span></span>}>
-                <SubMenu key="sub1" title={<span><span>Mobil</span></span>}>
-                  <Menu.Item key="Avanza">Avanza</Menu.Item>
-                  <Menu.Item key="Toyota">Xenia</Menu.Item>
-                </SubMenu>
-            </Menu>
-          </Col>
-          <Col md={10}>
-          {this.state.merek === '' ? (
-            DataContentTab.map((d, index) => (
-              <Col md={4} key={index}>
-              <ContentTab
-                name={d.name}
-                image={d.image}
-                merek={d.merek}
-                model={d.model}
-                tipe={d.tipe}
-                at_mt={d.at_mt}
-                warna={d.warna}
-                price={d.price}
-                button={d.button} />
-              </Col>
-            ))
-          ) : (
-            DataContentTab.filter(data => data.merek === this.state.merek).map((d, index) => (
-              <Col md={4} key={index}>
-              <ContentTab
-                name={d.name}
-                image={d.image}
-                merek={d.merek}
-                model={d.model}
-                tipe={d.tipe}
-                at_mt={d.at_mt}
-                warna={d.warna}
-                price={d.price}
-                button={d.button} />
-              </Col>
-            ))
-          )}
-          </Col>
-          </Row>
-        </Grid>*/}
         <Grid style={{ paddingTop: "3%", paddingBottom: "3%" }}>
           <Row>
             <Col md={5} className="searchPanel">
@@ -478,11 +444,67 @@ class Index extends Component {
                     {" "}
                     Produk yang mungkin disukai{" "}
                   </p>
-                  {paginate(
-                    this.props.receivedproductall,
-                    this.state.pageSize,
-                    this.state.current
-                  )
+                  {this.state.loadingCard ? (
+                    <Row>
+                      <Col md={12}>
+                      <div className="searchLelang" style={{ paddingBottom: 10 }}>
+                        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+                            <Col md={12}>
+                              <Row className="contentLelang">
+                                <Col xs={12} md={5}>
+                                  {/* <Image src={this.props.image} width="100%" /> */}
+                                  <SkeletonImg heightSkeleton={100} />
+                                </Col>
+                                <Col xs={12} md={7}>
+                                  <div className="headerLelang">
+                                    <p> <Skeleton width={200}  /> </p>
+                                  </div>
+                                  <Row className="box">
+                                    <Col md={12}>
+                                      <p className="title"> <Skeleton width={100} /> </p>
+                                    </Col>
+                                    <Col md={12}>
+                                      <p className="title"> <Skeleton width={150} /> </p>
+                                    </Col>
+                                  </Row>
+                                </Col>
+                              </Row>
+                            </Col>
+                        </Row>
+                      </div>
+                      <div className="searchLelang" style={{ paddingBottom: 10 }}>
+                        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+                            <Col md={12}>
+                              <Row className="contentLelang">
+                                <Col xs={12} md={5}>
+                                  {/* <Image src={this.props.image} width="100%" /> */}
+                                  <SkeletonImg heightSkeleton={100} />
+                                </Col>
+                                <Col xs={12} md={7}>
+                                  <div className="headerLelang">
+                                    <p> <Skeleton width={200}  /> </p>
+                                  </div>
+                                  <Row className="box">
+                                    <Col md={12}>
+                                      <p className="title"> <Skeleton width={100} /> </p>
+                                    </Col>
+                                    <Col md={12}>
+                                      <p className="title"> <Skeleton width={150} /> </p>
+                                    </Col>
+                                  </Row>
+                                </Col>
+                              </Row>
+                            </Col>
+                        </Row>
+                      </div>
+                      </Col>
+                  </Row>
+                  ) : (
+                    paginate(
+                      this.props.receivedproductall,
+                      this.state.pageSize,
+                      this.state.current
+                    )
                     .slice(0, 10)
                     .map((data, Index) => (
                       <Col md={12} key={data.UnitKeyFinder}>
@@ -505,20 +527,25 @@ class Index extends Component {
                           lotId={data.AuctionLot.AuctionLotId}
                         />
                       </Col>
-                    ))}
+                    ))
+                  )}
                 </Row>
                 <Row>
-                  <Col xs={1} md={3} />
-                  <Col xs={10} md={7}>
+                  <Col xs={1} md={1} />
+                  <Col xs={10} md={10}>
+                  {this.state.loadingCard ? (
+                    <SkeletonImg heightSkeleton={35} />
+                  ) : (
                     <Pagination
                       defaultCurrent={1}
                       pageSize={this.state.pageSize}
-                      total={this.props.receivedproductrecomend.length}
+                      total={this.props.receivedproductall.length}
                       current={this.state.current}
                       onChange={this.onChange}
                     />
+                  )}
                   </Col>
-                  <Col xs={1} md={3} />
+                  <Col xs={1} md={1} />
                 </Row>
               </Col>
              : this.state.resultSearch != '' ?
@@ -556,8 +583,8 @@ class Index extends Component {
                   ))}
                 </Row>
                 <Row>
-                  <Col xs={1} md={3} />
-                  <Col xs={10} md={7}>
+                  <Col xs={1} md={1} />
+                  <Col xs={10} md={10}>
                     <Pagination
                       defaultCurrent={1}
                       pageSize={this.state.pageSize}
@@ -566,7 +593,7 @@ class Index extends Component {
                       onChange={this.onChange}
                     />
                   </Col>
-                  <Col xs={1} md={3} />
+                  <Col xs={1} md={1} />
                 </Row>
               </Col>
               :
@@ -580,7 +607,7 @@ class Index extends Component {
                 <Row>
                   <Col xs={1} md={2} />
                   <Col xs={10} md={8}>
-                <p style={{ fontWeight: "bold", marginTop: 10,  }}>
+                <p style={{ fontWeight: "bold", marginTop: 10 }}>
                 mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda{" "}
                 <NavLink
                   to="https://lelang.legoas.co.id/Auction/Bidder/Register"
@@ -607,6 +634,40 @@ class Index extends Component {
             <Row>
               <Col xs={12} md={12}>
                 <Row>
+                {this.state.loadingJadwal ? (
+                  <Row>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={200} /></p>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={100} /></p>
+                      <p><Skeleton width={225} /></p>
+                      <p><Skeleton width={220} /></p>
+                      <p><Skeleton width={150} /></p>
+                      <p><Skeleton width={190} /></p>
+                    </div>
+                    </Col>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={200} /></p>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={100} /></p>
+                      <p><Skeleton width={225} /></p>
+                      <p><Skeleton width={210} /></p>
+                      <p><Skeleton width={150} /></p>
+                      <p><Skeleton width={180} /></p>
+                    </div>
+                    </Col>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={200} /></p>
+                      <p style={{ fontWeight: "bold" }}><Skeleton width={100} /></p>
+                      <p><Skeleton width={225} /></p>
+                      <p><Skeleton width={220} /></p>
+                      <p><Skeleton width={150} /></p>
+                      <p><Skeleton width={190} /></p>
+                    </div>
+                    </Col>
+                  </Row>
+                ) : (
                   <AliceCarousel
                     duration={400}
                     autoPlay={false}
@@ -620,32 +681,27 @@ class Index extends Component {
                     onSlideChange={this.onSlideChange}
                     onSlideChanged={this.onSlideChanged}
                   >
-                    {this.props.schedulecar === [] ? (
-                      <div>
-                        <Spin size="large" />
-                      </div>
-                    ) : (
-                      this.props.schedulecar.map((data, index) => (
-                        <Col xs={12} md={12} key={data.auctionEventId}>
-                          <JadwalLelang
-                            transport={" MOBIL"}
-                            eventCode={data.eventCode}
-                            eventNumber={data.eventNumber}
-                            location={data.auctionHouseProvince}
-                            date={data.eventDate.date}
-                            startTime={data.eventDate.startTime}
-                            endTime={data.eventDate.endTime}
-                            timeZone={data.timezone}
-                            openhouse={data.openHouseDate.date}
-                            houseName={data.auctionHouseName}
-                            houseAddress={data.auctionHouseAddress}
-                            eventId={data.auctionEventId}
-                            admfee={this.props.receivedadmfee.CAR}
-                          />
-                        </Col>
-                      ))
-                    )}
+                    {this.props.schedulecar.map((data, index) => (
+                      <Col xs={12} md={this.props.schedulecar.length === 1 ? 4 : this.props.schedulecar.length === 2 ? 8 : 12} lg={this.props.schedulecar.length === 1 ? 4 : this.props.schedulecar.length === 2 ? 10 : 12} lgOffset={this.props.schedulecar.length === 2 ? 1 : 0} key={data.auctionEventId}>
+                        <JadwalLelang
+                          transport={" MOBIL"}
+                          eventCode={data.eventCode}
+                          eventNumber={data.eventNumber}
+                          location={data.auctionHouseProvince}
+                          date={data.eventDate.date}
+                          startTime={data.eventDate.startTime}
+                          endTime={data.eventDate.endTime}
+                          timeZone={data.timezone}
+                          openhouse={data.openHouseDate.date}
+                          houseName={data.auctionHouseName}
+                          houseAddress={data.auctionHouseAddress}
+                          eventId={data.auctionEventId}
+                          admfee={this.props.receivedadmfee.CAR}
+                        />
+                      </Col>
+                    ))}
                   </AliceCarousel>
+                )}
                 </Row>
               </Col>
             </Row>

@@ -61,7 +61,7 @@ export class Index extends Component {
             </div>
             <Row>
               <Col md={6}>
-                {this.props.schedulecar == null ? (
+                {this.props.schedulecar.length == 0 ? (
                   <center>
                     <p>Schedule Mobil Not Available</p>
                   </center>
@@ -131,6 +131,9 @@ export class Index extends Component {
               <Col xs={12} md={4} />
               <Col xs={12} md={4}>
                 <div className="pagination">
+                {this.props.schedulemot == null && this.props.schedulecar.length == 0 ? (
+                  null
+                ) : (
                   <Pagination
                     defaultCurrent={1}
                     pageSize={this.state.pageSize}
@@ -138,6 +141,7 @@ export class Index extends Component {
                     current={this.state.current}
                     onChange={this.onChange}
                   />
+                )}
                 </div>
               </Col>
               <Col xs={12} md={4} />

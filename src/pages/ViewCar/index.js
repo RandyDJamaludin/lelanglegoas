@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, Image, ProgressBar } from "react-bootstrap";
+import { Grid, Row, Col, Image } from "react-bootstrap";
 import { Divider } from "antd";
 import { Redirect } from "react-router";
 import AliceCarousel from "react-alice-carousel";
-// import MdAccessTime from "react-icons/lib/md/access-time";
 import MdLocationOn from "react-icons/lib/md/location-on";
 import FaCalendarCheckO from "react-icons/lib/fa/calendar-check-o";
 import moment from "moment";
@@ -14,8 +13,7 @@ import { fetchProductDetail } from "../../actions/getProduct";
 
 class Index extends Component {
   state = {
-    isAuth: null,
-    loading: true
+    isAuth: null
   };
 
   async componentDidMount() {
@@ -26,7 +24,6 @@ class Index extends Component {
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.lotId
     );
-    await this.setState({ loading: false });
   }
 
   renderThumbs = () => (
@@ -47,19 +44,8 @@ class Index extends Component {
   );
   render() {
     const {
-      grade,
-      // km,
-      // lotId,
-      lotNumber,
-      // merek,
-      // model,
-      // tipe,
-      name,
-      // police,
-      price,
-      // warna,
-      // year,
-      data
+      grade, lotNumber, name,
+      price, data
     } = this.props.location.state.data;
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
@@ -68,10 +54,6 @@ class Index extends Component {
           state: { from: this.props.location }
         }}
       />
-    ) : this.state.loading ? (
-      <div>
-        <ProgressBar active striped bsStyle="info" now={100} />
-      </div>
     ) : (
       <div className="wrap-viewCarPage">
         <Grid>
@@ -305,6 +287,23 @@ class Index extends Component {
                   </Col>
                 </Row>
 
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div>
+                      <p> Lelang </p>
+                    </div>
+                  </Col>
+
+                  <Col xs={8} md={8}>
+                    <div>
+                      <p>
+                        <FaCalendarCheckO />
+                        <b> {moment(data.AuctionLot.AuctionEvent.EventDate).format("D MMMM YYYY")} </b>
+                      </p>
+                    </div>
+                  </Col>
+                </Row>
+
                 {/* <Row>
                   <Col xs={4} md={4}>
                     <div>
@@ -326,23 +325,6 @@ class Index extends Component {
                     </div>
                   </Col>
                 </Row> */}
-
-                <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Lelang </p>
-                    </div>
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p>
-                        <FaCalendarCheckO />
-                        <b> {moment(data.AuctionLot.AuctionEvent.EventDate).format("D MMMM YYYY")} </b>
-                      </p>
-                    </div>
-                  </Col>
-                </Row>
 
                 {/* <Row>
                   <Col xs={4} md={4}>

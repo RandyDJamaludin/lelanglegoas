@@ -1,34 +1,28 @@
 import React, { Component } from "react";
-import { Grid, Row, Col, ProgressBar } from "react-bootstrap";
-// import { Select } from "antd";
+import { Grid, Row, Col } from "react-bootstrap";
+import {SkeletonImg, Skeleton} from 'react-js-skeleton'
 import { Redirect } from "react-router";
-// import { DataCardLocation } from "../AllData/DataCard";
 import { ListLelang } from "../Components/Card";
 import { connect } from "react-redux";
 import { fetchProductByEvent } from "../../actions/getProduct";
 import moment from "moment";
 import "moment/locale/id";
 
-// const Option = Select.Option;
-
 class Index extends Component {
   state = {
     isAuth: null,
-    loading: true,
-    progress: 0
+    loading: true
   };
 
   async componentDidMount() {
     if (this.props.sessionPersistance.tokenId != null) {
       await this.setState({ isAuth: this.props.sessionPersistance });
     }
-    await this.setState({ progress: 50 });
     await this.props.fetchProductByEvent(
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.eventId
     );
-    await this.setState({ progress: 100 });
-    await this.setState({ loading: false });
+    this.setState({ loading: false });
   }
 
   render() {
@@ -160,14 +154,81 @@ class Index extends Component {
           </Row>
           <Row style={{ paddingTop: "4%", paddingBottom: "4%" }}>
             {this.state.loading ? (
-              <div>
-                <ProgressBar
-                  active
-                  striped
-                  bsStyle="info"
-                  now={this.state.progress}
-                />
-              </div>
+              <div className="listLelang" style={{ paddingBottom: "5%" }}>
+              <Row>
+                  <Col md={12}>
+                    <Row className="contentLelang">
+                      <Col xs={12} md={3}><SkeletonImg heightSkeleton={175} /></Col>
+                      <Col xs={12} md={9}>
+                        <Row>
+                          <Col xs={12} md={10}>
+                            <div className="headerLelang">
+                              <p><b><Skeleton /></b></p>
+                              <p><b><Skeleton /></b></p>
+                            </div>
+                          </Col>
+                          <Col xs={12} md={2}>
+                            <div className="headerLelang">
+                              <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                              <Skeleton />
+                              </p>
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={10}>
+                            <div className="headerLelang">
+                              <p style={{ color: "#000", fontSize: 15 }}>
+                              <Skeleton />
+                              </p>
+                              <p><Skeleton /></p>
+                            </div>
+                          </Col>
+                          <Col xs={12} md={2}>
+                            <div className="headerLelang">
+                              <div className="bodyLelang">
+                                <p
+                                  style={{
+                                    fontWeight: "bold",
+                                    fontSize: 30,
+                                    color: "#3c8dbc",
+                                    textAlign: "center",
+                                    lineHeight: 0
+                                  }}
+                                >
+                                  {" "}
+                                  <Skeleton />
+                                </p>
+                                <p
+                                  style={{
+                                    fontWeight: "bold",
+                                    fontSize: 14,
+                                    textAlign: "center",
+                                    lineHeight: 0,
+                                    marginTop: 10
+                                  }}
+                                >
+                                  {" "}
+                                  <Skeleton />
+                                </p>
+                              </div>
+                            </div>
+                          </Col>
+                        </Row>
+                        <Row>
+                          <Col xs={12} md={10}>
+                            <div className="headerLelang">
+                              <p style={{ fontSize: 22, fontWeight: "bold" }}>
+                              <Skeleton />
+                              </p>
+                            </div>
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Col>
+              </Row>
+            </div>
             ) : (
               this.props.receivedproductbyevent.map((data, index) => (
                 <Col md={12} key={data.UnitKeyFinder}>
