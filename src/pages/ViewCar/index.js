@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col, Image } from "react-bootstrap";
 import { Divider } from "antd";
 import { Redirect } from "react-router";
+import {SkeletonImg, Skeleton} from 'react-js-skeleton'
 import AliceCarousel from "react-alice-carousel";
 import MdLocationOn from "react-icons/lib/md/location-on";
 import FaCalendarCheckO from "react-icons/lib/fa/calendar-check-o";
@@ -13,7 +14,8 @@ import { fetchProductDetail } from "../../actions/getProduct";
 
 class Index extends Component {
   state = {
-    isAuth: null
+    isAuth: null,
+    loading: true
   };
 
   async componentDidMount() {
@@ -24,6 +26,7 @@ class Index extends Component {
       this.props.sessionPersistance.tokenId,
       this.props.location.state.data.lotId
     );
+    this.setState({loading: false})
   }
 
   renderThumbs = () => (
@@ -60,7 +63,10 @@ class Index extends Component {
           <Row>
             <Col xs={12} md={8}>
               <p className="header"> {name} </p>
-              <div>
+              {this.state.loading ? (
+                <SkeletonImg heightSkeleton={400}/>
+              ) : (
+                <div>
                 <AliceCarousel
                   dotsDisabled={true}
                   buttonsDisabled={true}
@@ -74,6 +80,8 @@ class Index extends Component {
                 </AliceCarousel>
                 {this.renderThumbs()}
               </div>
+              )}
+              
 
               <div className="infoKendaraan">
                 <Row>
@@ -371,9 +379,7 @@ class Index extends Component {
 }
 
 const mapStateToProps = state => ({
-  receivedproductdetail: state.receivedproductdetail,
   receivedimagesproduct: state.receivedimagesproduct,
-  receivedimageeveryproduct: state.receivedimageeveryproduct,
   sessionPersistance: state.sessionPersistance
 });
 

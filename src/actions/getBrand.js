@@ -4,6 +4,7 @@ import { server } from '../env/server'
 
 import { RECEIVED_BRAND } from '../constants/processor'
 
+//Function For Fetching Brand (Merk, Model, Tipe)
 export const fetchBrand = (tokenId) => {
   return async dispatch => {
     await dispatch(setLoading(true, 'LOADING_GET_BRAND'))

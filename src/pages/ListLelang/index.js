@@ -33,17 +33,6 @@ class Index extends Component {
       date
     } = this.props.location.state.data;
 
-    // function handleChange(value) {
-    //   console.log(`selected ${value}`);
-    // }
-
-    // function handleBlur() {
-    //   console.log("blur");
-    // }
-
-    // function handleFocus() {
-    //   console.log("focus");
-    // }
     return this.props.sessionPersistance.tokenId == null ? (
       <Redirect
         to={{
@@ -64,92 +53,6 @@ class Index extends Component {
                 DAFTAR {transport} - {houseName} {eventNumber} |{" "}
                 {moment(date).format("D MMMM YYYY")}{" "}
               </p>
-              {/* <p className='header'> Pencarian </p> */}
-              {/* <Row> 
-                <Col md={2}>
-                  <Select
-                    showSearch
-                    style={{ width: '100%' }}
-                    optionFilterProp="children"
-                    placeholder='Merk'
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                  >
-                    <Option value="jack">Honda</Option>
-                    <Option value="lucy">Yamaha</Option>
-                    <Option value="tom">Suzuki</Option>
-                  </Select>
-                </Col>
-                <Col md={2}>
-                  <Select
-                    showSearch
-                    style={{ width: '100%' }}
-                    optionFilterProp="children"
-                    placeholder='Pilih Model'
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                  >
-                    <Option value="jack">Model A</Option>
-                    <Option value="lucy">Model B</Option>
-                    <Option value="tom">Model C</Option>
-                  </Select>
-                </Col>
-                <Col md={2}>
-                  <Select
-                    showSearch
-                    style={{ width: '100%' }}
-                    optionFilterProp="children"
-                    placeholder='Dari Tahun'
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                  >
-                    <Option value="jack">2000</Option>
-                    <Option value="lucy">2001</Option>
-                    <Option value="tom">2002</Option>
-                  </Select>
-                </Col>
-                <Col md={2}>
-                  <Select
-                    showSearch
-                    style={{ width: '100%' }}
-                    optionFilterProp="children"
-                    placeholder='Sampai Tahun'
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                  >
-                    <Option value="jack">2014</Option>
-                    <Option value="lucy">2015</Option>
-                    <Option value="tom">2016</Option>
-                  </Select>
-                </Col>
-                <Col md={2}>
-                  <Select
-                    showSearch
-                    style={{ width: '100%' }}
-                    optionFilterProp="children"
-                    placeholder='Warna'
-                    onChange={handleChange}
-                    onFocus={handleFocus}
-                    onBlur={handleBlur}
-                    filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
-                  >
-                    <Option value="jack">Putih</Option>
-                    <Option value="lucy">Abu - Abu</Option>
-                    <Option value="tom">Merah</Option>
-                  </Select>
-                </Col>
-                <Col md={2}>
-                  <Button className='search'> Cari </Button>
-                </Col>
-              </Row> */}
             </Col>
           </Row>
           <Row style={{ paddingTop: "4%", paddingBottom: "4%" }}>
@@ -158,19 +61,19 @@ class Index extends Component {
               <Row>
                   <Col md={12}>
                     <Row className="contentLelang">
-                      <Col xs={12} md={3}><SkeletonImg heightSkeleton={175} /></Col>
+                      <Col xs={12} md={3}><SkeletonImg heightSkeleton={160} /></Col>
                       <Col xs={12} md={9}>
                         <Row>
                           <Col xs={12} md={10}>
                             <div className="headerLelang">
-                              <p><b><Skeleton /></b></p>
-                              <p><b><Skeleton /></b></p>
+                              <p><b><Skeleton width={200} /></b></p>
+                              <p><b><Skeleton width={200} /></b></p>
                             </div>
                           </Col>
                           <Col xs={12} md={2}>
                             <div className="headerLelang">
                               <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                              <Skeleton />
+                              <Skeleton width={100} />
                               </p>
                             </div>
                           </Col>
@@ -178,39 +81,18 @@ class Index extends Component {
                         <Row>
                           <Col xs={12} md={10}>
                             <div className="headerLelang">
-                              <p style={{ color: "#000", fontSize: 15 }}>
-                              <Skeleton />
+                              <p style={{ color: "#000", fontSize: 18 }}>
+                              <Skeleton width={225} />
                               </p>
-                              <p><Skeleton /></p>
+                              <p><Skeleton width={175} /></p>
                             </div>
                           </Col>
                           <Col xs={12} md={2}>
                             <div className="headerLelang">
                               <div className="bodyLelang">
-                                <p
-                                  style={{
-                                    fontWeight: "bold",
-                                    fontSize: 30,
-                                    color: "#3c8dbc",
-                                    textAlign: "center",
-                                    lineHeight: 0
-                                  }}
-                                >
-                                  {" "}
-                                  <Skeleton />
-                                </p>
-                                <p
-                                  style={{
-                                    fontWeight: "bold",
-                                    fontSize: 14,
-                                    textAlign: "center",
-                                    lineHeight: 0,
-                                    marginTop: 10
-                                  }}
-                                >
-                                  {" "}
-                                  <Skeleton />
-                                </p>
+                                <center>
+                                  <SkeletonImg heightSkeleton={60} widthSkeleton={50} />
+                                </center>
                               </div>
                             </div>
                           </Col>
@@ -219,8 +101,24 @@ class Index extends Component {
                           <Col xs={12} md={10}>
                             <div className="headerLelang">
                               <p style={{ fontSize: 22, fontWeight: "bold" }}>
-                              <Skeleton />
+                              <Skeleton width={200} />
                               </p>
+                            </div>
+                          </Col>
+                          <Col xs={12} md={2}>
+                            <div className="headerLelang">
+                              <div className="bodyLelang">
+                                <p
+                                  style={{
+                                    fontWeight: "bold",
+                                    fontSize: 14,
+                                    textAlign: "center",
+                                    lineHeight: 0,
+                                  }}
+                                >
+                                  <Skeleton width={75} />
+                                </p>
+                              </div>
                             </div>
                           </Col>
                         </Row>
@@ -273,6 +171,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Index);
-// const WrappedListLelang = Form.create()(Index);
-
-// export default WrappedListLelang;

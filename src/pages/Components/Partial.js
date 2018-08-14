@@ -242,7 +242,7 @@ export class Footer extends Component {
               </p>
             </Col>
             <Col xs={12} md={3}>
-              <p> Subscribe Our Newslatter </p>
+              <p> Subscribe Our Newsletter </p>
               <Input
                 addonAfter={<Icon type="mail" onClick={() => alert("Terimakasih sudah subscribe Legoas")} />}
                 className="footer-email"

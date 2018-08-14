@@ -28,11 +28,11 @@ export class Main extends Component {
           <Route exact path="/lokasi" component={Lokasi} />
           <Route exact path="/list-lelang" component={ListLelang} />
           <Route exact path="/view-car" component={ViewCar} />
-          <Route exact path="/kontak" component={Kontak} />
           <Route exact path="/tentang-kami" component={TentangKami} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register-choose" component={RegisterChoose} />
-          <Route exact path="/register" component={Register} />
+          {/* <Route exact path="/kontak" component={Kontak} /> */}
+          {/* <Route exact path="/login" component={Login} /> */}
+          {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}
+          {/* <Route exact path="/register" component={Register} /> */}
           <Route component={noMatch} />
         </Switch>
       </main>
@@ -43,8 +43,7 @@ export class Main extends Component {
 const noMatch = ({ location }) => (
   <Redirect
     to={{
-      pathname: "/",
-      state: { from: this.props.location }
+      pathname: "/"
     }}
   />
 );

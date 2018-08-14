@@ -4,6 +4,7 @@ import { server } from "../env/server";
 
 import { RECEIVED_ADM_FEE } from "../constants/processor";
 
+//Function For Fetching Administration Fee
 export const fetchAdmFee = tokenId => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_ADM_FEE"));

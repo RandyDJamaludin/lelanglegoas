@@ -68,13 +68,13 @@ class Index extends Component {
     await this.setState({ session });
     await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode);
     await this.props.fetchAdmFee(session.tokenId);
+    await this.props.fetchScheduleCar(session.tokenId);
+    this.setState({loadingJadwal: false})
     await this.props.fetchProductRecomended(session.tokenId);
     if(this.props.receivedproductrecomend == null){
       await this.props.fetchProductGradeB(session.tokenId);
     }
     this.setState({loadingRecomended: false})
-    await this.props.fetchScheduleCar(session.tokenId);
-    this.setState({loadingJadwal: false})
     // await this.props.fetchScheduleMot(session.tokenId);
     await this.props.fetchProductAll(session.tokenId);
     this.setState({loadingCard: false})
@@ -172,6 +172,42 @@ class Index extends Component {
                 </div>
                 </Col>
               </Row>
+            ) : this.props.receivedproductrecomend == 0 ? (
+              <Row>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
+                    <br />
+                    <br />
+                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                    <br />
+                  </center>
+                </div>
+                </Col>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
+                    <br />
+                    <br />
+                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                    <br />
+                  </center>
+                </div>
+                </Col>
+                <Col md={4} >
+                <div className="background-cardCarousel">
+                  <center>
+                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
+                    <br />
+                    <br />
+                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                    <br />
+                  </center>
+                </div>
+                </Col>
+              </Row>
             ) : (
               <AliceCarousel
               duration={400}
@@ -231,6 +267,20 @@ class Index extends Component {
                       <p className="color"> <Skeleton width={100} /> </p>
                       <p><Skeleton width={200} /></p>
                     </center>
+                  </div>
+                  </Col>
+              </Row>
+            ) : this.props.receivedproductrecomend == 0 ? (
+              <Row>
+                  <Col md={4} >
+                  <div className="background-cardCarousel">
+                  <center>
+                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
+                    <br />
+                    <br />
+                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                    <br />
+                  </center>
                   </div>
                   </Col>
               </Row>
@@ -407,7 +457,8 @@ class Index extends Component {
                     <Option value="putih">PUTIH</Option>
                     <Option value="abu-abu">ABU - ABU</Option>
                     <Option value="hitam">HITAM</Option>
-                    <Option value="biru">BIRU</Option>
+                    <Option value="silver metalik">SILVER METALIK</Option>
+                    <Option value="highlight silver">HIGHLIGHT SILVER</Option>
                   </Select>
                 </Col>
               </Row>
@@ -446,59 +497,104 @@ class Index extends Component {
                     Produk yang mungkin disukai{" "}
                   </p>
                   {this.state.loadingCard ? (
+                  <Row>
+                    <Col md={12}>
+                      <div className="searchLelang" style={{ paddingBottom: 10 }}>
+                        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+                          <Col md={12}>
+                            <Row className="contentLelang">
+                              <Col xs={12} md={5}>
+                                {/* <Image src={this.props.image} width="100%" /> */}
+                                <SkeletonImg heightSkeleton={100} />
+                              </Col>
+                              <Col xs={12} md={7}>
+                                <div className="headerLelang">
+                                  <p> <Skeleton width={200}  /> </p>
+                                </div>
+                                <Row className="box">
+                                  <Col md={12}>
+                                    <p className="title"> <Skeleton width={100} /> </p>
+                                  </Col>
+                                  <Col md={12}>
+                                    <p className="title"> <Skeleton width={150} /> </p>
+                                  </Col>
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </div>
+                      <div className="searchLelang" style={{ paddingBottom: 10 }}>
+                        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+                          <Col md={12}>
+                            <Row className="contentLelang">
+                              <Col xs={12} md={5}>
+                                {/* <Image src={this.props.image} width="100%" /> */}
+                                <SkeletonImg heightSkeleton={100} />
+                              </Col>
+                              <Col xs={12} md={7}>
+                                <div className="headerLelang">
+                                  <p> <Skeleton width={200}  /> </p>
+                                </div>
+                                <Row className="box">
+                                  <Col md={12}>
+                                    <p className="title"> <Skeleton width={100} /> </p>
+                                  </Col>
+                                  <Col md={12}>
+                                    <p className="title"> <Skeleton width={150} /> </p>
+                                  </Col>
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Col>
+                        </Row>
+                      </div>
+                    </Col>
+                  </Row>
+                  ) : this.props.receivedproductall == 0 ? (
                     <Row>
-                      <Col md={12}>
+                    <Col md={12}>
                       <div className="searchLelang" style={{ paddingBottom: 10 }}>
                         <Row style={{ border: "1px solid #ccc", padding: 10 }}>
-                            <Col md={12}>
-                              <Row className="contentLelang">
-                                <Col xs={12} md={5}>
-                                  {/* <Image src={this.props.image} width="100%" /> */}
-                                  <SkeletonImg heightSkeleton={100} />
-                                </Col>
-                                <Col xs={12} md={7}>
-                                  <div className="headerLelang">
-                                    <p> <Skeleton width={200}  /> </p>
-                                  </div>
-                                  <Row className="box">
-                                    <Col md={12}>
-                                      <p className="title"> <Skeleton width={100} /> </p>
-                                    </Col>
-                                    <Col md={12}>
-                                      <p className="title"> <Skeleton width={150} /> </p>
-                                    </Col>
-                                  </Row>
-                                </Col>
-                              </Row>
-                            </Col>
+                          <Col md={12}>
+                            <Row className="contentLelang">
+                              <Col xs={12} md={5}>
+                              <div style={{height: 100, backgroundColor: '#F5F5F5'}} ></div>
+                              </Col>
+                              <Col xs={12} md={7}>
+                                <Row className="box">
+                                  <br />
+                                  <Col md={12}>
+                                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                                  </Col>
+                                  <br />
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Col>
                         </Row>
                       </div>
                       <div className="searchLelang" style={{ paddingBottom: 10 }}>
                         <Row style={{ border: "1px solid #ccc", padding: 10 }}>
-                            <Col md={12}>
-                              <Row className="contentLelang">
-                                <Col xs={12} md={5}>
-                                  {/* <Image src={this.props.image} width="100%" /> */}
-                                  <SkeletonImg heightSkeleton={100} />
-                                </Col>
-                                <Col xs={12} md={7}>
-                                  <div className="headerLelang">
-                                    <p> <Skeleton width={200}  /> </p>
-                                  </div>
-                                  <Row className="box">
-                                    <Col md={12}>
-                                      <p className="title"> <Skeleton width={100} /> </p>
-                                    </Col>
-                                    <Col md={12}>
-                                      <p className="title"> <Skeleton width={150} /> </p>
-                                    </Col>
-                                  </Row>
-                                </Col>
-                              </Row>
-                            </Col>
+                          <Col md={12}>
+                            <Row className="contentLelang">
+                              <Col xs={12} md={5}>
+                              <div style={{height: 100, backgroundColor: '#F5F5F5'}} ></div>
+                              </Col>
+                              <Col xs={12} md={7}>
+                                <Row className="box">
+                                  <br />
+                                  <Col md={12}>
+                                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
+                                  </Col>
+                                  <br />
+                                </Row>
+                              </Col>
+                            </Row>
+                          </Col>
                         </Row>
                       </div>
-                      </Col>
+                    </Col>
                   </Row>
                   ) : (
                     paginate(
@@ -668,6 +764,51 @@ class Index extends Component {
                     </div>
                     </Col>
                   </Row>
+                ) : this.props.schedulecar == 0 ? (
+                  <Row>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <center>
+                        <br />
+                        <br />
+                        <h2>Jadwal Lelang</h2>
+                        <br />
+                        <h3>Tidak Tersedia</h3>
+                        <br />
+                        <br />
+                        <br />
+                      </center>
+                    </div>
+                    </Col>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <center>
+                        <br />
+                        <br />
+                        <h2>Jadwal Lelang</h2>
+                        <br />
+                        <h3>Tidak Tersedia</h3>
+                        <br />
+                        <br />
+                        <br />
+                      </center>
+                    </div>
+                    </Col>
+                    <Col md={4} >
+                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
+                      <center>
+                        <br />
+                        <br />
+                        <h2>Jadwal Lelang</h2>
+                        <br />
+                        <h3>Tidak Tersedia</h3>
+                        <br />
+                        <br />
+                        <br />
+                      </center>
+                    </div>
+                    </Col>
+                  </Row>
                 ) : (
                   <AliceCarousel
                     duration={400}
@@ -688,7 +829,7 @@ class Index extends Component {
                           transport={" MOBIL"}
                           eventCode={data.eventCode}
                           eventNumber={data.eventNumber}
-                          location={data.auctionHouseProvince}
+                          location={data.auctionHouseCity}
                           date={data.eventDate.date}
                           startTime={data.eventDate.startTime}
                           endTime={data.eventDate.endTime}
