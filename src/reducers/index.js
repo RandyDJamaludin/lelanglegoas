@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { success, loading, failed } from "./processor";
 
-import { schedulecar } from "./getSchedule";
+import { schedulecar, schedulebyid } from "./getSchedule";
 import { receivedbrand } from "./getBrand";
 import { receivedadmfee } from "./getAdmFee";
 import { sessionPersistance, resultCekToken } from "./login";
@@ -20,6 +20,7 @@ const rootReducers = combineReducers({
   loading,
   failed,
   schedulecar,
+  schedulebyid,
   receivedbrand,
   receivedadmfee,
   sessionPersistance,

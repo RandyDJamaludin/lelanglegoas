@@ -5,7 +5,11 @@ import { Redirect } from "react-router";
 import { JadwalLelang } from "../Components/Card";
 import GoCalendar from "react-icons/lib/go/calendar";
 import { connect } from "react-redux";
-import { fetchScheduleCar, fetchScheduleMot } from "../../actions/getSchedule";
+import { 
+  fetchScheduleCar, 
+  // fetchScheduleMot
+ } from "../../actions/getSchedule";
+import { fetchAdmFee } from "../../actions/getAdmFee";
 
 const paginate = (array, page_size, page_number) => {
   --page_number; // because pages logically start with 1, but technically with 0
@@ -23,12 +27,15 @@ export class Index extends Component {
     };
   }
 
-  componentDidMount = async () => {
-    if (this.props.sessionPersistance.tokenId != null) {
-      this.setState({ isAuth: this.props.sessionPersistance });
+  async componentDidMount(){
+    const session = await localStorage.getItem('session')
+    const data = await JSON.parse(session)
+    if (data.tokenId != null) {
+      this.setState({ isAuth: data });
     }
-    // await this.props.fetchScheduleCar(this.props.sessionPersistance);
-    // await this.props.fetchScheduleMot(this.props.sessionPersistance);
+    await this.props.fetchAdmFee(data.tokenId);
+    await this.props.fetchScheduleCar(data.tokenId);
+    // await this.props.fetchScheduleMot(data.tokenId);
   };
 
   onChange = page => {
@@ -38,11 +45,15 @@ export class Index extends Component {
   };
 
   render() {
+    const session = localStorage.getItem('session')
+    const data = JSON.parse(session)
+
     let total = Math.max(
       this.props.schedulecar.length,
       this.props.schedulecar.length
     );
-    return this.props.sessionPersistance.tokenId == null ? (
+
+    return data.tokenId == null ? (
       <Redirect
         to={{
           pathname: "/",
@@ -162,7 +173,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
-  fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId))
+  // fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
+  fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId))
 });
 
 export default connect(

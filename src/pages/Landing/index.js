@@ -7,8 +7,7 @@ import {
   Select,
   Form,
   Pagination,
-  Button,
-  Spin
+  Button
 } from "antd";
 import { NavLink } from "react-router-dom";
 import {SkeletonImg, Skeleton} from 'react-js-skeleton'
@@ -67,15 +66,16 @@ class Index extends Component {
     const session = JSON.parse(localStorage.getItem("session"));
     await this.setState({ session });
     await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode);
-    await this.props.fetchAdmFee(session.tokenId);
-    await this.props.fetchScheduleCar(session.tokenId);
-    this.setState({loadingJadwal: false})
+    
     await this.props.fetchProductRecomended(session.tokenId);
     if(this.props.receivedproductrecomend == null){
       await this.props.fetchProductGradeB(session.tokenId);
     }
     this.setState({loadingRecomended: false})
+    await this.props.fetchAdmFee(session.tokenId);
+    await this.props.fetchScheduleCar(session.tokenId);
     // await this.props.fetchScheduleMot(session.tokenId);
+    this.setState({loadingJadwal: false})
     await this.props.fetchProductAll(session.tokenId);
     this.setState({loadingCard: false})
     this.props.fetchBrand(session.tokenId);
@@ -225,7 +225,7 @@ class Index extends Component {
               {this.props.receivedproductrecomend
                 .slice(0, 10)
                 .map((data, Index) => (
-                  <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
+                  <Col key={Index} xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
                     <CardCarousel
                       key={data.UnitKeyFinder}
                       nameBrand={data.UnitName}
@@ -301,7 +301,7 @@ class Index extends Component {
                 {this.props.receivedproductrecomend
                   .slice(0, 10)
                   .map((data, Index) => (
-                    <Col xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
+                    <Col key={Index} xs={12} md={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 8 : 12} lg={this.props.receivedproductrecomend.length === 1 ? 4 : this.props.receivedproductrecomend.length === 2 ? 10 : 12} lgOffset={this.props.receivedproductrecomend.length === 2 ? 1 : 0} >
                       <CardCarousel
                         key={data.UnitKeyFinder}
                         nameBrand={data.UnitName}
@@ -863,7 +863,7 @@ class Index extends Component {
               </div>
               <Row>
                 <Col xs={12} md={12}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6263097029314!2d106.9802200539126!3d-6.196873185633912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b937f68c20d%3A0xda5b15b4bf92449c!2skantor+pt.Digital+sarana+legoas!5e0!3m2!1sen!2sid!4v1531283557410" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameborder="0" allowfullscreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6263097029314!2d106.9802200539126!3d-6.196873185633912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b937f68c20d%3A0xda5b15b4bf92449c!2skantor+pt.Digital+sarana+legoas!5e0!3m2!1sen!2sid!4v1531283557410" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameBorder="0" allowFullScreen></iframe>
                   <div className="wrap-location">
                     <p className="sub-location">PT Digital Sarana Legoas</p>
                   </div>

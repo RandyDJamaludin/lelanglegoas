@@ -5,6 +5,7 @@ import { Redirect } from "react-router";
 import {SkeletonImg, Skeleton} from 'react-js-skeleton'
 import AliceCarousel from "react-alice-carousel";
 import MdLocationOn from "react-icons/lib/md/location-on";
+import MdAccessTime from "react-icons/lib/md/access-time";
 import FaCalendarCheckO from "react-icons/lib/fa/calendar-check-o";
 import moment from "moment";
 import "moment/locale/id";
@@ -19,12 +20,14 @@ class Index extends Component {
   };
 
   async componentDidMount() {
-    if (this.props.sessionPersistance.tokenId != null) {
-      this.setState({ isAuth: this.props.sessionPersistance });
+    const session = await localStorage.getItem('session')
+    const data = await JSON.parse(session)
+    if (data.tokenId != null) {
+      this.setState({ isAuth: data });
     }
     await this.props.fetchProductDetail(
-      this.props.sessionPersistance.tokenId,
-      this.props.location.state.data.lotId
+      data.tokenId,
+      this.props.match.params.id
     );
     this.setState({loading: false})
   }
@@ -46,11 +49,144 @@ class Index extends Component {
     </div>
   );
   render() {
+    const session = localStorage.getItem('session')
+    const dataSession = JSON.parse(session)
+
     const {
-      grade, lotNumber, name,
-      price, data
-    } = this.props.location.state.data;
-    return this.props.sessionPersistance.tokenId == null ? (
+      auctionLotUnits, auctionLotNumber, finalBasePrice, auctionEvent
+    } = this.props.receivedproductdetail
+    return dataSession.tokenId == null ? (
+      <Redirect
+        to={{
+          pathname: "/",
+          state: { from: this.props.location }
+        }}
+      />
+    ) : this.state.loading ? (
+      <div className="wrap-viewCarPage">
+        <Grid>
+          <Row>
+            <Col xs={12} md={8}>
+              <p className="header"> <Skeleton width={400} /> </p>
+              <div>
+                <SkeletonImg heightSkeleton={400}/>
+              </div>
+              <div className="infoKendaraan">
+                <Row>
+                  <Col md={12}>
+                    <div className="contentKendaraan">
+                      <p style={{ fontSize: 16 }}> Detail Kendaraan </p>
+                      <p className="header">
+                        {" "}
+                        Grade <span className="grade"> <Skeleton width={30} /> </span>{" "}
+                      </p>
+                      <Divider />
+                    </div>
+                  </Col>
+                  <Col md={6}>
+                    <p><Skeleton width={100} /></p>
+                    <p><Skeleton width={90} /></p>
+                    <p><Skeleton width={80} /></p>
+                    <p><Skeleton width={150} /></p>
+                    <p><Skeleton width={80} /></p>
+                    <p><Skeleton width={150} /></p>
+                    <p><Skeleton width={300} /></p>
+                  </Col>
+                  <Col md={6}>
+                    <p><Skeleton width={200} /></p>
+                    <p><Skeleton width={100} /></p>
+                    <p><Skeleton width={150} /></p>
+                    <p><Skeleton width={150} /></p>
+                    <p><Skeleton width={100} /></p>
+                    <p><Skeleton width={800} /></p>
+                    <p><Skeleton width={120} /></p>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+            <Col xs={12} md={4}>
+              <div className="right-panel">
+                <p className="title"> INFORMASI LELANG </p>
+              </div>
+              <div className="body-panel">
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> LOT </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><b> <Skeleton width={30} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={70} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><b> <Skeleton width={70} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={70} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><b> <Skeleton width={50} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={40} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><b> <Skeleton width={60} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={80} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><b> <Skeleton width={90} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={80} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p style={{ fontSize: 16, fontWeight: "bold" }}> <Skeleton width={120} /> </p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={70} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><MdLocationOn />{" "}<b><Skeleton width={150} count={2} /></b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={70} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><FaCalendarCheckO /><b> <Skeleton width={100} /> </b></p></div>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col xs={4} md={4}>
+                    <div><p> <Skeleton width={70} /> </p></div>
+                  </Col>
+                  <Col xs={8} md={8}>
+                    <div><p><MdAccessTime /><b><Skeleton width={100} /></b></p></div>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
+    ) : this.props.receivedproductdetail == 0 ? (
       <Redirect
         to={{
           pathname: "/",
@@ -62,26 +198,21 @@ class Index extends Component {
         <Grid>
           <Row>
             <Col xs={12} md={8}>
-              <p className="header"> {name} </p>
-              {this.state.loading ? (
-                <SkeletonImg heightSkeleton={400}/>
-              ) : (
-                <div>
+              <p className="header"> {auctionLotUnits[0].unitName} </p>
+              <div>
                 <AliceCarousel
                   dotsDisabled={true}
                   buttonsDisabled={true}
                   ref={el => (this.Carousel = el)}
                 >
                   {this.props.receivedimagesproduct.map((item, i) => (
-                    <div className="multiSlider">
+                    <div className="multiSlider" key={i} >
                       <Image src={item.imageUri} />
                     </div>
                   ))}
                 </AliceCarousel>
                 {this.renderThumbs()}
               </div>
-              )}
-              
 
               <div className="infoKendaraan">
                 <Row>
@@ -90,7 +221,7 @@ class Index extends Component {
                       <p style={{ fontSize: 16 }}> Detail Kendaraan </p>
                       <p className="header">
                         {" "}
-                        Grade <span className="grade"> {grade} </span>{" "}
+                        Grade <span className="grade"> {auctionLotUnits[0].unitGrade} </span>{" "}
                       </p>
                       <Divider />
                     </div>
@@ -98,74 +229,74 @@ class Index extends Component {
                   <Col md={6}>
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[0].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[0].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[0].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[0].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[1].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[1].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[1].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[1].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[2].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[2].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[2].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[2].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[3].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[3].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[3].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[3].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[4].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[4].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[4].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[4].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[5].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[5].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[5].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[5].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[6].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[6].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[6].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[6].specValue} </span>
                     </p>
                   </Col>
 
                   <Col md={6}>
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[7].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[7].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[7].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[7].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[8].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[8].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[8].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[8].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[9].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[9].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[9].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[9].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[10].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[10].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[10].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[10].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[11].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[11].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[11].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[11].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[12].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[12].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[12].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[12].specValue} </span>
                     </p>
 
                     <p>
                       {" "}
-                      {data.AuctionLotUnitSpecs[13].SpecName} <span style={{ fontWeight: "bold" }}> {data.AuctionLotUnitSpecs[13].SpecValue} </span>
+                      {auctionLotUnits[0].auctionLotUnitSpecs[13].specName} <span style={{ fontWeight: "bold" }}> {auctionLotUnits[0].auctionLotUnitSpecs[13].specValue} </span>
                     </p>
                   </Col>
                 </Row>
@@ -186,7 +317,7 @@ class Index extends Component {
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {lotNumber} </b>
+                        <b> {auctionLotNumber} </b>
                       </p>
                     </div>
                   </Col>
@@ -195,14 +326,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[0].SpecValue} </p>
+                      <p> {auctionLotUnits[0].auctionLotUnitSpecs[0].specName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[0].SpecValue} </b>
+                        <b> {auctionLotUnits[0].auctionLotUnitSpecs[0].specValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -211,14 +342,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[1].SpecValue} </p>
+                      <p> {auctionLotUnits[0].auctionLotUnitSpecs[1].specName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[1].SpecValue} </b>
+                        <b> {auctionLotUnits[0].auctionLotUnitSpecs[1].specValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -227,14 +358,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[2].SpecValue} </p>
+                      <p> {auctionLotUnits[0].auctionLotUnitSpecs[2].specName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[2].SpecValue} </b>
+                        <b> {auctionLotUnits[0].auctionLotUnitSpecs[2].specValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -243,14 +374,14 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> {data.AuctionLotUnitSpecs[3].SpecValue} </p>
+                      <p> {auctionLotUnits[0].auctionLotUnitSpecs[3].specName} </p>
                     </div>
                   </Col>
 
                   <Col xs={8} md={8}>
                     <div>
                       <p>
-                        <b> {data.AuctionLotUnitSpecs[3].SpecValue} </b>
+                        <b> {auctionLotUnits[0].auctionLotUnitSpecs[3].specValue} </b>
                       </p>
                     </div>
                   </Col>
@@ -259,7 +390,7 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Start Bid </p>
+                      <p> START BID </p>
                     </div>
                   </Col>
 
@@ -268,7 +399,7 @@ class Index extends Component {
                       <p style={{ fontSize: 16, fontWeight: "bold" }}>
                         {" "}
                         Rp.{" "}
-                        {price
+                        {finalBasePrice
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}{" "}
                       </p>
@@ -279,7 +410,7 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Lokasi </p>
+                      <p> LOKASI </p>
                     </div>
                   </Col>
 
@@ -288,7 +419,7 @@ class Index extends Component {
                       <p>
                         <MdLocationOn />{" "}
                         <b>
-                          {data.AuctionLot.AuctionEvent.AuctionHouse.AuctionHouseAddr}{" "}
+                          {auctionEvent.auctionHouseAddr}{" "}
                         </b>
                       </p>
                     </div>
@@ -298,7 +429,7 @@ class Index extends Component {
                 <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Lelang </p>
+                      <p> LELANG </p>
                     </div>
                   </Col>
 
@@ -306,38 +437,16 @@ class Index extends Component {
                     <div>
                       <p>
                         <FaCalendarCheckO />
-                        <b> {moment(data.AuctionLot.AuctionEvent.EventDate).format("D MMMM YYYY")} </b>
+                        <b> {moment(auctionEvent.eventDate).format("D MMMM YYYY")} </b>
                       </p>
                     </div>
                   </Col>
                 </Row>
 
-                {/* <Row>
+                <Row>
                   <Col xs={4} md={4}>
                     <div>
-                      <p> Open House </p>
-                    </div>
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <p>
-                        <FaCalendarCheckO />
-                        <b>
-                          {" "}
-                          {moment(dataJadwal.openhouse).format(
-                            "D MMMM YYYY"
-                          )}{" "}
-                        </b>
-                      </p>
-                    </div>
-                  </Col>
-                </Row> */}
-
-                {/* <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Waktu </p>
+                      <p> WAKTU </p>
                     </div>
                   </Col>
 
@@ -347,28 +456,13 @@ class Index extends Component {
                         <MdAccessTime />
                         <b>
                           {" "}
-                          {dataJadwal.startTime} - {dataJadwal.endTime}{" "}
-                          {dataJadwal.timeZone}{" "}
+                          {auctionEvent.eventSchedules[0].startTime} - {auctionEvent.eventSchedules[0].endTime}{" "}
+                          {auctionEvent.timezone}{" "}
                         </b>
                       </p>
                     </div>
                   </Col>
-                </Row> */}
-
-                {/* <Row>
-                  <Col xs={4} md={4}>
-                    <div>
-                      <p> Status </p>
-                    </div>
-                  </Col>
-
-                  <Col xs={8} md={8}>
-                    <div>
-                      <Tag color="#f50">Non available</Tag>
-                      <Tag color="#87d068">Available</Tag> 
-                    </div>
-                  </Col>
-                </Row> */}
+                </Row>
               </div>
             </Col>
           </Row>
@@ -380,7 +474,7 @@ class Index extends Component {
 
 const mapStateToProps = state => ({
   receivedimagesproduct: state.receivedimagesproduct,
-  sessionPersistance: state.sessionPersistance
+  receivedproductdetail: state.receivedproductdetail
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -34,7 +34,7 @@ export class CardCarousel extends Component {
     return (
       <Link
         to={{
-          pathname: "/view-car",
+          pathname: `/view-car/${this.props.lotId}`,
           state: { data: this.props }
         }}
       >
@@ -104,7 +104,7 @@ export class ListLelang extends Component {
         <Row>
           <Link
             to={{
-              pathname: "/view-car",
+              pathname: `/view-car/${this.props.lotId}`,
               state: { data: this.props }
             }}
           >
@@ -205,7 +205,7 @@ export class SearchLelang extends Component {
         <Row style={{ border: "1px solid #ccc", padding: 10 }}>
           <Link
             to={{
-              pathname: "/view-car",
+              pathname: `/view-car/${this.props.lotId}`,
               state: { data: this.props }
             }}
           >
@@ -273,7 +273,7 @@ export class JadwalLelang extends Component {
         </p>
         <Link
           to={{
-            pathname: "/list-lelang",
+            pathname: `/list-lelang/${this.props.eventId}`,
             state: { data: this.props }
           }}
         >

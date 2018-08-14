@@ -285,7 +285,7 @@ export const fetchProductDetail = (tokenId, lotId) => {
         }
       );
       const data = await response.data;
-      await dispatch(receivedProductDetail(data));
+      await dispatch(receivedProductDetail({...data}));
       await dispatch(receivedImages(data.auctionLotUnits[0].physicalImages));
       await dispatch(
         receivedImage(data.auctionLotUnits[0].physicalImages[2].imageUri)
