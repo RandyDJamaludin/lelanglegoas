@@ -138,7 +138,6 @@ export const fetchProductGradeB = tokenId => {
 
 const receivedProductRecomend = data => {
   temporary_product_recomend.push(...data)
-  console.log(temporary_product_recomend)
   return {
     type: RECEIVED_PRODUCT_RECOMEND,
     payload: temporary_product_recomend
