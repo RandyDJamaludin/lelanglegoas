@@ -219,11 +219,21 @@ export const fetchProductByEvent = (tokenId, eventId) => {
                 value: `${eventId}`,
                 regex: false
               }
+            },
+            {
+              data: "AuctionLot.AuctionLotNumber",
+              name: null,
+              searchable: true,
+              orderable: true,
+              search: {
+                value: null,
+                regex: false
+              }
             }
           ],
           order: [
             {
-              column: 0,
+              column: 1,
               dir: "asc"
             }
           ],

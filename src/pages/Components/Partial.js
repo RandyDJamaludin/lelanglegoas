@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Grid, Row, Col, Image, Navbar, NavDropdown } from "react-bootstrap";
+import { Grid, Row, Col, Image, Nav, NavItem, Navbar, NavDropdown, MenuItem } from "react-bootstrap";
 import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
@@ -29,67 +29,41 @@ export class Navigation extends Component {
           >
             <Navbar.Header>
               <Navbar.Brand>
-                <NavLink to="/">
+                <a href="/">
                   <Image src={Logo} className="logo" width="130px" />
-                </NavLink>
+                </a>
               </Navbar.Brand>
               <Navbar.Toggle />
             </Navbar.Header>
             <Navbar.Collapse>
-              <ul className="nav navbar-nav right">
-                <li eventkey={1}>
-                  <NavLink to="/">Beranda</NavLink>
-                </li>
-
-                <li eventkey={2}>
-                  <NavLink to="/jadwal">Jadwal Lelang</NavLink>
-                </li>
-
-                <NavDropdown title="Info Lelang" id="basic-nav-dropdown">
-                  <li>
-                    <NavLink to="/pengertian-lelang">Pengertian Lelang</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/tatacara-lelang">Tata Cara Lelang</NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/peraturan-lelang">Peraturan Lelang</NavLink>
-                  </li>
+              <Nav pullRight>
+                <NavItem eventKey={1} href="/">
+                  Beranda
+                </NavItem>
+                <NavItem eventKey={2} href="/jadwal">
+                  Jadwal Lelang
+                </NavItem>
+                <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
+                  <MenuItem eventKey={3.1} href="/pengertian-lelang" >Pengertian Lelang</MenuItem>
+                  <MenuItem eventKey={3.2} href="/tatacara-lelang" >Tata Cara Lelang</MenuItem>
+                  <MenuItem eventKey={3.3} href="/peraturan-lelang" >Peraturan Lelang</MenuItem>
                 </NavDropdown>
-
-                <li eventkey={4}>
-                  <NavLink to="/lokasi">Lokasi Lelang</NavLink>
-                </li>
-
-                <li eventkey={5}>
-                  <NavLink to="/tentang-kami">Tentang Kami</NavLink>
-                </li>
-
-                {/*<li eventkey={5}>
-                  <NavLink to="/kontak">
-                    Kontak Kami
-                  </NavLink>
-                </li>
-                */}
-
-                <li eventkey={6}>
-                  <NavLink
-                    to="https://lelang.legoas.co.id/Account/Login"
-                    target="_blank"
-                  >
-                    Login
-                  </NavLink>
-                </li>
-
-                <li eventkey={7}>
-                  <NavLink
-                    to="https://lelang.legoas.co.id/Auction/Bidder/Register"
-                    target="_blank"
-                  >
-                    Register
-                  </NavLink>
-                </li>
-              </ul>
+                <NavItem eventKey={4} href="/lokasi">
+                  Lokasi Lelang
+                </NavItem>
+                <NavItem eventKey={5} href="/tentang-kami">
+                  Tentang Kami
+                </NavItem>
+                {/* <NavItem eventKey={5} href="/kontak">
+                  Kontak Kami
+                </NavItem> */}
+                <NavItem eventKey={6} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
+                  Login
+                </NavItem>
+                <NavItem eventKey={7} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
+                  Register
+                </NavItem>
+              </Nav>
             </Navbar.Collapse>
           </Navbar>
         </div>
@@ -106,7 +80,7 @@ export class Banner extends Component {
           <Carousel>
             <div className="containBanner1"></div>
             <div className="containBanner2"></div>
-            <div className="containBanner3"></div>
+            {/* <div className="containBanner3"></div> */}
             {/* <div className="containBanner4"></div> */}
           </Carousel>
         </div>

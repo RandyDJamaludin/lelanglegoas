@@ -174,32 +174,9 @@ class Index extends Component {
               </Row>
             ) : this.props.receivedproductrecomend == 0 ? (
               <Row>
-                <Col md={4} >
+                <Col md={12} >
                 <div className="background-cardCarousel">
                   <center>
-                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
-                    <br />
-                    <br />
-                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
-                    <br />
-                  </center>
-                </div>
-                </Col>
-                <Col md={4} >
-                <div className="background-cardCarousel">
-                  <center>
-                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
-                    <br />
-                    <br />
-                    <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
-                    <br />
-                  </center>
-                </div>
-                </Col>
-                <Col md={4} >
-                <div className="background-cardCarousel">
-                  <center>
-                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
                     <br />
                     <br />
                     <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
@@ -275,7 +252,6 @@ class Index extends Component {
                   <Col md={4} >
                   <div className="background-cardCarousel">
                   <center>
-                    <div style={{height: 175, backgroundColor: '#F5F5F5'}} ></div>
                     <br />
                     <br />
                     <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
@@ -766,35 +742,7 @@ class Index extends Component {
                   </Row>
                 ) : this.props.schedulecar == 0 ? (
                   <Row>
-                    <Col md={4} >
-                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
-                      <center>
-                        <br />
-                        <br />
-                        <h2>Jadwal Lelang</h2>
-                        <br />
-                        <h3>Tidak Tersedia</h3>
-                        <br />
-                        <br />
-                        <br />
-                      </center>
-                    </div>
-                    </Col>
-                    <Col md={4} >
-                    <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
-                      <center>
-                        <br />
-                        <br />
-                        <h2>Jadwal Lelang</h2>
-                        <br />
-                        <h3>Tidak Tersedia</h3>
-                        <br />
-                        <br />
-                        <br />
-                      </center>
-                    </div>
-                    </Col>
-                    <Col md={4} >
+                    <Col md={12} >
                     <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
                       <center>
                         <br />

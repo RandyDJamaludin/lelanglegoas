@@ -5,7 +5,6 @@ import { Redirect } from "react-router";
 import { ListLelang } from "../Components/Card";
 import { connect } from "react-redux";
 import { fetchByEventId } from "../../actions/getSchedule";
-import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchProductByEvent } from "../../actions/getProduct";
 import moment from "moment";
 import "moment/locale/id";

@@ -303,9 +303,11 @@ section {
     background-size: 100% !important;
     background: url("../image/banner/1.jpg");
     background-attachment: fixed;
+    margin-top: 40px;
     .shadow {
       background: rgba(255, 255, 255, 0.561);
       height: 350px;
+      padding-top: 50px;
 
       h3 {
         font-weight: 400 !important;
@@ -319,14 +321,13 @@ section {
   }
 
   .mobile {
-    height: 400px;
+    height: 520px;
     background-size: cover !important;
     background: url("../image/banner/1.jpg") no-repeat;
     .shadow {
       background: rgba(255, 255, 255, 0.561);
-      height: 380px;
-      padding: 50px;
-      margin-top: 30px;
+      height: 520px;
+      padding: 80px;
 
       h3 {
         font-weight: 400 !important;

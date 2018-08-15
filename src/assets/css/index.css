@@ -1528,10 +1528,12 @@ section {
   height: 350px;
   background-size: 100% !important;
   background: url("../image/banner/1.jpg");
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  margin-top: 40px; }
   .bannerAbout .desktop .shadow {
     background: rgba(255, 255, 255, 0.561);
-    height: 350px; }
+    height: 350px;
+    padding-top: 50px; }
     .bannerAbout .desktop .shadow h3 {
       font-weight: 400 !important;
       font-size: 30px;
@@ -1541,14 +1543,13 @@ section {
       display: none; } }
 
 .bannerAbout .mobile {
-  height: 400px;
+  height: 520px;
   background-size: cover !important;
   background: url("../image/banner/1.jpg") no-repeat; }
   .bannerAbout .mobile .shadow {
     background: rgba(255, 255, 255, 0.561);
-    height: 380px;
-    padding: 50px;
-    margin-top: 30px; }
+    height: 520px;
+    padding: 80px; }
     .bannerAbout .mobile .shadow h3 {
       font-weight: 400 !important;
       font-size: 30px;
