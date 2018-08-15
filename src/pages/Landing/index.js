@@ -127,7 +127,7 @@ class Index extends Component {
         <Banner />
         <Grid className="wrap-cardCarousel">
           <Row>
-            <p className="titleHeader"> REKOMENDASI</p>
+            <p className="titleHeader"> REKOMENDASI MOBIL</p>
             {this.state.loadingRecomended ? (
               <Row>
                 <Col md={4} >
