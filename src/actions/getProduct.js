@@ -10,6 +10,7 @@ import {
   RECEIVED_IMAGES_PRODUCT,
   RECEIVED_IMAGE_EVERY_PRODUCT
 } from "../constants/processor";
+let temporary_product_recomend =[]
 
 export const fetchProductRecomended = tokenId => {
   return async dispatch => {
@@ -136,9 +137,11 @@ export const fetchProductGradeB = tokenId => {
 };
 
 const receivedProductRecomend = data => {
+  temporary_product_recomend.push(...data)
+  console.log(temporary_product_recomend)
   return {
     type: RECEIVED_PRODUCT_RECOMEND,
-    payload: data
+    payload: temporary_product_recomend
   };
 };
 
