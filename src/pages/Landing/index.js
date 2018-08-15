@@ -68,7 +68,7 @@ class Index extends Component {
     await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode);
     
     await this.props.fetchProductRecomended(session.tokenId);
-    if(this.props.receivedproductrecomend == null){
+    if(this.props.receivedproductrecomend == 0){
       await this.props.fetchProductGradeB(session.tokenId);
     }
     this.setState({loadingRecomended: false})
