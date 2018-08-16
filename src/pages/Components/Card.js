@@ -127,13 +127,7 @@ export class ListLelang extends Component {
                         </p>
                       </div>
                     </Col>
-                    <Col xs={12} md={2}>
-                      <div className="headerLelang">
-                        <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                          Grade
-                        </p>
-                      </div>
-                    </Col>
+                    <Col xs={12} md={2}></Col>
                   </Row>
                   <Row>
                     <Col xs={12} md={10}>
@@ -143,10 +137,19 @@ export class ListLelang extends Component {
                           {this.props.km}
                         </p>
                         <p>Harga Dasar: </p>
+                        <p style={{ fontSize: 22, fontWeight: "bold" }}>
+                          RP.{" "}
+                          {this.props.price
+                            .toString()
+                            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                        </p>
                       </div>
                     </Col>
                     <Col xs={12} md={2}>
                       <div className="headerLelang">
+                        <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                          Grade
+                        </p>
                         <div className="bodyLelang">
                           <p
                             style={{
@@ -173,18 +176,6 @@ export class ListLelang extends Component {
                             LOT {this.props.lotNumber}
                           </p>
                         </div>
-                      </div>
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col xs={12} md={10}>
-                      <div className="headerLelang">
-                        <p style={{ fontSize: 22, fontWeight: "bold" }}>
-                          RP.{" "}
-                          {this.props.price
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-                        </p>
                       </div>
                     </Col>
                   </Row>

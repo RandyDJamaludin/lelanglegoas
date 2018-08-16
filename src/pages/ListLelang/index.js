@@ -74,13 +74,7 @@ class Index extends Component {
                           <p><b><Skeleton width={200} /></b></p>
                         </div>
                       </Col>
-                      <Col xs={12} md={2}>
-                        <div className="headerLelang">
-                          <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                          <Skeleton width={100} />
-                          </p>
-                        </div>
-                      </Col>
+                      <Col xs={12} md={2}></Col>
                     </Row>
                     <Row>
                       <Col xs={12} md={10}>
@@ -89,10 +83,16 @@ class Index extends Component {
                           <Skeleton width={225} />
                           </p>
                           <p><Skeleton width={175} /></p>
+                          <p style={{ fontSize: 22, fontWeight: "bold" }}>
+                          <Skeleton width={200} />
+                          </p>
                         </div>
                       </Col>
                       <Col xs={12} md={2}>
                         <div className="headerLelang">
+                          <p style={{ textAlign: "center", fontWeight: "bold" }}>
+                            <Skeleton width={100} />
+                          </p>
                           <div className="bodyLelang">
                             <center>
                               <SkeletonImg heightSkeleton={60} widthSkeleton={50} />
@@ -102,13 +102,7 @@ class Index extends Component {
                       </Col>
                     </Row>
                     <Row>
-                      <Col xs={12} md={10}>
-                        <div className="headerLelang">
-                          <p style={{ fontSize: 22, fontWeight: "bold" }}>
-                          <Skeleton width={200} />
-                          </p>
-                        </div>
-                      </Col>
+                      <Col xs={12} md={10}></Col>
                       <Col xs={12} md={2}>
                         <div className="headerLelang">
                           <div className="bodyLelang">
