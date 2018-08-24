@@ -4,10 +4,10 @@ import {
   RECEIVED_PRODUCT_BY_EVENT,
   RECEIVED_PRODUCT_DETAIL,
   RECEIVED_IMAGES_PRODUCT,
-  RECEIVED_IMAGE_EVERY_PRODUCT,
   RECEIVED_SEARCH_PRODUCT
 } from "../constants/processor";
 
+//reducer for Recomended Product
 export const receivedproductrecomend = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_PRODUCT_RECOMEND:
@@ -17,6 +17,7 @@ export const receivedproductrecomend = (state = [], action) => {
   }
 };
 
+//reducer for all Product
 export const receivedproductall = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_PRODUCT_ALL:
@@ -26,6 +27,7 @@ export const receivedproductall = (state = [], action) => {
   }
 };
 
+//reducer for Product by Jadwal
 export const receivedproductbyevent = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_PRODUCT_BY_EVENT:
@@ -35,6 +37,7 @@ export const receivedproductbyevent = (state = [], action) => {
   }
 };
 
+//reducer for Detail Product
 export const receivedproductdetail = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_PRODUCT_DETAIL:
@@ -44,6 +47,7 @@ export const receivedproductdetail = (state = [], action) => {
   }
 };
 
+//reducer for Search Product
 export const receivedsearchproduct = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_SEARCH_PRODUCT:
@@ -53,18 +57,10 @@ export const receivedsearchproduct = (state = [], action) => {
   }
 };
 
+//reducer for Images Product
 export const receivedimagesproduct = (state = [], action) => {
   switch (action.type) {
     case RECEIVED_IMAGES_PRODUCT:
-      return action.payload;
-    default:
-      return state;
-  }
-};
-
-export const receivedimageeveryproduct = (state = [], action) => {
-  switch (action.type) {
-    case RECEIVED_IMAGE_EVERY_PRODUCT:
       return action.payload;
     default:
       return state;

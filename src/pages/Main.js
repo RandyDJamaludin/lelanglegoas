@@ -15,6 +15,7 @@ import TentangKami from "./TentangKami/index";
 // import RegisterChoose from "./RegisterChoose/index";
 // import Register from "./Register/index";
 
+//Register list route
 export class Main extends Component {
   render() {
     return (
@@ -40,6 +41,7 @@ export class Main extends Component {
   }
 }
 
+//func redirect to home when link is invalid
 const noMatch = ({ location }) => (
   <Redirect
     to={{

@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import {SkeletonImg, Skeleton} from 'react-js-skeleton'
 import { Redirect } from "react-router";
-import { ListLelang } from "../Components/Card";
 import { connect } from "react-redux";
-import { fetchByEventId } from "../../actions/getSchedule";
-import { fetchProductByEvent } from "../../actions/getProduct";
 import moment from "moment";
 import "moment/locale/id";
+
+import { fetchByEventId } from "../../actions/getSchedule";
+import { fetchProductByEvent } from "../../actions/getProduct";
+import { ListLelang } from "../Components/Card"; //import component from card
 
 class Index extends Component {
   state = {

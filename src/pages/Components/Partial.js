@@ -7,6 +7,7 @@ import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
 
+//component Navigation(header)
 export class Navigation extends Component {
   state = {
     current: "mail"
@@ -72,15 +73,20 @@ export class Navigation extends Component {
   }
 }
 
+//component Banner at Landing Page
 export class Banner extends Component {
   render() {
     return (
       <div>
         <div className="banner_background">
           <Carousel>
+            {/* Banner 1 */}
             <div className="containBanner1"></div>
+            {/* Banner 2 */}
             <div className="containBanner2"></div>
+            {/* Banner 3 */}
             <div className="containBanner3"></div>
+            {/* Banner 4 */}
             {/* <div className="containBanner4"></div> */}
           </Carousel>
         </div>
@@ -89,6 +95,7 @@ export class Banner extends Component {
   }
 }
 
+//componen Banner at Pengertian & peraturan & tatacara lelang page
 export class BannerInfo extends Component {
   render() {
     return (
@@ -106,62 +113,64 @@ export class BannerInfo extends Component {
   }
 }
 
-export class BannerAbout extends Component {
-  render() {
-    return (
-      <div className="bannerAbout">
-        <div id="top-pictureAbout" className="desktop">
-          <Grid>
-            <Row>
-              <Col md={6} />
-              <Col md={6}>
-                <div className="shadow" style={{ padding: 50 }}>
-                  <h3> WHO WE ARE ?</h3>
-                  <p>
-                    LEGOAS memiliki ijin operasional Balai Lelang yang disahkan
-                    melalui Keputusan Menteri Keuangan no 28/KM.6/2018. Dalam
-                    hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan
-                    pemerintah sehingga peserta tidak perlu khawatir atas
-                    kredibilitas LEGOAS karena sebagai peserta lelang juga
-                    dilindungi haknya oleh Negara. Dengan masuknya LEGOAS dalam
-                    pengawasan negara, maka kewajiban dari LEGOAS juga dalam
-                    pelaksanaan lelang dan termasuk memeriksa keabsahan
-                    kepemilikan barang tersebut sehingga peserta tidak perlu
-                    dikhawatirkan dalam keabsahan kepemilikan tersebut.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Grid>
-        </div>
+// export class BannerAbout extends Component {
+//   render() {
+//     return (
+//       <div className="bannerAbout">
+//         <div id="top-pictureAbout" className="desktop">
+//           <Grid>
+//             <Row>
+//               <Col md={6} />
+//               <Col md={6}>
+//                 <div className="shadow" style={{ padding: 50 }}>
+//                   <h3> WHO WE ARE ?</h3>
+//                   <p>
+//                     LEGOAS memiliki ijin operasional Balai Lelang yang disahkan
+//                     melalui Keputusan Menteri Keuangan no 28/KM.6/2018. Dalam
+//                     hal ini, LEGOAS menjadi perusahaan yang berada dalam naungan
+//                     pemerintah sehingga peserta tidak perlu khawatir atas
+//                     kredibilitas LEGOAS karena sebagai peserta lelang juga
+//                     dilindungi haknya oleh Negara. Dengan masuknya LEGOAS dalam
+//                     pengawasan negara, maka kewajiban dari LEGOAS juga dalam
+//                     pelaksanaan lelang dan termasuk memeriksa keabsahan
+//                     kepemilikan barang tersebut sehingga peserta tidak perlu
+//                     dikhawatirkan dalam keabsahan kepemilikan tersebut.
+//                   </p>
+//                 </div>
+//               </Col>
+//             </Row>
+//           </Grid>
+//         </div>
 
-        <div id="top-pictureAbout" className="mobile">
-          <Grid>
-            <Row>
-              <Col md={6} />
-              <Col md={6}>
-                <div className="shadow">
-                  <h3> WHO WE ARE ?</h3>
-                  <p>
-                    LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
-                    untuk menjual assetnya dengan cepat dan transparan terhadap
-                    proses dan harga yang terbentuk. LEGOAS mengusung dunia
-                    perlelangan dengan konsep proses digital terbaik pada saat
-                    ini berdasarkan system IT, sumberdaya manusia yang
-                    berpengalaman dalam dunia lelang, dan mengutamakan kepuasan
-                    bagi pelanggan. LEGOAS hadir untuk memberikan kemudahan
-                    Anda.
-                  </p>
-                </div>
-              </Col>
-            </Row>
-          </Grid>
-        </div>
-      </div>
-    );
-  }
-}
+//         <div id="top-pictureAbout" className="mobile">
+//           <Grid>
+//             <Row>
+//               <Col md={6} />
+//               <Col md={6}>
+//                 <div className="shadow">
+//                   <h3> WHO WE ARE ?</h3>
+//                   <p>
+//                     LEGOAS Didirikan untuk memberikan solusi bagi pemilik barang
+//                     untuk menjual assetnya dengan cepat dan transparan terhadap
+//                     proses dan harga yang terbentuk. LEGOAS mengusung dunia
+//                     perlelangan dengan konsep proses digital terbaik pada saat
+//                     ini berdasarkan system IT, sumberdaya manusia yang
+//                     berpengalaman dalam dunia lelang, dan mengutamakan kepuasan
+//                     bagi pelanggan. LEGOAS hadir untuk memberikan kemudahan
+//                     Anda.
+//                   </p>
+//                 </div>
+//               </Col>
+//             </Row>
+//           </Grid>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
+
+//component footer
 export class Footer extends Component {
   render() {
     return (

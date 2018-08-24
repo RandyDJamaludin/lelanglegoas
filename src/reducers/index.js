@@ -4,14 +4,13 @@ import { success, loading, failed } from "./processor";
 import { schedulecar, schedulebyid } from "./getSchedule";
 import { receivedbrand } from "./getBrand";
 import { receivedadmfee } from "./getAdmFee";
-import { sessionPersistance, resultCekToken } from "./login";
+import { sessionPersistance,  } from "./login";
 import {
   receivedproductrecomend,
   receivedproductall,
   receivedproductbyevent,
   receivedproductdetail,
   receivedimagesproduct,
-  receivedimageeveryproduct,
   receivedsearchproduct
 } from "./getProduct";
 
@@ -24,14 +23,12 @@ const rootReducers = combineReducers({
   receivedbrand,
   receivedadmfee,
   sessionPersistance,
-  resultCekToken,
   receivedproductrecomend,
   receivedproductall,
   receivedproductbyevent,
   receivedproductdetail,
   receivedsearchproduct,
-  receivedimagesproduct,
-  receivedimageeveryproduct
+  receivedimagesproduct
 });
 
 export default rootReducers;

@@ -4,6 +4,7 @@ import { server } from "../env/server";
 
 import { RECEIVED_SEARCH_PRODUCT } from "../constants/processor";
 
+//Function For Searching Product by Merek
 export const fetchMerek = (tokenId, merek) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -47,6 +48,7 @@ export const fetchMerek = (tokenId, merek) => {
   };
 };
 
+//Function For Searching Product by Merek & model
 export const fetchModel = (tokenId, merek, model) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -98,6 +100,7 @@ export const fetchModel = (tokenId, merek, model) => {
   };
 };
 
+//Function For Searching Product by Merek, Model & Tipe
 export const fetchTipe = (tokenId, merek, model, tipe) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -149,6 +152,7 @@ export const fetchTipe = (tokenId, merek, model, tipe) => {
   };
 };
 
+//Function For Searching Product by Merek With warna
 export const fetchMerekWithColor = (tokenId, merek, warna) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -192,6 +196,7 @@ export const fetchMerekWithColor = (tokenId, merek, warna) => {
   };
 };
 
+//Function For Searching Product by Merek & Model With warna
 export const fetchModelWithColor = (tokenId, merek, model, warna) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -243,6 +248,7 @@ export const fetchModelWithColor = (tokenId, merek, model, warna) => {
   };
 };
 
+//Function For Searching Product by Merek, Model & Tipe With warna
 export const fetchTipeWithColor = (tokenId, merek, model, tipe, warna) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_GET_SEARCH_PRODUCT"));
@@ -294,6 +300,7 @@ export const fetchTipeWithColor = (tokenId, merek, model, tipe, warna) => {
   };
 };
 
+//Function For send Search Result to reducer
 const receivedSearchProduct = data => {
   return {
     type: RECEIVED_SEARCH_PRODUCT,

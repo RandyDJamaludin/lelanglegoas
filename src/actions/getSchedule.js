@@ -4,6 +4,7 @@ import { server } from '../env/server'
 
 import { RECEIVED_SCHEDULE_CAR, RECEIVED_SCHEDULE_MOT, RECEIVED_SCHEDULE_BY_EVENTID  } from '../constants/processor'
 
+//Function For Fetching Jadwal lelang Mobil
 export const fetchScheduleCar = (tokenId) => {
   return async dispatch => {
     await dispatch(setLoading(true, 'LOADING_GET_SCHEDULE_CAR'))
@@ -36,6 +37,7 @@ export const fetchScheduleCar = (tokenId) => {
   }
 }
 
+//Function For send Jadwal lelang Mobil to reducer
 const receivedScheduleCar = data => {
 	return{
 		type: RECEIVED_SCHEDULE_CAR,
@@ -43,6 +45,7 @@ const receivedScheduleCar = data => {
 	}
 }
 
+//Function For Fetching Jadwal lelang by Id
 export const fetchByEventId = (tokenId, eventId) => {
   return async dispatch => {
     await dispatch(setLoading(true, 'LOADING_GET_SCHEDULE_BY_EVENTID'))
@@ -86,6 +89,7 @@ export const fetchByEventId = (tokenId, eventId) => {
   }
 }
 
+//Function For send Jadwal lelang by id to reducer
 const receivedScheduleByEventId = data => {
 	return{
 		type: RECEIVED_SCHEDULE_BY_EVENTID,
@@ -93,6 +97,7 @@ const receivedScheduleByEventId = data => {
 	}
 }
 
+//Function For Fetching Jadwal lelang Motor
 export const fetchScheduleMot = (tokenId) => {
   return async dispatch => {
     await dispatch(setLoading(true, 'LOADING_GET_SCHEDULE_MOT'))
@@ -125,6 +130,7 @@ export const fetchScheduleMot = (tokenId) => {
   }
 }
 
+//Function For send Jadwal lelang Motor to reducer
 const receivedScheduleMot = data => {
 	return{
 		type: RECEIVED_SCHEDULE_MOT,

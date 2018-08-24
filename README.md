@@ -2,11 +2,22 @@
 
 Website lelang PT Digital Sarana Legoas yang dibuat menggunakan React JS & Redux
 
+---
 ## Table of Contents
 
 - [Getting Started](#getting-started)
-- [Prerequisites](#prerequisites)
+    - [Prerequisites](#prerequisites)
 - [Folder Structure](#folder-structure)
+- [Explanation each Folder](#explanation-each-folder)
+    - [Actions](#actions)
+    - [Assets](#assets)
+    - [Constants](#constants)
+    - [Env](#env)
+    - [Pages](#pages)
+    - [Reducer](#reducer)
+- [Tips & Trick](#tips-&-trick)
+    - [Change Banner](#change-banner)
+    - [Activate / Deactivate Banner](#activate-/-deactivate-banner)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm run build](#npm-run-build)
@@ -27,7 +38,7 @@ Things you need to install
 The Project folder structure should look like this:
 
 ```
-ADINS---WEBSITE-LELANG/
+Project-name/
   README.md
   node_modules/
   public/
@@ -45,7 +56,6 @@ ADINS---WEBSITE-LELANG/
     |-searchProduct.js
   |-assets/
     |-css/
-    |-image/
     |-image/
       |-banner/
       |-...
@@ -88,20 +98,122 @@ ADINS---WEBSITE-LELANG/
   package.json
 ```
 
-For the project to build, **these files must exist with exact filenames**:
+## Explanation each Folder
 
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
+Explanation About the project folder inside `src/` folder
 
-You can delete or rename the other files.
+### Actions
 
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+Folder For Storing Action Redux
 
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
+- getAdmFee
+    Action for Get Administration Fee
+- getBrand
+    Action for Get Brand (Merk, Model, Tipe)
+- getProduct
+    Action for Get Product (Mobil)
+- getSchedule
+    Action for Get Schedule / Event
+- login
+    Action for login
+- processor
+    redux thunk system
+- searchProduct
+    Action for search Product
 
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
+### Assets
+
+Folder For Keeping Assets Like Css, Scss, Image, Banner, etc.
+
+### Constants
+
+Folder For store constant For Redux Thunk
+
+### Env
+
+Folder For Setting environment like server for development & production
+
+### Pages
+
+Folder For Store Any Project Page
+
+- AllData
+    Folder For Store Data Dummy
+- Components
+    Folder For Store Component (Card & Particle)
+- Jadwal
+    Folder For Page Jadwal lelang 
+    [Jadwal Page](https://legoas.co.id/jadwal)
+- Kontak
+    Folder For Page Kontak (Not Yet Used)
+- Landing
+    Folder For Page Landing / Home 
+    [Landing Page](https://legoas.co.id/)
+- List Lelang
+    Folder For Page list-lelang 
+    click [Jadwal Page](https://legoas.co.id/jadwal) and then click `Lihat Lot` 
+- Login
+    Folder For Page Login (Not Used)
+- Lokasi
+    Folder For Page location lelang
+    [lokasi Page](https://legoas.co.id/lokasi)
+- PengertianLelang
+    Folder For Page Pengertian Lelang
+    [Pengertian Lelang Page](https://legoas.co.id/pengertian-lelang)
+- PeraturanLelang
+    Folder For Page Peraturan Lelang
+    [Peraturan Lelang Page](https://legoas.co.id/peraturan-lelang)
+- Register
+    Folder For Page Register (Not Used)
+- RegisterChoose
+    Folder For Page RegisterChoose (Not Used)
+- TataCara
+    Folder For Page Tata Cara Lelang
+    [Tata Cara Lelang Page](https://legoas.co.id/tatacara-lelang)
+- TentangKami
+    Folder For Page About Us
+    [Tentang Kami Page](https://legoas.co.id/tentang-kami)
+- ViewCar
+    Folder For Page See Detail Car
+    click [Landing Page](https://legoas.co.id/) and then click Any Car in 'Rekomendasi' or 'Produk yang mungkin disukai'
+- Main.js
+    File For Register Page to Route
+
+### Reducer
+
+Folder For Storing Reducer Redux
+
+- getAdmFee
+    Reducer for save Administration Fee
+- getBrand
+    Reducer for save Brand (Merk, Model, Tipe)
+- getProduct
+    Reducer for save Product (Mobil)
+- getSchedule
+    Reducer for save Schedule / Event
+- login
+    Reducer for Save Session
+- processor
+    redux thunk system
+
+## Tips & Trick
+
+here's some tips & trick:
+### Change Banner
+
+To Change Banner you can go to `src/assets/image/banner`
+* replace `Ban1.jpg` to change First Banner
+* replace `Ban2.jpg` to change Second Banner
+* replace `Ban3.jpg` to change Third Banner
+* replace `Ban4.jpg` to change Fourth Banner
+    
+### Activate / Deactivate Banner
+
+You can go to `src/pages/Components/Partial.js` at `class Banner` Inside `<Carousel>` tag
+* comment `<div className="containBanner1"></div>` to Deactivate First Banner and uncomment to Activate First Banner
+* comment `<div className="containBanner2"></div>` to Deactivate Second Banner and uncomment to Activate Second Banner
+* comment `<div className="containBanner3"></div>` to Deactivate Third Banner and uncomment to Activate Third Banner
+* comment `<div className="containBanner4"></div>` to Deactivate Fourth Banner and uncomment to Activate Fourth Banner
 
 ## Available Scripts
 

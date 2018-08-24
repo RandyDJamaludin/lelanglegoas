@@ -5,30 +5,31 @@ import { Link } from "react-router-dom";
 import moment from "moment";
 import "moment/locale/id";
 
-export class Card extends Component {
-  render() {
-    return (
-      <div>
-        <div className="background-card">
-          <center>
-            <Image
-              className="components-card"
-              src={this.props.image}
-            />
-            <h3> {this.props.name} </h3>
-            <p>
-              Harga dasar <span className="orange"> Rp. {" "}
-              {this.props.price
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
-            </p>
-          </center>
-        </div>
-      </div>
-    );
-  }
-}
+// export class Card extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <div className="background-card">
+//           <center>
+//             <Image
+//               className="components-card"
+//               src={this.props.image}
+//             />
+//             <h3> {this.props.name} </h3>
+//             <p>
+//               Harga dasar <span className="orange"> Rp. {" "}
+//               {this.props.price
+//                 .toString()
+//                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
+//             </p>
+//           </center>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
+//component card Recomendation at Landing page
 export class CardCarousel extends Component {
   render() {
     return (
@@ -65,38 +66,39 @@ export class CardCarousel extends Component {
   }
 }
 
-export class ContentTab extends Component {
-  render() {
-    return (
-      <div>
-        <div className="background-card2">
-          <center>
-            <Image
-              className="components-card2"
-              src={this.props.image}
-              width="100%"
-            />
-            <h3> {this.props.name} </h3>
-            <p>
-              {" "}
-              {this.props.merek} {this.props.model} - {this.props.tipe} ({
-                this.props.at_mt
-              })
-            </p>
-            <p className="skin"> {this.props.warna} </p>
-            <p>
-              Harga dasar <span className="orange"> Rp. {" "}
-              {this.props.price
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
-            </p>
-          </center>
-        </div>
-      </div>
-    );
-  }
-}
+// export class ContentTab extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <div className="background-card2">
+//           <center>
+//             <Image
+//               className="components-card2"
+//               src={this.props.image}
+//               width="100%"
+//             />
+//             <h3> {this.props.name} </h3>
+//             <p>
+//               {" "}
+//               {this.props.merek} {this.props.model} - {this.props.tipe} ({
+//                 this.props.at_mt
+//               })
+//             </p>
+//             <p className="skin"> {this.props.warna} </p>
+//             <p>
+//               Harga dasar <span className="orange"> Rp. {" "}
+//               {this.props.price
+//                 .toString()
+//                 .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
+//             </p>
+//           </center>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
 
+//component card List Lelang at ListLelang page
 export class ListLelang extends Component {
   render() {
     return (
@@ -189,6 +191,7 @@ export class ListLelang extends Component {
   }
 }
 
+//component card Search at Landing page
 export class SearchLelang extends Component {
   render() {
     return (
@@ -233,6 +236,7 @@ export class SearchLelang extends Component {
   }
 }
 
+//component card Jadwal at Landing page & Jadwal Page
 export class JadwalLelang extends Component {
   render() {
     return (

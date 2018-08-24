@@ -7,11 +7,11 @@ import {
   RECEIVED_PRODUCT_ALL,
   RECEIVED_PRODUCT_BY_EVENT,
   RECEIVED_PRODUCT_DETAIL,
-  RECEIVED_IMAGES_PRODUCT,
-  RECEIVED_IMAGE_EVERY_PRODUCT
+  RECEIVED_IMAGES_PRODUCT
 } from "../constants/processor";
 let temporary_product_recomend =[]
 
+//Function For Fetching Product Recomended (Grade A)
 export const fetchProductRecomended = tokenId => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_FETCH_RECOMEND"));
@@ -74,6 +74,7 @@ export const fetchProductRecomended = tokenId => {
   };
 };
 
+//Function For Fetching Product Recomended (Grade B)
 export const fetchProductGradeB = tokenId => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_FETCH_RECOMEND"));
@@ -136,6 +137,7 @@ export const fetchProductGradeB = tokenId => {
   };
 };
 
+//Function For Combining Grade A & B, and then send it to reducer
 const receivedProductRecomend = data => {
   temporary_product_recomend.push(...data)
   return {
@@ -144,6 +146,7 @@ const receivedProductRecomend = data => {
   };
 };
 
+//Function For Fetching All Product
 export const fetchProductAll = tokenId => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_FETCH_ALL"));
@@ -195,6 +198,7 @@ export const fetchProductAll = tokenId => {
   };
 };
 
+//Function For send All Product to reducer
 const receivedProductAll = data => {
   return {
     type: RECEIVED_PRODUCT_ALL,
@@ -202,6 +206,7 @@ const receivedProductAll = data => {
   };
 };
 
+//Function For Fetching Product by Jadwal
 export const fetchProductByEvent = (tokenId, eventId) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_FETCH_BY_EVENT"));
@@ -274,6 +279,7 @@ export const fetchProductByEvent = (tokenId, eventId) => {
   };
 };
 
+//Function For send Product by Jadwal to reducer
 const receivedProductByEvent = data => {
   return {
     type: RECEIVED_PRODUCT_BY_EVENT,
@@ -281,8 +287,7 @@ const receivedProductByEvent = data => {
   };
 };
 
-let imageArray = [];
-
+//Function For Fetching Detail Product by Jadwal
 export const fetchProductDetail = (tokenId, lotId) => {
   return async dispatch => {
     await dispatch(setLoading(true, "LOADING_FETCH_DETAIL_PRODUCT"));
@@ -299,9 +304,6 @@ export const fetchProductDetail = (tokenId, lotId) => {
       const data = await response.data;
       await dispatch(receivedProductDetail({...data}));
       await dispatch(receivedImages(data.auctionLotUnits[0].physicalImages));
-      await dispatch(
-        receivedImage(data.auctionLotUnits[0].physicalImages[2].imageUri)
-      );
       await dispatch(
         setSuccess(
           true,
@@ -323,6 +325,7 @@ export const fetchProductDetail = (tokenId, lotId) => {
   };
 };
 
+//Function For send Detail Product to reducer
 const receivedProductDetail = data => {
   return {
     type: RECEIVED_PRODUCT_DETAIL,
@@ -330,18 +333,10 @@ const receivedProductDetail = data => {
   };
 };
 
+//Function For send just Product Image to reducer
 const receivedImages = data => {
   return {
     type: RECEIVED_IMAGES_PRODUCT,
     payload: data
-  };
-};
-
-const receivedImage = data => {
-  imageArray.push(data);
-  
-  return {
-    type: RECEIVED_IMAGE_EVERY_PRODUCT,
-    payload: imageArray
   };
 };

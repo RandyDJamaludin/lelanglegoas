@@ -35,6 +35,7 @@ export const fetchBrand = (tokenId) => {
   }
 }
 
+//Function For send List Brand to reducer
 const receivedBrand = data => {
 	return{
 		type: RECEIVED_BRAND,

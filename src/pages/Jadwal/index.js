@@ -3,15 +3,17 @@ import { Grid, Row, Col } from "react-bootstrap";
 import { Pagination } from "antd";
 import { Redirect } from "react-router";
 import { Skeleton } from 'react-js-skeleton'
-import { JadwalLelang } from "../Components/Card";
 import GoCalendar from "react-icons/lib/go/calendar";
 import { connect } from "react-redux";
+
 import { 
   fetchScheduleCar, 
   // fetchScheduleMot
- } from "../../actions/getSchedule";
+} from "../../actions/getSchedule";
 import { fetchAdmFee } from "../../actions/getAdmFee";
+import { JadwalLelang } from "../Components/Card"; //import component from card
 
+//function for pagination
 const paginate = (array, page_size, page_number) => {
   --page_number; // because pages logically start with 1, but technically with 0
   return array.slice(page_number * page_size, (page_number + 1) * page_size);
@@ -41,6 +43,7 @@ export class Index extends Component {
     this.setState({loading: false})
   };
 
+  //func for change page number (pagination)
   onChange = page => {
     this.setState({
       current: page

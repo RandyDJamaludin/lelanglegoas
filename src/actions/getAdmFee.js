@@ -31,6 +31,7 @@ export const fetchAdmFee = tokenId => {
   };
 };
 
+//Function For send Administration Fee to reducer
 const receivedAdmFee = data => {
   return {
     type: RECEIVED_ADM_FEE,

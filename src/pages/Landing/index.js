@@ -32,7 +32,7 @@ import {
 } from "../../actions/getProduct";
 import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchMerek, fetchModel, fetchTipe, fetchMerekWithColor, fetchModelWithColor, fetchTipeWithColor } from "../../actions/searchProduct";
-import { login, cekToken } from "../../actions/login";
+import { login } from "../../actions/login";
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -65,7 +65,6 @@ class Index extends Component {
     await this.props.login("TELECREATIVE", "01042018");
     const session = JSON.parse(localStorage.getItem("session"));
     await this.setState({ session });
-    await this.props.cekToken(session.tokenId, session.RoleCode, session.officeCode);
     
     await this.props.fetchProductRecomended(session.tokenId);
     await this.props.fetchProductGradeB(session.tokenId);
@@ -838,9 +837,7 @@ const mapStateToProps = state => ({
   receivedproductbyevent: state.receivedproductbyevent,
   receivedproductdetail: state.receivedproductdetail,
   receivedsearchproduct: state.receivedsearchproduct,
-  receivedimageeveryproduct: state.receivedimageeveryproduct,
   sessionPersistance: state.sessionPersistance,
-  resultCekToken: state.resultCekToken,
   receivedadmfee: state.receivedadmfee
 });
 
@@ -866,8 +863,6 @@ const mapDispatchToProps = dispatch => ({
   fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
   fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
   fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
-  cekToken: (token, officeCode, roleCode) =>
-    dispatch(cekToken(token, officeCode, roleCode)),
   fetchAdmFee: tokenId => dispatch(fetchAdmFee(tokenId))
 });
 
