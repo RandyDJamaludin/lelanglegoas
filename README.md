@@ -83,12 +83,12 @@ Project-name/
     |-ViewCar/
     |-Main.js
   |-reducers/
-  |-  getAdmFee.js
-  |-  getBrand.js
-  |-  getProduct.js
-  |-  getSchedule.js
-  |-  login.js
-  |-  processor.js
+    |-getAdmFee.js
+    |-getBrand.js
+    |-getProduct.js
+    |-getSchedule.js
+    |-login.js
+    |-processor.js
   |-App.js
   |-App.test.js
   |-index.css
