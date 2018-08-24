@@ -15,9 +15,9 @@ Website lelang PT Digital Sarana Legoas yang dibuat menggunakan React JS & Redux
     - [Env](#env)
     - [Pages](#pages)
     - [Reducer](#reducer)
-- [Tips & Trick](#tips-&-trick)
+- [Tips and Trick](#tips-and-trick)
     - [Change Banner](#change-banner)
-    - [Activate / Deactivate Banner](#activate-/-deactivate-banner)
+    - [Activate or Deactivate Banner](#activate-or-deactivate-banner)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
   - [npm run build](#npm-run-build)
@@ -196,7 +196,7 @@ Folder For Storing Reducer Redux
 - processor
     redux thunk system
 
-## Tips & Trick
+## Tips and Trick
 
 here's some tips & trick:
 ### Change Banner
@@ -207,7 +207,7 @@ To Change Banner you can go to `src/assets/image/banner`
 * replace `Ban3.jpg` to change Third Banner
 * replace `Ban4.jpg` to change Fourth Banner
     
-### Activate / Deactivate Banner
+### Activate or Deactivate Banner
 
 You can go to `src/pages/Components/Partial.js` at `class Banner` Inside `<Carousel>` tag
 * comment `<div className="containBanner1"></div>` to Deactivate First Banner and uncomment to Activate First Banner
