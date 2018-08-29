@@ -30,8 +30,9 @@ Go To Project and run `npm install` and then `npm start` for starting developmen
 
 ### Prerequisites
 
-Things you need to install
-* React Js
+* Have knowledge about [React Js](https://reactjs.org/)
+* Things you need to install
+    * [Node](https://nodejs.org/en/)
 
 ## Folder Structure
 
