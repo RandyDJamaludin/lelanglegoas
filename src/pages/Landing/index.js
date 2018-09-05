@@ -31,7 +31,7 @@ import {
   fetchProductDetail
 } from "../../actions/getProduct";
 import { fetchAdmFee } from "../../actions/getAdmFee";
-import { fetchMerek, fetchModel, fetchTipe, fetchMerekWithColor, fetchModelWithColor, fetchTipeWithColor } from "../../actions/searchProduct";
+import { fetchSearchProduct } from "../../actions/searchProduct";
 import { login } from "../../actions/login";
 
 const FormItem = Form.Item;
@@ -51,6 +51,7 @@ class Index extends Component {
       model: "",
       tipe: "",
       warna: "",
+      tahun: "",
       session: {},
       loadingRecomended: true,
       loadingCard: true,
@@ -80,20 +81,8 @@ class Index extends Component {
 
   //Function for Handling Search
   async handleSearch() {
-    const { session, merk, model, tipe, warna } = this.state;
-    if (merk !== "" && model !== "" && tipe !== "" && warna !== "") {
-      await this.props.fetchTipeWithColor(session.tokenId, merk, model, tipe, warna);
-    } else if (merk !== "" && model !== "" && tipe === "" && warna !== "") {
-      await this.props.fetchModelWithColor(session.tokenId, merk, model, warna);
-    } else if (merk !== "" && model === "" && tipe === "" && warna !== "") {
-      await this.props.fetchMerekWithColor(session.tokenId, merk, warna);
-    } else if (merk !== "" && model !== "" && tipe !== "" && warna === "") {
-      await this.props.fetchTipe(session.tokenId, merk, model, tipe);
-    } else if (merk !== "" && model !== "" && tipe === "" && warna === "") {
-      await this.props.fetchModel(session.tokenId, merk, model);
-    } else if (merk !== "" && model === "" && tipe === "" && warna === "") {
-      await this.props.fetchMerek(session.tokenId, merk);
-    }
+    const { session, merk, model, tipe, warna, tahun } = this.state;
+    await this.props.fetchSearchProduct(session.tokenId, merk, model, tipe, warna, tahun);
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
   }
 
@@ -104,10 +93,6 @@ class Index extends Component {
     });
   };
 
-  static defaultProps = {
-    center: { lat: -6.197027, lng: 106.9793295 },
-    zoom: 11
-  };
   render() {
     const responsive = {
       0: {
@@ -411,7 +396,7 @@ class Index extends Component {
               <Row style={{ paddingTop: 10 }}>
                 <Col md={6}>
                   <p> Tahun </p>
-                  <Input width="100%" />
+                  <Input width="100%" onChange={e => this.setState({ tahun: e.target.value })} />
                 </Col>
                 <Col md={6}>
                   <p> warna </p>
@@ -438,7 +423,7 @@ class Index extends Component {
               <Row>
                 <Col md={12}>
                   <FormItem>
-                    {this.state.merk === "" ? (
+                    {this.state.merk === "" && this.state.tahun === "" && this.state.warna === "" ? (
                       <Button
                         type="primary"
                         htmlType="submit"
@@ -850,16 +835,7 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchProductByEvent(tokenId, eventId)),
   fetchProductDetail: (tokenId, lotId) =>
     dispatch(fetchProductDetail(tokenId, lotId)),
-  fetchMerekWithColor: (tokenId, merek, warna) => dispatch(fetchMerekWithColor(tokenId, merek, warna)),
-  fetchModelWithColor: (tokenId, merek, model, warna) =>
-    dispatch(fetchModelWithColor(tokenId, merek, model, warna)),
-  fetchTipeWithColor: (tokenId, merek, model, tipe, warna) =>
-    dispatch(fetchTipeWithColor(tokenId, merek, model, tipe, warna)),
-  fetchMerek: (tokenId, merek) => dispatch(fetchMerek(tokenId, merek)),
-  fetchModel: (tokenId, merek, model) =>
-    dispatch(fetchModel(tokenId, merek, model)),
-  fetchTipe: (tokenId, merek, model, tipe) =>
-    dispatch(fetchTipe(tokenId, merek, model, tipe)),
+  fetchSearchProduct: (tokenId, merek, model, tipe, warna, tahun) => dispatch(fetchSearchProduct(tokenId, merek, model, tipe, warna, tahun)),
   fetchScheduleCar: tokenId => dispatch(fetchScheduleCar(tokenId)),
   fetchScheduleMot: tokenId => dispatch(fetchScheduleMot(tokenId)),
   fetchBrand: tokenId => dispatch(fetchBrand(tokenId)),
