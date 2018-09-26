@@ -8,7 +8,7 @@ import { BrowserRouter } from 'react-router-dom'
 import './assets/css/index.css'
 import 'antd/dist/antd.css'
 import App from './App'
-import registerServiceWorker from './registerServiceWorker';
+import {registerServiceWorker, unregister} from './registerServiceWorker';
 
 const store = createStore(rootReducers, applyMiddleware(thunk))
 
@@ -18,4 +18,4 @@ ReactDOM.render(
       <App />
     </BrowserRouter>
   </Provider>,document.getElementById('root'));
-registerServiceWorker();
+unregister();
