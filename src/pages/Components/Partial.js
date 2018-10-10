@@ -85,9 +85,9 @@ export class Banner extends Component {
             {/* Banner 2 */}
             <div className="containBanner2"></div>
             {/* Banner 3 */}
-            <div className="containBanner3"></div>
+            {/* <div className="containBanner3"></div> */}
             {/* Banner 4 */}
-            <div className="containBanner4"></div>
+            {/* <div className="containBanner4"></div> */}
           </Carousel>
         </div>
       </div>
