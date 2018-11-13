@@ -10,7 +10,7 @@ import Lokasi from "./Lokasi/index";
 import PengertianLelang from "./PengertianLelang/index";
 import PeraturanLelang from "./PeraturanLelang/index";
 import TentangKami from "./TentangKami/index";
-// import Kontak from "./Kontak/index";
+import Kontak from "./Kontak/index";
 // import Login from "./Login/index";
 // import RegisterChoose from "./RegisterChoose/index";
 // import Register from "./Register/index";
@@ -30,7 +30,7 @@ export class Main extends Component {
           <Route exact path="/list-lelang/:id" component={ListLelang} />
           <Route exact path="/view-car/:id" component={ViewCar} />
           <Route exact path="/tentang-kami" component={TentangKami} />
-          {/* <Route exact path="/kontak" component={Kontak} /> */}
+          <Route exact path="/kontak" component={Kontak} />
           {/* <Route exact path="/login" component={Login} /> */}
           {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}
           {/* <Route exact path="/register" component={Register} /> */}

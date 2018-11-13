@@ -55,9 +55,9 @@ export class Navigation extends Component {
                 <NavItem eventKey={5} href="/tentang-kami">
                   Tentang Kami
                 </NavItem>
-                {/* <NavItem eventKey={5} href="/kontak">
+                <NavItem eventKey={5} href="/kontak">
                   Kontak Kami
-                </NavItem> */}
+                </NavItem>
                 <NavItem eventKey={6} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
                   Login
                 </NavItem>
