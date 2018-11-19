@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { Carousel, Input, Icon,Button,Select,Form } from "antd";
-import { Banner } from "../Components/Partial";
+import { BannerJual } from "../Components/Partial";
 import LogoWhite from "../../assets/image/legoas-white.png";
 // import { BannerAbout } from "../Components/Partial";
 
@@ -25,7 +25,7 @@ export class Index extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div>
-                <Banner/>
+                <BannerJual/>
 
                 <Grid>
                     <Row className="mb-3">

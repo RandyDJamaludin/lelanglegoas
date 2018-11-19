@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Grid, Row, Col, Image, Nav, NavItem, Navbar, NavDropdown, MenuItem } from "react-bootstrap";
 import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
+import Banner1 from "../../assets/image//banner/Ban1.jpg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
@@ -91,7 +92,22 @@ export class Banner extends Component {
             {/* Banner 3 */}
             <div className="containBanner3"></div>
             {/* Banner 4 */}
-            {/*  <div className="containBanner4"></div> */}
+            <div className="containBanner4"></div>
+          </Carousel>
+        </div>
+      </div>
+    );
+  }
+}
+
+//component Banner at Landing Page
+export class BannerJual extends Component {
+  render() {
+    return (
+      <div>
+        <div className="banner_background">
+          <Carousel>
+            <div className="containBanner1"></div>
           </Carousel>
         </div>
       </div>
