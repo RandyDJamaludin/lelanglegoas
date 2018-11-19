@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 import { Carousel, Input, Icon,Button,Select,Form } from "antd";
 import { Banner } from "../Components/Partial";
+import LogoWhite from "../../assets/image/legoas-white.png";
 // import { BannerAbout } from "../Components/Partial";
 
 const { TextArea } = Input;
@@ -112,7 +113,7 @@ export class Index extends Component {
                                     </Row>
                                 </Col>
                                 <Col xs={12} md={4} className="panel-form-right height-100 p-3">
-                                    <p className="color-white font-big">LOGO</p>
+                                    <img className="mb-3" src={LogoWhite} width={200} style={{marginLeft:'-10px'}} />
 
                                     <p className="color-white">PT Digital Sarana Legoas <br/> Jl. Raya kaliabang km 0,8</p>
 
