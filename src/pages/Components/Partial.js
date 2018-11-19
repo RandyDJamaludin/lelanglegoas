@@ -55,13 +55,17 @@ export class Navigation extends Component {
                 <NavItem eventKey={5} href="/tentang-kami">
                   Tentang Kami
                 </NavItem>
+
+                <NavItem eventKey={6} href="/jual">
+                  Jual
+                </NavItem>
                 {/* <NavItem eventKey={5} href="/kontak">
                   Kontak Kami
                 </NavItem> */}
-                <NavItem eventKey={6} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
+                <NavItem eventKey={7} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
                   Login
                 </NavItem>
-                <NavItem eventKey={7} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
+                <NavItem eventKey={8} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
                   Register
                 </NavItem>
               </Nav>
