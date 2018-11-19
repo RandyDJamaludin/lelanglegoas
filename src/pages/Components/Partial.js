@@ -106,7 +106,7 @@ export class BannerJual extends Component {
     return (
       <div>
         <div className="banner_background">
-          <Carousel>
+          <Carousel dots={false}>
             <div className="containBanner1"></div>
           </Carousel>
         </div>
