@@ -33,9 +33,9 @@ class InstagramFeed extends Component {
                           </div>
                         </div>
                     </a>`}
-                    userId='9384177790'
+                    userId='7647214269'
                     clientId='c593810dc87b45a28539dc0851bb53a8'
-                    accessToken='9384177790.1677ed0.8f2242e85ec24f4fb46f9f24b8b3f0ab'
+                    accessToken='7647214269.1677ed0.3d3a0abad52e43c4ae9ff481ca4dcad2'
                   />
             </div>
         )
