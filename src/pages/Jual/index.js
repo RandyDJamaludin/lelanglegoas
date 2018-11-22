@@ -4,6 +4,9 @@ import { Carousel, Input, Icon,Button,Select,Form } from "antd";
 import { BannerJual } from "../Components/Partial";
 import LogoWhite from "../../assets/image/legoas-white.png";
 // import { BannerAbout } from "../Components/Partial";
+import axios from 'axios'
+import swal from 'sweetalert2';
+import { server } from '../../env/server'
 
 const { TextArea } = Input;
 const Option = Select.Option;
@@ -11,12 +14,50 @@ const Option = Select.Option;
 const FormItem = Form.Item;
 
 export class Index extends Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            loader: false
+        }
+    }
 
     handleSubmit = (e) => {
        e.preventDefault();
+       const that = this
        this.props.form.validateFields((err, values) => {
           if (!err) {
             console.log('Received values of form: ', values);
+            that.setState({loader:true})
+            axios({
+            method: 'post',
+            url: `https://demo.legoas.co.id:8443/api/am/post/command`,
+            headers: { 'Content-Type': 'application/json' },
+            data:
+                {
+                "tokenId":"Zzp5ZCU9KcwvdvdjjI7EmQk8cmjecncHHXrMsHylrYg6H1_8ItFihA2",
+                "eventCode":"CONTACT_FORM_SUBMITED",
+                "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+                },
+            })
+            .then(function (response) {
+
+                swal(
+                    'Success!',
+                    'Pesan Terkirim!',
+                    'success'
+                ).then((result) => {
+                    window.location.href=""
+                })
+                that.setState({loader:false})
+            })
+            .catch(function (response) {
+                swal(
+                    'Error',
+                    'error',
+                    'error'
+                )
+                that.setState({loader:false})
+            });
           }
         });
     }
@@ -72,7 +113,10 @@ export class Index extends Component {
                                         <Col md={6}>
                                             <FormItem>
                                                   {getFieldDecorator('email', {
-                                                    rules: [{ required: true, message: 'harus diisi!' }],
+                                                    rules: [
+                                                        { required: true, message: 'harus diisi!' },
+                                                        { type: 'email', message: 'email tidak valid!'}
+                                                    ],
                                                   })(
                                                     <Input
                                                       placeholder="Email Anda"
@@ -108,7 +152,7 @@ export class Index extends Component {
                                     </Row>
                                     <Row className="mt-2 mb-2">
                                         <Col md={12}>
-                                            <Button type="primary" className="btn-cs" htmlType="submit">SUBMIT</Button>
+                                            <Button type="primary" loading={this.state.loader} className="btn-cs" htmlType="submit">SUBMIT</Button>
                                         </Col>
                                     </Row>
                                 </Col>
