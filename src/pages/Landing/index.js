@@ -33,6 +33,7 @@ import {
 import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchSearchProduct } from "../../actions/searchProduct";
 import { login } from "../../actions/login";
+import InstagramFeed from './instagramFeed';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -66,7 +67,7 @@ class Index extends Component {
     await this.props.login("TELECREATIVE", "01042018");
     const session = JSON.parse(localStorage.getItem("session"));
     await this.setState({ session });
-    
+
     await this.props.fetchProductRecomended(session.tokenId);
     await this.props.fetchProductGradeB(session.tokenId);
     this.setState({loadingRecomended: false})
@@ -447,7 +448,7 @@ class Index extends Component {
               </Row>
             </Col>
             <Col md={1} />
-            {this.state.resultSearch === "Not Yet Search" ? 
+            {this.state.resultSearch === "Not Yet Search" ?
               <Col md={6}>
                 <Row id="hasilPencarian">
                   <p style={{ fontWeight: "bold", marginLeft: 10 }}>
@@ -782,6 +783,23 @@ class Index extends Component {
             </NavLink>
           </Grid>
         </div>
+
+        <div className="landing-lelang mb-3">
+          <Grid>
+            <div className="body-header">
+              <p>
+                <Icon type="instagram" /> INSTAGRAM
+              </p>
+              <hr />
+            </div>
+            <Row>
+                <Col md={12}>
+                    <InstagramFeed/>
+                </Col>
+            </Row>
+            </Grid>
+        </div>
+
         <div>
           <div className="location-lelang">
             <Grid>

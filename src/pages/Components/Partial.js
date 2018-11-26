@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Grid, Row, Col, Image, Nav, NavItem, Navbar, NavDropdown, MenuItem } from "react-bootstrap";
 import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
+import Banner1 from "../../assets/image//banner/Ban1.jpg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
@@ -55,13 +56,16 @@ export class Navigation extends Component {
                 <NavItem eventKey={5} href="/tentang-kami">
                   Tentang Kami
                 </NavItem>
-                <NavItem eventKey={5} href="/kontak">
+                <NavItem eventKey={6} href="/kontak">
                   Kontak Kami
                 </NavItem>
-                <NavItem eventKey={6} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
+                <NavItem eventKey={7} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
                   Login
                 </NavItem>
-                <NavItem eventKey={7} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
+                <NavItem eventKey={8} href="/jual">
+                  Jual
+                </NavItem>
+                <NavItem eventKey={9} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
                   Register
                 </NavItem>
               </Nav>
@@ -87,7 +91,22 @@ export class Banner extends Component {
             {/* Banner 3 */}
             <div className="containBanner3"></div>
             {/* Banner 4 */}
-            {/*  <div className="containBanner4"></div> */}
+            <div className="containBanner4"></div>
+          </Carousel>
+        </div>
+      </div>
+    );
+  }
+}
+
+//component Banner at Landing Page
+export class BannerJual extends Component {
+  render() {
+    return (
+      <div>
+        <div className="banner_background">
+          <Carousel dots={false}>
+            <div className="containBanner1"></div>
           </Carousel>
         </div>
       </div>
