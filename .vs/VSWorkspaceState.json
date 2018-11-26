@@ -1,13 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\node_modules",
-    "\\node_modules\\axios",
     "\\src",
-    "\\src\\env",
     "\\src\\pages",
-    "\\src\\pages\\Jual"
+    "\\src\\pages\\Components"
   ],
-  "SelectedNode": "\\src\\pages\\Jual\\index.js",
+  "SelectedNode": "\\src\\pages\\Components\\Partial.js",
   "PreviewInSolutionExplorer": false
 }

@@ -10,8 +10,12 @@ import Lokasi from "./Lokasi/index";
 import PengertianLelang from "./PengertianLelang/index";
 import PeraturanLelang from "./PeraturanLelang/index";
 import TentangKami from "./TentangKami/index";
+<<<<<<< HEAD
 import Jual from "./Jual/index";
 // import Kontak from "./Kontak/index";
+=======
+import Kontak from "./Kontak/index";
+>>>>>>> f7ed859b45a07fb3a868aa265e9764c5a16e7619
 // import Login from "./Login/index";
 // import RegisterChoose from "./RegisterChoose/index";
 // import Register from "./Register/index";
@@ -31,8 +35,12 @@ export class Main extends Component {
           <Route exact path="/list-lelang/:id" component={ListLelang} />
           <Route exact path="/view-car/:id" component={ViewCar} />
           <Route exact path="/tentang-kami" component={TentangKami} />
+<<<<<<< HEAD
           <Route exact path="/jual" component={Jual} />
           {/* <Route exact path="/kontak" component={Kontak} /> */}
+=======
+          <Route exact path="/kontak" component={Kontak} />
+>>>>>>> f7ed859b45a07fb3a868aa265e9764c5a16e7619
           {/* <Route exact path="/login" component={Login} /> */}
           {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}
           {/* <Route exact path="/register" component={Register} /> */}
