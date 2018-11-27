@@ -36,14 +36,14 @@ export class Index extends Component {
                 {
                 "tokenId":"Zzp5ZCU9KcwvdvdjjI7EmQk8cmjecncHHXrMsHylrYg6H1_8ItFihA2",
                 "eventCode":"CONTACT_FORM_SUBMITED",
-                "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+                "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cslegoas@gmail.com\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
                 },
             })
             .then(function (response) {
 
                 swal(
                     'Success!',
-                    'Pesan Terkirim!',
+                    'Terima kasih, CS kami akan melayani Anda!',
                     'success'
                 ).then((result) => {
                     window.location.href=""
@@ -170,7 +170,7 @@ export class Index extends Component {
                                                 <small>cs@legoas.co.id</small>
                                             </div>
                                             <div>
-                                                <small>021.888388388</small>
+                                                <small>021-88388388</small>
                                             </div>
                                         </div>
                                     </div>
