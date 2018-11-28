@@ -18,38 +18,38 @@ import Jual from "./Jual/index";
 
 //Register list route
 export class Main extends Component {
-  render() {
-    return (
-      <main>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/pengertian-lelang" component={PengertianLelang} />
-          <Route exact path="/peraturan-lelang" component={PeraturanLelang} />
-          <Route exact path="/tatacara-lelang" component={Tata} />
-          <Route exact path="/jadwal" component={Jadwal} />
-          <Route exact path="/lokasi" component={Lokasi} />
-          <Route exact path="/list-lelang/:id" component={ListLelang} />
-          <Route exact path="/view-car/:id" component={ViewCar} />
-          <Route exact path="/tentang-kami" component={TentangKami} />
-          <Route exact path="/jual" component={Jual} />
-          {/* <Route exact path="/kontak" component={Kontak} /> */}
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}
-          {/* <Route exact path="/register" component={Register} /> */}
-          <Route component={noMatch} />
-        </Switch>
-      </main>
-    );
-  }
+    render() {
+        return (
+            <main>
+                <Switch>
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/pengertian-lelang" component={PengertianLelang} />
+                    <Route exact path="/peraturan-lelang" component={PeraturanLelang} />
+                    <Route exact path="/tatacara-lelang" component={Tata} />
+                    <Route exact path="/jadwal" component={Jadwal} />
+                    <Route exact path="/lokasi" component={Lokasi} />
+                    <Route exact path="/list-lelang/:id" component={ListLelang} />
+                    <Route exact path="/view-car/:id" component={ViewCar} />
+                    <Route exact path="/tentang-kami" component={TentangKami} />
+                    <Route exact path="/jual" component={Jual} />
+                    {/* <Route exact path="/kontak" component={Kontak} /> */}
+                    {/* <Route exact path="/login" component={Login} /> */}
+                    {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}
+                    {/* <Route exact path="/register" component={Register} /> */}
+                    <Route component={noMatch} />
+                </Switch>
+            </main>
+        );
+    }
 }
 
 //func redirect to home when link is invalid
 const noMatch = ({ location }) => (
-  <Redirect
-    to={{
-      pathname: "/"
-    }}
-  />
+    <Redirect
+        to={{
+            pathname: "/"
+        }}
+    />
 );
 
 export default Main;
