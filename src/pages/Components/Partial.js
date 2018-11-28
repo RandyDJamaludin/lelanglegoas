@@ -56,21 +56,11 @@ export class Navigation extends Component {
                 <NavItem eventKey={5} href="/tentang-kami">
                   Tentang Kami
                 </NavItem>
-<<<<<<< HEAD
 
                 <NavItem eventKey={6} href="/jual">
                   Jual
                 </NavItem>
-                {/* <NavItem eventKey={5} href="/kontak">
-                  Kontak Kami
-                </NavItem> */}
                 <NavItem eventKey={7} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
-=======
-                <NavItem eventKey={5} href="/kontak">
-                  Kontak Kami
-                </NavItem>
-                <NavItem eventKey={6} href="https://lelang.legoas.co.id/Account/Login" target="_blank">
->>>>>>> f7ed859b45a07fb3a868aa265e9764c5a16e7619
                   Login
                 </NavItem>
                 <NavItem eventKey={8} href="https://lelang.legoas.co.id/Auction/Bidder/Register" target="_blank">
@@ -99,7 +89,7 @@ export class Banner extends Component {
             {/* Banner 3 */}
             <div className="containBanner3"></div>
             {/* Banner 4 */}
-            <div className="containBanner4"></div>
+            {/* <div className="containBanner4"></div> */}
           </Carousel>
         </div>
       </div>

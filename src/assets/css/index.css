@@ -94,15 +94,14 @@ img.logo {
     font-weight: bold; }
 
 .wrap-kontak {
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  padding-top: 8%; }
   .wrap-kontak .right-panel {
     box-shadow: 0 0 10px #ccc;
     padding: 30px; }
     .wrap-kontak .right-panel .form-contact input::placeholder {
       font-size: 12px; }
     .wrap-kontak .right-panel .form-contact textarea {
-      height: 50px; }
+      height: 200px; }
     .wrap-kontak .right-panel .form-contact textarea::placeholder {
       font-size: 12px; }
     .wrap-kontak .right-panel .form-contact button {
