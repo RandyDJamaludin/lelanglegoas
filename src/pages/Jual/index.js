@@ -42,8 +42,8 @@ export class Index extends Component {
             .then(function (response) {
 
                 swal(
-                    'Terimakasih!',
-                    'Terimakasih, CS kami akan melayani Anda!',
+                    'Terima Kasih!',
+                    'Permohonan Anda sudah kami terima, dan tim kami akan segera menghubungi Anda untuk proses penjualan mobil Anda.',
                     'success'
                 ).then((result) => {
                     window.location.href=""
