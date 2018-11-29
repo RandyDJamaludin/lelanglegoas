@@ -42,8 +42,8 @@ export class Index extends Component {
             .then(function (response) {
 
                 swal(
-                    'Success!',
-                    'Terima kasih, CS kami akan melayani Anda!',
+                    'Terimakasih!',
+                    'Terimakasih, CS kami akan melayani Anda!',
                     'success'
                 ).then((result) => {
                     window.location.href=""
