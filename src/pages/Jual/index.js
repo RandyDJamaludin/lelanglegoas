@@ -22,6 +22,7 @@ export class Index extends Component {
     }
 
     handleSubmit = (e) => {
+<<<<<<< HEAD
         e.preventDefault();
         const that = this
         this.props.form.validateFields((err, values) => {
@@ -38,6 +39,33 @@ export class Index extends Component {
                         "eventCode": "CONTACT_FORM_SUBMITED",
                         "jsonData": `{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cslegoas@gmail.com\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
                     },
+=======
+       e.preventDefault();
+       const that = this
+       this.props.form.validateFields((err, values) => {
+          if (!err) {
+            console.log('Received values of form: ', values);
+            that.setState({loader:true})
+            axios({
+            method: 'post',
+            url: `https://demo.legoas.co.id:8443/api/am/post/command`,
+            headers: { 'Content-Type': 'application/json' },
+            data:
+                {
+                "tokenId":"Zzp5ZCU9KcwvdvdjjI7EmQk8cmjecncHHXrMsHylrYg6H1_8ItFihA2",
+                "eventCode":"CONTACT_FORM_SUBMITED",
+                "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+                },
+            })
+            .then(function (response) {
+
+                swal(
+                    'Terima Kasih!',
+                    'Permohonan Anda sudah kami terima, dan tim kami akan segera menghubungi Anda untuk proses penjualan mobil Anda.',
+                    'success'
+                ).then((result) => {
+                    window.location.href=""
+>>>>>>> a490328bbc647b75aecd1592161af8c9d0cb62ae
                 })
                     .then(function (response) {
 
