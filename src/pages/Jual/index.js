@@ -13,12 +13,75 @@ const Option = Select.Option;
 
 const FormItem = Form.Item;
 
+
 export class Index extends Component {
     constructor(props){
         super(props)
         this.state = {
             loader: false
         }
+        this.authOffice = this.authOffice.bind(this)
+        this.handlePostEmail = this.handlePostEmail.bind(this)
+    }
+
+    authOffice(res,values){
+        const that = this
+        axios({
+        method: 'post',
+        url: `${server}/api/am/loginByOffice`,
+        headers: { 'Content-Type': 'application/json' },
+        data:
+             {
+            "tokenId": res.data.tokenId,
+            "roleCode": res.data.listRole[0].RoleCode,
+            "officeCode": res.data.listOffice[0].officeCode
+            }
+        })
+        .then(function (response) {
+            that.handlePostEmail(response,values)
+        })
+        .catch(function (response) {
+            swal(
+                'Error',
+                'authentication error',
+                'error'
+            )
+            that.setState({loader:false})
+        });
+    }
+
+    handlePostEmail(res,values){
+        const that = this
+        axios({
+        method: 'post',
+        url: `${server}/api/am/post/command`,
+        headers: { 'Content-Type': 'application/json' },
+        data:
+            {
+            "tokenId":res.data.tokenId,
+            "eventCode":"CONTACT_FORM_SUBMITED",
+            "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+            },
+        })
+        .then(function (response) {
+
+            swal(
+                'Terima Kasih!',
+                'Permohonan Anda sudah kami terima, dan tim kami akan segera menghubungi Anda untuk proses penjualan mobil Anda.',
+                'success'
+            ).then((result) => {
+                window.location.href=""
+            })
+            that.setState({loader:false})
+        })
+        .catch(function (response) {
+            swal(
+                'Error',
+                'error',
+                'error'
+            )
+            that.setState({loader:false})
+        });
     }
 
     handleSubmit = (e) => {
@@ -26,34 +89,26 @@ export class Index extends Component {
        const that = this
        this.props.form.validateFields((err, values) => {
           if (!err) {
-            console.log('Received values of form: ', values);
+            // console.log('Received values of form: ', values);
             that.setState({loader:true})
             axios({
             method: 'post',
-            url: `https://demo.legoas.co.id:8443/api/am/post/command`,
+            url: `${server}/api/am/authentication`,
             headers: { 'Content-Type': 'application/json' },
             data:
-                {
-                "tokenId":"Zzp5ZCU9KcwvdvdjjI7EmQk8cmjecncHHXrMsHylrYg6H1_8ItFihA2",
-                "eventCode":"CONTACT_FORM_SUBMITED",
-                "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+                 {
+                "username": "TELECREATIVE",
+                "password": "01042018"
                 },
             })
             .then(function (response) {
-
-                swal(
-                    'Terima Kasih!',
-                    'Permohonan Anda sudah kami terima, dan tim kami akan segera menghubungi Anda untuk proses penjualan mobil Anda.',
-                    'success'
-                ).then((result) => {
-                    window.location.href=""
-                })
-                that.setState({loader:false})
+                console.log(response);
+                that.authOffice(response,values)
             })
             .catch(function (response) {
                 swal(
                     'Error',
-                    'error',
+                    'authentication error',
                     'error'
                 )
                 that.setState({loader:false})
@@ -65,7 +120,7 @@ export class Index extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         return (
-            <div>  
+            <div>
                 <BannerJual/>
 
                 <Grid>
