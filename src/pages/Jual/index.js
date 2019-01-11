@@ -216,7 +216,7 @@ export class Index extends Component {
                                 <Col xs={12} md={4} className="panel-form-right height-100 p-3">
                                     <img className="mb-3" src={LogoWhite} width={200} style={{marginLeft:'-10px'}} />
 
-                                    <p className="color-white">PT Digital Sarana Legoas <br/> Jl. Raya kaliabang km 0,8</p>
+                                    <p className="color-white">PT Digital Sarana Legoas <br/> Jl. Meruya Selatan N0. 12 RT 08 RW 04 Kel. Meruya Utara  Kec. Kembangan Jakarta Barat 11620</p>
 
                                     <div className="color-white d-flex">
                                         <div className="pr-2">
@@ -227,7 +227,7 @@ export class Index extends Component {
                                                 <small>cs@legoas.co.id</small>
                                             </div>
                                             <div>
-                                                <small>021-88388388</small>
+                                                <small>021-25988388</small>
                                             </div>
                                         </div>
                                     </div>
