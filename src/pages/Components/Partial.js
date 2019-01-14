@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Grid, Row, Col, Image, Nav, NavItem, Navbar, NavDropdown, MenuItem } from "react-bootstrap";
 import { Carousel, Input, Icon } from "antd";
 import Logo from "../../assets/image/logo.jpeg";
-import Banner1 from "../../assets/image//banner/Ban1.jpg";
+import Banner2 from "../../assets/image//banner/Ban2.jpg";
 import TiFacebook from "react-icons/lib/ti/social-facebook";
 import TiInstagram from "react-icons/lib/ti/social-instagram";
 import TiTwitter from "react-icons/lib/ti/social-twitter";
@@ -107,7 +107,7 @@ export class BannerJual extends Component {
             <div>
                 <div className="banner_background">
                     <Carousel dots={false}>
-                        <div className="containBanner1"></div>
+                        <div className="containBanner2"></div>
                     </Carousel>
                 </div>
             </div>
