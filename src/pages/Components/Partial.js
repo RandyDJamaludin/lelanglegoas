@@ -85,10 +85,10 @@ export class Banner extends Component {
             <div>
                 <div className="banner_background">
                     <Carousel autoplay>
-                        {/* Banner 1 */}
-                        <div className="containBanner1"></div>
                         {/* Banner 2 */}
                         <div className="containBanner2"></div>
+                        {/* Banner 1 */}
+                        <div className="containBanner1"></div>
                         {/* Banner 3 */}
                         <div className="containBanner3"></div>
                         {/* Banner 4 */}
@@ -107,7 +107,7 @@ export class BannerJual extends Component {
             <div>
                 <div className="banner_background">
                     <Carousel dots={false}>
-                        <div className="containBanner2"></div>
+                        <div className="containBanner1"></div>
                     </Carousel>
                 </div>
             </div>
