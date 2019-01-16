@@ -49,3 +49,29 @@
   border-radius: 60px !important;
   min-width: 120px !important;
   min-height: 38px !important; }
+
+.sticky-form {
+  position: absolute;
+  top: 150px;
+  right: 10%;
+  width: 400px; }
+
+.text-area-cs {
+  margin-top: 5px !important; }
+
+/* Scrollbar custom */
+.scrollClass {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  /* Handle */ }
+  .scrollClass:hover {
+    overflow-y: auto !important; }
+  .scrollClass ::-webkit-scrollbar {
+    width: 0.1rem;
+    height: 0.1rem; }
+  .scrollClass ::-webkit-scrollbar-thumb {
+    background: #3A4ABA; }
+
+.form-h {
+  height: calc(100vh - 30px);
+  overflow: scroll; }
