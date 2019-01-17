@@ -59,7 +59,8 @@ class Index extends Component {
       loadingJadwal: true,
       resultSearch: "Not Yet Search",
       pageSize: 2,
-      current: 1
+      current: 1,
+      video: true
     };
   }
 
@@ -826,6 +827,16 @@ class Index extends Component {
             </Grid>
           </div>
         </div>
+        {
+          this.state.video
+          &&
+          <div className="sticky-video">
+            <Button className="btn-delay" type="primary" shape="circle" icon="close" onClick={()=>{this.setState({video:false})}} />
+            <div class="video-container">
+            <iframe className="content-media__object" id="featured-video" width="560" height="315" src="https://www.youtube.com/embed/pua_QFrmCqM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+          </div>
+        }
       </div>
     );
   }

@@ -1809,6 +1809,22 @@ section {
       #instafeed a {
         width: 100%; } }
 
+#featured-video {
+  transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out; }
+
+.btn-delay {
+  transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out; }
+
+.sticky-video {
+  position: fixed;
+  z-index: 9999999;
+  bottom: 10px;
+  right: 10px; }
+  .sticky-video .ant-btn {
+    position: absolute;
+    right: 0;
+    top: -20px; }
+
 .alice-carousel .animated {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both; }
