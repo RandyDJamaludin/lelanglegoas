@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import { BannerJual } from "../Components/Partial";
-import { Affix } from 'antd';
-import FormJual from './FormJual';
+import { Row } from "react-bootstrap";
+import { Affix } from "antd";
+import FormJual from "./FormJual";
+import Img1 from "../../assets/image/jual/section1.jpeg";
+import Img2 from "../../assets/image/jual/section2.jpeg";
 
-const Content = () => <div style={{ padding:100, textAlign: 'center', borderBottom: '1px solid' }}>Content</div>;
+const Content = () => (
+  <div style={{ padding: 100, textAlign: "center", borderBottom: "1px solid" }}>
+    Content
+  </div>
+);
 
 export class Index extends Component {
   constructor(props) {
@@ -17,36 +22,15 @@ export class Index extends Component {
   render() {
     return (
       <div>
-        <Grid>
-          <Row className="mb-3">
-            <Col xs={12} md={12}>
-              <Content />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col xs={12} md={12}>
-              <Content />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col xs={12} md={12}>
-              <Content />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col xs={12} md={12}>
-              <Content />
-            </Col>
-          </Row>
-          <Row className="mb-3">
-            <Col xs={12} md={12}>
-              <Content />
-            </Col>
-          </Row>
-        </Grid>
+        <Row style={{ marginLeft: 0, marginRight: 0 }}>
+          <img style={{ width: "100%" }} src={Img1} />
+        </Row>
+        <Row className="mb-3" style={{ marginLeft: 0, marginRight: 0 }}>
+          <img style={{ width: "100%" }} src={Img2} />
+        </Row>
         <div className="sticky-form">
           <Affix offsetTop={60}>
-              <FormJual />
+            <FormJual />
           </Affix>
         </div>
       </div>
