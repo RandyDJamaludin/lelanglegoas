@@ -111,144 +111,144 @@ export class Jual extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
-          <Row className="mb-3 scrollClass">
-            <Col xs={12} md={12} className="form-h">
-              <Form onSubmit={this.handleSubmit}>
-                <div>
-                  <Row
-                    className="panel-form radius"
-                    style={{ background: "linear-gradient(#274491, #3960CA)" }}
+        <Row className="mb-3 scrollClass">
+          <Col xs={12} md={12} className="form-h">
+            <Form onSubmit={this.handleSubmit}>
+              <div>
+                <Row
+                  className="panel-form radius"
+                  style={{ background: "linear-gradient(#274491, #3960CA)" }}
+                >
+                  <Col
+                    xs={12}
+                    md={12}
+                    className="panel-form-left p-3 height-100"
+                    style={{ background: "#D9D9D9" }}
                   >
-                    <Col
-                      xs={12}
-                      md={12}
-                      className="panel-form-left p-3 height-100"
-                      style={{ background: "#D9D9D9" }}
-                    >
-                      <Row>
-                        <Col md={12}>
-                          <div>
-                            <h4 className="text-center">
-                              {" "}
-                              Hubungi legoas <br /> untuk dilayani oleh sales kami{" "}
-                            </h4>
-                          </div>
-                        </Col>
-                      </Row>
-                      <Row className="mt-1">
-                        <Col md={12}>
-                          <FormItem>
-                            {getFieldDecorator("name", {
-                              rules: [
-                                { required: true, message: "masukkan nama!" }
-                              ]
-                            })(<Input placeholder="Nama Anda" />)}
-                          </FormItem>
-                        </Col>
-                      </Row>
-                      <Row className="mt-1">
-                        <Col md={12}>
-                          <FormItem>
-                            {getFieldDecorator("status", {
-                              rules: [
-                                { required: true, message: "harus diisi!" }
-                              ]
-                            })(
-                              <Select
-                                style={{ width: "100%" }}
-                                placeholder="Personal atau perusahaan"
-                              >
-                                <Option value="personal">Personal</Option>
-                                <Option value="perusahaan">Perusahaan</Option>
-                              </Select>
-                            )}
-                          </FormItem>
-                        </Col>
-                      </Row>
-                      <Row className="mt-1">
-                        <Col md={12}>
-                          <FormItem>
-                            {getFieldDecorator("email", {
-                              rules: [
-                                { required: true, message: "harus diisi!" },
-                                { type: "email", message: "email tidak valid!" }
-                              ]
-                            })(<Input placeholder="Email Anda" />)}
-                          </FormItem>
-                        </Col>
-                      </Row>
-                      <Row className="mt-1">
-                        <Col md={12}>
-                          <FormItem>
-                            {getFieldDecorator("phone", {
-                              rules: [
-                                { required: true, message: "harus diisi!" }
-                              ]
-                            })(<Input placeholder="Nomor Ponsel" />)}
-                          </FormItem>
-                        </Col>
-                      </Row>
-                      <Row className="mt-1">
-                        <Col md={12}>
-                          <FormItem>
-                            {getFieldDecorator("pesan", {
-                              rules: [
-                                { required: true, message: "harus diisi!" }
-                              ]
-                            })(<TextArea rows={4} placeholder="Pesan Anda" className="text-area-cs" />)}
-                          </FormItem>
-                        </Col>
-                      </Row>
-                      <Row className="mt-2">
-                        <Col md={12}>
-                          <Button
-                            type="primary"
-                            loading={this.state.loader}
-                            className="btn-cs"
-                            htmlType="submit"
-                          >
-                            SUBMIT
-                          </Button>
-                        </Col>
-                      </Row>
-                    </Col>
-                    <Col
-                      xs={12}
-                      md={12}
-                      className="panel-form-right height-100 p-3"
-                    >
-                      <img
-                        className="mb-3"
-                        src={LogoWhite}
-                        width={100}
-                        style={{ marginLeft: "-10px" }}
-                      />
+                    <Row>
+                      <Col md={12}>
+                        <div>
+                          <h4 className="text-center">
+                            {" "}
+                            Hubungi legoas <br /> untuk dilayani oleh sales kami{" "}
+                          </h4>
+                        </div>
+                      </Col>
+                    </Row>
+                    <Row className="mt-1">
+                      <Col md={12}>
+                        <FormItem>
+                          {getFieldDecorator("name", {
+                            rules: [
+                              { required: true, message: "masukkan nama!" }
+                            ]
+                          })(<Input placeholder="Nama Anda" />)}
+                        </FormItem>
+                      </Col>
+                    </Row>
+                    <Row className="mt-1">
+                      <Col md={12}>
+                        <FormItem>
+                          {getFieldDecorator("status", {
+                            rules: [{ required: true, message: "harus diisi!" }]
+                          })(
+                            <Select
+                              style={{ width: "100%" }}
+                              placeholder="Personal atau perusahaan"
+                            >
+                              <Option value="personal">Personal</Option>
+                              <Option value="perusahaan">Perusahaan</Option>
+                            </Select>
+                          )}
+                        </FormItem>
+                      </Col>
+                    </Row>
+                    <Row className="mt-1">
+                      <Col md={12}>
+                        <FormItem>
+                          {getFieldDecorator("email", {
+                            rules: [
+                              { required: true, message: "harus diisi!" },
+                              { type: "email", message: "email tidak valid!" }
+                            ]
+                          })(<Input placeholder="Email Anda" />)}
+                        </FormItem>
+                      </Col>
+                    </Row>
+                    <Row className="mt-1">
+                      <Col md={12}>
+                        <FormItem>
+                          {getFieldDecorator("phone", {
+                            rules: [{ required: true, message: "harus diisi!" }]
+                          })(<Input placeholder="Nomor Ponsel" />)}
+                        </FormItem>
+                      </Col>
+                    </Row>
+                    <Row className="mt-1">
+                      <Col md={12}>
+                        <FormItem>
+                          {getFieldDecorator("pesan", {
+                            rules: [{ required: true, message: "harus diisi!" }]
+                          })(
+                            <TextArea
+                              rows={2}
+                              placeholder="Pesan Anda"
+                              className="text-area-cs"
+                            />
+                          )}
+                        </FormItem>
+                      </Col>
+                    </Row>
+                    <Row className="mt-2">
+                      <Col md={12}>
+                        <Button
+                          type="primary"
+                          loading={this.state.loader}
+                          className="btn-cs"
+                          htmlType="submit"
+                        >
+                          SUBMIT
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Col>
+                  <Col
+                    xs={12}
+                    md={12}
+                    className="panel-form-right height-100 p-3"
+                  >
+                    <img
+                      className="mb-3"
+                      src={LogoWhite}
+                      width={100}
+                      style={{ marginLeft: "-10px" }}
+                    />
 
-                      <p className="color-white">
-                        PT Digital Sarana Legoas <br /> Jl. Meruya Selatan N0.
-                        12 RT 08 RW 04 Kel. Meruya Utara Kec. Kembangan Jakarta
-                        Barat 11620
-                      </p>
+                    <p className="color-white">
+                      PT Digital Sarana Legoas <br /> Jl. Meruya Selatan N0. 12
+                      RT 08 RW 04 Kel. Meruya Utara Kec. Kembangan Jakarta Barat
+                      11620
+                    </p>
 
-                      <div className="color-white d-flex">
-                        <div className="pr-2">
-                          <Icon type="mail" />
+                    <div className="color-white d-flex">
+                      <div className="pr-2">
+                        <Icon type="mail" />
+                      </div>
+                      <div>
+                        <div>
+                          <small>cs@legoas.co.id</small>
                         </div>
                         <div>
-                          <div>
-                            <small>cs@legoas.co.id</small>
-                          </div>
-                          <div>
-                            <small>021-25988388</small>
-                          </div>
+                          <small>021-25988388</small>
                         </div>
                       </div>
-                    </Col>
-                  </Row>
-                </div>
-              </Form>
-            </Col>
-          </Row>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+            </Form>
+          </Col>
+        </Row>
       </div>
     );
   }
