@@ -23,7 +23,10 @@ export class Index extends Component {
     return (
       <div>
         <Row style={{ marginLeft: 0, marginRight: 0 }}>
-          <img style={{ width: "100%" }} src={Img1} />
+          <img
+            style={{ width: "100%", height: 767, objectFit: "cover" }}
+            src={Img1}
+          />
         </Row>
         <Row className="mb-3" style={{ marginLeft: 0, marginRight: 0 }}>
           <img style={{ width: "100%" }} src={Img2} />
