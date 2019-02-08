@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row } from "react-bootstrap";
 import { Affix } from "antd";
 import FormJual from "./FormJual";
-import Img1 from "../../assets/image/jual/section1.jpeg";
+import Img1 from "../../assets/image/jual/section-ex1.jpg";
 import Img2 from "../../assets/image/jual/section2.jpeg";
 
 const Content = () => (
@@ -22,9 +22,9 @@ export class Index extends Component {
   render() {
     return (
       <div>
-        <Row style={{ marginLeft: 0, marginRight: 0 }}>
+        <Row style={{ marginLeft: 0, marginRight: 0, paddingTop:70 }}>
           <img
-            style={{ width: "100%", height: 767, objectFit: "cover" }}
+            style={{ width: "100%", objectFit: "contain" }}
             src={Img1}
           />
         </Row>
