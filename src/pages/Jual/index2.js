@@ -32,7 +32,7 @@ export class Index extends Component {
           <img style={{ width: "100%" }} src={Img2} />
         </Row>
         <div className="sticky-form">
-          <Affix offsetTop={60}>
+          <Affix offsetTop={80}>
             <FormJual />
           </Affix>
         </div>

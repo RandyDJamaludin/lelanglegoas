@@ -218,7 +218,7 @@ export class Jual extends Component {
                     className="panel-form-right height-100 p-3"
                   >
                     <img
-                      className="mb-3"
+                      className="mb-2"
                       src={LogoWhite}
                       width={100}
                       style={{ marginLeft: "-10px" }}
@@ -239,7 +239,7 @@ export class Jual extends Component {
                           <small>cs@legoas.co.id</small>
                         </div>
                         <div>
-                          <small>021-25988388</small>
+                          <small>021-22548888</small>
                         </div>
                       </div>
                     </div>

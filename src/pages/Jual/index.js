@@ -227,7 +227,7 @@ export class Index extends Component {
                                                 <small>cs@legoas.co.id</small>
                                             </div>
                                             <div>
-                                                <small>021-25988388</small>
+                                                <small>021-22548888</small>
                                             </div>
                                         </div>
                                     </div>

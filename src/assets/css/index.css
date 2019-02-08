@@ -1764,14 +1764,14 @@ section {
   margin-bottom: 0 !important; }
 
 .btn-cs {
-  background-color: #0055A7 !important;
+  background-color: #0055a7 !important;
   border-radius: 60px !important;
   min-width: 120px !important;
   min-height: 38px !important; }
 
 .sticky-form {
   position: absolute;
-  top: 150px;
+  top: 100px;
   right: 10%;
   width: 400px; }
 
@@ -1789,7 +1789,7 @@ section {
     width: 0.1rem;
     height: 0.1rem; }
   .scrollClass ::-webkit-scrollbar-thumb {
-    background: #3A4ABA; }
+    background: #3a4aba; }
 
 .form-h {
   height: calc(100vh - 30px);
