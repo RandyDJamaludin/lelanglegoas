@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Row } from "react-bootstrap";
 import { Affix } from "antd";
 import FormJual from "./FormJual";
-import Img1 from "../../assets/image/jual/section-ex1.jpg";
+import Img1 from "../../assets/image/jual/section-ex2.jpg";
 import Img2 from "../../assets/image/jual/section2.jpeg";
 
 const Content = () => (
