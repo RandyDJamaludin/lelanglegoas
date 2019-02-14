@@ -116,7 +116,7 @@ export class Jual extends Component {
             <Form onSubmit={this.handleSubmit}>
               <div>
                 <Row
-                  className="panel-form radius"
+                  className="panel-form radius panel-cs"
                   style={{ background: "linear-gradient(#274491, #3960CA)" }}
                 >
                   <Col
