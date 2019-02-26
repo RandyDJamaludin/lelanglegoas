@@ -12,7 +12,7 @@ const Option = Select.Option;
 
 const FormItem = Form.Item;
 
-const URL_DEMO = "https://demo.legoas.co.id:8443";
+const URL_LIVE = "https://lelang.legoas.co.id:8443";
 
 export class Jual extends Component {
   constructor(props) {
@@ -28,7 +28,7 @@ export class Jual extends Component {
     const that = this;
     axios({
       method: "post",
-      url: `${URL_DEMO}/api/am/loginByOffice`,
+      url: `${URL_LIVE}/api/am/loginByOffice`,
       headers: { "Content-Type": "application/json" },
       data: {
         tokenId: res.data.tokenId,
@@ -49,7 +49,7 @@ export class Jual extends Component {
     const that = this;
     axios({
       method: "post",
-      url: `${URL_DEMO}/api/am/post/command`,
+      url: `${URL_LIVE}/api/am/post/command`,
       headers: { "Content-Type": "application/json" },
       data: {
         tokenId: res.data.tokenId,
@@ -88,7 +88,7 @@ export class Jual extends Component {
         that.setState({ loader: true });
         axios({
           method: "post",
-          url: `${URL_DEMO}/api/am/authentication`,
+          url: `${URL_LIVE}/api/am/authentication`,
           headers: { "Content-Type": "application/json" },
           data: {
             username: "TELECREATIVE",
