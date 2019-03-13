@@ -62,7 +62,7 @@ export class Index extends Component {
             {
             "tokenId":res.data.tokenId,
             "eventCode":"CONTACT_FORM_SUBMITED",
-            "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\"NO-REPLY@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
+            "jsonData":`{\"eventcode\":\"CONTACT_FORM_SUBMITED\",\"email\":\cs@legoas.co.id\",\"contact_name\":\"${values.name}\",\"contact_type\":\"${values.status}\",\"contact_email\":\"${values.email}\",\"contact_phone\":\"${values.phone}\",\"message\":\"${values.pesan}\"}`
             },
         })
         .then(function (response) {
