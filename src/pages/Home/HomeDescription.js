@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
+import Logo1 from "../../assets/image/home/aset-01.png";
+import Logo2 from "../../assets/image/home/aset-02.png";
+import Logo3 from "../../assets/image/home/aset-03.png";
+import Logo4 from "../../assets/image/home/aset-04.png";
 
 class HomeDescription extends Component {
   constructor() {
@@ -15,9 +19,23 @@ class HomeDescription extends Component {
         <p className="title-section text-center">
           BALAI LELANG DENGAN E-AUCTION
         </p>
+        <h2 className="text-center" style={{ color: "#FFBB00" }}>
+          PERTAMA DI INDONESIA
+        </h2>
         <Grid>
           <Row>
-            <Col md={12} />
+            <Col md={3} className="text-center">
+              <img width={150} src={Logo1} />
+            </Col>
+            <Col md={3} className="text-center">
+              <img width={150} src={Logo2} />
+            </Col>
+            <Col md={3} className="text-center">
+              <img width={150} src={Logo3} />
+            </Col>
+            <Col md={3} className="text-center">
+              <img width={150} src={Logo4} />
+            </Col>
           </Row>
         </Grid>
       </div>
