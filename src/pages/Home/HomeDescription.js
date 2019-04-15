@@ -19,22 +19,29 @@ class HomeDescription extends Component {
         <p className="title-section text-center">
           BALAI LELANG DENGAN E-AUCTION
         </p>
-        <h2 className="text-center" style={{ color: "#FFBB00" }}>
+        <h2
+          className="text-center m-t-10"
+          style={{ color: "#FFBB00", fontWeight: "bold" }}
+        >
           PERTAMA DI INDONESIA
         </h2>
         <Grid>
           <Row>
             <Col md={3} className="text-center">
-              <img width={150} src={Logo1} />
+              <img width={150} height={150} src={Logo1} />
+              <div className="base-color w700">Cari Mobil/Motor</div>
             </Col>
             <Col md={3} className="text-center">
-              <img width={150} src={Logo2} />
+              <img width={150} height={150} src={Logo2} />
+              <div className="base-color w700">Jadwal Lelang Terdekat</div>
             </Col>
             <Col md={3} className="text-center">
-              <img width={150} src={Logo3} />
+              <img width={150} height={150} src={Logo3} />
+              <div className="base-color w700">Produk</div>
             </Col>
             <Col md={3} className="text-center">
-              <img width={150} src={Logo4} />
+              <img width={150} height={150} src={Logo4} />
+              <div className="base-color w700">Testimonial</div>
             </Col>
           </Row>
         </Grid>
