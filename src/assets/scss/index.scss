@@ -1,6 +1,19 @@
+@import "base/variable.scss";
+@import "base/spacing.scss";
+@import "base/typography.scss";
+
 body {
   background: #fff !important;
-  font-family: Helvetica !important;
+  font-family: $font-type2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-type2;
 }
 
 button.buttonSearch {
@@ -468,7 +481,6 @@ p.backTop {
 }
 
 //End to Top
-@import "base/variable.scss";
 @import "base/utility.scss";
 @import "Components/Banner.scss";
 @import "Components/Card.scss";

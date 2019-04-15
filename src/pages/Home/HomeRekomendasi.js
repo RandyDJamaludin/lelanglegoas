@@ -49,9 +49,11 @@ class Index extends Component {
     return (
       <Fragment>
         <Grid className="wrap-cardCarousel">
-          <Row>
-            <p className="title-section text-center"> REKOMENDASI </p>
+          <div className="body-header">
+            <p className="title-section text-center">REKOMENDASI</p>
             <hr className="title-hr" />
+          </div>
+          <Row>
             {this.state.loadingRecomended ? (
               <Row>
                 <Col md={4}>
@@ -198,8 +200,11 @@ class Index extends Component {
           </Row>
         </Grid>
         <Grid className="wrap-cardCarouselMobile">
+          <div className="body-header">
+            <p className="title-section text-center">REKOMENDASI</p>
+            <hr className="title-hr" />
+          </div>
           <Row>
-            <p className="titleHeader"> REKOMENDASI</p>
             {this.state.loadingRecomended ? (
               <Row>
                 <Col md={4}>
