@@ -33,6 +33,7 @@ import {
 import { fetchAdmFee } from "../../actions/getAdmFee";
 import { fetchSearchProduct } from "../../actions/searchProduct";
 import { login } from "../../actions/login";
+import InstagramFeed from './instagramFeed';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -58,7 +59,8 @@ class Index extends Component {
       loadingJadwal: true,
       resultSearch: "Not Yet Search",
       pageSize: 2,
-      current: 1
+      current: 1,
+      video: true
     };
   }
 
@@ -66,7 +68,7 @@ class Index extends Component {
     await this.props.login("TELECREATIVE", "01042018");
     const session = JSON.parse(localStorage.getItem("session"));
     await this.setState({ session });
-    
+
     await this.props.fetchProductRecomended(session.tokenId);
     await this.props.fetchProductGradeB(session.tokenId);
     this.setState({loadingRecomended: false})
@@ -447,7 +449,7 @@ class Index extends Component {
               </Row>
             </Col>
             <Col md={1} />
-            {this.state.resultSearch === "Not Yet Search" ? 
+            {this.state.resultSearch === "Not Yet Search" ?
               <Col md={6}>
                 <Row id="hasilPencarian">
                   <p style={{ fontWeight: "bold", marginLeft: 10 }}>
@@ -782,6 +784,23 @@ class Index extends Component {
             </NavLink>
           </Grid>
         </div>
+
+        <div className="landing-lelang mb-3">
+          <Grid>
+            <div className="body-header">
+              <p>
+                <Icon type="instagram" /> INSTAGRAM
+              </p>
+              <hr />
+            </div>
+            <Row>
+                <Col md={12}>
+                    <InstagramFeed/>
+                </Col>
+            </Row>
+            </Grid>
+        </div>
+
         <div>
           <div className="location-lelang">
             <Grid>
@@ -793,13 +812,13 @@ class Index extends Component {
               </div>
               <Row>
                 <Col xs={12} md={12}>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.6263097029314!2d106.9802200539126!3d-6.196873185633912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b937f68c20d%3A0xda5b15b4bf92449c!2skantor+pt.Digital+sarana+legoas!5e0!3m2!1sen!2sid!4v1531283557410" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameBorder="0" allowFullScreen></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.4470743860265!2d106.73473651476907!3d-6.20460629550834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f7b1852c75a1%3A0x6a976ae8016423df!2sPT.+DIGITAL+SARANA+LEGOAS!5e0!3m2!1sid!2sid!4v1549611252590" title="map" style={{marginLeft:"10%", width:"80%", height:600}} frameBorder="0" allowFullScreen></iframe>
                   <div className="wrap-location">
                     <p className="sub-location">PT Digital Sarana Legoas</p>
                   </div>
                   <div className="body-location">
-                    <p>Jl. Raya Kaliabang no. 45</p>
-                    <p>Medan Satria, Bekasi 17132</p>
+                    <p>Jl. Meruya Selatan N0. 12 RT 08 RW 04 Kel. Meruya Utara</p>
+                    <p>Kec. Kembangan Jakarta Barat 11620</p>
                     <p>Indonesia</p>
                     <p>cs@legoas.co.id </p>
                   </div>
@@ -808,6 +827,16 @@ class Index extends Component {
             </Grid>
           </div>
         </div>
+        {
+          this.state.video
+          &&
+          <div className="sticky-video">
+            <Button className="btn-delay" type="primary" shape="circle" icon="close" onClick={()=>{this.setState({video:false})}} />
+            <div class="video-container">
+            <iframe className="content-media__object" id="featured-video" width="444" height="255" src="https://www.youtube.com/embed/pua_QFrmCqM?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </div>
+          </div>
+        }
       </div>
     );
   }

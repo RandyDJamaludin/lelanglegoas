@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Redirect } from "react-router";
 import { Switch, Route } from "react-router-dom";
 import Landing from "./Landing/index";
+import Home from "./Home/Home";
 import Tata from "./TataCara/index";
 import Jadwal from "./Jadwal/index";
 import ListLelang from "./ListLelang/index";
@@ -11,6 +12,7 @@ import PengertianLelang from "./PengertianLelang/index";
 import PeraturanLelang from "./PeraturanLelang/index";
 import TentangKami from "./TentangKami/index";
 import Jual from "./Jual/index";
+import Jual2 from "./Jual/index2";
 // import Kontak from "./Kontak/index";
 // import Login from "./Login/index";
 // import RegisterChoose from "./RegisterChoose/index";
@@ -22,7 +24,7 @@ export class Main extends Component {
     return (
       <main>
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/pengertian-lelang" component={PengertianLelang} />
           <Route exact path="/peraturan-lelang" component={PeraturanLelang} />
           <Route exact path="/tatacara-lelang" component={Tata} />
@@ -32,6 +34,7 @@ export class Main extends Component {
           <Route exact path="/view-car/:id" component={ViewCar} />
           <Route exact path="/tentang-kami" component={TentangKami} />
           <Route exact path="/jual" component={Jual} />
+          <Route exact path="/jual2" component={Jual2} />
           {/* <Route exact path="/kontak" component={Kontak} /> */}
           {/* <Route exact path="/login" component={Login} /> */}
           {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}

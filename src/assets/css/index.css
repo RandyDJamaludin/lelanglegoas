@@ -288,6 +288,17 @@ p.backTop {
   100% {
     stroke-dashoffset: -600; } }
 
+.title-section {
+  font-size: 18px !important;
+  font-weight: 700;
+  color: #005695;
+  margin-bottom: 0;
+  padding-top: 2%;
+  font-family: "Overpass", sans-serif; }
+
+.title-hr {
+  margin: 5px 0; }
+
 @media (min-width: 1240px) and (max-width: 1440px) {
   .banner_background {
     height: 440px; } }
@@ -344,36 +355,44 @@ p.backTop {
   background-position: 0px 40px; }
   @media only screen and (max-width: 299px) {
     .banner_background .containBanner1 {
-      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background: url("../image/banner/mobile/Ban-mobile1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
       padding: 100px !important;
-      margin-top: 70px !important; } }
+      margin-top: 70px !important;
+      background-size: 100%; }
+      .banner_background .containBanner1.slick-active {
+        height: 1700px !important; } }
   @media (min-width: 300px) and (max-width: 360px) {
     .banner_background .containBanner1 {
-      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background: url("../image/banner/mobile/Ban-mobile1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
       padding: 140px !important;
-      margin-top: 70px !important; } }
+      margin-top: 70px !important;
+      background-size: 100%; }
+      .banner_background .containBanner1.slick-active {
+        height: 1700px !important; } }
   @media (min-width: 361px) and (max-width: 424px) {
     .banner_background .containBanner1 {
-      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background: url("../image/banner/mobile/Ban-mobile1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
       padding: 180px !important;
-      margin-top: 70px !important; } }
+      margin-top: 70px !important;
+      background-size: 100%; }
+      .banner_background .containBanner1.slick-active {
+        height: 2000px !important; } }
   @media (min-width: 425px) and (max-width: 470px) {
     .banner_background .containBanner1 {
-      background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
+      background: url("../image/banner/mobile/Ban-mobile1.jpg") no-repeat;
       background-repeat: no-repeat;
       background-position: center center;
-      background-size: cover;
       padding: 210px !important;
-      margin-top: 70px !important; } }
+      margin-top: 70px !important;
+      background-size: 100%; }
+      .banner_background .containBanner1.slick-active {
+        height: 2200px !important; } }
   @media (min-width: 471px) and (max-width: 500px) {
     .banner_background .containBanner1 {
       background: url("../image/banner/mobile/Ban1.jpg") no-repeat;
@@ -1750,16 +1769,77 @@ section {
   min-height: 290px; }
 
 .panel-form .panel-form-right {
-  padding: 40px; }
+  padding: 30px; }
 
 .panel-form .ant-form-item {
   margin-bottom: 0 !important; }
 
+.panel-cs .panel-form-left {
+  padding: 15px; }
+
+.panel-cs .panel-form-right {
+  padding: 20px; }
+
 .btn-cs {
-  background-color: #0055A7 !important;
+  background-color: #0055a7 !important;
   border-radius: 60px !important;
   min-width: 120px !important;
   min-height: 38px !important; }
+
+.sticky-form {
+  position: absolute;
+  top: 80px;
+  right: 10%;
+  width: 400px; }
+
+.text-area-cs {
+  margin-top: 5px !important; }
+
+/* Scrollbar custom */
+.scrollClass {
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+  /* Handle */ }
+  .scrollClass:hover {
+    overflow-y: auto !important; }
+  .scrollClass ::-webkit-scrollbar {
+    width: 0.1rem;
+    height: 0.1rem; }
+  .scrollClass ::-webkit-scrollbar-thumb {
+    background: #3a4aba; }
+
+.form-h {
+  height: calc(100vh - 30px);
+  overflow: scroll; }
+
+#instafeed {
+  width: 100%; }
+  #instafeed a {
+    display: inline-block;
+    width: 25%; }
+    #instafeed a img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover; }
+    @media (max-width: 480px) {
+      #instafeed a {
+        width: 100%; } }
+
+#featured-video {
+  transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out; }
+
+.btn-delay {
+  transition: width .2s ease-in-out, height .2s ease-in-out, transform .38s ease-in-out; }
+
+.sticky-video {
+  position: fixed;
+  z-index: 9999999;
+  bottom: 10px;
+  right: 10px; }
+  .sticky-video .ant-btn {
+    position: absolute;
+    right: 0;
+    top: -20px; }
 
 .alice-carousel .animated {
   -webkit-animation-fill-mode: both;

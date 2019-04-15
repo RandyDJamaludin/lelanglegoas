@@ -2,14 +2,17 @@ body {
   background: #fff !important;
   font-family: Helvetica !important;
 }
+
 button.buttonSearch {
   width: 100%;
   margin-top: 24px;
 }
+
 button.search {
   width: 100%;
   border: 1px solid #40a9ff;
 }
+
 .wrap-nav {
   position: fixed;
   z-index: 999;
@@ -18,6 +21,7 @@ button.search {
   a.anchorActive {
     color: #3c8dbc !important;
   }
+
   .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -26,6 +30,7 @@ button.search {
     background: #fff;
     color: #3c8dbc;
   }
+
   .navbar-inverse {
     border: none;
 
@@ -33,38 +38,49 @@ button.search {
       border: none;
       background: #3c8dbc;
     }
+
     .navbar-toggle:hover {
       border: none;
       background: #3c8dbc;
     }
+
     .navbar-collapse {
       border: none;
     }
+
     .navbar-form {
       border: none;
     }
+
     .navbar-nav {
       background: transparent;
+
       &:focus {
         background: red !important;
       }
+
       .open {
         a {
           background: transparent;
         }
+
         &:hover {
           background: transparent;
         }
+
         &:focus {
           background: transparent;
         }
       }
+
       li {
         a {
           color: #000;
+
           &:focus {
             color: #3c8dbc;
           }
+
           &:hover {
             color: #3c8dbc;
           }
@@ -73,16 +89,20 @@ button.search {
     }
   }
 }
+
 span.orange {
   color: #3c8dbc;
   font-weight: bold;
 }
+
 ul.right {
   float: right;
+
   @media only screen and (max-width: 765px) {
     float: none;
   }
 }
+
 img.logo {
   margin-top: -5px;
 }
@@ -91,6 +111,7 @@ img.logo {
 
 .page-lokasi {
   padding-top: 8%;
+
   @media only screen and(max-width:600px) {
     padding-top: 18%;
   }
@@ -98,9 +119,11 @@ img.logo {
 
 .page-jadwal {
   padding-top: 5%;
+
   @media only screen and(max-width:600px) {
     padding-top: 18%;
   }
+
   .searchPanel {
     box-shadow: 0 0 10px #ccc;
     padding: 20px;
@@ -113,9 +136,11 @@ img.logo {
   background: #fff;
   background-size: 100%;
   margin-top: 5%;
+
   @media only screen and (max-width: 800px) {
     padding-top: 20px;
   }
+
   p.header {
     text-align: center;
     font-size: 20px;
@@ -130,19 +155,24 @@ img.logo {
 
 .wrap-kontak {
   padding-top: 8%;
+
   .right-panel {
     box-shadow: 0 0 10px #ccc;
     padding: 30px;
+
     .form-contact {
       input::placeholder {
         font-size: 12px;
       }
+
       textarea {
         height: 200px;
       }
+
       textarea::placeholder {
         font-size: 12px;
       }
+
       button {
         margin-top: 5%;
         width: 100%;
@@ -150,6 +180,7 @@ img.logo {
         border: 1px solid #3c8dbc;
       }
     }
+
     .header {
       p.header {
         font-size: 18px;
@@ -171,26 +202,31 @@ img.logo {
 
 .wrap-tatacara {
   padding-top: 5%;
+
   .desktop-tatacaraPage {
     padding-bottom: 10%;
+
     @media only screen and(max-width:800px) {
       display: none !important;
     }
   }
+
   .mobile-tatacaraPage {
     display: none;
+
     @media only screen and (max-width: 800px) {
       display: inherit !important;
     }
   }
-  .table_ant{
+
+  .table_ant {
     margin-top: 30px;
-    ul.ant-pagination{
+
+    ul.ant-pagination {
       display: none !important;
     }
   }
 }
-
 
 //End tata cara lelang
 
@@ -199,27 +235,29 @@ img.logo {
 .wrap-pengertianLelangPage {
   padding-top: 5%;
   padding-bottom: 8%;
+
   p.header {
     font-size: 18px;
     font-weight: bold;
     font-family: Helvetica;
     text-transform: uppercase;
   }
+
   span.orange {
     color: #3c8dbc;
     font-weight: bold;
   }
 }
 
-  .Tabs {
-    list-style: none;
-  }
+.Tabs {
+  list-style: none;
+}
 
-  .Text {
-    margin-top: 2%;
-    text-align: center;
-    font-weight: bold;
-  }
+.Text {
+  margin-top: 2%;
+  text-align: center;
+  font-weight: bold;
+}
 
 // End Pengertian lelang
 
@@ -228,18 +266,22 @@ img.logo {
 .wrap-peraturanLelangPage {
   padding-top: 5%;
   padding-bottom: 5%;
+
   p.header {
     font-size: 18px;
     font-weight: bold;
     font-family: Helvetica;
     text-transform: uppercase;
   }
+
   span.orange {
     font-weight: bold;
   }
+
   .collapse-body {
     padding: 10px;
     padding-left: 25px;
+
     span {
       font-weight: bold;
       font-size: 14px;
@@ -254,17 +296,20 @@ img.logo {
 
 .wrap-tentangKamiPage {
   padding-top: 5%;
+
   .banner {
     background: url() no-repeat;
     background-size: cover;
     padding: 2%;
   }
+
   .right-panel {
     p.header {
       font-size: 18px;
       font-weight: bold;
       text-transform: uppercase;
     }
+
     p.description {
       line-height: 2;
     }
@@ -277,19 +322,24 @@ img.logo {
 
 .wrap-footer {
   color: #b3b3b3;
+
   .logo-footer {
     padding-bottom: 2%;
   }
+
   .body-client {
     padding-top: 4%;
   }
+
   p.title {
     font-weight: bold;
     color: #3c8dbc;
   }
-  a.footer{
+
+  a.footer {
     color: #ccc !important;
   }
+
   p.footer {
     text-align: center;
     padding-top: 1%;
@@ -299,15 +349,18 @@ img.logo {
     color: #ccc;
     font-size: 12px;
   }
+
   input.footer-email {
     font-size: 12px;
   }
+
   p.social-media {
     font-size: 22px;
     display: inline-block;
     padding-right: 15px;
     padding-top: 10px;
   }
+
   span {
     color: #3c8dbc;
   }
@@ -315,13 +368,13 @@ img.logo {
 
 //End Footer
 
-p.street{
+p.street {
   margin-left: 5px;
 }
 
 #comment_bubble {
   width: 100%;
-  padding:20px;
+  padding: 20px;
   border: 5px solid #ccc;
   position: relative;
   -moz-border-radius: 12px;
@@ -341,10 +394,9 @@ p.street{
   border-bottom: 13px solid transparent;
 }
 
-
 #comment_bubbleWomen {
   width: 100%;
-  padding:20px;
+  padding: 20px;
   border: 5px solid #ccc;
   position: relative;
   -moz-border-radius: 12px;
@@ -364,8 +416,8 @@ p.street{
   border-bottom: 13px solid transparent;
 }
 
-.wrap_tentang{
-  height:300px;
+.wrap_tentang {
+  height: 300px;
 }
 
 //Back to Top
@@ -378,40 +430,46 @@ p.backTop {
 
 #load {
   width: 100px;
-    animation: loading 3s linear infinite;
-    #loading-inner {
+  animation: loading 3s linear infinite;
+
+  #loading-inner {
     stroke: {
-        dashoffset: 0;
-        dasharray: 300;
-        width: 5;
-        miterlimit: 10;
-        linecap: round;
-      }
-      animation: loading-circle 2s linear infinite;
-      stroke: #3c8dbc;
-      fill: transparent;
+      dashoffset: 0;
+      dasharray: 300;
+      width: 5;
+      miterlimit: 10;
+      linecap: round;
     }
- }
+
+    animation: loading-circle 2s linear infinite;
+    stroke: #3c8dbc;
+    fill: transparent;
+  }
+}
 
 @keyframes loading {
   0% {
-      transform: rotate(0);
-    }
+    transform: rotate(0);
+  }
+
   100% {
-      transform: rotate(360deg);
-    }
+    transform: rotate(360deg);
+  }
 }
+
 @keyframes loading-circle {
   0% {
-      stroke-dashoffset: 0
-    }
+    stroke-dashoffset: 0;
+  }
+
   100% {
-      stroke-dashoffset: -600;
-    }
+    stroke-dashoffset: -600;
+  }
 }
 
 //End to Top
-
+@import "base/variable.scss";
+@import "base/utility.scss";
 @import "Components/Banner.scss";
 @import "Components/Card.scss";
 @import "Components/About.scss";
@@ -420,4 +478,6 @@ p.backTop {
 @import "Components/Register.scss";
 @import "Components/ViewCar.scss";
 @import "Components/Panel.scss";
+@import "Components/Instagram.scss";
+@import "Components/Media.scss";
 @import "react-alice-carousel/src/alice-carousel.scss";
