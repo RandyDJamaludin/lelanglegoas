@@ -1,7 +1,7 @@
-@import "base/variable.scss";
-@import "base/spacing.scss";
-@import "base/typography.scss";
-// @import "base/utility.scss";
+@import 'base/variable.scss';
+@import 'base/spacing.scss';
+@import 'base/typography.scss';
+@import 'base/utility.scss';
 
 body {
   background: #fff !important;
@@ -397,7 +397,7 @@ p.street {
 }
 
 #comment_bubble:before {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   right: 100%;
@@ -419,7 +419,7 @@ p.street {
 }
 
 #comment_bubbleWomen:before {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   left: 100%;
@@ -482,14 +482,14 @@ p.backTop {
 }
 
 //End to Top
-@import "Components/Banner.scss";
-@import "Components/Card.scss";
-@import "Components/About.scss";
-@import "Components/TabLeft.scss";
-@import "Components/Login.scss";
-@import "Components/Register.scss";
-@import "Components/ViewCar.scss";
-@import "Components/Panel.scss";
-@import "Components/Instagram.scss";
-@import "Components/Media.scss";
-@import "react-alice-carousel/src/alice-carousel.scss";
+@import 'Components/Banner.scss';
+@import 'Components/Card.scss';
+@import 'Components/About.scss';
+@import 'Components/TabLeft.scss';
+@import 'Components/Login.scss';
+@import 'Components/Register.scss';
+@import 'Components/ViewCar.scss';
+@import 'Components/Panel.scss';
+@import 'Components/Instagram.scss';
+@import 'Components/Media.scss';
+@import 'react-alice-carousel/src/alice-carousel.scss';
