@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import { Banner } from "../Components/Partial";
-import HomeDescription from "./HomeDescription";
-import HomeInstagramFeed from "./HomeInstagramFeed";
-import HomeRekomendasi from "./HomeRekomendasi";
-import HomeMiniVideo from "./HomeMiniVideo";
+import React, { Component } from 'react';
+import { Banner } from '../Components/Partial';
+import HomeDescription from './HomeDescription';
+import HomeInstagramFeed from './HomeInstagramFeed';
+import HomeRekomendasi from './HomeRekomendasi';
+import HomeMiniVideo from './HomeMiniVideo';
 
 class Home extends Component {
   constructor() {
@@ -25,7 +25,7 @@ class Home extends Component {
 
         <HomeInstagramFeed />
 
-        {/* <HomeMiniVideo /> */}
+        <HomeMiniVideo />
       </div>
     );
   }

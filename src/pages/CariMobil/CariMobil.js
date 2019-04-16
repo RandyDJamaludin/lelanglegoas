@@ -1,15 +1,15 @@
-import React, { Fragment, Component } from "react";
-import { Grid, Row, Col } from "react-bootstrap";
-import { Divider, Input, Select, Form, Pagination, Button } from "antd";
-import { NavLink } from "react-router-dom";
-import { SkeletonImg, Skeleton } from "react-js-skeleton";
-import { SearchLelang } from "../Components/Card";
-import { connect } from "react-redux";
-import { fetchBrand } from "../../actions/getBrand";
-import { fetchProductAll } from "../../actions/getProduct";
-import { fetchSearchProduct } from "../../actions/searchProduct";
-import { login } from "../../actions/login";
-import SkeletonLoader from "./component/SkeletonLoader";
+import React, { Fragment, Component } from 'react';
+import { Grid, Row, Col } from 'react-bootstrap';
+import { Divider, Input, Select, Form, Pagination, Button } from 'antd';
+import { NavLink } from 'react-router-dom';
+import { SkeletonImg, Skeleton } from 'react-js-skeleton';
+import { SearchLelang } from '../Components/Card';
+import { connect } from 'react-redux';
+import { fetchBrand } from '../../actions/getBrand';
+import { fetchProductAll } from '../../actions/getProduct';
+import { fetchSearchProduct } from '../../actions/searchProduct';
+import { login } from '../../actions/login';
+import SkeletonLoader from './component/SkeletonLoader';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
@@ -24,23 +24,24 @@ class Index extends Component {
     super();
 
     this.state = {
-      merk: "",
-      model: "",
-      tipe: "",
-      warna: "",
-      tahun: "",
+      merk: '',
+      model: '',
+      tipe: '',
+      warna: '',
+      tahun: '',
       session: {},
       loadingSearch: false,
       loadingCard: true,
-      resultSearch: "Not Yet Search",
+      resultSearch: 'Not Yet Search',
       pageSize: 4,
       current: 1
     };
   }
 
   async componentDidMount() {
-    await this.props.login("TELECREATIVE", "01042018");
-    const session = JSON.parse(localStorage.getItem("session"));
+    window.scrollTo(0, 0);
+    await this.props.login('TELECREATIVE', '01042018');
+    const session = JSON.parse(localStorage.getItem('session'));
     await this.setState({ session });
 
     await this.props.fetchProductAll(session.tokenId);
@@ -50,24 +51,9 @@ class Index extends Component {
 
   //Function for Handling Search
   async handleSearch() {
-    const {
-      session,
-      merk,
-      model,
-      tipe,
-      warna,
-      tahun,
-      loadingSearch
-    } = this.state;
+    const { session, merk, model, tipe, warna, tahun, loadingSearch } = this.state;
     this.setState({ loadingSearch: true });
-    await this.props.fetchSearchProduct(
-      session.tokenId,
-      merk,
-      model,
-      tipe,
-      warna,
-      tahun
-    );
+    await this.props.fetchSearchProduct(session.tokenId, merk, model, tipe, warna, tahun);
     await this.setState({ resultSearch: this.props.receivedsearchproduct });
     this.setState({ loadingSearch: false });
   }
@@ -82,10 +68,7 @@ class Index extends Component {
   render() {
     return (
       <div>
-        <Grid
-          className="p-t-100 p-b-100"
-          style={{ paddingTop: "3%", paddingBottom: "3%" }}
-        >
+        <Grid className="p-t-100 p-b-100" style={{ paddingTop: '3%', paddingBottom: '3%' }}>
           <Row>
             <Col md={12} className="searchPanel">
               <div className="body-header">
@@ -97,12 +80,11 @@ class Index extends Component {
                   <p> Jenis Kendaraan</p>
                   <Select
                     showSearch
-                    style={{ width: "100%" }}
+                    style={{ width: '100%' }}
+                    allowClear
                     optionFilterProp="children"
                     filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                   >
                     <Option value="mobil">Mobil</Option>
@@ -112,12 +94,11 @@ class Index extends Component {
                   <p> Merek </p>
                   <Select
                     showSearch
-                    style={{ width: "100%" }}
+                    allowClear
+                    style={{ width: '100%' }}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={value => this.setState({ merk: value })}
                   >
@@ -132,16 +113,15 @@ class Index extends Component {
                   <p> Model </p>
                   <Select
                     showSearch
-                    style={{ width: "100%" }}
+                    allowClear
+                    style={{ width: '100%' }}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={value => this.setState({ model: value })}
                   >
-                    {this.state.merk === "" ? (
+                    {this.state.merk === '' ? (
                       <Option value="select" disabled>
                         Please Select Model
                       </Option>
@@ -164,16 +144,15 @@ class Index extends Component {
                   <p> Tipe </p>
                   <Select
                     showSearch
-                    style={{ width: "100%" }}
+                    allowClear
+                    style={{ width: '100%' }}
                     optionFilterProp="children"
                     filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={value => this.setState({ tipe: value })}
                   >
-                    {this.state.model === "" ? (
+                    {this.state.model === '' ? (
                       <Option value="select" disabled>
                         Please Select Tipe
                       </Option>
@@ -196,21 +175,17 @@ class Index extends Component {
                 </Col>
                 <Col md={4}>
                   <p> Tahun </p>
-                  <Input
-                    width="100%"
-                    onChange={e => this.setState({ tahun: e.target.value })}
-                  />
+                  <Input width="100%" onChange={e => this.setState({ tahun: e.target.value })} />
                 </Col>
                 <Col md={4}>
                   <p> warna </p>
                   <Select
                     showSearch
-                    style={{ width: "100%" }}
+                    style={{ width: '100%' }}
                     optionFilterProp="children"
+                    allowClear
                     filterOption={(input, option) =>
-                      option.props.children
-                        .toLowerCase()
-                        .indexOf(input.toLowerCase()) >= 0
+                      option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
                     }
                     onChange={value => this.setState({ warna: value })}
                   >
@@ -226,15 +201,10 @@ class Index extends Component {
               <Row>
                 <Col md={12}>
                   <FormItem>
-                    {this.state.merk === "" &&
-                    this.state.tahun === "" &&
-                    this.state.warna === "" ? (
-                      <Button
-                        type="primary"
-                        htmlType="submit"
-                        className="buttonSearch"
-                        disabled
-                      >
+                    {this.state.merk === '' &&
+                    this.state.tahun === '' &&
+                    this.state.warna === '' ? (
+                      <Button type="primary" htmlType="submit" className="buttonSearch" disabled>
                         CARI
                       </Button>
                     ) : (
@@ -254,23 +224,18 @@ class Index extends Component {
             </Col>
             <Col md={12}>
               <Row>
-                {this.state.resultSearch === "Not Yet Search" ? (
+                {this.state.resultSearch === 'Not Yet Search' ? (
                   <Col md={12}>
-                    <p style={{ fontWeight: "bold" }}>
-                      Produk yang mungkin disukai
-                    </p>
+                    <p style={{ fontWeight: 'bold' }}>Produk yang mungkin disukai</p>
                     <Row id="hasilPencarian">
                       {this.state.loadingCard ? (
                         <SkeletonLoader />
                       ) : this.props.receivedproductall == 0 ? (
                         <Col md={12}>
-                          <div
-                            className="searchLelang"
-                            style={{ paddingBottom: 10 }}
-                          >
+                          <div className="searchLelang" style={{ paddingBottom: 10 }}>
                             <Row
                               style={{
-                                border: "1px solid #ccc",
+                                border: '1px solid #ccc',
                                 padding: 10
                               }}
                             >
@@ -280,7 +245,7 @@ class Index extends Component {
                                     <div
                                       style={{
                                         height: 100,
-                                        backgroundColor: "#F5F5F5"
+                                        backgroundColor: '#F5F5F5'
                                       }}
                                     />
                                   </Col>
@@ -288,9 +253,7 @@ class Index extends Component {
                                     <Row className="box">
                                       <br />
                                       <Col md={12}>
-                                        <h2>
-                                          Tidak Ada Barang Untuk Ditampilkan
-                                        </h2>
+                                        <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
                                       </Col>
                                       <br />
                                     </Row>
@@ -299,13 +262,10 @@ class Index extends Component {
                               </Col>
                             </Row>
                           </div>
-                          <div
-                            className="searchLelang"
-                            style={{ paddingBottom: 10 }}
-                          >
+                          <div className="searchLelang" style={{ paddingBottom: 10 }}>
                             <Row
                               style={{
-                                border: "1px solid #ccc",
+                                border: '1px solid #ccc',
                                 padding: 10
                               }}
                             >
@@ -315,7 +275,7 @@ class Index extends Component {
                                     <div
                                       style={{
                                         height: 100,
-                                        backgroundColor: "#F5F5F5"
+                                        backgroundColor: '#F5F5F5'
                                       }}
                                     />
                                   </Col>
@@ -323,9 +283,7 @@ class Index extends Component {
                                     <Row className="box">
                                       <br />
                                       <Col md={12}>
-                                        <h2>
-                                          Tidak Ada Barang Untuk Ditampilkan
-                                        </h2>
+                                        <h2>Tidak Ada Barang Untuk Ditampilkan</h2>
                                       </Col>
                                       <br />
                                     </Row>
@@ -343,13 +301,9 @@ class Index extends Component {
                         )
                           .slice(0, 10)
                           .map((data, Index) => (
-                            <Col
-                              md={6}
-                              key={data.UnitKeyFinder}
-                              className="p-l-30 p-r-30"
-                            >
+                            <Col md={6} key={data.UnitKeyFinder} className="p-l-30 p-r-30">
                               <SearchLelang
-                                number={"1"}
+                                number={'1'}
                                 name={data.UnitName}
                                 police={data.AuctionLotUnitSpecs[3].SpecValue}
                                 price={data.AuctionLot.FinalBasePrice}
@@ -387,23 +341,16 @@ class Index extends Component {
                       <Col xs={1} md={1} />
                     </Row>
                   </Col>
-                ) : this.state.resultSearch != "" ? (
+                ) : this.state.resultSearch != '' ? (
                   <Col md={12}>
                     <Row id="hasilPencarian">
-                      <p style={{ fontWeight: "bold", marginLeft: 10 }}>
-                        {" "}
-                        Hasil Pencarian{" "}
-                      </p>
+                      <p style={{ fontWeight: 'bold', marginLeft: 10 }}> Hasil Pencarian </p>
                       {paginate(
                         this.state.resultSearch,
                         this.state.pageSize,
                         this.state.current
                       ).map((data, index) => (
-                        <Col
-                          md={6}
-                          key={data.UnitKeyFinder}
-                          className="p-l-30 p-r-30"
-                        >
+                        <Col md={6} key={data.UnitKeyFinder} className="p-l-30 p-r-30">
                           <SearchLelang
                             number={data.number}
                             name={data.UnitName}
@@ -441,17 +388,13 @@ class Index extends Component {
                 ) : (
                   <Col md={12}>
                     <Row id="hasilPencarian">
-                      <p style={{ fontWeight: "bold", marginLeft: 10 }}>
-                        {" "}
-                        Hasil Pencarian{" "}
-                      </p>
+                      <p style={{ fontWeight: 'bold', marginLeft: 10 }}> Hasil Pencarian </p>
                     </Row>
                     <Row>
                       <Col xs={1} md={2} />
                       <Col xs={10} md={8}>
-                        <p style={{ fontWeight: "bold", marginTop: 10 }}>
-                          mohon maaf untuk kendaraan masih belum tersedia.
-                          Daftarkan diri Anda{" "}
+                        <p style={{ fontWeight: 'bold', marginTop: 10 }}>
+                          mohon maaf untuk kendaraan masih belum tersedia. Daftarkan diri Anda{' '}
                           <NavLink
                             to="https://lelang.legoas.co.id/Auction/Bidder/Register"
                             target="_blank"
