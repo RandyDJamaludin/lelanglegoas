@@ -626,20 +626,6 @@ p.backTop {
   100% {
     stroke-dashoffset: -600; } }
 
-.title-section {
-  font-size: 18px !important;
-  font-weight: 700;
-  color: #005695;
-  margin-bottom: 0;
-  padding-top: 2%;
-  font-family: "Overpass", sans-serif; }
-
-.title-hr {
-  margin: 5px 0; }
-
-.base-color {
-  color: #005695; }
-
 @media (min-width: 1240px) and (max-width: 1440px) {
   .banner_background {
     height: 440px; } }
