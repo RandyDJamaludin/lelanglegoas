@@ -117,7 +117,7 @@ export class Index extends Component {
                   <Row>
                     {paginate(this.props.schedulecar, this.state.pageSize, this.state.current).map(
                       (data, index) => (
-                        <Col xs={3} md={3} key={data.auctionEventId}>
+                        <Col xs={12} md={3} key={data.auctionEventId}>
                           <JadwalLelang
                             transport={' MOBIL'}
                             eventCode={data.eventCode}

@@ -52,8 +52,11 @@ export class Navigation extends Component {
                 <NavItem eventKey={1} href="/">
                   Beranda
                 </NavItem>
+                <NavItem eventKey={2} href="/info-lelang">
+                  Info Lelang
+                </NavItem>
 
-                <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
+                {/* <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
                   <MenuItem eventKey={3.1} href="/pengertian-lelang">
                     Pengertian Lelang
                   </MenuItem>
@@ -63,7 +66,7 @@ export class Navigation extends Component {
                   <MenuItem eventKey={3.3} href="/peraturan-lelang">
                     Peraturan Lelang
                   </MenuItem>
-                </NavDropdown>
+                </NavDropdown> */}
                 <NavItem eventKey={4} href="/lokasi">
                   Lokasi Lelang
                 </NavItem>
