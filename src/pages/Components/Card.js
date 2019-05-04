@@ -1,9 +1,13 @@
-import React, { Component } from "react";
-import { Row, Col, Image } from "react-bootstrap";
-import { Icon } from "antd";
-import { Link } from "react-router-dom";
-import moment from "moment";
-import "moment/locale/id";
+import React, { Component } from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
+import { Icon } from 'antd';
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import 'moment/locale/id';
+import aset5 from '../../assets/image/home/aset-05.png';
+import aset6 from '../../assets/image/home/aset-06.png';
+import aset7 from '../../assets/image/home/aset-07.png';
+import aset8 from '../../assets/image/home/aset-07.png';
 
 // export class Card extends Component {
 //   render() {
@@ -39,28 +43,23 @@ export class CardCarousel extends Component {
           state: { data: this.props }
         }}
       >
-      <div className="background-cardCarousel">
-        <center>
-          <Image className="components-card" src={this.props.image} />
-          <h3>{this.props.nameBrand} </h3>
-          <p>
-            {" "}
-            {this.props.merek} {this.props.model} - {this.props.tipe} ({
-              this.props.no_pol
-            })
-          </p>
-          <p className="color"> {this.props.color} </p>
-          <p>
-            Harga dasar{" "}
-            <span className="orange">
-              Rp. {" "}
-              {this.props.price
-                .toString()
-                .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
-            </span>
-          </p>
-        </center>
-      </div>
+        <div className="background-cardCarousel">
+          <center>
+            <Image className="components-card" src={this.props.image} />
+            <h3>{this.props.nameBrand} </h3>
+            <p>
+              {' '}
+              {this.props.merek} {this.props.model} - {this.props.tipe} ({this.props.no_pol})
+            </p>
+            <p className="color"> {this.props.color} </p>
+            <p>
+              Harga dasar{' '}
+              <span className="orange">
+                Rp. {this.props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
+              </span>
+            </p>
+          </center>
+        </div>
       </Link>
     );
   }
@@ -102,7 +101,7 @@ export class CardCarousel extends Component {
 export class ListLelang extends Component {
   render() {
     return (
-      <div className="listLelang" style={{ paddingBottom: "5%" }}>
+      <div className="listLelang" style={{ paddingBottom: '5%' }}>
         <Row>
           <Link
             to={{
@@ -129,52 +128,46 @@ export class ListLelang extends Component {
                         </p>
                       </div>
                     </Col>
-                    <Col xs={12} md={2}></Col>
+                    <Col xs={12} md={2} />
                   </Row>
                   <Row>
                     <Col xs={12} md={10}>
                       <div className="headerLelang">
-                        <p style={{ color: "#000", fontSize: 15 }}>
-                          {this.props.police} | {this.props.year} | KM :{" "}
-                          {this.props.km}
+                        <p style={{ color: '#000', fontSize: 15 }}>
+                          {this.props.police} | {this.props.year} | KM : {this.props.km}
                         </p>
                         <p>Harga Dasar: </p>
-                        <p style={{ fontSize: 22, fontWeight: "bold" }}>
-                          RP.{" "}
-                          {this.props.price
-                            .toString()
-                            .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                        <p style={{ fontSize: 22, fontWeight: 'bold' }}>
+                          RP. {this.props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                         </p>
                       </div>
                     </Col>
                     <Col xs={12} md={2}>
                       <div className="headerLelang">
-                        <p style={{ textAlign: "center", fontWeight: "bold" }}>
-                          Grade
-                        </p>
+                        <p style={{ textAlign: 'center', fontWeight: 'bold' }}>Grade</p>
                         <div className="bodyLelang">
                           <p
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                               fontSize: 30,
-                              color: "#3c8dbc",
-                              textAlign: "center",
+                              color: '#3c8dbc',
+                              textAlign: 'center',
                               lineHeight: 0
                             }}
                           >
-                            {" "}
+                            {' '}
                             {this.props.grade}
                           </p>
                           <p
                             style={{
-                              fontWeight: "bold",
+                              fontWeight: 'bold',
                               fontSize: 14,
-                              textAlign: "center",
+                              textAlign: 'center',
                               lineHeight: 0,
                               marginTop: 10
                             }}
                           >
-                            {" "}
+                            {' '}
                             LOT {this.props.lotNumber}
                           </p>
                         </div>
@@ -196,7 +189,7 @@ export class SearchLelang extends Component {
   render() {
     return (
       <div className="searchLelang" style={{ paddingBottom: 10 }}>
-        <Row style={{ border: "1px solid #ccc", padding: 10 }}>
+        <Row style={{ border: '1px solid #ccc', padding: 10 }}>
           <Link
             to={{
               pathname: `/view-car/${this.props.lotId}`,
@@ -218,11 +211,9 @@ export class SearchLelang extends Component {
                     </Col>
                     <Col md={12}>
                       <p className="title">
-                        {" "}
-                        Harga :Rp.{" "}
-                        {this.props.price
-                          .toString()
-                          .replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+                        {' '}
+                        Harga :Rp.{' '}
+                        {this.props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
                       </p>
                     </Col>
                   </Row>
@@ -240,31 +231,37 @@ export class SearchLelang extends Component {
 export class JadwalLelang extends Component {
   render() {
     return (
-      <div style={{ padding: 20, margin: 10, background: "#f8f8f8" }}>
-        <p style={{ fontWeight: "bold" }}>
-          <Icon type="form" /> Lelang
+      <div style={{ padding: 20, margin: 0 }}>
+        <p
+          style={{ fontWeight: 'bold', textTransform: 'uppercase' }}
+          className="text-center base-color m-b-0"
+        >
+          Lelang
           <span>
             {this.props.transport} {this.props.location}
           </span>
         </p>
-        <p style={{ fontWeight: "bold" }}>
+        <p style={{ fontWeight: 'bold' }} className="text-center base-color">
           {this.props.eventCode} {this.props.eventNumber}
         </p>
         <p>
-          <Icon type="calendar" />Tanggal Lelang{" "}
-          {moment(this.props.date).format("D MMMM YYYY")}
+          <img src={aset7} className="m-t-0 m-r-5" />
+          Tanggal Lelang {moment(this.props.date).format('D MMMM YYYY')}
         </p>
         <p>
-          <Icon type="home" /> Open House{" "}
-          {moment(this.props.openhouse).format("D MMMM YYYY")}
+          <img src={aset7} className="m-t-0 m-r-5" />
+          Open House {moment(this.props.openhouse).format('D MMMM YYYY')}
         </p>
         <p>
-          <Icon type="clock-circle-o" /> {this.props.startTime} -{" "}
-          {this.props.endTime} {this.props.timeZone}
+          <img src={aset7} className="m-t-0 m-r-5" />
+          {this.props.startTime} - {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <Icon type="money" /> Biaya Admin: Rp. {this.props.admfee == null ? this.props.admfee : 
-          this.props.admfee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+          <img src={aset7} className="m-t-0 m-r-5" />
+          Biaya Admin: Rp.{' '}
+          {this.props.admfee == null
+            ? this.props.admfee
+            : this.props.admfee.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')}
         </p>
         <Link
           to={{
@@ -272,8 +269,8 @@ export class JadwalLelang extends Component {
             state: { data: this.props }
           }}
         >
-          {" "}
-          Lihat Lot{" "}
+          {' '}
+          Lihat Lot{' '}
         </Link>
       </div>
     );

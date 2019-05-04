@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import {
   Grid,
   Row,
@@ -10,18 +10,18 @@ import {
   Navbar,
   NavDropdown,
   MenuItem
-} from "react-bootstrap";
-import { Carousel, Input, Icon } from "antd";
-import Logo from "../../assets/image/logo.jpeg";
-import Banner2 from "../../assets/image//banner/Ban2.jpg";
-import TiFacebook from "react-icons/lib/ti/social-facebook";
-import TiInstagram from "react-icons/lib/ti/social-instagram";
-import TiTwitter from "react-icons/lib/ti/social-twitter";
+} from 'react-bootstrap';
+import { Carousel, Input, Icon } from 'antd';
+import Logo from '../../assets/image/logo.jpeg';
+import Banner2 from '../../assets/image//banner/Ban2.jpg';
+import TiFacebook from 'react-icons/lib/ti/social-facebook';
+import TiInstagram from 'react-icons/lib/ti/social-instagram';
+import TiTwitter from 'react-icons/lib/ti/social-twitter';
 
 //component Navigation(header)
 export class Navigation extends Component {
   state = {
-    current: "mail"
+    current: 'mail'
   };
   handleClick = e => {
     this.setState({
@@ -35,7 +35,7 @@ export class Navigation extends Component {
           <Navbar
             inverse
             collapseOnSelect
-            style={{ zIndex: "99" }}
+            style={{ zIndex: '99' }}
             id="navbar"
             onSelect={this.handleSelect}
           >
@@ -52,14 +52,8 @@ export class Navigation extends Component {
                 <NavItem eventKey={1} href="/">
                   Beranda
                 </NavItem>
-                <NavItem eventKey={2} href="/jadwal">
-                  Jadwal Lelang
-                </NavItem>
-                <NavDropdown
-                  eventKey={3}
-                  title="Info Lelang"
-                  id="basic-nav-dropdown"
-                >
+
+                <NavDropdown eventKey={3} title="Info Lelang" id="basic-nav-dropdown">
                   <MenuItem eventKey={3.1} href="/pengertian-lelang">
                     Pengertian Lelang
                   </MenuItem>
@@ -148,7 +142,7 @@ export class BannerInfo extends Component {
         <div className="content">
           <div className="card">
             <Image src={this.props.logo} style={{ width: 130 }} />
-            <h1 className="title" style={{ color: "#fff" }}>
+            <h1 className="title" style={{ color: '#fff' }}>
               {this.props.title}
             </h1>
           </div>
@@ -227,8 +221,8 @@ export class Footer extends Component {
               </div>
               <div className="body-client">
                 <p className="street">
-                  Market-place pertama di Indonesia untuk menjual dan membeli
-                  kendaraan melalui Lelang
+                  Market-place pertama di Indonesia untuk menjual dan membeli kendaraan melalui
+                  Lelang
                 </p>
                 <p> </p>
               </div>
@@ -273,10 +267,7 @@ export class Footer extends Component {
               <p> Subscribe Our Newsletter </p>
               <Input
                 addonAfter={
-                  <Icon
-                    type="mail"
-                    onClick={() => alert("Terimakasih sudah subscribe Legoas")}
-                  />
+                  <Icon type="mail" onClick={() => alert('Terimakasih sudah subscribe Legoas')} />
                 }
                 className="footer-email"
                 placeholder="Type your e-mail here"
@@ -291,18 +282,12 @@ export class Footer extends Component {
                 </NavLink>
               </p>
               <p className="social-media">
-                <NavLink
-                  to="https://www.instagram.com/legoasindonesia/"
-                  target="_blank"
-                >
+                <NavLink to="https://www.instagram.com/legoasindonesia/" target="_blank">
                   <TiInstagram />
                 </NavLink>
               </p>
               <p className="social-media">
-                <NavLink
-                  to="https://twitter.com/LegoasIndonesia?lang=en"
-                  target="_blank"
-                >
+                <NavLink to="https://twitter.com/LegoasIndonesia?lang=en" target="_blank">
                   <TiTwitter />
                 </NavLink>
               </p>

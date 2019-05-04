@@ -1,19 +1,19 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router";
-import { Switch, Route } from "react-router-dom";
-import Landing from "./Landing/index";
-import Home from "./Home/Home";
-import Tata from "./TataCara/index";
-import Jadwal from "./Jadwal/index";
-import ListLelang from "./ListLelang/index";
-import ViewCar from "./ViewCar/index";
-import Lokasi from "./Lokasi/index";
-import PengertianLelang from "./PengertianLelang/index";
-import PeraturanLelang from "./PeraturanLelang/index";
-import TentangKami from "./TentangKami/index";
-import Jual from "./Jual/index";
-import Jual2 from "./Jual/index2";
-import CariMobil from "./CariMobil/CariMobil";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
+import { Switch, Route } from 'react-router-dom';
+import Landing from './Landing/index';
+import Home from './Home/Home';
+import Tata from './TataCara/index';
+import Jadwal from './Jadwal/Jadwal';
+import ListLelang from './ListLelang/index';
+import ViewCar from './ViewCar/index';
+import Lokasi from './Lokasi/index';
+import PengertianLelang from './PengertianLelang/index';
+import PeraturanLelang from './PeraturanLelang/index';
+import TentangKami from './TentangKami/index';
+import Jual from './Jual/index';
+import Jual2 from './Jual/index2';
+import CariMobil from './CariMobil/CariMobil';
 // import Kontak from "./Kontak/index";
 // import Login from "./Login/index";
 // import RegisterChoose from "./RegisterChoose/index";
@@ -52,7 +52,7 @@ export class Main extends Component {
 const noMatch = ({ location }) => (
   <Redirect
     to={{
-      pathname: "/"
+      pathname: '/'
     }}
   />
 );
