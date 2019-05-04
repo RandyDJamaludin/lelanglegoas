@@ -14,6 +14,7 @@ import TentangKami from './TentangKami/index';
 import Jual from './Jual/index';
 import Jual2 from './Jual/index2';
 import CariMobil from './CariMobil/CariMobil';
+import Produk from './Produk/Produk';
 // import Kontak from "./Kontak/index";
 // import Login from "./Login/index";
 // import RegisterChoose from "./RegisterChoose/index";
@@ -37,6 +38,7 @@ export class Main extends Component {
           <Route exact path="/jual" component={Jual} />
           <Route exact path="/jual2" component={Jual2} />
           <Route exact path="/cari-mobil" component={CariMobil} />
+          <Route exact path="/produk" component={Produk} />
           {/* <Route exact path="/kontak" component={Kontak} /> */}
           {/* <Route exact path="/login" component={Login} /> */}
           {/* <Route exact path="/register-choose" component={RegisterChoose} /> */}

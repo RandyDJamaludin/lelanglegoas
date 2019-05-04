@@ -36,8 +36,10 @@ class HomeDescription extends Component {
               </Link>
             </Col>
             <Col md={3} className="text-center">
-              <img width={150} height={150} src={Logo3} />
-              <div className="base-color w700">Produk</div>
+              <Link to="/produk">
+                <img width={150} height={150} src={Logo3} />
+                <div className="base-color w700">Produk</div>
+              </Link>
             </Col>
             <Col md={3} className="text-center">
               <img width={150} height={150} src={Logo4} />
