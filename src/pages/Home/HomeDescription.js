@@ -23,28 +23,28 @@ class HomeDescription extends Component {
         </h2>
         <Grid>
           <Row>
-            <Col md={3} className="text-center">
+            <Col md={4} className="text-center">
               <Link to="/cari-mobil">
                 <img width={150} height={150} src={Logo1} />
                 <div className="base-color w700">Cari Mobil/Motor</div>
               </Link>
             </Col>
-            <Col md={3} className="text-center">
+            <Col md={4} className="text-center">
               <Link to="/jadwal">
                 <img width={150} height={150} src={Logo2} />
                 <div className="base-color w700">Jadwal Lelang Terdekat</div>
               </Link>
             </Col>
-            <Col md={3} className="text-center">
+            <Col md={4} className="text-center">
               <Link to="/produk">
                 <img width={150} height={150} src={Logo3} />
                 <div className="base-color w700">Produk</div>
               </Link>
             </Col>
-            <Col md={3} className="text-center">
+            {/* <Col md={3} className="text-center">
               <img width={150} height={150} src={Logo4} />
               <div className="base-color w700">Testimonial</div>
-            </Col>
+            </Col> */}
           </Row>
         </Grid>
       </div>

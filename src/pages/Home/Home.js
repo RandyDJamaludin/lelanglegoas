@@ -4,6 +4,7 @@ import HomeDescription from './HomeDescription';
 import HomeInstagramFeed from './HomeInstagramFeed';
 import HomeRekomendasi from './HomeRekomendasi';
 import HomeMiniVideo from './HomeMiniVideo';
+import HomeTestimoni from './HomeTestimoni';
 
 class Home extends Component {
   constructor() {
@@ -22,6 +23,8 @@ class Home extends Component {
         <HomeDescription />
 
         <HomeRekomendasi />
+
+        <HomeTestimoni />
 
         <HomeInstagramFeed />
 
