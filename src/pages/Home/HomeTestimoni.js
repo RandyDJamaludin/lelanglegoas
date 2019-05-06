@@ -4,6 +4,11 @@ import AliceCarousel from 'react-alice-carousel';
 import img1 from '../../assets/image/testimoni/img1.jpg';
 import img2 from '../../assets/image/testimoni/img2.jpg';
 import img3 from '../../assets/image/testimoni/img3.jpg';
+import img4 from '../../assets/image/testimoni/img4.jpg';
+import img5 from '../../assets/image/testimoni/img5.jpg';
+import img6 from '../../assets/image/testimoni/img6.jpg';
+import img7 from '../../assets/image/testimoni/img7.jpg';
+import img8 from '../../assets/image/testimoni/img8.jpg';
 
 const dataTestimony = [
   {
@@ -18,6 +23,31 @@ const dataTestimony = [
   },
   {
     img: img3,
+    description:
+      'Test'
+  },
+  {
+    img: img4,
+    description:
+      'Test'
+  },
+  {
+    img: img5,
+    description:
+      'Test'
+  },
+  {
+    img: img6,
+    description:
+      'Test'
+  },
+  {
+    img: img7,
+    description:
+      'Test'
+  },
+  {
+    img: img8,
     description:
       'Test'
   }
@@ -45,7 +75,7 @@ class HomeTestimoni extends Component {
         </div>
         <Row>
           <AliceCarousel
-            duration={400}
+            duration={500}
             autoPlay={true}
             infinite={true}
             startIndex={0}
@@ -60,9 +90,9 @@ class HomeTestimoni extends Component {
             {dataTestimony.map((data, i) => (
               <Col md={12} xs={12} key={i} style={{ padding: 5 }}>
                 <div style={{ background: '#F1F1F1', padding: 15 }} className="box-shadow">
-                  <img src={img1} className="img m-t-15" style={{ width: '100%' }} />
+                  <img src={data.img} className="img m-t-15" style={{ width: '100%' }} />
                   <p className="m-t-15 base-color">
-                  "Baru pertama mencoba transaksi dengan lelang, rasanya luar biasa. Sebagai generasi milenial kita harus mengikuti perkembangan jaman. Jadi sistem lelang dengan aplikasi ini sangat amat membantu di era globalisasi ini"{' '}
+                  {data.description}
                   </p>
                 </div>
               </Col>
