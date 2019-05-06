@@ -7,7 +7,7 @@ import 'moment/locale/id';
 import aset5 from '../../assets/image/home/aset-05.png';
 import aset6 from '../../assets/image/home/aset-06.png';
 import aset7 from '../../assets/image/home/aset-07.png';
-import aset8 from '../../assets/image/home/aset-07.png';
+import aset8 from '../../assets/image/home/aset-08.png';
 
 // export class Card extends Component {
 //   render() {
@@ -245,11 +245,11 @@ export class JadwalLelang extends Component {
           {this.props.eventCode} {this.props.eventNumber}
         </p>
         <p>
-          <img src={aset7} className="m-t-0 m-r-5" />
+          <img src={aset5} className="m-t-0 m-r-5" />
           Tanggal Lelang {moment(this.props.date).format('D MMMM YYYY')}
         </p>
         <p>
-          <img src={aset7} className="m-t-0 m-r-5" />
+          <img src={aset6} className="m-t-0 m-r-5" />
           Open House {moment(this.props.openhouse).format('D MMMM YYYY')}
         </p>
         <p>
@@ -257,7 +257,7 @@ export class JadwalLelang extends Component {
           {this.props.startTime} - {this.props.endTime} {this.props.timeZone}
         </p>
         <p>
-          <img src={aset7} className="m-t-0 m-r-5" />
+          <img src={aset8} className="m-t-0 m-r-5" />
           Biaya Admin: Rp.{' '}
           {this.props.admfee == null
             ? this.props.admfee

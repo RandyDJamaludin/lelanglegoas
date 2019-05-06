@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
 import AliceCarousel from 'react-alice-carousel';
 import img1 from '../../assets/image/testimoni/img1.jpg';
+import img2 from '../../assets/image/testimoni/img2.jpg';
+import img3 from '../../assets/image/testimoni/img3.jpg';
 
 const dataTestimony = [
   {
     img: img1,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
+      'Baru pertama mencoba transaksi dengan lelang, rasanya luar biasa. Sebagai generasi milenial kita harus mengikuti perkembangan jaman. Jadi sistem lelang dengan aplikasi ini sangat amat membantu di era globalisasi ini'
   },
   {
-    img: img1,
+    img: img2,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
+      'Pertama kali ikut lelang'
   },
   {
-    img: img1,
+    img: img3,
     description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,'
+      'Test'
   }
 ];
 
@@ -50,7 +52,7 @@ class HomeTestimoni extends Component {
             fadeOutAnimation={true}
             mouseDragEnabled={true}
             responsive={responsive}
-            autoPlayInterval={2000}
+            autoPlayInterval={3000}
             autoPlayActionDisabled={true}
             onSlideChange={this.onSlideChange}
             onSlideChanged={this.onSlideChanged}
@@ -60,8 +62,7 @@ class HomeTestimoni extends Component {
                 <div style={{ background: '#F1F1F1', padding: 15 }} className="box-shadow">
                   <img src={img1} className="img m-t-15" style={{ width: '100%' }} />
                   <p className="m-t-15 base-color">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,{' '}
+                  "Baru pertama mencoba transaksi dengan lelang, rasanya luar biasa. Sebagai generasi milenial kita harus mengikuti perkembangan jaman. Jadi sistem lelang dengan aplikasi ini sangat amat membantu di era globalisasi ini"{' '}
                   </p>
                 </div>
               </Col>
