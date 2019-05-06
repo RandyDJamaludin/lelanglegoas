@@ -14,42 +14,95 @@ const dataTestimony = [
   {
     img: img1,
     description:
-      'Baru pertama mencoba transaksi dengan lelang, rasanya luar biasa. Sebagai generasi milenial kita harus mengikuti perkembangan jaman. Jadi sistem lelang dengan aplikasi ini sangat amat membantu di era globalisasi ini'
-  },
+      <p>"Baru pertama mencoba transaksi dengan lelang, rasanya 
+        luar biasa. Sebagai generasi milenial kita harus mengikuti
+        perkembangan jaman. Jadi sistem lelang dengan aplikasi 
+        ini sangat amat membantu di era globalisasi ini"
+        -
+        Terima kasih pada Bapak Saji Purwanto yang telah memenangkan Honda BRV
+      #LelangBebasRibet LEGOAS.
+      </p>
+    },
   {
     img: img2,
     description:
-      'Pertama kali ikut lelang'
+      <p>
+        "Pertama kali ikut lelang tapi sudah terkesan dengan pelayanannya
+        yang sangat ramah dan karyawannya sigap membantu jika ada kesulitan. Kalo ditanya
+        mau ikut lelang lagi apa nggak? Pastinya dong. Saya akan melakukan 
+        transaksi kembali melalui aplikasi Legoas jika ada keperluan
+        untuk membeli atau menjual unit nanti."
+        -
+        Terima kasih Bapak Muhammad Azis dari Cilincing yang telah memenangkan Nissan March
+        dari #LelangBebasRibet di LEGOAS. Apakah kamu sedang mencari mobil impian dengan harga
+        kompetitif dengan kualitas OK? Yuk cek legoas.co.id untuk ikut lelangnya.  
+      
+      </p>
   },
   {
     img: img3,
     description:
-      'Test'
+      <p>
+        "Saya udah rencana beli mobil ini sudah lama, tapi sayang waktu itu
+        belum kebeli karena mahal. Kemarin kebetulan ikut #LelangBebasRibet di
+        LEGOAS atas saran teman saya. Tinggal lewat aplikasi, pantau lelangnya 
+        dirumah, syukurlah saya menang dapat Agya, sesuai budget lagi harganya.
+        LEGOAS terpercaya dan mantaplah!"
+        -
+        Selamat kepada Bapak Randi Nurmarrandi berhasil membawa pulang mobil idamannya Agya.
+      </p>
   },
   {
     img: img4,
     description:
-      'Test'
+      <p>
+        "Udah lama saya mencari mobil yang pas untuk anak saya yang sesuai
+        dengan budget yang saya siapkan. Syukurlah saya menemukan balai 
+        lelang seperti Legoas yang lelangnya mudah bisa melalui 
+        handphone, memiliki banyak pilihan mobil dan lelangnya setiap 
+        hari jadi saya ga perlu menunggu lama untuk bertemu dengan 
+        mobil idaman. Terima kasih banyak Legoas, saya jadi bisa 
+        memberikan hadiah mobil Honda City spesial untuk Adit anak saya. 
+        Pokoknya Legoas recommended banget!".
+        -
+        Selamat kepada Bapak Agus yang berhasil memenangkan Honda City di #LelangBebasRibet Legoas.
+      </p>
   },
   {
     img: img5,
     description:
-      'Test'
+      <p>
+        “Cari mobil mudah itu nyata, lho. Buktinya saya nggak perlu repot ke showroom untuk dapat mobil idaman. Cukup ikut #LelangBebasRibet di aplikasi LEGOAS, sambil duduk santai di rumah, eh nggak taunya menang. Terima kasih LEGOAS!”
+-
+Selamat kepada Bapak Deni Ardie berhasil membawa pulang mobil idaman Proton Saga Brand New 2013.
+      </p>
   },
   {
     img: img6,
     description:
-      'Test'
+      <p>
+        “Baru kali ini saya merasa sangat puas ikutan lelang mobil lewat aplikasi Legoas. Caranya mudah dan pelayanannya dari karyawan Legoas ramah dan sangat membantu. Meskipun sudah berhasil menemukan mobil impian, saya masih terus pantau lelangnya, lho. Kalau ada mobil dengan harga yang pas, saya pasti akan ikut lelangnya lagi. Terima kasih Legoas.”
+-
+Selamat kepada Bapak Hendri yang berhasil memenangkan unit Toyota Avanza 1,3 GMT tahun 2013 di #LelangBebasRibet Legoas.
+      </p>
   },
   {
     img: img7,
     description:
-      'Test'
+      <p>
+        “Awalnya saya ragu mau ikut lelang lewat aplikasi, tapi setelah dengar temen ada yang menang bidding mobil dengan harga terjangkau, saya jadi tertarik. Akhirnya, saya ikutan #LelangBebasRibet di LEGOAS. Iseng daftar, top up keanggotaan, lalu ikut bidding. Nggak disangka saya menang Toyota Veloz. Super efisien! Highly recommended lah LEGOAS.”
+-
+Selamat kepada Bapak Rulianto Tarigan yang berhasil memenangkan Toyota Veloz.
+      </p>
   },
   {
     img: img8,
     description:
-      'Test'
+      <p>
+        Baru kali ini saya menemukan balai lelang mobil yang sangat memudahkan para peserta lelang terutama yang dari luar kota seperti saya yang berdomisili di kota Bandung. Prosesnya ga ribet lagi, daftar, beli membership, pilih dan lihat kondisi mobil hingga ikutan lelang semuanya lewat layer HP. Mudah, ga ribet dan bisa ikutan lelang dimana saja. Terima kasih LEGOAS, saya jadi bisa bertemu mobil idaman saya, Toyota Yaris. Ayo, ikutan lelang di LEGOAS! Highly recommended.”
+
+Selamat kepada Bapak Chandra Juliansyah dari Bandung yang berhasl memenangkan Toyota Yaris.
+      </p>
   }
 ];
 

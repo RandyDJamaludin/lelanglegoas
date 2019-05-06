@@ -6,6 +6,7 @@ import HomeRekomendasi from './HomeRekomendasi';
 import HomeMiniVideo from './HomeMiniVideo';
 import HomeTestimoni from './HomeTestimoni';
 
+
 class Home extends Component {
   constructor() {
     super();
