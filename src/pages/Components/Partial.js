@@ -251,17 +251,17 @@ export class Footer extends Component {
             <Col xs={6} md={3}>
               <p className="title"> Bantuan </p>
               <p>
-                <NavLink className="footer" to="/pengertian-lelang">
+                <NavLink className="footer" to="/info-lelang">
                   Pengertian Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink className="footer" to="/tatacara-lelang">
+                <NavLink className="footer" to="/info-lelang">
                   Tata Cara Lelang
                 </NavLink>
               </p>
               <p>
-                <NavLink className="footer" to="/peraturan-lelang">
+                <NavLink className="footer" to="/info-lelang">
                   Peraturan Lelang
                 </NavLink>
               </p>
