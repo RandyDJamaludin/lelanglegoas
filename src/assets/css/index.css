@@ -386,11 +386,11 @@ h6 {
 button.buttonSearch {
   width: 100%;
   margin-top: 24px;
-background: #3C8DBC;  }
+  background: #3C8DBC; }
 
 button.search {
   width: 100%;
-  border: 1px solid #3C8DBC; }
+  border: 1px solid #40a9ff; }
 
 .wrap-nav {
   position: fixed;
@@ -401,19 +401,18 @@ button.search {
   .wrap-nav .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 15px;
-    font-family: "Overpass", sans-serif;
+    font-size: 13px;
     box-shadow: 0 0 10px #ccc;
     background: #fff;
-    color: #10467F; }
+    color: #3c8dbc; }
   .wrap-nav .navbar-inverse {
     border: none; }
     .wrap-nav .navbar-inverse .navbar-toggle {
       border: none;
-      background: #10467F; }
+      background: #3c8dbc; }
     .wrap-nav .navbar-inverse .navbar-toggle:hover {
       border: none;
-      background: #10467F; }
+      background: #3c8dbc; }
     .wrap-nav .navbar-inverse .navbar-collapse {
       border: none; }
     .wrap-nav .navbar-inverse .navbar-form {
@@ -429,11 +428,11 @@ button.search {
       .wrap-nav .navbar-inverse .navbar-nav .open:focus {
         background: transparent; }
       .wrap-nav .navbar-inverse .navbar-nav li a {
-        color: #10467F; }
+        color: #000; }
         .wrap-nav .navbar-inverse .navbar-nav li a:focus {
-          color: #10467F; }
+          color: #3c8dbc; }
         .wrap-nav .navbar-inverse .navbar-nav li a:hover {
-          color: #FBBB28; }
+          color: #3c8dbc; }
 
 span.orange {
   color: #3c8dbc;
@@ -1449,14 +1448,14 @@ button.explore:hover {
   font-size: 12px; }
 
 .wrap-cardCarousel .header {
-  background: #DEDFE0;
+  background: #f8f8f8;
   margin-bottom: 15px; }
   .wrap-cardCarousel .header p.left {
     font-weight: bold;
     padding-top: 15px;
     padding-left: 10px; }
   .wrap-cardCarousel .header p.right {
-    color: #DEDFE0 ;
+    color: #ccc;
     padding-top: 15px;
     padding-left: 10px;
     padding-right: 20px;
@@ -1471,9 +1470,9 @@ button.explore:hover {
 
 .wrap-cardCarousel .background-cardCarousel {
   padding-bottom: 20px;
-  border: 1px solid #DEDFE0; }
+  border: 1px solid #ccc; }
   .wrap-cardCarousel .background-cardCarousel:hover {
-    background: #DEDFE0 ;
+    background: #f8f8f8;
     cursor: pointer; }
 
 .wrap-cardCarousel img {
