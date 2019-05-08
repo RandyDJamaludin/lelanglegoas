@@ -786,7 +786,7 @@ class Index extends Component {
         </div>
 
         <div className="landing-lelang mb-3">
-          <Grid style={{ paddingTop: "1%", paddingBottom: "1%" }}>
+        <Grid>
             <div className="body-header">
               <p>
                 <Icon type="instagram" /> INSTAGRAM

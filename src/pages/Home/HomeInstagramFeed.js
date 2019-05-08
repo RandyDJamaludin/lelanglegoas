@@ -20,7 +20,7 @@ class InstagramFeed extends Component {
   render() {
     return (
       <div className="landing-lelang m-b-50">
-        <Grid style={{ paddingTop: "1%", paddingBottom: "1%" }}>
+        <Grid>
           <div className="body-header">
             <p className="title-section text-center">
               <Icon type="instagram" /> INSTAGRAM
@@ -44,8 +44,8 @@ class InstagramFeed extends Component {
                         </div>
                     </a>`}
                   userId="7647214269"
-                  clientId="c593810dc87b45a28539dc0851bb53a8"
-                  accessToken="7647214269.1677ed0.3d3a0abad52e43c4ae9ff481ca4dcad2"
+                  clientId="afe9cc75ece54810a9d1c068ef5fa891"
+                  accessToken="7647214269.afe9cc7.a1c885b3418b4d7792ad4c96fff352b3"
                 />
               </div>
             </Col>
