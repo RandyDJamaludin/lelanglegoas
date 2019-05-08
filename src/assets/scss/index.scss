@@ -40,10 +40,11 @@ button.search {
   .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 13px;
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
     box-shadow: 0 0 10px #ccc;
     background: #fff;
-    color: #3c8dbc;
+    color: #10467F;
   }
 
   .navbar-inverse {
@@ -51,12 +52,12 @@ button.search {
 
     .navbar-toggle {
       border: none;
-      background: #3c8dbc;
+      background: #10467F;
     }
 
     .navbar-toggle:hover {
       border: none;
-      background: #3c8dbc;
+      background: #10467F;
     }
 
     .navbar-collapse {
@@ -90,14 +91,14 @@ button.search {
 
       li {
         a {
-          color: #000;
+          color: #10467F;
 
           &:focus {
-            color: #3c8dbc;
+            color: #10467F;
           }
 
           &:hover {
-            color: #3c8dbc;
+            color: #FBBB28;
           }
         }
       }

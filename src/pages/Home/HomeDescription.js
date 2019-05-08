@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col } from 'react-bootstrap';
+import linejpg from '../../assets/image/line.png';
 import { Link } from 'react-router-dom';
 import Logo1 from '../../assets/image/home/aset-01.png';
 import Logo2 from '../../assets/image/home/aset-02.png';
@@ -16,11 +17,12 @@ class HomeDescription extends Component {
 
   render() {
     return (
-      <div className="landing-lelang mb-3">
-        <p className="title-section text-center">BALAI LELANG DENGAN E-AUCTION</p>
-        <h2 className="text-center m-t-10" style={{ color: '#FFBB00', fontWeight: 'bold' }}>
-          PERTAMA DI INDONESIA
-        </h2>
+      <div className="info-content" style={{ paddingTop: "3%", paddingBottom: "1%" }}>
+        <div className="body-header text-center">
+          <h4 className="base-color w900">BALAI LELANG DENGAN E-AUCTION</h4>
+          <h2 className="text-center w900" style={{ color: '#FFBB00', fontWeight: 'bold' }}>PERTAMA DI INDONESIA</h2>
+          <img src={linejpg} alt="" />
+        </div>
         <Grid>
           <Row>
             <Col md={4} className="text-center">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import linejpg from '../../assets/image/line.jpg';
+import linejpg from '../../assets/image/line.png';
 import { Collapse } from 'antd';
 import Logo1 from '../../assets/image/home/aset-24.png';
 import Logo2 from '../../assets/image/home/aset-25.png';

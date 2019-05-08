@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import linejpg from '../../assets/image/line.jpg';
+import linejpg from '../../assets/image/line.png';
 import { Row, Col } from 'react-bootstrap';
 import Logo1 from '../../assets/image/home/aset-14.png';
 import Logo2 from '../../assets/image/home/aset-15.png';

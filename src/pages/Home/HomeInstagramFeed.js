@@ -20,7 +20,7 @@ class InstagramFeed extends Component {
   render() {
     return (
       <div className="landing-lelang m-b-50">
-        <Grid>
+        <Grid style={{ paddingTop: "1%", paddingBottom: "1%" }}>
           <div className="body-header">
             <p className="title-section text-center">
               <Icon type="instagram" /> INSTAGRAM

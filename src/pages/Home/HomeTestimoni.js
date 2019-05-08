@@ -121,7 +121,7 @@ class HomeTestimoni extends Component {
     };
 
     return (
-      <Grid className="testimony-slider">
+      <Grid className="testimony-slider" style={{ paddingTop: "1%", paddingBottom: "1%" }}>
         <div className="body-header">
           <p className="title-section text-center">TESTIMONI</p>
           <hr className="title-hr" />

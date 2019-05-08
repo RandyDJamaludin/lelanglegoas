@@ -5,7 +5,7 @@ import { Redirect } from 'react-router';
 import { Skeleton } from 'react-js-skeleton';
 import MdLocationOn from 'react-icons/lib/md/location-on';
 import { connect } from 'react-redux';
-import linejpg from '../../assets/image/line.jpg';
+import linejpg from '../../assets/image/line.png';
 
 import {
   fetchScheduleCar

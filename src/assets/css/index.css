@@ -401,18 +401,19 @@ button.search {
   .wrap-nav .navbar {
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 13px;
+    font-size: 15px;
+    font-family: "Overpass", sans-serif;
     box-shadow: 0 0 10px #ccc;
     background: #fff;
-    color: #3c8dbc; }
+    color: #10467F; }
   .wrap-nav .navbar-inverse {
     border: none; }
     .wrap-nav .navbar-inverse .navbar-toggle {
       border: none;
-      background: #3c8dbc; }
+      background: #10467F; }
     .wrap-nav .navbar-inverse .navbar-toggle:hover {
       border: none;
-      background: #3c8dbc; }
+      background: #10467F; }
     .wrap-nav .navbar-inverse .navbar-collapse {
       border: none; }
     .wrap-nav .navbar-inverse .navbar-form {
@@ -428,11 +429,11 @@ button.search {
       .wrap-nav .navbar-inverse .navbar-nav .open:focus {
         background: transparent; }
       .wrap-nav .navbar-inverse .navbar-nav li a {
-        color: #000; }
+        color: #10467F; }
         .wrap-nav .navbar-inverse .navbar-nav li a:focus {
-          color: #3c8dbc; }
+          color: #10467F; }
         .wrap-nav .navbar-inverse .navbar-nav li a:hover {
-          color: #3c8dbc; }
+          color: #FBBB28; }
 
 span.orange {
   color: #3c8dbc;

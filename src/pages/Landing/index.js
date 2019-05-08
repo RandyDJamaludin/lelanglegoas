@@ -287,7 +287,7 @@ class Index extends Component {
             )}
           </Row>
         </Grid>
-        <Grid style={{ paddingTop: "3%", paddingBottom: "3%" }}>
+        <Grid style={{ paddingTop: "1%", paddingBottom: "1%" }}>
           <Row>
             <Col md={5} className="searchPanel">
               <p style={{ fontWeight: "bold" }}> CARI MOBIL / MOTOR </p>
@@ -786,7 +786,7 @@ class Index extends Component {
         </div>
 
         <div className="landing-lelang mb-3">
-          <Grid>
+          <Grid style={{ paddingTop: "1%", paddingBottom: "1%" }}>
             <div className="body-header">
               <p>
                 <Icon type="instagram" /> INSTAGRAM
