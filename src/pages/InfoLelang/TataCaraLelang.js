@@ -7,7 +7,7 @@ import Logo3 from '../../assets/image/home/aset-16.png';
 import Logo4 from '../../assets/image/home/aset-17.png';
 import Logo5 from '../../assets/image/home/aset-18.png';
 import Logo6 from '../../assets/image/home/aset-20.png';
-import Logo7 from '../../assets/image/home/aset-18.png';
+import Logo7 from '../../assets/image/home/aset-33.png';
 import Logo8 from '../../assets/image/home/aset-21.png';
 import Logo9 from '../../assets/image/home/aset-22.png';
 import Logo10 from '../../assets/image/home/aset-23.png';
@@ -142,8 +142,8 @@ class TataCaraLelang extends Component {
     return (
       <div className="info-content">
         <div className="body-header text-center">
-          <h3 className="base-color w900">TATA CARA LELANG</h3>
-          <img src={linejpg} alt="" />
+          <h3 className="base-color w900">CARA IKUT LELANG</h3>
+          <img style={{marginTop:'-3%'}} src={linejpg} alt="" />
         </div>
 
         <div className="m-t-30 ct-content container-fluid">
@@ -154,7 +154,9 @@ class TataCaraLelang extends Component {
               </Col>
               <Col md="11" className="p-t-15">
                 <h4 className="base-color w900">{data.title}</h4>
+                <p style={{font:'Overpass', textAlign:'Justify'}}>
                 {data.content()}
+                </p>
               </Col>
             </Row>
           ))}

@@ -78,7 +78,7 @@ class PengertianLelang extends Component {
         <div className="body-header text-center">
           <h3 className="base-color w900">PENGERTIAN LELANG</h3>
           <h4 className="base-color text-center w900">APA ITU LELANG</h4>
-          <img src={linejpg} alt="" />
+          <img style={{marginTop:'-3%'}} src={linejpg} alt="" />
         </div>
 
         <div className="m-t-30 ct-content container-fluid">
@@ -88,7 +88,9 @@ class PengertianLelang extends Component {
                 <img width={75} src={data.img} />
               </Col>
               <Col md="11" className="p-t-15">
+              <p style={{font:'Overpass', textAlign:'Justify'}}>
                 {data.content()}
+                </p>
               </Col>
             </Row>
           ))}

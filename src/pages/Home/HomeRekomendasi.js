@@ -48,7 +48,7 @@ class Index extends Component {
 
     return (
       <Fragment>
-        <Grid className="wrap-cardCarousel">
+        <Grid className="wrap-cardCarousel" style={{ paddingBottom: "2%" }}>
           <div className="body-header">
             <p className="title-section text-center">REKOMENDASI</p>
             <hr className="title-hr" />

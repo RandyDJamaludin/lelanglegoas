@@ -3,6 +3,7 @@ import { Grid, Row, Col } from 'react-bootstrap';
 import PengertianLelang from './PengertianLelang';
 import TataCaraLelang from './TataCaraLelang';
 import PeraturanLelang from './PeraturanLelang';
+import BeliMobil from './BeliMobil';
 
 class InfoLelang extends Component {
   state = {
@@ -16,8 +17,9 @@ class InfoLelang extends Component {
       case 2:
         return <TataCaraLelang />;
       case 3:
+        return <BeliMobil />;
+      case 4:
         return <PeraturanLelang />;
-
       default:
         return <PengertianLelang />;
     }
@@ -46,11 +48,17 @@ class InfoLelang extends Component {
                     className={`menu-item ${tab === 2 ? 'active' : ''}`}
                     onClick={this.handleClickMenu.bind(this, 2)}
                   >
-                    TATA CARA LELANG
+                    CARA IKUT LELANG
                   </div>
                   <div
                     className={`menu-item ${tab === 3 ? 'active' : ''}`}
                     onClick={this.handleClickMenu.bind(this, 3)}
+                  >
+                    BELI MOBIL
+                  </div>
+                  <div
+                    className={`menu-item ${tab === 4 ? 'active' : ''}`}
+                    onClick={this.handleClickMenu.bind(this, 4)}
                   >
                     PERATURAN LELANG
                   </div>

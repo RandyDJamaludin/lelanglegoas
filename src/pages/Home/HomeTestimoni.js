@@ -121,7 +121,7 @@ class HomeTestimoni extends Component {
     };
 
     return (
-      <Grid className="testimony-slider" style={{ paddingTop: "1%", paddingBottom: "1%" }}>
+      <Grid className="testimony-slider">
         <div className="body-header">
           <p className="title-section text-center">TESTIMONI</p>
           <hr className="title-hr" />
@@ -142,9 +142,9 @@ class HomeTestimoni extends Component {
           >
             {dataTestimony.map((data, i) => (
               <Col md={12} xs={12} key={i} style={{ padding: 5 }}>
-                <div style={{ background: '#F1F1F1', padding: 15 }} className="box-shadow">
+                <div style={{ background: '#005991', padding: 15 }} className="box-shadow">
                   <img src={data.img} className="img m-t-15" style={{ width: '100%' }} />
-                  <p className="m-t-15 base-color">
+                  <p className="m-t-15 base-color" style={{ font: 'Overpass', textAlign: 'Justify', color:'white'}}>
                   {data.description}
                   </p>
                 </div>

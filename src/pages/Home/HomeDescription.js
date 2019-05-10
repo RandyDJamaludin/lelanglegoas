@@ -17,11 +17,12 @@ class HomeDescription extends Component {
 
   render() {
     return (
-      <div className="info-content" style={{ paddingTop: "3%", paddingBottom: "1%" }}>
+      <div className="info-content" style={{ paddingTop: "4%", paddingBottom: "4%" }}>
         <div className="body-header text-center">
           <h4 className="base-color w900">BALAI LELANG DENGAN E-AUCTION</h4>
           <h2 className="text-center w900" style={{ color: '#FFBB00', fontWeight: 'bold' }}>PERTAMA DI INDONESIA</h2>
-          <img src={linejpg} alt="" />
+          <img style={{marginTop:'-3%'}} src={linejpg} alt="" />
+          <p></p>
         </div>
         <Grid>
           <Row>

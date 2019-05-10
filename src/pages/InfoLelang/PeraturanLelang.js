@@ -330,7 +330,7 @@ class PeraturanLelang extends Component {
       <div className="info-content">
         <div className="body-header text-center">
           <h3 className="base-color w900">PERATURAN LELANG</h3>
-          <img src={linejpg} alt="" />
+          <img style={{marginTop:'-3%'}} src={linejpg} alt="" />
         </div>
 
         <div className="m-t-30 m-b-30 ct-content container-fluid">
@@ -345,7 +345,9 @@ class PeraturanLelang extends Component {
                 }
                 key={data.key}
               >
+              <p style={{font:'Overpass', textAlign:'Justify'}}>
                 {data.content()}
+                </p>
               </Panel>
             ))}
           </Collapse>
