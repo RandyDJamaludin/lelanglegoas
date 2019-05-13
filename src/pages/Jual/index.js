@@ -3,7 +3,7 @@ import { Row } from "react-bootstrap";
 import { Affix } from "antd";
 import FormJual from "./FormJual";
 import Img1 from "../../assets/image/jual/section-ex5.jpg";
-import Img2 from "../../assets/image/jual/section2.jpeg";
+import Img2 from "../../assets/image/jual/section2.jpg";
 
 const Content = () => (
   <div style={{ padding: 100, textAlign: "center", borderBottom: "1px solid" }}>

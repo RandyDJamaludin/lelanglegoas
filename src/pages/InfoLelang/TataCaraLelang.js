@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import linejpg from '../../assets/image/line.png';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Grid } from 'react-bootstrap';
+import { Tabs, Table } from "antd";
 import Logo1 from '../../assets/image/home/aset-14.png';
 import Logo2 from '../../assets/image/home/aset-15.png';
 import Logo3 from '../../assets/image/home/aset-16.png';
@@ -11,6 +12,44 @@ import Logo7 from '../../assets/image/home/aset-33.png';
 import Logo8 from '../../assets/image/home/aset-21.png';
 import Logo9 from '../../assets/image/home/aset-22.png';
 import Logo10 from '../../assets/image/home/aset-23.png';
+
+
+const dataSilver = [{
+  key: '1',
+  paket: 'SILVER A',
+  price: 'Rp. 1.000.000',
+  address: '1 Token Motor'
+}, {
+  key: '2',
+  paket: 'SILVER B',
+  price: 'Rp. 5.000.000',
+  address: '1 Token Mobil'
+}];
+
+
+const dataPlatinum = [{
+  key: '1',
+  paket: 'PLATINUM',
+  price: 'Rp. 30.000.000',
+  address: 'Tidak terbatas untuk mobil dan motor.'
+}];
+
+const headerTable = [{
+  title: 'Paket',
+  dataIndex: 'paket',
+  key: 'paket',
+  width: 100,
+}, {
+  title: 'Deposito',
+  dataIndex: 'price',
+  key: 'price',
+  width: 130,
+}, {
+  title: 'Token yang diperoleh',
+  dataIndex: 'address',
+  key: 'address',
+  width: 130,
+}];
 
 const arr = [
   {
@@ -145,7 +184,6 @@ class TataCaraLelang extends Component {
           <h3 className="base-color w900">CARA IKUT LELANG</h3>
           <img style={{marginTop:'-3%'}} src={linejpg} alt="" />
         </div>
-
         <div className="m-t-30 ct-content container-fluid">
           {arr.map(data => (
             <Row key={data.key} className="m-b-10">
@@ -161,7 +199,23 @@ class TataCaraLelang extends Component {
             </Row>
           ))}
         </div>
-      </div>
+        <div className="info-table">
+        <Row>
+        <Col md={2}/>
+        <Col md={10}>
+        <Table dataSource={dataSilver} columns={headerTable} size="small" className="table_ant"/>
+        </Col>
+          </Row>
+        </div>
+        <div className="info-table">
+        <Row>
+        <Col md={2}/>
+        <Col md={10}>
+        <Table dataSource={dataPlatinum} columns={headerTable} size="small" className="table_ant"/>
+        </Col>
+        </Row>
+        </div>
+          </div> 
     );
   }
 }
