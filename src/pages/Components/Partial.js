@@ -13,7 +13,7 @@ import {
 } from 'react-bootstrap';
 import { Carousel, Input, Icon } from 'antd';
 import Logo from '../../assets/image/logo.jpeg';
-import Banner2 from '../../assets/image//banner/Ban2.jpg';
+import Banner2 from '../../assets/image/banner/Ban2.jpg';
 import TiFacebook from 'react-icons/lib/ti/social-facebook';
 import TiInstagram from 'react-icons/lib/ti/social-instagram';
 import TiTwitter from 'react-icons/lib/ti/social-twitter';
@@ -115,6 +115,14 @@ export class Banner extends Component {
             <div className="containBanner3" />
             {/* Banner 4 */}
             <div className="containBanner4" />
+            {/* Banner 5 */}
+            <div className="containBanner5" />
+            {/* Banner 6 */}
+            <div className="containBanner6" />
+            {/* Banner 7 */}
+            <div className="containBanner7" />
+            {/* Banner 8 */}
+            <div className="containBanner8" />
           </Carousel>
         </div>
       </div>

@@ -135,7 +135,7 @@ class HomeTestimoni extends Component {
             fadeOutAnimation={true}
             mouseDragEnabled={true}
             responsive={responsive}
-            autoPlayInterval={3000}
+            autoPlayInterval={2800}
             autoPlayActionDisabled={true}
             onSlideChange={this.onSlideChange}
             onSlideChanged={this.onSlideChanged}
