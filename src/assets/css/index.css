@@ -2243,7 +2243,7 @@ section {
     margin: auto;
     display: flex;
     justify-content: space-between;
-    color: #564a80;
+    color: #10467F;
     font-weight: 600;
     font-size: 14px;
     padding-bottom: 2rem; }
@@ -2255,7 +2255,7 @@ section {
       padding: 10px;
       border: 1px solid #fff; }
       .info-lelang-ct .menu-info .menu-item:hover {
-        border: 1px solid #d0d0d0; }
+        border: 1px solid #eeeeee; }
       .info-lelang-ct .menu-info .menu-item.active {
         background: #eeeeee;
         border: 1px solid #eee; }
