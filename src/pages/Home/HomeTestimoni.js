@@ -9,6 +9,8 @@ import img5 from '../../assets/image/testimoni/img5.jpg';
 import img6 from '../../assets/image/testimoni/img6.jpg';
 import img7 from '../../assets/image/testimoni/img7.jpg';
 import img8 from '../../assets/image/testimoni/img8.jpg';
+import img9 from '../../assets/image/testimoni/img9.jpeg';
+import img10 from '../../assets/image/testimoni/img10.jpg';
 
 const dataTestimony = [
   {
@@ -102,6 +104,24 @@ Selamat kepada Bapak Rulianto Tarigan yang berhasil memenangkan Toyota Veloz.
         Baru kali ini saya menemukan balai lelang mobil yang sangat memudahkan para peserta lelang terutama yang dari luar kota seperti saya yang berdomisili di kota Bandung. Prosesnya ga ribet lagi, daftar, beli membership, pilih dan lihat kondisi mobil hingga ikutan lelang semuanya lewat layer HP. Mudah, ga ribet dan bisa ikutan lelang dimana saja. Terima kasih LEGOAS, saya jadi bisa bertemu mobil idaman saya, Toyota Yaris. Ayo, ikutan lelang di LEGOAS! Highly recommended.”
 
 Selamat kepada Bapak Chandra Juliansyah dari Bandung yang berhasl memenangkan Toyota Yaris.
+      </p>
+  },
+  {
+    img: img9,
+    description:
+      <p>
+        "Transaksi bisa sangat mudah karena dapat dilakukan dirumah. LEGOAS juga sangat enak karena bisa melakukan pengecekan unit tiap
+        hari. Jadwal lelangnya pun sama setiap harinya. Saya pasti akan melakukan transaksi kembali dengan LEGOAS".
+        Selamat kepada Bapak Fitra Aprilia Susanto yang berhasil memenangkan Daihatsu Xenia.
+      </p>
+  },
+  {
+    img: img10,
+    description:
+      <p>
+        "Transaksi kedua saya di LEGOAS. LEGOAS juga sangat enak karena bisa melakukan pengecekan unit tiap hari. Jadwal lelang pun
+        sama setiap harinnya. Saya pasti akan melakukan transaksi kembali dengan LEGOAS".
+        Selamat kepada Bapak Fitra Aprilia Susanto yang berhasil memenangkan Daihatsu Xenia.
       </p>
   }
 ];
