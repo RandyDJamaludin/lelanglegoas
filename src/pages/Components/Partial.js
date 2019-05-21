@@ -109,12 +109,12 @@ export class Banner extends Component {
           <Carousel autoplay>
             {/* Banner 2 */}
             <div className="containBanner2" />
-            {/* Banner 1 */}
+            {/* Banner 1 
             <div className="containBanner1" />
-            {/* Banner 3 */}
+            {/* Banner 3 
             <div className="containBanner3" />
-            {/* Banner 4 */}
-            <div className="containBanner4" />
+            {/* Banner 4 
+            <div className="containBanner4" /> */}
             {/* Banner 5 */}
             <div className="containBanner5" />
             {/* Banner 6 */}
